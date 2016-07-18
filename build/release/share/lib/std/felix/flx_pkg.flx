@@ -1,4 +1,4 @@
-#line 644 "C:/cygwin64/home/skaller/felix/src/packages/flx_pkgconfig.fdoc"
+#line 644 "C:/projects/felix/src/packages/flx_pkgconfig.fdoc"
 include "std/felix/flx_pkgconfig";
 
 class FlxPkg

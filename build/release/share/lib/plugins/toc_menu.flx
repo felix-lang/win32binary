@@ -1,4 +1,4 @@
-#line 4464 "C:/cygwin64/home/skaller/felix/src/packages/flx_web.fdoc"
+#line 4464 "C:/projects/felix/src/packages/flx_web.fdoc"
 include "./toc_menu-interface";
 
 fun setup (config_data:string) = {

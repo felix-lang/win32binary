@@ -1,4 +1,4 @@
-#line 108 "C:/cygwin64/home/skaller/felix/src/packages/core_type_constructors.fdoc"
+#line 108 "C:/projects/felix/src/packages/core_type_constructors.fdoc"
 
 // Note: some felix internals expect this to be defined here, not in a class, and
 // in this order.  Don't mess with it!

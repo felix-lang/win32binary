@@ -1,4 +1,4 @@
-#line 18 "C:/cygwin64/home/skaller/felix/src/packages/filesystem.fdoc"
+#line 18 "C:/projects/felix/src/packages/filesystem.fdoc"
 
 //$ Operations on filenames.
 class Filename_class[os] {

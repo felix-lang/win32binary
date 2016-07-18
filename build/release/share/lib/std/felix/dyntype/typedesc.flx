@@ -1,4 +1,4 @@
-#line 7 "C:/cygwin64/home/skaller/felix/src/packages/dynamic_metatyping.fdoc"
+#line 7 "C:/projects/felix/src/packages/dynamic_metatyping.fdoc"
 include "std/felix/rtti";
 
 class DynamicMetaTyping

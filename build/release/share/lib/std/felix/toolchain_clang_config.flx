@@ -1,4 +1,4 @@
-#line 35 "C:/cygwin64/home/skaller/felix/src/packages/toolchain.fdoc"
+#line 35 "C:/projects/felix/src/packages/toolchain.fdoc"
 
 typedef clang_config_t = (
   header_search_dirs: list[string],

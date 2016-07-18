@@ -1,4 +1,4 @@
-#line 281 "C:/cygwin64/home/skaller/felix/src/packages/numbers.fdoc"
+#line 281 "C:/projects/felix/src/packages/numbers.fdoc"
 
 typedef fun integral_promotion: TYPE -> TYPE =
   | #tiny => int
@@ -13,7 +13,7 @@ typedef fun integral_promotion: TYPE -> TYPE =
   | #uvlong => uvlong
 ;
 
-#line 297 "C:/cygwin64/home/skaller/felix/src/packages/numbers.fdoc"
+#line 297 "C:/projects/felix/src/packages/numbers.fdoc"
 open class Tiny
 {
   ctor tiny: string = "static_cast<#0>(::std::atoi($1.c_str()))" requires Cxx_headers::cstdlib;
@@ -167,7 +167,7 @@ open class Uintmax
 }
 
 
-#line 452 "C:/cygwin64/home/skaller/felix/src/packages/numbers.fdoc"
+#line 452 "C:/projects/felix/src/packages/numbers.fdoc"
 instance Str[tiny] {
   fun str: tiny -> string = "::flx::rtl::strutil::str<int>($1)" requires package "flx_strutil";
 }
@@ -187,7 +187,7 @@ Str[T]
   fun str: T -> string = "::flx::rtl::strutil::str<#1>($1)" requires package "flx_strutil";
 }
 
-#line 473 "C:/cygwin64/home/skaller/felix/src/packages/numbers.fdoc"
+#line 473 "C:/projects/felix/src/packages/numbers.fdoc"
 instance Repr[tiny]   { fun repr[with Str[tiny]]   (t:tiny)   : string => (str t) + "t";  }
 instance Repr[short]  { fun repr[with Str[short]]  (t:short)  : string => (str t) + "s";  }
 instance Repr[int]   { fun repr[with Str[int]]   (t:int)   : string => (str t) + "";  }
@@ -215,7 +215,7 @@ instance Repr[uintmax]  { fun repr[with Str[uintmax]]  (t:uintmax)  : string => 
 instance Repr[uintptr]  { fun repr[with Str[uintptr]]  (t:uintptr)  : string => (str t) + "up";  }
 
 
-#line 502 "C:/cygwin64/home/skaller/felix/src/packages/numbers.fdoc"
+#line 502 "C:/projects/felix/src/packages/numbers.fdoc"
 instance[t in ints] Addgrp[t] {}
 instance[t in ints] Ring[t] {}
 instance[t in ints] MultSemi1[t] {}
@@ -250,16 +250,16 @@ instance[t in ints] Integer[t] {
   fun >> : t * t -> t = "$1>>$2";
 }
 
-#line 538 "C:/cygwin64/home/skaller/felix/src/packages/numbers.fdoc"
+#line 538 "C:/projects/felix/src/packages/numbers.fdoc"
 instance[t in sints] Signed_integer[t] {
   fun sgn: t -> int = "$1<0??-1:$1>0??1:0";
   fun abs: t -> t = "$1<0??-$1:$1";
 }
 
-#line 545 "C:/cygwin64/home/skaller/felix/src/packages/numbers.fdoc"
+#line 545 "C:/projects/felix/src/packages/numbers.fdoc"
 instance[t in uints] Unsigned_integer[t] {}
 
-#line 549 "C:/cygwin64/home/skaller/felix/src/packages/numbers.fdoc"
+#line 549 "C:/projects/felix/src/packages/numbers.fdoc"
 //open[T in sints] Signed_integer[T];
 open Signed_integer[tiny];
 open Signed_integer[short];

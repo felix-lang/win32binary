@@ -1,4 +1,4 @@
-#line 1274 "C:/cygwin64/home/skaller/felix/src/packages/dynlink.fdoc"
+#line 1274 "C:/projects/felix/src/packages/dynlink.fdoc"
 #ifndef __FLX_DYNLINK_CONFIG_H__
 #define __FLX_DYNLINK_CONFIG_H__
 #include "flx_rtl_config.hpp"

@@ -1,4 +1,4 @@
-#line 27 "C:/cygwin64/home/skaller/felix/src/packages/embed.fdoc"
+#line 27 "C:/projects/felix/src/packages/embed.fdoc"
 
 #ifndef __flx_world_config_H_
 #define __flx_world_config_H_

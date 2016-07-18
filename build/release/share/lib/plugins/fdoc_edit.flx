@@ -1,4 +1,4 @@
-#line 3604 "C:/cygwin64/home/skaller/felix/src/packages/flx_web.fdoc"
+#line 3604 "C:/projects/felix/src/packages/flx_web.fdoc"
 include "./edit-interface";
 
 fun setup(config_data:string) = {

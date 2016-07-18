@@ -1,4 +1,4 @@
-#line 504 "C:/cygwin64/home/skaller/felix/src/packages/algebra.fdoc"
+#line 504 "C:/projects/felix/src/packages/algebra.fdoc"
 //$ Additive symmetric float-approximate group, symbol +.
 //$ Note: associativity is not assumed.
 class FloatAddgrp[t] {
@@ -23,7 +23,7 @@ class FloatAddgrp[t] {
   proc pluseq(px:&t, y:t) {  += (px,y); }
   proc  minuseq(px:&t, y:t) { -= (px,y); }
 }
-#line 545 "C:/cygwin64/home/skaller/felix/src/packages/algebra.fdoc"
+#line 545 "C:/projects/felix/src/packages/algebra.fdoc"
 //$ Additive symmetric group, symbol +.
 class Addgrp[t] {
   inherit FloatAddgrp[t];
@@ -31,7 +31,7 @@ class Addgrp[t] {
   reduce inv(x:t,y:t): x + y - y => x;
 }
 
-#line 556 "C:/cygwin64/home/skaller/felix/src/packages/algebra.fdoc"
+#line 556 "C:/projects/felix/src/packages/algebra.fdoc"
 //$ Multiplicative symmetric float-approximate semi group with unit symbol *.
 //$ Note: associativity is not assumed.
 class FloatMultSemi1[t] {
@@ -47,7 +47,7 @@ class FloatMultSemi1[t] {
   reduce id (x:t): one()*x => x;
 }
 
-#line 585 "C:/cygwin64/home/skaller/felix/src/packages/algebra.fdoc"
+#line 585 "C:/projects/felix/src/packages/algebra.fdoc"
 //$ Multiplicative semi group with unit.
 class MultSemi1[t] {
   inherit FloatMultSemi1[t];
@@ -55,7 +55,7 @@ class MultSemi1[t] {
   reduce cancel (x:t,y:t,z:t): x * z ==  y * z => x == y;
 }
 
-#line 895 "C:/cygwin64/home/skaller/felix/src/packages/algebra.fdoc"
+#line 895 "C:/projects/felix/src/packages/algebra.fdoc"
 open class Quantifiers_add_mul {
   fun \sum[T,C with FloatAddgrp[T], Streamable[C,T]] (a:C):T =
   {

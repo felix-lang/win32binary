@@ -1,4 +1,4 @@
-#line 746 "C:/cygwin64/home/skaller/felix/src/packages/faio.fdoc"
+#line 746 "C:/projects/felix/src/packages/faio.fdoc"
 #ifndef __FLX_FAIO_CONFIG_H__
 #define __FLX_FAIO_CONFIG_H__
 #include "flx_rtl_config.hpp"

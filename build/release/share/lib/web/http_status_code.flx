@@ -1,4 +1,4 @@
-#line 718 "C:/cygwin64/home/skaller/felix/src/packages/web.fdoc"
+#line 718 "C:/projects/felix/src/packages/web.fdoc"
 /*
 Example:
   println$ str SC_OK;

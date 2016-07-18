@@ -1,7 +1,7 @@
-#line 655 "C:/cygwin64/home/skaller/felix/src/packages/trees.fdoc"
+#line 655 "C:/projects/felix/src/packages/trees.fdoc"
 class BinarySearchTree[T with Tord[T]]
 {
-#line 659 "C:/cygwin64/home/skaller/felix/src/packages/trees.fdoc"
+#line 659 "C:/projects/felix/src/packages/trees.fdoc"
   typedef bstree_node_t =
     (
       elt: T,
@@ -15,7 +15,7 @@ class BinarySearchTree[T with Tord[T]]
     | Node of &bstree_node_t
   ;
 
-#line 674 "C:/cygwin64/home/skaller/felix/src/packages/trees.fdoc"
+#line 674 "C:/projects/felix/src/packages/trees.fdoc"
 
   fun leaf: bstree_t -> bool =
     | #Empty => false
@@ -30,7 +30,7 @@ class BinarySearchTree[T with Tord[T]]
     | x => leaf x
   ;
 
-#line 690 "C:/cygwin64/home/skaller/felix/src/packages/trees.fdoc"
+#line 690 "C:/projects/felix/src/packages/trees.fdoc"
   instance Str[bstree_t] {
     fun str : bstree_t -> string =
       | #Empty => "()"
@@ -39,7 +39,7 @@ class BinarySearchTree[T with Tord[T]]
     ;
   }
 
-#line 702 "C:/cygwin64/home/skaller/felix/src/packages/trees.fdoc"
+#line 702 "C:/projects/felix/src/packages/trees.fdoc"
   // Skiena p78
   fun find (tree:bstree_t) (elt:T) : bstree_t =>
     // saves passing invariant elt
@@ -54,7 +54,7 @@ class BinarySearchTree[T with Tord[T]]
     in aux tree
   ;
 
-#line 720 "C:/cygwin64/home/skaller/felix/src/packages/trees.fdoc"
+#line 720 "C:/projects/felix/src/packages/trees.fdoc"
   fun min (x:bstree_t) =>
     match x with
     | #Empty => x
@@ -65,7 +65,7 @@ class BinarySearchTree[T with Tord[T]]
         | Node p => aux p
       in aux p
    ;
-#line 734 "C:/cygwin64/home/skaller/felix/src/packages/trees.fdoc"
+#line 734 "C:/projects/felix/src/packages/trees.fdoc"
    proc iter (f: T -> 0) (x:bstree_t) =
    {
       proc aux (x:bstree_t) = {
@@ -80,21 +80,21 @@ class BinarySearchTree[T with Tord[T]]
      aux x;
    }
 
-#line 751 "C:/cygwin64/home/skaller/felix/src/packages/trees.fdoc"
+#line 751 "C:/projects/felix/src/packages/trees.fdoc"
   fun fold_left[U] (_f:U->T->U) (init:U) (x:bstree_t): U = {
     var sum = init;
     iter proc (elt:T) { sum = _f sum elt; } x;
     return sum;
   }
 
-#line 760 "C:/cygwin64/home/skaller/felix/src/packages/trees.fdoc"
+#line 760 "C:/projects/felix/src/packages/trees.fdoc"
   fun map[U] (_f:T->U) (x:bstree_t): BinarySearchTree[U]::bstree_t = {
     var res = BinarySearchTree::Empty[U];
     iter proc (elt:T) { BinarySearchTree[U]::insert &res elt._f; } x;
     return res;
   }
 
-#line 768 "C:/cygwin64/home/skaller/felix/src/packages/trees.fdoc"
+#line 768 "C:/projects/felix/src/packages/trees.fdoc"
   ctor bstree_t () => Empty;
   ctor bstree_node_t (x:T) => (parent=Empty,elt=x,left=Empty,right=Empty);
   ctor bstree_node_t (x:T, p:bstree_t) => (parent=p,elt=x,left=Empty,right=Empty);
@@ -102,7 +102,7 @@ class BinarySearchTree[T with Tord[T]]
   ctor bstree_t (x:T) => Node (new (bstree_node_t x));
   ctor bstree_t (x:T, p:bstree_t) => Node (new (bstree_node_t (x,p)));
 
-#line 777 "C:/cygwin64/home/skaller/felix/src/packages/trees.fdoc"
+#line 777 "C:/projects/felix/src/packages/trees.fdoc"
   // Note: this routine disallows duplicates.
   proc insert_with_parent (p:&bstree_t) (parent:bstree_t) (elt:T)
   {
@@ -121,7 +121,7 @@ class BinarySearchTree[T with Tord[T]]
   }
   proc insert (p:&bstree_t) (elt:T) => insert_with_parent p Empty elt;
 
-#line 798 "C:/cygwin64/home/skaller/felix/src/packages/trees.fdoc"
+#line 798 "C:/projects/felix/src/packages/trees.fdoc"
   ctor bstree_t  (f:1->opt[T]) = {
     var x = Empty;
     var ff = f;
@@ -135,7 +135,7 @@ class BinarySearchTree[T with Tord[T]]
     return x;
   }
 
-#line 814 "C:/cygwin64/home/skaller/felix/src/packages/trees.fdoc"
+#line 814 "C:/projects/felix/src/packages/trees.fdoc"
   gen iterator (x:bstree_t) () : opt[T] =
   {
     match x with
@@ -164,7 +164,7 @@ class BinarySearchTree[T with Tord[T]]
       endmatch;
     endmatch;
   }
-#line 844 "C:/cygwin64/home/skaller/felix/src/packages/trees.fdoc"
+#line 844 "C:/projects/felix/src/packages/trees.fdoc"
   instance Set[bstree_t,T] {
     fun \in (elt:T, container:bstree_t) =>
       match find container elt with
@@ -175,7 +175,7 @@ class BinarySearchTree[T with Tord[T]]
   }
   inherit Set[bstree_t,T];
 
-#line 856 "C:/cygwin64/home/skaller/felix/src/packages/trees.fdoc"
+#line 856 "C:/projects/felix/src/packages/trees.fdoc"
   instance Container[bstree_t, T] {
     // not tail rec
     fun len (x:bstree_t) =>
@@ -197,7 +197,7 @@ class BinarySearchTree[T with Tord[T]]
   }
   inherit Container[bstree_t,T];
 
-#line 880 "C:/cygwin64/home/skaller/felix/src/packages/trees.fdoc"
+#line 880 "C:/projects/felix/src/packages/trees.fdoc"
   // deletes the first copy of the element found
   proc delete_element (p:&bstree_t) (elt:T)
   {

@@ -1,4 +1,4 @@
-#line 14 "C:/cygwin64/home/skaller/felix/src/packages/stl.fdoc"
+#line 14 "C:/projects/felix/src/packages/stl.fdoc"
 
 class Iterator[it,t] {
   virtual fun deref: it -> t;

@@ -1,4 +1,4 @@
-#line 13 "C:/cygwin64/home/skaller/felix/src/packages/lists.fdoc"
+#line 13 "C:/projects/felix/src/packages/lists.fdoc"
 open class List
 {
   union list[T] = | Empty | Snoc of list[T] * T;
@@ -19,7 +19,7 @@ open class List
     }}
   """;
 
-#line 36 "C:/cygwin64/home/skaller/felix/src/packages/lists.fdoc"
+#line 36 "C:/projects/felix/src/packages/lists.fdoc"
   //$ The second list is made the tail of the
   //$ list stored at the location pointed at by the first argument.
   //$ If the first list is empty, the variable will point
@@ -40,7 +40,7 @@ open class List
     """
   ;
 
-#line 59 "C:/cygwin64/home/skaller/felix/src/packages/lists.fdoc"
+#line 59 "C:/projects/felix/src/packages/lists.fdoc"
   //$ In place list reversal: unsafe!
   // second arg is a dummy to make overload work
   proc rev[T,PLT=&list[T]] : &list[T] = "_rev($1,(?1*)0);" requires _iprev_[T,PLT];
@@ -65,7 +65,7 @@ open class List
     """
   ;
 
-#line 86 "C:/cygwin64/home/skaller/felix/src/packages/lists.fdoc"
+#line 86 "C:/projects/felix/src/packages/lists.fdoc"
   // in place list reversal, also returns the last element
   // as a list, empty iff the original list is
   // unsafe!
@@ -93,7 +93,7 @@ open class List
     """
   ;
 
-#line 117 "C:/cygwin64/home/skaller/felix/src/packages/lists.fdoc"
+#line 117 "C:/projects/felix/src/packages/lists.fdoc"
   //$ Copy a list.
   fun copy[T] (x:list[T]):list[T]= {
     var y = rev x;
@@ -101,7 +101,7 @@ open class List
     return y;
   }
 
-#line 127 "C:/cygwin64/home/skaller/felix/src/packages/lists.fdoc"
+#line 127 "C:/projects/felix/src/packages/lists.fdoc"
   //$ Copy a list, and return last element as a list,
   //$ empty if original list was empty.
   proc copy_last[T] (inp:list[T], out:&list[T], last:&list[T]) {
@@ -110,17 +110,17 @@ open class List
   }
 
 
-#line 138 "C:/cygwin64/home/skaller/felix/src/packages/lists.fdoc"
+#line 138 "C:/projects/felix/src/packages/lists.fdoc"
   //$ Make an empty list.
   ctor[T] list[T] () => Empty[T];
 
-#line 145 "C:/cygwin64/home/skaller/felix/src/packages/lists.fdoc"
+#line 145 "C:/projects/felix/src/packages/lists.fdoc"
   //$ Make a list with one element.
   //$ NOTE: list (1,2) is a list of 2 ints.
   //$ To get a list of one pair use list[int*int] (1,2) instead!
   ctor[T] list[T] (x:T) => Snoc(Empty[T],x);
 
-#line 152 "C:/cygwin64/home/skaller/felix/src/packages/lists.fdoc"
+#line 152 "C:/projects/felix/src/packages/lists.fdoc"
   //$ Make a list from an array.
   ctor[T,N] list[T] (x:array[T, N]) = {
     var o = Empty[T];
@@ -132,7 +132,7 @@ open class List
     return o;
   }
 
-#line 167 "C:/cygwin64/home/skaller/felix/src/packages/lists.fdoc"
+#line 167 "C:/projects/felix/src/packages/lists.fdoc"
   //$ List comprehension:
   //$ Make a list from a stream.
   fun list_comprehension[T] (f: (1->opt[T])) = {
@@ -149,15 +149,15 @@ open class List
     return aux Empty[T];
   }
 
-#line 187 "C:/cygwin64/home/skaller/felix/src/packages/lists.fdoc"
+#line 187 "C:/projects/felix/src/packages/lists.fdoc"
 //$ List comprehension:
   //$ Make a list from a stream.
   ctor[T] list[T](f: (1->opt[T])) => list_comprehension f;
 
-#line 193 "C:/cygwin64/home/skaller/felix/src/packages/lists.fdoc"
+#line 193 "C:/projects/felix/src/packages/lists.fdoc"
   //$ Contrue a list as an array value
   instance[T] ArrayValue[list[T],T] {
-#line 197 "C:/cygwin64/home/skaller/felix/src/packages/lists.fdoc"
+#line 197 "C:/projects/felix/src/packages/lists.fdoc"
     //$ Return umber of elements in a list.
     pure fun len (x:list[T]) = {
       fun aux (acc:size) (x:list[T]) =>
@@ -168,14 +168,14 @@ open class List
       ;
       return aux 0uz x;
     }
-#line 209 "C:/cygwin64/home/skaller/felix/src/packages/lists.fdoc"
+#line 209 "C:/projects/felix/src/packages/lists.fdoc"
     //$ get n'th element
     pure fun unsafe_get: list[T] * size -> T =
       | Snoc(_,h), 0uz => h
       | Snoc(t,_), i => unsafe_get (t, i - 1uz)
     ;
 
-#line 217 "C:/cygwin64/home/skaller/felix/src/packages/lists.fdoc"
+#line 217 "C:/projects/felix/src/packages/lists.fdoc"
     //$ Apply a procedure to each element of a list.
     proc iter (_f:T->void) (x:list[T]) {
       match x with
@@ -185,7 +185,7 @@ open class List
       ;
     }
 
-#line 228 "C:/cygwin64/home/skaller/felix/src/packages/lists.fdoc"
+#line 228 "C:/projects/felix/src/packages/lists.fdoc"
     //$ Traditional left fold over list (tail rec).
     fun fold_left[U] (_f:U->T->U) (init:U) (x:list[T]):U =
     {
@@ -198,7 +198,7 @@ open class List
       return aux init x;
     }
 
-#line 242 "C:/cygwin64/home/skaller/felix/src/packages/lists.fdoc"
+#line 242 "C:/projects/felix/src/packages/lists.fdoc"
     //$ Right fold over list (not tail rec!).
     fun fold_right[U] (_f:T->U->U) (x:list[T]) (init:U):U =
     {
@@ -213,14 +213,14 @@ open class List
 
   }
 
-#line 259 "C:/cygwin64/home/skaller/felix/src/packages/lists.fdoc"
+#line 259 "C:/projects/felix/src/packages/lists.fdoc"
   //$ Test if a list is empty.
   pure fun is_empty[T] : list[T] -> 2 =
     | #Empty => true
     | _ => false
   ;
 
-#line 267 "C:/cygwin64/home/skaller/felix/src/packages/lists.fdoc"
+#line 267 "C:/projects/felix/src/packages/lists.fdoc"
   //$ Tail of a list, abort with match failure if list is empty.
   pure fun tail[T] (x:list[T]) : list[T] = {
     match x with
@@ -228,7 +228,7 @@ open class List
     endmatch;
   }
 
-#line 276 "C:/cygwin64/home/skaller/felix/src/packages/lists.fdoc"
+#line 276 "C:/projects/felix/src/packages/lists.fdoc"
   //$ Head of a list, abort with match failure if list is empty.
   pure fun head[T] (x:list[T]) : T = {
     match x with
@@ -236,7 +236,7 @@ open class List
     endmatch;
   }
 
-#line 287 "C:/cygwin64/home/skaller/felix/src/packages/lists.fdoc"
+#line 287 "C:/projects/felix/src/packages/lists.fdoc"
   //$ map a list, return mapped list in reverse order (tail rec).
   fun rev_map[T,U] (_f:T->U) (x:list[T]): list[U] = {
     fun aux (inp:list[T]) (out:list[U]) : list[U] =>
@@ -248,7 +248,7 @@ open class List
     return aux x Empty[U];
   }
 
-#line 302 "C:/cygwin64/home/skaller/felix/src/packages/lists.fdoc"
+#line 302 "C:/projects/felix/src/packages/lists.fdoc"
   //$ map a list (tail-rec).
   //  tail rec due to in-place reversal of result.
   fun map[T,U] (_f:T->U) (x:list[T]): list[U] =
@@ -258,7 +258,7 @@ open class List
     return r;
   }
 
-#line 314 "C:/cygwin64/home/skaller/felix/src/packages/lists.fdoc"
+#line 314 "C:/projects/felix/src/packages/lists.fdoc"
   //$ reverse a list (tail rec).
   pure fun rev[T] (x:list[T]):list[T]= {
     fun aux (x:list[T]) (y:list[T]) : list[T] =
@@ -273,7 +273,7 @@ open class List
     return aux x Empty[T];
   }
 
-#line 331 "C:/cygwin64/home/skaller/felix/src/packages/lists.fdoc"
+#line 331 "C:/projects/felix/src/packages/lists.fdoc"
   //$ Zip two lists into a list of pairs.
   //$ Zips to length of shortest list.
   fun zip2[T1,T2] (l1: list[T1]) (l2: list[T2]) : list[T1 * T2] =
@@ -287,7 +287,7 @@ open class List
     return aux l1 l2 Empty[T1 * T2];
   }
 
-#line 348 "C:/cygwin64/home/skaller/felix/src/packages/lists.fdoc"
+#line 348 "C:/projects/felix/src/packages/lists.fdoc"
   //$ Generate an ordered list of ints between low and high with given step.
   //$ Low included, high not included.
   fun range (low:int, high:int, step:int) =
@@ -319,15 +319,15 @@ open class List
     ;
   }
 
-#line 381 "C:/cygwin64/home/skaller/felix/src/packages/lists.fdoc"
+#line 381 "C:/projects/felix/src/packages/lists.fdoc"
   //$ Range with step 1.
   fun range (low:int, high:int) => range(low, high, 1);
 
-#line 387 "C:/cygwin64/home/skaller/felix/src/packages/lists.fdoc"
+#line 387 "C:/projects/felix/src/packages/lists.fdoc"
   //$ Range from 0 to num (excluded).
   fun range (num:int) => range(0, num, 1);
 
-#line 393 "C:/cygwin64/home/skaller/felix/src/packages/lists.fdoc"
+#line 393 "C:/projects/felix/src/packages/lists.fdoc"
   //$ Concatenate two lists.
   fun join[T] (x:list[T]) (y:list[T]):list[T] =
   {
@@ -345,18 +345,18 @@ open class List
   //$ Concatenate two lists.
   pure fun + [T] (x:list[T], y: list[T]):list[T] => join x y;
 
-#line 412 "C:/cygwin64/home/skaller/felix/src/packages/lists.fdoc"
+#line 412 "C:/projects/felix/src/packages/lists.fdoc"
   //$ Prepend element to head of list.
   pure fun + [T] (x:T, y:list[T]):list[T] => Snoc(y,x);
 
-#line 418 "C:/cygwin64/home/skaller/felix/src/packages/lists.fdoc"
+#line 418 "C:/projects/felix/src/packages/lists.fdoc"
   //$ Append element to tail of list (slow!).
   noinline fun + [T] (x:list[T], y:T):list[T] => rev$ Snoc (rev x,y);
 
   //$ Append element to tail of list (slow!).
   proc += [T] (x:&list[T], y:T) { x <- *x + y; }
 
-#line 426 "C:/cygwin64/home/skaller/felix/src/packages/lists.fdoc"
+#line 426 "C:/projects/felix/src/packages/lists.fdoc"
   //$ Concatenate all the lists in a list of lists.
   noinline fun cat[T] (x:list[list[T]]):list[T] =
   {
@@ -368,7 +368,7 @@ open class List
      ;
    }
 
-#line 440 "C:/cygwin64/home/skaller/felix/src/packages/lists.fdoc"
+#line 440 "C:/projects/felix/src/packages/lists.fdoc"
   //$ Concatenate all the strings in a list with given separator.
   pure fun cat (sep:string) (x:list[string]):string =
   {
@@ -392,7 +392,7 @@ open class List
     return r;
   }
 
-#line 465 "C:/cygwin64/home/skaller/felix/src/packages/lists.fdoc"
+#line 465 "C:/projects/felix/src/packages/lists.fdoc"
   fun catmap[T] (sep:string) (f:T -> string) (ls: list[T]) =>
     cat sep (map f ls)
   ;
@@ -406,7 +406,7 @@ open class List
   ;
 
 
-#line 481 "C:/cygwin64/home/skaller/felix/src/packages/lists.fdoc"
+#line 481 "C:/projects/felix/src/packages/lists.fdoc"
   //$ Return true if one value in a list satisfies the predicate.
   fun mem[T] (eq:T -> bool) (xs:list[T]) : bool =>
     match xs with
@@ -428,7 +428,7 @@ open class List
     fun \in (x:T, a:list[T]) => mem[T,T] eq of (T * T) a x;
   }
 
-#line 505 "C:/cygwin64/home/skaller/felix/src/packages/lists.fdoc"
+#line 505 "C:/projects/felix/src/packages/lists.fdoc"
   //$ return option of the first element in a list satisfying the predicate.
   fun find[T] (eq:T -> bool) (xs:list[T]) : opt[T] =>
     match xs with
@@ -530,7 +530,7 @@ open class List
     fun ==(a:list[T], b:list[T])=> list_eq(a,b);
   }
 
-#line 608 "C:/cygwin64/home/skaller/felix/src/packages/lists.fdoc"
+#line 608 "C:/projects/felix/src/packages/lists.fdoc"
   //$ Sort a list with given less than operator, which must be
   //$ total order. Uses varray sort (which uses STL sort).
   fun sort[T] (lt:T*T->bool) (x:list[T])=
@@ -550,7 +550,7 @@ open class List
   //$ Uses varray sort (which uses STL sort).
   fun sort[T with Tord[T]](x:list[T])=> sort lt x;
 
-#line 629 "C:/cygwin64/home/skaller/felix/src/packages/lists.fdoc"
+#line 629 "C:/projects/felix/src/packages/lists.fdoc"
   instance[T] Iterable[list[T],T] {
   //$ Convert a list to a stream.
     gen iterator (var xs:list[T]) () = {

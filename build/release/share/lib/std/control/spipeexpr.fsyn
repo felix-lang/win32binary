@@ -1,4 +1,4 @@
-#line 339 "C:/cygwin64/home/skaller/felix/src/packages/fibres.fdoc"
+#line 339 "C:/projects/felix/src/packages/fibres.fdoc"
 syntax spipeexpr
 {
   //$ Left assoc, for schannel pipes.

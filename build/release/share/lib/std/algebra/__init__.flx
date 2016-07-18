@@ -1,4 +1,4 @@
-#line 31 "C:/cygwin64/home/skaller/felix/src/packages/algebra.fdoc"
+#line 31 "C:/projects/felix/src/packages/algebra.fdoc"
 include "std/algebra/predicate";        // in logic.fdoc
 include "std/algebra/set";              // in algebra.fdoc
 include "std/algebra/container";        // in algebra.fdoc

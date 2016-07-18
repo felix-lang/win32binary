@@ -1,4 +1,4 @@
-#line 8 "C:/cygwin64/home/skaller/felix/src/packages/logic.fdoc"
+#line 8 "C:/projects/felix/src/packages/logic.fdoc"
 typedef bool = 2;
 
 //$ Standard operations on boolean type.

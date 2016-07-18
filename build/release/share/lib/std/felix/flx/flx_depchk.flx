@@ -1,4 +1,4 @@
-#line 383 "C:/cygwin64/home/skaller/felix/src/packages/toolchain.fdoc"
+#line 383 "C:/projects/felix/src/packages/toolchain.fdoc"
 include "std/felix/toolchain_interface";
 
   gen cxx_depcheck (tc: toolchain_t, src:string, dst:string) : bool =

@@ -1,4 +1,4 @@
-#line 78 "C:/cygwin64/home/skaller/felix/src/packages/dynlink.fdoc"
+#line 78 "C:/projects/felix/src/packages/dynlink.fdoc"
 #ifndef __FLX_DL_H__
 #define __FLX_DL_H__
 

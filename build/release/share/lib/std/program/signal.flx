@@ -1,4 +1,4 @@
-#line 1146 "C:/cygwin64/home/skaller/felix/src/packages/program.fdoc"
+#line 1146 "C:/projects/felix/src/packages/program.fdoc"
 
 body ctrl_c_flag = """
   static bool ctrl_c_flag = false;

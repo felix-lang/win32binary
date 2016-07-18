@@ -1,4 +1,4 @@
-#line 106 "C:/cygwin64/home/skaller/felix/src/packages/filetools.fdoc"
+#line 106 "C:/projects/felix/src/packages/filetools.fdoc"
 class CopyFiles {
   proc processfiles
     (var process: string * string -> bool)

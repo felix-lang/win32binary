@@ -1,4 +1,4 @@
-#line 80 "C:/cygwin64/home/skaller/felix/src/packages/libstruct.fdoc"
+#line 80 "C:/projects/felix/src/packages/libstruct.fdoc"
 
 include "std/c/c_headers";
 include "std/c/cxx_headers";

@@ -1,4 +1,4 @@
-#line 213 "C:/cygwin64/home/skaller/felix/src/packages/codecs.fdoc"
+#line 213 "C:/projects/felix/src/packages/codecs.fdoc"
 
 publish """
 Encoder Decoders for URIs, Translates characters not allowed in URIs

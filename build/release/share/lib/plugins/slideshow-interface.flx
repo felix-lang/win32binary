@@ -1,4 +1,4 @@
-#line 3495 "C:/cygwin64/home/skaller/felix/src/packages/flx_web.fdoc"
+#line 3495 "C:/projects/felix/src/packages/flx_web.fdoc"
 interface slideshow_t {
   whatami : 1 -> string;
   check-slide-commands : string -> bool;

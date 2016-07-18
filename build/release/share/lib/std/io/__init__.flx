@@ -1,4 +1,4 @@
-#line 275 "C:/cygwin64/home/skaller/felix/src/packages/io.fdoc"
+#line 275 "C:/projects/felix/src/packages/io.fdoc"
 
 include "std/io/textio";
 include "std/io/demux";

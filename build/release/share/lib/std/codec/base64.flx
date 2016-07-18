@@ -1,4 +1,4 @@
-#line 16 "C:/cygwin64/home/skaller/felix/src/packages/codecs.fdoc"
+#line 16 "C:/projects/felix/src/packages/codecs.fdoc"
 
 //$ Base64 encode/decode functions.
 //$ http://en.wikipedia.org/wiki/Base64

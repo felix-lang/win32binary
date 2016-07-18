@@ -1,4 +1,4 @@
-#line 746 "C:/cygwin64/home/skaller/felix/src/packages/program.fdoc"
+#line 746 "C:/projects/felix/src/packages/program.fdoc"
 
 // Note Shell_class interface doesn't use process_status_t
 // but the implementation does.

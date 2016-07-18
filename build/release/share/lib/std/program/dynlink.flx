@@ -1,10 +1,10 @@
-#line 687 "C:/cygwin64/home/skaller/felix/src/packages/dynlink.fdoc"
+#line 687 "C:/projects/felix/src/packages/dynlink.fdoc"
 class Dynlink
 {
-#line 691 "C:/cygwin64/home/skaller/felix/src/packages/dynlink.fdoc"
+#line 691 "C:/projects/felix/src/packages/dynlink.fdoc"
   requires package "flx_dynlink";
 
-#line 700 "C:/cygwin64/home/skaller/felix/src/packages/dynlink.fdoc"
+#line 700 "C:/projects/felix/src/packages/dynlink.fdoc"
   //$ Exception thrown if dynamic linkage fails.
   type flx_link_failure_t = "::flx::rtl::flx_link_failure_t";
 
@@ -22,16 +22,16 @@ class Dynlink
   //$ This doesn't belong here but it will do for now
   fun get_debug_driver_flag : 1 -> bool = "PTF gcp->debug_driver" requires property "needs_gc";
 
-#line 723 "C:/cygwin64/home/skaller/felix/src/packages/dynlink.fdoc"
+#line 723 "C:/projects/felix/src/packages/dynlink.fdoc"
   //$ Type of a DLL (dynamic link library) object.
   _gc_pointer type flx_library = "::flx::dynlink::flx_dynlink_t*";
 
-#line 730 "C:/cygwin64/home/skaller/felix/src/packages/dynlink.fdoc"
+#line 730 "C:/projects/felix/src/packages/dynlink.fdoc"
   //$ Create a fresh DLL object.
   fun create_library_handle: bool ->flx_library=
     "new(*PTF gcp, ::flx::dynlink::flx_dynlink_ptr_map, false) ::flx::dynlink::flx_dynlink_t($1)";
 
-#line 738 "C:/cygwin64/home/skaller/felix/src/packages/dynlink.fdoc"
+#line 738 "C:/projects/felix/src/packages/dynlink.fdoc"
   //$ Link a DLL using given filename.
   //$ May throw flx_link_failure_t.
   proc dlopen:flx_library * string = "$1->dynamic_link($2);";
@@ -47,7 +47,7 @@ class Dynlink
     "$1->static_link($2,(::flx::dynlink::thread_frame_creator_t)$3, (::flx::dynlink::start_t)$4, NULL);"
   ;
 
-#line 756 "C:/cygwin64/home/skaller/felix/src/packages/dynlink.fdoc"
+#line 756 "C:/projects/felix/src/packages/dynlink.fdoc"
   typedef module_dictionary_t = StrDict::strdict[address];
   typedef registry_t = StrDict::strdict[module_dictionary_t];
   fun get_module_registry_address_address: 1 -> &&registry_t =
@@ -93,7 +93,7 @@ class Dynlink
      endmatch;
   }
 
-#line 803 "C:/cygwin64/home/skaller/felix/src/packages/dynlink.fdoc"
+#line 803 "C:/projects/felix/src/packages/dynlink.fdoc"
   //$ Get the filename of a DLL.
   fun filename : flx_library -> string = "$1->filename";
 
@@ -123,13 +123,13 @@ class Dynlink
   }
 
 
-#line 855 "C:/cygwin64/home/skaller/felix/src/packages/dynlink.fdoc"
+#line 855 "C:/projects/felix/src/packages/dynlink.fdoc"
   //$ Unlink a DLL.
   //$ Unsafe! Use with extreme caution.
   //$ May cause pointers into the DLL code segment to dangle.
   proc dlclose:flx_library = "$1->unlink();";
 
-#line 873 "C:/cygwin64/home/skaller/felix/src/packages/dynlink.fdoc"
+#line 873 "C:/projects/felix/src/packages/dynlink.fdoc"
   //$ Find raw address of a symbol in a DLL.
   //$ This function now ALWAYS does a dlsym
   //$ (or Windows equivalent)
@@ -156,18 +156,18 @@ class Dynlink
     done
   }
 
-#line 906 "C:/cygwin64/home/skaller/felix/src/packages/dynlink.fdoc"
+#line 906 "C:/projects/felix/src/packages/dynlink.fdoc"
   //$ Type of a DLL (dynamic link library) instance.
   //$ Conceptually this is a pair consisting of
   //$ a library object and a global data frame object.
   _gc_pointer type flx_instance = "::flx::dynlink::flx_libinst_t*";
 
-#line 915 "C:/cygwin64/home/skaller/felix/src/packages/dynlink.fdoc"
+#line 915 "C:/projects/felix/src/packages/dynlink.fdoc"
   //$ Create a fresh DLL instance object.
   fun create_instance_handle: bool->flx_instance=
     "new(*PTF gcp, ::flx::dynlink::flx_libinst_ptr_map, false) ::flx::dynlink::flx_libinst_t($1)";
 
-#line 926 "C:/cygwin64/home/skaller/felix/src/packages/dynlink.fdoc"
+#line 926 "C:/projects/felix/src/packages/dynlink.fdoc"
   //$ Create a DLL instance from a DLL.
   //$ This is a procedure, so maybe the caller is too
   //$ which means the thread frame must be available.
@@ -193,23 +193,23 @@ class Dynlink
   }
 
 
-#line 953 "C:/cygwin64/home/skaller/felix/src/packages/dynlink.fdoc"
+#line 953 "C:/projects/felix/src/packages/dynlink.fdoc"
   //$ Get the filename of a DLL from an instance of it.
   fun filename : flx_instance -> string = "::std::string($1->lib->filename)";
 
-#line 979 "C:/cygwin64/home/skaller/felix/src/packages/dynlink.fdoc"
+#line 979 "C:/projects/felix/src/packages/dynlink.fdoc"
   //$ Get the initialisation continuation of an instance.
   fun get_init: flx_instance -> cont = "$1->start_proc";
 
-#line 984 "C:/cygwin64/home/skaller/felix/src/packages/dynlink.fdoc"
+#line 984 "C:/projects/felix/src/packages/dynlink.fdoc"
   //$ Get the DLL associated with an instance.
   fun get_library: flx_instance -> flx_library = "$1->lib";
 
-#line 991 "C:/cygwin64/home/skaller/felix/src/packages/dynlink.fdoc"
+#line 991 "C:/projects/felix/src/packages/dynlink.fdoc"
   //$ Get the thread frame (global data object) of an instance.
   fun get_thread_frame: flx_instance -> address = "(void*)$1->thread_frame";
 
-#line 1000 "C:/cygwin64/home/skaller/felix/src/packages/dynlink.fdoc"
+#line 1000 "C:/projects/felix/src/packages/dynlink.fdoc"
 
   //$ Create, link, and prepare a DLL instance from a modulename.
   //$ NOTE: libraries created here do not need to be roots
@@ -253,7 +253,7 @@ class Dynlink
   }
 
 
-#line 1046 "C:/cygwin64/home/skaller/felix/src/packages/dynlink.fdoc"
+#line 1046 "C:/projects/felix/src/packages/dynlink.fdoc"
   //$ Run a Felix program from a filename.
   proc run_lib(modulename:string)
   {
@@ -274,7 +274,7 @@ class Dynlink
   }
 
 
-#line 1072 "C:/cygwin64/home/skaller/felix/src/packages/dynlink.fdoc"
+#line 1072 "C:/projects/felix/src/packages/dynlink.fdoc"
   //$ Find typed address of a symbol in a DLL.
   noinline fun flx_dlsym[T] (linst: flx_instance, sym:string) = {
     var dlibrary = Dynlink::get_library linst;
@@ -290,7 +290,7 @@ class Dynlink
     return typed_sym, tf;
   }
 
-#line 1107 "C:/cygwin64/home/skaller/felix/src/packages/dynlink.fdoc"
+#line 1107 "C:/projects/felix/src/packages/dynlink.fdoc"
   //$ Return a closure representing a symbol in a DLL instance
   //$ of a function of no arguments.
   noinline fun func0[R] (linst: flx_instance, sym:string) = {
@@ -333,7 +333,7 @@ class Dynlink
     return proc (a0:A0,a1:A1) { s (tf, a0, a1); };
   }
 
-#line 1173 "C:/cygwin64/home/skaller/felix/src/packages/dynlink.fdoc"
+#line 1173 "C:/projects/felix/src/packages/dynlink.fdoc"
   //$ Specialised routine(s) to load stylised plugin.
   //$ Two entry points:
   //$
@@ -394,7 +394,7 @@ class Dynlink
     return Dynlink::func2[iftype,arg1_t, arg2_t] (linst, entrypoint);
   }
 
-#line 1235 "C:/cygwin64/home/skaller/felix/src/packages/dynlink.fdoc"
+#line 1235 "C:/projects/felix/src/packages/dynlink.fdoc"
 
   //$ Execute an address representing a top
   //$ level exported felix procedure's C wrapper,

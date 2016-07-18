@@ -1,4 +1,4 @@
-#line 1831 "C:/cygwin64/home/skaller/felix/src/packages/web.fdoc"
+#line 1831 "C:/projects/felix/src/packages/web.fdoc"
 publish """
 Simple config file reader. Splits key value pairs seperated by the equals character.
 Skips lines where first non-space character is the # character. Max configuration file size

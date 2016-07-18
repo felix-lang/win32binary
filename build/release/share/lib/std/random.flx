@@ -1,4 +1,4 @@
-#line 622 "C:/cygwin64/home/skaller/felix/src/packages/numbers.fdoc"
+#line 622 "C:/projects/felix/src/packages/numbers.fdoc"
 
 class Random {
     private type random_device = "::std::random_device*"

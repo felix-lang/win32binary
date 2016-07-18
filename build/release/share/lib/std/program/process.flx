@@ -1,4 +1,4 @@
-#line 234 "C:/cygwin64/home/skaller/felix/src/packages/program.fdoc"
+#line 234 "C:/projects/felix/src/packages/program.fdoc"
 
 class Process_class[os, process_status_t]
 {

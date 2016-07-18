@@ -1,4 +1,4 @@
-#line 36 "C:/cygwin64/home/skaller/felix/src/packages/sync.fdoc"
+#line 36 "C:/projects/felix/src/packages/sync.fdoc"
 
 #ifndef __FLX_SYNC_H__
 #define __FLX_SYNC_H__

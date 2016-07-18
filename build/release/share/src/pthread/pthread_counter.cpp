@@ -1,4 +1,4 @@
-#line 805 "C:/cygwin64/home/skaller/felix/src/packages/rtl-threads.fdoc"
+#line 805 "C:/projects/felix/src/packages/rtl-threads.fdoc"
 #include "pthread_counter.hpp"
 #include <stdio.h>
 

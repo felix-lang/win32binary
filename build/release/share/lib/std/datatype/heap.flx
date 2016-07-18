@@ -1,4 +1,4 @@
-#line 13 "C:/cygwin64/home/skaller/felix/src/packages/trees.fdoc"
+#line 13 "C:/projects/felix/src/packages/trees.fdoc"
 class MinHeap[T with Tord[T]]
 {
   fun left_child (p:int)  => 2*p + 1;

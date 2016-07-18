@@ -1,4 +1,4 @@
-#line 864 "C:/cygwin64/home/skaller/felix/src/packages/gui.fdoc"
+#line 864 "C:/projects/felix/src/packages/gui.fdoc"
 class FlxGuiButton
 {
   union button_state_t =

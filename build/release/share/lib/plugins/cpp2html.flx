@@ -1,4 +1,4 @@
-#line 2566 "C:/cygwin64/home/skaller/felix/src/packages/flx_web.fdoc"
+#line 2566 "C:/projects/felix/src/packages/flx_web.fdoc"
 include "./plugin_common";
 
 var C_PATH = Empty[string];

@@ -1,4 +1,4 @@
-#line 350 "C:/cygwin64/home/skaller/felix/src/packages/faio.fdoc"
+#line 350 "C:/projects/felix/src/packages/faio.fdoc"
 #ifndef __FLX_FAIO_WINIO_H__
 #define __FLX_FAIO_WINIO_H__
 #include <flx_faio_config.hpp>

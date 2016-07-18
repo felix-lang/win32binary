@@ -1,4 +1,4 @@
-#line 1891 "C:/cygwin64/home/skaller/felix/src/packages/flx_web.fdoc"
+#line 1891 "C:/projects/felix/src/packages/flx_web.fdoc"
 include "./plugin_common";
 
 // fixup text by replacing < > and & characters

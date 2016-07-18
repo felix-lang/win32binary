@@ -1,4 +1,4 @@
-#line 371 "C:/cygwin64/home/skaller/felix/src/packages/algebra.fdoc"
+#line 371 "C:/projects/felix/src/packages/algebra.fdoc"
 // total order
 class Tord[t]{
   inherit Eq[t];

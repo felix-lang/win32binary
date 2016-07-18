@@ -1,4 +1,4 @@
-#line 13 "C:/cygwin64/home/skaller/felix/src/packages/pointers.fdoc"
+#line 13 "C:/projects/felix/src/packages/pointers.fdoc"
 
 //$ Felix and C pointers.
 //$ Felix pointer ptr[T] = &T.

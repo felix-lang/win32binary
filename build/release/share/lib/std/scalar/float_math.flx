@@ -1,4 +1,4 @@
-#line 45 "C:/cygwin64/home/skaller/felix/src/packages/numbers.fdoc"
+#line 45 "C:/projects/felix/src/packages/numbers.fdoc"
 
 // note: has to be called Fcomplex to avoid clash with class Complex
 
@@ -113,7 +113,7 @@ typedef complex[t in floats] = typematch t with
   endmatch
 ;
 
-#line 161 "C:/cygwin64/home/skaller/felix/src/packages/numbers.fdoc"
+#line 161 "C:/projects/felix/src/packages/numbers.fdoc"
 
 ctor complex[float] (x:float, y:float) => fcomplex(x,y);
 ctor complex[double] (x:double, y:double) => dcomplex(x,y);

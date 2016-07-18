@@ -1,4 +1,4 @@
-#line 507 "C:/cygwin64/home/skaller/felix/src/packages/exceptions.fdoc"
+#line 507 "C:/projects/felix/src/packages/exceptions.fdoc"
 #ifndef __FLX_EXCEPTIONS_CONFIG_H__
 #define __FLX_EXCEPTIONS_CONFIG_H__
 #include "flx_rtl_config.hpp"

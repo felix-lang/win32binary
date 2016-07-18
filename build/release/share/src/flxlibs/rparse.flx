@@ -1,4 +1,4 @@
-#line 31 "C:/cygwin64/home/skaller/felix/src/packages/rparse.fdoc"
+#line 31 "C:/projects/felix/src/packages/rparse.fdoc"
 class NewRespectfulParser
 {
     export union quote_action_t =

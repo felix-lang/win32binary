@@ -1,4 +1,4 @@
-#line 4437 "C:/cygwin64/home/skaller/felix/src/packages/flx_web.fdoc"
+#line 4437 "C:/projects/felix/src/packages/flx_web.fdoc"
 open class WebserverPluginCommon
 {
   fun get_file (var fname:string, INSTALL_ROOT:string, path:list[string]) = {

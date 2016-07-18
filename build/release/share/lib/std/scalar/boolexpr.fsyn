@@ -1,4 +1,4 @@
-#line 79 "C:/cygwin64/home/skaller/felix/src/packages/logic.fdoc"
+#line 79 "C:/projects/felix/src/packages/logic.fdoc"
 syntax boolexpr
 {
   //$ Boolean false.

@@ -1,4 +1,4 @@
-#line 38 "C:/cygwin64/home/skaller/felix/src/packages/grammar.fdoc"
+#line 38 "C:/projects/felix/src/packages/grammar.fdoc"
 //$ Assertion statements.
 //$ See also functions to find pre- and post-conditions.
 syntax assertions {

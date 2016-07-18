@@ -1,4 +1,4 @@
-#line 278 "C:/cygwin64/home/skaller/felix/src/packages/pointers.fdoc"
+#line 278 "C:/projects/felix/src/packages/pointers.fdoc"
 
 //$ Core operations on addresses.
 open class Address {

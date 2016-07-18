@@ -1,4 +1,4 @@
-#line 154 "C:/cygwin64/home/skaller/felix/src/packages/codecs.fdoc"
+#line 154 "C:/projects/felix/src/packages/codecs.fdoc"
 
 //$ Comma Separated Values (CSV) reader
 //$ Splits a string like 1,2,"hell" up into three strings.

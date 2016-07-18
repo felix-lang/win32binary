@@ -1,4 +1,4 @@
-#line 19 "C:/cygwin64/home/skaller/felix/src/packages/exceptions.fdoc"
+#line 19 "C:/projects/felix/src/packages/exceptions.fdoc"
 #ifndef _FLX_CONTINUATION_HPP
 #define _FLX_CONTINUATION_HPP
 #include "flx_exceptions_config.hpp"

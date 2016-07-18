@@ -1,4 +1,4 @@
-#line 1171 "C:/cygwin64/home/skaller/felix/src/packages/program.fdoc"
+#line 1171 "C:/projects/felix/src/packages/program.fdoc"
 
 class PosixSignal {
   requires C89_headers::signal_h;

@@ -1,4 +1,4 @@
-#line 174 "C:/cygwin64/home/skaller/felix/src/packages/gc.fdoc"
+#line 174 "C:/projects/felix/src/packages/gc.fdoc"
 
 #ifndef __FLX_GC_H__
 #define __FLX_GC_H__
@@ -24,7 +24,7 @@ struct GC_EXTERN allocator_t;     // the allocator used
 struct GC_EXTERN offset_data_t;   // private data for offset scanner
 struct GC_EXTERN pointer_data_t;  // description of a pointer
 
-#line 214 "C:/cygwin64/home/skaller/felix/src/packages/gc.fdoc"
+#line 214 "C:/projects/felix/src/packages/gc.fdoc"
 struct GC_EXTERN pointer_data_t
 {
   void *pointer;                      //< candidate pointer
@@ -34,7 +34,7 @@ struct GC_EXTERN pointer_data_t
   gc_shape_t *shape;                  //< shape
 };
 
-#line 227 "C:/cygwin64/home/skaller/felix/src/packages/gc.fdoc"
+#line 227 "C:/projects/felix/src/packages/gc.fdoc"
 enum gc_shape_flags_t {
   gc_flags_default    = 0,            //< collectable and mobile
   gc_flags_immobile   = 1,            //< cannot be moved
@@ -75,7 +75,7 @@ struct GC_EXTERN gc_shape_t
 
 GC_EXTERN extern gc_shape_t _ptr_void_map;
 
-#line 272 "C:/cygwin64/home/skaller/felix/src/packages/gc.fdoc"
+#line 272 "C:/projects/felix/src/packages/gc.fdoc"
 struct GC_EXTERN offset_data_t
 {
   ::std::size_t n_offsets;
@@ -84,7 +84,7 @@ struct GC_EXTERN offset_data_t
 
 GC_EXTERN scanner_t scan_by_offsets;
 
-#line 289 "C:/cygwin64/home/skaller/felix/src/packages/gc.fdoc"
+#line 289 "C:/projects/felix/src/packages/gc.fdoc"
 
 /*
  * The following template is provided as a standard wrapper
@@ -112,7 +112,7 @@ void std_finaliser(collector_t*, void *t)
   static_cast<T*>(t) -> ~T();
 }
 
-#line 325 "C:/cygwin64/home/skaller/felix/src/packages/gc.fdoc"
+#line 325 "C:/projects/felix/src/packages/gc.fdoc"
 /// Allocator abstraction.
 
 struct allocator_t {
@@ -124,7 +124,7 @@ struct allocator_t {
   void set_debug(bool d){debug=d;}
 };
 
-#line 356 "C:/cygwin64/home/skaller/felix/src/packages/gc.fdoc"
+#line 356 "C:/projects/felix/src/packages/gc.fdoc"
 
 /// Collector abstraction.
 struct GC_EXTERN collector_t

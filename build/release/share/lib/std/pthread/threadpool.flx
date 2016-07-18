@@ -1,4 +1,4 @@
-#line 563 "C:/cygwin64/home/skaller/felix/src/packages/pthreads.fdoc"
+#line 563 "C:/projects/felix/src/packages/pthreads.fdoc"
 
 include "std/pthread/ts_bound_queue";
 include "std/pthread/atomic";

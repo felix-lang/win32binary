@@ -1,4 +1,4 @@
-#line 302 "C:/cygwin64/home/skaller/felix/src/packages/flx.fdoc"
+#line 302 "C:/projects/felix/src/packages/flx.fdoc"
 class Flxg
 {
   typedef flxg_spec_t =

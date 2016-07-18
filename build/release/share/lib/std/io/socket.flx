@@ -1,4 +1,4 @@
-#line 993 "C:/cygwin64/home/skaller/felix/src/packages/io.fdoc"
+#line 993 "C:/projects/felix/src/packages/io.fdoc"
 
 class Socket_class[socket_t] {
   requires package "demux";
@@ -16,7 +16,7 @@ class Socket_class[socket_t] {
   inherit IOStream::TerminalIOByteStream[socket_t];
 }
 
-#line 1012 "C:/cygwin64/home/skaller/felix/src/packages/io.fdoc"
+#line 1012 "C:/projects/felix/src/packages/io.fdoc"
 class PosixSocket
 {
   requires package "demux";
@@ -96,7 +96,7 @@ class PosixSocket
 
 }
 
-#line 1095 "C:/cygwin64/home/skaller/felix/src/packages/io.fdoc"
+#line 1095 "C:/projects/felix/src/packages/io.fdoc"
 class Win32Socket
 {
   requires package "demux";
@@ -167,7 +167,7 @@ class Win32Socket
     ;
   }
 }
-#line 1169 "C:/cygwin64/home/skaller/felix/src/packages/io.fdoc"
+#line 1169 "C:/projects/felix/src/packages/io.fdoc"
 
 class Socket
 {

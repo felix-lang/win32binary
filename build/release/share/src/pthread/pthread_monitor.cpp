@@ -1,4 +1,4 @@
-#line 692 "C:/cygwin64/home/skaller/felix/src/packages/rtl-threads.fdoc"
+#line 692 "C:/projects/felix/src/packages/rtl-threads.fdoc"
 #include "pthread_monitor.hpp"
 #include <string.h>       // strerror
 #include <assert.h>

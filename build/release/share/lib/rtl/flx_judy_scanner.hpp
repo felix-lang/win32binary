@@ -1,4 +1,4 @@
-#line 97 "C:/cygwin64/home/skaller/felix/src/packages/serialisation.fdoc"
+#line 97 "C:/projects/felix/src/packages/serialisation.fdoc"
 #include "flx_gc.hpp"
 
 namespace flx { namespace gc { namespace generic {

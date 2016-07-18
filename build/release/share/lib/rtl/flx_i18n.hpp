@@ -1,4 +1,4 @@
-#line 289 "C:/cygwin64/home/skaller/felix/src/packages/strutil.fdoc"
+#line 289 "C:/projects/felix/src/packages/strutil.fdoc"
 
 #ifndef __FLX_I18N_H__
 #define __FLX_I18N_H__

@@ -1,4 +1,4 @@
-#line 707 "C:/cygwin64/home/skaller/felix/src/packages/algebra.fdoc"
+#line 707 "C:/projects/felix/src/packages/algebra.fdoc"
 
 //$ Integers.
 class Integer[t] {

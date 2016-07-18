@@ -1,4 +1,4 @@
-#line 30 "C:/cygwin64/home/skaller/felix/src/packages/fibres.fdoc"
+#line 30 "C:/projects/felix/src/packages/fibres.fdoc"
 
 //$ Low level management of Felix fthreads (fibres).
 open class Fibres

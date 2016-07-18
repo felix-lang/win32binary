@@ -1,4 +1,4 @@
-#line 4229 "C:/cygwin64/home/skaller/felix/src/packages/grammar.fdoc"
+#line 4229 "C:/projects/felix/src/packages/grammar.fdoc"
 //$ This file contains a huge set of operators from TeX, AMSTeX and LaTeX.
 //
 //$ The precedence classification is currently very crude.

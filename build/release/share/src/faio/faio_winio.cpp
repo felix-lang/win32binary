@@ -1,4 +1,4 @@
-#line 477 "C:/cygwin64/home/skaller/felix/src/packages/faio.fdoc"
+#line 477 "C:/projects/felix/src/packages/faio.fdoc"
 #include "faio_winio.hpp"
 #include <stdio.h>      // printf
 

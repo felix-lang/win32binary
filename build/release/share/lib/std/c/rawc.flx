@@ -1,4 +1,4 @@
-#line 294 "C:/cygwin64/home/skaller/felix/src/packages/libstruct.fdoc"
+#line 294 "C:/projects/felix/src/packages/libstruct.fdoc"
 
 // This file contains raw, low level bindings to C functions.
 // It is not intended to be used by application code.

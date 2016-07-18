@@ -1,4 +1,4 @@
-#line 218 "C:/cygwin64/home/skaller/felix/src/packages/algebra.fdoc"
+#line 218 "C:/projects/felix/src/packages/algebra.fdoc"
 // roughly, a finite Set
 class Container [c,v]
 {

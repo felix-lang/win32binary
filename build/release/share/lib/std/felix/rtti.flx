@@ -1,4 +1,4 @@
-#line 1942 "C:/cygwin64/home/skaller/felix/src/packages/gc.fdoc"
+#line 1942 "C:/projects/felix/src/packages/gc.fdoc"
 class Rtti {
 
   //$ The type of the collector.

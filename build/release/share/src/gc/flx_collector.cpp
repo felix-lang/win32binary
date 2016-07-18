@@ -1,4 +1,4 @@
-#line 946 "C:/cygwin64/home/skaller/felix/src/packages/gc.fdoc"
+#line 946 "C:/projects/felix/src/packages/gc.fdoc"
 
 #include <cstdlib>
 #include <map>

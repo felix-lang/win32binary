@@ -1,18 +1,18 @@
-#line 900 "C:/cygwin64/home/skaller/felix/src/packages/arrays.fdoc"
+#line 900 "C:/projects/felix/src/packages/arrays.fdoc"
 
 
-#line 918 "C:/cygwin64/home/skaller/felix/src/packages/arrays.fdoc"
+#line 918 "C:/projects/felix/src/packages/arrays.fdoc"
 //$ Unbounded Variable length object array.
 open class Darray
 {
-#line 929 "C:/cygwin64/home/skaller/felix/src/packages/arrays.fdoc"
+#line 929 "C:/projects/felix/src/packages/arrays.fdoc"
   private struct darray_ctl[T]
   {
     a: varray[T];
     resize: size * size --> size;
   }
 
-#line 945 "C:/cygwin64/home/skaller/felix/src/packages/arrays.fdoc"
+#line 945 "C:/projects/felix/src/packages/arrays.fdoc"
   //$ This is the default array resize function.
   //$ If we run out of space, allocate what we have + 50%.
   //$ If we need less than half the allocated space, return the requested size + 50%.
@@ -28,11 +28,11 @@ open class Darray
     return old_max;
   }
 
-#line 966 "C:/cygwin64/home/skaller/felix/src/packages/arrays.fdoc"
+#line 966 "C:/projects/felix/src/packages/arrays.fdoc"
   //$ Type of a darray.
   type darray[T] = new &darray_ctl[T];
 
-#line 979 "C:/cygwin64/home/skaller/felix/src/packages/arrays.fdoc"
+#line 979 "C:/projects/felix/src/packages/arrays.fdoc"
   //$ Force a resize.
   //$ Similar to C++ vector reserve function.
   proc do_resize[T] (pd: darray[T], new_size: size)
@@ -41,7 +41,7 @@ open class Darray
     (_repr_ pd).a <- varray[T] (new_size, (len old), (fun(i:size)=>old.i));
   }
 
-#line 989 "C:/cygwin64/home/skaller/felix/src/packages/arrays.fdoc"
+#line 989 "C:/projects/felix/src/packages/arrays.fdoc"
   //$ Make an empty darray, give it 20 slots for no particular reason.
   ctor[T] darray[T] () =>
     _make_darray[T]$ new darray_ctl[T](varray[T] 20uz , dflt_resize);
@@ -61,28 +61,28 @@ open class Darray
   //$ make a darray of a certain size initialised with some default value
   ctor[T] darray[T] (n:size, default:T) => darray[T] (varray[T](n,default));
 
-#line 1010 "C:/cygwin64/home/skaller/felix/src/packages/arrays.fdoc"
+#line 1010 "C:/projects/felix/src/packages/arrays.fdoc"
   //$ Basic array value stuff.
   instance[v] ArrayValue[darray[v],v] {
     fun len (a:darray[v])=> len (_repr_ a)*.a;
     fun unsafe_get (a:darray[v], i:size) => (_repr_ a)*.a.i;
   }
 
-#line 1018 "C:/cygwin64/home/skaller/felix/src/packages/arrays.fdoc"
+#line 1018 "C:/projects/felix/src/packages/arrays.fdoc"
   //$ Basic array object stuff.
   instance[v] ArrayObject[darray[v],v] {
     proc unsafe_set (b:darray[v],  n:size, x:v) => unsafe_set ((_repr_ b)*.a,n,x);
     fun unsafe_get_ref (b:darray[v],  n:size) : &v => unsafe_get_ref ((_repr_ b)*.a,n);
   }
 
-#line 1026 "C:/cygwin64/home/skaller/felix/src/packages/arrays.fdoc"
+#line 1026 "C:/projects/felix/src/packages/arrays.fdoc"
   //$ Contrue as contiguous store.
   instance[v] ContiguousArrayObject[darray[v],v] {
     fun stl_begin(b:darray[v]) => stl_begin b._repr_*.a;
     fun stl_end(b:darray[v]) => stl_end b._repr_*.a;
   }
 
-#line 1036 "C:/cygwin64/home/skaller/felix/src/packages/arrays.fdoc"
+#line 1036 "C:/projects/felix/src/packages/arrays.fdoc"
   //$ Pop a value from the end.
   //$ Same as pop_back in C++.
   proc pop_back[t](a:darray[t]) {
@@ -128,7 +128,7 @@ open class Darray
   proc erase[t] (a:darray[t], first:int, last:int) =>
     erase ((_repr_ a)*.a, first,last);
 
-#line 1083 "C:/cygwin64/home/skaller/felix/src/packages/arrays.fdoc"
+#line 1083 "C:/projects/felix/src/packages/arrays.fdoc"
   // uses _repr_ so has to be in the module
   instance[T with Show[T]] Str[Darray::darray[T]] {
     //$ Convert an array to a string,
@@ -138,7 +138,7 @@ open class Darray
 
 }
 
-#line 1095 "C:/cygwin64/home/skaller/felix/src/packages/arrays.fdoc"
+#line 1095 "C:/projects/felix/src/packages/arrays.fdoc"
 //$ Construe a darray as a Set.
 instance[T with Eq[T]] Set[darray[T],T] {
  //$ element membership test.

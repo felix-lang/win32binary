@@ -1,4 +1,4 @@
-#line 655 "C:/cygwin64/home/skaller/felix/src/packages/rtl-threads.fdoc"
+#line 655 "C:/projects/felix/src/packages/rtl-threads.fdoc"
 #ifndef __FLX_PTHREAD_MONITOR_H__
 #define __FLX_PTHREAD_MONITOR_H__
 #include "flx_pthread_config.hpp"

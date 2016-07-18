@@ -1,4 +1,4 @@
-#line 10 "C:/cygwin64/home/skaller/felix/src/packages/time.fdoc"
+#line 10 "C:/projects/felix/src/packages/time.fdoc"
 class Time_class [os] {
   virtual gen time: 1 -> double; // time in seconds since Jan 1 1970 UTC, seconds
 }

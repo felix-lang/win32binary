@@ -1,4 +1,4 @@
-#line 169 "C:/cygwin64/home/skaller/felix/src/packages/serialisation.fdoc"
+#line 169 "C:/projects/felix/src/packages/serialisation.fdoc"
 class Serialise
 {
   open Collector;

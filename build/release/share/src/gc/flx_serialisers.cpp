@@ -1,4 +1,4 @@
-#line 44 "C:/cygwin64/home/skaller/felix/src/packages/serialisation.fdoc"
+#line 44 "C:/projects/felix/src/packages/serialisation.fdoc"
 #include "flx_serialisers.hpp"
 #include <string>
 #include <cstring>

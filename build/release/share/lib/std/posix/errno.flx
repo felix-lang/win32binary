@@ -1,4 +1,4 @@
-#line 251 "C:/cygwin64/home/skaller/felix/src/packages/program.fdoc"
+#line 251 "C:/projects/felix/src/packages/program.fdoc"
 
 open class Errno
 {

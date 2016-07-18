@@ -1,4 +1,4 @@
-#line 249 "C:/cygwin64/home/skaller/felix/src/packages/grammar.fdoc"
+#line 249 "C:/projects/felix/src/packages/grammar.fdoc"
 syntax brackets
 {
   //$ Array expression (deprecated).

@@ -1,4 +1,4 @@
-#line 1246 "C:/cygwin64/home/skaller/felix/src/packages/io.fdoc"
+#line 1246 "C:/projects/felix/src/packages/io.fdoc"
 
 class Faio_posix  {
 header faio_posixio_hpp = '#include "faio_posixio.hpp"';

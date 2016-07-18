@@ -1,4 +1,4 @@
-#line 169 "C:/cygwin64/home/skaller/felix/src/packages/stl.fdoc"
+#line 169 "C:/projects/felix/src/packages/stl.fdoc"
 
 include "stl/stl";
   class Stl_Set[t]

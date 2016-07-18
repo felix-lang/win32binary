@@ -1,4 +1,4 @@
-#line 1286 "C:/cygwin64/home/skaller/felix/src/packages/grammar.fdoc"
+#line 1286 "C:/projects/felix/src/packages/grammar.fdoc"
 syntax expressions {
   priority
     let_pri <

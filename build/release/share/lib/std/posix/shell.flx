@@ -1,4 +1,4 @@
-#line 841 "C:/cygwin64/home/skaller/felix/src/packages/program.fdoc"
+#line 841 "C:/projects/felix/src/packages/program.fdoc"
 
 // Note: shell functions here only work with Bash.
 // However, the system() function always calls sh,

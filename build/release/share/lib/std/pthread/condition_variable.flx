@@ -1,4 +1,4 @@
-#line 392 "C:/cygwin64/home/skaller/felix/src/packages/pthreads.fdoc"
+#line 392 "C:/projects/felix/src/packages/pthreads.fdoc"
 
 //$ Condition Variable for pthread synchronisation.
 open class Condition_Variable

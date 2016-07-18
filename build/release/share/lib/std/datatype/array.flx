@@ -1,4 +1,4 @@
-#line 411 "C:/cygwin64/home/skaller/felix/src/packages/arrays.fdoc"
+#line 411 "C:/projects/felix/src/packages/arrays.fdoc"
 
 //$ Compile time fix length array.
 open class Farray

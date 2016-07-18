@@ -1,4 +1,4 @@
-#line 153 "C:/cygwin64/home/skaller/felix/src/packages/algebra.fdoc"
+#line 153 "C:/projects/felix/src/packages/algebra.fdoc"
 syntax setexpr
 {
   cmp := "in" =># '(nos "\\in")';

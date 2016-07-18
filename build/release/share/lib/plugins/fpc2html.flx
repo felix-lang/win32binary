@@ -1,4 +1,4 @@
-#line 1415 "C:/cygwin64/home/skaller/felix/src/packages/flx_web.fdoc"
+#line 1415 "C:/projects/felix/src/packages/flx_web.fdoc"
 
 var FLX_PKGCONFIG_PATH = Empty[string];
 var INSTALL_ROOT = "";

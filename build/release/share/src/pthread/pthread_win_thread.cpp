@@ -1,4 +1,4 @@
-#line 384 "C:/cygwin64/home/skaller/felix/src/packages/rtl-threads.fdoc"
+#line 384 "C:/projects/felix/src/packages/rtl-threads.fdoc"
 #include "pthread_thread.hpp"
 #if FLX_WIN32
 #include <stdio.h>

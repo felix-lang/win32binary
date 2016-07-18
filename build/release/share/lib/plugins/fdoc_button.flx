@@ -1,4 +1,4 @@
-#line 3506 "C:/cygwin64/home/skaller/felix/src/packages/flx_web.fdoc"
+#line 3506 "C:/projects/felix/src/packages/flx_web.fdoc"
 //$ Make buttons in a consistent style
 include "./button-interface";
 

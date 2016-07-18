@@ -1,4 +1,4 @@
-#line 11 "C:/cygwin64/home/skaller/felix/src/packages/serialisation.fdoc"
+#line 11 "C:/projects/felix/src/packages/serialisation.fdoc"
 #ifndef __FLX_SERIALISERS_HPP__
 #define __FLX_SERIALISERS_HPP__
 

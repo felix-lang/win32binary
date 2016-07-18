@@ -1,4 +1,4 @@
-#line 6 "C:/cygwin64/home/skaller/felix/src/packages/streams.fdoc"
+#line 6 "C:/projects/felix/src/packages/streams.fdoc"
 //$ Class of data structures supporting streaming.
 //$ The container type just needs an iterator method.
 //$ The iterator method returns a generator which

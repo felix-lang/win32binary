@@ -1,4 +1,4 @@
-#line 341 "C:/cygwin64/home/skaller/felix/src/packages/libstruct.fdoc"
+#line 341 "C:/projects/felix/src/packages/libstruct.fdoc"
 
 struct Osx{};
 include "std/posix/__init__";

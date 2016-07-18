@@ -1,4 +1,4 @@
-#line 348 "C:/cygwin64/home/skaller/felix/src/packages/libstruct.fdoc"
+#line 348 "C:/projects/felix/src/packages/libstruct.fdoc"
 
 module Linux {
   header '#include "plat_linux.hpp"';

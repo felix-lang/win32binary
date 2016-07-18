@@ -1,4 +1,4 @@
-#line 640 "C:/cygwin64/home/skaller/felix/src/packages/algebra.fdoc"
+#line 640 "C:/projects/felix/src/packages/algebra.fdoc"
 syntax divexpr
 {
   //$ division: right associative low precedence fraction form

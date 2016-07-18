@@ -1,4 +1,4 @@
-#line 766 "C:/cygwin64/home/skaller/felix/src/packages/web.fdoc"
+#line 766 "C:/projects/felix/src/packages/web.fdoc"
 publish """
 Implements variant types representing MIME types.
 Also implements Str instance for mime types and parses MIME type from string

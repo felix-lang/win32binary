@@ -1,4 +1,4 @@
-#line 1405 "C:/cygwin64/home/skaller/felix/src/packages/rtl-threads.fdoc"
+#line 1405 "C:/projects/felix/src/packages/rtl-threads.fdoc"
 class LockFreeBag
 {
   type lf_bag = "::std::shared_ptr<::flx::pthread::pthread_lf_bag>"

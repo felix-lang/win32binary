@@ -1,4 +1,4 @@
-#line 2549 "C:/cygwin64/home/skaller/felix/src/packages/sdl.fdoc"
+#line 2549 "C:/projects/felix/src/packages/sdl.fdoc"
 
 header '#include "SDL_opengl.h"';
 

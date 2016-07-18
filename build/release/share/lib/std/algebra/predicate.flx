@@ -1,4 +1,4 @@
-#line 145 "C:/cygwin64/home/skaller/felix/src/packages/logic.fdoc"
+#line 145 "C:/projects/felix/src/packages/logic.fdoc"
 
 // Some operations on predicates.
 // These also automatically apply to relations, but just taking

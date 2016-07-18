@@ -1,4 +1,4 @@
-#line 27 "C:/cygwin64/home/skaller/felix/src/packages/io.fdoc"
+#line 27 "C:/projects/felix/src/packages/io.fdoc"
 #ifndef FLX_IOUTIL
 #define FLX_IOUTIL
 #include <string>

@@ -1,4 +1,4 @@
-#line 8 "C:/cygwin64/home/skaller/felix/src/packages/codecs.fdoc"
+#line 8 "C:/projects/felix/src/packages/codecs.fdoc"
 
 include "std/codec/csv";
 include "std/codec/base64";

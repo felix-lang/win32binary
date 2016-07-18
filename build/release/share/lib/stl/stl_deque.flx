@@ -1,4 +1,4 @@
-#line 635 "C:/cygwin64/home/skaller/felix/src/packages/stl.fdoc"
+#line 635 "C:/projects/felix/src/packages/stl.fdoc"
 
 
 class Stl_Deque[t]

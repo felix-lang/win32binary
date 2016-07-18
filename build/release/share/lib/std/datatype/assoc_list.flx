@@ -1,4 +1,4 @@
-#line 682 "C:/cygwin64/home/skaller/felix/src/packages/lists.fdoc"
+#line 682 "C:/projects/felix/src/packages/lists.fdoc"
 open class Assoc_list
 {
   typedef assoc_list[A,B] = List::list[A*B];

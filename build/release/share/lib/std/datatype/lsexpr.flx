@@ -1,4 +1,4 @@
-#line 1145 "C:/cygwin64/home/skaller/felix/src/packages/lists.fdoc"
+#line 1145 "C:/projects/felix/src/packages/lists.fdoc"
 class LS_expr
 {
   union lsexpr[T,L] = | Leaf of T | Tree of L * list[lsexpr[T,L]];

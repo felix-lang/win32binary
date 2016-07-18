@@ -1,4 +1,4 @@
-#line 3417 "C:/cygwin64/home/skaller/felix/src/packages/flx_web.fdoc"
+#line 3417 "C:/projects/felix/src/packages/flx_web.fdoc"
 
 interface edit-interface_t {
   whatami: 1 -> string;

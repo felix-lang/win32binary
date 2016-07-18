@@ -1,4 +1,4 @@
-#line 375 "C:/cygwin64/home/skaller/felix/src/packages/pthreads.fdoc"
+#line 375 "C:/projects/felix/src/packages/pthreads.fdoc"
 
 open class Semaphore
 {

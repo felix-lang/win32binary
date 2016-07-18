@@ -1,4 +1,4 @@
-#line 352 "C:/cygwin64/home/skaller/felix/src/packages/stl.fdoc"
+#line 352 "C:/projects/felix/src/packages/stl.fdoc"
 
 include "stl/stl";
 class Stl_Map[k,v]

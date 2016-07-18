@@ -1,4 +1,4 @@
-#line 1115 "C:/cygwin64/home/skaller/felix/src/packages/arrays.fdoc"
+#line 1115 "C:/projects/felix/src/packages/arrays.fdoc"
 
 //$ Unbounded sparse psuedo-array sarray.
 //$ This data type is not a real array because it has no bounds

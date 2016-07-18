@@ -1,4 +1,4 @@
-#line 1716 "C:/cygwin64/home/skaller/felix/src/packages/gui.fdoc"
+#line 1716 "C:/projects/felix/src/packages/gui.fdoc"
 include "gui/line_buffer_display_controller_interface";
 
 class FlxGuiLineBufferDisplayController

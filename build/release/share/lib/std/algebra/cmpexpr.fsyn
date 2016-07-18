@@ -1,4 +1,4 @@
-#line 283 "C:/cygwin64/home/skaller/felix/src/packages/algebra.fdoc"
+#line 283 "C:/projects/felix/src/packages/algebra.fdoc"
 syntax cmpexpr
 {
   x[scomparison_pri]:= x[>scomparison_pri] cmp x[>scomparison_pri] =># "`(ast_apply ,_sr (,_2 (,_1 ,_3)))";

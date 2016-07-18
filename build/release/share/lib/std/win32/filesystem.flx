@@ -1,4 +1,4 @@
-#line 778 "C:/cygwin64/home/skaller/felix/src/packages/filesystem.fdoc"
+#line 778 "C:/projects/felix/src/packages/filesystem.fdoc"
 
 class Win32FileSystem
 {

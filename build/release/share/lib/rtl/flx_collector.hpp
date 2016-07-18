@@ -1,4 +1,4 @@
-#line 778 "C:/cygwin64/home/skaller/felix/src/packages/gc.fdoc"
+#line 778 "C:/projects/felix/src/packages/gc.fdoc"
 
 #ifndef __FLX_COLLECTOR_H__
 #define __FLX_COLLECTOR_H__

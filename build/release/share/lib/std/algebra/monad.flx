@@ -1,4 +1,4 @@
-#line 930 "C:/cygwin64/home/skaller/felix/src/packages/algebra.fdoc"
+#line 930 "C:/projects/felix/src/packages/algebra.fdoc"
 
 class Monad [M: TYPE->TYPE] {
   virtual fun bind[a,b]: M a * (a -> M b) -> M b;

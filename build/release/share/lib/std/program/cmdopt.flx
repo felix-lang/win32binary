@@ -1,4 +1,4 @@
-#line 69 "C:/cygwin64/home/skaller/felix/src/packages/program.fdoc"
+#line 69 "C:/projects/felix/src/packages/program.fdoc"
 
 open class CmdOpt
 {

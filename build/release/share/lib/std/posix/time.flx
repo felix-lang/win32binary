@@ -1,4 +1,4 @@
-#line 24 "C:/cygwin64/home/skaller/felix/src/packages/time.fdoc"
+#line 24 "C:/projects/felix/src/packages/time.fdoc"
 
 class PosixTime
 {

@@ -1,4 +1,4 @@
-#line 327 "C:/cygwin64/home/skaller/felix/src/packages/filesystem.fdoc"
+#line 327 "C:/projects/felix/src/packages/filesystem.fdoc"
 
 class PosixFileStat
 {

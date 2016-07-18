@@ -1,4 +1,4 @@
-#line 109 "C:/cygwin64/home/skaller/felix/src/packages/strutil.fdoc"
+#line 109 "C:/projects/felix/src/packages/strutil.fdoc"
 
 #include <stdio.h>
 #include <stdint.h>

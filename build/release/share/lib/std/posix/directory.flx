@@ -1,4 +1,4 @@
-#line 981 "C:/cygwin64/home/skaller/felix/src/packages/filesystem.fdoc"
+#line 981 "C:/projects/felix/src/packages/filesystem.fdoc"
 
 class PosixDirectory
 {

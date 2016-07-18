@@ -1,4 +1,4 @@
-#line 493 "C:/cygwin64/home/skaller/felix/src/packages/web.fdoc"
+#line 493 "C:/projects/felix/src/packages/web.fdoc"
 include "web/__init__";
 
 publish """

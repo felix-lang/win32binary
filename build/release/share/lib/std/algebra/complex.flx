@@ -1,4 +1,4 @@
-#line 869 "C:/cygwin64/home/skaller/felix/src/packages/algebra.fdoc"
+#line 869 "C:/projects/felix/src/packages/algebra.fdoc"
 //$ Float-approximate Complex.
 class Complex[t,r] {
   inherit Eq[t];

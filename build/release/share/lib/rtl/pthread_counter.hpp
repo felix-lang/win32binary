@@ -1,4 +1,4 @@
-#line 761 "C:/cygwin64/home/skaller/felix/src/packages/rtl-threads.fdoc"
+#line 761 "C:/projects/felix/src/packages/rtl-threads.fdoc"
 #ifndef __FLX_PTHREAD_COUNTER_H__
 #define __FLX_PTHREAD_COUNTER_H__
 #include "flx_pthread_config.hpp"

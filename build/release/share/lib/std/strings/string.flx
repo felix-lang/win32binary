@@ -1,4 +1,4 @@
-#line 118 "C:/cygwin64/home/skaller/felix/src/packages/strings.fdoc"
+#line 118 "C:/projects/felix/src/packages/strings.fdoc"
 typedef cstring = +char;
 type string = "::std::basic_string<char>"
   requires Cxx_headers::string,
@@ -22,7 +22,7 @@ class Show [T] {
 }
 
 
-#line 143 "C:/cygwin64/home/skaller/felix/src/packages/strings.fdoc"
+#line 143 "C:/projects/felix/src/packages/strings.fdoc"
 instance[t in strings] Eq[t] {
   fun == : t * t -> bool = "$1==$2";
 }
@@ -36,22 +36,22 @@ open class String
 
   inherit Tord[string];
 
-#line 158 "C:/cygwin64/home/skaller/felix/src/packages/strings.fdoc"
+#line 158 "C:/projects/felix/src/packages/strings.fdoc"
   fun == (s:string, c:char) => len s == 1uz and s.[0] == c;
   fun == (c:char, s:string) => len s == 1uz and s.[0] == c;
   fun != (s:string, c:char) => len s != 1uz or s.[0] != c;
   fun != (c:char, s:string) => len s != 1uz or s.[0] != c;
 
-#line 165 "C:/cygwin64/home/skaller/felix/src/packages/strings.fdoc"
+#line 165 "C:/projects/felix/src/packages/strings.fdoc"
   proc  += : &string * string = "$1->append($2:assign);";
   proc  += : &string * +char = "$1->append($2:assign);";
   proc  += : &string * char = "*$1 += $2;";
 
-#line 171 "C:/cygwin64/home/skaller/felix/src/packages/strings.fdoc"
+#line 171 "C:/projects/felix/src/packages/strings.fdoc"
   // we need to cast to an int so that c++ won't complain
   fun len: string -> size = "$1.size()";
 
-#line 176 "C:/cygwin64/home/skaller/felix/src/packages/strings.fdoc"
+#line 176 "C:/projects/felix/src/packages/strings.fdoc"
   fun + : string * string -> string = "$1+$2";
   fun + : string * carray[char] -> string = "$1+$2";
   fun + : string * char -> string = "$1+$2";
@@ -64,23 +64,23 @@ open class String
   // is this a string or a list of strings?
   //fun + [T with Str[T]] (x:string, y:T) => x + str y;
 
-#line 190 "C:/cygwin64/home/skaller/felix/src/packages/strings.fdoc"
+#line 190 "C:/projects/felix/src/packages/strings.fdoc"
   fun * : string * int -> string = "::flx::rtl::strutil::mul($1:assign,$2:assign)" requires package "flx_strutil";
   fun * : char * int -> string = "::std::string($2:assign,$1:assign)";
 
-#line 195 "C:/cygwin64/home/skaller/felix/src/packages/strings.fdoc"
+#line 195 "C:/projects/felix/src/packages/strings.fdoc"
   fun apply (x:string, y:string):string => x + y;
   fun apply (x:string, y:int):string => x + y;
 
-#line 201 "C:/cygwin64/home/skaller/felix/src/packages/strings.fdoc"
+#line 201 "C:/projects/felix/src/packages/strings.fdoc"
   ctor char (x:string) => x.[0];
-#line 204 "C:/cygwin64/home/skaller/felix/src/packages/strings.fdoc"
+#line 204 "C:/projects/felix/src/packages/strings.fdoc"
   ctor string (c:char) => ""+c;
   ctor string: +char = "::std::string($1:assign)";
   ctor string: +char  * !ints = "::std::string($1:assign,$2:assign)";
   fun utf8: int -> string = "::flx::rtl::i18n::utf8($1)" requires package "flx_i18n";
 
-#line 211 "C:/cygwin64/home/skaller/felix/src/packages/strings.fdoc"
+#line 211 "C:/projects/felix/src/packages/strings.fdoc"
   fun subscript: string * !ints -> char =
     "::flx::rtl::strutil::subscript($1:assign,$2:assign)" requires package "flx_strutil";
   fun copyfrom: string * !ints -> string =
@@ -120,7 +120,7 @@ open class String
 
   proc store: &string * !ints * char = "(*$1)[$2] = $3;";
 
-#line 252 "C:/cygwin64/home/skaller/felix/src/packages/strings.fdoc"
+#line 252 "C:/projects/felix/src/packages/strings.fdoc"
   fun map (f:char->char) (var x:string): string = {
     if len x > 0uz do
       for var i in 0uz upto (len x) - 1uz do
@@ -130,7 +130,7 @@ open class String
     return x;
   }
 
-#line 266 "C:/cygwin64/home/skaller/felix/src/packages/strings.fdoc"
+#line 266 "C:/projects/felix/src/packages/strings.fdoc"
   const stl_npos: size = "::std::string::npos";
 
   fun stl_find: string * string -> size = "$1.find($2)" is cast;
@@ -218,12 +218,12 @@ open class String
   fun find_last_not_of (s:string, e:char, i:size) : opt[size] => match stl_find_last_not_of (s, e, i) with | i when i == stl_npos => None[size] | i => Some i endmatch;
 
 
-#line 355 "C:/cygwin64/home/skaller/felix/src/packages/strings.fdoc"
+#line 355 "C:/projects/felix/src/packages/strings.fdoc"
   instance Set[string,char] {
     fun \in (c:char, s:string) => stl_find (s,c) != stl_npos;
   }
 
-#line 361 "C:/cygwin64/home/skaller/felix/src/packages/strings.fdoc"
+#line 361 "C:/projects/felix/src/packages/strings.fdoc"
   instance Iterable[string, char] {
     gen iterator(var x:string) () = {
       for var i in 0 upto x.len.int - 1 do yield Some (x.[i]); done
@@ -232,7 +232,7 @@ open class String
   }
   inherit Streamable[string,char];
 
-#line 371 "C:/cygwin64/home/skaller/felix/src/packages/strings.fdoc"
+#line 371 "C:/projects/felix/src/packages/strings.fdoc"
   fun prefix(arg:string,key:string)=>
     arg.[to len key]==key
   ;
@@ -250,7 +250,7 @@ open class String
   fun startswith (x:string) (e:char) : bool => x.[0] == e;
   fun endswith (x:string) (e:char) : bool => x.[-1] == e;
 
-#line 390 "C:/cygwin64/home/skaller/felix/src/packages/strings.fdoc"
+#line 390 "C:/projects/felix/src/packages/strings.fdoc"
   fun ltrim (x:string) (e:string) : string =>
     if startswith x e then
       x.[e.len.int to]
@@ -269,7 +269,7 @@ open class String
 
   fun trim (x:string) (e:string) : string => ltrim (rtrim x e) e;
 
-#line 410 "C:/cygwin64/home/skaller/felix/src/packages/strings.fdoc"
+#line 410 "C:/projects/felix/src/packages/strings.fdoc"
   fun lstrip (x:string, e:string) : string =
   {
     if len x > 0uz do
@@ -314,7 +314,7 @@ open class String
   fun rstrip (x:string) : string => rstrip(x, " \t\n\r\f\v");
   fun strip (x:string) : string => lstrip$ rstrip x;
 
-#line 456 "C:/cygwin64/home/skaller/felix/src/packages/strings.fdoc"
+#line 456 "C:/projects/felix/src/packages/strings.fdoc"
   fun ljust(x:string, width:int) : string =>
     if x.len.int >= width
       then x
@@ -329,7 +329,7 @@ open class String
     endif
   ;
 
-#line 472 "C:/cygwin64/home/skaller/felix/src/packages/strings.fdoc"
+#line 472 "C:/projects/felix/src/packages/strings.fdoc"
   fun split (x:string, d:char): List::list[string] => List::rev (rev_split (x,d));
 
   fun rev_split (x:string, d:char): List::list[string] = {
@@ -563,7 +563,7 @@ open class String
     method fun get_parsed () => state.parsed;
   }
 
-#line 707 "C:/cygwin64/home/skaller/felix/src/packages/strings.fdoc"
+#line 707 "C:/projects/felix/src/packages/strings.fdoc"
   // Note: pos, length!
   //$ mutators
   proc erase: &string * size * size = "$1->erase($2,$3);";
@@ -576,7 +576,7 @@ open class String
   fun replace: string * size * size * string -> string = "::std::string($1).replace($2,$3,$4)";
 
 
-#line 722 "C:/cygwin64/home/skaller/felix/src/packages/strings.fdoc"
+#line 722 "C:/projects/felix/src/packages/strings.fdoc"
   fun search_and_replace (x:string, var spos:size, s:string, r:string) : string =
   {
     val m = s.len;
@@ -599,7 +599,7 @@ open class String
     return v;
   }
 
-#line 747 "C:/cygwin64/home/skaller/felix/src/packages/strings.fdoc"
+#line 747 "C:/projects/felix/src/packages/strings.fdoc"
   // Replace \0 \1 \2 etc in s with text from v
   fun subst(s:string, v:varray[StringPiece]): string =
   {
@@ -667,16 +667,16 @@ open class String
     o+=x.[spos to];                  // rest of string
     return o;
   }
-#line 816 "C:/cygwin64/home/skaller/felix/src/packages/strings.fdoc"
+#line 816 "C:/projects/felix/src/packages/strings.fdoc"
   fun atoi: string -> int = "::std::atoi($1:postfix.c_str())"  requires Cxx_headers::cstdlib;
   fun atol: string -> long = "::std::atol($1:postfix.c_str())"  requires Cxx_headers::cstdlib;
   fun atoll: string -> long = "::std::atoll($1:postfix.c_str())"  requires Cxx_headers::cstdlib;
   fun atof: string -> double = "::std::atof($1:postfix.c_str())"  requires Cxx_headers::cstdlib;
 
-#line 823 "C:/cygwin64/home/skaller/felix/src/packages/strings.fdoc"
+#line 823 "C:/projects/felix/src/packages/strings.fdoc"
   proc reserve: &string * !ints = "$1->reserve($2);";
 
-#line 827 "C:/cygwin64/home/skaller/felix/src/packages/strings.fdoc"
+#line 827 "C:/projects/felix/src/packages/strings.fdoc"
   // Entirely unsafe because string could be an rvalue.
   fun _unsafe_cstr: string -> +char = "((char*)$1.c_str())" is atom;
 
@@ -688,7 +688,7 @@ open class String
   // provided is copied (and garbage collected)
   fun cstr (x:string) : +char => (varray[char] x).stl_begin;
 
-#line 840 "C:/cygwin64/home/skaller/felix/src/packages/strings.fdoc"
+#line 840 "C:/projects/felix/src/packages/strings.fdoc"
   fun vsprintf[t]: +char  * t -> string =
     "::flx::rtl::strutil::flx_asprintf($1,$2)" requires package "flx_strutil"
   ;
@@ -697,7 +697,7 @@ open class String
     "::flx::rtl::strutil::flx_asprintf(const_cast<char*>($1.c_str()),$2)" requires package "flx_strutil"
   ;
 
-#line 850 "C:/cygwin64/home/skaller/felix/src/packages/strings.fdoc"
+#line 850 "C:/projects/felix/src/packages/strings.fdoc"
   // Convert all characters to upper case
   fun toupper(s:string):string => map (toupper of char) s;
   // Convert all characters to lower case
@@ -705,7 +705,7 @@ open class String
 }
 
 
-#line 859 "C:/cygwin64/home/skaller/felix/src/packages/strings.fdoc"
+#line 859 "C:/projects/felix/src/packages/strings.fdoc"
 
 instance Str[string] {
   fun str (s:string) : string => s;

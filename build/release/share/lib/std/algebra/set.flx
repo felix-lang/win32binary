@@ -1,4 +1,4 @@
-#line 123 "C:/cygwin64/home/skaller/felix/src/packages/algebra.fdoc"
+#line 123 "C:/projects/felix/src/packages/algebra.fdoc"
 // note: eq is not necessarily required for a membership test
 // for example: string member of regexp doesn't require
 // string equality
@@ -27,7 +27,7 @@ class Set[c,t] {
   ;
 }
 
-#line 176 "C:/cygwin64/home/skaller/felix/src/packages/algebra.fdoc"
+#line 176 "C:/projects/felix/src/packages/algebra.fdoc"
 interface set_form[T] { has_elt: T -> bool; }
 
 instance[T] Set[set_form[T], T] {
@@ -44,7 +44,7 @@ fun invimg[t,c2,t2 with Set[c2,t2]]
   { e : t | (f e) \in x }
 ;
 
-#line 199 "C:/cygwin64/home/skaller/felix/src/packages/algebra.fdoc"
+#line 199 "C:/projects/felix/src/packages/algebra.fdoc"
 
 fun \times[U,V] (x:set_form[U],y:set_form[V]) =>
   { u,v : U * V | u \in x and v \in y }

@@ -1,4 +1,4 @@
-#line 179 "C:/cygwin64/home/skaller/felix/src/packages/dynlink.fdoc"
+#line 179 "C:/projects/felix/src/packages/dynlink.fdoc"
 #ifndef __FLX_DLOPEN_H__
 #define __FLX_DLOPEN_H__
 #include "flx_dynlink_config.hpp"

@@ -1,4 +1,4 @@
-#line 439 "C:/cygwin64/home/skaller/felix/src/packages/algebra.fdoc"
+#line 439 "C:/projects/felix/src/packages/algebra.fdoc"
 syntax tordcmpexpr
 {
   cmp := "<" =># "(nos _1)";

@@ -1,4 +1,4 @@
-#line 3481 "C:/cygwin64/home/skaller/felix/src/packages/flx_web.fdoc"
+#line 3481 "C:/projects/felix/src/packages/flx_web.fdoc"
 // split up an fdoc into a stream of commands and text
 union fdoc-data_t =
   | Cmd of string

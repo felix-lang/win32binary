@@ -1,4 +1,4 @@
-#line 109 "C:/cygwin64/home/skaller/felix/src/packages/sync.fdoc"
+#line 109 "C:/projects/felix/src/packages/sync.fdoc"
 
 #include <stdio.h>
 

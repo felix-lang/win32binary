@@ -1,4 +1,4 @@
-#line 672 "C:/cygwin64/home/skaller/felix/src/packages/lists.fdoc"
+#line 672 "C:/projects/felix/src/packages/lists.fdoc"
 syntax listexpr
 {
   //$ List cons, right associative.

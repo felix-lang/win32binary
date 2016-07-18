@@ -1,4 +1,4 @@
-#line 4082 "C:/cygwin64/home/skaller/felix/src/packages/grammar.fdoc"
+#line 4082 "C:/projects/felix/src/packages/grammar.fdoc"
 //$ A grab bag of miscellaneous statements and
 //$ nonterminals used to construct other statements.
 syntax statements {

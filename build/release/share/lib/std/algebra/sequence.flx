@@ -1,4 +1,4 @@
-#line 475 "C:/cygwin64/home/skaller/felix/src/packages/algebra.fdoc"
+#line 475 "C:/projects/felix/src/packages/algebra.fdoc"
 
 class Forward[t] {
   virtual fun succ: t -> t;

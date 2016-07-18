@@ -1,4 +1,4 @@
-#line 103 "C:/cygwin64/home/skaller/felix/src/packages/toolchain.fdoc"
+#line 103 "C:/projects/felix/src/packages/toolchain.fdoc"
 class CxxCompiler
 {
   typedef cxx_dep_spec_t =

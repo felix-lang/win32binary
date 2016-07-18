@@ -1,4 +1,4 @@
-#line 275 "C:/cygwin64/home/skaller/felix/src/packages/libstruct.fdoc"
+#line 275 "C:/projects/felix/src/packages/libstruct.fdoc"
 
 open class Cstdlib
 {

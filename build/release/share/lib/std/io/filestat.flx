@@ -1,4 +1,4 @@
-#line 191 "C:/cygwin64/home/skaller/felix/src/packages/filesystem.fdoc"
+#line 191 "C:/projects/felix/src/packages/filesystem.fdoc"
 
 //$ Filesystem file kind query functions parametrised
 //$ by operating system, status type and mode type.

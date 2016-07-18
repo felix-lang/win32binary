@@ -1,4 +1,4 @@
-#line 514 "C:/cygwin64/home/skaller/felix/src/packages/program.fdoc"
+#line 514 "C:/projects/felix/src/packages/program.fdoc"
 
 class Win32Process {
   open Win32Signal;

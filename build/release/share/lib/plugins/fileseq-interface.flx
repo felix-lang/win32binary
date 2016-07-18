@@ -1,4 +1,4 @@
-#line 3452 "C:/cygwin64/home/skaller/felix/src/packages/flx_web.fdoc"
+#line 3452 "C:/projects/felix/src/packages/flx_web.fdoc"
 interface fileseq-control_t {
   whatami: 1 -> string;
   shownav: 1 -> string;

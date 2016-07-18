@@ -1,4 +1,4 @@
-#line 581 "C:/cygwin64/home/skaller/felix/src/packages/numbers.fdoc"
+#line 581 "C:/projects/felix/src/packages/numbers.fdoc"
 
 class Quaternion
 {

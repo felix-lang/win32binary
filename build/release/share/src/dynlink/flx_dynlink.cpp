@@ -1,4 +1,4 @@
-#line 454 "C:/cygwin64/home/skaller/felix/src/packages/dynlink.fdoc"
+#line 454 "C:/projects/felix/src/packages/dynlink.fdoc"
 #include "flx_dynlink.hpp"
 #include "flx_strutil.hpp"
 #include <stdio.h>
@@ -111,7 +111,7 @@ flx_dynlink_t::~flx_dynlink_t() {
   // modulename.c_str(), filename.c_str()
   // );
 }
-#line 570 "C:/cygwin64/home/skaller/felix/src/packages/dynlink.fdoc"
+#line 570 "C:/projects/felix/src/packages/dynlink.fdoc"
 
 // ************************************************
 // libinst

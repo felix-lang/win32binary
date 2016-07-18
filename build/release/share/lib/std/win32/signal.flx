@@ -1,4 +1,4 @@
-#line 1253 "C:/cygwin64/home/skaller/felix/src/packages/program.fdoc"
+#line 1253 "C:/projects/felix/src/packages/program.fdoc"
 
 class Win32Signal {
   requires C89_headers::signal_h;

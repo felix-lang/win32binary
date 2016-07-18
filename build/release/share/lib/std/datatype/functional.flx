@@ -1,4 +1,4 @@
-#line 484 "C:/cygwin64/home/skaller/felix/src/packages/core_type_constructors.fdoc"
+#line 484 "C:/projects/felix/src/packages/core_type_constructors.fdoc"
 
 //$ Categorical Operators
 open class Functional

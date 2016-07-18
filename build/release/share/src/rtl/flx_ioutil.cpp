@@ -1,4 +1,4 @@
-#line 58 "C:/cygwin64/home/skaller/felix/src/packages/io.fdoc"
+#line 58 "C:/projects/felix/src/packages/io.fdoc"
 
 #include <cstdio>
 #include <cstring>

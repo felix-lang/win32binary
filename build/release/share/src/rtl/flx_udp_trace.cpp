@@ -1,4 +1,4 @@
-#line 84 "C:/cygwin64/home/skaller/felix/src/packages/debug.fdoc"
+#line 84 "C:/projects/felix/src/packages/debug.fdoc"
 #ifdef _WIN32
 #include <stdio.h>
 #include <string>

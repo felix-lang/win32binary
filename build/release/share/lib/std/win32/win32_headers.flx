@@ -1,4 +1,4 @@
-#line 256 "C:/cygwin64/home/skaller/felix/src/packages/cheaders.fdoc"
+#line 256 "C:/projects/felix/src/packages/cheaders.fdoc"
 class Win32_headers {
   header windows_h = "#include <windows.h>";
   header io_h = "#include <io.h>";

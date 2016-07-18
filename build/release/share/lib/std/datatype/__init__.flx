@@ -1,4 +1,4 @@
-#line 94 "C:/cygwin64/home/skaller/felix/src/packages/libstruct.fdoc"
+#line 94 "C:/projects/felix/src/packages/libstruct.fdoc"
 
 // special
 include "std/datatype/typing";

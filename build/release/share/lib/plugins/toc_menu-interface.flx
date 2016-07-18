@@ -1,4 +1,4 @@
-#line 3406 "C:/cygwin64/home/skaller/felix/src/packages/flx_web.fdoc"
+#line 3406 "C:/projects/felix/src/packages/flx_web.fdoc"
 
 interface toc_menu_interface {
   whatami: 1 -> string;

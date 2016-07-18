@@ -1,4 +1,4 @@
-#line 1971 "C:/cygwin64/home/skaller/felix/src/packages/web.fdoc"
+#line 1971 "C:/projects/felix/src/packages/web.fdoc"
 include "web/__init__";
 
 class ServerConfig {

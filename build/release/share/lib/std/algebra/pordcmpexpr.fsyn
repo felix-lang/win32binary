@@ -1,4 +1,4 @@
-#line 337 "C:/cygwin64/home/skaller/felix/src/packages/algebra.fdoc"
+#line 337 "C:/projects/felix/src/packages/algebra.fdoc"
 syntax pordcmpexpr
 {
   cmp := "\subset" =># '(nos _1)';

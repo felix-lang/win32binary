@@ -1,4 +1,4 @@
-#line 725 "C:/cygwin64/home/skaller/felix/src/packages/embed.fdoc"
+#line 725 "C:/projects/felix/src/packages/embed.fdoc"
 
 
 #include "flx_world.hpp"

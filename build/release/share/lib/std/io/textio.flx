@@ -1,4 +1,4 @@
-#line 289 "C:/cygwin64/home/skaller/felix/src/packages/io.fdoc"
+#line 289 "C:/projects/felix/src/packages/io.fdoc"
 
 //$ These classes provide simple I/O for text, primarily intended for
 //$ naive use, debugging etc. This is because there is no error

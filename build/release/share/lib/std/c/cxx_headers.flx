@@ -1,4 +1,4 @@
-#line 90 "C:/cygwin64/home/skaller/felix/src/packages/cheaders.fdoc"
+#line 90 "C:/projects/felix/src/packages/cheaders.fdoc"
 class Cxx_headers
 {
   header exception = '#include <exception>';
@@ -57,7 +57,7 @@ class Cxx_headers
   header cwctype = '#include <cwctype>';
 }
 
-#line 152 "C:/cygwin64/home/skaller/felix/src/packages/cheaders.fdoc"
+#line 152 "C:/projects/felix/src/packages/cheaders.fdoc"
 class Cxx11_headers  // http://en.cppreference.com/w/cpp/header
 {
   inherit Cxx_headers;

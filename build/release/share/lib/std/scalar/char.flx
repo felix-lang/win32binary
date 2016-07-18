@@ -1,4 +1,4 @@
-#line 5 "C:/cygwin64/home/skaller/felix/src/packages/char.fdoc"
+#line 5 "C:/projects/felix/src/packages/char.fdoc"
 
 //$ Standard C operations on C character set.
 open class Char

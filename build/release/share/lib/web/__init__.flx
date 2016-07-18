@@ -1,4 +1,4 @@
-#line 22 "C:/cygwin64/home/skaller/felix/src/packages/web.fdoc"
+#line 22 "C:/projects/felix/src/packages/web.fdoc"
 // codecs
 include "web/json";
 include "web/mime_type";

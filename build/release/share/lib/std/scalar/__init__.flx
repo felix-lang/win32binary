@@ -1,4 +1,4 @@
-#line 34 "C:/cygwin64/home/skaller/felix/src/packages/core_scalar_types.fdoc"
+#line 34 "C:/projects/felix/src/packages/core_scalar_types.fdoc"
 
 include "std/scalar/ctypedefs";
 

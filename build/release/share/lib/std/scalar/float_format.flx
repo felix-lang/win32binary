@@ -1,4 +1,4 @@
-#line 196 "C:/cygwin64/home/skaller/felix/src/packages/numbers.fdoc"
+#line 196 "C:/projects/felix/src/packages/numbers.fdoc"
 //$ Functions to format floating point numbers.
 open class float_format
 {

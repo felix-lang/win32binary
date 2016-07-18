@@ -1,4 +1,4 @@
-#line 600 "C:/cygwin64/home/skaller/felix/src/packages/faio.fdoc"
+#line 600 "C:/projects/felix/src/packages/faio.fdoc"
 #ifndef __FLX_FAIO_TIMER_H__
 #define __FLX_FAIO_TIMER_H__
 #include <flx_faio_config.hpp>

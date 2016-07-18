@@ -1,4 +1,4 @@
-#line 1240 "C:/cygwin64/home/skaller/felix/src/packages/web.fdoc"
+#line 1240 "C:/projects/felix/src/packages/web.fdoc"
 class LowResTime
 {
   open C_hack;

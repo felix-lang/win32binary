@@ -1,4 +1,4 @@
-#line 302 "C:/cygwin64/home/skaller/felix/src/packages/strutil.fdoc"
+#line 302 "C:/projects/felix/src/packages/strutil.fdoc"
 
 #include "flx_i18n.hpp"
 namespace flx { namespace rtl { namespace i18n {

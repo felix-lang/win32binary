@@ -1,4 +1,4 @@
-#line 1523 "C:/cygwin64/home/skaller/felix/src/packages/flx_web.fdoc"
+#line 1523 "C:/projects/felix/src/packages/flx_web.fdoc"
 // Ocaml
 module Ocaml2Html {
 private val big_keywords =

@@ -1,4 +1,4 @@
-#line 20 "C:/cygwin64/home/skaller/felix/src/packages/core_type_constructors.fdoc"
+#line 20 "C:/projects/felix/src/packages/core_type_constructors.fdoc"
 open class Typing
 {
   typedef fun dom(t:TYPE):TYPE =>

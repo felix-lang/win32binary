@@ -1,4 +1,4 @@
-#line 845 "C:/cygwin64/home/skaller/felix/src/packages/algebra.fdoc"
+#line 845 "C:/projects/felix/src/packages/algebra.fdoc"
 //$ Float-approximate real numbers.
 class Real[t] {
   inherit Tord[t];

@@ -1,4 +1,4 @@
-#line 1664 "C:/cygwin64/home/skaller/felix/src/packages/toolchain.fdoc"
+#line 1664 "C:/projects/felix/src/packages/toolchain.fdoc"
 class Cygwin
 {
   requires package "cygwin";

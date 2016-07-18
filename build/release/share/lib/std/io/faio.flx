@@ -1,4 +1,4 @@
-#line 1196 "C:/cygwin64/home/skaller/felix/src/packages/io.fdoc"
+#line 1196 "C:/projects/felix/src/packages/io.fdoc"
 
 class Faio {
   requires package "demux";

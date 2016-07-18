@@ -1,4 +1,4 @@
-#line 266 "C:/cygwin64/home/skaller/felix/src/packages/algebra.fdoc"
+#line 266 "C:/projects/felix/src/packages/algebra.fdoc"
 // equality: technically, equivalence relation
 class Eq[t] {
   virtual fun == : t * t -> bool;

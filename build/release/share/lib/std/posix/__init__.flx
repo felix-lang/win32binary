@@ -1,4 +1,4 @@
-#line 132 "C:/cygwin64/home/skaller/felix/src/packages/libstruct.fdoc"
+#line 132 "C:/projects/felix/src/packages/libstruct.fdoc"
 
 struct Posix {};
 include "std/posix/posix_headers";

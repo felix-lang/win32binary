@@ -1,4 +1,4 @@
-#line 2185 "C:/cygwin64/home/skaller/felix/src/packages/toolchain.fdoc"
+#line 2185 "C:/projects/felix/src/packages/toolchain.fdoc"
 include "std/felix/toolchain/gcc_linux";
 
 export fun toolchain_gcc_linux of (clang_config_t) as "toolchain_gcc_linux";

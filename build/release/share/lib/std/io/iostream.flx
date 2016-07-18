@@ -1,4 +1,4 @@
-#line 637 "C:/cygwin64/home/skaller/felix/src/packages/io.fdoc"
+#line 637 "C:/projects/felix/src/packages/io.fdoc"
 
 class IOStream {
   requires package "demux";

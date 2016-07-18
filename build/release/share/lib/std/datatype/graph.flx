@@ -1,4 +1,4 @@
-#line 311 "C:/cygwin64/home/skaller/felix/src/packages/trees.fdoc"
+#line 311 "C:/projects/felix/src/packages/trees.fdoc"
 // Directed Cyclic graph
 
 include "std/datatype/dlist";

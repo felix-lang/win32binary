@@ -1,4 +1,4 @@
-#line 14 "C:/cygwin64/home/skaller/felix/src/packages/strutil.fdoc"
+#line 14 "C:/projects/felix/src/packages/strutil.fdoc"
 
 #ifndef __FLX_STRUTIL_HPP_
 #define __FLX_STRUTIL_HPP_

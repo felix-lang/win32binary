@@ -1,4 +1,4 @@
-#line 443 "C:/cygwin64/home/skaller/felix/src/packages/flx_pkgconfig.fdoc"
+#line 443 "C:/projects/felix/src/packages/flx_pkgconfig.fdoc"
 class FlxPkgConfigQuery_interface
 {
   interface FlxPkgConfigQuery_t {

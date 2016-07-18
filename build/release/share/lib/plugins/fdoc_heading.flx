@@ -1,4 +1,4 @@
-#line 4026 "C:/cygwin64/home/skaller/felix/src/packages/flx_web.fdoc"
+#line 4026 "C:/projects/felix/src/packages/flx_web.fdoc"
 include "./paragraph-interface";
 include "./heading-interface";
 

@@ -1,4 +1,4 @@
-#line 1213 "C:/cygwin64/home/skaller/felix/src/packages/trees.fdoc"
+#line 1213 "C:/projects/felix/src/packages/trees.fdoc"
 
 //$ A strdict is dictionary keyed by strings.
 //$ The strings must not contain nul bytes.

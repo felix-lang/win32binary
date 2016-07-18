@@ -1,4 +1,4 @@
-#line 65 "C:/cygwin64/home/skaller/felix/src/packages/debug.fdoc"
+#line 65 "C:/projects/felix/src/packages/debug.fdoc"
 syntax debug
 {
    satom := "HERE" =># "`(ast_here ,_sr)";

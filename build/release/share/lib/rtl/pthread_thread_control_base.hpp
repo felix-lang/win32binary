@@ -1,4 +1,4 @@
-#line 117 "C:/cygwin64/home/skaller/felix/src/packages/gc.fdoc"
+#line 117 "C:/projects/felix/src/packages/gc.fdoc"
 #ifndef __PTHREAD_THREAD_CONTROL_BASE_HPP__
 #define __PTHREAD_THREAD_CONTROL_BASE_HPP__
 

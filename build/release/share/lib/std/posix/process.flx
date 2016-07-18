@@ -1,4 +1,4 @@
-#line 335 "C:/cygwin64/home/skaller/felix/src/packages/program.fdoc"
+#line 335 "C:/projects/felix/src/packages/program.fdoc"
 
 class PosixProcess {
   open PosixSignal;

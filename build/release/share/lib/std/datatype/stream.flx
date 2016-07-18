@@ -1,19 +1,19 @@
-#line 108 "C:/cygwin64/home/skaller/felix/src/packages/streams.fdoc"
+#line 108 "C:/projects/felix/src/packages/streams.fdoc"
 class Fstream[T,S] {
   virtual fun uncons: S -> T * S;
 };
-#line 116 "C:/cygwin64/home/skaller/felix/src/packages/streams.fdoc"
+#line 116 "C:/projects/felix/src/packages/streams.fdoc"
 instance Fstream [int,int] {
   fun uncons(x:int) => x, x + 1;
 }
-#line 134 "C:/cygwin64/home/skaller/felix/src/packages/streams.fdoc"
+#line 134 "C:/projects/felix/src/packages/streams.fdoc"
 instance Fstream [opt[int], list[int]] {
   fun uncons: list[int] -> opt[int] * list[int] =
   | Cons (h,t) => Some h, t
   | #Empty => None[int], Empty[int]
   ;
 }
-#line 152 "C:/cygwin64/home/skaller/felix/src/packages/streams.fdoc"
+#line 152 "C:/projects/felix/src/packages/streams.fdoc"
 class Stream
 {
 fun make_generator [T,S with Fstream[T,S]]
@@ -25,15 +25,15 @@ fun make_generator [T,S with Fstream[T,S]]
     return v;
   }
 ;
-#line 175 "C:/cygwin64/home/skaller/felix/src/packages/streams.fdoc"
+#line 175 "C:/projects/felix/src/packages/streams.fdoc"
 fun make_iterator [T,S with Fstream[opt[T],S]]
   (var state:S)
 =>
   make_generator[opt[T],S] state
 ;
-#line 192 "C:/cygwin64/home/skaller/felix/src/packages/streams.fdoc"
+#line 192 "C:/projects/felix/src/packages/streams.fdoc"
 typedef stream[T,S] = ( state:S, uncons_f: S -> T * S );
-#line 199 "C:/cygwin64/home/skaller/felix/src/packages/streams.fdoc"
+#line 199 "C:/projects/felix/src/packages/streams.fdoc"
 instance[T,S] Fstream[T, stream[T,S]] {
   fun uncons (x:stream[T,S]) : T * stream[T,S] =>
     let head,tail = x.uncons_f x.state in

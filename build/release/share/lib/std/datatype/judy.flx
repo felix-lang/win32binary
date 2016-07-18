@@ -1,4 +1,4 @@
-#line 934 "C:/cygwin64/home/skaller/felix/src/packages/trees.fdoc"
+#line 934 "C:/projects/felix/src/packages/trees.fdoc"
 
 // NOTES: The Felix type 'address' is the correct type for Judy Word
 // However it is also an unsigned integer type (int or long depending

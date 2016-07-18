@@ -1,4 +1,4 @@
-#line 79 "C:/cygwin64/home/skaller/felix/src/packages/flx.fdoc"
+#line 79 "C:/projects/felix/src/packages/flx.fdoc"
 class FlxCache
 {
   fun gramtime(debugln: string -> 0) (path:string, s:string) : double = {

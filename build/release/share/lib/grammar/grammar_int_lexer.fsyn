@@ -1,4 +1,4 @@
-#line 145 "C:/cygwin64/home/skaller/felix/src/packages/core_scalar_types.fdoc"
+#line 145 "C:/projects/felix/src/packages/core_scalar_types.fdoc"
 
 SCHEME """
 (define (findradix s)  ; find the radix of integer lexeme

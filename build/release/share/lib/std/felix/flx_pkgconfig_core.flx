@@ -1,4 +1,4 @@
-#line 20 "C:/cygwin64/home/skaller/felix/src/packages/flx_pkgconfig.fdoc"
+#line 20 "C:/projects/felix/src/packages/flx_pkgconfig.fdoc"
 class FlxPkgConfig_core
 {
   open Lexer;

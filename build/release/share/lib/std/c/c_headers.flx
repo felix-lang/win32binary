@@ -1,4 +1,4 @@
-#line 27 "C:/cygwin64/home/skaller/felix/src/packages/cheaders.fdoc"
+#line 27 "C:/projects/felix/src/packages/cheaders.fdoc"
 // reference: Wikipedia: http://en.wikibooks.org/wiki/C_Programming/Reference_Tables#List_of_Standard_Headers
 
 // ANSI C89 = ISO C90
@@ -20,7 +20,7 @@ class C89_headers
   header string_h =   "#include <string.h>";
   header time_h =     "#include <time.h>";
 }
-#line 53 "C:/cygwin64/home/skaller/felix/src/packages/cheaders.fdoc"
+#line 53 "C:/projects/felix/src/packages/cheaders.fdoc"
 // ISO C94/95 Amendment 1
 class C95_headers
 {
@@ -29,7 +29,7 @@ class C95_headers
   header wchar_h =    "#include <wchar.h>";
   header wctype_h =   "#include <wctype.h>";
 }
-#line 67 "C:/cygwin64/home/skaller/felix/src/packages/cheaders.fdoc"
+#line 67 "C:/projects/felix/src/packages/cheaders.fdoc"
 // ISO C99
 class C99_headers
 {

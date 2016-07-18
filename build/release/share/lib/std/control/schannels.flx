@@ -1,4 +1,4 @@
-#line 185 "C:/cygwin64/home/skaller/felix/src/packages/fibres.fdoc"
+#line 185 "C:/projects/felix/src/packages/fibres.fdoc"
 
 //$ Sychronous Channels.
 //$ Used to exchange control and possibly data
@@ -110,7 +110,7 @@ open class Schannel
   }
 }
 
-#line 1069 "C:/cygwin64/home/skaller/felix/src/packages/fibres.fdoc"
+#line 1069 "C:/projects/felix/src/packages/fibres.fdoc"
 
 open class DuplexSchannels
 {

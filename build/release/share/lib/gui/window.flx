@@ -1,4 +1,4 @@
-#line 573 "C:/cygwin64/home/skaller/felix/src/packages/gui.fdoc"
+#line 573 "C:/projects/felix/src/packages/gui.fdoc"
 class FlxGuiWindow
 {
   interface window_t {

@@ -1,4 +1,4 @@
-#line 188 "C:/cygwin64/home/skaller/felix/src/packages/cheaders.fdoc"
+#line 188 "C:/projects/felix/src/packages/cheaders.fdoc"
 class Posix_headers {
   header aio_h = "#include <aio.h>";
   header arpa_inet_h = "#include <arpa/inet.h>";
