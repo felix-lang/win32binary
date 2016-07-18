@@ -1,0 +1,13 @@
+#line 141 "C:/cygwin64/home/skaller/felix/src/packages/gui.fdoc"
+class FlxGuiTypes
+{
+  typedef font_t = TTF_Font;
+  typedef colour_t = SDL_Color;
+  typedef color_t = colour_t; // dang yanks ..
+  typedef point_t = SDL_Point;
+  typedef rect_t = SDL_Rect;
+
+  ctor rect_t (x:int, y:int, w:int, h:int) => SDL_Rect (x,y,w,h);
+
+  typedef event_t = SDL_Event;
+}

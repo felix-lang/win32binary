@@ -1,0 +1,28 @@
+// GENERATED DURING CONFIGURATION
+open class Float
+{
+  ctor float: string = "static_cast<float>(::std::atof($1.data()))" requires Cxx_headers::cstdlib;
+  ctor[T in reals] float: T = "static_cast<float>($1)";
+  fun isnan: float -> bool = "::std::isnan($1)" is postfix requires Cxx_headers::cmath;
+  fun isinf: float -> bool = "::std::isinf($1)" is postfix requires Cxx_headers::cmath;
+  fun isfinite: float -> bool = "::std::isfinite($1)" is postfix requires Cxx_headers::cmath;
+}
+
+open class Double
+{
+  ctor double: string = "static_cast<double>(::std::atof($1.data()))" requires Cxx_headers::cstdlib;
+  ctor[T in reals] double: T = "static_cast<double>($1)";
+  fun isnan: double -> bool = "::std::isnan($1)" is postfix requires Cxx_headers::cmath;
+  fun isinf: double -> bool = "::std::isinf($1)" is postfix requires Cxx_headers::cmath;
+  fun isfinite: double -> bool = "::std::isfinite($1)" is postfix requires Cxx_headers::cmath;
+}
+
+open class Ldouble
+{
+  ctor ldouble: string = "static_cast<long double>(::std::atof($1.data()))" requires Cxx_headers::cstdlib;
+  ctor[T in reals] ldouble: T = "static_cast<long double>($1)";
+  fun isnan: ldouble -> bool = "::std::isnan($1)" is postfix requires Cxx_headers::cmath;
+  fun isinf: ldouble -> bool = "::std::isinf($1)" is postfix requires Cxx_headers::cmath;
+  fun isfinite: ldouble -> bool = "::std::isfinite($1)" is postfix requires Cxx_headers::cmath;
+}
+

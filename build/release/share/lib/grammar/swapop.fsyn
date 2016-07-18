@@ -1,0 +1,5 @@
+#line 151 "C:/cygwin64/home/skaller/felix/src/packages/control.fdoc"
+syntax swapop
+{
+  sswapop := "<->" =># "'_swap";
+}

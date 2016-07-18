@@ -1,0 +1,9 @@
+Generated_from: 358 "/home/skaller/felix/src/packages/sqlite3.fdoc"
+provides_dlib: -lflx_sqlite3_dynamic
+provides_slib: -lflx_sqlite3_static
+includes: '"flx_sqlite3.hpp"'
+macros: BUILD_SQLITE3
+build_includes: build/release/share/lib/rtl
+library: flx_sqlite3
+srcdir: src/sqlite3
+src: sqlite3\.c

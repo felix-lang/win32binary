@@ -1,0 +1,7 @@
+#line 104 "C:/cygwin64/home/skaller/felix/src/packages/strings.fdoc"
+include "std/strings/string";
+include "std/strings/re2";
+include "std/strings/tre";
+include "std/strings/regdef";
+include "std/strings/lexer";
+

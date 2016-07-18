@@ -1,0 +1,11 @@
+
+
+macro val PLAT_WIN32 = true;
+macro val PLAT_POSIX = false;
+macro val PLAT_LINUX = false;
+macro val PLAT_MACOSX = false;
+macro val PLAT_CYGWIN = false;
+macro val PLAT_SOLARIS = false;
+macro val PLAT_BSD = false;
+
+

@@ -1,0 +1,5 @@
+Generated_from: 360 "C:\cygwin64\home\skaller\felix\src\packages\strutil.fdoc"
+Name: flx_i18n
+Description: Internationalisation support, Unicode, utf8
+Requires: flx_strutil
+includes: '"flx_i18n.hpp"'
