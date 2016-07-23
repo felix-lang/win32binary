@@ -1,4 +1,4 @@
-#line 741 "C:/projects/felix/src/packages/gui.fdoc"
+#line 799 "C:/projects/felix/src/packages/gui.fdoc"
 class FlxGuiWindowManager
 {
 // Window Manager is responsible for a set of windows,
@@ -51,33 +51,17 @@ object window_manager () =
     endmatch;
   }
 
-  // this is a global source for all events
-  gen create_event_source () : ischannel[event_t]  =
+  chip window_event_dispatcher
+   connector events
+     pin eventin : %<event_t
   {
-    var imsgs,omsgs = #mk_ioschannel_pair[SDL_Event];
-    proc driver ()
-    {
-      var e : SDL_Event;
-      // dummy first event
-      e.type = SDL_FIRSTEVENT.uint32;
-      write$ omsgs,e;
-      SDL_PumpEvents;
-      C_hack::ignore$ SDL_WaitEvent$ &e;
-      while e.type.SDL_EventType != SDL_QUIT do
-        write$ omsgs, e;
-        SDL_PumpEvents;
-        C_hack::ignore$ SDL_WaitEvent$ &e;
-      done
-      println$ "SDL_QUIT seen!";
-      write$ omsgs, e;
-      return;
-    }
-    spawn_fthread driver;
-    return imsgs;
+    forever:while true do
+      var e = read events.eventin;
+      if e.type.SDL_EventType == SDL_QUIT break forever
+      dispatch_window_event e;
+    done
   }
-
-  var imsgs = create_event_source ();
-  method fun get_event_source () => imsgs;
+  method fun get_window_event_dispatcher () => window_event_dispatcher;
   method proc dispatch_window_event (e:event_t)
   {
     match SDL_GetWindowID e with
@@ -115,5 +99,13 @@ object window_manager () =
   }
 }
 
+gen create_SDL_event_source () : ischannel[event_t]  =
+{
+  var imsgs, omsgs = mk_ioschannel_pair[event_t]();
+  circuit
+    wire omsgs to event_source.src
+  endcircuit
+  return imsgs;
+}
 }
 

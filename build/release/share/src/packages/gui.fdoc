@@ -1,6 +1,8 @@
 @title GUI
 @tangler __init__.flx                                  = share/lib/gui/__init__.flx
 @tangler types.flx                                     = share/lib/gui/types.flx
+@tangler events.flx                                    = share/lib/gui/events.flx
+
 @tangler init.flx                                      = share/lib/gui/init.flx
 @tangler font.flx                                      = share/lib/gui/font.flx
 @tangler color.flx                                     = share/lib/gui/color.flx
@@ -35,6 +37,7 @@ The basic SDL initialisation stuff.
 @tangle __init__.flx
 include "gui/init";
 include "gui/types";
+include "gui/events";
 include "gui/font";
 @
 Basic GUI abstractions. Felix uses the Model-View-Controller (MVC)
@@ -103,6 +106,7 @@ class FlxGui
 {
  inherit FlxGuiInit;
  inherit FlxGuiTypes;
+ inherit FlxGuiEvents;
  inherit FlxGuiFont;
  inherit FlxGuiColor;
  inherit FlxGuiSurface;
@@ -147,8 +151,62 @@ class FlxGuiTypes
   typedef rect_t = SDL_Rect;
 
   ctor rect_t (x:int, y:int, w:int, h:int) => SDL_Rect (x,y,w,h);
+}
 
+@
+
+@tangle events.flx
+class FlxGuiEvents
+{
   typedef event_t = SDL_Event;
+
+  fun _match_ctor_QUIT (e:event_t) => e.type == SDL_QUIT.uint32;
+  fun _match_ctor_WINDOWEVENT (e:event_t) => e.type == SDL_WINDOWEVENT.uint32;
+  fun _ctor_arg_WINDOWEVENT (e:event_t) => e.window;
+
+  fun _match_ctor_KEYDOWN (e:event_t) => e.type == SDL_KEYDOWN.uint32;
+  fun _ctor_arg_KEYDOWN (e:event_t) => e.key;
+
+  fun _match_ctor_KEYUP (e:event_t) => e.type == SDL_KEYUP.uint32;
+  fun _ctor_arg_KEYUP(e:event_t) => e.key;
+
+  fun _match_ctor_MOUSEMOTION (e:event_t) => e.type == SDL_MOUSEMOTION.uint32;
+  fun _ctor_arg_MOUSEMOTION (e:event_t) => e.motion;
+
+  fun _match_ctor_MOUSEBUTTONDOWN (e:event_t) => e.type == SDL_MOUSEBUTTONDOWN.uint32;
+  fun _ctor_arg_MOUSEBUTTONDOWN (e:event_t) => e.button;
+
+  fun _match_ctor_MOUSEBUTTONUP (e:event_t) => e.type == SDL_MOUSEBUTTONUP.uint32;
+  fun _ctor_arg_MOUSEBUTTONUP (e:event_t) => e.button;
+
+  fun _match_ctor_MOUSEWHEEL  (e:event_t) => e.type == SDL_MOUSEWHEEL.uint32;
+  fun _ctor_arg_MOUSEWHEEL (e:event_t) => e.wheel;
+
+  fun _match_ctor_TEXTINPUT (e:event_t) => e.type == SDL_TEXTINPUT.uint32;
+  fun _ctor_arg_TEXTINPUT (e:event_t) => e.text;
+
+  fun _match_ctor_TEXTEDITING (e:event_t) => e.type == SDL_TEXTEDITING.uint32;
+  fun _ctor_arg_TEXTEDITING (e:event_t) => e.edit;
+
+  chip event_source
+    connector events
+      pin src : %> event_t
+  {
+      var e : SDL_Event;
+      // dummy first event
+      e.type = SDL_FIRSTEVENT.uint32;
+      write$ events.src,e;
+      SDL_PumpEvents;
+      C_hack::ignore$ SDL_WaitEvent$ &e;
+      while e.type.SDL_EventType != SDL_QUIT do
+        write$ events.src, e;
+        SDL_PumpEvents;
+        C_hack::ignore$ SDL_WaitEvent$ &e;
+      done
+      println$ "SDL_QUIT seen!";
+      write$ events.src, e;
+      return;
+  } // chip event_source
 }
 @
 
@@ -638,11 +696,11 @@ class FlxGuiWindow
   }
 
   gen create_fixed_window (title:string, x:int, y:int, width:int, height:int) : window_t =>
-    window (title, x,y,width,height, SDL_WINDOW_SHOWN \| SDL_ALLOW_HIGHDPI)
+    window (title, x,y,width,height, SDL_WINDOW_SHOWN \| SDL_WINDOW_ALLOW_HIGHDPI)
   ;
 
   gen create_resizable_window (title:string, x:int, y:int, width:int, height:int) : window_t =>
-    window (title, x,y,width,height, SDL_WINDOW_RESIZABLE \| SDL_ALLOW_HIGHDPI)
+    window (title, x,y,width,height, SDL_WINDOW_RESIZABLE \| SDL_WINDOW_ALLOW_HIGHDPI)
   ;
 
 
@@ -790,33 +848,17 @@ object window_manager () =
     endmatch;
   }
 
-  // this is a global source for all events
-  gen create_event_source () : ischannel[event_t]  =
+  chip window_event_dispatcher 
+   connector events
+     pin eventin : %<event_t
   {
-    var imsgs,omsgs = #mk_ioschannel_pair[SDL_Event]; 
-    proc driver ()
-    {
-      var e : SDL_Event;
-      // dummy first event
-      e.type = SDL_FIRSTEVENT.uint32;
-      write$ omsgs,e;
-      SDL_PumpEvents;
-      C_hack::ignore$ SDL_WaitEvent$ &e;
-      while e.type.SDL_EventType != SDL_QUIT do
-        write$ omsgs, e;
-        SDL_PumpEvents;
-        C_hack::ignore$ SDL_WaitEvent$ &e;
-      done
-      println$ "SDL_QUIT seen!";
-      write$ omsgs, e;
-      return;
-    }
-    spawn_fthread driver;
-    return imsgs;
+    forever:while true do
+      var e = read events.eventin;
+      if e.type.SDL_EventType == SDL_QUIT break forever
+      dispatch_window_event e;
+    done
   }
-
-  var imsgs = create_event_source ();
-  method fun get_event_source () => imsgs;
+  method fun get_window_event_dispatcher () => window_event_dispatcher;
   method proc dispatch_window_event (e:event_t) 
   {
     match SDL_GetWindowID e with
@@ -854,6 +896,14 @@ object window_manager () =
   }
 }
 
+gen create_SDL_event_source () : ischannel[event_t]  =
+{
+  var imsgs, omsgs = mk_ioschannel_pair[event_t]();
+  circuit
+    wire omsgs to event_source.src
+  endcircuit
+  return imsgs;
+}
 }
 
 @
@@ -861,6 +911,8 @@ object window_manager () =
 @h1 Widgets
 @h2 Simple Click Button
 @tangle button.flx
+open syntax chips;
+
 class FlxGuiButton
 {
   union button_state_t =  
@@ -970,21 +1022,22 @@ class FlxGuiButton
     display();
   } //button
 
-proc button_controller 
+chip button_controller 
 (
   bm: button_model_t, 
-  bd: button_display_t, 
-  ec:ischannel[event_t],
-  response:oschannel[button_action_t]
-) () =
+  bd: button_display_t 
+)
+connector but
+  pin ec: %<event_t
+  pin response: %>button_action_t 
 {
   bd.display();
   var run = true;
-  var e = read ec;
+  var e = read but.ec;
   while run do
-    match e.type.SDL_EventType with
-    | $(SDL_MOUSEMOTION) =>
-      var x,y = e.motion.x,e.motion.y; //int32
+    match e with
+    | MOUSEMOTION mm =>
+      var x,y = mm.x,mm.y; //int32
       if SDL_Point (x.int,y.int) \in bd.get_client_rect () do
         //println$ "Motion in client rect of button " + bd.get_label();
         match bm.get_state () with
@@ -998,34 +1051,34 @@ proc button_controller
         | _ => ;
         endmatch;
       done
-      write$ response, NoAction;
+      write$ but.response, NoAction;
  
-    | $(SDL_MOUSEBUTTONDOWN) => 
-      x,y = e.button.x,e.button.y; //int32
+    | MOUSEBUTTONDOWN mbd =>
+      x,y = mbd.x,mbd.y; //int32
       if SDL_Point (x.int,y.int) \in bd.get_client_rect () do
         //println$ "Button down in client rect of button " + bd.get_label();
         bm.set_state Down; bd.display();
       done
-      write$ response, NoAction;
+      write$ but.response, NoAction;
  
-    | $(SDL_MOUSEBUTTONUP) => 
-      x,y = e.button.x,e.button.y; //int32
+    | MOUSEBUTTONUP mbu => 
+      x,y = mbu.x,mbu.y; //int32
       if SDL_Point (x.int,y.int) \in bd.get_client_rect () do
         //println$ "Button up in client rect of button " + bd.get_label();
         bm.set_state Mouseover; bd.display();
-        write$ response, ClickAction #(bm.get_tag);
+        write$ but.response, ClickAction #(bm.get_tag);
       else
         bm.set_state Up; bd.display();
-        write$ response, NoAction;
+        write$ but.response, NoAction;
       done
-    | $(SDL_WINDOWEVENT) when e.window.event == SDL_WINDOWEVENT_LEAVE.uint8  =>
+    | WINDOWEVENT we when we.event == SDL_WINDOWEVENT_LEAVE.uint8  =>
       bm.set_state Up; bd.display();
-      write$ response, NoAction;
+      write$ but.response, NoAction;
 
     | _ => 
-      write$ response, NoAction;
+      write$ but.response, NoAction;
     endmatch;
-    e = read ec;
+    e = read but.ec;
   done
 
 }

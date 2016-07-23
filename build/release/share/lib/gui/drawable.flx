@@ -1,4 +1,4 @@
-#line 459 "C:/projects/felix/src/packages/gui.fdoc"
+#line 517 "C:/projects/felix/src/packages/gui.fdoc"
 class FlxGuiDrawable
 {
   interface drawable_t {

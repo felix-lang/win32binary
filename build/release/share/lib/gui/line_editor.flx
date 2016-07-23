@@ -1,4 +1,4 @@
-#line 1886 "C:/projects/felix/src/packages/gui.fdoc"
+#line 1939 "C:/projects/felix/src/packages/gui.fdoc"
 class FlxGuiLineEditor
 {
 proc line_edit

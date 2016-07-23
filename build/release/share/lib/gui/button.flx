@@ -1,4 +1,6 @@
-#line 864 "C:/projects/felix/src/packages/gui.fdoc"
+#line 914 "C:/projects/felix/src/packages/gui.fdoc"
+open syntax chips;
+
 class FlxGuiButton
 {
   union button_state_t =
@@ -108,21 +110,22 @@ class FlxGuiButton
     display();
   } //button
 
-proc button_controller
+chip button_controller
 (
   bm: button_model_t,
-  bd: button_display_t,
-  ec:ischannel[event_t],
-  response:oschannel[button_action_t]
-) () =
+  bd: button_display_t
+)
+connector but
+  pin ec: %<event_t
+  pin response: %>button_action_t
 {
   bd.display();
   var run = true;
-  var e = read ec;
+  var e = read but.ec;
   while run do
-    match e.type.SDL_EventType with
-    | $(SDL_MOUSEMOTION) =>
-      var x,y = e.motion.x,e.motion.y; //int32
+    match e with
+    | MOUSEMOTION mm =>
+      var x,y = mm.x,mm.y; //int32
       if SDL_Point (x.int,y.int) \in bd.get_client_rect () do
         //println$ "Motion in client rect of button " + bd.get_label();
         match bm.get_state () with
@@ -136,34 +139,34 @@ proc button_controller
         | _ => ;
         endmatch;
       done
-      write$ response, NoAction;
+      write$ but.response, NoAction;
 
-    | $(SDL_MOUSEBUTTONDOWN) =>
-      x,y = e.button.x,e.button.y; //int32
+    | MOUSEBUTTONDOWN mbd =>
+      x,y = mbd.x,mbd.y; //int32
       if SDL_Point (x.int,y.int) \in bd.get_client_rect () do
         //println$ "Button down in client rect of button " + bd.get_label();
         bm.set_state Down; bd.display();
       done
-      write$ response, NoAction;
+      write$ but.response, NoAction;
 
-    | $(SDL_MOUSEBUTTONUP) =>
-      x,y = e.button.x,e.button.y; //int32
+    | MOUSEBUTTONUP mbu =>
+      x,y = mbu.x,mbu.y; //int32
       if SDL_Point (x.int,y.int) \in bd.get_client_rect () do
         //println$ "Button up in client rect of button " + bd.get_label();
         bm.set_state Mouseover; bd.display();
-        write$ response, ClickAction #(bm.get_tag);
+        write$ but.response, ClickAction #(bm.get_tag);
       else
         bm.set_state Up; bd.display();
-        write$ response, NoAction;
+        write$ but.response, NoAction;
       done
-    | $(SDL_WINDOWEVENT) when e.window.event == SDL_WINDOWEVENT_LEAVE.uint8  =>
+    | WINDOWEVENT we when we.event == SDL_WINDOWEVENT_LEAVE.uint8  =>
       bm.set_state Up; bd.display();
-      write$ response, NoAction;
+      write$ but.response, NoAction;
 
     | _ =>
-      write$ response, NoAction;
+      write$ but.response, NoAction;
     endmatch;
-    e = read ec;
+    e = read but.ec;
   done
 
 }

@@ -1,12 +1,13 @@
-#line 29 "C:/projects/felix/src/packages/gui.fdoc"
+#line 31 "C:/projects/felix/src/packages/gui.fdoc"
 include "sdl/SDL2";
 include "sdl/SDL_ttf";
 include "sdl/SDL_image";
-#line 36 "C:/projects/felix/src/packages/gui.fdoc"
+#line 38 "C:/projects/felix/src/packages/gui.fdoc"
 include "gui/init";
 include "gui/types";
+include "gui/events";
 include "gui/font";
-#line 55 "C:/projects/felix/src/packages/gui.fdoc"
+#line 58 "C:/projects/felix/src/packages/gui.fdoc"
 include "gui/color";
 include "gui/surface";
 include "gui/drawable";
@@ -16,20 +17,21 @@ include "gui/window_controller_interface";
 include "gui/window_controller";
 include "gui/window_manager";
 
-#line 85 "C:/projects/felix/src/packages/gui.fdoc"
+#line 88 "C:/projects/felix/src/packages/gui.fdoc"
 include "gui/button";
 include "gui/menu";
-#line 91 "C:/projects/felix/src/packages/gui.fdoc"
+#line 94 "C:/projects/felix/src/packages/gui.fdoc"
 include "gui/line_buffer_interface";
 include "gui/line_buffer_object";
 include "gui/line_buffer_display_controller_interface";
 include "gui/line_buffer_display_controller";
 include "gui/line_editor";
-#line 102 "C:/projects/felix/src/packages/gui.fdoc"
+#line 105 "C:/projects/felix/src/packages/gui.fdoc"
 class FlxGui
 {
  inherit FlxGuiInit;
  inherit FlxGuiTypes;
+ inherit FlxGuiEvents;
  inherit FlxGuiFont;
  inherit FlxGuiColor;
  inherit FlxGuiSurface;

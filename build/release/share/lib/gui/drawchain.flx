@@ -1,4 +1,4 @@
-#line 502 "C:/projects/felix/src/packages/gui.fdoc"
+#line 560 "C:/projects/felix/src/packages/gui.fdoc"
 class FlxGuiDrawChain
 {
   interface drawchain_t {

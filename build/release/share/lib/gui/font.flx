@@ -1,4 +1,4 @@
-#line 226 "C:/projects/felix/src/packages/gui.fdoc"
+#line 284 "C:/projects/felix/src/packages/gui.fdoc"
 class FlxGuiFont
 {
   private fun / (s:string, t:string) => Filename::join (s,t);

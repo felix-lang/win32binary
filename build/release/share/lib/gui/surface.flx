@@ -1,4 +1,4 @@
-#line 339 "C:/projects/felix/src/packages/gui.fdoc"
+#line 397 "C:/projects/felix/src/packages/gui.fdoc"
 class FlxGuiSurface
 {
   proc clear(surf:&SDL_Surface) (c: colour_t)

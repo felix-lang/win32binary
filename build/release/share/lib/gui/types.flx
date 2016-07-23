@@ -1,4 +1,4 @@
-#line 141 "C:/projects/felix/src/packages/gui.fdoc"
+#line 145 "C:/projects/felix/src/packages/gui.fdoc"
 class FlxGuiTypes
 {
   typedef font_t = TTF_Font;
@@ -8,6 +8,5 @@ class FlxGuiTypes
   typedef rect_t = SDL_Rect;
 
   ctor rect_t (x:int, y:int, w:int, h:int) => SDL_Rect (x,y,w,h);
-
-  typedef event_t = SDL_Event;
 }
+

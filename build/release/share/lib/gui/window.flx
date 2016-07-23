@@ -1,4 +1,4 @@
-#line 573 "C:/projects/felix/src/packages/gui.fdoc"
+#line 631 "C:/projects/felix/src/packages/gui.fdoc"
 class FlxGuiWindow
 {
   interface window_t {
@@ -67,11 +67,11 @@ class FlxGuiWindow
   }
 
   gen create_fixed_window (title:string, x:int, y:int, width:int, height:int) : window_t =>
-    window (title, x,y,width,height, SDL_WINDOW_SHOWN \| SDL_ALLOW_HIGHDPI)
+    window (title, x,y,width,height, SDL_WINDOW_SHOWN \| SDL_WINDOW_ALLOW_HIGHDPI)
   ;
 
   gen create_resizable_window (title:string, x:int, y:int, width:int, height:int) : window_t =>
-    window (title, x,y,width,height, SDL_WINDOW_RESIZABLE \| SDL_ALLOW_HIGHDPI)
+    window (title, x,y,width,height, SDL_WINDOW_RESIZABLE \| SDL_WINDOW_ALLOW_HIGHDPI)
   ;
 
 
