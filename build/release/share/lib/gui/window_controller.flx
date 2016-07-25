@@ -1,11 +1,11 @@
-#line 746 "C:/projects/felix/src/packages/gui.fdoc"
+#line 773 "C:/projects/felix/src/packages/gui.fdoc"
 
 class FlxGuiWindowController
 {
   object window_controller
   (
     w:window_t,
-    p:ischannel[event_t] -> 1->0
+    p:(input:ischannel[event_t]) -> 1->0 // chip interface
   )
     implements window_controller_interface =
   {
@@ -15,6 +15,9 @@ class FlxGuiWindowController
     method proc destroy_window () => w.destroy ();
     method fun get_oschannel () => omsgs;
     method proc display() { w.update(); }
-    spawn_fthread (p imsgs);
+    circuit
+      wire imsgs to p.input
+    endcircuit
+    //spawn_fthread (p imsgs);
   }
 }

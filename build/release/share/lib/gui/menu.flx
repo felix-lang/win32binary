@@ -1,4 +1,4 @@
-#line 1092 "C:/projects/felix/src/packages/gui.fdoc"
+#line 1177 "C:/projects/felix/src/packages/gui.fdoc"
 // interim menu stuff
 // these menus are transient, retaining state only when open
 
@@ -556,26 +556,27 @@ class FlxGuiMenu
   // ===============================================================================
 
 
-  proc menu_controller
+  chip menu_controller
   (
     mm: menu_model_t,
-    md: menu_display_t,
-    ec: ischannel[event_t],
-    response: oschannel[menu_action_t]
-  ) ()
+    md: menu_display_t
+  )
+  connector mio
+    pin ec: %<event_t
+    pin response: %>menu_action_t
   {
     md.display();
     var run = true;
-    var e = read ec;
+    var e = read mio.ec;
     while run do
       match e.type.SDL_EventType with
       | $(SDL_WINDOWEVENT) =>
         match e.window.event.SDL_WindowEventID with
         | $(SDL_WINDOWEVENT_RESIZED) =>
           md.display();
-          write$ response, NoAction;
+          write$ mio.response, NoAction;
 
-        | _ => write$ response, NoAction;
+        | _ => write$ mio.response, NoAction;
         endmatch;
 
       | $(SDL_MOUSEMOTION) =>
@@ -585,18 +586,18 @@ class FlxGuiMenu
         var x,y = e.motion.x,e.motion.y; //int32
         match hotpos ( SDL_Point (x.int,y.int), hotrecs) with
         | #None =>
-          write$ response, NoAction;
+          write$ mio.response, NoAction;
         | Some pos =>
           println$ "Mouse Move Position " + pos.str;
           match #(mm.get_state) with
           | #Closed =>
-            write$ response, ChangedPosition;
+            write$ mio.response, ChangedPosition;
           | Open oldpos =>
             if oldpos == pos do
-              write$ response, NoAction;
+              write$ mio.response, NoAction;
             else
               mm.set_state (Open pos);
-              write$ response, ChangedPosition;
+              write$ mio.response, ChangedPosition;
             done
           endmatch;
         endmatch;
@@ -606,18 +607,18 @@ class FlxGuiMenu
         x,y = e.button.x,e.button.y; //int32
         match hotpos ( SDL_Point (x.int,y.int), hotrecs) with
         | #None =>
-          write$ response, NoAction;
+          write$ mio.response, NoAction;
         | Some pos =>
           println$ "Mouse down Position " + pos.str;
           match #(mm.get_state) with
           | #Closed =>
-            write$ response, ChangedPosition;
+            write$ mio.response, ChangedPosition;
           | Open oldpos =>
             if oldpos == pos do
-              write$ response, NoAction;
+              write$ mio.response, NoAction;
             else
               mm.set_state (Open pos);
-              write$ response, ChangedPosition;
+              write$ mio.response, ChangedPosition;
             done
           endmatch;
         endmatch;
@@ -627,19 +628,19 @@ class FlxGuiMenu
         x,y = e.button.x,e.button.y; //int32
         match hotpos ( SDL_Point (x.int,y.int), hotrecs) with
         | #None =>
-          write$ response, NoAction;
+          write$ mio.response, NoAction;
         | Some pos =>
           println$ "Mouse up Position " + pos.str;
           match #(mm.get_state) with
           | #Closed =>
-            write$ response, ChangedPosition;
+            write$ mio.response, ChangedPosition;
           | Open oldpos =>
             if oldpos == pos do
               var selected_tag = #(mm.get_current_tag);
-              write$ response, SelectedAction selected_tag;
+              write$ mio.response, SelectedAction selected_tag;
             else
               mm.set_state (Open pos);
-              write$ response, ChangedPosition;
+              write$ mio.response, ChangedPosition;
             done
           endmatch;
         endmatch;
@@ -647,12 +648,12 @@ class FlxGuiMenu
 
 
       | $(SDL_WINDOWEVENT) when e.window.event == SDL_WINDOWEVENT_LEAVE.uint8  =>
-        write$ response, NoAction;
+        write$ mio.response, NoAction;
 
       | _ =>
-        write$ response, NoAction;
+        write$ mio.response, NoAction;
       endmatch;
-      e = read ec;
+      e = read mio.ec;
     done
 
   }

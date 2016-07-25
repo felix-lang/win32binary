@@ -1,4 +1,4 @@
-#line 631 "C:/projects/felix/src/packages/gui.fdoc"
+#line 658 "C:/projects/felix/src/packages/gui.fdoc"
 class FlxGuiWindow
 {
   interface window_t {

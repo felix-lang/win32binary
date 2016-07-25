@@ -1,4 +1,4 @@
-#line 218 "C:/projects/felix/src/packages/gui.fdoc"
+#line 245 "C:/projects/felix/src/packages/gui.fdoc"
 class FlxGuiInit
 {
   proc init()

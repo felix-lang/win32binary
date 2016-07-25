@@ -1,6 +1,4 @@
-#line 914 "C:/projects/felix/src/packages/gui.fdoc"
-open syntax chips;
-
+#line 1001 "C:/projects/felix/src/packages/gui.fdoc"
 class FlxGuiButton
 {
   union button_state_t =

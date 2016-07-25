@@ -1,4 +1,4 @@
-#line 799 "C:/projects/felix/src/packages/gui.fdoc"
+#line 829 "C:/projects/felix/src/packages/gui.fdoc"
 class FlxGuiWindowManager
 {
 // Window Manager is responsible for a set of windows,
@@ -17,13 +17,16 @@ object window_manager () =
   method gen add_window (w:window_controller_interface) : int =
   {
     windows += w;
+println$ "add_window: index = " + (windows.len.int - 1  ).str + " SDL windows id = " + #(w.get_window_id).str;
     return windows.len.int - 1;
   }
 
   fun find_window(wid: uint32) : opt[window_controller_interface] =
   {
     for wobj in windows do
-      if wid == #(wobj.get_window_id) return Some wobj;
+      if wid == #(wobj.get_window_id) do
+        return Some wobj;
+      done
     done
     return None[window_controller_interface];
   }
@@ -54,12 +57,14 @@ object window_manager () =
   chip window_event_dispatcher
    connector events
      pin eventin : %<event_t
+     pin quit: %>int
   {
     forever:while true do
       var e = read events.eventin;
       if e.type.SDL_EventType == SDL_QUIT break forever
       dispatch_window_event e;
     done
+    write$ events.quit,1;
   }
   method fun get_window_event_dispatcher () => window_event_dispatcher;
   method proc dispatch_window_event (e:event_t)
@@ -78,10 +83,10 @@ object window_manager () =
         else
           wobj.display();
         done
-        | #None => println$ "Can't find window ID = " + str wid;
-        endmatch;
-      | #None => println$ "No window for message: Event type " + e.type.SDL_EventType.str;
+      | #None => println$ "Can't find window ID = " + str wid;
       endmatch;
+    | #None => println$ "No window for message: Event type " + e.type.SDL_EventType.str;
+    endmatch;
   }
 
   method proc delete_all()
@@ -93,9 +98,61 @@ object window_manager () =
     for wobj in windows do
       var omsgs = #(wobj.get_oschannel);
       e.window.windowID = #(wobj.get_window_id);
-      //write (omsgs, e);
+      write (omsgs, e);
     done
     // note: not bothering to delete the darray :)
+  }
+
+  // the quit channel is deliberately connected to a dummy channel
+  // (a dummy is used to suppress compiler non-connection warning)
+  // the WM will suicide when it gets a SDL_QUIT message
+  method proc start ()
+  {
+    var qin,qout = mk_ioschannel_pair[int]();
+    circuit
+      connect window_event_dispatcher.eventin, event_source.src
+      wire qout to window_event_dispatcher.quit
+    endcircuit
+  }
+
+  // start WM, wait until SDL_QUIT seen
+  // closes windows before returning
+  method proc run_until_quit ()
+  {
+    var qin,qout = mk_ioschannel_pair[int]();
+
+    circuit
+      connect window_event_dispatcher.eventin, event_source.src
+      wire qout to window_event_dispatcher.quit
+    endcircuit
+
+    C_hack::ignore(read qin);
+
+    // we must have got a quit ..
+    println$ "QUIT EVENT, deleting all windows";
+    delete_all();
+  }
+
+  // start WM, wait until SDL_QUIT issued by either
+  // the user or the timer
+  // closes windows before returning
+  method proc run_with_timeout (var timeout: double)
+  {
+    var qin,qout = mk_ioschannel_pair[int]();
+
+    circuit
+      connect window_event_dispatcher.eventin, event_source.src
+      wire qout to window_event_dispatcher.quit
+    endcircuit
+
+    var quit = false;
+    spawn_fthread$ demo_timer &quit timeout;
+    C_hack::ignore(read qin);
+    quit = true;
+
+    // we must have got a quit ..
+    println$ "QUIT EVENT, deleting all windows";
+    delete_all();
   }
 }
 

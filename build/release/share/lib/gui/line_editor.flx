@@ -1,16 +1,16 @@
-#line 1939 "C:/projects/felix/src/packages/gui.fdoc"
+#line 2025 "C:/projects/felix/src/packages/gui.fdoc"
 class FlxGuiLineEditor
 {
-proc line_edit
+chip line_edit
   (b:line_buffer_interface)
   (d:line_buffer_display_controller_interface)
-  (ec:ischannel[event_t])
-  ()
+  connector lin
+    pin ec: %<event_t
 {
   //println$ "Line buffer running";
   d.display();
   var run = true;
-  var e : event_t = read ec;
+  var e : event_t = read lin.ec;
   while run do
     match e.type.SDL_EventType with
     | $(SDL_WINDOWEVENT) =>
@@ -58,8 +58,8 @@ proc line_edit
       run = false;
     | _ => ;
     endmatch;
-    e = read ec;
+    e = read lin.ec;
   done
-}
-}
+} //chip
+} //class
 
