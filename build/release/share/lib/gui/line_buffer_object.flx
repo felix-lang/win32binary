@@ -1,4 +1,4 @@
-#line 1947 "C:/projects/felix/src/packages/gui.fdoc"
+#line 1975 "C:/projects/felix/src/packages/gui.fdoc"
 include "gui/line_buffer_interface";
 
 class FlxGuiLineBuffer

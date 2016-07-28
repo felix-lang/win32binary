@@ -1,4 +1,4 @@
-#line 382 "C:/projects/felix/src/packages/gui.fdoc"
+#line 398 "C:/projects/felix/src/packages/gui.fdoc"
 class FlxGuiColor
 {
   fun RGB (r:int, g:int, b:int) =>

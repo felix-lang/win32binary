@@ -1,4 +1,4 @@
-#line 1001 "C:/projects/felix/src/packages/gui.fdoc"
+#line 1022 "C:/projects/felix/src/packages/gui.fdoc"
 class FlxGuiButton
 {
   union button_state_t =
@@ -41,6 +41,14 @@ class FlxGuiButton
     right_colour: colour_t
   );
 
+  typedef button_skin_t =
+  (
+    up: button_colour_scheme_t,
+    down: button_colour_scheme_t,
+    disabled: button_colour_scheme_t,
+    mouseover: button_colour_scheme_t
+  );
+
   interface button_display_t {
     display: 1 -> 0;
     get_client_rect: 1 -> rect_t;
@@ -54,12 +62,9 @@ class FlxGuiButton
     font:font_t,
     label:string,
     tag: string, // note: NOT the same as the button's tag!
-    up_colour: button_colour_scheme_t,
-    down_colour: button_colour_scheme_t,
-    disabled_colour: button_colour_scheme_t,
-    mouseover_colour: button_colour_scheme_t,
-    left_x:int, top_y:int, right_x:int, bottom_y:int,
-    origin_x:int, origin_y:int
+    skin : button_skin_t,
+    coords: rect_t,
+    origin: point_t
    )
    implements button_display_t =
    {
@@ -71,24 +76,27 @@ class FlxGuiButton
      // drives two displays on the same window).
      method fun get_tag () => tag;
 
-     method fun get_client_rect () =>
-       SDL_Rect
-       (
-         left_x, top_y, right_x - left_x + 1, bottom_y - top_y + 1
-       )
-     ;
+     method fun get_client_rect () => coords;
+
      method fun get_label () => label;
      method proc display()
      {
       var state = b.get_state ();
       var scheme = match state with
-        | #Up => up_colour
-        | #Down => down_colour
-        | #Disabled => disabled_colour
-        | #Mouseover => mouseover_colour
+        | #Up => skin.up
+        | #Down => skin.down
+        | #Disabled => skin.disabled
+        | #Mouseover => skin.mouseover
         endmatch
       ;
       w.remove tag;
+      var left_x = coords.x;
+      var right_x = coords.x + coords.w - 1;
+      var top_y = coords.y;
+      var bottom_y = coords.y + coords.h - 1;
+      var origin_x = origin.x;
+      var origin_y = origin.y;
+
       // top
       w.add$ mk_drawable tag draw_line (scheme.top_colour, left_x - 2,top_y - 2,right_x + 2, top_y - 2) ;
       w.add$ mk_drawable tag draw_line (scheme.top_colour, left_x - 1,top_y - 1,right_x + 1, top_y - 1);
@@ -168,6 +176,5 @@ connector but
   done
 
 }
-
 
 } // class

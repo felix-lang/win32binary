@@ -1,4 +1,4 @@
-#line 1840 "C:/projects/felix/src/packages/gui.fdoc"
+#line 1868 "C:/projects/felix/src/packages/gui.fdoc"
 class FlxGuiLineBufferDisplayControllerInterface
 {
 interface line_buffer_display_controller_interface

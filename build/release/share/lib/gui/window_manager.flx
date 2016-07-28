@@ -1,4 +1,4 @@
-#line 829 "C:/projects/felix/src/packages/gui.fdoc"
+#line 850 "C:/projects/felix/src/packages/gui.fdoc"
 class FlxGuiWindowManager
 {
 // Window Manager is responsible for a set of windows,

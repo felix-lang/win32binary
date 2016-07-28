@@ -1,4 +1,4 @@
-#line 1855 "C:/projects/felix/src/packages/gui.fdoc"
+#line 1883 "C:/projects/felix/src/packages/gui.fdoc"
 include "gui/line_buffer_display_controller_interface";
 
 class FlxGuiLineBufferDisplayController
@@ -53,8 +53,8 @@ implements line_buffer_display_controller_interface =
       var curpos = x + charwidth * #(b.get_pos);
       w.add$ mk_drawable tag draw_line(red,curpos,viewport.y - 1,curpos,viewport.y + viewport.h - 2);
     done
-    //w.update();
   }
+  display();
 }
 }
 

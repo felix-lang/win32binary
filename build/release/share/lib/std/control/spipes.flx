@@ -1,25 +1,25 @@
-#line 377 "C:/projects/felix/src/packages/fibres.fdoc"
+#line 404 "C:/projects/felix/src/packages/fibres.fdoc"
 //$ Synchronous Pipes.
 open class Spipe {
 
-#line 385 "C:/projects/felix/src/packages/fibres.fdoc"
+#line 412 "C:/projects/felix/src/packages/fibres.fdoc"
   //$ Send an stream down a channel.
   proc source_from_stream[S] (var it:1 -> S) (out:%>S) =>
     while true call write (out,#it)
   ;
 
-#line 395 "C:/projects/felix/src/packages/fibres.fdoc"
+#line 422 "C:/projects/felix/src/packages/fibres.fdoc"
   //$ source from an iterator
   proc source_from_iterator[S] (var it:1 -> opt[S]) (out:%>S) =>
     match v in it call write$ out,v
   ;
 
-#line 404 "C:/projects/felix/src/packages/fibres.fdoc"
+#line 431 "C:/projects/felix/src/packages/fibres.fdoc"
   proc sink_from_procedure[T] (var p:T -> 0) (inp:%<T) =>
     while true call p (read inp)
   ;
 
-#line 416 "C:/projects/felix/src/packages/fibres.fdoc"
+#line 443 "C:/projects/felix/src/packages/fibres.fdoc"
   //$ Wire a source component to a sink.
   //$ Return coupled fibre ready to run.
   inline fun pipe[T]
@@ -34,14 +34,14 @@ open class Spipe {
       spawn_fthread { (r chi); };
     }
   ;
-#line 464 "C:/projects/felix/src/packages/fibres.fdoc"
+#line 491 "C:/projects/felix/src/packages/fibres.fdoc"
   proc transducer_from_function[O,I] (f:I->O)
     (var r: %<I,
     var w: %>O)
   =>
     while true call write$ w, r.read.f;
   ;
-#line 477 "C:/projects/felix/src/packages/fibres.fdoc"
+#line 504 "C:/projects/felix/src/packages/fibres.fdoc"
   //$ Wire a transducer into a sink.
   //$ Return a sink.
   inline fun pipe[T,U]
@@ -57,7 +57,7 @@ open class Spipe {
       spawn_fthread { b (chi); };
     }
   ;
-#line 498 "C:/projects/felix/src/packages/fibres.fdoc"
+#line 525 "C:/projects/felix/src/packages/fibres.fdoc"
   //$ Wire a source component to a transducer.
   //$ Return source.
   inline fun pipe[T,U]
@@ -73,7 +73,7 @@ open class Spipe {
       spawn_fthread { (t (chi, out)); };
     }
   ;
-#line 518 "C:/projects/felix/src/packages/fibres.fdoc"
+#line 545 "C:/projects/felix/src/packages/fibres.fdoc"
   //$ Wire a transducer into a transducer.
   //$ Return another transducer.
   inline fun pipe[T,U,V]
@@ -89,7 +89,7 @@ open class Spipe {
       spawn_fthread { b (chi, out); };
     }
   ;
-#line 594 "C:/projects/felix/src/packages/fibres.fdoc"
+#line 621 "C:/projects/felix/src/packages/fibres.fdoc"
   // source to sink: autobuild both arguments
   inline fun pipe[T] (w:1->T,r:T->0) =>
      w.source_from_stream |-> r.sink_from_procedure;
@@ -146,7 +146,7 @@ open class Spipe {
   inline fun pipe[T0,T1] (f:%<T0 * %>T1->0, r:T1->0) =>
     f |-> r.sink_from_procedure;
 
-#line 753 "C:/projects/felix/src/packages/fibres.fdoc"
+#line 780 "C:/projects/felix/src/packages/fibres.fdoc"
 
   //$ Wire two sources to two sinks.
   //$ Return a bi-pipeline!
@@ -169,7 +169,7 @@ open class Spipe {
   ;
 
 
-#line 780 "C:/projects/felix/src/packages/fibres.fdoc"
+#line 807 "C:/projects/felix/src/packages/fibres.fdoc"
   //$ Wire two source components to two transducers.
   //$ Return two sources.
   inline fun pipe[T0,T1,U0,U1]
@@ -189,7 +189,7 @@ open class Spipe {
     pipe (w.1,t.1)
   ;
 
-#line 803 "C:/projects/felix/src/packages/fibres.fdoc"
+#line 830 "C:/projects/felix/src/packages/fibres.fdoc"
   //$ Wire two transducers into two sinks.
   //$ Return two sinks.
   inline fun pipe[T0,T1,U0,U1]
@@ -210,7 +210,7 @@ open class Spipe {
   ;
 
 
-#line 827 "C:/projects/felix/src/packages/fibres.fdoc"
+#line 854 "C:/projects/felix/src/packages/fibres.fdoc"
 
   //$ Wire two transducers into two transducers.
   //$ Return two transducers.
@@ -230,7 +230,7 @@ open class Spipe {
      pipe (a.0, b.0),
      pipe (a.1, b.1)
   ;
-#line 886 "C:/projects/felix/src/packages/fibres.fdoc"
+#line 913 "C:/projects/felix/src/packages/fibres.fdoc"
 
   //$ Utility for tee connector: array of outputs
   proc run_tee[T,N] (i:%<T, oa:(%>T)^N)
