@@ -1,4 +1,4 @@
-#line 1352 "C:/projects/felix/src/packages/strings.fdoc"
+#line 1353 "C:/projects/felix/src/packages/strings.fdoc"
 #ifndef __FLX_RE2_CONFIG_H__
 #define __FLX_RE2_CONFIG_H__
 #include "flx_rtl_config.hpp"

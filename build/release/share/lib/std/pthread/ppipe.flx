@@ -1,4 +1,4 @@
-#line 182 "C:/projects/felix/src/packages/pthreads.fdoc"
+#line 181 "C:/projects/felix/src/packages/pthreads.fdoc"
 
 //$ Asynchronous Synchronous Pipe.
 //$ Used to link pthreads.

@@ -1,4 +1,5 @@
-#line 298 "C:/projects/felix/src/packages/pthreads.fdoc"
+#line 297 "C:/projects/felix/src/packages/pthreads.fdoc"
+include "std/pthread/pchannels";
 
 //$ Implement fork/join protocol.
 open class ForkJoin
@@ -8,8 +9,8 @@ open class ForkJoin
   proc concurrently_by_iterator (var it:1 -> opt[1->0])
   {
      // Make a channel to signal termination.
-     var iterm,oterm = mk_iopchannel_pair[unit]();
-     noinline proc manager (var p: 1->0) () { p(); write (oterm, ()); }
+     var iterm,oterm = mk_iopchannel_pair[int](); // should be unit but that bugs out at the moment
+     noinline proc manager (var p: 1->0) () { p(); write (oterm, 1); }
      // Count the number of pthreads.
      var count = 0;
    again:>

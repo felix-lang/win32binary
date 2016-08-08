@@ -7,7 +7,6 @@
 //$ cannot proceed until both parties agree data exchange is complete.
 //$ Unlike schannels, both reader and writer can subsequently
 //$ continue concurrently after the exchange.
-
 open class Pchannel
 {
   requires package "flx_pthread";
