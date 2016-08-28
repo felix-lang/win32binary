@@ -1,4 +1,4 @@
-#line 3175 "C:/projects/felix/src/packages/flx.fdoc"
+#line 3179 "C:/projects/felix/src/packages/flx.fdoc"
 include "std/felix/config";
 
 include "std/felix/flx_cache";
@@ -131,6 +131,7 @@ endoff:>
 
   gen runflx(args:list[string]) : int =
   {
+println$ "[bootflx] " + strcat " " args;
     var config = #Config::std_config;
     var control = #FlxControl::dflt_control;
     var loopctl = #FlxControl::init_loopctl;

@@ -1,4 +1,4 @@
-#line 2964 "C:/projects/felix/src/packages/flx.fdoc"
+#line 2965 "C:/projects/felix/src/packages/flx.fdoc"
 include "std/felix/config";
 
 include "std/felix/flx_cache";
@@ -108,6 +108,9 @@ class Flx
          Dynlink::load-plugin-func1 [toolchain_t,clang_config_t] ( dll-name=x, setup-str="")
        endmatch
     ;
+
+    //println$ "[flx] Toolchain set to " + toolchain_name;
+
     if control*.INREGEX != "" do
 
       begin

@@ -11,7 +11,8 @@ private proc print_help() {
   println "--repl               : enter REPL mode saving stuff in session.flx and library.flx";
   println "--test               : use felix installation in current directory";
   println "--test=dir           : use felix installation in dir";
-  println "--target=dir         : subdir of install dir containing target configuration (default 'host')";
+  println "--target-subdir=dir  : subdir of install dir containing target configuration (default 'host')";
+  println "--target-dir=dir     : dir containing target configuration (default '$FLX_INSTALL_DIR/host')";
   println "--pkgconfig-path+=dir: prepend extra flx_pkgconfig search directory to standard path";
   println "--toolchain=toolchain: pick a non-default C++ compiler toolchain";
   println "--felix=file         : get installation details from file";
