@@ -1,4 +1,4 @@
-#line 2342 "C:/projects/felix/src/packages/grammar.fdoc"
+#line 2345 "C:/projects/felix/src/packages/grammar.fdoc"
 SCHEME """(define counter 100)""";
 
 SCHEME """(define (fresh_int x)(begin (set! counter (+ counter 1)) counter))""";

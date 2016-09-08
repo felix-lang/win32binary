@@ -1,4 +1,4 @@
-#line 4937 "C:/projects/felix/src/packages/grammar.fdoc"
+#line 4940 "C:/projects/felix/src/packages/grammar.fdoc"
 //$ General variable binders.
 syntax variables {
   requires statements, executable;

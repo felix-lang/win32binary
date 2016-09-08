@@ -1,4 +1,4 @@
-#line 3409 "C:/projects/felix/src/packages/grammar.fdoc"
+#line 3412 "C:/projects/felix/src/packages/grammar.fdoc"
 syntax macros {
   requires expressions, statements, list;
 
