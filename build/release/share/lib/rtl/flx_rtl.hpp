@@ -159,7 +159,7 @@ enum svc_t               // what the dispatch should do
   svc_sread=7,                 // synchronous read
   svc_swrite=8,                // synchronous write
   svc_kill=9,                  // kill fthread
-  svc_reserved2 =10,
+  svc_swait =10,
   svc_multi_swrite=11,         // multi-write
   svc_schedule_detached=12,    // schedule fthread (continue)
   svc_end

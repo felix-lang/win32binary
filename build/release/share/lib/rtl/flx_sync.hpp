@@ -18,6 +18,7 @@ struct RTL_EXTERN sync_sched {
 
   // scheduler queue
   ::std::list<flx::rtl::fthread_t*> *active;
+  ::std::list<flx::rtl::fthread_t*> *waiting;
 
   // temporary for currently running fibre
   ::flx::rtl::fthread_t *ft;
@@ -57,6 +58,7 @@ struct RTL_EXTERN sync_sched {
 protected:
   // handlers for synchronous service calls.
   void do_yield();
+  void do_swait();
   void do_spawn_detached();
   void do_schedule_detached();
   void do_sread();

@@ -1,4 +1,4 @@
-#line 109 "C:/projects/felix/src/packages/sync.fdoc"
+#line 111 "C:/projects/felix/src/packages/sync.fdoc"
 
 #include <stdio.h>
 
@@ -25,7 +25,8 @@ char const *sync_sched::get_fpc_desc()
   else
   {
     if (active->size() > 0) return "Next fthread pos";
-    else return "Out of active threads";
+    if (waiting->size() > 0) return "Pop Waiting fthreads pos";
+    else return "Out of active and waiting threads";
   }
 }
 
@@ -38,6 +39,7 @@ sync_sched::sync_sched (
   debug_driver(debug_driver_),
   collector(gcp_->collector),
   active(active_),
+  waiting(0),
   ft(0)
 {}
 
@@ -57,7 +59,16 @@ void sync_sched::pop_current()
        ft = active->front();
        active->pop_front();
      }
-     else
+     else if(waiting && waiting->size() > 0)
+     {
+       ft = waiting->front();
+       waiting->pop_front();
+       if(waiting->size() == 0) {
+         delete waiting;
+         waiting=0;
+       }
+     }
+else
        ft = 0;
   }
 
@@ -80,6 +91,18 @@ void sync_sched::do_yield()
       active->push_back(ft);
       pop_current();
     }
+
+void sync_sched::do_swait()
+    {
+      if(debug_driver)
+         fprintf(stderr,"[sync: svc_swait] swait");
+      if(active->size() > 0) {
+        if (waiting==0) waiting = new ::std::list<fthread_t*>;
+        waiting->push_back(ft);
+        pop_current();
+      }
+    }
+
 
 void sync_sched::do_spawn_detached()
     {
@@ -223,6 +246,8 @@ dispatch:
   switch(request->variant)
   {
     case svc_yield: do_yield(); goto dispatch;
+
+    case svc_swait: do_swait(); goto dispatch;
 
     case svc_spawn_detached: do_spawn_detached(); goto dispatch;
 

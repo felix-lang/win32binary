@@ -27,7 +27,7 @@ static char const *svc_desc[13] = {
   "svc_sread",
   "svc_swrite",
   "svc_kill",
-  "svc_reserved2",
+  "svc_swait",
   "svc_multi_swrite",
   "svc_schedule_detached"
 };
