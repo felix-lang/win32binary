@@ -1,0 +1,24 @@
+Hypotenuse of triangle base 4, side 3 is 5
+(1, (1, 2))
+(2, (2, 3))
+(3, (3, 5))
+(4, (4, 8))
+(5, (5, 13))
+(6, (6, 21))
+(7, (7, 34))
+(8, (8, 55))
+(9, (9, 89))
+(10, (10, 144))
+Word = The
+Word = quick
+Word = brown
+Word = fox
+Word = jumped
+Word = over
+Word = the
+Word = lazy
+Word = dog
+42
+2
+(1, 2, 3)
+(2, 5.2)

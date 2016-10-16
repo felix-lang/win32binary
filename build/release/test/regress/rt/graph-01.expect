@@ -1,0 +1,88 @@
+Vertices=4
+Edges=2
+0 V0
+  0->1 E01
+1 V1
+2 Unlabelled Vertex
+3 V3
+  3->2 E32
+
+Early Vertex 0
+Edge 0->1
+Late Vertex 0
+Early Vertex 1
+Late Vertex 1
+Vertices=7
+Edges=12
+0 V0
+1 V1
+  1->6 1<->6
+  1->5 1<->5
+  1->2 1<->2
+2 Unlabelled Vertex
+  2->5 2<->5
+  2->3 2<->3
+  2->1 1<->2
+3 V3
+  3->4 3<->4
+  3->2 2<->3
+4 V4
+  4->3 3<->4
+5 V5
+  5->2 2<->5
+  5->1 1<->5
+6 V6
+  6->1 1<->6
+
+Breadth first -------------
+Early Vertex 1
+Edge 1->6
+Edge 1->5
+Edge 1->2
+Late Vertex 1
+Early Vertex 6
+Edge 6->1
+Late Vertex 6
+Early Vertex 5
+Edge 5->2
+Edge 5->1
+Late Vertex 5
+Early Vertex 2
+Edge 2->5
+Edge 2->3
+Edge 2->1
+Late Vertex 2
+Early Vertex 3
+Edge 3->4
+Edge 3->2
+Late Vertex 3
+Early Vertex 4
+Edge 4->3
+Late Vertex 4
+Depth first -------------
+Early Vertex 1
+Edge 1->6
+Edge 1->5
+Edge 1->2
+Late Vertex 1
+Early Vertex 2
+Edge 2->5
+Edge 2->3
+Edge 2->1
+Late Vertex 2
+Early Vertex 3
+Edge 3->4
+Edge 3->2
+Late Vertex 3
+Early Vertex 4
+Edge 4->3
+Late Vertex 4
+Early Vertex 5
+Edge 5->2
+Edge 5->1
+Late Vertex 5
+Early Vertex 6
+Edge 6->1
+Late Vertex 6
+Path 2->4 is: list(2, 3, 4)
+Spanning tree from vertex 1 = list((1, 2), (2, 3), (3, 4), (1, 5), (1, 6))

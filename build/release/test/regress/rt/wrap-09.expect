@@ -1,0 +1,4 @@
+Wrapper for tuple projection
+(42, 100)
+42
+Tuple field 0 = 42

@@ -1,0 +1,8 @@
+struct S { a:int; b:int; };
+var x = S (1,2);
+println$ x.a,x.b;
+ 
+ctor S (q:int) => S (q,q);
+var y = S (42);
+println$ y.a,y.b;
+

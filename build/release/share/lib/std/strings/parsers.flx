@@ -1,0 +1,79 @@
+#line 9 "C:/projects/felix/src/packages/parsers.fdoc"
+
+///////////////////// capture pipeline lsexpr
+include "std/datatype/lsexpr";
+
+typedef lsexpr_t = LS_expr::lsexpr[string,string];
+instance Str[lsexpr_t] {
+  fun str (x:lsexpr_t) =>
+     match x with
+      | Leaf a => str a
+      | Tree (a,b) => str a + "(" + List::catmap ","  (str of lsexpr_t) b  + ")"
+    ;
+}
+open Str[lsexpr_t];
+
+instance Eq[lsexpr_t] {
+  fun ==: lsexpr_t * lsexpr_t -> bool=
+  | Leaf a, Leaf b => a == b
+  | Tree (a,x), Tree (b,y) => a == b and x == y
+  ;
+}
+
+typedef ll_t = list[lsexpr_t];
+
+// parser SHIFT action
+gen push_entry (first: Buffer * ll_t, last: Buffer) : Buffer * ll_t =
+{
+   var lst = first.1;
+   var b0 = first.0;
+   var sp = b0.sp;
+   var s = sp.string;
+   var p0 = b0.pos;
+   var p1 = last.pos;
+   var lexeme = sp.[p0..<p1].string;
+   //println$ "Lexeme = '" + lexeme+"'";
+   var entry = LS_expr::Leaf[string,string] lexeme;
+   var newstate = Cons (entry, lst);
+   return last, newstate;
+}
+
+gen skip_entry (first: Buffer * ll_t, last: Buffer) : Buffer * ll_t =
+{
+  return last, first.1;
+}
+
+#line 75 "C:/projects/felix/src/packages/parsers.fdoc"
+typedef pardat_t[B,T] = B * T;
+
+chip leaf_capture[B,T]
+  (
+    scan: iochip_t[B,B],
+    newstate: pardat_t[B,T] * B -> pardat_t[B,T]
+  )
+  connector io
+    pin inp: %<pardat_t[B,T]
+    pin out: %>pardat_t[B,T]
+{
+while true do
+  var x = read io.inp;
+  noinline proc handler (var x: pardat_t[B,T]) () {
+    var b,pd = x;
+    var rin,win= mk_ioschannel_pair[B]();
+    var rout,wout= mk_ioschannel_pair[B]();
+    spawn_fthread (scan (inp=rin,out=wout));
+    write(win,b);
+    var b2 = read rout; // this can block forever if scan fails
+    var s = newstate ((b,pd),b2);
+    write (io.out,s);
+  }
+  var y = handler x;
+  spawn_fthread y;
+done
+}
+
+fun string_parser (s:string) =>
+  leaf_capture (match_string s,push_entry)
+;
+
+

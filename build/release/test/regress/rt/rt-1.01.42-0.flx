@@ -1,0 +1,20 @@
+//Check goto:nonlocal
+
+proc f () {
+  val x = { goto foo; };
+  print 'there'; endl;
+  foo:>
+  print 'here'; endl;
+}
+
+f;
+
+proc g () {
+  val x = { goto foo; };
+  print 'there'; endl;
+  foo:>
+  print 'here'; endl;
+}
+
+g;
+

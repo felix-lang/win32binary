@@ -1,0 +1,9 @@
+include "std/datatype/partition";
+open Partition;
+
+// odd, even attribute
+fun parity (x:int) => x % 2;
+var p = partition_t (10, mk_equiv parity);
+for var i in 0 upto 9 do
+  println$ i.str + " -> " + find(&p,i);
+done

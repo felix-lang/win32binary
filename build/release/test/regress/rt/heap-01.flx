@@ -1,0 +1,45 @@
+include "std/datatype/heap";
+open MinHeap[int];
+for var i in 0 upto 10 do
+  println$ "node="+i.str+", parent="+i.parent.str+
+    ", left="+i.left_child.str+", right="+i.right_child.str+
+    " " + (i.left_child.parent == i).str + " " + (i.right_child.parent == i).str
+  ;
+done
+
+var x = minheap_t();
+heap_insert x 42;
+heap_insert x 25;
+heap_insert x 28;
+heap_insert x 26;
+heap_insert x 2;
+heap_insert x 92;
+println$ x;
+
+
+again:while true do
+  var min = x.extract_min;
+  match min with
+  | Some min => print$ min.str + " ";
+  | None => break again;
+  endmatch;
+done
+println$ " End";
+
+x = minheap_t();
+heap_insert x 42;
+heap_insert x 25;
+heap_insert x 28;
+heap_insert x 26;
+heap_insert x 2;
+heap_insert x 92;
+println$ x;
+
+heap_sort x;
+println$ x;
+heapify x;
+println$ x;
+heap_sort x;
+println$ x;
+heapify x;
+println$ x;

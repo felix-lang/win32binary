@@ -1,0 +1,356 @@
+@tangler chips.flx      = share/lib/std/control/chips.flx
+
+@title Chips.
+@h1 Standard components
+@h2 Write block.
+Blocks reader.
+@tangle chips.flx
+chip writeblock[T]
+  connector io
+    pin inp : %<T
+{
+}
+
+@h2 Read block.
+Blocks writer.
+@tangle chips.flx
+chip readblock[T]
+  connector io
+    pin inp: %>T
+{
+}
+
+
+@h2 Universal sink
+Reads input forever.
+@tangle chips.flx
+chip sink[T]
+  connector io
+    pin inp : %<T
+{
+  while true do
+    var x = read (io.inp);
+    C_hack::ignore (x);
+  done
+}
+
+@h2 Constant Source.
+Write fixed value forever.
+@tangle chips.flx
+chip source[T] (a:T)
+  connector io
+    pin out: %>T
+{
+  while true do
+    write (io.out, a);
+  done
+}
+
+@h2 Source from list
+@tangle chips.flx
+chip source_from_list[T] (a:list[T])
+  connector io
+    pin out: %>T
+{
+  for y in a perform write (io.out,y);
+}
+
+@h2 Function adaptor.
+Converts function to chip.
+@tangle chips.flx
+chip function[D,C] (f:D->C)
+  connector io
+    pin inp: %<D
+    pin out: %>C
+{
+  while true do
+    var x = read io.inp;
+    var y = f x; 
+    write (io.out, y);
+  done
+}
+
+@h2 Buffer.
+One step buffer. Same as a function adaptor passed identity.
+@tangle chips.flx
+chip buffer [T]
+  connector io
+    pin inp: %<T
+    pin out: %>T
+{
+  while true do
+    var x = read io.inp;
+    write (io.out, x);
+  done
+}
+
+@h2 Debug Buffer.
+
+@tangle chips.flx
+chip debug_buffer [T with Str[T]] (tag:string)
+  connector io
+    pin inp: %<T
+    pin out: %>T
+{
+  while true do
+    println$ "Debug buffer [" + tag + "] READ";
+    var x = read io.inp;
+    println$ "Debug buffer [" + tag + "] read " + x.str;
+    write (io.out, x);
+    println$ "Debug buffer [" + tag + "] written " + x.str;
+  done
+}
+
+@h2 One Shot.
+A one shot buffer.  
+@tangle chips.flx
+chip oneshot [T]
+  connector io
+    pin inp: %<T
+    pin out: %>T
+{
+  var x = read io.inp;
+  write (io.out, x);
+}
+
+@h2 Store
+Stores read values in a variable.
+@tangle chips.flx
+chip store[T] (p:&T)
+  connector io
+    pin inp: %<T
+{
+  while true do
+    var x = read io.inp;
+    p <- x;
+  done
+}
+
+@h2 Fetch
+Writes current value of a variable.
+@tangle chips.flx
+chip fetch[T] (p:&T)
+  connector io
+    pin out: %>T
+{
+  while true do
+    write (io.out, *p);
+  done
+}
+
+@h2 Printer
+Writes input to console.
+
+@tangle chips.flx
+chip debug_sink [T with Str[T]] (s:string)
+  connector io
+    pin inp: %<T
+{
+  while true do
+    var x = read io.inp;
+    println$ "Debug sink ["+s+"] "+x.str;
+  done
+}
+
+
+@h2 Asynchronous Latch.
+Satisfied all reads with the last
+value written. Blocks readers until at least
+one value is written.
+@tangle chips.flx
+chip latch[T]
+  connector io
+    pin inp: %<T
+    pin out: %>T
+{
+   var x = read io.inp;
+   device w = fetch &x;
+   device r = store &x;
+   circuit
+     wire io.inp to r.inp
+     wire io.out to w.out
+   endcircuit
+} 
+
+@h2 Serialise.
+Read values in sequence from a sequence of channels,
+write each one out on a single channel. Repeat.
+The input channels are fixed by supplying them as
+an argument.
+
+@tangle chips.flx
+chip serialise_chan_list[T] (a: list[%<T])
+ connector io
+   pin out: %>T
+{
+  while true do
+    var current = a;
+next:>
+    match current with
+    | Cons (h,t) =>
+      var x = read h;
+      write (io.out, x);
+      current = t;
+      goto next;
+    | Empty => ;
+    endmatch;
+  done
+}
+
+typedef iopair_t[D,C] = (inp: %<D, out: %>C);
+typedef iochip_t[D,C] = iopair_t[D,C] -> 1 -> 0;
+
+// NOTE: this is currently a one-shot!
+// .. Well sort of!
+// It can do multiple reads if its first chip
+// cycles. If the pipeline drops dead, it will
+// not be reuable.
+//
+// To be reusable, components should not return,
+// instead loop back to reading without writing.
+
+chip pipeline_list[T] (a: list[iochip_t[T,T]])
+  connector io
+    pin inp: %<T
+    pin out: %>T
+{
+  proc aux (lst:list[iochip_t[T,T]]) (inp: %<T) {
+    match lst with
+    | h1 ! h2 ! tail =>
+      var inchan,outchan = mk_ioschannel_pair[T]();
+      spawn_fthread$  h1 (inp=inp, out=outchan);
+      aux (h2!tail) inchan;
+    | h1 ! _ =>
+      spawn_fthread$  h1 (inp=inp, out=io.out);
+    endmatch;
+  }
+  aux a io.inp;
+}
+
+// This loops, but only by repeatedly spawning
+// the alternative set. The alternatives are restricted
+// to a single read on each iteration. The chips are
+// respawned because they might be locked up, in which
+// case the whole thing locks up.
+//
+// NOTE: if one of the alternatives starts, and does not
+// read the input, everything locks up. This is because
+// the implementation ACTUALLY progresses serially.
+//
+// this COULD be fixed by adding a buffer to the front of
+// each. Actually better, add a one shot source based
+// on the input.
+chip tryall_list[D,C with Str[D]] (a: list[iochip_t[D,C]]) 
+  connector io
+    pin inp: %<D
+    pin out: %>C
+{
+  while true do
+    var x = read io.inp;
+//println$ "Tryall read " + x.str;
+    for h in a do
+      var lin,lout = mk_ioschannel_pair[D]();
+      spawn_fthread (h (inp=lin, out=io.out));
+      write (lout,x);
+    done
+  done
+}
+
+@h2 Deref
+This version spawns a clone of p for each input. 
+In particular it delays the spawn until there is an input.
+@tangle chips.flx
+chip deref_each_read[D,C] (p:&iochip_t[D,C]) 
+  connector io
+    pin inp: %<D
+    pin out: %>C
+{
+  while true do
+    var x = read io.inp;
+    var rinp,rout = mk_ioschannel_pair[D]();
+    spawn_fthread ((*p) (inp=rinp, out=io.out));
+    write (rout,x);
+  done
+}
+
+chip deref_first_read[D,C] (p:&iochip_t[D,C]) 
+  connector io
+    pin inp: %<D
+    pin out: %>C
+{
+  var x = read io.inp;
+  var rinp,rout = mk_ioschannel_pair[D]();
+  spawn_fthread ((*p) (inp=rinp, out=io.out));
+  write (rout,x);
+  while true do
+    x = read io.inp;
+    write (rout,x);
+  done
+}
+@h2 Epsilon
+Identity chip.
+
+@tangle chips.flx
+chip epsilon[T]
+  connector io
+   pin inp: %<T
+   pin out: %>T
+{
+  while true do
+    var x = read io.inp;
+    write (io.out, x);
+  done
+}
+@h2 Optional matcher.
+Matches given matcher if possible and epsilon.
+Note the epsilon match is ALWAYS output!
+
+@tangle chips.flx
+chip optional[T] (p:iochip_t[T,T])
+  connector io
+    pin inp: %<T
+    pin out: %>T
+{
+  device both = tryall_list ([
+    p,
+    epsilon[T]
+  ]);
+  circuit
+    wire io.inp to both.inp
+    wire io.out to both.out
+  endcircuit
+}
+
+@h2 One or more matcher
+@tangle chips.flx
+
+chip oneormore_matcher[T] (A:iochip_t[T,T]) 
+connector chans 
+  pin inp: %<T
+  pin out: %>T
+{
+ device As = oneormore_matcher A;
+ device As2 = pipeline_list (A,As).list; 
+ device Ass = tryall_list (A, As2).list;
+ circuit
+   wire chans.inp to Ass.inp
+   wire chans.out to Ass.out
+ endcircuit
+}
+
+@h2 Zero or more matcher
+@tangle chips.flx
+
+chip zeroormore_matcher[T] (A:iochip_t[T,T]) 
+connector chans 
+  pin inp: %<T
+  pin out: %>T
+{
+ device As = oneormore_matcher A;
+ device Ass = tryall_list (epsilon[T], As).list;
+ circuit
+   wire chans.inp to Ass.inp
+   wire chans.out to Ass.out
+ endcircuit
+}
+

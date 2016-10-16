@@ -1,0 +1,60 @@
+
+include "std/datatype/graph";
+open DiGraph[string, string];
+
+proc pve(d:digraph_t) (v:int) { println$ "Early Vertex " + v.str; }
+proc pvl(d:digraph_t) (v:int) { println$ "Late Vertex " + v.str; }
+proc pe(d:digraph_t) (x:int, y:int) { println$ "Edge " + x.str+ "->" + y.str; }
+
+var visitor = (
+  process_vertex_early = pve, 
+  process_vertex_late=pvl, 
+  process_edge=pe
+);
+
+begin
+  var g = digraph_t();
+  add_vertex (&g, "V0", 0);
+  add_vertex (&g, "V1", 1);
+  add_vertex (&g, "V3", 3);
+  add_edge (&g, 0,1,"E01");
+  add_edge (&g, 3,2,"E32");
+
+  println$ "Vertices=" + g.vertices.len.int.str;
+  println$ "Edges=" + g.nedges.str;
+  println$ dump_digraph g;
+  breadth_first_iter g 0 visitor;
+end
+begin // Skiena fig 5.9 page 162
+  var g = digraph_t();
+  add_vertex (&g, "V0", 0); // ignore this one
+  add_vertex (&g, "V1", 1);
+  add_vertex (&g, "V3", 3);
+  add_vertex (&g, "V4", 4);
+  add_vertex (&g, "V5", 5);
+  add_vertex (&g, "V6", 6);
+  add_edge_pair (&g, 1,2, "1<->2");
+  add_edge_pair (&g, 1,5, "1<->5");
+  add_edge_pair (&g, 1,6, "1<->6");
+  add_edge_pair (&g, 2,3, "2<->3");
+  add_edge_pair (&g, 2,5, "2<->5");
+  add_edge_pair (&g, 3,4, "3<->4");
+
+  println$ "Vertices=" + g.vertices.len.int.str;
+  println$ "Edges=" + g.nedges.str;
+  println$ dump_digraph g;
+  println$ "Breadth first -------------";
+  breadth_first_iter g 1 visitor;
+  println$ "Depth first -------------";
+  depth_first_iter g 1 visitor;
+
+  var p = find_shortest_unweighted_path g (2,4);
+  match p with
+  | #None => println$ "No path from 2 to 4";
+  | Some lst => println$ "Path 2->4 is: " + lst.str;
+  endmatch;
+
+ var p2 = prim g 1; // minimum spanning tree
+ println$ "Spanning tree from vertex 1 = " + p2.str;
+end
+

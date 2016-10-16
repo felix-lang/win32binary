@@ -1,0 +1,23 @@
+//Check fibres
+//Check channels
+include "std/control/schannels";
+
+open Control;
+
+var chin,chout = mk_ioschannel_pair[int] ();
+
+spawn_fthread {
+  var x = 1;
+  while x <= 10 do
+    write$ chout,x;
+    ++x;
+  done;
+};
+
+spawn_fthread {
+  var x = 1;
+  while x < 10 do
+    x = read chin; print x; endl;
+  done;
+};
+
