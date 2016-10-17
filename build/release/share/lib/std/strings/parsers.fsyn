@@ -1,4 +1,4 @@
-#line 110 "C:/projects/felix/src/packages/parsers.fdoc"
+#line 72 "C:/projects/felix/src/packages/parsers.fdoc"
 
 syntax parsers {
   priority
@@ -27,57 +27,63 @@ syntax parsers {
   x[sapplication_pri] := "parse" "(" sparser[palt_pri] ")" =># "_3";
 
   //$ Alternatives.
-  private sparser[palt_pri] := sparser[>palt_pri] ("|" sparser[>palt_pri])+ =>#
-    """`(ast_apply ,_sr ( ,(noi 'tryall_list)
+  sparser[palt_pri] := sparser[>palt_pri] ("|" sparser[>palt_pri])+ =>#
+    """`(ast_apply ,_sr ( ,(qnoi 'BaseChips 'tryall_list)
       (ast_apply ,_sr (,(noi 'list) ,(cons _1 (map second _2))))))"""
   ;
 
   //$ Sequential concatenation.
-  private sparser[pseq_pri] := sparser[>pseq_pri] (sparser[>pseq_pri])+ =>#
-    """`(ast_apply ,_sr ( ,(noi 'pipeline_list)
+  sparser[pseq_pri] := sparser[>pseq_pri] (sparser[>pseq_pri])+ =>#
+    """`(ast_apply ,_sr ( ,(qnoi 'BaseChips 'pipeline_list)
       (ast_apply ,_sr (,(noi 'list) ,(cons _1 _2)))))"""
   ;
 
+/////////
+// THESE COMBINATORS SEEM USELESS BECAUSE THERE IS NO WELL DEFINED
+// RESULT.
+//
+// That is, when parsing, they're not defined to say, push a list
+// onto the parser stack.
+//
+// They can be used by pushing a mark before and popping to the mark
+// to do a reduce. Works fine. But depends on being able to put
+// a mark on the stack, which means the type of terms on the stack
+// has to include a mark term.
 
   //$ Postfix star (*).
   //$ Kleene closure: zero or more repetitions.
-  private sparser[ppostfix_pri] := sparser[ppostfix_pri] "*" =>#
-    """`(ast_apply ,_sr ( ,(noi 'zeroormore_matcher) ,_1 ))"""
+  sparser[ppostfix_pri] := sparser[ppostfix_pri] "*" =>#
+    """`(ast_apply ,_sr ( ,(qnoi 'BaseChips 'zeroormore_matcher) ,_1 ))"""
   ;
 
   //$ Postfix plus (+).
   //$ One or more repetitions.
-  private sparser[ppostfix_pri] := sparser[ppostfix_pri] "+" =>#
-    """`(ast_apply ,_sr ( ,(noi 'oneormore_matcher) ,_1 ))"""
+  sparser[ppostfix_pri] := sparser[ppostfix_pri] "+" =>#
+    """`(ast_apply ,_sr ( ,(qnoi 'BaseChips 'oneormore_matcher) ,_1 ))"""
   ;
 
   //$ Postfix question mark (?).
   //$ Optional. Zero or one repetitions.
-  private sparser[ppostfix_pri] := sparser[ppostfix_pri] "?" =>#
-    """`(ast_apply ,_sr (,(noi 'optional) ,_1 ))"""
+  sparser[ppostfix_pri] := sparser[ppostfix_pri] "?" =>#
+    """`(ast_apply ,_sr (,(qnoi 'BaseChips 'optional) ,_1 ))"""
   ;
+// end suspect combinators
+/////////
 
   //$ Group psuedo function.
-  private sparser[patom_pri] := "(" sparser[palt_pri] ")" =># '_2';
+  sparser[patom_pri] := "(" sparser[palt_pri] ")" =># '_2';
 
-  //$ The string literal.
-  //$ The given sequence of characters.
-  //$ Any valid Felix string can be used here.
-  private sparser[patom_pri] := String =>#
-    """`(ast_apply ,_sr ( ,(noi 'string_parser) ,_1)) """
-  ;
-
-  private sparser[patom_pri] :=  "{" sexpr "}" =># "_2";
+  sparser[patom_pri] :=  "{" sexpr "}" =># "_2";
 
   //$ Identifier.
-  private sparser[patom_pri] := sname=># "`(ast_name ,_sr ,_1 ())";
+  sparser[patom_pri] := sname=># "`(ast_name ,_sr ,_1 ())";
 
   //$ Indirection
   //$ For example, the LHS of a regdef binder.
-  private sparser[patom_pri] := "&" sname=># """
+  sparser[patom_pri] := "&" sname=># """
     `(ast_apply ,_sr
       (
-        ,(noi 'deref_first_read)
+        ,(qnoi 'BaseChips 'deref_first_read)
         (ast_ref ,_sr ,(nos _2))
       )
     )
