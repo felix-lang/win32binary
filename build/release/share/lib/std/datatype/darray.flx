@@ -136,9 +136,23 @@ open class Darray
     fun str (x:darray[T])=> str (_repr_ x)*.a;
   }
 
+#line 1092 "C:/projects/felix/src/packages/arrays.fdoc"
+  //$ Traditional map darray to darray.
+  fun map[T, U] (_f:T->U) (arr:darray[T]): darray[U] = {
+    var o = darray[U]();
+
+    if arr.len > 0uz do
+      for var i in 0uz upto arr.len - 1uz do
+      push_back (o, _f arr.i);
+      done
+    done
+
+    return o;
+  }
+
 }
 
-#line 1095 "C:/projects/felix/src/packages/arrays.fdoc"
+#line 1110 "C:/projects/felix/src/packages/arrays.fdoc"
 //$ Construe a darray as a Set.
 instance[T with Eq[T]] Set[darray[T],T] {
  //$ element membership test.
