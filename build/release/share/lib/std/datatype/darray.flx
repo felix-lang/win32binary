@@ -150,9 +150,28 @@ open class Darray
     return o;
   }
 
+#line 1107 "C:/projects/felix/src/packages/arrays.fdoc"
+
+  //$ Return a sub list with elements satisfying the given predicate.
+  fun filter[T] (P:T -> bool) (arr:darray[T]) : darray[T] =
+  {
+    var o = darray[T]();
+
+    if arr.len > 0uz do
+      for var i in 0uz upto arr.len - 1uz do
+        if (P(arr.i)) do
+      	  push_back (o, arr.i);
+        done
+      done
+    done
+
+    return o;
+  }
+
+
 }
 
-#line 1110 "C:/projects/felix/src/packages/arrays.fdoc"
+#line 1130 "C:/projects/felix/src/packages/arrays.fdoc"
 //$ Construe a darray as a Set.
 instance[T with Eq[T]] Set[darray[T],T] {
  //$ element membership test.
