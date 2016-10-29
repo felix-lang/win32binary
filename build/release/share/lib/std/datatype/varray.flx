@@ -1,4 +1,4 @@
-#line 610 "C:/projects/felix/src/packages/arrays.fdoc"
+#line 613 "C:/projects/felix/src/packages/arrays.fdoc"
 
 //$ Bounded Variable length arrays, bound set at construction time.
 //$ A bound of 0 is allowed, the result is a NULL pointer.

@@ -1,4 +1,4 @@
-#line 3567 "C:/projects/felix/src/packages/grammar.fdoc"
+#line 3568 "C:/projects/felix/src/packages/grammar.fdoc"
 //$ Pattern matching.
 //$
 //$ Pattern matching is a way to "take apart" a value according
@@ -78,7 +78,10 @@ syntax patterns {
   //$ The RHS is the rest of the tuple.
   private stuple_cons_pattern := stuple_pattern ",," stuple_cons_pattern =>#
     "`(pat_tuple_cons ,_sr ,_1 ,_3)";
+  private stuple_cons_pattern := stuple_pattern "<,,>" stuple_cons_pattern =>#
+    "`(pat_tuple_snoc ,_sr ,_1 ,_3)";
   private stuple_cons_pattern := stuple_pattern =># "_1";
+
 
   //$ Match a tuple with 2 or more components.
   private stuple_pattern := scoercive_pattern ("," scoercive_pattern )* =>#

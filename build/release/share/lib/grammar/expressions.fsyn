@@ -188,6 +188,7 @@ syntax expressions {
 
   //$ Fortran power.
   x[spower_pri] := x[ssuperscript_pri] "**" x[sprefixed_pri] =># "(infix 'pow)";
+  x[spower_pri] := x[ssuperscript_pri] "<**>" x[sprefixed_pri] =># "(infix 'tuple_snoc)";
 
   //$ Superscript, exponential.
   x[ssuperscript_pri] := x[ssuperscript_pri] "^" x[srefr_pri] =># "`(ast_superscript (,_1 ,_3))";

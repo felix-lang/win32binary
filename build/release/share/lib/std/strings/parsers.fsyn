@@ -91,4 +91,7 @@ syntax parsers {
 
 }
 
-
+syntax Combw {
+  x[ssetintersection_pri] := x[ssetintersection_pri] "#>" x[>ssetintersection_pri] =># "(infix 'combw)";
+  x[ssetunion_pri] := x[ssetunion_pri] "#|" x[>ssetunion_pri] =># "(infix 'alts)";
+}
