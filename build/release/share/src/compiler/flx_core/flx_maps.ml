@@ -41,6 +41,7 @@ let map_type f (t:typecode_t):typecode_t = match t with
   *)
   | TYP_sum ts -> TYP_sum (List.map f ts)
   | TYP_intersect ts -> TYP_intersect (List.map f ts)
+  | TYP_union ts -> TYP_union (List.map f ts)
   | TYP_function (a,b) -> TYP_function (f a, f b)
   | TYP_effector (a,e,b) -> TYP_effector (f a, f e, f b)
   | TYP_cfunction (a,b) -> TYP_cfunction (f a, f b)
@@ -144,6 +145,7 @@ let full_map_expr fi ft fe (e:expr_t):expr_t = match e with
   | EXPR_product (sr,es) -> EXPR_product (sr, List.map fe es)
   | EXPR_sum (sr,es) -> EXPR_sum (sr, List.map fe es)
   | EXPR_intersect (sr,es) -> EXPR_intersect (sr, List.map fe es)
+  | EXPR_union (sr,es) -> EXPR_union(sr, List.map fe es)
   | EXPR_isin (sr,(a,b)) -> EXPR_isin (sr, (fe a, fe b))
   | EXPR_orlist (sr,es) -> EXPR_orlist (sr, List.map fe es)
   | EXPR_andlist (sr,es) -> EXPR_andlist (sr, List.map fe es)
@@ -282,6 +284,7 @@ let iter_expr f (e:expr_t) =
   | EXPR_product (_,es)
   | EXPR_sum (_,es)
   | EXPR_intersect (_,es)
+  | EXPR_union (_,es)
   | EXPR_orlist (_,es)
   | EXPR_andlist (_,es)
   | EXPR_arrayof (_, es)
@@ -343,6 +346,43 @@ let rec map_exe fi ft fe (x:exe_t):exe_t = match x with
   | EXE_endtry -> x
   | EXE_catch (name,t) -> EXE_catch (name, ft t)
   | EXE_proc_return_from _ -> x
+
+
+let rec iter_exe fi ft fe (x:exe_t):unit = match x with
+  | EXE_begin_match_case
+  | EXE_end_match_case -> ()
+
+  | EXE_circuit cs ->  () 
+  | EXE_type_error (x) -> iter_exe fi ft fe x
+  | EXE_code (c,e) ->fe e
+  | EXE_noreturn_code (c,e) -> fe e
+  | EXE_comment _
+  | EXE_label _
+  | EXE_goto _
+    ->() 
+  | EXE_cgoto e -> fe e
+  | EXE_ifcgoto (e1,e2) -> fe e1; fe e2
+  | EXE_ifgoto (e,s) -> fe e
+  | EXE_call (a,b) -> fe a; fe b
+  | EXE_call_with_trap (a,b) ->fe a; fe b
+  | EXE_jump (a,b) ->fe a; fe b
+  | EXE_loop (s,e) -> fe e
+  | EXE_svc _ -> ()
+  | EXE_fun_return e -> fe e
+  | EXE_yield e -> fe e
+  | EXE_proc_return ->() 
+  | EXE_halt _ -> ()
+  | EXE_trace _ -> ()
+  | EXE_nop _ -> ()
+  | EXE_init (name,e) -> fe e
+  | EXE_iinit ((name,idx),e) -> fi idx; fe e
+  | EXE_assign (a,b) -> fe a; fe b
+  | EXE_assert e -> fe e
+  | EXE_try  -> ()
+  | EXE_endtry -> ()
+  | EXE_catch (name,t) -> ft t
+  | EXE_proc_return_from _ -> ()
+
 
 
 
