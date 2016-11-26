@@ -2,7 +2,7 @@ include "std/strings/recognisers";
 
 spawn_fthread {
   var test = "hello";
-  var b = Buffer &test;
+  var b = Buffer test;
   var ri,wi = mk_ioschannel_pair[Buffer]();
   var ro,wo = mk_ioschannel_pair[Buffer]();
   spawn_fthread (match_string "hello" (inp=ri, out=wo));
@@ -25,7 +25,7 @@ spawn_fthread {
 
 
   var test = "hello";
-  var b = Buffer &test;
+  var b = Buffer test;
   var i,o = mk_ioschannel_pair[Buffer]();
   spawn_fthread (match_string "FAIL" (inp=i, out=o));
   write (o,b);

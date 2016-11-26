@@ -1,14 +1,14 @@
 #line 13 "C:/projects/felix/src/packages/recognisers.fdoc"
 struct Buffer
 {
-  sp: StringPiece;
+  sp: varray[char];
   pos: int;
 
   fun atend => self.pos >= self.sp.len.int;
 
   fun get =>
     if self.atend then char ""
-    else (self.sp.data) . (self.pos)
+    else (self.sp) . (self.pos)
   ;
 
   proc next {
@@ -23,8 +23,17 @@ struct Buffer
   ;
 }
 
-ctor Buffer (p:&string) =>
-  Buffer (p.StringPiece,0)
+
+ctor Buffer (p:varray[char]) =>
+  Buffer (p,0)
+;
+
+ctor Buffer (p:string) =>
+  Buffer (p.varray[char],0)
+;
+
+ctor Buffer (p: &string) =>
+  Buffer (*p)
 ;
 
 instance Str[Buffer] {
@@ -37,7 +46,7 @@ instance Eq[Buffer] {
 }
 
 
-#line 54 "C:/projects/felix/src/packages/recognisers.fdoc"
+#line 63 "C:/projects/felix/src/packages/recognisers.fdoc"
 chip match_string (s:string)
   connector io
     pin inp: %<Buffer
@@ -53,7 +62,7 @@ nextmatch:>
   goto nextmatch;
 }
 
-#line 71 "C:/projects/felix/src/packages/recognisers.fdoc"
+#line 80 "C:/projects/felix/src/packages/recognisers.fdoc"
 chip match_white
   connector io
     pin inp: %<Buffer
@@ -66,7 +75,7 @@ chip match_white
   done
 }
 
-#line 86 "C:/projects/felix/src/packages/recognisers.fdoc"
+#line 95 "C:/projects/felix/src/packages/recognisers.fdoc"
 chip match_regex (r:RE2)
   connector io
     pin inp: %<Buffer
@@ -76,7 +85,7 @@ chip match_regex (r:RE2)
     var b = read io.inp;
 //println$ "Match regex " + r.str;
     var matched = varray[StringPiece] (1uz,StringPiece());
-    var result = Match(r,b.sp,b.pos,ANCHOR_START,matched.stl_begin,1);
+    var result = Match(r,StringPiece(b.sp),b.pos,ANCHOR_START,matched.stl_begin,1);
 //println$ "Match result " + result.str;
     if result do
 //println$ "Matched OK, match len = " + matched.0.len.str;
@@ -87,13 +96,13 @@ chip match_regex (r:RE2)
   done
 }
 
-#line 110 "C:/projects/felix/src/packages/recognisers.fdoc"
+#line 119 "C:/projects/felix/src/packages/recognisers.fdoc"
 device cident_matcher = match_regex (RE2 "[A-Za-z][A-Za-z0-9_]*");
 
-#line 116 "C:/projects/felix/src/packages/recognisers.fdoc"
+#line 125 "C:/projects/felix/src/packages/recognisers.fdoc"
 device decimal_integer_matcher = match_regex (RE2 "[0-9]+");
 
-#line 122 "C:/projects/felix/src/packages/recognisers.fdoc"
+#line 131 "C:/projects/felix/src/packages/recognisers.fdoc"
 chip match_string_literal
   connector io
     pin inp: %<Buffer
