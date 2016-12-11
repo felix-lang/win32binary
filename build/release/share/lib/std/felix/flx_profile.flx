@@ -1,4 +1,4 @@
-#line 385 "C:/projects/felix/src/packages/flx.fdoc"
+#line 386 "C:/projects/felix/src/packages/flx.fdoc"
 class FlxProfile
 {
   fun dflt_profile () =

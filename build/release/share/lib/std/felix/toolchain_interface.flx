@@ -1,4 +1,4 @@
-#line 48 "C:/projects/felix/src/packages/toolchain.fdoc"
+#line 49 "C:/projects/felix/src/packages/toolchain.fdoc"
 interface toolchain_t {
   whatami : 1 -> string;
   host_os : 1 -> string;

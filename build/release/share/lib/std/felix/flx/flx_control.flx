@@ -1,4 +1,4 @@
-#line 623 "C:/projects/felix/src/packages/flx.fdoc"
+#line 624 "C:/projects/felix/src/packages/flx.fdoc"
 class FlxControl
 {
 proc print_options(control:control_type) {
