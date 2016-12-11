@@ -1,5 +1,8 @@
 #line 13 "C:/projects/felix/src/packages/recognisers.fdoc"
 include "std/control/chips";
+include "std/strings/grammars";
+class Recognisers
+{
 
 struct Buffer
 {
@@ -47,8 +50,10 @@ instance Eq[Buffer] {
   fun == (a:Buffer, b:Buffer) => a.pos == b.pos;
 }
 
+typedef recog_t = BaseChips::iochip_t[Buffer,Buffer];
+// rendering lazy terms to actual recognizer
 
-#line 65 "C:/projects/felix/src/packages/recognisers.fdoc"
+#line 70 "C:/projects/felix/src/packages/recognisers.fdoc"
 chip match_string (s:string)
   connector io
     pin inp: %<Buffer
@@ -64,7 +69,7 @@ nextmatch:>
   goto nextmatch;
 }
 
-#line 82 "C:/projects/felix/src/packages/recognisers.fdoc"
+#line 87 "C:/projects/felix/src/packages/recognisers.fdoc"
 chip match_white
   connector io
     pin inp: %<Buffer
@@ -77,7 +82,7 @@ chip match_white
   done
 }
 
-#line 97 "C:/projects/felix/src/packages/recognisers.fdoc"
+#line 102 "C:/projects/felix/src/packages/recognisers.fdoc"
 chip match_regex (r:RE2)
   connector io
     pin inp: %<Buffer
@@ -98,13 +103,13 @@ chip match_regex (r:RE2)
   done
 }
 
-#line 121 "C:/projects/felix/src/packages/recognisers.fdoc"
+#line 126 "C:/projects/felix/src/packages/recognisers.fdoc"
 device cident_matcher = match_regex (RE2 "[A-Za-z][A-Za-z0-9_]*");
 
-#line 127 "C:/projects/felix/src/packages/recognisers.fdoc"
+#line 132 "C:/projects/felix/src/packages/recognisers.fdoc"
 device decimal_integer_matcher = match_regex (RE2 "[0-9]+");
 
-#line 133 "C:/projects/felix/src/packages/recognisers.fdoc"
+#line 138 "C:/projects/felix/src/packages/recognisers.fdoc"
 chip match_string_literal
   connector io
     pin inp: %<Buffer
@@ -157,82 +162,14 @@ restart:>
   goto restart;
 }
 
-#line 187 "C:/projects/felix/src/packages/recognisers.fdoc"
-
-class RecogGrammar {
-union open_prod_t[T] =
-| Strng of string
-| Nonterminal of string
-| Epsilon
-| Seq of list[T]
-| Alt of list[T]
-;
-
-typedef prod_t = open_prod_t[prod_t];
-
-instance[T with Str[T]] Str[open_prod_t[T]]
-{
-  fun str: open_prod_t[T] -> string =
-  | Strng s => '"' + s + '"'
-  | Nonterminal name => name
-  | Epsilon => "Eps"
-  | Seq ss => "(" + catmap " " (str of T) ss + ")"
-  | Alt ss => "(" + catmap " | " (str of T) ss + ")"
-  ;
-}
-
-typedef open_gramentry_t[T] = string * open_prod_t[T];
-typedef open_gramlib_t[T] = list[open_gramentry_t[T]];
-typedef open_grammar_t[T] = string * open_gramlib_t[T];
-
-typedef gramentry_t = open_gramentry_t[prod_t];
-typedef gramlib_t = open_gramlib_t[prod_t];
-typedef grammar_t = open_grammar_t[prod_t];
-
-
-fun add_unique (acc:list[string]) (elt:string) : list[string] =>
-  if elt in acc then acc else Cons (elt,acc)
-;
-
-fun add_prod (acc:list[string]) (p: prod_t) : list[string] =>
-  match p with
-  | Strng _ => acc
-  | Nonterminal name => Cons (name, acc)
-  | Epsilon => acc
-  | Seq ps => fold_left add_prod acc ps
-  | Alt ps => fold_left add_prod acc ps
-  endmatch
-;
-
-fun cls (lib:gramlib_t)
-  (unprocessed: list[string])
-  (processed:list[string])
-: list[string]
-=>
-  match unprocessed with
-  | Empty => processed
-  | Cons (h,tail) =>
-    if h in processed then cls lib tail processed else
-    let Some p = find lib h in
-    let unprocessed = add_prod tail p in
-    cls lib unprocessed (Cons (h,processed))
-  endmatch
-;
-
-fun closure : grammar_t -> list[string] =
-| start, lib => cls lib ([start]) Empty[string]
-;
-
-
-typedef recog_t = BaseChips::iochip_t[Buffer,Buffer];
-// rendering lazy terms to actual recognizer
-
+#line 192 "C:/projects/felix/src/packages/recognisers.fdoc"
 // this is a function, so it cannot construct pipeline
 // chips, because they actually spawn the components internally
 // and functions can't do service calls.
 //
 // So instead we just return a function 1->recog_t which does the
 // job on invocation.
+open Grammars;
 
 typedef ntdef_t = string * recog_t;
 
@@ -243,6 +180,7 @@ fun find (v:varray[ntdef_t]) (nt:string) : size =
   done
   assert false;
 }
+
 
 fun render_prod
   (lib:gramlib_t,v:varray[ntdef_t])
@@ -311,4 +249,6 @@ chip make_recogniser_from_grammar
     write (io.out, (v.(find v start).1));
   done
 }
-} // RecogGrammar
+
+} // Recognisers
+
