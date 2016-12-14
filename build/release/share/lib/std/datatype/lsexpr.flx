@@ -1,4 +1,4 @@
-#line 1151 "C:/projects/felix/src/packages/lists.fdoc"
+#line 1171 "C:/projects/felix/src/packages/lists.fdoc"
 class LS_expr
 {
   union lsexpr[T,L] = | Leaf of T | Tree of L * list[lsexpr[T,L]];

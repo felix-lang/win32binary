@@ -356,7 +356,20 @@ open class List
   //$ Append element to tail of list (slow!).
   proc += [T] (x:&list[T], y:T) { x <- *x + y; }
 
-#line 426 "C:/projects/felix/src/packages/lists.fdoc"
+#line 432 "C:/projects/felix/src/packages/lists.fdoc"
+
+noinline fun outer_product[T] (x:list[list[T]]) (y:list[list[T]]): list[list[T]] =
+{
+  var res = Empty[list[T]];
+
+  for xelt in x
+  for yelt in y
+    perform res = (xelt + yelt) ! res;
+  return res;
+}
+
+
+#line 446 "C:/projects/felix/src/packages/lists.fdoc"
   //$ Concatenate all the lists in a list of lists.
   noinline fun cat[T] (x:list[list[T]]):list[T] =
   {
@@ -368,7 +381,7 @@ open class List
      ;
    }
 
-#line 440 "C:/projects/felix/src/packages/lists.fdoc"
+#line 460 "C:/projects/felix/src/packages/lists.fdoc"
   //$ Concatenate all the strings in a list with given separator.
   pure fun cat (sep:string) (x:list[string]):string =
   {
@@ -392,7 +405,7 @@ open class List
     return r;
   }
 
-#line 465 "C:/projects/felix/src/packages/lists.fdoc"
+#line 485 "C:/projects/felix/src/packages/lists.fdoc"
   fun catmap[T] (sep:string) (f:T -> string) (ls: list[T]) =>
     cat sep (map f ls)
   ;
@@ -406,7 +419,7 @@ open class List
   ;
 
 
-#line 481 "C:/projects/felix/src/packages/lists.fdoc"
+#line 501 "C:/projects/felix/src/packages/lists.fdoc"
   //$ Return true if one value in a list satisfies the predicate.
   fun mem[T] (eq:T -> bool) (xs:list[T]) : bool =>
     match xs with
@@ -428,7 +441,7 @@ open class List
     fun \in (x:T, a:list[T]) => mem[T,T] eq of (T * T) a x;
   }
 
-#line 505 "C:/projects/felix/src/packages/lists.fdoc"
+#line 525 "C:/projects/felix/src/packages/lists.fdoc"
   //$ return option of the first element in a list satisfying the predicate.
   fun find[T] (eq:T -> bool) (xs:list[T]) : opt[T] =>
     match xs with
@@ -530,7 +543,7 @@ open class List
     fun ==(a:list[T], b:list[T])=> list_eq(a,b);
   }
 
-#line 608 "C:/projects/felix/src/packages/lists.fdoc"
+#line 628 "C:/projects/felix/src/packages/lists.fdoc"
   //$ Sort a list with given less than operator, which must be
   //$ total order. Uses varray sort (which uses STL sort).
   fun sort[T] (lt:T*T->bool) (x:list[T])=
@@ -550,7 +563,7 @@ open class List
   //$ Uses varray sort (which uses STL sort).
   fun sort[T with Tord[T]](x:list[T])=> sort lt x;
 
-#line 629 "C:/projects/felix/src/packages/lists.fdoc"
+#line 649 "C:/projects/felix/src/packages/lists.fdoc"
   instance[T] Iterable[list[T],T] {
   //$ Convert a list to a stream.
     gen iterator (var xs:list[T]) () = {
