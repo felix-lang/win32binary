@@ -7,9 +7,9 @@ open Flx_drules
 let _ = () (* dummy line to improve OCaml error location *)
 # 9                  "build/flxg-tmp\flx_parse.ml"
 let _ =
-  if "20120528" <> Dyp.version
+  if "20120619" <> Dyp.version
   then (Printf.fprintf stderr
-    "version mismatch, dypgen version 20120528 and dyplib version %s\n" Dyp.version;
+    "version mismatch, dypgen version 20120619 and dyplib version %s\n" Dyp.version;
   exit 2)
 
 module Dyp_symbols =
