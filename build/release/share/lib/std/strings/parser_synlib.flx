@@ -1,9 +1,10 @@
-#line 371 "C:/projects/felix/src/packages/parsers.fdoc"
+#line 434 "C:/projects/felix/src/packages/parsers.fdoc"
 include "std/strings/parsers";
 
 class Parser_synlib
 {
   open Parsers;
+  open Grammars;
   fun NT (s:string) => Recog (Nonterminal [pgram_t] s);
   fun STR (s:string) => Recog (Strng [pgram_t] s);
   fun REDUCE (s:string, n:int) => Action[pgram_t] (Reduce (s,n));
