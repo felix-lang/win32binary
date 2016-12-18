@@ -1,6 +1,7 @@
-#line 7 "C:/projects/felix/src/packages/parsers.fdoc"
+#line 9 "C:/projects/felix/src/packages/parsers.fdoc"
 include "std/control/chips";
 include "std/strings/recognisers";
+include "std/strings/parser_synlib";
 class Parsers
 {
   open Recognisers;
