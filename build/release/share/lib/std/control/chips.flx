@@ -288,16 +288,20 @@ chip tryall_list[D,C with Str[D]] (a: list[iochip_t[D,C]])
 {
   while true do
     var x = read io.inp;
-//println$ "Tryall read " + x.str;
+println$ "Tryall read " + a.len.str + " alternatives: " + x.str;
+var counter = 1;
     for h in a do
+println$ "    Trying alternative #" + counter.str + "/"+a.len.str;
+++counter;
       var lin,lout = mk_ioschannel_pair[D]();
       spawn_fthread (h (inp=lin, out=io.out));
       write (lout,x);
     done
+println$ "Tryall read done";
   done
 }
 
-#line 350 "C:/projects/felix/src/packages/chips.fdoc"
+#line 354 "C:/projects/felix/src/packages/chips.fdoc"
 chip deref_each_read[D,C] (p:&iochip_t[D,C])
   connector io
     pin inp: %<D
@@ -325,7 +329,7 @@ chip deref_first_read[D,C] (p:&iochip_t[D,C])
     write (rout,x);
   done
 }
-#line 381 "C:/projects/felix/src/packages/chips.fdoc"
+#line 385 "C:/projects/felix/src/packages/chips.fdoc"
 chip epsilon[T]
   connector io
    pin inp: %<T
@@ -336,7 +340,7 @@ chip epsilon[T]
     write (io.out, x);
   done
 }
-#line 396 "C:/projects/felix/src/packages/chips.fdoc"
+#line 400 "C:/projects/felix/src/packages/chips.fdoc"
 chip optional[T] (p:iochip_t[T,T])
   connector io
     pin inp: %<T
@@ -352,7 +356,7 @@ chip optional[T] (p:iochip_t[T,T])
   endcircuit
 }
 
-#line 413 "C:/projects/felix/src/packages/chips.fdoc"
+#line 417 "C:/projects/felix/src/packages/chips.fdoc"
 
 chip oneormore_matcher[T] (A:iochip_t[T,T])
 connector chans
@@ -368,7 +372,7 @@ connector chans
  endcircuit
 }
 
-#line 430 "C:/projects/felix/src/packages/chips.fdoc"
+#line 434 "C:/projects/felix/src/packages/chips.fdoc"
 
 chip zeroormore_matcher[T] (A:iochip_t[T,T])
 connector chans
@@ -382,6 +386,6 @@ connector chans
    wire chans.out to Ass.out
  endcircuit
 }
-#line 446 "C:/projects/felix/src/packages/chips.fdoc"
+#line 450 "C:/projects/felix/src/packages/chips.fdoc"
 } // end class BaseChips
 

@@ -61,15 +61,17 @@ chip match_string (s:string)
 {
 nextmatch:>
   var b = read io.inp;
+println$ "Match " + s + " at " + b.str;
   for i in 0..< s.len.int do
     if s.[i] != b.get goto nextmatch;
     b&.next;
   done
+println$ "Matched " + s + " to " + b.str;
   write (io.out, b);
   goto nextmatch;
 }
 
-#line 87 "C:/projects/felix/src/packages/recognisers.fdoc"
+#line 89 "C:/projects/felix/src/packages/recognisers.fdoc"
 chip match_white
   connector io
     pin inp: %<Buffer
@@ -82,7 +84,7 @@ chip match_white
   done
 }
 
-#line 102 "C:/projects/felix/src/packages/recognisers.fdoc"
+#line 104 "C:/projects/felix/src/packages/recognisers.fdoc"
 chip match_regex (r:RE2)
   connector io
     pin inp: %<Buffer
@@ -103,13 +105,13 @@ chip match_regex (r:RE2)
   done
 }
 
-#line 126 "C:/projects/felix/src/packages/recognisers.fdoc"
+#line 128 "C:/projects/felix/src/packages/recognisers.fdoc"
 device cident_matcher = match_regex (RE2 "[A-Za-z][A-Za-z0-9_]*");
 
-#line 132 "C:/projects/felix/src/packages/recognisers.fdoc"
+#line 134 "C:/projects/felix/src/packages/recognisers.fdoc"
 device decimal_integer_matcher = match_regex (RE2 "[0-9]+");
 
-#line 138 "C:/projects/felix/src/packages/recognisers.fdoc"
+#line 140 "C:/projects/felix/src/packages/recognisers.fdoc"
 chip match_string_literal
   connector io
     pin inp: %<Buffer
@@ -162,7 +164,7 @@ restart:>
   goto restart;
 }
 
-#line 192 "C:/projects/felix/src/packages/recognisers.fdoc"
+#line 194 "C:/projects/felix/src/packages/recognisers.fdoc"
 // this is a function, so it cannot construct pipeline
 // chips, because they actually spawn the components internally
 // and functions can't do service calls.
