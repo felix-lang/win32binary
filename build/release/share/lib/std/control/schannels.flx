@@ -1,4 +1,4 @@
-#line 186 "C:/projects/felix/src/packages/fibres.fdoc"
+#line 190 "C:/projects/felix/src/packages/fibres.fdoc"
 
 //$ Sychronous Channels.
 //$ Used to exchange control and possibly data
@@ -39,6 +39,9 @@ open class Schannel
   //$ Necessary for killing off schannels,
   //$ so as to make them unreachable, so the gc can reap them.
   gen mk_null_oschannel[t]: 1->oschannel[t] = "NULL";
+
+  ctor[T] address: oschannel[T] = "$1";
+  ctor[T] address: ischannel[T] = "$1";
 
   //$ Check if an schannel is NULL.
   fun isNULL[T] :schannel[T] -> bool = "NULL==$1";
@@ -138,7 +141,7 @@ open class Schannel
 
 }
 
-#line 1098 "C:/projects/felix/src/packages/fibres.fdoc"
+#line 1105 "C:/projects/felix/src/packages/fibres.fdoc"
 
 open class DuplexSchannels
 {

@@ -1,4 +1,4 @@
-#line 332 "C:/projects/felix/src/packages/fibres.fdoc"
+#line 339 "C:/projects/felix/src/packages/fibres.fdoc"
 
 //$ Schannel multiplexor.
 //$ Read multiple input schannels, write to an output schannel.

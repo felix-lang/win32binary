@@ -288,20 +288,19 @@ chip tryall_list[D,C with Str[D]] (a: list[iochip_t[D,C]])
 {
   while true do
     var x = read io.inp;
-println$ "Tryall read " + a.len.str + " alternatives: " + x.str;
-var counter = 1;
+    //println$ "Tryall read " + a.len.str + " alternatives: " + x.str;
+    //var counter = 1;
     for h in a do
-println$ "    Trying alternative #" + counter.str + "/"+a.len.str;
-++counter;
+      //println$ "Trying alternative #" + counter.str + "/"+a.len.str;
       var lin,lout = mk_ioschannel_pair[D]();
       spawn_fthread (h (inp=lin, out=io.out));
+      //println$ "Tryall_list write " + lout.address.str;
       write (lout,x);
     done
-println$ "Tryall read done";
   done
 }
 
-#line 354 "C:/projects/felix/src/packages/chips.fdoc"
+#line 353 "C:/projects/felix/src/packages/chips.fdoc"
 chip deref_each_read[D,C] (p:&iochip_t[D,C])
   connector io
     pin inp: %<D
@@ -311,6 +310,7 @@ chip deref_each_read[D,C] (p:&iochip_t[D,C])
     var x = read io.inp;
     var rinp,rout = mk_ioschannel_pair[D]();
     spawn_fthread ((*p) (inp=rinp, out=io.out));
+    // println$ "Deref_each_read: write " + io.out.address.str;
     write (rout,x);
   done
 }
@@ -337,10 +337,11 @@ chip epsilon[T]
 {
   while true do
     var x = read io.inp;
+    //println$ "Epsilon: write " + io.out.address.str;
     write (io.out, x);
   done
 }
-#line 400 "C:/projects/felix/src/packages/chips.fdoc"
+#line 401 "C:/projects/felix/src/packages/chips.fdoc"
 chip optional[T] (p:iochip_t[T,T])
   connector io
     pin inp: %<T
@@ -356,7 +357,7 @@ chip optional[T] (p:iochip_t[T,T])
   endcircuit
 }
 
-#line 417 "C:/projects/felix/src/packages/chips.fdoc"
+#line 418 "C:/projects/felix/src/packages/chips.fdoc"
 
 chip oneormore_matcher[T] (A:iochip_t[T,T])
 connector chans
@@ -372,7 +373,7 @@ connector chans
  endcircuit
 }
 
-#line 434 "C:/projects/felix/src/packages/chips.fdoc"
+#line 435 "C:/projects/felix/src/packages/chips.fdoc"
 
 chip zeroormore_matcher[T] (A:iochip_t[T,T])
 connector chans
@@ -386,6 +387,6 @@ connector chans
    wire chans.out to Ass.out
  endcircuit
 }
-#line 450 "C:/projects/felix/src/packages/chips.fdoc"
+#line 451 "C:/projects/felix/src/packages/chips.fdoc"
 } // end class BaseChips
 

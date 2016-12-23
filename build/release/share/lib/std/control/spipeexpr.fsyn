@@ -1,4 +1,4 @@
-#line 368 "C:/projects/felix/src/packages/fibres.fdoc"
+#line 375 "C:/projects/felix/src/packages/fibres.fdoc"
 syntax spipeexpr
 {
   //$ Left assoc, for schannel pipes.

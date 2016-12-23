@@ -65,7 +65,7 @@ protected:
   void do_swrite();
   void do_multi_swrite();
   void do_kill();
-
+  void show_state();
 };
 
 }}
