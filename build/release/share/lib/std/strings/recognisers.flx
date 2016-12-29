@@ -223,7 +223,69 @@ device cident_matcher = match_regex (RE2 "[A-Za-z][A-Za-z0-9_]*");
 #line 253 "C:/projects/felix/src/packages/recognisers.fdoc"
 device decimal_integer_matcher = match_regex (RE2 "[0-9]+");
 
-#line 259 "C:/projects/felix/src/packages/recognisers.fdoc"
+#line 262 "C:/projects/felix/src/packages/recognisers.fdoc"
+
+chip felix_integer_matcher
+  connector io
+    pin inp: %<Buffer
+    pin out: %>Buffer
+{
+nexttry:>
+  var b = read io.inp;
+  var ch = b.get;
+  if ch == char "0" do
+    b&.next;
+    ch = b.get;
+//println$ "felix_integer got leading 0, next char " + ch;
+    if ch in "bB" goto nextbinary;
+    if ch in "oO" goto nextoctal;
+    if ch in "dD0123456789_" goto nextdecimal;
+    if ch in "xX" goto nexthex;
+//println$ "Bad radix";
+    goto bad;
+  done
+  goto decimal;
+
+nextbinary:>
+  b&.next;
+binary:>
+  ch = b.get;
+  if ch in "_01234567" goto nextbinary;
+  goto ok;
+
+nextoctal:>
+  b&.next;
+octal:>
+  ch = b.get;
+  if ch in "_01234567" goto nextoctal;
+  goto ok;
+
+
+nextdecimal:>
+  b&.next;
+decimal:>
+  ch = b.get;
+  if ch in "_0123456789" goto nextdecimal;
+  goto ok;
+
+nexthex:>
+  b&.next;
+hex:>
+  ch = b.get;
+  if ch in "_0123456789ABCDEFabcdef" goto nexthex;
+  goto ok;
+
+ok:>
+//println$ "Felix integer ok";
+  write (io.out,b);
+  goto nexttry;
+
+bad:>
+//println$ "Felix integer bad";
+  goto nexttry;
+}
+
+#line 327 "C:/projects/felix/src/packages/recognisers.fdoc"
 chip match_string_literal
   connector io
     pin inp: %<Buffer
@@ -276,7 +338,7 @@ restart:>
   goto restart;
 }
 
-#line 313 "C:/projects/felix/src/packages/recognisers.fdoc"
+#line 381 "C:/projects/felix/src/packages/recognisers.fdoc"
 // this is a function, so it cannot construct pipeline
 // chips, because they actually spawn the components internally
 // and functions can't do service calls.
@@ -301,7 +363,7 @@ fun render_prod
   (p:prod_t)
 : 1 -> recog_t =>
   match p with
-  | Strng s => { match_string s }
+  | Terminal (s,r) => { r }
   | Epsilon => { BaseChips::epsilon[Buffer] }
   | Seq ps => { BaseChips::pipeline_list (
       map (fun (p:prod_t) => #(render_prod (lib,v) p)) ps) }
