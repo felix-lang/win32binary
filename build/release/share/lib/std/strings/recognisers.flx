@@ -225,11 +225,55 @@ chip match_regex (r:RE2)
 
 #line 253 "C:/projects/felix/src/packages/recognisers.fdoc"
 device cident_matcher = match_regex (RE2 "[A-Za-z][A-Za-z0-9_]*");
+device flxident_matcher = match_regex (RE2 "[A-Za-z_][A-Za-z0-9_']*");
+device texident_matcher = match_regex (RE2 "\\\\[A-Za-z]+");
 
-#line 259 "C:/projects/felix/src/packages/recognisers.fdoc"
+chip flx_n_ident_matcher
+  connector io
+    pin inp: %<Buffer
+    pin out: %>Buffer
+{
+nextnident:>
+  var b = read io.inp;
+  if b.get != char "n" goto nextnident;
+  b&.next;
+  if b.get == char "'" do
+    b&.next;
+    while not b.atend and b.get != char "'" perform b&.next;
+    b&.next;
+    write (io.out, b);
+  elif b.get == char '"' do
+    b&.next;
+    while not b.atend and b.get != char '"' perform b&.next;
+    b&.next;
+    write (io.out, b);
+  done
+  goto nextnident;
+}
+
+chip felix_identifier_matcher
+  connector io
+    pin inp: %<Buffer
+    pin out: %>Buffer
+{
+  device x = BaseChips::tryall_list
+    ([
+      flxident_matcher,
+      texident_matcher,
+      flx_n_ident_matcher
+    ])
+  ;
+  circuit
+    wire io.inp to x.inp
+    wire io.out to x.out
+  endcircuit
+}
+
+
+#line 303 "C:/projects/felix/src/packages/recognisers.fdoc"
 device decimal_integer_matcher = match_regex (RE2 "[0-9]+");
 
-#line 268 "C:/projects/felix/src/packages/recognisers.fdoc"
+#line 312 "C:/projects/felix/src/packages/recognisers.fdoc"
 
 chip felix_integer_matcher
   connector io
@@ -238,7 +282,10 @@ chip felix_integer_matcher
 {
 nexttry:>
   var b = read io.inp;
+//println$ "Felix integer matcher "+b.str;
   var ch = b.get;
+  if ch not in "0123456789" goto bad;
+
   if ch == char "0" do
     b&.next;
     ch = b.get;
@@ -257,14 +304,14 @@ nextbinary:>
 binary:>
   ch = b.get;
   if ch in "_01234567" goto nextbinary;
-  goto ok;
+  goto suffix;
 
 nextoctal:>
   b&.next;
 octal:>
   ch = b.get;
   if ch in "_01234567" goto nextoctal;
-  goto ok;
+  goto suffix;
 
 
 nextdecimal:>
@@ -272,13 +319,54 @@ nextdecimal:>
 decimal:>
   ch = b.get;
   if ch in "_0123456789" goto nextdecimal;
-  goto ok;
+  goto suffix;
 
 nexthex:>
   b&.next;
 hex:>
   ch = b.get;
   if ch in "_0123456789ABCDEFabcdef" goto nexthex;
+  goto suffix;
+
+suffix:>
+  // 3 char suffix
+  if "" + toupper (b.get) + toupper (b.lookahead 1) + toupper (b.lookahead 2) in
+    ([
+      "I16", "I32","I64",
+      "U16", "U32","U64"
+    ])
+  do
+    b&.next;
+    b&.next;
+    b&.next;
+
+  // 2 char suffix
+  elif "" + toupper (b.get) + toupper (b.lookahead 1) in
+    ([
+      "LL","I8","U8",
+      "UT","US","UD","UL","UV","UZ","UJ",
+      "TU","SU","DU","LU","VU","ZU","JU"
+    ])
+  do
+    b&.next;
+    b&.next;
+
+  // one char suffix
+  elif "" + toupper (b.get) in
+    ([
+      'T', // tiny
+      'S', // short
+      'I', // int
+      'L', // long
+      'V', // long long
+      "Z", // size
+      "J", // intmax
+      "P", // intptr
+      "D"  // ptrdiff
+    ])
+  do
+    b&.next;
+  done
   goto ok;
 
 ok:>
@@ -291,7 +379,7 @@ bad:>
   goto nexttry;
 }
 
-#line 335 "C:/projects/felix/src/packages/recognisers.fdoc"
+#line 423 "C:/projects/felix/src/packages/recognisers.fdoc"
 chip felix_float_literal_matcher
   connector io
     pin inp: %<Buffer
@@ -374,7 +462,7 @@ bad:>
 }
 
 
-#line 421 "C:/projects/felix/src/packages/recognisers.fdoc"
+#line 509 "C:/projects/felix/src/packages/recognisers.fdoc"
 chip match_string_literal
   connector io
     pin inp: %<Buffer
@@ -508,7 +596,7 @@ bad:>
 }
 
 
-#line 556 "C:/projects/felix/src/packages/recognisers.fdoc"
+#line 644 "C:/projects/felix/src/packages/recognisers.fdoc"
 // this is a function, so it cannot construct pipeline
 // chips, because they actually spawn the components internally
 // and functions can't do service calls.

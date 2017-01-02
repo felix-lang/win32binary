@@ -1,4 +1,4 @@
-#line 596 "C:/projects/felix/src/packages/parsers.fdoc"
+#line 608 "C:/projects/felix/src/packages/parsers.fdoc"
 include "std/strings/parsers";
 
 class Parser_synlib
@@ -7,8 +7,11 @@ class Parser_synlib
   open Grammars;
   fun NT (s:string) => Recog (Nonterminal [pgram_t] s);
   fun TERM (s:string, r:Recognisers::recog_t) => Recog (Terminal [pgram_t] (s,r));
-  fun STR (s:string) => Recog (Terminal [pgram_t] ("TOKEN", (Recognisers::match_string s)));
+  fun STR (s:string) => Recog (Terminal [pgram_t] (s, (Recognisers::match_string s)));
   fun REDUCE (s:string, n:int) => Action[pgram_t] (Reduce (s,n));
+  fun BINOP(s:string) => Action[pgram_t] (Sequence ([Swap, Drop 1, (Reduce (s,2))]));
+  fun SWAP () => Action[pgram_t] (Swap);
+  fun DROP (n:int) => Action[pgram_t] (Drop n);
   fun ALT (ls: list[pgram_t]) => Recog (Alt[pgram_t] ls);
   fun SEQ (ls: list[pgram_t]) => Recog (Seq[pgram_t] ls);
   fun EPS () => Recog (Epsilon[pgram_t]);
