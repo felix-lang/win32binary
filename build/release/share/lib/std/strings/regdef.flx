@@ -1,4 +1,4 @@
-#line 1150 "C:/projects/felix/src/packages/strings.fdoc"
+#line 1152 "C:/projects/felix/src/packages/strings.fdoc"
 
 class Regdef {
   union regex =
