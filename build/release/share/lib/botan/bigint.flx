@@ -1,5 +1,5 @@
-#line 23 "C:/projects/felix/src/packages/botan.fdoc"
-class BigInt
+#line 36 "C:/projects/felix/src/packages/botan.fdoc"
+library Botan { class BigInt
 {
   requires package "botan_bigint";
   type bigint = "Botan::BigInt";
@@ -80,5 +80,11 @@ class BigInt
   instance Str[bigint] {
     fun str: bigint -> string = "strbigint($1)" requires strbigint;
   }
-}
+  fun gcd: bigint * bigint -> bigint = "Botan::gcd($1,$2)";
+  fun lcm: bigint * bigint -> bigint = "Botan::lcm($1,$2)";
+  fun jacobi: bigint * bigint -> bigint = "Botan::jacobi($1,$2)";
+
+  // b^x % m
+  fun power_mod: bigint * bigint * bigint -> bigint = "Botan::power_mod($1,$2,$3)";
+}}
 
