@@ -1,4 +1,4 @@
-#line 643 "C:/projects/felix/src/packages/parsers.fdoc"
+#line 687 "C:/projects/felix/src/packages/parsers.fdoc"
 include "std/strings/parsers";
 
 class Parser_synlib
