@@ -157,7 +157,8 @@ void sync_sched::do_sread()
         if(debug_driver)
           fprintf(stderr,"[sync: svc_read] Writer @%p=%p, read into %p\n",
             pw->variable,*(void**)pw->variable, pr->variable);
-        *(void**)pr->variable = *(void**)pw->variable;
+        if (pr->variable && pw->variable)
+          *(void**)pr->variable = *(void**)pw->variable;
         if(debug_driver)
           fprintf(stderr,"[sync: svc_read] current fibre %p FED, fibre %p UNBLOCKED\n",ft, writer);
 
@@ -194,7 +195,8 @@ void sync_sched::do_swrite()
         if(debug_driver)
           fprintf(stderr,"[sync: svc_write] Writer @%p=%p, read into %p\n",
             pw->variable,*(void**)pw->variable, pr->variable);
-        *(void**)pr->variable = *(void**)pw->variable;
+        if (pr->variable && pw->variable)
+          *(void**)pr->variable = *(void**)pw->variable;
         if(debug_driver)
           fprintf(stderr,"[sync: svc_write] hungry fibre %p FED\n",reader);
 
@@ -225,7 +227,8 @@ void sync_sched::external_multi_swrite (schannel_t *chan, void *data)
         if(debug_driver)
            fprintf(stderr,"[sync: svc_multi_write] Write data %p, read into %p\n",
              data, pr->variable);
-        *(void**)pr->variable = data;
+        if (pr->variable)
+          *(void**)pr->variable = data;
         push_new(reader);
       }
       goto svc_multi_write_next;
