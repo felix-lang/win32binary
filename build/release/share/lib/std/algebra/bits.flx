@@ -1,4 +1,4 @@
-#line 667 "C:/projects/felix/src/packages/algebra.fdoc"
+#line 675 "C:/projects/felix/src/packages/algebra.fdoc"
 
 //$ Bitwise operators.
 class Bits[t] {

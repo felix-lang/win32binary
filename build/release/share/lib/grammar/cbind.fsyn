@@ -1,4 +1,4 @@
-#line 291 "C:/projects/felix/src/packages/grammar.fdoc"
+#line 295 "C:/projects/felix/src/packages/grammar.fdoc"
 //$ Technology for binding to C.
 //$ The forms in this DSSL are used to lift types and functions
 //$ from C into Felix, and, export Felix types and functions

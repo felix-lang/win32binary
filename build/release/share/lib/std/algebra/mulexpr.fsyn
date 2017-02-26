@@ -1,4 +1,4 @@
-#line 573 "C:/projects/felix/src/packages/algebra.fdoc"
+#line 579 "C:/projects/felix/src/packages/algebra.fdoc"
 syntax mulexpr
 {
   //$ multiplication: non-associative.

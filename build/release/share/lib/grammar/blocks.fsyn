@@ -1,4 +1,4 @@
-#line 237 "C:/projects/felix/src/packages/grammar.fdoc"
+#line 241 "C:/projects/felix/src/packages/grammar.fdoc"
 syntax blocks
 {
   stmt = block;

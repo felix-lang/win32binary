@@ -1,4 +1,4 @@
-#line 687 "C:/projects/felix/src/packages/grammar.fdoc"
+#line 691 "C:/projects/felix/src/packages/grammar.fdoc"
 //$ Embed C into Felix using extern "C" { } style.
 //$ Direct name binding.
 //$ WORK IN PROGRESS, NOT OPERATIONAL!
