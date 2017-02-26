@@ -1,4 +1,4 @@
-#line 534 "C:/projects/felix/src/packages/algebra.fdoc"
+#line 532 "C:/projects/felix/src/packages/algebra.fdoc"
 syntax addexpr
 {
   //$ Addition: left non-associative.

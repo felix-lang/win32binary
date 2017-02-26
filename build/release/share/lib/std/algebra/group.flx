@@ -11,12 +11,10 @@ class FloatAddgrp[t] {
   virtual proc += (px:&t,y:t) { px <- *px + y; }
   virtual proc -= (px:&t,y:t) { px <- *px - y; }
 
-/*
   reduce id (x:t): x+zero() => x;
   reduce id (x:t): zero()+x => x;
   reduce inv(x:t): x - x => zero();
   reduce inv(x:t): - (-x) => x;
-*/
   axiom sym (x:t,y:t): x+y == y+x;
 
   fun add(x:t,y:t)=> x + y;
@@ -25,17 +23,15 @@ class FloatAddgrp[t] {
   proc pluseq(px:&t, y:t) {  += (px,y); }
   proc  minuseq(px:&t, y:t) { -= (px,y); }
 }
-#line 547 "C:/projects/felix/src/packages/algebra.fdoc"
+#line 545 "C:/projects/felix/src/packages/algebra.fdoc"
 //$ Additive symmetric group, symbol +.
 class Addgrp[t] {
   inherit FloatAddgrp[t];
   axiom assoc (x:t,y:t,z:t): (x + y) + z == x + (y + z);
-/*
   reduce inv(x:t,y:t): x + y - y => x;
-*/
 }
 
-#line 560 "C:/projects/felix/src/packages/algebra.fdoc"
+#line 556 "C:/projects/felix/src/packages/algebra.fdoc"
 //$ Multiplicative symmetric float-approximate semi group with unit symbol *.
 //$ Note: associativity is not assumed.
 class FloatMultSemi1[t] {
@@ -47,23 +43,19 @@ class FloatMultSemi1[t] {
   virtual fun one: unit -> t;
   virtual fun * : t * t -> t;
   virtual proc *= (px:&t, y:t) { px <- *px * y; }
-/*
   reduce id (x:t): x*one() => x;
   reduce id (x:t): one()*x => x;
-*/
 }
 
-#line 591 "C:/projects/felix/src/packages/algebra.fdoc"
+#line 585 "C:/projects/felix/src/packages/algebra.fdoc"
 //$ Multiplicative semi group with unit.
 class MultSemi1[t] {
   inherit FloatMultSemi1[t];
   axiom assoc (x:t,y:t,z:t): (x * y) * z == x * (y * z);
-/*
   reduce cancel (x:t,y:t,z:t): x * z ==  y * z => x == y;
-*/
 }
 
-#line 903 "C:/projects/felix/src/packages/algebra.fdoc"
+#line 895 "C:/projects/felix/src/packages/algebra.fdoc"
 open class Quantifiers_add_mul {
   fun \sum[T,C with FloatAddgrp[T], Streamable[C,T]] (a:C):T =
   {
