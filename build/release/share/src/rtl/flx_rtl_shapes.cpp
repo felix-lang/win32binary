@@ -1,4 +1,4 @@
-#line 1079 "C:/projects/felix/src/packages/rtl.fdoc"
+#line 1080 "C:/projects/felix/src/packages/rtl.fdoc"
 #include "flx_rtl_shapes.hpp"
 #include "flx_rtl.hpp"
 //#include "flx_collector.hpp"
@@ -157,12 +157,40 @@ static ::flx::gc::generic::offset_data_t const _variant_offset_data = { 1, _vari
 static CxxValueType<int> int_fcops {};
 
 // ********************************************************
+// jump_address implementation
+// ********************************************************
+//OFFSETS for jump_address
+static const std::size_t jump_address_offsets[1]= {
+  offsetof(jump_address_t,target_frame)
+};
+
+static ::flx::gc::generic::offset_data_t const
+  jump_address_offset_data = { 1, jump_address_offsets }
+;
+
+static CxxValueType<jump_address_t> jump_address_t_fcops {};
+
+::flx::gc::generic::gc_shape_t jump_address_ptr_map = {
+  &_variant_ptr_map,
+  "rtl::jump_address_t",
+  1,
+  sizeof(_uctor_),
+  0, // finaliser
+  &jump_address_t_fcops, // fcops
+  &jump_address_offset_data, // scanner data
+  ::flx::gc::generic::scan_by_offsets, // scanner
+  ::flx::gc::generic::tblit<jump_address_t>, // encoder
+  ::flx::gc::generic::tunblit<jump_address_t>,  // decoder
+  gc::generic::gc_flags_default
+};
+
+// ********************************************************
 // int implementation
 // ********************************************************
 
 
 ::flx::gc::generic::gc_shape_t _int_ptr_map = {
-  &_variant_ptr_map,
+  &jump_address_ptr_map,
   "rtl::int",
   1,
   sizeof(int),

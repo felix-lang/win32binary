@@ -25,6 +25,7 @@ RTL_EXTERN extern ::flx::gc::generic::gc_shape_t _address_ptr_map;
 //RTL_EXTERN extern ::flx::gc::generic::gc_shape_t _caddress_ptr_map;
 RTL_EXTERN extern ::flx::gc::generic::gc_shape_t slist_node_ptr_map;
 RTL_EXTERN extern ::flx::gc::generic::gc_shape_t slist_ptr_map;
+RTL_EXTERN extern ::flx::gc::generic::gc_shape_t jump_address_ptr_map;
 
 }}
 #endif

@@ -1,4 +1,4 @@
-#line 2222 "C:/projects/felix/src/packages/grammar.fdoc"
+#line 2240 "C:/projects/felix/src/packages/grammar.fdoc"
 syntax felix_ident_lexer {
   /* identifiers */
   regdef ucn =

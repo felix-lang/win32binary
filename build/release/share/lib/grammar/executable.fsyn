@@ -1,4 +1,4 @@
-#line 1261 "C:/projects/felix/src/packages/grammar.fdoc"
+#line 1279 "C:/projects/felix/src/packages/grammar.fdoc"
 //$ Special executable forms.
 syntax executable {
   requires statements;

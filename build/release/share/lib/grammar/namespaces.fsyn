@@ -1,4 +1,4 @@
-#line 3413 "C:/projects/felix/src/packages/grammar.fdoc"
+#line 3431 "C:/projects/felix/src/packages/grammar.fdoc"
 //$ Felix namespace control.
 syntax namespaces {
   requires statements;
