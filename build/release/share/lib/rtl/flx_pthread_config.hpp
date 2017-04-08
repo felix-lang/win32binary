@@ -1,4 +1,4 @@
-#line 1925 "C:/projects/felix/src/packages/rtl-threads.fdoc"
+#line 1934 "C:/projects/felix/src/packages/rtl-threads.fdoc"
 #ifndef __FLX_PTHREAD_CONFIG_H__
 #define __FLX_PTHREAD_CONFIG_H__
 #include "flx_rtl_config.hpp"

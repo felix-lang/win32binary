@@ -30,6 +30,7 @@ public:
   size_t gc_freq;
   size_t min_mem;
   size_t max_mem;
+  int gcthreads;
 
   double free_factor;
 

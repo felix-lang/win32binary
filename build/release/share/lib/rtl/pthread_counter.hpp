@@ -19,6 +19,7 @@ class PTHREAD_EXTERN flx_ts_counter_t {
   flx_ts_counter_t(flx_ts_counter_t const &);
 public:
   flx_ts_counter_t();
+  flx_ts_counter_t(long);
   ~flx_ts_counter_t();
   long pre_incr(); // value AFTER increment
   long pre_decr(); // value AFTER decrement
@@ -36,6 +37,7 @@ public:
   long operator--(int) { return post_decr(); }
   long operator*() { return get(); }
   long operator=(long a) { return set(a); }
+  void decr_wait_zero();
 };
 }}
 

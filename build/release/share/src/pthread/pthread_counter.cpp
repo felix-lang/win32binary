@@ -1,4 +1,4 @@
-#line 805 "C:/projects/felix/src/packages/rtl-threads.fdoc"
+#line 807 "C:/projects/felix/src/packages/rtl-threads.fdoc"
 #include "pthread_counter.hpp"
 #include <stdio.h>
 
@@ -6,6 +6,7 @@ namespace flx { namespace pthread {
 
 
 flx_ts_counter_t::flx_ts_counter_t() : x(0) {}
+flx_ts_counter_t::flx_ts_counter_t(long init) : x(init) {}
 
 flx_ts_counter_t::~flx_ts_counter_t() {
   wait_zero();
@@ -69,6 +70,12 @@ void flx_ts_counter_t::wait_zero() {
     if(x==0)return;
     c.wait(m);
   }
+}
+
+void flx_ts_counter_t::decr_wait_zero() {
+  ::std::unique_lock< ::std::mutex> l(m);
+   --x;
+   while (x>0) c.wait(m);
 }
 
 }}

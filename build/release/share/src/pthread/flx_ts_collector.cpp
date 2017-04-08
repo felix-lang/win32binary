@@ -1,4 +1,4 @@
-#line 1692 "C:/projects/felix/src/packages/rtl-threads.fdoc"
+#line 1701 "C:/projects/felix/src/packages/rtl-threads.fdoc"
 #include "flx_rtl_config.hpp"
 #include "flx_ts_collector.hpp"
 
@@ -6,8 +6,8 @@ namespace flx {
 namespace gc {
 namespace collector {
 
-flx_ts_collector_t::flx_ts_collector_t(allocator_t *a, flx::pthread::thread_control_t *tc,FILE *tf) :
-  flx_collector_t(a,tc,tf)
+flx_ts_collector_t::flx_ts_collector_t(allocator_t *a, flx::pthread::thread_control_t *tc,int _gcthreads, FILE *tf) :
+  flx_collector_t(a,tc,_gcthreads,tf)
 {}
 
 flx_ts_collector_t::~flx_ts_collector_t(){}

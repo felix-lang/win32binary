@@ -1,4 +1,4 @@
-#line 1270 "C:/projects/felix/src/packages/rtl-threads.fdoc"
+#line 1279 "C:/projects/felix/src/packages/rtl-threads.fdoc"
 #ifndef __FLX_PTHREAD_LF_BAG_H__
 #define __FLX_PTHREAD_LF_BAG_H__
 

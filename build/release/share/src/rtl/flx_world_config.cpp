@@ -1,4 +1,4 @@
-#line 92 "C:/projects/felix/src/packages/embed.fdoc"
+#line 93 "C:/projects/felix/src/packages/embed.fdoc"
 
 #include "flx_world_config.hpp"
 #include <cstdlib>
@@ -108,6 +108,10 @@ flx_config::init(int argc, char **argv) {
   allow_collection_anywhere = (bool)egetv("FLX_ALLOW_COLLECTION_ANYWHERE", 1);
   if (debug)
     fprintf(stderr, "[FLX_ALLOW_COLLECTION_ANYWHERE] %s\n", allow_collection_anywhere ? "True" : "False");
+
+  gcthreads = (int)egetv("FLX_GCTHREADS",0);
+  if (debug)
+    fprintf(stderr, "[FLX_GCTHREADS] %d\n",gcthreads);
 
   if (debug) {
     for (int i=0; i<flx_argc; ++i)

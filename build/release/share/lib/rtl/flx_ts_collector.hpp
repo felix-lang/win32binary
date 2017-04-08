@@ -1,4 +1,4 @@
-#line 1646 "C:/projects/felix/src/packages/rtl-threads.fdoc"
+#line 1655 "C:/projects/felix/src/packages/rtl-threads.fdoc"
 
 #ifndef __FLX_TS_COLLECTOR_H__
 #define __FLX_TS_COLLECTOR_H__
@@ -15,7 +15,7 @@ namespace collector {
 struct PTHREAD_EXTERN flx_ts_collector_t :
   public flx::gc::collector::flx_collector_t
 {
-  flx_ts_collector_t(allocator_t *, flx::pthread::thread_control_t *, FILE*);
+  flx_ts_collector_t(allocator_t *, flx::pthread::thread_control_t *, int _gcthreads, FILE*);
   ~flx_ts_collector_t();
 
 private:

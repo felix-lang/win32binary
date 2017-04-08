@@ -1,4 +1,4 @@
-#line 908 "C:/projects/felix/src/packages/rtl-threads.fdoc"
+#line 917 "C:/projects/felix/src/packages/rtl-threads.fdoc"
 #include "pthread_waitable_bool.hpp"
 
 namespace flx { namespace pthread {

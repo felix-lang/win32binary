@@ -1,4 +1,4 @@
-#line 725 "C:/projects/felix/src/packages/embed.fdoc"
+#line 734 "C:/projects/felix/src/packages/embed.fdoc"
 
 
 #include "flx_world.hpp"

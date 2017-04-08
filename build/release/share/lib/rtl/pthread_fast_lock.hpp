@@ -1,4 +1,4 @@
-#line 1772 "C:/projects/felix/src/packages/rtl-threads.fdoc"
+#line 1781 "C:/projects/felix/src/packages/rtl-threads.fdoc"
 #ifndef __pthread_fast_lock__
 #define __pthread_fast_lock__
 #include "flx_pthread_config.hpp"

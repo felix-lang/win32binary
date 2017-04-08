@@ -1,4 +1,4 @@
-#line 882 "C:/projects/felix/src/packages/rtl-threads.fdoc"
+#line 891 "C:/projects/felix/src/packages/rtl-threads.fdoc"
 #ifndef __FLX_PTHREAD_WAIT_BOOL_H__
 #define __FLX_PTHREAD_WAIT_BOOL_H__
 #include "flx_pthread_config.hpp"

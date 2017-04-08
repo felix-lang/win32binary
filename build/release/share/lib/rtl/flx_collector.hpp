@@ -38,10 +38,18 @@ struct GC_EXTERN tracing_allocator : public virtual allocator_t
 };
 
 
+struct mark_thread_context_t
+{
+  flx_collector_t *collector;
+  pthread::memory_ranges_t *px;
+  int reclimit;
+};
+
+
 /// Naive Mark and Sweep Collector.
 struct GC_EXTERN flx_collector_t : public collector_t
 {
-  flx_collector_t(allocator_t *, flx::pthread::thread_control_base_t *, FILE *tf);
+  flx_collector_t(allocator_t *, flx::pthread::thread_control_base_t *, int _gcthreads, FILE *tf);
   ~flx_collector_t();
 
   // RF: added to allow implementation of non-leaky drivers.
@@ -111,7 +119,22 @@ private:
   void delete_frame(void *frame);
   size_t reap();
 
+  // top level mark, calls mark_single or mark_multi
   void mark(pthread::memory_ranges_t*);
+
+  // single threaded mark
+  void mark_single(pthread::memory_ranges_t*, int);
+
+  // multithreaded mark: single thread enters and creates
+  // worker threads which run mark_thread routine below
+  void mark_multi(pthread::memory_ranges_t*,int reclimit, int nthreads);
+
+public: // unfortunately, due to dispatch machinery
+  // worker thread
+  void mark_thread(mark_thread_context_t *);
+
+private:
+  int gcthreads;
   size_t sweep(); // calls scan_object
 
   typedef std::map<void *,size_t, std::less<void *> > rootmap_t;

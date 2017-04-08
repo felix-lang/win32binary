@@ -1,4 +1,4 @@
-#line 282 "C:/projects/felix/src/packages/embed.fdoc"
+#line 287 "C:/projects/felix/src/packages/embed.fdoc"
 
 #include "flx_world.hpp"
 #include "flx_eh.hpp"
@@ -179,7 +179,11 @@ int flx_world::setup(int argc, char **argv) {
     }
   }
 
-  collector = new flx::gc::collector::flx_ts_collector_t(allocator, thread_control, tracefile);
+  collector = new flx::gc::collector::flx_ts_collector_t(
+    allocator,
+    thread_control,
+    c->gcthreads, tracefile
+  );
   collector->set_debug(c->debug_collections);
   if(debug)
     fprintf(stderr, "[flx_world: setup] Created ts collector\n");
