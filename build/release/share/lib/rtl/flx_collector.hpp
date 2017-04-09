@@ -157,6 +157,10 @@ public:
   };
   void scan_object(void *memory, int reclimit);
   memdata_t check_interior (void *memory);
+
+  ::std::mutex j_tmp_lock;
+  ::std::condition_variable j_tmp_cv;
+  int j_tmp_waiting;
   void *j_tmp;
   JError_t je;
 };

@@ -1,4 +1,4 @@
-#line 2231 "C:/projects/felix/src/packages/gc.fdoc"
+#line 2254 "C:/projects/felix/src/packages/gc.fdoc"
 class Collector
 {
   open Rtti;

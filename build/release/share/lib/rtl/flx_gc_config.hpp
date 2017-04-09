@@ -1,4 +1,4 @@
-#line 2359 "C:/projects/felix/src/packages/gc.fdoc"
+#line 2382 "C:/projects/felix/src/packages/gc.fdoc"
 #ifndef __FLX_GC_CONFIG_H__
 #define __FLX_GC_CONFIG_H__
 #include "flx_rtl_config.hpp"

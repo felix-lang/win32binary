@@ -1,4 +1,4 @@
-#line 2091 "C:/projects/felix/src/packages/gc.fdoc"
+#line 2114 "C:/projects/felix/src/packages/gc.fdoc"
 class Rtti {
 
   //$ The type of the collector.
