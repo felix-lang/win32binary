@@ -1,4 +1,4 @@
-#line 523 "C:/projects/felix/src/packages/gc.fdoc"
+#line 533 "C:/projects/felix/src/packages/gc.fdoc"
 
 #include <cstdlib>
 #include <cstdio>
@@ -34,9 +34,24 @@ gc_shape_t _ptr_void_map = {
 };
 
 allocator_t::~allocator_t(){}
-collector_t::~collector_t(){}
+collector_t::~collector_t(){
+  if (debug)
+  {
+    ::std::chrono::duration<double> elapsed =
+      ::std::chrono::high_resolution_clock::now() - start_time
+    ;
+    fprintf(stderr, "Deleting collector total time = %4.5f seconds, gc time = %4.5f = %3.2f%%\n",
+      elapsed.count(), gc_time.count(), gc_time.count() * 100.0 / elapsed.count()
+    );
+  }
+}
 
-collector_t::collector_t() : debug(false), module_registry(0){}
+collector_t::collector_t()
+  : debug(false)
+  , module_registry(0)
+  , gc_time(0.0)
+  , start_time(::std::chrono::high_resolution_clock::now())
+{}
 
 gc_profile_t::gc_profile_t (
   bool debug_driver_,

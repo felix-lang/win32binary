@@ -9,6 +9,7 @@
 #include "pthread_thread_control_base.hpp"
 #include <string>
 #include "flx_compiler_support_bodies.hpp"
+#include <chrono>
 
 // we use an STL set to hold the collection of roots
 #include <set>
@@ -24,7 +25,7 @@ struct GC_EXTERN allocator_t;     // the allocator used
 struct GC_EXTERN offset_data_t;   // private data for offset scanner
 struct GC_EXTERN pointer_data_t;  // description of a pointer
 
-#line 214 "C:/projects/felix/src/packages/gc.fdoc"
+#line 215 "C:/projects/felix/src/packages/gc.fdoc"
 struct GC_EXTERN pointer_data_t
 {
   void *pointer;                      //< candidate pointer
@@ -34,7 +35,7 @@ struct GC_EXTERN pointer_data_t
   gc_shape_t *shape;                  //< shape
 };
 
-#line 227 "C:/projects/felix/src/packages/gc.fdoc"
+#line 228 "C:/projects/felix/src/packages/gc.fdoc"
 enum gc_shape_flags_t {
   gc_flags_default    = 0,            //< collectable and mobile
   gc_flags_immobile   = 1,            //< cannot be moved
@@ -75,7 +76,7 @@ struct GC_EXTERN gc_shape_t
 
 GC_EXTERN extern gc_shape_t _ptr_void_map;
 
-#line 272 "C:/projects/felix/src/packages/gc.fdoc"
+#line 273 "C:/projects/felix/src/packages/gc.fdoc"
 struct GC_EXTERN offset_data_t
 {
   ::std::size_t n_offsets;
@@ -84,7 +85,7 @@ struct GC_EXTERN offset_data_t
 
 GC_EXTERN scanner_t scan_by_offsets;
 
-#line 289 "C:/projects/felix/src/packages/gc.fdoc"
+#line 290 "C:/projects/felix/src/packages/gc.fdoc"
 
 /*
  * The following template is provided as a standard wrapper
@@ -112,7 +113,7 @@ void std_finaliser(collector_t*, void *t)
   static_cast<T*>(t) -> ~T();
 }
 
-#line 325 "C:/projects/felix/src/packages/gc.fdoc"
+#line 326 "C:/projects/felix/src/packages/gc.fdoc"
 /// Allocator abstraction.
 
 struct allocator_t {
@@ -124,7 +125,7 @@ struct allocator_t {
   void set_debug(bool d){debug=d;}
 };
 
-#line 356 "C:/projects/felix/src/packages/gc.fdoc"
+#line 357 "C:/projects/felix/src/packages/gc.fdoc"
 
 /// Collector abstraction.
 struct GC_EXTERN collector_t
@@ -136,6 +137,8 @@ struct GC_EXTERN collector_t
   virtual ~collector_t();
   virtual ::flx::pthread::thread_control_base_t *get_thread_control()const =0;
   virtual void register_pointer(void *q, int reclimit)=0;
+  ::std::chrono::time_point<::std::chrono::high_resolution_clock> start_time;
+  ::std::chrono::duration<double> gc_time;
 
   // These routines just provide statistics.
   size_t get_allocation_count()const {
@@ -159,8 +162,15 @@ struct GC_EXTERN collector_t
   // The mark and sweep collector algorithm.
   size_t collect() {
     //fprintf(stderr, "Collecting\n");
+    ::std::chrono::time_point< ::std::chrono::high_resolution_clock> start_time, end_time;
+    start_time = ::std::chrono::high_resolution_clock::now();
     size_t x = v_collect();
-    //fprintf(stderr, "Collecting DONE\n");
+    end_time = ::std::chrono::high_resolution_clock::now();
+    ::std::chrono::duration<double> elapsed = end_time - start_time;
+
+    if (debug)
+      fprintf(stderr, "Collecting DONE in %10.5f seconds\n", elapsed.count());
+    gc_time += elapsed;
     return x;
   }
 
