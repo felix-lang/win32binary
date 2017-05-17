@@ -1,9 +1,0 @@
-fun fix[T] (f:(T->T)->T->T) (x:T) : T => f (fix f) x;
-fun factabs (fact:int->int) (x:int) : int =>
-  match x with
-  | 0 => 1
-  | x => x * fact (x - 1)
-  endmatch
-;
-var fact = fix factabs;
-println$ fact 5;

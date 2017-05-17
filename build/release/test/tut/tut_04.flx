@@ -1,3 +1,0 @@
-write$ stdout,"Enter your name: "; fflush stdout;
-val name = readln$ stdin;
-writeln$ stdout, "Hello " + name;

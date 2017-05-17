@@ -1,2 +1,0 @@
-var a1 : int * int * int = 1,2,3;
-var a2 : int ^ 3 = 1,2,3;

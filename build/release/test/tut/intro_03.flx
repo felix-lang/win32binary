@@ -1,5 +1,0 @@
-fun add: int * int -> int = "add($a)";
-fun f: int * int -> int;
-ctypes myint, mylong;
-cenum myenum = one,two,three;
-cflags myflags = flag1, flag2, flag3;

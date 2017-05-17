@@ -1,8 +1,0 @@
-include "./intro_02";
-var x : myint = one;
-var px : &myint = &x;
-myprintln (*px);
-x = two;
-myprintln (*px);
-px <- two;
-myprintln (x);
