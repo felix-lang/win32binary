@@ -1,0 +1,45 @@
+  proc printline[T] : T = "::std::cout << $1 << ::std::endl;" 
+    requires header '#include <iostream>'
+  ;
+
+  printline 1;
+  printline "Hello";
+  printline 4.2;
+type myshort= "short";
+type myint = "int";
+type mylong = "long";
+
+type myushort= "unsigned short";
+type myuint = "unsigned int";
+type myulong = "unsigned long";
+
+type myfloat = "float";
+type mydouble = "double";
+
+fun + : myshort * myshort -> myshort = "$1+$2";
+fun + : myint * myint -> myint = "$1+$2";
+fun + : mylong * mylong -> myint = "$1+$2";
+fun + : myushort * myushort -> myushort = "$1+$2";
+fun + : myuint * myuint -> myuint = "$1+$2";
+fun + : myulong * myulong -> myulong = "$1+$2";
+fun + : myfloat * myfloat -> myfloat = "$1+$2";
+fun + : mydouble* mydouble -> mydouble = "$1+$2";
+fun +[T] : T * T -> T = "$1+$2";
+typedef myints = typesetof (myshort, myint, mylong);
+typedef myuints = typesetof (myushort, myuint, myulong);
+typedef myfloats = typesetof (myfloat, mydouble);
+typedef mynumbers = myints \cup myuints \cup myfloats;
+
+fun mymake [T in mynumbers] : int -> T = "int($1)";
+fun *[T in mynumbers] : T * T -> T = "$1*$2";
+proc printit[T in mynumbers] : T = "::std::cout<<$1<<::std::endl;";
+
+var xs = mymake[myshort] (42);
+var xi = mymake[myint] (42);
+var xl = mymake[mylong] (42);
+var xd = mymake[mydouble] (42);
+
+printit$ xs;
+printit$ xi;
+printit$ xl;
+printit$ xd;

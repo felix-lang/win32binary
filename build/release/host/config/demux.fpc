@@ -1,4 +1,4 @@
-Generated_from: 101 "C:\cygwin64\home\skaller\felix\src\packages\demux.fdoc"
+Generated_from: 101 "C:\projects\felix\src\packages\demux.fdoc"
 Name: demux
 Description: Event handling (windows event ports with msvc)
 Comment: Generated during configuration

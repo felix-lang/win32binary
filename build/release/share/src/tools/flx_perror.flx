@@ -1,4 +1,4 @@
-#line 208 "C:/cygwin64/home/skaller/felix/src/packages/programmer.fdoc"
+#line 208 "C:/projects/felix/src/packages/programmer.fdoc"
 val e = int (System::argv 1);
 println$ "Errno " + str e + " " + Errno::strerror e.Errno::errno_t;
 

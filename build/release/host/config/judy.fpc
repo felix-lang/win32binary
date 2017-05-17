@@ -1,4 +1,4 @@
-Generated_from: 137 "C:\cygwin64\home\skaller\felix\src\packages\judy.fdoc"
+Generated_from: 137 "C:\projects\felix\src\packages\judy.fdoc"
 Name: Judy WIN32 64 BIT
 Description: Judy arrays
 provides_dlib: /DEFAULTLIB:judy_dynamic

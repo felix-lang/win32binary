@@ -1,4 +1,4 @@
-#line 2097 "C:/projects/felix/src/packages/gc.fdoc"
+#line 2104 "C:/projects/felix/src/packages/gc.fdoc"
 
 //$ Generic garbage collector interface.
 //$ This class provides a generic interface to the GC,

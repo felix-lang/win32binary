@@ -1,4 +1,4 @@
-#line 660 "C:/cygwin64/home/skaller/felix/src/packages/buildtools.fdoc"
+#line 660 "C:/projects/felix/src/packages/buildtools.fdoc"
 include "std/felix/flx_cp";
 
 class FlxPrepBuild

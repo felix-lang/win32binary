@@ -1,4 +1,4 @@
-#line 110 "C:/cygwin64/home/skaller/felix/src/packages/flx_doc.fdoc"
+#line 110 "C:/projects/felix/src/packages/flx_doc.fdoc"
 var ishtml = System::argv 1 == "--html";
 var dir =  Filename::join ("src", "lib", "std");
 

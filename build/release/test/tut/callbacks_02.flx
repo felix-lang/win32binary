@@ -1,0 +1,19 @@
+  body cback_h =
+  """
+  void register_callback(int x, void (*cb)(int, void*), void *client_data)
+  {
+    cb (x, client_data);
+  }
+  """;
+proc register_callback: int * (int * address --> void) * address
+  requires cback_h;
+proc flx_cb(x:int){ println$ "Called back with " + str x; }
+callback proc wrap_flx_cb: int * wrap_flx_cb;
+register_callback
+  (
+    42, 
+    C_hack::cast[int * address --> void] wrap_flx_cb, 
+    C_hack::cast[address] flx_cb
+  )
+;
+wrap_flx_cb(66, flx_cb);

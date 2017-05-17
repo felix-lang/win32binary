@@ -1,4 +1,4 @@
-#line 25 "C:/cygwin64/home/skaller/felix/src/packages/flx.fdoc"
+#line 25 "C:/projects/felix/src/packages/flx.fdoc"
 // flx plugin linker
 //
 class FlxPluginSymbols
@@ -17,7 +17,8 @@ class FlxPluginSymbols
   {
     static-link-plugin
       toolchain_clang_osx,
-      toolchain_clang_iphoneos,
+      toolchain_iphoneos,
+      toolchain_iphonesimulator,
       toolchain_clang_linux,
       toolchain_gcc_osx,
       toolchain_gcc_linux,

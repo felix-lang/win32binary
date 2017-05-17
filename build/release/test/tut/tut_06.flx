@@ -1,0 +1,12 @@
+var a : int ;  // uninitialized is ok
+a = 2; // mutable is ok
+var b = &a; // references are ok
+val num = 10;
+val denom = 0;
+val quot = { num / denom }; // defer evaluation
+val result = 
+  if denom == 0 then 0 
+  else #quot // evaluate now if control flows here
+  endif
+;
+println$ result;

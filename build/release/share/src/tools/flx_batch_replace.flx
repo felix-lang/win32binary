@@ -1,4 +1,4 @@
-#line 293 "C:/cygwin64/home/skaller/felix/src/packages/filetools.fdoc"
+#line 293 "C:/projects/felix/src/packages/filetools.fdoc"
 include "std/felix/flx_cp";
 
 fun dbg(s:string):string={ println s; return s; }

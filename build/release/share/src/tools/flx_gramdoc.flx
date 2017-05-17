@@ -1,4 +1,4 @@
-#line 17 "C:/cygwin64/home/skaller/felix/src/packages/flx_doc.fdoc"
+#line 17 "C:/projects/felix/src/packages/flx_doc.fdoc"
 var ishtml = System::argv 1 == "--html";
 var dir =  Filename::join ("src", "lib", "grammar");
 var fregex = ".*\\.flxh";

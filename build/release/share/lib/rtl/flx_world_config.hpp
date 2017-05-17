@@ -23,6 +23,7 @@ public:
   bool debug_allocations;
   bool debug_collections;
   bool report_collections;
+  bool report_gcstats;
 
   bool debug_driver;
   bool finalise;

@@ -1,4 +1,4 @@
-Generated_from: 1152 "C:\cygwin64\home\skaller\felix\src\packages\embed.fdoc"
+Generated_from: 1169 "C:\projects\felix\src\packages\embed.fdoc"
 Name: flx_async
 Description: Async hook
 provides_dlib: -lflx_async_dynamic

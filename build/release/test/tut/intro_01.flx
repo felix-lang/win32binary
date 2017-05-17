@@ -1,0 +1,50 @@
+// A bool type.
+type mybool = "bool";
+
+// An integer type.
+type myint = "int";
+
+// A string type.
+type mystring = "::std::string" 
+  requires header "#include <string>"
+;
+const myfalse : mybool = "false";
+const mytrue : mybool = "true";
+
+const zero : myint = "0";
+const one : myint = "1";
+const two : myint = "2";
+
+const empty : mystring = '::std::string("")'; 
+const white : mystring = '::std::string(" ")';
+const hello : mystring = '::std::string("hello")';
+const world : mystring = '::std::string("world")';
+fun myand : mybool * mybool -> mybool = "$1&&$2";
+fun myor : mybool * mybool -> mybool = "$1||$2";
+fun mynot : mybool -> mybool = "!$1";
+
+fun myadd : myint * myint -> myint = "$1+$2";
+fun mymul : myint * myint -> myint = "$1*$2";
+fun myeq : myint * myint -> mybool = "$1==$2";
+
+fun mycat : mystring * mystring -> mystring = "$1+$2";
+proc myprint : myint = "::std::cout<<$1;" 
+  requires header "#include <iostream>"
+;
+proc myendl : 1 = "::std::cout<<::std::endl;"
+  requires header "#include <iostream>"
+;
+proc myprint : mystring = "::std::cout<<$1;" 
+  requires header "#include <iostream>"
+;
+proc myprint : mybool= '::std::cout<<($1??"mytrue":"myfalse");' 
+  requires header "#include <iostream>"
+;
+// Say "hello world"
+myprint (mycat (mycat (hello, white), world)); myendl ();
+
+// show 1 + 2, should be 3
+myprint (myadd (one, two)); myendl();
+
+// basic axiom check
+myprint (myeq (myadd (one, two), myadd (two, one))); myendl ();

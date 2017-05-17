@@ -1,4 +1,4 @@
-#line 153 "C:/cygwin64/home/skaller/felix/src/packages/debug.fdoc"
+#line 153 "C:/projects/felix/src/packages/debug.fdoc"
 #include <sys/socket.h>
 #include <stdio.h>
 #include <arpa/inet.h>

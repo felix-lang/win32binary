@@ -1,4 +1,4 @@
-#line 20 "C:/cygwin64/home/skaller/felix/src/packages/linux.fdoc"
+#line 20 "C:/projects/felix/src/packages/linux.fdoc"
 #define STAT "/proc/stat"
 #include <stdio.h>
 #include <errno.h>

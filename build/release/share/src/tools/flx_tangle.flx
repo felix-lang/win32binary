@@ -1,4 +1,4 @@
-#line 6 "C:/cygwin64/home/skaller/felix/src/packages/programmer.fdoc"
+#line 6 "C:/projects/felix/src/packages/programmer.fdoc"
 //$ flx_tangle --inoutdir --indir=indir --outdir=outdir pattern ...
 //$ processes the file indir/basename.fdoc and generates
 //$ the files:

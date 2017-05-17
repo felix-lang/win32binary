@@ -1,0 +1,17 @@
+type myint = "int";
+fun make_myint: int -> myint = "$1";
+fun make_int: myint -> int = "$1";
+var x : myint = make_myint (42);
+println$ make_int(x);
+fun _ctor_myint : int -> myint = "$1";
+fun _ctor_int : myint -> int = "$1";
+var y : myint = myint (42);
+println$ int(y);
+type yourint = "int";
+ctor yourint : int = "$1";
+ctor int : yourint = "$1";
+var z = yourint (42);
+println$ int(z);
+typedef alias = myint;
+ctor alias : double = "int($1)";
+println$ int ( alias (4.2) );

@@ -1,4 +1,4 @@
-Generated_from: 276 "C:\cygwin64\home\skaller\felix\src\packages\strutil.fdoc"
+Generated_from: 276 "C:\projects\felix\src\packages\strutil.fdoc"
 Name: flx_strutil
 Description: String utilities
 provides_dlib: /DEFAULTLIB:flx_strutil_dynamic

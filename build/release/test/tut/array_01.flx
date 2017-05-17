@@ -1,0 +1,131 @@
+//Check tuple constructor
+begin
+  val x2 = (3, 4);
+  print$ x2.0;
+  print$ x2.1;
+  endl;
+
+  val x3 = (5, 6, 7);
+  print$ x3.0;
+  print$ x3.1;
+  print$ x3.2;
+  endl;
+
+  val x4 = (8, 9, 10, 11);
+  print$ x4.0;
+  print$ x4.1;
+  print$ x4.2;
+  print$ x4.3;
+  endl;
+end
+//Check Array::_ctor_array
+begin
+  val x2 = (3, 4);
+  print$ x2.0;
+  print$ x2.1;
+  endl;
+
+  val x3 = (5, 6, 7);
+  print$ x3.0;
+  print$ x3.1;
+  print$ x3.2;
+  endl;
+
+  val x4 = (8, 9, 10, 11);
+  print$ x4.0;
+  print$ x4.1;
+  print$ x4.2;
+  print$ x4.3;
+  endl;
+end
+//Check Array::len
+begin
+  print$ len$ (5, 6); endl;
+  print$ len$ (7, 8, 9); endl;
+  print$ len$ (7, 8, 9, 10); endl;
+end
+//Check Array::subscript
+begin
+  val x2 = (5, 6);
+  print$ x2.0;
+  print$ x2.1;
+  endl;
+
+  val x3 = (7, 8, 9);
+  print$ x3.0;
+  print$ x3.1;
+  print$ x3.2;
+  endl;
+
+  val x4 = (10, 11, 12, 13);
+  print$ x4.0;
+  print$ x4.1;
+  print$ x4.2;
+  print$ x4.3;
+  endl;
+end
+//Check Array::iter
+begin
+  val f = proc (i:int) { print i; };
+  iter f$ (4, 5); endl;
+  iter f$ (4, 5, 6); endl;
+  iter f$ (4, 5, 6, 7); endl;
+end
+//Check arrays
+begin
+  val f = proc (i:int) { print i; };
+  val g = fun (i:int) => i - 1;
+  iter f$ map g$ (4, 5); endl;
+  iter f$ map g$ (4, 5, 6); endl;
+  iter f$ map g$ (4, 5, 6, 7); endl;
+end
+//Check arrays
+begin
+  val f = fun (x:int) (y:int) => x - y;
+  print$ fold_left f 3$ (4, 5); endl;
+  print$ fold_left f 3$ (4, 5, 6); endl;
+  print$ fold_left f 3$ (4, 5, 6, 7); endl;
+end
+//Check arrays
+begin
+  val f = fun (x:int) (y:int) => x - y;
+  print$ fold_right f (4, 5) 6; endl;
+  print$ fold_right f (4, 5, 6) 7; endl;
+  print$ fold_right f (4, 5, 6, 7) 8; endl;
+end
+//Check arrays
+begin
+  val f = proc (i:int) { print i; };
+  iter f$ rev$ (4, 5); endl;
+  iter f$ rev$ (4, 5, 6); endl;
+  iter f$ rev$ (4, 5, 6, 7); endl;
+end
+//Check Array::map
+begin
+  val f = proc (i:int) { print i; };
+  val g = fun (i:int) => i - 1;
+  iter f$ map g$ (4, 5); endl;
+  iter f$ map g$ (4, 5, 6); endl;
+  iter f$ map g$ (4, 5, 6, 7); endl;
+end
+//Check Array::fold_left
+begin
+  val f = fun (x:int) (y:int) => x - y;
+  print$ fold_left f 3$ (4, 5); endl;
+  print$ fold_left f 3$ (4, 5, 6); endl;
+  print$ fold_left f 3$ (4, 5, 6, 7); endl;
+end
+//Check Array::fold_right
+begin
+  val f = fun (x:int) (y:int) => x - y;
+  print$ fold_right f (4, 5) 6; endl;
+  print$ fold_right f (4, 5, 6) 7; endl;
+  print$ fold_right f (4, 5, 6, 7) 8; endl;
+end
+//Check Array::rev
+begin
+  val f = proc (i:int) { print i; };
+  iter f$ rev$ (4, 5); endl;
+  iter f$ rev$ (4, 5, 6); endl;
+  iter f$ rev$ (4, 5, 6, 7); endl;
+end

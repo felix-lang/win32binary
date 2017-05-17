@@ -1,4 +1,4 @@
-#line 966 "C:/projects/felix/src/packages/embed.fdoc"
+#line 974 "C:/projects/felix/src/packages/embed.fdoc"
 #ifndef __FLX_ASYNC_H__
 #define __FLX_ASYNC_H__
 #include "flx_rtl_config.hpp"

@@ -1,4 +1,4 @@
-Generated_from: 519 "C:\cygwin64\home\skaller\felix\src\packages\exceptions.fdoc"
+Generated_from: 519 "C:\projects\felix\src\packages\exceptions.fdoc"
 Name: flx_exceptions
 Description: Felix exceptions
 provides_dlib: -lflx_exceptions_dynamic

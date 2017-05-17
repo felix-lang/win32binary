@@ -1,4 +1,4 @@
-#line 533 "C:/projects/felix/src/packages/gc.fdoc"
+#line 537 "C:/projects/felix/src/packages/gc.fdoc"
 
 #include <cstdlib>
 #include <cstdio>
@@ -35,7 +35,7 @@ gc_shape_t _ptr_void_map = {
 
 allocator_t::~allocator_t(){}
 collector_t::~collector_t(){
-  if (debug)
+  if (report_gcstats)
   {
     ::std::chrono::duration<double> elapsed =
       ::std::chrono::high_resolution_clock::now() - start_time
@@ -48,6 +48,7 @@ collector_t::~collector_t(){
 
 collector_t::collector_t()
   : debug(false)
+  , report_gcstats(false)
   , module_registry(0)
   , gc_time(0.0)
   , start_time(::std::chrono::high_resolution_clock::now())
@@ -58,6 +59,7 @@ gc_profile_t::gc_profile_t (
   bool debug_allocations_,
   bool debug_collections_,
   bool report_collections_,
+  bool report_gcstats_,
   bool allow_collection_anywhere_,
   size_t gc_freq_,
   size_t min_mem_,
@@ -70,6 +72,7 @@ gc_profile_t::gc_profile_t (
   debug_allocations(debug_allocations_),
   debug_collections(debug_collections_),
   report_collections(report_collections_),
+  report_gcstats(report_gcstats_),
   allow_collection_anywhere(allow_collection_anywhere_),
   gc_freq(gc_freq_),
   gc_counter(0),
@@ -217,7 +220,7 @@ void *scan_by_offsets(collector_t *collector, gc_shape_t *shape, void *p, size_t
       //fprintf(stderr, "scan by offsets %s, #%d, offset %zu, address %p, value %p\n",
       //  shape->cname, i, offsets[i], pq, q);
       // instead of returning the pointer, register it for later processing
-      if(q)
+      if(collector->inrange(q))
       {
         collector->register_pointer(q, reclimit);
       }

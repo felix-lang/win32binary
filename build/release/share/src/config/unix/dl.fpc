@@ -1,4 +1,4 @@
-Generated_from: 1286 "C:\cygwin64\home\skaller\felix\src\packages\dynlink.fdoc"
+Generated_from: 1286 "C:\projects\felix\src\packages\dynlink.fdoc"
 Name: dl
 Description: dynamic loading support
 includes: '<dlfcn.h>'

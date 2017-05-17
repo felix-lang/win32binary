@@ -1,4 +1,4 @@
-#line 361 "C:/cygwin64/home/skaller/felix/src/packages/filetools.fdoc"
+#line 361 "C:/projects/felix/src/packages/filetools.fdoc"
 // File renumbering
 
 if System::argc < 4 do

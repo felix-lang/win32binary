@@ -1,4 +1,4 @@
-#line 344 "C:/cygwin64/home/skaller/felix/src/packages/flx_doc.fdoc"
+#line 344 "C:/projects/felix/src/packages/flx_doc.fdoc"
 var dirname = System::argv_dflt 1 "src/web/tut";
 var homepage = System::argv_dflt 2 "";
 

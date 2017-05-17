@@ -1,4 +1,4 @@
-Generated_from: 1307 "C:\cygwin64\home\skaller\felix\src\packages\dynlink.fdoc"
+Generated_from: 1318 "C:\projects\felix\src\packages\dynlink.fdoc"
 Name: flx_dynlink
 Description: Felix Dynamic loading support
 provides_dlib: /DEFAULTLIB:flx_dynlink_dynamic

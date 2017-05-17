@@ -1,4 +1,4 @@
-#line 803 "C:/projects/felix/src/packages/gc.fdoc"
+#line 810 "C:/projects/felix/src/packages/gc.fdoc"
 
 #ifndef __FLX_COLLECTOR_H__
 #define __FLX_COLLECTOR_H__
@@ -112,7 +112,7 @@ private:
   uintptr_t minptr;
   uintptr_t maxptr;
 
-  bool inrange(void *p) { return minptr <= uintptr_t(p) && uintptr_t(p) < maxptr; }
+  bool inrange(void *p)const { return minptr <= uintptr_t(p) && uintptr_t(p) < maxptr; }
   void unlink(void *frame);
   void v_finalise(void *frame);
   void post_delete(void *frame);

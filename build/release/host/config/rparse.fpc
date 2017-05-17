@@ -1,4 +1,4 @@
-Generated_from: 219 "C:\cygwin64\home\skaller\felix\src\packages\rparse.fdoc"
+Generated_from: 219 "C:\projects\felix\src\packages\rparse.fdoc"
 Description: Respectful Parser, binary edition
 Location: Part of the standard library
 provides_slib: /DEFAULTLIB:librparse_static

@@ -1,4 +1,4 @@
-#line 30 "C:/cygwin64/home/skaller/felix/src/packages/filetools.fdoc"
+#line 30 "C:/projects/felix/src/packages/filetools.fdoc"
 fun dbg(s:string):string={ println s; return s; }
 //println$ System::args ();
 //println$ "argc=" + str System::argc;

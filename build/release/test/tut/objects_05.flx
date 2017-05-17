@@ -1,0 +1,39 @@
+// The base.
+interface A[T] { print : 1 -> 0; get: 1 -> list[T]; }
+object fred[T] (x:list[T]) implements A[T] = 
+{
+  method proc print () { println$ x; }
+  method fun get () => x;
+}
+
+var lst = list$ 1,2,3;
+var a = fred lst;
+
+a.print();
+println$ a.get();
+
+println$ "*" * 20;
+
+// OK, so an inheritance example.
+
+interface B[T] extends A[T] { pprint: 1 -> 0; }
+
+object joe () extends a implements B[int] = {
+  method proc pprint () { print "Hello "; a.print(); }
+}
+
+var b = joe();
+b.print();
+b.pprint();
+println$ b.get();
+interface C[T] extends A[T] { pprint: 1 -> 0; }
+
+object joe[T] (x:list[T]) extends fred x as var y implements C[T] = {
+  method proc pprint () { print "Hello "; y.print(); }
+  method proc print () { print "OVERRIDE "; y.print(); }
+}
+
+var c = joe lst;
+c.print();
+c.pprint();
+println$ c.get();

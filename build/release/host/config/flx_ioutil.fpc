@@ -1,4 +1,4 @@
-Generated_from: 267 "C:\cygwin64\home\skaller\felix\src\packages\io.fdoc"
+Generated_from: 267 "C:\projects\felix\src\packages\io.fdoc"
 Name: flx_ioutil
 Description: I/O support
 includes: '"flx_ioutil.hpp"'

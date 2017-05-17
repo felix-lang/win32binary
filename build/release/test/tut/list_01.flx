@@ -1,0 +1,68 @@
+//Check List::_ctor_list
+begin
+  fun str (x:list[int]) =>
+    match x with
+    | #Empty => "()"
+    | Cons (h, t) => "(" + (str h) + ", " + (str t) + ")"
+    endmatch
+  ;
+  print$ str$ list[int](); endl;
+  print$ str$ list(4); endl;
+  print$ str$ list(4, 5); endl;
+  print$ str$ list(4, 5, 6); endl;
+  print$ str$ list(4, 5, 6, 7); endl;
+end
+//Check List::len
+begin
+  print$ len$ list[int](); endl;
+  print$ len$ list(2); endl;
+  print$ len$ list(3, 4); endl;
+  print$ len$ list(5, 6, 7); endl;
+  print$ len$ list(8, 9, 10, 11); endl;
+end
+//Check List::iter
+begin
+  val f = proc (i:int) { print i; };
+  iter f$ list[int](); endl;
+  iter f$ list(4); endl;
+  iter f$ list(4, 5); endl;
+  iter f$ list(4, 5, 6); endl;
+  iter f$ list(4, 5, 6, 7); endl;
+end
+//Check List::map
+begin
+  val f = proc (i:int) { print i; };
+  val g = fun (i:int) => i - 1;
+  iter f$ map g$ list[int](); endl;
+  iter f$ map g$ list(4); endl;
+  iter f$ map g$ list(4, 5); endl;
+  iter f$ map g$ list(4, 5, 6); endl;
+  iter f$ map g$ list(4, 5, 6, 7); endl;
+end
+//Check List::fold_left
+begin
+  val f = fun (x:int) (y:int) => x - y;
+  print$ fold_left f 3$ list[int](); endl;
+  print$ fold_left f 3$ list(4); endl;
+  print$ fold_left f 3$ list(4, 5); endl;
+  print$ fold_left f 3$ list(4, 5, 6); endl;
+  print$ fold_left f 3$ list(4, 5, 6, 7); endl;
+end
+//Check List::fold_right
+begin
+  val f = fun (x:int) (y:int) => x + y;
+  print$ fold_right f (list[int]()) 4; endl;
+  print$ fold_right f (list(4)) 5; endl;
+  print$ fold_right f (list(4, 5)) 6; endl;
+  print$ fold_right f (list(4, 5, 6)) 7; endl;
+  print$ fold_right f (list(4, 5, 6, 7)) 8; endl;
+end
+//Check List::rev
+begin
+  val f = proc (i:int) { print i; };
+  iter f$ rev$ list[int](); endl;
+  iter f$ rev$ list(4); endl;
+  iter f$ rev$ list(4, 5); endl;
+  iter f$ rev$ list(4, 5, 6); endl;
+  iter f$ rev$ list(4, 5, 6, 7); endl;
+end

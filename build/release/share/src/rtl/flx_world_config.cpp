@@ -1,4 +1,4 @@
-#line 93 "C:/projects/felix/src/packages/embed.fdoc"
+#line 94 "C:/projects/felix/src/packages/embed.fdoc"
 
 #include "flx_world_config.hpp"
 #include <cstdlib>
@@ -63,6 +63,12 @@ flx_config::init(int argc, char **argv) {
   if (report_collections)
   {
     fprintf(stderr, "[FLX_REPORT_COLLECTIONS] Collection report enabled\n");
+  }
+
+  report_gcstats = (bool)egetv("FLX_REPORT_GCSTATS", report_collections);
+  if (report_collections)
+  {
+    fprintf(stderr, "[FLX_REPORT_GCSTATS] GC statistics report enabled\n");
   }
 
 

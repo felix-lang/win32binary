@@ -1,0 +1,3 @@
+cstmt '::std::cout << "hello world" << ::std::endl;';
+println$ cexpr[string] '::std::string("Hello ")' endcexpr +"world";
+noreturn cstmt "exit(0);";

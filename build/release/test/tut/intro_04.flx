@@ -1,0 +1,28 @@
+include "./intro_01";
+syntax mystatements
+{ 
+  stmt := "say" sexpr ";" =># { myprint ?2; myendl(); };
+}
+open syntax mystatements;
+
+say (myeq (myadd (one, two), myadd (two, one)));
+syntax myexpressions
+{
+  sexpr := myrel =># (?1);
+
+  myrel := myterm "==" myterm =>#  (myeq (?1, ?3) );
+  myrel := myterm =># (?1);
+
+  myterm := myterm "+" myfactor =># ( myadd (?1, ?3) );
+  myterm := myfactor =># (?1);
+
+  myfactor := myfactor "*" myatom =># ( mymul (?1, ?3) );
+  myfactor := myatom =># (?1);
+
+  myatom := sname =># "(nos _1)";
+  myatom := "(" myrel ")" =># "_2";
+
+}
+open syntax myexpressions;
+
+say one + two == two + one;

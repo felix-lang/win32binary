@@ -131,8 +131,9 @@ struct allocator_t {
 struct GC_EXTERN collector_t
 {
   bool debug;
+  bool report_gcstats;
   void *module_registry;
-  void set_debug(bool d){debug=d;}
+  void set_debug(bool d, bool stats){debug=d;report_gcstats=stats;}
   collector_t();
   virtual ~collector_t();
   virtual ::flx::pthread::thread_control_base_t *get_thread_control()const =0;
@@ -140,6 +141,7 @@ struct GC_EXTERN collector_t
   ::std::chrono::time_point<::std::chrono::high_resolution_clock> start_time;
   ::std::chrono::duration<double> gc_time;
 
+  virtual bool inrange(void *)const =0;
   // These routines just provide statistics.
   size_t get_allocation_count()const {
     return v_get_allocation_count();
@@ -223,7 +225,8 @@ struct GC_EXTERN gc_profile_t {
   bool debug_driver;
   bool debug_allocations;     ///< allocator debug on/off
   bool debug_collections;     ///< collector debug on/off
-  bool report_collections;     ///< collector debug on/off
+  bool report_collections;    ///< collector debug on/off
+  bool report_gcstats;        ///< print final gc statistics
   bool allow_collection_anywhere; ///< enable collect on allocate
 
   size_t gc_freq;      ///< how often to collect
@@ -253,6 +256,7 @@ struct GC_EXTERN gc_profile_t {
     bool debug_allocations_,
     bool debug_collections_,
     bool report_collections_,
+    bool report_gcstats_,
     bool allow_collection_anywhere_,
     size_t gc_freq_,
     size_t min_mem_,

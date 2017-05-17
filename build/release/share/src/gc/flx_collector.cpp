@@ -1,4 +1,4 @@
-#line 998 "C:/projects/felix/src/packages/gc.fdoc"
+#line 1005 "C:/projects/felix/src/packages/gc.fdoc"
 
 #include <cstdlib>
 #include <map>

@@ -1,4 +1,4 @@
-#line 225 "C:/cygwin64/home/skaller/felix/src/packages/filetools.fdoc"
+#line 225 "C:/projects/felix/src/packages/filetools.fdoc"
 var dir =
   if System::argc < 2 then Directory::getcwd()
   else System::argv 1
