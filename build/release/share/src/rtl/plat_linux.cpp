@@ -1,4 +1,4 @@
-#line 1359 "C:/projects/felix/src/packages/rtl.fdoc"
+#line 1358 "C:/projects/felix/src/packages/rtl.fdoc"
 #define STAT "/proc/stat"
 #include <stdio.h>
 #include <errno.h>
