@@ -1,0 +1,9 @@
+proc prompt (x:string) {
+  write$ stdout, x; 
+  fflush stdout;
+}
+
+prompt "Input string: ";
+println$ readln$ stdin;
+var items = list(1,2,3);
+iter (proc (x:int) { println x; }) items;

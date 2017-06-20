@@ -1,4 +1,4 @@
-Generated_from: 3640 "C:\projects\felix\src\packages\sdl.fdoc"
+Generated_from: 3643 "C:\projects\felix\src\packages\sdl.fdoc"
 Name: SDL2
 Description: Simple Direct Media Layer 2.0
 cflags: -I/usr/local/include/SDL2

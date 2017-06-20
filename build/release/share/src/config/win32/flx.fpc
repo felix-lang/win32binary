@@ -1,4 +1,4 @@
-Generated_from: 1546 "C:\projects\felix\src\packages\rtl.fdoc"
+Generated_from: 1552 "C:\projects\felix\src\packages\rtl.fdoc"
 Name: flx
 Description: Felix core runtime support
 provides_dlib: /DEFAULTLIB:flx_dynamic

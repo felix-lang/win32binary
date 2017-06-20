@@ -1,0 +1,39 @@
+type Metres = "double";                    // bind the type to C
+ctor Metres: double = "$1";                // constructors
+ctor double: Metres = "$1";
+fun str(x:Metres)=> str (double x) + "m";  // format as string
+
+type SquareMetres = "double";              // bind the type to C
+ctor SquareMetres: double = "$1";          // constructors
+ctor double: SquareMetres = "$1";
+fun str(x:SquareMetres)=> str (double x)+"m^2"; // format as string
+
+fun +: Metres * Metres -> Metres = "$1+$2";
+fun *: Metres * double -> Metres = "$1*$2";
+fun *: double * Metres -> Metres = "$1*$2";
+fun *: Metres * Metres-> SquareMetres = "$1*$2";
+
+val a = 1.2;
+val x = Metres 42.0;
+val y = 3.0.Metres;
+
+println$ str x + "*" + str y + " = " + str (x * y);
+println$ str a + "*" + str x + " = " + str (a * x);
+begin
+  ctypes int, long, double;
+  fun f: int -> int;
+end
+begin
+  type int="int";
+  type long="long";
+  type double="double";
+  fun f: int * int -> int = "f($1,$2)";
+end
+const metre : Metres = "1.0";
+const pi2 : double = "PI*PI";
+cenum MyEnum = zero, one, two;
+cflags MyFlags = none, bit1, bit2, allbits;
+header "struct X {int a; int b; };";
+cstruct X {a:int; b:int; };
+val z = X(1,2);
+println$ z.b;

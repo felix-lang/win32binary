@@ -18,6 +18,7 @@ struct FLX_EXCEPTIONS_EXTERN flx_assert_failure_t;
 struct FLX_EXCEPTIONS_EXTERN flx_assert2_failure_t;
 struct FLX_EXCEPTIONS_EXTERN flx_axiom_check_failure_t;
 struct FLX_EXCEPTIONS_EXTERN flx_switch_failure_t;
+struct FLX_EXCEPTIONS_EXTERN flx_dead_frame_failure_t;
 struct FLX_EXCEPTIONS_EXTERN flx_dropthru_failure_t;
 struct FLX_EXCEPTIONS_EXTERN flx_link_failure_t;
 
@@ -157,6 +158,7 @@ struct FLX_EXCEPTIONS_EXTERN flx_range_failure_t : flx_exception_t {
 
 FLX_EXCEPTIONS_EXTERN long range_check (long l, long x, long h, flx_range_srcref_t sref, char const *cf, int cl);
 FLX_EXCEPTIONS_EXTERN void print_loc(FILE *ef,flx_range_srcref_t x,char const *cf, int cl);
+FLX_EXCEPTIONS_EXTERN void print_cxxloc(FILE *ef,char const *cf, int cl);
 
 
 // ********************************************************
@@ -164,8 +166,25 @@ FLX_EXCEPTIONS_EXTERN void print_loc(FILE *ef,flx_range_srcref_t x,char const *c
 // ********************************************************
 
 struct FLX_EXCEPTIONS_EXTERN flx_switch_failure_t : flx_exception_t {
+  char const *cxx_srcfile;          ///< C++ file
+  int cxx_srcline;            ///< __LINE__ macro
+  flx_switch_failure_t(char const *cf, int cl);
   virtual ~flx_switch_failure_t();
 };
+
+
+// ********************************************************
+/// EXCEPTION: DEAD FRAME failure.
+/// Thrown on attempt to resume already returned procedure frame.
+// ********************************************************
+
+struct FLX_EXCEPTIONS_EXTERN flx_dead_frame_failure_t : flx_exception_t {
+  char const *cxx_srcfile;          ///< C++ file
+  int cxx_srcline;            ///< __LINE__ macro
+  flx_dead_frame_failure_t(char const *cf, int cl);
+  virtual ~flx_dead_frame_failure_t();
+};
+
 
 // ********************************************************
 /// EXCEPTION: DYNAMIC LINKAGE failure. this is a system failure!

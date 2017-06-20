@@ -1,0 +1,15 @@
+proc subroutine(argument: ischannel[int], result: oschannel[string])
+{
+  v := read argument;
+  s := str v;
+  write$ result, s;
+}
+
+{
+  iarg,oarg := #mk_ioschannel_pair[int];
+  ires,ores := #mk_ioschannel_pair[string];
+  spawn_fthread { subroutine (iarg, ores); };
+  write$ oarg, 42;
+  s := read ires;
+  println$ "42 as a string is " + s;
+};

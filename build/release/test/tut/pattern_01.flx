@@ -1,0 +1,83 @@
+union boolean = 
+  | True
+  | False
+;
+
+var b:boolean = True;
+
+proc f(b:boolean)  {
+  match b with
+  | #True => println "True";
+  | #False => println "False";
+  endmatch;
+}
+
+println$ match b with | #True => "True" | #False => "False" endmatch;
+union Z = 
+  | Cart of double * double // cartesian complex x+iy
+  | Polar of double * double // polar complex re^(i\theta)
+;
+
+fun str (z:Z) => match z with
+  | Cart (x,y) => str x + "+"+str y+"i"
+  | Polar (r,theta) => str r + "e^"+str theta+"i"
+  endmatch
+;
+fun fst (a:int * long) => 
+  match a with 
+  | x,_ => x
+  endmatch
+;
+
+fun xaxis (a:(x:double, y:double))=> 
+  match a with
+  | (x=xval) => xval
+  endmatch
+;
+
+println$ fst (41,99l);
+println$ xaxis (x=1.2,y=2.2);
+fun matcher (x:int) => match x with
+  | 1 => "one"
+  | 2..10 => "two to ten"
+  | _ => "other"
+  endmatch
+;
+enum colour {red, green, blue};
+
+instance Str[colour] {
+  fun str: colour -> string = 
+    | #red => "red"
+    | #blue => "blue"
+    | #green => "green"
+  ;
+}
+
+println$ red;
+enum flags {b1=1,b2=2,b3=4};
+println$ caseno b3;
+
+// Use C to model flag like operations
+type flagset = "int";
+ctor flagset: flags = "$1";
+fun \vee :flags * flags -> flagset = "$1|$2";
+fun \vee :flags * flagset -> flagset = "$1|$2";
+fun \vee :flagset * flags -> flagset = "$1|$2";
+fun \cup :flagset * flagset -> flagset = "$1|$2";
+fun \in : flags * flagset -> bool = "($1&$2)!=0";
+
+fun ==: flagset * flagset -> bool = "$1==$2";
+fun !=: flagset * flagset -> bool = "$1!=$2";
+fun \subseteq : flagset * flagset -> bool = "($1&~$2)==0";
+fun \subset (x:flagset,y:flagset)=> x \subseteq y and not x == y;
+fun \supset (x:flagset,y:flagset)=> not x \subseteq y;
+fun \supseteq (x:flagset,y:flagset)=> not x \subset y;
+
+
+var x = b1 \vee b2;         // infix operator \| is function bor!
+println$ b1 \in x;         // true: infix operator in is function mem!
+println$ b2 \in x;         // true
+println$ b3 \in x;         // false
+println$ b1.flagset \subset x;  // true
+println$ x \subset b1.flagset;  // false
+

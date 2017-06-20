@@ -1,4 +1,4 @@
-#line 622 "C:/projects/felix/src/packages/numbers.fdoc"
+#line 623 "C:/projects/felix/src/packages/numbers.fdoc"
 
 class Random {
     private type random_device = "::std::random_device*"

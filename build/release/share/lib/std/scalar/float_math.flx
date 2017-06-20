@@ -99,6 +99,7 @@ instance[t in floats] Real[t] {
   fun floor: t -> t = "::std::floor($1)";
   fun trunc: t -> t = "::std::trunc($1)";
   fun embed: int -> t = "(?1)($1)";
+  fun atan2: t * t -> t = "::std::atan2($1,$2)";
 }
 
 class CartComplex[r] {
@@ -113,7 +114,7 @@ typedef complex[t in floats] = typematch t with
   endmatch
 ;
 
-#line 161 "C:/projects/felix/src/packages/numbers.fdoc"
+#line 162 "C:/projects/felix/src/packages/numbers.fdoc"
 
 ctor complex[float] (x:float, y:float) => fcomplex(x,y);
 ctor complex[double] (x:double, y:double) => dcomplex(x,y);

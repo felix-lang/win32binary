@@ -1,0 +1,37 @@
+body demo = """
+typedef void mouse_click_handler_t 
+ (int x, int y, 
+ long window, 
+ void *client_data
+);
+
+void register_mouse_click_handler 
+(
+  long window, 
+  mouse_click_handler_t * handler, 
+  void * client_data
+)
+{
+ // demo registration function will just call the callback
+ // with some test data
+ int x = 42;
+ int y = 38;
+ (*handler)(x,y,window, client_data);  
+}
+""";
+callback proc mouse_click_handler_wrapper: 
+ int * int * long * 
+ mouse_click_handler_wrapper 
+;
+proc myClickHandler (x:int, y:int, w:long) 
+{
+ println$ "User clicked in Window " + w.str +
+    " at (" + x.str + ", " + y.str ")"
+ ;
+}
+typedef c_handler_t = int * int * long * address --> void;
+proc register_mouse_click_handler: long * c_handler_t * address requires demo;
+register_mouse_click_handler (99l,
+ C_hack::cast[c_handler_t] mouse_click_handler_wrapper,
+ C_hack::cast[address] myClickHandler
+);

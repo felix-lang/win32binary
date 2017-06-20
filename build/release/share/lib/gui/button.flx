@@ -5,7 +5,7 @@ class FlxGuiButton
     | Up       // ready
     | Down     // being clicked
     | Disabled // inactive
-    | Mouseover // read and mouse is over
+    | Mouseover // ready and mouse is over
   ;
 
   union button_action_t =

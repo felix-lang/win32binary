@@ -1,0 +1,31 @@
+fun diag[T,U] (x:T, y:U)=> y,x;
+a := 1,"Hi";
+println$ a, diag a, diag (diag a);
+type vector[T] = "::std::vector<?1>";
+proc push_back[T]: vector[T] * T = "$1.push_back($2)";
+fun f[T,V] (x:T, y:V)=>y,x;               //1
+fun f[T] (x:T, y:T)=>y,x;                 //2
+fun f[A,B,C] (x: A * B, y : B *C) => y,x; //3
+typedef fun diag1 (x:TYPE) : TYPE => x * x;
+var b: diag1 int = 1,2; // OK
+typedef diag2[T] = T * T;
+typedef T = int;
+val x : 
+  typematch T with 
+  | int => int * int  
+  | _ => long 
+  endmatch 
+  = 1,2
+;
+typedef fun integral_promotion: TYPE -> TYPE =
+  | tiny => int
+  | utiny => int
+  | short => int
+  | ushort => int
+  | int => int
+  | uint => uint
+  | long => long
+  | ulong => ulong
+  | vlong => vlong
+  | uvlong => uvlong
+;

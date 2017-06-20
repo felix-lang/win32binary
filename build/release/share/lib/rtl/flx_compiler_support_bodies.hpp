@@ -1,4 +1,4 @@
-#line 132 "C:/projects/felix/src/packages/rtl.fdoc"
+#line 134 "C:/projects/felix/src/packages/rtl.fdoc"
 #ifndef __FLX_COMPILER_SUPPORT_BODIES_H__
 #define __FLX_COMPILER_SUPPORT_BODIES_H__
 #include "flx_compiler_support_headers.hpp"
@@ -232,7 +232,8 @@ struct _tt5 {
     __asm__("l"#i"_"#n"_"#x":");\
     __asm__(""::"g"(&&x));
   #define FLX_FARTARGET(n,i,x) (void*)&f##i##_##n##_##x
-  #define FLX_END_SWITCH
+  #define FLX_END_SWITCH \
+    _flx_dead_frame: throw ::flx::rtl::flx_dead_frame_failure_t(__FILE__,__LINE__);
 #else
   #define FLX_START_SWITCH _start_switch: switch(pc){case 0:;
   #define FLX_LOCAL_LABEL_ADDRESS(x) x
@@ -241,7 +242,9 @@ struct _tt5 {
   #define FLX_DECLARE_LABEL(n,i,x)
   #define FLX_LABEL(n,i,x) case n: x:;
   #define FLX_FARTARGET(n,i,x) n
-  #define FLX_END_SWITCH default: throw ::flx::rtl::flx_switch_failure_t(); }
+  #define FLX_END_SWITCH \
+    case -1: throw ::flx::rtl::flx_dead_frame_failure_t(__FILE__,__LINE__);\
+    default: throw ::flx::rtl::flx_switch_failure_t(__FILE__,__LINE__); }
 #endif
 
 //
@@ -270,6 +273,7 @@ struct _tt5 {
 
 #define FLX_RETURN \
 { \
+  FLX_KILLPC \
   con_t *tmp = _caller; \
   _caller = 0; \
   return tmp; \

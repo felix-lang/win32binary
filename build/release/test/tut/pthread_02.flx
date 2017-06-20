@@ -1,0 +1,32 @@
+include "std/pthread/pchannels";
+ 
+proc client(x:ipchannel[opt[string]]) {
+  var finished = false;
+  while not finished do
+    match read x with
+    | Some line => print line;
+    | #None => finished = true;
+    endmatch;
+  done
+}
+
+proc server(x:opchannel[opt[string]]) {
+  var directory = System::argv 1;
+  var filename = Filename::join (directory,"pthreads_01_data.data");
+  f := fopen_input_text filename;
+  var line = readln f;
+  while line != "" do
+    write$ x,Some line;
+    line = readln f;
+  done;
+  fclose f;
+  write$ x, None[string];
+}
+
+proc launch() {
+  inp,out:= mk_iopchannel_pair[opt[string]]();
+  spawn_pthread { client(inp); };
+  spawn_pthread { server (out); };
+}
+
+launch;

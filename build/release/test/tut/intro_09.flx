@@ -1,0 +1,19 @@
+fun sum : int * int -> int = '$1+$2';
+fun neg : int -> int = '-$1';
+println ( sum (1,neg (2)) );
+println ( sum (1,neg 2) );
+var x = 1, neg 2;
+println ( sum x );
+println (1,2.neg).sum;
+println$ sum$ 1, neg 2;
+fun zero : 1 -> int = "0";
+println$ zero();
+println$ #zero;
+call println 1;
+proc hello : 1 = '::std::cout<<"hello"<<::std::endl;'
+  requires header '#include <iostream>'
+;
+call hello ();
+hello ();
+hello;
+call hello;

@@ -1,4 +1,4 @@
-#line 190 "C:/projects/felix/src/packages/numbers.fdoc"
+#line 191 "C:/projects/felix/src/packages/numbers.fdoc"
 instance[t in reals] Tord[t] {
   fun < : t * t -> bool = "$1<$2";
 }

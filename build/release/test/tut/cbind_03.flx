@@ -1,0 +1,10 @@
+body mystuff = '''
+  struct mytype { 
+    int data; 
+    mytype(int x) : data(x) {} 
+  };
+''';
+type mytype = "mytype" requires mystuff;
+ctor mytype : int = "mytype($1)";
+ctor int : mytype = "$1.data";
+println$ int (mytype 42);

@@ -1,4 +1,4 @@
-#line 482 "C:/projects/felix/src/packages/exceptions.fdoc"
+#line 526 "C:/projects/felix/src/packages/exceptions.fdoc"
 syntax exceptions
 {
   //$ Exception handling.

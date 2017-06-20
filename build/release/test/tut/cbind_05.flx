@@ -1,0 +1,1 @@
+fun add: int * int -> int = "$1:add + $2:mult" is add;

@@ -1,0 +1,53 @@
+#line 30 "C:/projects/felix/src/web/tut/regexp_01.fdoc"
+var r = RE2(" *([A-Za-z_][A-Za-z0-9]*).*");
+#line 38 "C:/projects/felix/src/web/tut/regexp_01.fdoc"
+var line = "Hello World";
+var maybe_subgroups = Match (r, line);
+#line 53 "C:/projects/felix/src/web/tut/regexp_01.fdoc"
+match maybe_subgroups with
+| #None => println$ "No match";
+| Some a =>
+  println$ "Matched " + a.1;
+endmatch;
+#line 69 "C:/projects/felix/src/web/tut/regexp_01.fdoc"
+var r2 = RE2("\w+"); // try to match a word
+var sentence = "Hello World";
+for x in (r2, sentence) do
+    println$ x.0;
+done
+#line 92 "C:/projects/felix/src/web/tut/regexp_01.fdoc"
+begin
+  regdef lower = charset "abcdefghijklmnopqrstuvwxyz";
+  regdef upper = charset "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  regdef digit = charset "0123456789";
+  regdef alpha = upper | lower;
+  regdef cid0 = alpha | "_";
+  regdef cid1 = cid0 | digit;
+  regdef cid = cid0 cid1 *;
+  regdef space = " ";
+  regdef white = space +;
+  regdef integer = digit+;
+#line 117 "C:/projects/felix/src/web/tut/regexp_01.fdoc"
+// match an assignment statement
+  regdef sassign =
+    white? "var" white?
+    group (cid) white? "=" white?
+    (group (cid) | group (integer))
+    white? ";" white?
+  ;
+
+  var rstr : string = sassign.Regdef::render;
+  var ra = RE2 rstr;
+  var result = Match (ra, " var a = b; ");
+  match result with
+    | #None =>
+      println$ "No match?";
+
+    | Some groups =>
+      if groups.2 != "" do
+        println$ "Assigned " + groups.1 + " from variable " + groups.2;
+      else
+        println$ "Assigned " + groups.1 + " from integer" + groups.3;
+      done;
+  endmatch;
+end

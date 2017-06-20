@@ -1,4 +1,4 @@
-#line 385 "C:/projects/felix/src/packages/exceptions.fdoc"
+#line 416 "C:/projects/felix/src/packages/exceptions.fdoc"
 #include <stdio.h>
 #include "flx_exceptions.hpp"
 #include "flx_eh.hpp"
@@ -64,6 +64,19 @@ fprintf(stderr, "Felix exception handler\n");
   {
     fprintf(stderr,"Match Failure\n");
     print_loc(stderr,x->flx_loc,x->cxx_srcfile, x->cxx_srcline);
+    return 3;
+  }
+  else
+  if (flx_switch_failure_t const *x = dynamic_cast<flx_switch_failure_t const*>(e))
+  {
+    fprintf(stderr,"Attempt to switch to non-existant case\n");
+    print_cxxloc(stderr,x->cxx_srcfile, x->cxx_srcline);
+    return 3;
+  }
+  if (flx_dead_frame_failure_t const *x = dynamic_cast<flx_dead_frame_failure_t const*>(e))
+  {
+    fprintf(stderr,"Attempt to resume non-live procedure frame\n");
+    print_cxxloc(stderr,x->cxx_srcfile, x->cxx_srcline);
     return 3;
   }
   else

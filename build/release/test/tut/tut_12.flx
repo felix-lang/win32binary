@@ -1,0 +1,5 @@
+typedef myint = int;
+typedef int_pair = int * int;
+val x="Hello";
+println$ str x; // Hello
+println$ repr x; // "Hello"

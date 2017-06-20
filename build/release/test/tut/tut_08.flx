@@ -1,0 +1,13 @@
+fun square (x:int) => x * x;
+write$ stdout, "Input number: "; fflush stdout;
+val result = readln$ stdin;
+val cleaned_result = strip result;
+val v = int cleaned_result;
+val v2 = square v;
+println$ "Square of " + str v + " is " + str v2;
+var data = list(1,2,3);
+fun square' (x:int) => x * x;
+
+// the following are equivalent.
+println$ map square' data;
+println$ map (fun (x:int) => x * x) data;

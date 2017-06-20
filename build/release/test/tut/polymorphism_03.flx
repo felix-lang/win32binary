@@ -1,0 +1,12 @@
+class X[T] {
+  virtual fun f: T -> T;
+  fun g(x:T)=> f (f x);
+}
+
+instance X[int] {
+  fun f(x:int)=> x + 1;
+}
+
+open X[int];
+
+println$ g 1;

@@ -55,7 +55,7 @@ class MultSemi1[t] {
   reduce cancel (x:t,y:t,z:t): x * z ==  y * z => x == y;
 }
 
-#line 895 "C:/projects/felix/src/packages/algebra.fdoc"
+#line 900 "C:/projects/felix/src/packages/algebra.fdoc"
 open class Quantifiers_add_mul {
   fun \sum[T,C with FloatAddgrp[T], Streamable[C,T]] (a:C):T =
   {

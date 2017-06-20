@@ -1,4 +1,4 @@
-#line 274 "C:/projects/felix/src/packages/exceptions.fdoc"
+#line 293 "C:/projects/felix/src/packages/exceptions.fdoc"
 #include <stdio.h>
 
 #include "flx_exceptions.hpp"
@@ -53,6 +53,13 @@ flx_range_failure_t::flx_range_failure_t(long l, long x, long h, flx_range_srcre
 flx_range_failure_t::~flx_range_failure_t(){}
 
 flx_switch_failure_t::~flx_switch_failure_t(){}
+flx_switch_failure_t::flx_switch_failure_t (char const *cf, int cl) :
+  cxx_srcfile(cf), cxx_srcline (cl) {}
+
+flx_dead_frame_failure_t::~flx_dead_frame_failure_t(){}
+flx_dead_frame_failure_t::flx_dead_frame_failure_t(char const *cf, int cl) :
+  cxx_srcfile(cf), cxx_srcline (cl) {}
+
 
 flx_link_failure_t::flx_link_failure_t(::std::string f, ::std::string o, ::std::string w) :
   filename(f),
@@ -68,6 +75,11 @@ long range_check (long l, long x, long h, flx_range_srcref_t sref, char const *c
 {
   if (x>=l && x<h) return x;
   throw flx::rtl::flx_range_failure_t (l,x,h,sref,cf,cl);
+}
+
+void print_cxxloc(FILE *ef,char const *cf, int cl)
+{
+  fprintf(ef,"C++ location  : %s %d\n", cf, cl);
 }
 
 void print_loc(FILE *ef,flx_range_srcref_t x,char const *cf, int cl)

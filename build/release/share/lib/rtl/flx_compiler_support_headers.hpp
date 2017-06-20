@@ -20,9 +20,11 @@
 #if FLX_CGOTO
   #define FLX_LOCAL_LABEL_VARIABLE_TYPE void*
   #define FLX_PC_DECL void *pc;
+  #define FLX_KILLPC pc = &&_flx_dead_frame;
 #else
   #define FLX_PC_DECL int pc;
   #define FLX_LOCAL_LABEL_VARIABLE_TYPE int
+  #define FLX_KILLPC pc = -1;
 #endif
 
 #define t typename
