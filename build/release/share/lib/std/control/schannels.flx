@@ -154,7 +154,7 @@ open class Schannel
 
 }
 
-#line 1126 "C:/projects/felix/src/packages/fibres.fdoc"
+#line 427 "C:/projects/felix/src/packages/fibres.fdoc"
 
 open class DuplexSchannels
 {
