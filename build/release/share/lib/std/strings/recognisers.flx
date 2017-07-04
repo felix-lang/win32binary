@@ -40,7 +40,7 @@ ctor Buffer (p:varray[char]) =>
 ;
 
 ctor Buffer (p:string) =>
-  Buffer (p.varray[char],0)
+  Buffer (p.varray_nonul,0)
 ;
 
 ctor Buffer (p: &string) =>
@@ -595,8 +595,20 @@ bad:>
   goto restart;
 }
 
+#line 643 "C:/projects/felix/src/packages/recognisers.fdoc"
+chip eos_matcher
+  connector io
+    pin inp: %<Buffer
+    pin out: %>Buffer
+{
+  while true do
+    var x = read io.inp;
+    if x.atend perform write (io.out,x);
+  done
+}
 
-#line 644 "C:/projects/felix/src/packages/recognisers.fdoc"
+
+#line 657 "C:/projects/felix/src/packages/recognisers.fdoc"
 // this is a function, so it cannot construct pipeline
 // chips, because they actually spawn the components internally
 // and functions can't do service calls.
@@ -619,21 +631,19 @@ fun find (v:varray[ntdef_t]) (nt:string) : size =
 fun render_prod
   (lib:gramlib_t,v:varray[ntdef_t])
   (p:prod_t)
-: 1 -> recog_t =>
+: recog_t =>
   match p with
-  | Terminal (s,r) => { r }
-  | Epsilon => { BaseChips::epsilon[Buffer] }
-  | Seq ps => { BaseChips::pipeline_list (
-      map (fun (p:prod_t) => #(render_prod (lib,v) p)) ps) }
-  | Alt ps =>  { BaseChips::tryall_list (
-      map (fun (p:prod_t) => #(render_prod (lib,v) p)) ps) }
+  | Terminal (s,r) => r
+  | Epsilon =>  BaseChips::epsilon[Buffer]
+  | Seq ps =>  BaseChips::pipeline_list (
+      map (fun (p:prod_t) => (render_prod (lib,v) p)) ps)
+  | Alt ps =>   BaseChips::tryall_list (
+      map (fun (p:prod_t) => (render_prod (lib,v) p)) ps)
   | Nonterminal nt =>
-     {
-       var idx : size = find v nt;
-       var pslot : &ntdef_t = -(v.stl_begin + idx);
-       var pchip : &recog_t = pslot . 1;
-       return BaseChips::deref_first_read pchip;
-     }
+    let idx = find v nt in
+    let pslot = -(v.stl_begin + idx) in
+    let pchip = pslot . 1 in
+    BaseChips::deref_first_read pchip
   endmatch
 ;
 
@@ -667,10 +677,7 @@ chip make_recogniser_from_grammar
       | None => assert false;
       | Some prod =>
         // get wrapped recogniser
-        var xprod_closure = render_prod (lib, v) prod;
-
-        // undo the wrappingt
-        var entry = #xprod_closure;
+        var entry = render_prod (lib, v) prod;
 
         // address of the slot
         var pentry : &recog_t = (-(v.stl_begin+index)).1;

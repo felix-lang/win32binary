@@ -1,9 +1,12 @@
 \documentclass[oneside]{book}
 \usepackage{color}
-\definecolor{bg}{rgb}{0.95,0.95,0.95}
+\definecolor{cxxbg}{rgb}{0.95,0.85,0.95}
+\definecolor{felixbg}{rgb}{0.95,0.95,0.95}
+\definecolor{felixlibbg}{rgb}{0.95,0.95,0.85}
 \definecolor{emphcolor}{rgb}{0.5,0.0,0.0}
 \newcommand{\empha}{\bf\color{emphcolor}}
 \usepackage{parskip}
+\usepackage{framed}
 \usepackage[newfloat=true]{minted}
 \usepackage{amsmath}
 \usepackage{amssymb}
@@ -14,7 +17,7 @@
 \makeindex[title=General Index]
 \makeindex[name=codeindex,title=Code Index]
 \usemintedstyle{friendly}
-\setminted{bgcolor=bg,xleftmargin=20pt}
+\setminted{bgcolor=felixlibbg,xleftmargin=20pt}
 \usepackage{hyperref}
 \hypersetup{pdftex,colorlinks=true,allcolors=blue}
 \newcommand*{\fullref}[1]{\hyperref[{#1}]{\autoref*{#1} \nameref*{#1}}}
@@ -78,7 +81,7 @@ First, we make a coroutine procedure which writes the integers
 from 0 up to but excluding 10 down a channel.
 
 \begin{listing}
-\begin{minted}{felix}
+\begin{minted}[bgcolor=felixbg]{felix}
 proc producer (out: %>int) () {
   for i in 0..<10 
     perform write (out, i);
@@ -100,7 +103,7 @@ and writes the result. It is an infinite loop, this coroutine never
 terminates of its own volition. This is typical of coroutines.
 
 \begin{listing}
-\begin{minted}{felix}
+\begin{minted}[bgcolor=felixbg]{felix}
 proc transducer (inp: %<int, out: %>int) () {
   while true do
     var x = read inp;
@@ -122,7 +125,7 @@ be read.
 Now we need a coroutine to print the results:
 
 \begin{listing}
-\begin{minted}{felix}
+\begin{minted}[bgcolor=felixbg]{felix}
 proc consumer (inp: %<int) () {
   while true do
     var y = read inp;
@@ -153,7 +156,7 @@ They key idea of functional abstraction is that an approximation of the
 function semantics is represented by the function type. For example
 the functions \verb%modulus% and \verb%argument%
 
-\begin{minted}{felix}
+\begin{minted}[bgcolor=felixbg]{felix}
 fun modulus (z:dcomplex) : double => sqrt (z.x^2 + z.y^2);
 fun argument (z:dcomplex) : double => arctan2 (z.y, z.x);
 \end{minted}
@@ -164,7 +167,7 @@ of abstract. Never-the-less the type is useful to allow the type checker
 to prevent calling these functions on an integer, but more importantly
 it allows for higher order functions:
 
-\begin{minted}{felix}
+\begin{minted}[bgcolor=felixbg]{felix}
 fun map (x:list[dcomplex]) (f:dcomplex->double) =>
   match x with
   | Empty => Empty[double]
@@ -195,7 +198,7 @@ intended way! First we have to make some channels to connect
 the devices:
 
 \begin{listing}
-\begin{minted}{felix}
+\begin{minted}[bgcolor=felixbg]{felix}
 proc doit () {
   var ich1, och1 = mk_ioschannel_pair[int]();
   var ich2, och2 = mk_ioschannel_pair[int]();
@@ -212,7 +215,7 @@ and the second output.
 Now we can connect the devices to the channels:
 
 \begin{listing}
-\begin{minted}{felix}
+\begin{minted}[bgcolor=felixbg]{felix}
   var p = producer och1;
   var t = transducer (ich1, och2);
   var c = consumer (ich2);
@@ -230,7 +233,7 @@ which is required for the next step.
 Now we spawn active fibres from the coroutine closures:
 
 \begin{listing}
-\begin{minted}{felix}
+\begin{minted}[bgcolor=felixbg]{felix}
   spawn_fthread p;
   spawn_fthread t;
   spawn_fthread c;
@@ -258,8 +261,8 @@ It is also possible for a coroutine to {\em block}. This happens when
 it tries to write a value which will never be read. Lets modify
 our example to see: an infinite production stream:
 
-\begin{listing}
-\begin{minted}{felix}
+\begin{listing}[h]
+\begin{minted}[bgcolor=felixbg]{felix}
 proc producer (out: %>int) () {
   var i = 0;
   while true do
@@ -275,7 +278,7 @@ proc producer (out: %>int) () {
 but a limited sample of data are printed:
 
 \begin{listing}
-\begin{minted}{felix}
+\begin{minted}[bgcolor=felixbg]{felix}
 proc consumer (inp: %<int) () {
   for i in 0..<10 do
     var y = read inp;
@@ -379,7 +382,7 @@ most recent activation record of its ancestors, in fact the
 thread frame may be consider a universal ancestor.
 
 Vitally, continuation objects also contain a value known as
-the program counter. This value is the current location at which
+the {\em program counter}. This value is the current location at which
 the continuation is executing, it always points into the code
 of the procedure the frame represents. When a subroutine is
 called, the program counter is set to the statement after the
@@ -394,7 +397,7 @@ Then the current continuation of the fibre is
 changed to the new continuation.
 
 \begin{listing}
-\begin{minted}{C++}
+\begin{minted}[bgcolor=cxxbg]{C++}
 #if FLX_CGOTO
   #define FLX_LOCAL_LABEL_VARIABLE_TYPE void*
   #define FLX_PC_DECL void *pc;
@@ -402,14 +405,27 @@ changed to the new continuation.
   #define FLX_PC_DECL int pc;
   #define FLX_LOCAL_LABEL_VARIABLE_TYPE int
 #endif
-
 \end{minted}
-\caption{Code Address}
+\caption{Code Address: C++ representation}
 \label{lst:code address}
+\begin{framed}\small
+The type of a code address depends on the capabilities of the compiler.
+The GNU compiler g++ for x86 and x86-64 family 
+supports two features essential for our purposes,
+a {\em computed goto}, and the ability to find the machine address of a labelled
+position in the code from any other place in the code. This is achieved
+in Felix with a trick using some assembler stolen from Fergus Henderson's
+Mercury implementation. Although Clang also has a computed goto, addressing
+label C++ function is not possible because the assembler label hack
+is not supported. Clang requires any computed goto in a function can
+only jump into that function, and enforces this by disallowing
+the assembler label trick. Felix never jumps to a label other than one
+in the function doing the computed goto, but it could.
+\end{framed}
 \end{listing}
 
 \begin{listing}
-\begin{minted}{C++}
+\begin{minted}[bgcolor=cxxbg]{C++}
 struct con_t 
 {
   FLX_PC_DECL               // interior program counter
@@ -419,23 +435,23 @@ struct con_t
   con_t * _caller;          // return address
 };
 \end{minted}
-\caption{Continuation base}
+\caption{Continuation base: C++ representation}
 \label{lst:continuation base}
 \end{listing}
 
 \begin{listing}
-\begin{minted}{C++}
+\begin{minted}[bgcolor=cxxbg]{C++}
 struct fthread_t 
 {
   con_t *cc;                // current continuation
 };
-\caption{Fibre}
-\label{lst:fibre}
 \end{minted}
+\caption{Fibre: C++ representation}
+\label{lst:fibre}
 \end{listing}
 
 \begin{listing}
-\begin{minted}{C++}
+\begin{minted}[bgcolor=cxxbg]{C++}
 struct slist_node_t {
   slist_node_t *next;
   fthread_t *data;
@@ -655,7 +671,7 @@ Note {\em very carefully} that it is {\em absolutely essential}
 that channels only be reachable by fibres that wil use them.
 Go back and look carefully at the \verb%doit% procedure:
 
-\begin{minted}{felix}
+\begin{minted}[bgcolor=felixbg]{felix}
 proc doit () {
   var ich1, och1 = mk_ioschannel_pair[int]();
   var ich2, och2 = mk_ioschannel_pair[int]();
@@ -708,7 +724,7 @@ circuits, even though that is not really accurate.
 
 \phantomsection
 \label{fig:prodtranscons1}
-\begin{minted}{felix}
+\begin{minted}[bgcolor=felixbg]{felix}
 chip producer 
   connector io
     pin out: %>int
@@ -717,7 +733,7 @@ chip producer
     perform write (io.out, i);
 }
 \end{minted}
-\begin{minted}{felix}
+\begin{minted}[bgcolor=felixbg]{felix}
 chip transducer 
   connector io
     pin inp: %<int
@@ -730,7 +746,7 @@ chip transducer
   done
 }
 \end{minted}
-\begin{minted}{felix}
+\begin{minted}[bgcolor=felixbg]{felix}
 chip consumer 
   connector io
     pin inp: %<int
@@ -749,7 +765,7 @@ phrase, each specifies a separate argument. Each \verb%chip%
 has an aditional unit argument added automatically. The signatures
 of the three chips above are:
 
-\begin{minted}{felix}
+\begin{minted}[bgcolor=felixbg]{felix}
   producer: (out: %out) -> 1 -> 0
   transducer: (inp: %<int, out: %out) -> 1 -> 0
   consumer: (inp: %<int) -> 1 -> 0
@@ -762,7 +778,7 @@ parameter and a tuple for the two required for the transducer.
 \subsection{The {\tt device} statement}
 You can write:
 
-\begin{minted}{felix}
+\begin{minted}[bgcolor=felixbg]{felix}
 device x = y;
 \end{minted}
 
@@ -778,7 +794,7 @@ A \verb%circuit% statement can be used to connect devices
 and pins. It is an executable statement!
 
 \begin{figure}[h]
-\begin{minted}{felix}
+\begin{minted}[bgcolor=felixbg]{felix}
 circuit
   connect producer.out, transducer.inp
   connect transducer.out, consumer.inp
@@ -802,13 +818,103 @@ an error!).
 \subsubsection{The {\tt wire} clause}
 There is also another clause you can use in a circuit statement:
 
-\begin{minted}{felix}
+\begin{minted}[bgcolor=felixbg]{felix}
 circuit
   wire ch to dev.pin
 endcircuit
 \end{minted}
 
 The \verb%wire% clause allows you to connect a known channel to a device.
+
+\section{Laziness}
+It is critical to understand {\em when} the code of a chip is
+run! Consider simple chip:
+
+\begin{minted}[bgcolor=felixbg]{felix}
+chip simple (n:int) 
+  connector io
+    pin out: %>int
+{
+  for i in 0..<n perform write (io.out, i);
+}
+\end{minted}
+
+The type of this chip is:
+
+\begin{minted}[bgcolor=felixbg]{felix}
+int -> (out: %>int) -> 1 -> 0
+\end{minted}
+
+that is, it is a function accepting an integer returning
+another function which accepts a record with field \verb%out%
+returning a procedure which accepts the unit argument ().
+
+Now if we say:
+
+\begin{minted}[bgcolor=felixbg]{felix}
+device  s1 = simple 10;
+\end{minted}
+
+we have created an object with the parameter $n$ fixed to 10.
+We say the object is a closure, because the parameter $n$
+is now fixed. The closure now has type
+
+\begin{minted}[bgcolor=felixbg]{felix}
+(out: %>int) -> 1 -> 0
+\end{minted}
+
+As you can see, this is still a function!
+
+We can again create a closure of that value by:
+
+\begin{minted}[bgcolor=felixbg]{felix}
+var s2 = s1 (out=ch);
+\end{minted}
+
+where \verb%ch% is a channel on which you can write an int.
+The closure \verb$s2$ has type:
+
+\begin{minted}[bgcolor=felixbg]{felix}
+1 -> 0
+\end{minted}
+
+and we say the second parameter, namely \verb%io%, is now bound.
+
+The result, finally, is a procedure, and in fact a coroutine
+because it writes to a channel. The body of the code of the chip
+is the code of this procedure. So until the procedure is actually
+called or spawned, the code does not execute.
+
+The chip is equivalent to this:
+
+\begin{minted}[bgcolor=felixbg]{felix}
+proc simple (n:int) 
+  (io: ( pin out: %>int) )
+  ()
+{
+  for i in 0..<n perform write (io.out, i);
+}
+\end{minted}
+
+which in turn is equivalent to this:
+
+\begin{minted}[bgcolor=felixbg]{felix}
+fun simple (n:int)  =>
+  fun (io: ( pin out: %>int) ) =>
+    proc () {
+      for i in 0..<n perform 
+        write (io.out, i);
+    }
+;
+\end{minted}
+
+In other words, connecting a chip to channels is a matter of
+binding to create a closure by fixing the parameter
+representing the connector, or, attaching channels to
+the pins if you like: it can be done inside a function
+because the connected circuit is not activated: it
+hasn't yet been connected to a power source!
+
 
 \chapter{Core Components}
 Every system needs a library! 
@@ -960,6 +1066,7 @@ of a {\em transducer}.
 
 And here is a basic adaptor for a procedure:
 
+\index[codeindex]{procedure}
 \begin{minted}{felix}
 chip procedure[D] (p:D->0)
   connector io
@@ -980,6 +1087,7 @@ uses a condition on the input, if it passes then the
 function is applied to the input value to produce
 the output value, otherwise the value is ignored:
 
+\index[codeindex]{filter}
 \begin{minted}{felix}
 chip filter[D,C] (c:D->bool) (f:D->C)
   connector io
@@ -998,6 +1106,7 @@ chip filter[D,C] (c:D->bool) (f:D->C)
 The second variant just uses a function with codomain
 of an option type:
 
+\index[codeindex]{filter}
 \begin{minted}{felix}
 chip filter[D,C] (f:D->opt[C])
   connector io
@@ -1016,6 +1125,7 @@ chip filter[D,C] (f:D->opt[C])
 
 Another special filter is:
 
+\index[codeindex]{oneshot}
 \begin{minted}{felix}
 chip oneshot [T]
   connector io
@@ -1062,7 +1172,7 @@ supply suitable proof sketches.
 Felix allows preconditions written using the \verb%when%
 clause like this:
 
-\begin{minted}{felix}
+\begin{minted}[bgcolor=felixbg]{felix}
 fun safe_divide (x:int, y:int when y != 0) => x/y;
 \end{minted}
 
@@ -1076,6 +1186,7 @@ temporal ordering into a spatial ordering.
 \subsection{List drop}
 A special case of the \verb%procedure% chip is a list drop:
 
+\index[codeindex]{sink\_to\_list}
 \begin{minted}{felix}
 chip sink_to_list[T] (p: &list[T])
   connector io
@@ -1169,6 +1280,7 @@ operation from another fibre is precisely a continuation.
 \section{Avoiding lockup}
 To avoid some cases of lockup we provide the buffer device:
 
+\index[codeindex]{buffer}
 \begin{minted}{felix}
 chip buffer [T]
   connector io
@@ -1189,7 +1301,7 @@ semantically a no operation.
 
 Here's an example:
 
-\begin{minted}{felix}
+\begin{minted}[bgcolor=felixbg]{felix}
 include "std/control/chips";
 open BaseChips;
 
@@ -1242,6 +1354,10 @@ when you only want a one shot operation.
 
 Finally here are some convenience types:
 
+\index[codeindex]{ochip\_t}
+\index[codeindex]{iochip\_t}
+\index[codeindex]{ichip\_t}
+\index[codeindex]{buffer}
 \begin{minted}{felix}
 typedef iopair_t[D,C] = (inp: %<D, out: %>C);
 
@@ -1271,9 +1387,9 @@ end, it is a closed pipeline.
 An open pipeline is semantically equivalent to a transucer with
 additional buffering. A pipline closed on the left is a source,
 and a pipeline closed on the right is a sink.
-The syntax |-> is parsed to pipe (a,b).
+The syntax \verb%|->% is parsed to \verb%pipe (a,b)%.
 We add overloads for chips with pins
-named io.inp, io.out.
+named \verb%io.inp%, \verb%io.out%.
 
 Here are the binary combinators:
 
@@ -1282,6 +1398,7 @@ transducer. Note, since we use the \verb%circuit%
 statement, the pair of component coroutines are
 actually spawned as fibres.
 
+\index[codeindex]{pipe}
 \begin{minted}{felix}
 chip pipe[T,U,V] (a:iochip_t[T,U],b:iochip_t[U,V])
  connector io
@@ -1299,6 +1416,7 @@ chip pipe[T,U,V] (a:iochip_t[T,U],b:iochip_t[U,V])
 Here we connect a source to a transducer to make
 a new source:
 
+\index[codeindex]{pipe}
 \begin{minted}{felix}
 chip pipe[T,U] (a:ochip_t[T],b:iochip_t[T,U])
  connector io
@@ -1314,6 +1432,7 @@ chip pipe[T,U] (a:ochip_t[T],b:iochip_t[T,U])
 Here, a transducer is connected to a sink
 to form a new sink.
 
+\index[codeindex]{pipe}
 \begin{minted}{felix}
 chip pipe[T,U] (a:iochip_t[T,U],b:ichip_t[U])
  connector io
@@ -1331,9 +1450,10 @@ a closed pipeline. Closed pipelines are equivalent in
 some sense to subroutines in that they can only be observed
 for their side effects.
 
+\index[codeindex]{pipe}
 \begin{minted}{felix}
 // source to sink
-proc pipe[T] (a:ochip_t[T],b:ichip_t[T])
+proc pipe[T] (a:ochip_t[T],b:ichip_t[T]) ()
 {
   circuit
     connect a.out,b.inp
@@ -1342,12 +1462,14 @@ proc pipe[T] (a:ochip_t[T],b:ichip_t[T])
 \end{minted}
 
 Note carefully, this last operator is a procedure not a chip!
+It produces a closed chip, that is, one with no channels to connect.
+It is ready to call or spawn.
 
 Felix provides the infix symbol \verb%|->% for the \verb%pipe% operator.
 An example of use, we can say:
 
 \begin{minted}{felix}
-producer |-> transducer |-> consumer;
+#(producer |-> transducer |-> consumer);
 \end{minted}
 
 given the chips of \ref{fig:prodtranscons1}
@@ -1385,6 +1507,7 @@ Its more flexible and more powerful.
 This chip allows dynamic construction of an open pipeline from
 a non-empty list of transducers.
 
+\index[codeindex]{pipeline\_from\_list}
 \begin{minted}{felix}
 chip pipeline_list[T] (a: list[iochip_t[T,T]])
   connector io
@@ -1573,7 +1696,7 @@ in which we have chips with multiple inputs and outputs,
 and we are going to demonstrate how to handle the partial
 function division:
 
-\begin{minted}{felix}
+\begin{minted}[bgcolor=felixbg]{felix}
 chip divide
   connector io
     pin numerator: %<int
@@ -1598,7 +1721,7 @@ Imagine we have to compute the formula:
 $${x + y\over x - y}+1$$
 We can use this:
 
-\begin{minted}{felix}
+\begin{minted}[bgcolor=felixbg]{felix}
 var x = 1;
 var y = 1;
 device xc = x.source;
@@ -1634,7 +1757,7 @@ endciruit
 \begin{center}
 \tikzstyle{cell} = [rectangle,minimum width=0.7cm,minimum height=0.5cm,text centered,draw=black]
 \tikzstyle{arrow} = [thick,->,>-stealth]
-\begin{tikzpicture}[node distance=3cm]
+\begin{tikzpicture}[node distance=2cm]
 \node(O)[cell]{1};
 \node(X)[cell,below of=O]{x};
 \node(Y)[cell, below of=X]{y};
@@ -1675,6 +1798,7 @@ what would we need to do?
 The following chip is a vital component with an interesting
 structure:
 
+\index[codeindex]{tryall\_list}
 \begin{minted}{felix}
 chip tryall_list[D,C with Str[D]] (a: list[iochip_t[D,C]]) 
   connector io
@@ -1705,9 +1829,6 @@ so that if the channel is blocked, the other writes can proceed.
 What this means, however, is that, because the channel is reachable
 from the chip, whilst any one channel is not blocked, attempts to write
 will be stacked up for every input on every blocked channel. 
-
-\section{Filter}
-...
 
 \chapter{Base Recognisers}
 In this chapter we introduce a data structure used for scanning strings,
@@ -1741,6 +1862,8 @@ Now, here is the kind of pointer to the string we will use,
 for some reason its called a \verb%Buffer%.
 
 
+\begin{figure}[h]
+\index[codeindex]{Buffer}
 \begin{minted}{felix}
 struct Buffer
 {
@@ -1772,6 +1895,8 @@ struct Buffer
   ;
 }
 \end{minted}
+\caption{lst:Type Buffer (lib Recog)}
+\end{figure}
 
 Two instance variables make a \verb%Buffer%, a \verb%varray% of \verb%char% called 
 \verb%sp%, for the string and an \verb%int% named \verb%pos% for as an index into
@@ -1787,7 +1912,7 @@ is not at the end, wherease the \verb%advanced% method returns a copy of the
 object advanced one, or at the same position if it is at end, this method
 is purely functional.
 
-Finallyu the \verb%lookahead% method returns the character \verb%i% positions ahead
+Finally the \verb%lookahead% method returns the character \verb%i% positions ahead
 of the current position, if there is one, or an empty string if that position is
 past the end.
 
@@ -1798,8 +1923,9 @@ ctor Buffer (p:varray[char]) =>
   Buffer (p,0)
 ;
 
+// excludes a trailing nul byte!
 ctor Buffer (p:string) =>
-  Buffer (p.varray[char],0)
+  Buffer (p.varray_nonul,0)
 ;
 
 ctor Buffer (p: &string) =>
@@ -1815,13 +1941,16 @@ instance Str[Buffer] {
 }
 \end{minted}
 
-and an equality operator which ignores the underlying
-string and just compares the positions.
+and an equality and total ordering operator which ignores the underlying
+string and just compares the positions: these operators only work
+correctly for the same underlying array.
 
 \begin{minted}{felix}
-// hack, ignore underlying data.. FIXME
 instance Eq[Buffer] {
   fun == (a:Buffer, b:Buffer) => a.pos == b.pos;
+}
+instance Tord[Buffer] {
+  fun < (a:Buffer, b:Buffer) => a.pos < b.pos;
 }
 \end{minted}
 
@@ -1847,6 +1976,7 @@ ctor string (a:Buffer, b:Buffer) =
 Now we have a the data type which will be transmitted along channels
 of the recogniser circuit, we can define it by
 
+\index[codeindex]{recog\_t}
 \begin{minted}{felix}
 typedef recog_t = BaseChips::iochip_t[Buffer,Buffer];
 \end{minted}
@@ -1884,6 +2014,7 @@ We now present some basic primitive recognisers.
 \subsection{String matcher}
 This chip just matches its argument as a string.
 
+\index[codeindex]{match\_string}
 \begin{minted}{felix}
 chip match_string (s:string)
   connector io
@@ -1917,6 +2048,7 @@ that is, if there is no white space character at
 the current position, it just returns the current 
 position. That is, it is a {\em total function}.
 
+\index[codeindex]{match\_white}
 \begin{minted}{felix}
 chip match_white 
   connector io
@@ -1943,6 +2075,7 @@ This matcher also cannot fail, if it cannot match
 a C++ comment it emits the input position.
 It is a total function.
 
+\index[codeindex]{match\_cxx\_comment}
 \begin{minted}{felix}
 chip match_cxx_comment 
   connector io
@@ -1976,6 +2109,7 @@ except that it also recognises nested comments. On the other hand
 it is a bit naive in that it also finds nested delimiters in 
 enclosed C++ comments and strings.
 
+\index[codeindex]{match\_nested\_c\_comment}
 \begin{minted}{felix}
 chip match_nested_c_comment 
   connector io
@@ -2024,9 +2158,14 @@ bad:>
 \end{minted}
 
 \subsection{Regular Expression matcher}
+\index{regular expression matcher}
 This is a generally useful matcher that uses
 Felix system library binding of Google's RE2 package for matching. 
 
+\index[codeindex]{match\_regex}
+\index[codeindex]{cident\_matcher}
+\index[codeindex]{decimal\_integer\_matcher}
+\index[codeindex]{decimal\_float\_matcher}
 \begin{minted}{felix}
 chip match_regex (r:RE2)
   connector io
@@ -2055,10 +2194,37 @@ device cident_matcher =
 device decimal_integer_matcher = 
   match_regex (RE2 "[0-9]+")
 ;
+device decimal_float_matcher = 
+  match_regex (RE2 "[0-9]+\\.[0-9]+")
+;
 \end{minted}
 
 We also included a matcher for C identifiers which uses the regexp
 matching chip, and simple decimal integer matcher.
+
+
+\subsection{End of String matcher}
+A particularly interesting chip! It reads a position
+and writes it out if, and only if, its at the end of the 
+string.
+
+By adding this chip to the end of a pipline you can force
+the whole string to be matched by the rest of the pipeline,
+instead of just a prefix.
+
+\index[codeindex]{match\_regex}
+\begin{minted}{felix}
+chip eos_matcher 
+  connector io
+    pin inp: %<Buffer
+    pin out: %>Buffer
+{
+  while true do
+    var x = read io.inp;
+    if x.atend perform write (io,out,x);
+  done
+}
+\end{minted}
 
 \section{Delegators}
 We present two versions of delegators, or proxies, which are chips that delegate
@@ -2070,6 +2236,7 @@ The following transducer accepts a pointer to another chip and delegates
 processing to the pointed at chip which is dereferenced each read,
 allowing the target to be changed during processing:
 
+\index[codeindex]{deref\_each\_read}
 \begin{minted}{felix}
 chip deref_each_read[D,C] (p:&iochip_t[D,C]) 
   connector io
@@ -2090,6 +2257,7 @@ Whereas this transducer also accepts a pointer to another chip
 and delegates processing to the pointed at chip, but it only
 dereferences the pointer once, after the first data is read.
 
+\index[codeindex]{deref\_first\_read}
 \begin{minted}{felix}
 chip deref_first_read[D,C] (p:&iochip_t[D,C]) 
   connector io
@@ -2111,6 +2279,7 @@ chip deref_first_read[D,C] (p:&iochip_t[D,C])
 This chip is just a copy buffer with the name changed to epsilon, 
 to suggest it recognises everything.
 
+\index[codeindex]{epsilon}
 \begin{minted}{felix}
 chip epsilon[T]
   connector io
@@ -2129,6 +2298,7 @@ The optional chip uses \verb%tryall_list% to both pass some data through
 unmodified, and also to pass it through modified by an arbitrary
 transducer.
 
+\index[codeindex]{optional}
 \begin{minted}{felix}
 chip optional[T] (p:iochip_t[T,T])
   connector io
@@ -2146,9 +2316,10 @@ chip optional[T] (p:iochip_t[T,T])
 }
 \end{minted}
 
-The \verb%oneormore_match% matches the regular expression A+.
+The \verb%oneormore_match% matches the regular expression \verb%A+%.
 It requires at least one match.
 
+\index[codeindex]{oneormore\_matcher}
 \begin{minted}{felix}
 chip oneormore_matcher[T] (A:iochip_t[T,T]) 
 connector chans 
@@ -2165,8 +2336,9 @@ connector chans
 }
 \end{minted}
 
-And of course, this one matches A*.
+And of course, this one matches \verb%A*%.
 
+\index[codeindex]{zeroormore\_matcher}
 \begin{minted}{felix}
 chip zeroormore_matcher[T] (A:iochip_t[T,T]) 
 connector chans 
@@ -2182,6 +2354,175 @@ connector chans
 }
 \end{minted}
 
+\subsection{Handling Ambiguity}
+In the \fullref{regular expression matcher} we provided a matcher for integers
+and a simplified floating point format without an exponent part. Now
+consider matching the string:
+
+\begin{minted}{text}
+"42.78"
+\end{minted}
+
+Lets build a ciruit which tries to detect if the prefix of a string matches
+a number. 
+
+\begin{minted}{felix}
+chip number
+  connector io
+    pin inp: %<Buffer
+    pin out: %>Buffer
+{
+  device num = tryall_list 
+    ([
+      decimal_integer_matcher,
+      decimal_float_matcher
+    ])
+  ;
+  circuit
+     wire io.inp to num.inp
+     wire io.out to num.out
+  endcircuit
+}
+\end{minted}
+
+The problem is that the input produces two outputs: the whole string
+is a float but the first two characters are also an integer.
+
+What can we do? One common specification for recognisers is that
+only the longest match should be used. You should note that this
+strategy will eliminate possible parses prematurely; that is,
+by excluding what is currently ambiguous, later elimination
+of the longest match will lead to failure, while keeping
+both matches might succeed.
+
+Nevertheless, longest match may be required, so the question
+becomes how to implement it. If we were using functional code
+we would get a set with all the matches, and just select
+the longest one. But we're using coroutines not functions,
+do we can't do that.
+
+Right? Well .. actually we can! 
+
+\begin{minted}{felix}
+// UNTESTED: TESTME
+chip longest (a: list[iochip_t[Buffer,Buffer]])
+  connector io
+    pin inp: %<Buffer
+    pin out: %>Buffer
+{
+  var x = read io.inp;
+  var wi,wo = mk_ioschannel_pair[Buffer];
+  var results = Empty[Buffer];
+  var processor = pipeline_list ([number,drop &results]);
+  circuit
+     wire wi to processor.inp;
+  endcircuit
+  run { write (wo, x); };
+
+  // find longest match, if any
+  match results with
+  | Empty => ; // no match do nothing
+  | head ! tail =>
+     var big = head;
+     for elt in tail do 
+       if elt > big do big = elt; done
+     done
+     write (io.out, big);
+   endmatch;
+}
+\end{minted}
+
+The trick is that the \verb%run% operation on a pipeline
+terminated by a drop will capture all the results,
+as if the code were functional. Indeed, \verb%run%
+is an ordinary subroutine!
+
+What we have done here, in terms of exploring a tree
+of parses, is commonly known as a {\em cut}, in which
+we prematurely prune whole subtrees based on some
+predictive heuristic. In this case, it's not an optimisation
+but a requirement of the specification.
+
+In general, a cuts are a technique for finding the spatial
+form of a finite temporal sequence. The \verb%run% subroutine
+is the key because it returns control when the fibre
+scheduler it has invoked no longer has any work to perform,
+in other words, when it can no longer reach any active
+fibres. Active fibres may still exist on the scheduler
+that called it, and it could create fibres itself which
+are suspended on channels it called knows about.
+
+As this would be a side-effect were the run nested in a function,
+the programmer must take care in that case to capture all
+such effects. Generators are allowed to have side effects,
+so it may be useful to use a generator instead. However,
+generators are really only intended to have internal mutable
+state which should not escape the generator abstraction.
+In particular generators have the same type as functions,
+so generator closures might accidentally be passed to
+a function which expected a functional, not generative,
+argument.
+
+In our example, our code is safe, and indeed the \verb%longest%
+chip is pure. The reasoning is that the \verb%processor% 
+pipeline only reads data from the channel with endpoints
+\verb%wi,wo% which is local to the chip, and the drop
+only occurs to \verb%results% which is also local. So no effects
+escape from the \verb%longest% chip: what it writes is purely
+a function of what it reads, no other behaviour can be detected
+by a circuit that uses it.
+
+The other side of purity reasoning is cleanup reasoning.
+We need to know that, should this chip become unreachable,
+then anything it creates also becomes unreachable. This means
+no references to anything it creates can escape the chip.
+The local variable \verb%results% is addressed, which is
+dangerous, but the address is passed only to the \verb%drop%
+chip which itself becomes unreachable at the end of the
+\verb%run% operation, except for its inclusion in the
+\verb%process% pipeline which is a local variable which is
+not addressed, and therefore is only locally reachable.
+
+Reachability reasoning is vital in functional programs
+too so this is not a new burden on programmers,
+however the reasoning is complicated by the need to consider
+fibres and channels as potentially reachable objects.
+
+It's vital to understand that the \verb%cicruit% statement
+does something more than just relieve the programmer of 
+mundane channel creation and spawning tasks. Critically,
+it hides the names of the channels and in making the secret
+{\em prevents} the programmer from inadvertantly reaching
+them, thereby ensuring that the blocked or starved circuit
+components will be reaped by the garbage collector.
+In other words, it provides a kind of abstraction through
+anonymity which helps keep components pure.
+
+\section{Recogniser test harness}
+We need to test our primitives, and later, combinations
+of them. What would a test harness look like?
+
+The first thing is to write a simple function.
+
+\index[codeindex]{tr}
+\begin{minted}[bgcolor=felixbg]{felix}
+fun tr (r: recog_t) (s:string) : bool =
+{
+  var result = false;
+  run (
+    source (Buffer s) 
+    |-> oneshot[Buffer] 
+    |-> r 
+    |-> eos_matcher 
+    |-> function (fun (x:Buffer) => true)
+    |-> store &result
+  );
+  return result;
+}
+\end{minted}
+
+
+
 \chapter{Grammars}
 We will now take a break from coroutines and do some functional
 programming, because this is a fairly easy way to do the job
@@ -2191,6 +2532,27 @@ What we need is a representation of a grammar, because later in this
 work we're going to show how to make a parser with coroutines.
 Just to keep you on your toes, we're going to use a very powerful
 functional programming technique known as {\em open recursion}.
+
+\begin{figure}[h]
+\begin{center}
+\tikzstyle{cell} = [rectangle,minimum width=0.7cm,minimum height=0.5cm,text centered,draw=black]
+\tikzstyle{arrow} = [thick,->,>-stealth]
+\begin{tikzpicture}[node distance=3cm]
+\node(genericgrammar)[cell]{generic\_grammar};
+\node(opengrammar)[cell,below of=genericgrammar]{open\_grammar};
+\node(grammar)[cell,right of=opengrammar]{grammar};
+\node(openpgrammar)[cell, below of=opengrammar]{open\_pgrammar};
+\node(pgrammar)[cell,right of=openpgrammar]{pgrammar};
+\draw[arrow](genericgrammar) -- (opengrammar) node[midway,right]{specialise};
+\draw[arrow](opengrammar) -- (grammar) node[midway,above]{fix};
+\draw[arrow](opengrammar) -- (openpgrammar) node[midway,right]{extend};
+\draw[arrow](openpgrammar) -- (pgrammar) node[midway, above]{fix};
+\end{tikzpicture}
+\caption{Grammar Development}
+\label{fig:grammar development}
+\end{center}
+\end{figure}
+
 
 \section{Grammar Datatype}
 The first thing we need is a data structure representing a grammar:
@@ -2246,6 +2608,7 @@ And the answer is: we can't! But the caller has to know how to find
 all the symbols in a \verb%T% so we just require them to pass in
 a function that can do it!
 
+\index[codeindex]{generic\_closure}
 \begin{minted}{felix}
 fun generic_cls[T] 
   (generic_add: list[string] -> T -> list[string])
@@ -2293,6 +2656,7 @@ Ok, so now, we define the {\em concrete} type of a production we
 desire in two stages. We use open recursion! First we define
 the flat, non-recursive form:
 
+\index[codeindex]{open\_prod\_t}
 \begin{minted}{felix}
 union open_prod_t[T] =
 | Terminal of string * recog_t
@@ -2306,6 +2670,7 @@ union open_prod_t[T] =
 and now we tie the recursive knot with a circular definition
 which effects a fixpoint operation:
 
+\index[codeindex]{open\_prod\_t}
 \begin{minted}{felix}
 typedef prod_t = open_prod_t[prod_t];
 \end{minted}
@@ -2355,17 +2720,23 @@ instance[T with Str[T]] Str[open_prod_t[T]]
 \end{minted}
 
 \subsubsection{Reification}
+\index[codeindex]{open\_gramentry\_t}
+\index[codeindex]{open\_gramlib\_t}
+\index[codeindex]{open\_grammar\_t}
+\index[codeindex]{gramentry\_t}
+\index[codeindex]{gramlib\_t}
+\index[codeindex]{grammar\_t}
 \begin{minted}{felix}
 typedef open_gramentry_t[T] = string * open_prod_t[T];
 typedef open_gramlib_t[T] = list[open_gramentry_t[T]];
 typedef open_grammar_t[T] = string * open_gramlib_t[T];
-
 
 typedef gramentry_t = open_gramentry_t[prod_t];
 typedef gramlib_t = open_gramlib_t[prod_t];
 typedef grammar_t = open_grammar_t[prod_t];
 \end{minted}
 
+\index[codeindex]{open\_add\_prod}
 \begin{minted}{felix}
 fun open_add_prod[T] 
   (aux: list[string] -> T -> list[string])
@@ -2382,12 +2753,14 @@ fun open_add_prod[T]
 \end{minted}
 
 \subsubsection{Construction}
+\index[codeindex]{add\_prod}
 \begin{minted}{felix}
 fun add_prod(acc:list[string]) (p:prod_t) : list[string] =>
   fix open_add_prod[prod_t] acc p
 ;
 
 \subsubsection{Reified Closure}
+\index[codeindex]{closure (of grammar\_t)}
 \begin{minted}{felix}
 fun closure (g:grammar_t): list[string] =>
   generic_closure[prod_t] add_prod g
@@ -2411,6 +2784,7 @@ and a terminal is any computable nonempty string.
 Calculate if a production RHS is nullable, depends on
 knowing if a nonterminal is nullable.
 
+\index[codeindex]{nullable\_prod}
 \begin{minted}{felix}
 fun nullable_prod 
   (lib:gramlib_t) 
@@ -2433,6 +2807,7 @@ fun nullable_prod
 Calculate if a nonterminal is nullable, which depends on
 knowing if a production is nullable.
 
+\index[codeindex]{nullable\_nt}
 \begin{minted}{felix}
 fun nullable_nt 
   (lib: gramlib_t) 
@@ -2448,6 +2823,8 @@ fun nullable_nt
 
 Close the inductions with a base case.
 
+\index[codeindex]{is\_nullable\_prod}
+\index[codeindex]{is\_nullable\_nt}
 \begin{minted}{felix}
 fun is_nullable_prod (lib:gramlib_t) (e:prod_t) => 
   nullable_prod lib e Empty[string]
@@ -2458,6 +2835,9 @@ fun is_nullable_nt (lib:gramlib_t) (nt:string) =>
 ;
 \end{minted}
 
+
+\subsection{Recursive Property}
+\index[codeindex]{recursive\_prod}
 \begin{minted}{felix}
 fun recursive_prod 
   (lib:gramlib_t) 
@@ -2483,10 +2863,11 @@ fun recursive_prod
 ;
 \end{minted}
 
-\subsection{Recursive Property}
 A nonterminal is recursive if it can produce a sentential
 form containing itself.
 
+\index[codeindex]{recursive\_nt}
+\index[codeindex]{is\_recursive\_nt}
 \begin{minted}{felix}
 fun recursive_nt
   (lib: gramlib_t) 
@@ -2510,6 +2891,7 @@ fun is_recursive_nt (lib:gramlib_t) (nt:string) =>
 A nonterminal is left recursive if it can produce a sentential
 form in which the first symbol is itself.
 
+\index[codeindex]{left\_recursive\_prod}
 \begin{minted}{felix}
 fun left_recursive_prod 
   (lib:gramlib_t) 
@@ -2541,7 +2923,11 @@ fun left_recursive_prod
 
   | Epsilon => false 
 ;
+\end{minted}
 
+\index[codeindex]{left\_recursive\_nt}
+\index[codeindex]{is\_left\_recursive\_nt}
+\begin{minted}{felix}
 fun left_recursive_nt 
   (lib: gramlib_t) 
   (nt:string) 
@@ -2553,7 +2939,6 @@ fun left_recursive_nt
   | None => false
   | Some e => left_recursive_prod lib e orig (nt ! trail)
 ;
-
 
 fun is_left_recursive_nt (
   lib:gramlib_t) 
@@ -2590,6 +2975,7 @@ the library. The library is then said to be {\em flat} because
 all the nesting is eliminated.
 
 
+\index[codeindex]{unpack}
 \begin{minted}{felix}
 fun unpack 
   (fresh:1->string) 
@@ -2631,7 +3017,10 @@ fun unpack
  endmatch;
  return out;
 }
+\end{minted}
 
+\index[codeindex]{normalise\_lib}
+\begin{minted}{felix}
 fun normalise_lib (fresh:1->string) (lib:gramlib_t) = {
   var normalised = Empty[gramentry_t];
   for p in lib perform
@@ -2659,6 +3048,7 @@ alternatives will be a non-empty list of symbols.
 
 The result is then unique up to the order of the alternatives.
 
+\index[codeindex]{sort\_merge}
 \begin{minted}{felix}
 fun sort_merge (g:gramlib_t) : gramlib_t =>
  let 
@@ -2671,6 +3061,7 @@ fun sort_merge (g:gramlib_t) : gramlib_t =>
 ;
 \end{minted}
 
+\index[codeindex]{merge}
 \begin{minted}{felix}
 fun merge (var p:gramlib_t): gramlib_t =
 {
@@ -2715,6 +3106,7 @@ a grammar.
 First we need a helper which finds the index of a 
 nonterminal definition in an array of definition:
 
+\index[codeindex]{find (of nt)}
 \begin{minted}{felix}
 fun find (v:varray[ntdef_t]) (nt:string) : size = 
 {
@@ -2732,25 +3124,24 @@ or fibration primitives, the function uses lazy evaluation: it
 returns a procedure which when executed will do the appropriate
 operations.
 
+\index[codeindex]{render\_prod}
 \begin{minted}{felix}
 fun render_prod 
   (lib:gramlib_t,v:varray[ntdef_t]) 
   (p:prod_t) 
-: 1 -> recog_t =>
+: recog_t =>
   match p with
-  | Terminal (s,r) => { r }
-  | Epsilon => { BaseChips::epsilon[Buffer] }
-  | Seq ps => { BaseChips::pipeline_list (
-      map (fun (p:prod_t) => #(render_prod (lib,v) p)) ps) }
-  | Alt ps =>  { BaseChips::tryall_list (
-      map (fun (p:prod_t) => #(render_prod (lib,v) p)) ps) }
+  | Terminal (s,r) => r 
+  | Epsilon => BaseChips::epsilon[Buffer] 
+  | Seq ps => BaseChips::pipeline_list (
+      map (fun (p:prod_t) => (render_prod (lib,v) p)) ps) 
+  | Alt ps =>   BaseChips::tryall_list (
+      map (fun (p:prod_t) => (render_prod (lib,v) p)) ps) 
   | Nonterminal nt => 
-     { 
-       var idx : size = find v nt;
-       var pslot : &ntdef_t = -(v.stl_begin + idx); 
-       var pchip : &recog_t = pslot . 1;
-       return BaseChips::deref_first_read pchip;
-     }
+    let idx = find v nt in
+    let pslot = -(v.stl_begin + idx) in
+    let pchip = pslot . 1 in
+    BaseChips::deref_first_read pchip
   endmatch
 ;
 \end{minted}
@@ -2803,6 +3194,7 @@ that's our recogniser. Note that the varray storing the nonterminals
 and their recogniser is not lost, since it is reachable from
 the starting chip.
 
+\index[codeindex]{make\_recogniser\_from\_grammar}
 \begin{minted}{felix}
 chip make_recogniser_from_grammar
   connector io
@@ -2834,10 +3226,7 @@ chip make_recogniser_from_grammar
       | None => assert false;
       | Some prod =>
         // get wrapped recogniser
-        var xprod_closure = render_prod (lib, v) prod;
-
-        // undo the wrappingt
-        var entry = #xprod_closure;
+        var entry = render_prod (lib, v) prod;
 
         // address of the slot
         var pentry : &recog_t = (-(v.stl_begin+index)).1;
@@ -2851,15 +3240,1018 @@ chip make_recogniser_from_grammar
   done
 }
 \end{minted}
+\chapter{Parsing}
+We are now ready to build our parser.
+We are going to this in a difficult way, leveraging
+our recogniser as the base. You can think of this
+as inheriting this technology, but the method of doing
+so is by using {\em open recursion}. The OO way doesn't
+work because it is not covariant, the functional technique
+allows us to retain covariance.
 
-NOTE: I have no idea how this can possibly work since the \verb%render_prod%
-function actually returns a generator function, not a procedure. That generator
-must fail if anything it does makes a service call. In particular \verb%pipeline_list%,
-for example, spawns all the component chips after connecting them,
-and spawn requires a service call. However the test case works! Why?
-Felix isn't smart enough to do the double level of inlining to achieve
-this is it??
+\section{Action Grammars}
+But first, we have to extend our grammars to be {\em action
+grammars}. An action grammar is like a grammar, except that
+there are three types of symbols. As well as terminals and
+nonterminals, we also have a new kind of symbol called
+an {\em action}.
+
+The idea of an action is simple enough. When the parser hits
+an action, it does it. Our parser will operate by a variant
+of recursive descent, but it wil actually be an LR parser!
+
+In terms of parsing, actions are equivalent to $epsilon$,
+that is, they do not consume any input. Instead, they modify
+an entity called the parser stack which maintains the state
+of the parser. The modification will be purely functional
+and monadic, and this is absolutely essential.
+
+I will show you the action data type now, but we will have
+to defer a complete understanding what it is for until later.
+
+\index[codeindex]{action\_t}
+\begin{minted}{felix}
+  union action_t =  
+  | Reduce of string * int
+  | Scroll of int
+  | Unscroll of int
+  | Pack of int
+  | Unpack
+  | Drop of int
+  | Swap
+  | Sequence of list[action_t]
+  ;
+\end{minted}
+
+As a rough guide, when the parsing is going along parsing
+a sequence of symbols and it hits a reduce action,
+the top $n$ values on the stack are removed and replaced
+by a single list of those value labelled by the given string.
+This is known as a {\em reduce action}.
+
+Normally when the parser runs, when it parses text corresponding
+to a symbol it has to push the recognised lexem onto the stack,
+this is known as a {\em shift action}. Parsers using this
+method are called {\em shift/reduce parsers}.
+
+Our action machine has an auxilliary stack, and the scroll and
+unscroll actions roll value off the top of the parser stack
+onto the auxilliary stack, and back again (respectively).
+These operations are vital because our parser, perhaps uniquely,
+has a property which is unusual but essential: our parser allows
+you to refactor the grammar, parse the refactored grammar, and
+end up with exactly the same output, as if it had not been
+refactored.
+
+Refactoring is absolutely essential because recursive descent
+parsers cannot cope with left recursive grammar productions.
+If you refactor the grammar to remove the left recursion,
+you would normally get a different, unwanted, parse tree
+than the one the original grammar would produce.
+
+We solve this problem by {\em backtracking the parser stack}
+to the state it would have had earlier, performing the 
+reduce action that would have occured then, and then
+reinstating the head of the stack. That's what the
+scroll and unscroll on the auxilliary stack are for.
+
+The pack and unpack operations are helpers to assist use
+contructing parse tree nodes. 
+
+In fact, no one actually wants to produce a parse tree.
+Everyone wants to produce an abstracted version of the
+parse tree in which things like punctuation are removed.
+This is called an {\em abstract syntax tree} or AST.
+
+Swap and Drop are the usual stack operations.
+You can see the action codes are actually instructions
+for a specialised stack machine like Forth.
+
+
+\subsubsection{Pretty printer}
+\begin{minted}{felix}
+instance Str[action_t] {
+  fun str: action_t -> string =
+  | Reduce (s,n) => "Reduce(" + s + ","+n.str+")"
+  | Scroll n => "Scroll " + n.str
+  | Unscroll n => "Unscroll " + n.str
+  | Pack n => "Pack " + n.str
+  | Drop n => "Drop " + n.str
+  | Swap => "Swap"
+  | Sequence aa =>
+    "Seq(" + catmap "," (str of action_t) aa + ")"
+  ;
+}
+\end{minted}
+
+\section{Action Grammar Extension}
+Now we have the actions, we extend our open grammar to
+include them:
+
+\index[codeindex]{open\_pgram\_t}
+\begin{minted}{felix}
+union open_pgram_t[T] = 
+  | Action of action_t
+  | Recog of open_prod_t[T]
+;
+\end{minted}
+
+Notice very carefully, we have extended the open version
+of the grammar, the one with a parameter. Our extension
+is to the flat version of the grammar, not the one with
+the recursive knot already tied by fixation.
+
+\begin{minted}{felix}
+instance[T with Str[T]] Str[open_pgram_t[T]] 
+{
+  fun str: open_pgram_t[T] -> string =
+  | Action a => "{" + a.str + "}"
+  | Recog r => r.str
+  ;
+}
+\end{minted}
+
+Now finally you can see how we reap the reward or
+reusability from open recursion! We use the pretty
+printer we defined for the actions in the first branch,
+but in the second branch we can delegate the pretty
+printing to the existing code for pretty printing
+recognisers.
+
+All of our code above will continue to work unmodified,
+even if we extend the definition of a recogniser,
+and thanks to our type system, it will also work
+with any recogniser because in a production, we required
+the client to tag the recogniser with a label, for
+the purpose of saying what it does.
+
+Now we define the new grammar type by fixating the
+open form:
+    
+\index[codeindex]{pgram\_t}
+\begin{minted}{felix}
+  typedef pgram_t = open_pgram_t[pgram_t];
+\end{minted}
+
+I have to repeat what we did: we started with an open form
+of the grammar and then defined a closed form by fixation.
+
+Then we extended the open grammar adding new terms to it,
+and then close that form with fixation. 
+
+Our type system does have polymorphic variants, which would
+have allowed adding the new action term directly to the
+end of the original type, but we have chosen to use the
+more conventional union constructor and a wrapper
+layer, because although it is more verbose, the nominal
+typing is easier to understand and and the compiler will
+give more definite error messages.
+
+In any case we now repeat the same kinds of extensions
+we used before for grammar entries, grammar libraries
+and grammars:
+
+\index[codeindex]{open\_pgramentry\_t}
+\index[codeindex]{open\_pgramlib\_t}
+\index[codeindex]{open\_pgrammar\_t}
+\begin{minted}{felix}
+  typedef open_pgramentry_t[T] = string * open_pgram_t[T];
+  typedef open_pgramlib_t[T] = list[open_pgramentry_t[T]];
+  typedef open_pgrammar_t[T] = string * open_pgramlib_t[T];
+\end{minted}
+
+and now we close them:
+
+\index[codeindex]{pgramentry\_t}
+\index[codeindex]{pgramlib\_t}
+\index[codeindex]{pgrammar\_t}
+\begin{minted}{felix}
+  typedef pgramentry_t = open_pgramentry_t[pgram_t];
+  typedef pgramlib_t = open_pgramlib_t[pgram_t];
+  typedef pgrammar_t = open_pgrammar_t[pgram_t];
+
+  instance Str[pgramlib_t] {
+    fun str (lib: pgramlib_t) : string = 
+    {
+      var s = "";
+      match nt,ex in lib do
+        s += nt + ":\n";
+        s += "  " + ex.str+"\n";
+      done
+      return s;
+    }
+  }
+\end{minted}
+
+Notice we didn't have to use the fixpoint operator here:
+we just plug in the already recursive type \verb%pgram_t%.
+
+\section{Parser stack}
+Now here is the promised parser stack. First we have to
+define the type of a lexeme, which is span of characters
+in the string we're parsing.
+
+\index[codeindex]{lexeme}
+\begin{minted}{felix}
+  typedef lexeme = (start:Buffer, finish:Buffer);
+\end{minted}
+
+Now the type of a value on the stack with the usual
+pretty printer:
+
+\index[codeindex]{stack\_node\_t}
+\begin{minted}{felix}
+  union stack_node_t = 
+  | RTerminal of string * lexeme
+  | RNonterminal of string * list[stack_node_t]
+  ;
+
+  instance Str[stack_node_t] {
+    fun str: stack_node_t -> string =
+    | RTerminal (s,x) => s+"("+string (x.start,x.finish)+")"
+    | RNonterminal (s,xs) => 
+      s + "(" + catmap "," (str of stack_node_t) xs + ")"
+    ;
+  }
+\end{minted}
+
+Here an \verb%RTerminal% is the result of parsing a terminal,
+and consists of the name of a recogniser
+that recognised a string, together with the lexeme that
+it recognised. We use a lexeme, not just a string,
+so we know where in the input we are up to.
+
+Our stack entry \verb%RNonterminal% is the result
+of parsing a nonterminal. It consists of a string,
+which will be the name of the nonterminal, and a list
+of stack nodes. The idea is that the \verb%Reduce%
+action will pull off the nodes that the nonterminal
+production put on there, and label them with the nonterminal
+name. In fact, since a nonterminal can have multiple productions,
+what we actually want is an AST, so what we put there is
+an invented named called a {\em constructor}. We may also
+fiddle with the list of values on the stack, for example,
+removing punctuation, before constructing a list of essential
+information for the constructor. That fiddling is done
+by the other action instructions, thats what they're for.
+You can use \verb%Drop%, for example, to throw away
+punctuation.
+
+So here's the type of a parser stack with the
+usual pretty printer:
+
+\index[codeindex]{parser\_stack\_t}
+\begin{minted}{felix}
+  typedef parser_stack_t = list[stack_node_t];
+
+  instance Str[parser_stack_t] {
+    fun str (x:parser_stack_t) => 
+      catmap "; " (str of stack_node_t) x
+    ;
+  }
+\end{minted}
+
+At any point, we will have "code" starting in some
+parser state and trying to proceed to a new state,
+the state is just the current string position
+together with a parser stack. Oh, and of course
+a pretty printer is required:
+
+\index[codeindex]{parser\_state\_t}
+\begin{minted}{felix}
+  typedef parser_state_t =
+  (
+    pos: Buffer,
+    stack: parser_stack_t
+  );
+
+  instance Str[parser_state_t] {
+    fun str (x:parser_state_t) =>
+      x.pos.str + ":  " + x.stack.str
+    ;
+  }
+
+\end{minted}
+
+\section{Actions}
+Now we're ready to define our parser:
+
+\index[codeindex]{parser\_t}
+\begin{minted}{felix}
+  typedef parser_t = BaseChips::iochip_t[parser_state_t,parser_state_t];
+\end{minted}
+
+You might have thought a parser is a function, which returns a parse
+tree or an AST. However, this is not what a parsing function would
+do. The parsing might fail, and, if the grammar is ambiguous there
+could be more than one parse tree. So actually, a functional
+parser, in general, must return a set of parse trees, not just one.
+The empty set means there were no parses.
+
+With fibration, the equivalent model uses a transducer, which attempts
+to parse the string from the given input position with multiple
+pipelines, one for each alternative. If the pipeline succeeds it
+writes the end position recognised, otherwise it does nothing.
+The transducer loops for the next input position.
+
+So at the output we see a stream of matches, the non-matching
+pathways producing nothing. The output correspond precisely
+to the set of matches a functional parser would return,
+they're just spread out over time instead of space.
+
+The first thing we need is a chip that does a shift action.
+It runs a recogniser, and then, if the recogniser succeeds,
+it pushes the corresponding lexeme onto the parser stack
+with the supplied label.
+
+\index[codeindex]{ActionShift}
+\begin{minted}{felix}
+  chip ActionShift (label:string) (r: recog_t)
+    connector io
+      pin inp: %<parser_state_t
+      pin out: %>parser_state_t
+   {
+     // We need to use a secondary chip so that if the recogniser
+     // writes no output, this chip will block on it and die
+     // without killing off the ActionShift chip.
+     chip handler 
+       connector inner
+         pin inp: %<parser_state_t
+     {
+       var inp = read inner.inp;
+
+       var ri,wi = #mk_ioschannel_pair[Buffer];
+       var ro,wo = #mk_ioschannel_pair[Buffer];
+       circuit 
+         wire ri to r.inp
+         wire wo to r.out
+       endcircuit
+
+       var ipos = inp.pos;
+       write (wi, ipos);
+       var opos = read ro;
+       var entry = RTerminal (label, (start = ipos, finish = opos));
+       //println$ "ActionShift " + label + " write " + io.out.address.str;
+       write (io.out, (pos = opos, stack = entry ! inp.stack));
+     }
+
+     while true do
+       var inp = read io.inp;
+       var ri,wi = #mk_ioschannel_pair[parser_state_t];
+      circuit
+         wire wi to handler.inp
+       endcircuit
+       write (wi, inp);
+     done
+   }
+\end{minted}
+
+Now, a special variant of the shift chip recognises two
+strings, but it only pushes the lexeme of the second one.
+
+You may ask why and the answer is fairly simple: the idea
+is just that the first recogniser is for whitespace,
+which we skip over first, the second one is the actual
+word we want to recognise. This allows us to construct a grammar
+which makes no provision for whitespace, and then throw
+in whitespace before each symbol systematically and automatically.
+
+\index[codeindex]{ActionSecond}
+\begin{minted}{felix}
+  chip ActionSecond (label:string) (r1: recog_t) (r2: recog_t)
+    connector io
+      pin inp: %<parser_state_t
+      pin out: %>parser_state_t
+   {
+
+     chip handler 
+       connector inner
+         pin inp: %<parser_state_t
+     {
+       var inp = read inner.inp;
+
+       var ri1,wi1 = #mk_ioschannel_pair[Buffer];
+       var ro1,wo1 = #mk_ioschannel_pair[Buffer];
+       var ri2,wi2 = #mk_ioschannel_pair[Buffer];
+       var ro2,wo2 = #mk_ioschannel_pair[Buffer];
+       circuit 
+         wire ri1 to r1.inp
+         wire wo1 to r1.out
+         wire ri2 to r2.inp
+         wire wo2 to r2.out
+       endcircuit
+
+       // whitespace
+       var pos1 = inp.pos;
+       write (wi1, pos1);
+       var pos2 = read ro1;
+
+       // terminal
+       write (wi2, pos2);
+       var pos3 = read ro2;
+
+       var entry = RTerminal (label, (start = pos2, finish = pos3));
+       //println$ "ActionSecond " + label + " write " + io.out.address.str;
+       write (io.out, (pos = pos3, stack = entry ! inp.stack));
+     }
+
+     while true do
+       var inp = read io.inp;
+       var ri,wi = #mk_ioschannel_pair[parser_state_t];
+       circuit
+         wire wi to handler.inp
+       endcircuit
+       write (wi, inp);
+     done
+   }
+\end{minted}
+
+Now we can define a function that does actions.
+
+This function takes as input an auxilliary parser stack \verb%aux%,
+the main parser stack \verb%s%, and an action \verb%a%,
+and returns a pair of the auxilliary parser stack and the new
+parser stack after the action is done. It is a pure function.
+
+\index[codeindex]{doaction}
+\begin{minted}{felix}
+  fun doaction (aux: parser_stack_t,s:parser_stack_t) (a:action_t) =>
+    match a with
+    | Reduce (label,n) => 
+      let revhead,tail = revsplit n s in
+      aux,RNonterminal (label,revhead) ! tail
+
+    | Drop n => aux,drop n s
+
+    | Swap => aux,
+      match s with 
+      | e1 ! e2 ! tail => e2 ! e1 ! tail 
+      | _ => s
+      endmatch
+
+    | Scroll n => let s,a = scroll (s,aux) n in a,s
+    | Unscroll n => scroll (aux,s) n
+
+    | Pack n => 
+      let revhead,tail = revsplit n s in
+      aux,RNonterminal ("_Tuple",revhead) ! tail
+
+    | Unpack => 
+      match s with
+      | RNonterminal (_,ss) ! tail => aux, ss + tail
+      | _ => aux,s
+      endmatch
  
+    | Sequence actions =>
+      fold_left (fun (aux:parser_stack_t,s:parser_stack_t) (a:action_t) => 
+        doaction (aux,s) a) 
+        (aux,s) 
+        actions
+
+    endmatch
+  ;
+
+  fun doaction (s:parser_stack_t) (a:action_t) =>
+    let _,s = doaction (Empty[stack_node_t], s) a in
+    s
+  ;
+\end{minted}
+
+The second variant just uses an initially empty auxilliary stack.
+These stacks are only used to connect subactions of a parser
+action. The auxilliary stack never propagates outside master action.
+
+Here is the action applied by a chip to a parser state (the previous
+function only applied to a stack).
+
+\index[codeindex]{ActionGeneral}
+\begin{minted}{felix}
+  chip ActionGeneral (a:action_t)
+    connector io
+      pin inp: %<parser_state_t
+      pin out: %>parser_state_t
+  {
+    while true do
+      var i = read io.inp;
+      var pos = i.pos;
+      var stack = doaction i.stack a;
+      //println$ "ActionGeneral ["+a.str+"] write " + io.out.address.str;
+      write (io.out, (pos=pos, stack=stack)); 
+    done
+  }
+\end{minted}
+
+\section{The parser}
+What we need to do now is build a parser from an action grammar.
+We proceed as we did with recognisers.
+
+\index[codeindex]{pntdef\_t}
+\index[codeindex]{find}
+\index[codeindex]{render\_pgram}
+\begin{minted}{felix}
+  typedef pntdef_t = string * parser_t;
+
+  fun find (v:varray[pntdef_t]) (nt:string) : size = 
+  {
+    for i in 0uz ..< v.len do
+      if v.i.0 == nt return i;
+    done
+    assert false;
+  }
+
+  fun render_pgram
+    (lib:pgramlib_t,v:varray[pntdef_t])
+    (white:recog_t)
+    (p:pgram_t) 
+  : parser_t =>
+    match p with
+    | Recog r => 
+      match r with
+      | Terminal (s,r) => ActionSecond s white r
+      | Epsilon => BaseChips::epsilon[parser_state_t]
+      | Seq ps => BaseChips::pipeline_list (
+          map (fun (p:pgram_t) => (render_pgram (lib,v) white p)) ps) 
+      | Alt ps =>  BaseChips::tryall_list (
+          map (fun (p:pgram_t) => (render_pgram (lib,v) white p)) ps) 
+      | Nonterminal nt => 
+         let  idx : size = find v nt in
+           let pslot : &pntdef_t = -(v.stl_begin + idx) in
+           let pchip : &parser_t = pslot . 1 in
+           BaseChips::deref_each_read pchip
+      endmatch
+    | Action a => ActionGeneral a
+  ;
+\end{minted}
+
+\index[codeindex]{open\_add\_pgram}
+\index[codeindex]{add\_pgram}
+\index[codeindex]{closure}
+\begin{minted}{felix}
+  fun open_add_pgram[T] 
+    (aux: list[string] -> T -> list[string])
+    (acc:list[string]) (p: open_pgram_t[T]) 
+  : list[string] =>
+    match p with
+    | Recog r => open_add_prod[T] aux acc r
+    | Action a => acc
+    endmatch
+  ;
+
+  fun add_pgram (acc:list[string]) (p:pgram_t) : list[string] =>
+    fix open_add_pgram[pgram_t] acc p
+  ;
+
+  fun closure (g:pgrammar_t): list[string] =>
+    generic_closure[pgram_t] add_pgram g
+  ;
+\end{minted}
+
+\index[codeindex]{make\_parser\_from\_grammar}
+\begin{minted}{felix}
+  chip make_parser_from_grammar (white:recog_t)
+    connector io
+      pin inp: %<pgrammar_t
+      pin out: %>parser_t
+  {
+
+    while true do
+      // read in the grammar
+      var start, lib = read io.inp;
+
+      // calculate the transitive closure of nonterminals
+      // from the start symbol
+      var cl = closure (start,lib);
+
+      // allocate a varray with a slot for each nonterminal
+      var n = cl.len;
+      var v = varray[string * parser_t] n;
+
+      // populate the varray with the terminal names and a dummy chip
+      for nt in cl call // initialise array
+        push_back (v,(nt,BaseChips::epsilon[parser_state_t]))
+      ;
+
+      // now assign the real recognisers to the array
+      var index = 0uz;
+      for nt in cl do
+        match find lib nt with
+        | None => assert false;
+        | Some prod =>
+          // get wrapped parser 
+          var xprod_closure = render_pgram (lib, v) white prod;
+
+          // undo the wrappingt
+          var entry = #xprod_closure;
+
+          // address of the slot
+          var pentry : &parser_t = (-(v.stl_begin+index)).1;
+
+          // overwrite dummy value
+          pentry <- entry;
+        endmatch;
+        ++index;
+      done
+      write (io.out, (v.(find v start).1));
+    done
+  }
+\end{minted}
+
+\index[codeindex]{make\_parser\_from\_grammar}
+\begin{minted}{felix}
+  gen make_parser_from_grammar (g:pgrammar_t) (white:recog_t) : parser_t =
+  {
+    var parsr: parser_t;
+    var sched = #fibre_scheduler; 
+    spawn_fthread sched {
+      var gri,gwi = mk_ioschannel_pair[pgrammar_t]();
+      var gro,gwo = mk_ioschannel_pair[parser_t]();
+      spawn_fthread (make_parser_from_grammar white (inp=gri,out=gwo));
+      write (gwi, g);
+      parsr = read gro;
+    };
+    sched.run;
+    return parsr;
+  }
+\end{minted}
+
+\index[codeindex]{run\_parser\_on\_string}
+\begin{minted}{felix}
+  gen run_parser_on_string (parsr:parser_t) (s:string) : list[parser_state_t] =
+  {
+    var results = Empty[parser_state_t]; 
+    var b = Buffer s;
+    var ps : parser_state_t = (pos=b, stack=Empty[stack_node_t]);
+    var sched = #fibre_scheduler; 
+    spawn_fthread sched { 
+      var ri,wi = mk_ioschannel_pair[parser_state_t]();
+      var ro,wo = mk_ioschannel_pair[parser_state_t]();
+      spawn_fthread (parsr (inp=ri, out=wo));
+      write (wi,ps);
+      while true do
+        var result = read ro;
+        results = result ! results;
+        //println$ "Test1: End pos (should be 14)=" + result.str;
+      done
+    };
+    sched.run;
+    return results;
+  }
+\end{minted}
+
+\chapter{Grammar Refactoring}
+
+\index[codeindex]{unpack}
+\begin{minted}{felix}
+  // replace internal sub-expressions with fresh nonterminals
+  fun unpack (fresh:1->string) (head:string, p:pgram_t) : pgramlib_t =
+  {
+   var out = Empty[pgramentry_t];
+   match p with
+   | Action a => out = ([head,p]); 
+   | Recog Epsilon => out = ([head,p]);
+   | Recog (Terminal _) => out = ([head,Recog (Seq[pgram_t] ([p]))]);
+   | Recog (Nonterminal s) => out= ([head,Recog (Seq[pgram_t] ([p]))]);
+
+   | Recog (Seq ps) =>
+     var newseq = Empty[pgram_t];
+     for term in ps do
+       match term with
+       | Action _ => newseq = term ! newseq;
+       | Recog Epsilon => ;
+       | Recog (Nonterminal _) => newseq = term ! newseq;
+       | Recog (Terminal _) => newseq = term ! newseq;
+       | _ =>
+         var newhead = fresh();
+         newseq = Recog (Nonterminal[pgram_t] newhead) ! newseq;
+         out = unpack fresh (newhead,term);
+       endmatch;
+     done
+
+     match newseq with 
+     | Empty => out = (head,Recog (Epsilon[pgram_t])) ! out;
+     | _ => out = (head,Recog (Seq[pgram_t] (rev newseq))) ! out;
+     endmatch;
+
+   | Recog (Alt ps) =>
+     iter (proc (p:pgram_t) { out = unpack fresh (head,p) + out; }) ps;
+   endmatch;
+   return out;
+  }
+\end{minted}
+
+
+\index[codeindex]{expand\_aux}
+\index[codeindex]{expand}
+\begin{minted}{felix}
+  // expand internal sub-expressions, return a list of symbol sequences
+  // the outer list are the alternatives and the inner ones sequences
+  // IN REVERSE ORDER! 
+  fun expand_aux (p:pgram_t) : list[list[pgram_t]] =
+  {
+   var out = ([Empty[pgram_t]]);
+   match p with
+   // add symbol to each alternative
+   | Recog Epsilon => ;
+   | ( Action a  
+   | Recog (Terminal _) 
+   | Recog (Nonterminal s)) => 
+     out = map (fun (ss: list[pgram_t]) => Cons (p,ss)) out; 
+
+   // A sequence is unpacked by successively unpacking each
+   // symbol. The result is then prepended to each alternative.
+   | Recog (Seq ps) =>
+     for term in ps do
+       var tmp = expand_aux term;
+       var out2 = Empty[list[pgram_t]];
+       for left in tmp perform 
+         for right in out perform
+           out2 += left + right;
+       out = out2;
+     done
+ 
+   | Recog (Alt ps) =>
+     var alts = cat (map expand_aux ps);
+     out2 = Empty[list[pgram_t]];
+     for left in alts perform
+       for right in out perform
+         out2 += left + right;
+     out = out2;
+
+   endmatch;
+   return out;
+  }
+
+  fun expand (p:pgram_t) : pgram_t =>
+    let ps = expand_aux p in
+    Recog (Alt[pgram_t] (map (fun (seqs: list[pgram_t]) => Recog (Seq[pgram_t] (rev seqs))) ps))
+  ;
+\end{minted}
+
+\index[codeindex]{substitute}
+\begin{minted}{felix}
+  // in p replace nonterminal name with value (where q=name,value)
+  fun substitute (q:pgramentry_t) (p:pgram_t)=>
+    let name,value = q in
+    match p with
+    | Recog (Nonterminal s) when name == s => value
+    | Recog (Seq ls) => Recog (Seq[pgram_t] (map (substitute q) ls))
+    | Recog (Alt ls) => Recog (Alt[pgram_t] (map (substitute q) ls))
+    | _ => p
+  ;
+\end{minted}
+
+\index[codeindex]{direct\_left\_recursion\_elimination}
+\begin{minted}{felix}
+// direct left recursion eliminator
+// assumes A = A alpha | beta form
+// outputs
+// A = beta A'
+// A' = alpha A' | Eps
+//
+// BETTER
+//
+// A = beta | beta A'
+// A' = alpha A' | alpha
+//
+// since this is Epsilon free
+
+  fun direct_left_recursion_el\imination 
+   (fresh:1->string) 
+   (lib:pgramlib_t) 
+  =
+  {
+   var outgram = Empty[pgramentry_t];
+   for ntdef in lib do
+     var nt,expr = ntdef;
+     var alphas = Empty[list[pgram_t]];
+     var betas = Empty[list[pgram_t]];
+  // where does Epsilon go??
+     match expr with
+     | Recog (Alt alts) =>
+       for alt in alts do
+         match alt with
+         | Recog (Seq (Cons (Recog (Nonterminal $(nt)),tail))) => alphas = tail ! alphas;
+         | Recog (Seq b) => betas = b ! betas;
+         | x => betas = ([x]) ! betas;
+
+         //| x => println$ "EDLR, unexpected alternative " + x.str; assert false;
+         endmatch;
+       done
+     | x => betas = ([x]) ! betas;
+
+     //| x => println$ "EDLR, unexpected expr " + x.str; assert false;
+     endmatch;
+     if alphas.len == 0uz do
+       outgram = (nt,expr) ! outgram;
+     else 
+       var newntname = fresh();
+       var newnt = Recog (Nonterminal[pgram_t] newntname); 
+       var alts = map (fun (b:list[pgram_t]) => Recog (Seq (b + newnt))) betas;
+       outgram =  (nt, Recog (Alt alts)) !  outgram ;
+       alts = map (fun (a:list[pgram_t]) => Recog (Seq (a + newnt))) alphas + Recog (Epsilon[pgram_t]);
+       outgram = (newntname, Recog (Alt alts)) ! outgram;
+     done
+   done
+   return outgram;
+  }
+\end{minted}
+
+\index[codeindex]{direct\_left\_recursion\_elimination}
+\index[codeindex]{left\_recursion\_elimination\_step}
+\index[codeindex]{left\_recursion\_elimination}
+\begin{minted}{felix}
+  gen fresh_sym () : string = {
+    var n = 1;
+  next:>
+    yield "_"+n.str;
+    ++n;
+    goto next;
+  }
+  // this needs to be global so the algo can be re-applied to the same
+  // grammar library
+  var fresh = fresh_sym;
+
+  fun direct_left_recursion_elimination (lib:pgramlib_t) = 
+  {
+    return direct_left_recursion_elimination fresh lib;
+  }
+
+  fun make_seq (a:pgram_t) (b:list[pgram_t]) =>
+    match a with
+    | Recog (Seq a) => Recog (Seq (a + b))
+    | _ => Recog (Seq (a ! b))
+  ; 
+
+  // requires one entry per non-terminal, sorted for performance
+  // must be in form Alt (Seq (nt, ...)) or Seq (nt, ...) or sym
+  // right is the original grammar which i scans thru
+  // left is the modified grammar for j = 1 to n -1
+  // each recursion advances i one step
+
+  fun left_recursion_elimination_step 
+    (fresh:1->string) 
+    (var left:pgramlib_t)
+    (var right:pgramlib_t)
+  = 
+  {
+     match right with
+     | Empty => return left;
+     | (rnt,rdfn) ! tail => // A_i
+println$ "left_recursion_elimination considering nonterminal A_i=" +rnt;
+       var rprods = 
+         match rdfn with
+         | Recog (Alt alts) => alts
+         | _ => ([rdfn])
+       ;
+
+       var toremove = Empty[int];
+       var toadd = Empty[pgram_t];
+       match lnt,ldfn in left do // A_j = 1 to i - 1
+println$ "  left_recursion_elimination considering nonterminal A_j=" +lnt;
+         var lprods = 
+           match ldfn with
+           | Recog (Alt alts) => alts
+           | _ => ([ldfn])
+         ;
+         var counter = -1;
+         for rprod in rprods do // A_i = A_j alpha
+println$ "    checking if " + rnt + " = " + rprod.str + " has left corner A_j=" + lnt;
+           ++counter;
+           match rprod with
+           | Recog (Seq (Recog (Nonterminal s) ! alpha)) =>
+             if s == lnt do
+println$ "      YES: replace";
+               toremove = counter ! toremove;
+               for beta in lprods perform 
+                 toadd  = make_seq beta alpha ! toadd;
+             else // not of form A_i = A_j alpha
+println$ "      NO: keep";
+             done
+           | Recog (Nonterminal s) => // alpha = Epsilon
+             if s == lnt do
+println$ "      YES: replace";
+               toremove = counter ! toremove;
+               for beta in lprods perform 
+                 toadd  = beta ! toadd;
+             else
+println$ "      NO: keep";
+             done
+           | _ => 
+println$ "      NO: keep";
+           endmatch;
+         done // all A_i of form A_J alpha
+       done
+       // strip replaced productions out, add the others
+       counter = -1;
+       for elt in rprods do
+         ++counter;
+         if not (counter in toremove) perform
+           toadd = elt ! toadd;
+       done
+       var newa_i = direct_left_recursion_elimination fresh ([rnt, Recog (Alt toadd)]);
+       return left_recursion_elimination_step fresh (newa_i + left) tail;
+     endmatch;
+  }
+
+  fun left_recursion_elimination 
+    (fresh:1->string) 
+    (var right:pgramlib_t)
+  => left_recursion_elimination_step fresh Empty[pgramentry_t] right;
+\end{minted}
+
+\section{Grammar Syntax}
+\index{Parse Syntax}
+\begin{minted}{felix}
+syntax parser_syn
+{
+  priority 
+    palt_pri <
+    pseq_pri <
+    patom_pri
+  ;
+  
+  stmt := plibrary =># "_1";
+
+  plibrary := "gramlib" sname "{" plibentry* "}" =>#
+    """
+    (let*
+      (
+        (tup `(ast_tuple ,_sr ,_4))
+        (v `(ast_apply ,_sr (,(nos "list") ,tup)))
+      )
+      `(ast_var_decl ,_sr ,_2 ,dfltvs none (some ,v))
+    )
+    """
+  ; 
+
+  plibentry := sname "=" pexpr[palt_pri] ";" =>#
+  """`(ast_tuple ,_sr (,(strlit _1) ,_3))""";
+
+  sexpr := "parser" "(" pexpr[palt_pri] ")" =># "_3";
+
+  private pexpr[palt_pri] := "|"? pexpr[>palt_pri] ("|" pexpr[>palt_pri])+ =># 
+    """`(ast_apply ,_sr (  
+      ,(qnoi 'Parser_synlib 'ALT)
+      (ast_apply ,_sr (,(noi 'list) ,(cons _2 (map second _3))))))"""
+  ;
+
+  private pexpr[pseq_pri] := pexpr[>pseq_pri] (pexpr[>pseq_pri])+ =># 
+    """`(ast_apply ,_sr ( 
+      ,(qnoi 'Parser_synlib 'SEQ)
+      (ast_apply ,_sr (,(noi 'list) ,(cons _1 _2)))))"""
+  ;
+
+  private pexpr[patom_pri] := "(" pexpr[palt_pri] ")" =># "_2";
+
+  private pexpr[patom_pri] := String =># 
+    """`(ast_apply ,_sr ( ,(qnoi 'Parser_synlib 'STR) ,_1)) """
+  ;
+
+  private pexpr[patom_pri] := "#EPS" =>#
+    """`(ast_apply ,_sr ( ,(qnoi 'Parser_synlib 'EPS) ())) """
+  ;
+
+  private pexpr[patom_pri] := sname=>#
+    """`(ast_apply ,_sr ( ,(qnoi 'Parser_synlib 'NT) ,(strlit _1))) """
+  ;
+
+  private pexpr[patom_pri] := "{" sexpr "}" =># "_2";
+
+
+}
+\end{minted}
+
+\section{Simplified Constructors}
+
+\index{Parser Shortcuts}
+\index[codeindex]{NT}
+\index[codeindex]{TERM}
+\index[codeindex]{STR}
+\index[codeindex]{REDUCE}
+\index[codeindex]{BINOP}
+\index[codeindex]{SWAP}
+\index[codeindex]{DROP}
+\index[codeindex]{ALT}
+\index[codeindex]{SEQ}
+\index[codeindex]{EPS}
+\begin{minted}{felix}
+class Parser_synlib
+{
+  open Parsers;
+  open Grammars;
+  fun NT (s:string) => Recog (Nonterminal [pgram_t] s);
+  fun TERM (s:string, r:Recognisers::recog_t) => Recog (Terminal [pgram_t] (s,r));
+  fun STR (s:string) => Recog (Terminal [pgram_t] (s, (Recognisers::match_string s)));
+  fun REDUCE (s:string, n:int) => Action[pgram_t] (Reduce (s,n));
+  fun BINOP(s:string) => Action[pgram_t] (Sequence ([Swap, Drop 1, (Reduce (s,2))]));
+  fun SWAP () => Action[pgram_t] (Swap);
+  fun DROP (n:int) => Action[pgram_t] (Drop n);
+  fun ALT (ls: list[pgram_t]) => Recog (Alt[pgram_t] ls);
+  fun SEQ (ls: list[pgram_t]) => Recog (Seq[pgram_t] ls);
+  fun EPS () => Recog (Epsilon[pgram_t]);
+}
+\end{minted}
+
 
 \part{Appendices}
 \chapter{Coroutine Semantics}

@@ -132,14 +132,6 @@ chip buffer [T]
   done
 }
 
-chip oneshot [T]
-  connector io
-    pin inp: %<T
-    pin out: %>T
-{
-  write (io.out, read io.inp);
-}
-
 chip dup [T]
   connector io
     pin inp: %<T
@@ -154,7 +146,7 @@ chip dup [T]
 }
 
 
-#line 186 "C:/projects/felix/src/packages/chips.fdoc"
+#line 178 "C:/projects/felix/src/packages/chips.fdoc"
 // two transducers
 chip pipe[T,U,V] (a:iochip_t[T,U],b:iochip_t[U,V])
  connector io
@@ -199,7 +191,7 @@ proc pipe[T] (a:ochip_t[T],b:ichip_t[T])  ()
 }
 
 
-#line 233 "C:/projects/felix/src/packages/chips.fdoc"
+#line 225 "C:/projects/felix/src/packages/chips.fdoc"
 chip debug_buffer [T with Str[T]] (tag:string)
   connector io
     pin inp: %<T
@@ -214,7 +206,7 @@ chip debug_buffer [T with Str[T]] (tag:string)
   done
 }
 
-#line 250 "C:/projects/felix/src/packages/chips.fdoc"
+#line 242 "C:/projects/felix/src/packages/chips.fdoc"
 chip oneshot [T]
   connector io
     pin inp: %<T
@@ -224,7 +216,7 @@ chip oneshot [T]
   write (io.out, x);
 }
 
-#line 262 "C:/projects/felix/src/packages/chips.fdoc"
+#line 254 "C:/projects/felix/src/packages/chips.fdoc"
 chip store[T] (p:&T)
   connector io
     pin inp: %<T
@@ -235,7 +227,7 @@ chip store[T] (p:&T)
   done
 }
 
-#line 275 "C:/projects/felix/src/packages/chips.fdoc"
+#line 267 "C:/projects/felix/src/packages/chips.fdoc"
 chip fetch[T] (p:&T)
   connector io
     pin out: %>T
@@ -245,7 +237,7 @@ chip fetch[T] (p:&T)
   done
 }
 
-#line 288 "C:/projects/felix/src/packages/chips.fdoc"
+#line 280 "C:/projects/felix/src/packages/chips.fdoc"
 chip debug_sink [T with Str[T]] (s:string)
   connector io
     pin inp: %<T
@@ -257,7 +249,7 @@ chip debug_sink [T with Str[T]] (s:string)
 }
 
 
-#line 304 "C:/projects/felix/src/packages/chips.fdoc"
+#line 296 "C:/projects/felix/src/packages/chips.fdoc"
 chip latch[T]
   connector io
     pin inp: %<T
@@ -272,7 +264,7 @@ chip latch[T]
    endcircuit
 }
 
-#line 325 "C:/projects/felix/src/packages/chips.fdoc"
+#line 317 "C:/projects/felix/src/packages/chips.fdoc"
 chip serialise_chan_list[T] (a: list[%<T])
  connector io
    pin out: %>T
@@ -361,7 +353,7 @@ chip tryall_list[D,C with Str[D]] (a: list[iochip_t[D,C]])
   done
 }
 
-#line 417 "C:/projects/felix/src/packages/chips.fdoc"
+#line 409 "C:/projects/felix/src/packages/chips.fdoc"
 chip deref_each_read[D,C] (p:&iochip_t[D,C])
   connector io
     pin inp: %<D
@@ -390,7 +382,7 @@ chip deref_first_read[D,C] (p:&iochip_t[D,C])
     write (rout,x);
   done
 }
-#line 449 "C:/projects/felix/src/packages/chips.fdoc"
+#line 441 "C:/projects/felix/src/packages/chips.fdoc"
 chip epsilon[T]
   connector io
    pin inp: %<T
@@ -402,7 +394,7 @@ chip epsilon[T]
     write (io.out, x);
   done
 }
-#line 465 "C:/projects/felix/src/packages/chips.fdoc"
+#line 457 "C:/projects/felix/src/packages/chips.fdoc"
 chip optional[T] (p:iochip_t[T,T])
   connector io
     pin inp: %<T
@@ -418,7 +410,7 @@ chip optional[T] (p:iochip_t[T,T])
   endcircuit
 }
 
-#line 482 "C:/projects/felix/src/packages/chips.fdoc"
+#line 474 "C:/projects/felix/src/packages/chips.fdoc"
 
 chip oneormore_matcher[T] (A:iochip_t[T,T])
 connector chans
@@ -434,7 +426,7 @@ connector chans
  endcircuit
 }
 
-#line 499 "C:/projects/felix/src/packages/chips.fdoc"
+#line 491 "C:/projects/felix/src/packages/chips.fdoc"
 
 chip zeroormore_matcher[T] (A:iochip_t[T,T])
 connector chans
@@ -448,6 +440,6 @@ connector chans
    wire chans.out to Ass.out
  endcircuit
 }
-#line 515 "C:/projects/felix/src/packages/chips.fdoc"
+#line 507 "C:/projects/felix/src/packages/chips.fdoc"
 } // end class BaseChips
 
