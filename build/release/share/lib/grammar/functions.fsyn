@@ -1,4 +1,4 @@
-#line 1797 "C:/projects/felix/src/packages/grammar.fdoc"
+#line 1798 "C:/projects/felix/src/packages/grammar.fdoc"
 //$ General functional forms.
 syntax functions {
   requires expressions;
@@ -144,6 +144,9 @@ syntax functions {
 
   //$ Parameter qualifier: val.
   private sparam_qual := "val" =># "'PVal";
+
+  //$ Parameter qualifier: once.
+  private sparam_qual := "once" =># "'POnce";
 
   //$ Parameter qualifier: var.
   private sparam_qual := "var" =># "'PVar";

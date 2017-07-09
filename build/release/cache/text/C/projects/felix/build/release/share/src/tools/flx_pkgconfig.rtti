@@ -1,18 +1,24 @@
 
-//OFFSETS for function _lam_2363
-static ::std::size_t const _lam_2363_offsets[1+FLX_PASS_PTF]={
-  FLX_EAT_PTF(offsetof(_lam_2363,ptf)comma)
-  offsetof(_lam_2363,ptrsearch_and_replace_uncurry),
+//OFFSETS for function _fI69498_aux_uncurry
+static ::std::size_t const _fI69498_aux_uncurry_offsets[7+FLX_PASS_PTF]={
+  FLX_EAT_PTF(offsetof(_fI69498_aux_uncurry,ptf)comma)
+  offsetof(_fI69498_aux_uncurry,ptr_lam_64579),
+  offsetof(_fI69498_aux_uncurry,ptrhandle_pkg),
+  offsetof(_fI69498_aux_uncurry,ptrflx_pkgconfig),
+  offsetof(_fI69498_aux_uncurry,_vI69505_t_param_std_1209)+0,
+  offsetof(_fI69498_aux_uncurry,_vI69503_aux__apos_2_mv_1328)+0,
+  offsetof(_fI69498_aux_uncurry,_vI69500_y)+0,
+  offsetof(_fI69498_aux_uncurry,_vI69499_x_uncurry)+0,
 };
-static ::flx::gc::generic::offset_data_t const _lam_2363_offset_data = { 1+FLX_PASS_PTF, _lam_2363_offsets};
-FLX_FINALISER(_lam_2363)
-static ::flx::gc::generic::gc_shape_t _lam_2363_ptr_map ={
+static ::flx::gc::generic::offset_data_t const _fI69498_aux_uncurry_offset_data = { 7+FLX_PASS_PTF, _fI69498_aux_uncurry_offsets};
+FLX_FINALISER(_fI69498_aux_uncurry)
+static ::flx::gc::generic::gc_shape_t _fI69498_aux_uncurry_ptr_map ={
   &::flx::rtl::_address_ptr_map,
-  "flx_pkgconfig::_lam_2363",
-  1,sizeof(_lam_2363),
-  _lam_2363_finaliser,
+  "flx_pkgconfig::_fI69498_aux_uncurry",
+  1,sizeof(_fI69498_aux_uncurry),
+  _fI69498_aux_uncurry_finaliser,
   0, // fcops
-  &_lam_2363_offset_data, // scanner data
+  &_fI69498_aux_uncurry_offset_data, // scanner data
   &::flx::gc::generic::scan_by_offsets, // scanner
   0,
   0,
@@ -20,24 +26,20 @@ static ::flx::gc::generic::gc_shape_t _lam_2363_ptr_map ={
   0ul,0ul
 };
 
-//OFFSETS for function _fI69281_aux_uncurry
-static ::std::size_t const _fI69281_aux_uncurry_offsets[5+FLX_PASS_PTF]={
-  FLX_EAT_PTF(offsetof(_fI69281_aux_uncurry,ptf)comma)
-  offsetof(_fI69281_aux_uncurry,ptr_fI68132___plus_),
-  offsetof(_fI69281_aux_uncurry,_vI69288_t_param_std_1268)+0,
-  offsetof(_fI69281_aux_uncurry,_vI69286_aux__apos_2_mv_1387)+0,
-  offsetof(_fI69281_aux_uncurry,_vI69283_y)+0,
-  offsetof(_fI69281_aux_uncurry,_vI69282_x_uncurry)+0,
+//OFFSETS for function _lam_64610
+static ::std::size_t const _lam_64610_offsets[1+FLX_PASS_PTF]={
+  FLX_EAT_PTF(offsetof(_lam_64610,ptf)comma)
+  offsetof(_lam_64610,ptrflx_pkgconfig),
 };
-static ::flx::gc::generic::offset_data_t const _fI69281_aux_uncurry_offset_data = { 5+FLX_PASS_PTF, _fI69281_aux_uncurry_offsets};
-FLX_FINALISER(_fI69281_aux_uncurry)
-static ::flx::gc::generic::gc_shape_t _fI69281_aux_uncurry_ptr_map ={
-  &_lam_2363_ptr_map,
-  "flx_pkgconfig::_fI69281_aux_uncurry",
-  1,sizeof(_fI69281_aux_uncurry),
-  _fI69281_aux_uncurry_finaliser,
+static ::flx::gc::generic::offset_data_t const _lam_64610_offset_data = { 1+FLX_PASS_PTF, _lam_64610_offsets};
+FLX_FINALISER(_lam_64610)
+static ::flx::gc::generic::gc_shape_t _lam_64610_ptr_map ={
+  &_fI69498_aux_uncurry_ptr_map,
+  "flx_pkgconfig::_lam_64610",
+  1,sizeof(_lam_64610),
+  _lam_64610_finaliser,
   0, // fcops
-  &_fI69281_aux_uncurry_offset_data, // scanner data
+  &_lam_64610_offset_data, // scanner data
   &::flx::gc::generic::scan_by_offsets, // scanner
   0,
   0,
@@ -45,21 +47,21 @@ static ::flx::gc::generic::gc_shape_t _fI69281_aux_uncurry_ptr_map ={
   0ul,0ul
 };
 
-//OFFSETS for function _lam_65104
-static ::std::size_t const _lam_65104_offsets[2+FLX_PASS_PTF]={
-  FLX_EAT_PTF(offsetof(_lam_65104,ptf)comma)
-  offsetof(_lam_65104,ptrxfind),
-  offsetof(_lam_65104,ptrflx_pkgconfig),
+//OFFSETS for function _lam_64536
+static ::std::size_t const _lam_64536_offsets[2+FLX_PASS_PTF]={
+  FLX_EAT_PTF(offsetof(_lam_64536,ptf)comma)
+  offsetof(_lam_64536,ptrparse_args),
+  offsetof(_lam_64536,ptrflx_pkgconfig),
 };
-static ::flx::gc::generic::offset_data_t const _lam_65104_offset_data = { 2+FLX_PASS_PTF, _lam_65104_offsets};
-FLX_FINALISER(_lam_65104)
-static ::flx::gc::generic::gc_shape_t _lam_65104_ptr_map ={
-  &_fI69281_aux_uncurry_ptr_map,
-  "flx_pkgconfig::_lam_65104",
-  1,sizeof(_lam_65104),
-  _lam_65104_finaliser,
+static ::flx::gc::generic::offset_data_t const _lam_64536_offset_data = { 2+FLX_PASS_PTF, _lam_64536_offsets};
+FLX_FINALISER(_lam_64536)
+static ::flx::gc::generic::gc_shape_t _lam_64536_ptr_map ={
+  &_lam_64610_ptr_map,
+  "flx_pkgconfig::_lam_64536",
+  1,sizeof(_lam_64536),
+  _lam_64536_finaliser,
   0, // fcops
-  &_lam_65104_offset_data, // scanner data
+  &_lam_64536_offset_data, // scanner data
   &::flx::gc::generic::scan_by_offsets, // scanner
   0,
   0,
@@ -67,24 +69,21 @@ static ::flx::gc::generic::gc_shape_t _lam_65104_ptr_map ={
   0ul,0ul
 };
 
-//OFFSETS for function _fI69647__lam_1391
-static ::std::size_t const _fI69647__lam_1391_offsets[5+FLX_PASS_PTF]={
-  FLX_EAT_PTF(offsetof(_fI69647__lam_1391,ptf)comma)
-  offsetof(_fI69647__lam_1391,ptr_fI69639_aux_uncurry),
-  offsetof(_fI69647__lam_1391,ptr_lam_65171),
-  offsetof(_fI69647__lam_1391,ptr_lam_65160),
-  offsetof(_fI69647__lam_1391,ptrhandle_pkg),
-  offsetof(_fI69647__lam_1391,ptrflx_pkgconfig),
+//OFFSETS for function _lam_64578
+static ::std::size_t const _lam_64578_offsets[2+FLX_PASS_PTF]={
+  FLX_EAT_PTF(offsetof(_lam_64578,ptf)comma)
+  offsetof(_lam_64578,ptrget_variable),
+  offsetof(_lam_64578,ptrflx_pkgconfig),
 };
-static ::flx::gc::generic::offset_data_t const _fI69647__lam_1391_offset_data = { 5+FLX_PASS_PTF, _fI69647__lam_1391_offsets};
-FLX_FINALISER(_fI69647__lam_1391)
-static ::flx::gc::generic::gc_shape_t _fI69647__lam_1391_ptr_map ={
-  &_lam_65104_ptr_map,
-  "flx_pkgconfig::_fI69647__lam_1391",
-  1,sizeof(_fI69647__lam_1391),
-  _fI69647__lam_1391_finaliser,
+static ::flx::gc::generic::offset_data_t const _lam_64578_offset_data = { 2+FLX_PASS_PTF, _lam_64578_offsets};
+FLX_FINALISER(_lam_64578)
+static ::flx::gc::generic::gc_shape_t _lam_64578_ptr_map ={
+  &_lam_64536_ptr_map,
+  "flx_pkgconfig::_lam_64578",
+  1,sizeof(_lam_64578),
+  _lam_64578_finaliser,
   0, // fcops
-  &_fI69647__lam_1391_offset_data, // scanner data
+  &_lam_64578_offset_data, // scanner data
   &::flx::gc::generic::scan_by_offsets, // scanner
   0,
   0,
@@ -92,27 +91,23 @@ static ::flx::gc::generic::gc_shape_t _fI69647__lam_1391_ptr_map ={
   0ul,0ul
 };
 
-//OFFSETS for function _fI69649_aux_uncurry
-static ::std::size_t const _fI69649_aux_uncurry_offsets[8+FLX_PASS_PTF]={
-  FLX_EAT_PTF(offsetof(_fI69649_aux_uncurry,ptf)comma)
-  offsetof(_fI69649_aux_uncurry,ptr_lam_65171),
-  offsetof(_fI69649_aux_uncurry,ptr_lam_65160),
-  offsetof(_fI69649_aux_uncurry,ptrhandle_pkg),
-  offsetof(_fI69649_aux_uncurry,ptrflx_pkgconfig),
-  offsetof(_fI69649_aux_uncurry,_vI69656_t_param_std_1268)+0,
-  offsetof(_fI69649_aux_uncurry,_vI69654_aux__apos_2_mv_1387)+0,
-  offsetof(_fI69649_aux_uncurry,_vI69651_y)+0,
-  offsetof(_fI69649_aux_uncurry,_vI69650_x_uncurry)+0,
+//OFFSETS for procedure add_val
+static ::std::size_t const add_val_offsets[4+FLX_PASS_PTF]={
+  FLX_EAT_PTF(offsetof(add_val,ptf)comma)
+  offsetof(add_val,p_svc),
+  offsetof(add_val,_caller),
+  offsetof(add_val,ptrflx_pkgconfig),
+  offsetof(add_val,_urv68543)+0,
 };
-static ::flx::gc::generic::offset_data_t const _fI69649_aux_uncurry_offset_data = { 8+FLX_PASS_PTF, _fI69649_aux_uncurry_offsets};
-FLX_FINALISER(_fI69649_aux_uncurry)
-static ::flx::gc::generic::gc_shape_t _fI69649_aux_uncurry_ptr_map ={
-  &_fI69647__lam_1391_ptr_map,
-  "flx_pkgconfig::_fI69649_aux_uncurry",
-  1,sizeof(_fI69649_aux_uncurry),
-  _fI69649_aux_uncurry_finaliser,
+static ::flx::gc::generic::offset_data_t const add_val_offset_data = { 4+FLX_PASS_PTF, add_val_offsets};
+FLX_FINALISER(add_val)
+static ::flx::gc::generic::gc_shape_t add_val_ptr_map ={
+  &_lam_64578_ptr_map,
+  "flx_pkgconfig::add_val",
+  1,sizeof(add_val),
+  add_val_finaliser,
   0, // fcops
-  &_fI69649_aux_uncurry_offset_data, // scanner data
+  &add_val_offset_data, // scanner data
   &::flx::gc::generic::scan_by_offsets, // scanner
   0,
   0,
@@ -120,21 +115,25 @@ static ::flx::gc::generic::gc_shape_t _fI69649_aux_uncurry_ptr_map ={
   0ul,0ul
 };
 
-//OFFSETS for function xfind
-static ::std::size_t const xfind_offsets[2+FLX_PASS_PTF]={
-  FLX_EAT_PTF(offsetof(xfind,ptf)comma)
-  offsetof(xfind,ptrflx_pkgconfig),
-  offsetof(xfind,xfind_mv_65100)+0,
+//OFFSETS for procedure _lam_64602
+static ::std::size_t const _lam_64602_offsets[6+FLX_PASS_PTF]={
+  FLX_EAT_PTF(offsetof(_lam_64602,ptf)comma)
+  offsetof(_lam_64602,p_svc),
+  offsetof(_lam_64602,_caller),
+  offsetof(_lam_64602,ptr_lam_64590),
+  offsetof(_lam_64602,ptr_lam_64579),
+  offsetof(_lam_64602,ptrhandle_pkg),
+  offsetof(_lam_64602,ptrflx_pkgconfig),
 };
-static ::flx::gc::generic::offset_data_t const xfind_offset_data = { 2+FLX_PASS_PTF, xfind_offsets};
-FLX_FINALISER(xfind)
-static ::flx::gc::generic::gc_shape_t xfind_ptr_map ={
-  &_fI69649_aux_uncurry_ptr_map,
-  "flx_pkgconfig::xfind",
-  1,sizeof(xfind),
-  xfind_finaliser,
+static ::flx::gc::generic::offset_data_t const _lam_64602_offset_data = { 6+FLX_PASS_PTF, _lam_64602_offsets};
+FLX_FINALISER(_lam_64602)
+static ::flx::gc::generic::gc_shape_t _lam_64602_ptr_map ={
+  &add_val_ptr_map,
+  "flx_pkgconfig::_lam_64602",
+  1,sizeof(_lam_64602),
+  _lam_64602_finaliser,
   0, // fcops
-  &xfind_offset_data, // scanner data
+  &_lam_64602_offset_data, // scanner data
   &::flx::gc::generic::scan_by_offsets, // scanner
   0,
   0,
@@ -142,24 +141,25 @@ static ::flx::gc::generic::gc_shape_t xfind_ptr_map ={
   0ul,0ul
 };
 
-//OFFSETS for function _fI69268_aux_uncurry
-static ::std::size_t const _fI69268_aux_uncurry_offsets[5+FLX_PASS_PTF]={
-  FLX_EAT_PTF(offsetof(_fI69268_aux_uncurry,ptf)comma)
-  offsetof(_fI69268_aux_uncurry,ptr_fI68132___plus_),
-  offsetof(_fI69268_aux_uncurry,_vI69275_t_param_std_1268)+0,
-  offsetof(_fI69268_aux_uncurry,_vI69273_aux__apos_2_mv_1387)+0,
-  offsetof(_fI69268_aux_uncurry,_vI69270_y)+0,
-  offsetof(_fI69268_aux_uncurry,_vI69269_x_uncurry)+0,
+//OFFSETS for procedure parse_args
+static ::std::size_t const parse_args_offsets[6+FLX_PASS_PTF]={
+  FLX_EAT_PTF(offsetof(parse_args,ptf)comma)
+  offsetof(parse_args,p_svc),
+  offsetof(parse_args,_caller),
+  offsetof(parse_args,ptrflx_pkgconfig),
+  offsetof(parse_args,tail_param_flx_pkgconfig_64429)+0,
+  offsetof(parse_args,parse_args_mv_64525)+0,
+  offsetof(parse_args,_vI64929_args)+0,
 };
-static ::flx::gc::generic::offset_data_t const _fI69268_aux_uncurry_offset_data = { 5+FLX_PASS_PTF, _fI69268_aux_uncurry_offsets};
-FLX_FINALISER(_fI69268_aux_uncurry)
-static ::flx::gc::generic::gc_shape_t _fI69268_aux_uncurry_ptr_map ={
-  &xfind_ptr_map,
-  "flx_pkgconfig::_fI69268_aux_uncurry",
-  1,sizeof(_fI69268_aux_uncurry),
-  _fI69268_aux_uncurry_finaliser,
+static ::flx::gc::generic::offset_data_t const parse_args_offset_data = { 6+FLX_PASS_PTF, parse_args_offsets};
+FLX_FINALISER(parse_args)
+static ::flx::gc::generic::gc_shape_t parse_args_ptr_map ={
+  &_lam_64602_ptr_map,
+  "flx_pkgconfig::parse_args",
+  1,sizeof(parse_args),
+  parse_args_finaliser,
   0, // fcops
-  &_fI69268_aux_uncurry_offset_data, // scanner data
+  &parse_args_offset_data, // scanner data
   &::flx::gc::generic::scan_by_offsets, // scanner
   0,
   0,
@@ -167,26 +167,23 @@ static ::flx::gc::generic::gc_shape_t _fI69268_aux_uncurry_ptr_map ={
   0ul,0ul
 };
 
-//OFFSETS for function _fI70688_aux_uncurry
-static ::std::size_t const _fI70688_aux_uncurry_offsets[7+FLX_PASS_PTF]={
-  FLX_EAT_PTF(offsetof(_fI70688_aux_uncurry,ptf)comma)
-  offsetof(_fI70688_aux_uncurry,ptr_fI70680_aux),
-  offsetof(_fI70688_aux_uncurry,ptrparse_args),
-  offsetof(_fI70688_aux_uncurry,ptrflx_pkgconfig),
-  offsetof(_fI70688_aux_uncurry,_vI70695_t_param_std_1268)+0,
-  offsetof(_fI70688_aux_uncurry,_vI70693_aux__apos_2_mv_1387)+0,
-  offsetof(_fI70688_aux_uncurry,_vI70690_y)+0,
-  offsetof(_fI70688_aux_uncurry,_vI70689_x_uncurry)+0,
+//OFFSETS for function check_id
+static ::std::size_t const check_id_offsets[4+FLX_PASS_PTF]={
+  FLX_EAT_PTF(offsetof(check_id,ptf)comma)
+  offsetof(check_id,ptrflx_pkgconfig),
+  offsetof(check_id,_genout_urv68747)+0,
+  offsetof(check_id,_generator_flx_pkgconfig_10763)+0,
+  offsetof(check_id,check_id_mv_64549)+0,
 };
-static ::flx::gc::generic::offset_data_t const _fI70688_aux_uncurry_offset_data = { 7+FLX_PASS_PTF, _fI70688_aux_uncurry_offsets};
-FLX_FINALISER(_fI70688_aux_uncurry)
-static ::flx::gc::generic::gc_shape_t _fI70688_aux_uncurry_ptr_map ={
-  &_fI69268_aux_uncurry_ptr_map,
-  "flx_pkgconfig::_fI70688_aux_uncurry",
-  1,sizeof(_fI70688_aux_uncurry),
-  _fI70688_aux_uncurry_finaliser,
+static ::flx::gc::generic::offset_data_t const check_id_offset_data = { 4+FLX_PASS_PTF, check_id_offsets};
+FLX_FINALISER(check_id)
+static ::flx::gc::generic::gc_shape_t check_id_ptr_map ={
+  &parse_args_ptr_map,
+  "flx_pkgconfig::check_id",
+  1,sizeof(check_id),
+  check_id_finaliser,
   0, // fcops
-  &_fI70688_aux_uncurry_offset_data, // scanner data
+  &check_id_offset_data, // scanner data
   &::flx::gc::generic::scan_by_offsets, // scanner
   0,
   0,
@@ -194,21 +191,28 @@ static ::flx::gc::generic::gc_shape_t _fI70688_aux_uncurry_ptr_map ={
   0ul,0ul
 };
 
-//OFFSETS for function _lam_65133
-static ::std::size_t const _lam_65133_offsets[2+FLX_PASS_PTF]={
-  FLX_EAT_PTF(offsetof(_lam_65133,ptf)comma)
-  offsetof(_lam_65133,ptrcheck_id),
-  offsetof(_lam_65133,ptrflx_pkgconfig),
+//OFFSETS for function flx_pkgconfig
+static ::std::size_t const flx_pkgconfig_offsets[9+FLX_PASS_PTF]={
+  FLX_EAT_PTF(offsetof(flx_pkgconfig,ptf)comma)
+  offsetof(flx_pkgconfig,tail_param_flx_pkgconfig_64512)+0,
+  offsetof(flx_pkgconfig,flx_pkgconfig_mv_64604)+0,
+  offsetof(flx_pkgconfig,is_empty_mv_1309)+0,
+  offsetof(flx_pkgconfig,args)+0,
+  offsetof(flx_pkgconfig,result)+0,
+  offsetof(flx_pkgconfig,dirs)+0,
+  offsetof(flx_pkgconfig,recfields)+0,
+  offsetof(flx_pkgconfig,pkgs)+0,
+  offsetof(flx_pkgconfig,fields)+0,
 };
-static ::flx::gc::generic::offset_data_t const _lam_65133_offset_data = { 2+FLX_PASS_PTF, _lam_65133_offsets};
-FLX_FINALISER(_lam_65133)
-static ::flx::gc::generic::gc_shape_t _lam_65133_ptr_map ={
-  &_fI70688_aux_uncurry_ptr_map,
-  "flx_pkgconfig::_lam_65133",
-  1,sizeof(_lam_65133),
-  _lam_65133_finaliser,
+static ::flx::gc::generic::offset_data_t const flx_pkgconfig_offset_data = { 9+FLX_PASS_PTF, flx_pkgconfig_offsets};
+FLX_FINALISER(flx_pkgconfig)
+static ::flx::gc::generic::gc_shape_t flx_pkgconfig_ptr_map ={
+  &check_id_ptr_map,
+  "flx_pkgconfig::flx_pkgconfig",
+  1,sizeof(flx_pkgconfig),
+  flx_pkgconfig_finaliser,
   0, // fcops
-  &_lam_65133_offset_data, // scanner data
+  &flx_pkgconfig_offset_data, // scanner data
   &::flx::gc::generic::scan_by_offsets, // scanner
   0,
   0,
@@ -216,23 +220,22 @@ static ::flx::gc::generic::gc_shape_t _lam_65133_ptr_map ={
   0ul,0ul
 };
 
-//OFFSETS for function _fI69914__lam_1457
-static ::std::size_t const _fI69914__lam_1457_offsets[4+FLX_PASS_PTF]={
-  FLX_EAT_PTF(offsetof(_fI69914__lam_1457,ptf)comma)
-  offsetof(_fI69914__lam_1457,ptr_lam_65171),
-  offsetof(_fI69914__lam_1457,ptr_lam_65160),
-  offsetof(_fI69914__lam_1457,ptrhandle_pkg),
-  offsetof(_fI69914__lam_1457,ptrflx_pkgconfig),
+//OFFSETS for function _fI70117__lam_1443
+static ::std::size_t const _fI70117__lam_1443_offsets[3+FLX_PASS_PTF]={
+  FLX_EAT_PTF(offsetof(_fI70117__lam_1443,ptf)comma)
+  offsetof(_fI70117__lam_1443,ptr_fI70099_aux),
+  offsetof(_fI70117__lam_1443,ptrparse_args),
+  offsetof(_fI70117__lam_1443,ptrflx_pkgconfig),
 };
-static ::flx::gc::generic::offset_data_t const _fI69914__lam_1457_offset_data = { 4+FLX_PASS_PTF, _fI69914__lam_1457_offsets};
-FLX_FINALISER(_fI69914__lam_1457)
-static ::flx::gc::generic::gc_shape_t _fI69914__lam_1457_ptr_map ={
-  &_lam_65133_ptr_map,
-  "flx_pkgconfig::_fI69914__lam_1457",
-  1,sizeof(_fI69914__lam_1457),
-  _fI69914__lam_1457_finaliser,
+static ::flx::gc::generic::offset_data_t const _fI70117__lam_1443_offset_data = { 3+FLX_PASS_PTF, _fI70117__lam_1443_offsets};
+FLX_FINALISER(_fI70117__lam_1443)
+static ::flx::gc::generic::gc_shape_t _fI70117__lam_1443_ptr_map ={
+  &flx_pkgconfig_ptr_map,
+  "flx_pkgconfig::_fI70117__lam_1443",
+  1,sizeof(_fI70117__lam_1443),
+  _fI70117__lam_1443_finaliser,
   0, // fcops
-  &_fI69914__lam_1457_offset_data, // scanner data
+  &_fI70117__lam_1443_offset_data, // scanner data
   &::flx::gc::generic::scan_by_offsets, // scanner
   0,
   0,
@@ -240,27 +243,21 @@ static ::flx::gc::generic::gc_shape_t _fI69914__lam_1457_ptr_map ={
   0ul,0ul
 };
 
-//OFFSETS for function _fI69824_search_and_replace__apos_2
-static ::std::size_t const _fI69824_search_and_replace__apos_2_offsets[8+FLX_PASS_PTF]={
-  FLX_EAT_PTF(offsetof(_fI69824_search_and_replace__apos_2,ptf)comma)
-  offsetof(_fI69824_search_and_replace__apos_2,ptr_lam_65171),
-  offsetof(_fI69824_search_and_replace__apos_2,ptr_lam_65160),
-  offsetof(_fI69824_search_and_replace__apos_2,ptrhandle_pkg),
-  offsetof(_fI69824_search_and_replace__apos_2,ptrflx_pkgconfig),
-  offsetof(_fI69824_search_and_replace__apos_2,_vI69836_xs)+0,
-  offsetof(_fI69824_search_and_replace__apos_2,_genout_urv69783)+0,
-  offsetof(_fI69824_search_and_replace__apos_2,_vI69825__generator_strings_7556)+0,
-  offsetof(_fI69824_search_and_replace__apos_2,_vI69823_search_and_replace__apos_2_mv_2360)+0,
+//OFFSETS for function _fI68708__lam_1332
+static ::std::size_t const _fI68708__lam_1332_offsets[2+FLX_PASS_PTF]={
+  FLX_EAT_PTF(offsetof(_fI68708__lam_1332,ptf)comma)
+  offsetof(_fI68708__lam_1332,ptr_fI68700_aux_uncurry),
+  offsetof(_fI68708__lam_1332,ptr_fI67551___plus_),
 };
-static ::flx::gc::generic::offset_data_t const _fI69824_search_and_replace__apos_2_offset_data = { 8+FLX_PASS_PTF, _fI69824_search_and_replace__apos_2_offsets};
-FLX_FINALISER(_fI69824_search_and_replace__apos_2)
-static ::flx::gc::generic::gc_shape_t _fI69824_search_and_replace__apos_2_ptr_map ={
-  &_fI69914__lam_1457_ptr_map,
-  "flx_pkgconfig::_fI69824_search_and_replace__apos_2",
-  1,sizeof(_fI69824_search_and_replace__apos_2),
-  _fI69824_search_and_replace__apos_2_finaliser,
+static ::flx::gc::generic::offset_data_t const _fI68708__lam_1332_offset_data = { 2+FLX_PASS_PTF, _fI68708__lam_1332_offsets};
+FLX_FINALISER(_fI68708__lam_1332)
+static ::flx::gc::generic::gc_shape_t _fI68708__lam_1332_ptr_map ={
+  &_fI70117__lam_1443_ptr_map,
+  "flx_pkgconfig::_fI68708__lam_1332",
+  1,sizeof(_fI68708__lam_1332),
+  _fI68708__lam_1332_finaliser,
   0, // fcops
-  &_fI69824_search_and_replace__apos_2_offset_data, // scanner data
+  &_fI68708__lam_1332_offset_data, // scanner data
   &::flx::gc::generic::scan_by_offsets, // scanner
   0,
   0,
@@ -268,22 +265,24 @@ static ::flx::gc::generic::gc_shape_t _fI69824_search_and_replace__apos_2_ptr_ma
   0ul,0ul
 };
 
-//OFFSETS for function _fI70117__lam_1391
-static ::std::size_t const _fI70117__lam_1391_offsets[3+FLX_PASS_PTF]={
-  FLX_EAT_PTF(offsetof(_fI70117__lam_1391,ptf)comma)
-  offsetof(_fI70117__lam_1391,ptr_fI70109_aux_uncurry),
-  offsetof(_fI70117__lam_1391,ptrhandle_pkg),
-  offsetof(_fI70117__lam_1391,ptrflx_pkgconfig),
+//OFFSETS for function reattach_drive_letters
+static ::std::size_t const reattach_drive_letters_offsets[5+FLX_PASS_PTF]={
+  FLX_EAT_PTF(offsetof(reattach_drive_letters,ptf)comma)
+  offsetof(reattach_drive_letters,ptrflx_pkgconfig),
+  offsetof(reattach_drive_letters,other_param_flx_pkgconfig_64479)+0,
+  offsetof(reattach_drive_letters,tail_param_flx_pkgconfig_64478)+0,
+  offsetof(reattach_drive_letters,reattach_drive_letters_mv_64538)+0,
+  offsetof(reattach_drive_letters,_a)+0,
 };
-static ::flx::gc::generic::offset_data_t const _fI70117__lam_1391_offset_data = { 3+FLX_PASS_PTF, _fI70117__lam_1391_offsets};
-FLX_FINALISER(_fI70117__lam_1391)
-static ::flx::gc::generic::gc_shape_t _fI70117__lam_1391_ptr_map ={
-  &_fI69824_search_and_replace__apos_2_ptr_map,
-  "flx_pkgconfig::_fI70117__lam_1391",
-  1,sizeof(_fI70117__lam_1391),
-  _fI70117__lam_1391_finaliser,
+static ::flx::gc::generic::offset_data_t const reattach_drive_letters_offset_data = { 5+FLX_PASS_PTF, reattach_drive_letters_offsets};
+FLX_FINALISER(reattach_drive_letters)
+static ::flx::gc::generic::gc_shape_t reattach_drive_letters_ptr_map ={
+  &_fI68708__lam_1332_ptr_map,
+  "flx_pkgconfig::reattach_drive_letters",
+  1,sizeof(reattach_drive_letters),
+  reattach_drive_letters_finaliser,
   0, // fcops
-  &_fI70117__lam_1391_offset_data, // scanner data
+  &reattach_drive_letters_offset_data, // scanner data
   &::flx::gc::generic::scan_by_offsets, // scanner
   0,
   0,
@@ -291,25 +290,22 @@ static ::flx::gc::generic::gc_shape_t _fI70117__lam_1391_ptr_map ={
   0ul,0ul
 };
 
-//OFFSETS for function _fI70706_aux
-static ::std::size_t const _fI70706_aux_offsets[6+FLX_PASS_PTF]={
-  FLX_EAT_PTF(offsetof(_fI70706_aux,ptf)comma)
-  offsetof(_fI70706_aux,ptrparse_args),
-  offsetof(_fI70706_aux,ptrflx_pkgconfig),
-  offsetof(_fI70706_aux,_vI70713_t_param_std_1301)+0,
-  offsetof(_fI70706_aux,_vI70711_aux_mv_1493)+0,
-  offsetof(_fI70706_aux,_vI70708_out)+0,
-  offsetof(_fI70706_aux,_vI70707_inp)+0,
+//OFFSETS for function _fI68947_iterator__apos_2
+static ::std::size_t const _fI68947_iterator__apos_2_offsets[3+FLX_PASS_PTF]={
+  FLX_EAT_PTF(offsetof(_fI68947_iterator__apos_2,ptf)comma)
+  offsetof(_fI68947_iterator__apos_2,ptrsearch_and_replace_uncurry),
+  offsetof(_fI68947_iterator__apos_2,t_param_std_1259)+0,
+  offsetof(_fI68947_iterator__apos_2,_vI68952_iterator__apos_2_mv_1504)+0,
 };
-static ::flx::gc::generic::offset_data_t const _fI70706_aux_offset_data = { 6+FLX_PASS_PTF, _fI70706_aux_offsets};
-FLX_FINALISER(_fI70706_aux)
-static ::flx::gc::generic::gc_shape_t _fI70706_aux_ptr_map ={
-  &_fI70117__lam_1391_ptr_map,
-  "flx_pkgconfig::_fI70706_aux",
-  1,sizeof(_fI70706_aux),
-  _fI70706_aux_finaliser,
+static ::flx::gc::generic::offset_data_t const _fI68947_iterator__apos_2_offset_data = { 3+FLX_PASS_PTF, _fI68947_iterator__apos_2_offsets};
+FLX_FINALISER(_fI68947_iterator__apos_2)
+static ::flx::gc::generic::gc_shape_t _fI68947_iterator__apos_2_ptr_map ={
+  &reattach_drive_letters_ptr_map,
+  "flx_pkgconfig::_fI68947_iterator__apos_2",
+  1,sizeof(_fI68947_iterator__apos_2),
+  _fI68947_iterator__apos_2_finaliser,
   0, // fcops
-  &_fI70706_aux_offset_data, // scanner data
+  &_fI68947_iterator__apos_2_offset_data, // scanner data
   &::flx::gc::generic::scan_by_offsets, // scanner
   0,
   0,
@@ -317,25 +313,21 @@ static ::flx::gc::generic::gc_shape_t _fI70706_aux_ptr_map ={
   0ul,0ul
 };
 
-//OFFSETS for function aux
-static ::std::size_t const aux_offsets[6+FLX_PASS_PTF]={
-  FLX_EAT_PTF(offsetof(aux,ptf)comma)
-  offsetof(aux,ptrtail_val),
-  offsetof(aux,ptrflx_pkgconfig),
-  offsetof(aux,t_param_std_1301)+0,
-  offsetof(aux,aux_mv_1493)+0,
-  offsetof(aux,_vI69241_out)+0,
-  offsetof(aux,inp)+0,
+//OFFSETS for function _fI70330__lam_1332
+static ::std::size_t const _fI70330__lam_1332_offsets[2+FLX_PASS_PTF]={
+  FLX_EAT_PTF(offsetof(_fI70330__lam_1332,ptf)comma)
+  offsetof(_fI70330__lam_1332,ptr_fI70322_aux_uncurry),
+  offsetof(_fI70330__lam_1332,ptrflx_pkgconfig),
 };
-static ::flx::gc::generic::offset_data_t const aux_offset_data = { 6+FLX_PASS_PTF, aux_offsets};
-FLX_FINALISER(aux)
-static ::flx::gc::generic::gc_shape_t aux_ptr_map ={
-  &_fI70706_aux_ptr_map,
-  "flx_pkgconfig::aux",
-  1,sizeof(aux),
-  aux_finaliser,
+static ::flx::gc::generic::offset_data_t const _fI70330__lam_1332_offset_data = { 2+FLX_PASS_PTF, _fI70330__lam_1332_offsets};
+FLX_FINALISER(_fI70330__lam_1332)
+static ::flx::gc::generic::gc_shape_t _fI70330__lam_1332_ptr_map ={
+  &_fI68947_iterator__apos_2_ptr_map,
+  "flx_pkgconfig::_fI70330__lam_1332",
+  1,sizeof(_fI70330__lam_1332),
+  _fI70330__lam_1332_finaliser,
   0, // fcops
-  &aux_offset_data, // scanner data
+  &_fI70330__lam_1332_offset_data, // scanner data
   &::flx::gc::generic::scan_by_offsets, // scanner
   0,
   0,
@@ -343,25 +335,27 @@ static ::flx::gc::generic::gc_shape_t aux_ptr_map ={
   0ul,0ul
 };
 
-//OFFSETS for procedure _lam_65160
-static ::std::size_t const _lam_65160_offsets[6+FLX_PASS_PTF]={
-  FLX_EAT_PTF(offsetof(_lam_65160,ptf)comma)
-  offsetof(_lam_65160,p_svc),
-  offsetof(_lam_65160,_caller),
-  offsetof(_lam_65160,ptrhandle_pkg),
-  offsetof(_lam_65160,ptrflx_pkgconfig),
-  offsetof(_lam_65160,_vI69984__urv69124)+0,
-  offsetof(_lam_65160,lines)+0,
+//OFFSETS for function _fI69316_aux_uncurry
+static ::std::size_t const _fI69316_aux_uncurry_offsets[8+FLX_PASS_PTF]={
+  FLX_EAT_PTF(offsetof(_fI69316_aux_uncurry,ptf)comma)
+  offsetof(_fI69316_aux_uncurry,ptr_lam_64590),
+  offsetof(_fI69316_aux_uncurry,ptr_lam_64579),
+  offsetof(_fI69316_aux_uncurry,ptrhandle_pkg),
+  offsetof(_fI69316_aux_uncurry,ptrflx_pkgconfig),
+  offsetof(_fI69316_aux_uncurry,_vI69323_t_param_std_1207)+0,
+  offsetof(_fI69316_aux_uncurry,_vI69321_aux__apos_2_mv_1322)+0,
+  offsetof(_fI69316_aux_uncurry,_vI69318_out)+0,
+  offsetof(_fI69316_aux_uncurry,_vI69317_inp_uncurry)+0,
 };
-static ::flx::gc::generic::offset_data_t const _lam_65160_offset_data = { 6+FLX_PASS_PTF, _lam_65160_offsets};
-FLX_FINALISER(_lam_65160)
-static ::flx::gc::generic::gc_shape_t _lam_65160_ptr_map ={
-  &aux_ptr_map,
-  "flx_pkgconfig::_lam_65160",
-  1,sizeof(_lam_65160),
-  _lam_65160_finaliser,
+static ::flx::gc::generic::offset_data_t const _fI69316_aux_uncurry_offset_data = { 8+FLX_PASS_PTF, _fI69316_aux_uncurry_offsets};
+FLX_FINALISER(_fI69316_aux_uncurry)
+static ::flx::gc::generic::gc_shape_t _fI69316_aux_uncurry_ptr_map ={
+  &_fI70330__lam_1332_ptr_map,
+  "flx_pkgconfig::_fI69316_aux_uncurry",
+  1,sizeof(_fI69316_aux_uncurry),
+  _fI69316_aux_uncurry_finaliser,
   0, // fcops
-  &_lam_65160_offset_data, // scanner data
+  &_fI69316_aux_uncurry_offset_data, // scanner data
   &::flx::gc::generic::scan_by_offsets, // scanner
   0,
   0,
@@ -369,24 +363,22 @@ static ::flx::gc::generic::gc_shape_t _lam_65160_ptr_map ={
   0ul,0ul
 };
 
-//OFFSETS for function _fI69846__lam_2363
-static ::std::size_t const _fI69846__lam_2363_offsets[5+FLX_PASS_PTF]={
-  FLX_EAT_PTF(offsetof(_fI69846__lam_2363,ptf)comma)
-  offsetof(_fI69846__lam_2363,ptr_fI69824_search_and_replace__apos_2),
-  offsetof(_fI69846__lam_2363,ptr_lam_65171),
-  offsetof(_fI69846__lam_2363,ptr_lam_65160),
-  offsetof(_fI69846__lam_2363,ptrhandle_pkg),
-  offsetof(_fI69846__lam_2363,ptrflx_pkgconfig),
+//OFFSETS for function _fI70170__lam_1332
+static ::std::size_t const _fI70170__lam_1332_offsets[3+FLX_PASS_PTF]={
+  FLX_EAT_PTF(offsetof(_fI70170__lam_1332,ptf)comma)
+  offsetof(_fI70170__lam_1332,ptr_fI70162_aux_uncurry),
+  offsetof(_fI70170__lam_1332,ptrparse_args),
+  offsetof(_fI70170__lam_1332,ptrflx_pkgconfig),
 };
-static ::flx::gc::generic::offset_data_t const _fI69846__lam_2363_offset_data = { 5+FLX_PASS_PTF, _fI69846__lam_2363_offsets};
-FLX_FINALISER(_fI69846__lam_2363)
-static ::flx::gc::generic::gc_shape_t _fI69846__lam_2363_ptr_map ={
-  &_lam_65160_ptr_map,
-  "flx_pkgconfig::_fI69846__lam_2363",
-  1,sizeof(_fI69846__lam_2363),
-  _fI69846__lam_2363_finaliser,
+static ::flx::gc::generic::offset_data_t const _fI70170__lam_1332_offset_data = { 3+FLX_PASS_PTF, _fI70170__lam_1332_offsets};
+FLX_FINALISER(_fI70170__lam_1332)
+static ::flx::gc::generic::gc_shape_t _fI70170__lam_1332_ptr_map ={
+  &_fI69316_aux_uncurry_ptr_map,
+  "flx_pkgconfig::_fI70170__lam_1332",
+  1,sizeof(_fI70170__lam_1332),
+  _fI70170__lam_1332_finaliser,
   0, // fcops
-  &_fI69846__lam_2363_offset_data, // scanner data
+  &_fI70170__lam_1332_offset_data, // scanner data
   &::flx::gc::generic::scan_by_offsets, // scanner
   0,
   0,
@@ -394,25 +386,23 @@ static ::flx::gc::generic::gc_shape_t _fI69846__lam_2363_ptr_map ={
   0ul,0ul
 };
 
-//OFFSETS for function _fI70680_aux
-static ::std::size_t const _fI70680_aux_offsets[6+FLX_PASS_PTF]={
-  FLX_EAT_PTF(offsetof(_fI70680_aux,ptf)comma)
-  offsetof(_fI70680_aux,ptrparse_args),
-  offsetof(_fI70680_aux,ptrflx_pkgconfig),
-  offsetof(_fI70680_aux,_vI70687_t_param_std_1301)+0,
-  offsetof(_fI70680_aux,_vI70685_aux_mv_1493)+0,
-  offsetof(_fI70680_aux,_vI70682_out)+0,
-  offsetof(_fI70680_aux,_vI70681_inp)+0,
+//OFFSETS for function _fI69416__lam_1332
+static ::std::size_t const _fI69416__lam_1332_offsets[4+FLX_PASS_PTF]={
+  FLX_EAT_PTF(offsetof(_fI69416__lam_1332,ptf)comma)
+  offsetof(_fI69416__lam_1332,ptr_fI69408_aux_uncurry),
+  offsetof(_fI69416__lam_1332,ptr_lam_64579),
+  offsetof(_fI69416__lam_1332,ptrhandle_pkg),
+  offsetof(_fI69416__lam_1332,ptrflx_pkgconfig),
 };
-static ::flx::gc::generic::offset_data_t const _fI70680_aux_offset_data = { 6+FLX_PASS_PTF, _fI70680_aux_offsets};
-FLX_FINALISER(_fI70680_aux)
-static ::flx::gc::generic::gc_shape_t _fI70680_aux_ptr_map ={
-  &_fI69846__lam_2363_ptr_map,
-  "flx_pkgconfig::_fI70680_aux",
-  1,sizeof(_fI70680_aux),
-  _fI70680_aux_finaliser,
+static ::flx::gc::generic::offset_data_t const _fI69416__lam_1332_offset_data = { 4+FLX_PASS_PTF, _fI69416__lam_1332_offsets};
+FLX_FINALISER(_fI69416__lam_1332)
+static ::flx::gc::generic::gc_shape_t _fI69416__lam_1332_ptr_map ={
+  &_fI70170__lam_1332_ptr_map,
+  "flx_pkgconfig::_fI69416__lam_1332",
+  1,sizeof(_fI69416__lam_1332),
+  _fI69416__lam_1332_finaliser,
   0, // fcops
-  &_fI70680_aux_offset_data, // scanner data
+  &_fI69416__lam_1332_offset_data, // scanner data
   &::flx::gc::generic::scan_by_offsets, // scanner
   0,
   0,
@@ -420,22 +410,25 @@ static ::flx::gc::generic::gc_shape_t _fI70680_aux_ptr_map ={
   0ul,0ul
 };
 
-//OFFSETS for function _fI69987__lam_1457
-static ::std::size_t const _fI69987__lam_1457_offsets[3+FLX_PASS_PTF]={
-  FLX_EAT_PTF(offsetof(_fI69987__lam_1457,ptf)comma)
-  offsetof(_fI69987__lam_1457,ptr_lam_65160),
-  offsetof(_fI69987__lam_1457,ptrhandle_pkg),
-  offsetof(_fI69987__lam_1457,ptrflx_pkgconfig),
+//OFFSETS for function _fI68551_aux_uncurry
+static ::std::size_t const _fI68551_aux_uncurry_offsets[6+FLX_PASS_PTF]={
+  FLX_EAT_PTF(offsetof(_fI68551_aux_uncurry,ptf)comma)
+  offsetof(_fI68551_aux_uncurry,ptradd_val),
+  offsetof(_fI68551_aux_uncurry,ptrflx_pkgconfig),
+  offsetof(_fI68551_aux_uncurry,t_param_std_1209)+0,
+  offsetof(_fI68551_aux_uncurry,_vI68556_aux__apos_2_mv_1328)+0,
+  offsetof(_fI68551_aux_uncurry,_vI68553_y)+0,
+  offsetof(_fI68551_aux_uncurry,x_uncurry)+0,
 };
-static ::flx::gc::generic::offset_data_t const _fI69987__lam_1457_offset_data = { 3+FLX_PASS_PTF, _fI69987__lam_1457_offsets};
-FLX_FINALISER(_fI69987__lam_1457)
-static ::flx::gc::generic::gc_shape_t _fI69987__lam_1457_ptr_map ={
-  &_fI70680_aux_ptr_map,
-  "flx_pkgconfig::_fI69987__lam_1457",
-  1,sizeof(_fI69987__lam_1457),
-  _fI69987__lam_1457_finaliser,
+static ::flx::gc::generic::offset_data_t const _fI68551_aux_uncurry_offset_data = { 6+FLX_PASS_PTF, _fI68551_aux_uncurry_offsets};
+FLX_FINALISER(_fI68551_aux_uncurry)
+static ::flx::gc::generic::gc_shape_t _fI68551_aux_uncurry_ptr_map ={
+  &_fI69416__lam_1332_ptr_map,
+  "flx_pkgconfig::_fI68551_aux_uncurry",
+  1,sizeof(_fI68551_aux_uncurry),
+  _fI68551_aux_uncurry_finaliser,
   0, // fcops
-  &_fI69987__lam_1457_offset_data, // scanner data
+  &_fI68551_aux_uncurry_offset_data, // scanner data
   &::flx::gc::generic::scan_by_offsets, // scanner
   0,
   0,
@@ -443,27 +436,150 @@ static ::flx::gc::generic::gc_shape_t _fI69987__lam_1457_ptr_map ={
   0ul,0ul
 };
 
-//OFFSETS for procedure _lam_65171
-static ::std::size_t const _lam_65171_offsets[8+FLX_PASS_PTF]={
-  FLX_EAT_PTF(offsetof(_lam_65171,ptf)comma)
-  offsetof(_lam_65171,p_svc),
-  offsetof(_lam_65171,_caller),
-  offsetof(_lam_65171,ptr_lam_65160),
-  offsetof(_lam_65171,ptrhandle_pkg),
-  offsetof(_lam_65171,ptrflx_pkgconfig),
-  offsetof(_lam_65171,r)+0,
-  offsetof(_lam_65171,_vI69634__urv69124)+0,
-  offsetof(_lam_65171,values)+0,
+//OFFSETS for procedure _lam_64590
+static ::std::size_t const _lam_64590_offsets[8+FLX_PASS_PTF]={
+  FLX_EAT_PTF(offsetof(_lam_64590,ptf)comma)
+  offsetof(_lam_64590,p_svc),
+  offsetof(_lam_64590,_caller),
+  offsetof(_lam_64590,ptr_lam_64579),
+  offsetof(_lam_64590,ptrhandle_pkg),
+  offsetof(_lam_64590,ptrflx_pkgconfig),
+  offsetof(_lam_64590,r)+0,
+  offsetof(_lam_64590,_vI69053__urv68543)+0,
+  offsetof(_lam_64590,values)+0,
 };
-static ::flx::gc::generic::offset_data_t const _lam_65171_offset_data = { 8+FLX_PASS_PTF, _lam_65171_offsets};
-FLX_FINALISER(_lam_65171)
-static ::flx::gc::generic::gc_shape_t _lam_65171_ptr_map ={
-  &_fI69987__lam_1457_ptr_map,
-  "flx_pkgconfig::_lam_65171",
-  1,sizeof(_lam_65171),
-  _lam_65171_finaliser,
+static ::flx::gc::generic::offset_data_t const _lam_64590_offset_data = { 8+FLX_PASS_PTF, _lam_64590_offsets};
+FLX_FINALISER(_lam_64590)
+static ::flx::gc::generic::gc_shape_t _lam_64590_ptr_map ={
+  &_fI68551_aux_uncurry_ptr_map,
+  "flx_pkgconfig::_lam_64590",
+  1,sizeof(_lam_64590),
+  _lam_64590_finaliser,
   0, // fcops
-  &_lam_65171_offset_data, // scanner data
+  &_lam_64590_offset_data, // scanner data
+  &::flx::gc::generic::scan_by_offsets, // scanner
+  0,
+  0,
+  ::flx::gc::generic::gc_flags_default,
+  0ul,0ul
+};
+
+//OFFSETS for function cat_uncurry
+static ::std::size_t const cat_uncurry_offsets[9+FLX_PASS_PTF]={
+  FLX_EAT_PTF(offsetof(cat_uncurry,ptf)comma)
+  offsetof(cat_uncurry,xs)+0,
+  offsetof(cat_uncurry,_genout_urv70385)+0,
+  offsetof(cat_uncurry,_vI68108_x)+0,
+  offsetof(cat_uncurry,t_param_std_1231_param_std_1234)+0,
+  offsetof(cat_uncurry,tail_param_std_1228)+0,
+  offsetof(cat_uncurry,_generator_lists_5045)+0,
+  offsetof(cat_uncurry,_vI68094_cat__apos_2_mv_1381)+0,
+  offsetof(cat_uncurry,_vI68091_cat__apos_2_mv_1377)+0,
+  offsetof(cat_uncurry,_vI68088_cat__apos_2_mv_1372)+0,
+};
+static ::flx::gc::generic::offset_data_t const cat_uncurry_offset_data = { 9+FLX_PASS_PTF, cat_uncurry_offsets};
+FLX_FINALISER(cat_uncurry)
+static ::flx::gc::generic::gc_shape_t cat_uncurry_ptr_map ={
+  &_lam_64590_ptr_map,
+  "flx_pkgconfig::cat_uncurry",
+  1,sizeof(cat_uncurry),
+  cat_uncurry_finaliser,
+  0, // fcops
+  &cat_uncurry_offset_data, // scanner data
+  &::flx::gc::generic::scan_by_offsets, // scanner
+  0,
+  0,
+  ::flx::gc::generic::gc_flags_default,
+  0ul,0ul
+};
+
+//OFFSETS for function _fI69272__lam_2306
+static ::std::size_t const _fI69272__lam_2306_offsets[5+FLX_PASS_PTF]={
+  FLX_EAT_PTF(offsetof(_fI69272__lam_2306,ptf)comma)
+  offsetof(_fI69272__lam_2306,ptr_fI69243_search_and_replace__apos_2),
+  offsetof(_fI69272__lam_2306,ptr_lam_64590),
+  offsetof(_fI69272__lam_2306,ptr_lam_64579),
+  offsetof(_fI69272__lam_2306,ptrhandle_pkg),
+  offsetof(_fI69272__lam_2306,ptrflx_pkgconfig),
+};
+static ::flx::gc::generic::offset_data_t const _fI69272__lam_2306_offset_data = { 5+FLX_PASS_PTF, _fI69272__lam_2306_offsets};
+FLX_FINALISER(_fI69272__lam_2306)
+static ::flx::gc::generic::gc_shape_t _fI69272__lam_2306_ptr_map ={
+  &cat_uncurry_ptr_map,
+  "flx_pkgconfig::_fI69272__lam_2306",
+  1,sizeof(_fI69272__lam_2306),
+  _fI69272__lam_2306_finaliser,
+  0, // fcops
+  &_fI69272__lam_2306_offset_data, // scanner data
+  &::flx::gc::generic::scan_by_offsets, // scanner
+  0,
+  0,
+  ::flx::gc::generic::gc_flags_default,
+  0ul,0ul
+};
+
+//OFFSETS for function _fI70143__lam_1443
+static ::std::size_t const _fI70143__lam_1443_offsets[3+FLX_PASS_PTF]={
+  FLX_EAT_PTF(offsetof(_fI70143__lam_1443,ptf)comma)
+  offsetof(_fI70143__lam_1443,ptr_fI70125_aux),
+  offsetof(_fI70143__lam_1443,ptrparse_args),
+  offsetof(_fI70143__lam_1443,ptrflx_pkgconfig),
+};
+static ::flx::gc::generic::offset_data_t const _fI70143__lam_1443_offset_data = { 3+FLX_PASS_PTF, _fI70143__lam_1443_offsets};
+FLX_FINALISER(_fI70143__lam_1443)
+static ::flx::gc::generic::gc_shape_t _fI70143__lam_1443_ptr_map ={
+  &_fI69272__lam_2306_ptr_map,
+  "flx_pkgconfig::_fI70143__lam_1443",
+  1,sizeof(_fI70143__lam_1443),
+  _fI70143__lam_1443_finaliser,
+  0, // fcops
+  &_fI70143__lam_1443_offset_data, // scanner data
+  &::flx::gc::generic::scan_by_offsets, // scanner
+  0,
+  0,
+  ::flx::gc::generic::gc_flags_default,
+  0ul,0ul
+};
+
+//OFFSETS for function _fI70395__lam_1507
+static ::std::size_t const _fI70395__lam_1507_offsets[2+FLX_PASS_PTF]={
+  FLX_EAT_PTF(offsetof(_fI70395__lam_1507,ptf)comma)
+  offsetof(_fI70395__lam_1507,ptr_fI70387_iterator__apos_2),
+  offsetof(_fI70395__lam_1507,ptrcat_uncurry),
+};
+static ::flx::gc::generic::offset_data_t const _fI70395__lam_1507_offset_data = { 2+FLX_PASS_PTF, _fI70395__lam_1507_offsets};
+FLX_FINALISER(_fI70395__lam_1507)
+static ::flx::gc::generic::gc_shape_t _fI70395__lam_1507_ptr_map ={
+  &_fI70143__lam_1443_ptr_map,
+  "flx_pkgconfig::_fI70395__lam_1507",
+  1,sizeof(_fI70395__lam_1507),
+  _fI70395__lam_1507_finaliser,
+  0, // fcops
+  &_fI70395__lam_1507_offset_data, // scanner data
+  &::flx::gc::generic::scan_by_offsets, // scanner
+  0,
+  0,
+  ::flx::gc::generic::gc_flags_default,
+  0ul,0ul
+};
+
+//OFFSETS for function mem_uncurry
+static ::std::size_t const mem_uncurry_offsets[4+FLX_PASS_PTF]={
+  FLX_EAT_PTF(offsetof(mem_uncurry,ptf)comma)
+  offsetof(mem_uncurry,t_param_std_1236)+0,
+  offsetof(mem_uncurry,_vI68450_mem__apos_2_mv_1388)+0,
+  offsetof(mem_uncurry,_vI68158_xs)+0,
+  offsetof(mem_uncurry,eq_uncurry)+0,
+};
+static ::flx::gc::generic::offset_data_t const mem_uncurry_offset_data = { 4+FLX_PASS_PTF, mem_uncurry_offsets};
+FLX_FINALISER(mem_uncurry)
+static ::flx::gc::generic::gc_shape_t mem_uncurry_ptr_map ={
+  &_fI70395__lam_1507_ptr_map,
+  "flx_pkgconfig::mem_uncurry",
+  1,sizeof(mem_uncurry),
+  mem_uncurry_finaliser,
+  0, // fcops
+  &mem_uncurry_offset_data, // scanner data
   &::flx::gc::generic::scan_by_offsets, // scanner
   0,
   0,
@@ -476,16 +592,16 @@ static ::std::size_t const _init__offsets[7+FLX_PASS_PTF]={
   FLX_EAT_PTF(offsetof(_init_,ptf)comma)
   offsetof(_init_,p_svc),
   offsetof(_init_,_caller),
-  offsetof(_init_,_genout_urv70944)+offsetof(_tt71038,mem_1)+0,
-  offsetof(_init_,t_param_std_1263)+0,
-  offsetof(_init_,tail_mv_1372)+0,
-  offsetof(_init_,_urv68984)+0,
-  offsetof(_init_,_vI68964_r)+0,
+  offsetof(_init_,_genout_urv70363)+offsetof(_tt70457,mem_1)+0,
+  offsetof(_init_,t_param_std_1204)+0,
+  offsetof(_init_,tail_mv_1313)+0,
+  offsetof(_init_,_urv68403)+0,
+  offsetof(_init_,_vI68383_r)+0,
 };
 static ::flx::gc::generic::offset_data_t const _init__offset_data = { 7+FLX_PASS_PTF, _init__offsets};
 FLX_FINALISER(_init_)
 static ::flx::gc::generic::gc_shape_t _init__ptr_map ={
-  &_lam_65171_ptr_map,
+  &mem_uncurry_ptr_map,
   "flx_pkgconfig::_init_",
   1,sizeof(_init_),
   _init__finaliser,
@@ -498,135 +614,21 @@ static ::flx::gc::generic::gc_shape_t _init__ptr_map ={
   0ul,0ul
 };
 
-//OFFSETS for function _lam_1354
-static ::std::size_t const _lam_1354_offsets[1+FLX_PASS_PTF]={
-  FLX_EAT_PTF(offsetof(_lam_1354,ptf)comma)
-  offsetof(_lam_1354,ptriter_uncurry),
+//OFFSETS for function _fI68695__lam_1332
+static ::std::size_t const _fI68695__lam_1332_offsets[2+FLX_PASS_PTF]={
+  FLX_EAT_PTF(offsetof(_fI68695__lam_1332,ptf)comma)
+  offsetof(_fI68695__lam_1332,ptr_fI68687_aux_uncurry),
+  offsetof(_fI68695__lam_1332,ptr_fI67551___plus_),
 };
-static ::flx::gc::generic::offset_data_t const _lam_1354_offset_data = { 1+FLX_PASS_PTF, _lam_1354_offsets};
-FLX_FINALISER(_lam_1354)
-static ::flx::gc::generic::gc_shape_t _lam_1354_ptr_map ={
+static ::flx::gc::generic::offset_data_t const _fI68695__lam_1332_offset_data = { 2+FLX_PASS_PTF, _fI68695__lam_1332_offsets};
+FLX_FINALISER(_fI68695__lam_1332)
+static ::flx::gc::generic::gc_shape_t _fI68695__lam_1332_ptr_map ={
   &_init__ptr_map,
-  "flx_pkgconfig::_lam_1354",
-  1,sizeof(_lam_1354),
-  _lam_1354_finaliser,
+  "flx_pkgconfig::_fI68695__lam_1332",
+  1,sizeof(_fI68695__lam_1332),
+  _fI68695__lam_1332_finaliser,
   0, // fcops
-  &_lam_1354_offset_data, // scanner data
-  &::flx::gc::generic::scan_by_offsets, // scanner
-  0,
-  0,
-  ::flx::gc::generic::gc_flags_default,
-  0ul,0ul
-};
-
-//OFFSETS for function _fI69999_aux_uncurry
-static ::std::size_t const _fI69999_aux_uncurry_offsets[7+FLX_PASS_PTF]={
-  FLX_EAT_PTF(offsetof(_fI69999_aux_uncurry,ptf)comma)
-  offsetof(_fI69999_aux_uncurry,ptr_lam_65160),
-  offsetof(_fI69999_aux_uncurry,ptrhandle_pkg),
-  offsetof(_fI69999_aux_uncurry,ptrflx_pkgconfig),
-  offsetof(_fI69999_aux_uncurry,_vI70006_t_param_std_1268)+0,
-  offsetof(_fI69999_aux_uncurry,_vI70004_aux__apos_2_mv_1387)+0,
-  offsetof(_fI69999_aux_uncurry,_vI70001_y)+0,
-  offsetof(_fI69999_aux_uncurry,_vI70000_x_uncurry)+0,
-};
-static ::flx::gc::generic::offset_data_t const _fI69999_aux_uncurry_offset_data = { 7+FLX_PASS_PTF, _fI69999_aux_uncurry_offsets};
-FLX_FINALISER(_fI69999_aux_uncurry)
-static ::flx::gc::generic::gc_shape_t _fI69999_aux_uncurry_ptr_map ={
-  &_lam_1354_ptr_map,
-  "flx_pkgconfig::_fI69999_aux_uncurry",
-  1,sizeof(_fI69999_aux_uncurry),
-  _fI69999_aux_uncurry_finaliser,
-  0, // fcops
-  &_fI69999_aux_uncurry_offset_data, // scanner data
-  &::flx::gc::generic::scan_by_offsets, // scanner
-  0,
-  0,
-  ::flx::gc::generic::gc_flags_default,
-  0ul,0ul
-};
-
-//OFFSETS for function _fI68132___plus_
-static ::std::size_t const _fI68132___plus__offsets[1+FLX_PASS_PTF]={
-  FLX_EAT_PTF(offsetof(_fI68132___plus_,ptf)comma)
-  offsetof(_fI68132___plus_,_vI68133_x)+0,
-};
-static ::flx::gc::generic::offset_data_t const _fI68132___plus__offset_data = { 1+FLX_PASS_PTF, _fI68132___plus__offsets};
-FLX_FINALISER(_fI68132___plus_)
-static ::flx::gc::generic::gc_shape_t _fI68132___plus__ptr_map ={
-  &_fI69999_aux_uncurry_ptr_map,
-  "flx_pkgconfig::_fI68132___plus_",
-  1,sizeof(_fI68132___plus_),
-  _fI68132___plus__finaliser,
-  0, // fcops
-  &_fI68132___plus__offset_data, // scanner data
-  &::flx::gc::generic::scan_by_offsets, // scanner
-  0,
-  0,
-  ::flx::gc::generic::gc_flags_default,
-  0ul,0ul
-};
-
-//OFFSETS for function _fI70087__lam_1391
-static ::std::size_t const _fI70087__lam_1391_offsets[4+FLX_PASS_PTF]={
-  FLX_EAT_PTF(offsetof(_fI70087__lam_1391,ptf)comma)
-  offsetof(_fI70087__lam_1391,ptr_fI70079_aux_uncurry),
-  offsetof(_fI70087__lam_1391,ptr_lam_65160),
-  offsetof(_fI70087__lam_1391,ptrhandle_pkg),
-  offsetof(_fI70087__lam_1391,ptrflx_pkgconfig),
-};
-static ::flx::gc::generic::offset_data_t const _fI70087__lam_1391_offset_data = { 4+FLX_PASS_PTF, _fI70087__lam_1391_offsets};
-FLX_FINALISER(_fI70087__lam_1391)
-static ::flx::gc::generic::gc_shape_t _fI70087__lam_1391_ptr_map ={
-  &_fI68132___plus__ptr_map,
-  "flx_pkgconfig::_fI70087__lam_1391",
-  1,sizeof(_fI70087__lam_1391),
-  _fI70087__lam_1391_finaliser,
-  0, // fcops
-  &_fI70087__lam_1391_offset_data, // scanner data
-  &::flx::gc::generic::scan_by_offsets, // scanner
-  0,
-  0,
-  ::flx::gc::generic::gc_flags_default,
-  0ul,0ul
-};
-
-//OFFSETS for function _lam_2365
-static ::std::size_t const _lam_2365_offsets[1+FLX_PASS_PTF]={
-  FLX_EAT_PTF(offsetof(_lam_2365,ptf)comma)
-  offsetof(_lam_2365,ptrsearch_and_replace_uncurry),
-};
-static ::flx::gc::generic::offset_data_t const _lam_2365_offset_data = { 1+FLX_PASS_PTF, _lam_2365_offsets};
-FLX_FINALISER(_lam_2365)
-static ::flx::gc::generic::gc_shape_t _lam_2365_ptr_map ={
-  &_fI70087__lam_1391_ptr_map,
-  "flx_pkgconfig::_lam_2365",
-  1,sizeof(_lam_2365),
-  _lam_2365_finaliser,
-  0, // fcops
-  &_lam_2365_offset_data, // scanner data
-  &::flx::gc::generic::scan_by_offsets, // scanner
-  0,
-  0,
-  ::flx::gc::generic::gc_flags_default,
-  0ul,0ul
-};
-
-//OFFSETS for function _fI70911__lam_1391
-static ::std::size_t const _fI70911__lam_1391_offsets[2+FLX_PASS_PTF]={
-  FLX_EAT_PTF(offsetof(_fI70911__lam_1391,ptf)comma)
-  offsetof(_fI70911__lam_1391,ptr_fI70903_aux_uncurry),
-  offsetof(_fI70911__lam_1391,ptrflx_pkgconfig),
-};
-static ::flx::gc::generic::offset_data_t const _fI70911__lam_1391_offset_data = { 2+FLX_PASS_PTF, _fI70911__lam_1391_offsets};
-FLX_FINALISER(_fI70911__lam_1391)
-static ::flx::gc::generic::gc_shape_t _fI70911__lam_1391_ptr_map ={
-  &_lam_2365_ptr_map,
-  "flx_pkgconfig::_fI70911__lam_1391",
-  1,sizeof(_fI70911__lam_1391),
-  _fI70911__lam_1391_finaliser,
-  0, // fcops
-  &_fI70911__lam_1391_offset_data, // scanner data
+  &_fI68695__lam_1332_offset_data, // scanner data
   &::flx::gc::generic::scan_by_offsets, // scanner
   0,
   0,
@@ -643,7 +645,7 @@ static ::std::size_t const lexstr_offsets[2+FLX_PASS_PTF]={
 static ::flx::gc::generic::offset_data_t const lexstr_offset_data = { 2+FLX_PASS_PTF, lexstr_offsets};
 FLX_FINALISER(lexstr)
 static ::flx::gc::generic::gc_shape_t lexstr_ptr_map ={
-  &_fI70911__lam_1391_ptr_map,
+  &_fI68695__lam_1332_ptr_map,
   "flx_pkgconfig::lexstr",
   1,sizeof(lexstr),
   lexstr_finaliser,
@@ -656,22 +658,23 @@ static ::flx::gc::generic::gc_shape_t lexstr_ptr_map ={
   0ul,0ul
 };
 
-//OFFSETS for function _fI70127__lam_1391
-static ::std::size_t const _fI70127__lam_1391_offsets[3+FLX_PASS_PTF]={
-  FLX_EAT_PTF(offsetof(_fI70127__lam_1391,ptf)comma)
-  offsetof(_fI70127__lam_1391,ptr_fI70119_aux_uncurry),
-  offsetof(_fI70127__lam_1391,ptrhandle_pkg),
-  offsetof(_fI70127__lam_1391,ptrflx_pkgconfig),
+//OFFSETS for function _fI69333__lam_1398
+static ::std::size_t const _fI69333__lam_1398_offsets[4+FLX_PASS_PTF]={
+  FLX_EAT_PTF(offsetof(_fI69333__lam_1398,ptf)comma)
+  offsetof(_fI69333__lam_1398,ptr_lam_64590),
+  offsetof(_fI69333__lam_1398,ptr_lam_64579),
+  offsetof(_fI69333__lam_1398,ptrhandle_pkg),
+  offsetof(_fI69333__lam_1398,ptrflx_pkgconfig),
 };
-static ::flx::gc::generic::offset_data_t const _fI70127__lam_1391_offset_data = { 3+FLX_PASS_PTF, _fI70127__lam_1391_offsets};
-FLX_FINALISER(_fI70127__lam_1391)
-static ::flx::gc::generic::gc_shape_t _fI70127__lam_1391_ptr_map ={
+static ::flx::gc::generic::offset_data_t const _fI69333__lam_1398_offset_data = { 4+FLX_PASS_PTF, _fI69333__lam_1398_offsets};
+FLX_FINALISER(_fI69333__lam_1398)
+static ::flx::gc::generic::gc_shape_t _fI69333__lam_1398_ptr_map ={
   &lexstr_ptr_map,
-  "flx_pkgconfig::_fI70127__lam_1391",
-  1,sizeof(_fI70127__lam_1391),
-  _fI70127__lam_1391_finaliser,
+  "flx_pkgconfig::_fI69333__lam_1398",
+  1,sizeof(_fI69333__lam_1398),
+  _fI69333__lam_1398_finaliser,
   0, // fcops
-  &_fI70127__lam_1391_offset_data, // scanner data
+  &_fI69333__lam_1398_offset_data, // scanner data
   &::flx::gc::generic::scan_by_offsets, // scanner
   0,
   0,
@@ -679,25 +682,24 @@ static ::flx::gc::generic::gc_shape_t _fI70127__lam_1391_ptr_map ={
   0ul,0ul
 };
 
-//OFFSETS for function _fI70109_aux_uncurry
-static ::std::size_t const _fI70109_aux_uncurry_offsets[6+FLX_PASS_PTF]={
-  FLX_EAT_PTF(offsetof(_fI70109_aux_uncurry,ptf)comma)
-  offsetof(_fI70109_aux_uncurry,ptrhandle_pkg),
-  offsetof(_fI70109_aux_uncurry,ptrflx_pkgconfig),
-  offsetof(_fI70109_aux_uncurry,_vI70116_t_param_std_1268)+0,
-  offsetof(_fI70109_aux_uncurry,_vI70114_aux__apos_2_mv_1387)+0,
-  offsetof(_fI70109_aux_uncurry,_vI70111_y)+0,
-  offsetof(_fI70109_aux_uncurry,_vI70110_x_uncurry)+0,
+//OFFSETS for function _fI69324__lam_1326
+static ::std::size_t const _fI69324__lam_1326_offsets[5+FLX_PASS_PTF]={
+  FLX_EAT_PTF(offsetof(_fI69324__lam_1326,ptf)comma)
+  offsetof(_fI69324__lam_1326,ptr_fI69316_aux_uncurry),
+  offsetof(_fI69324__lam_1326,ptr_lam_64590),
+  offsetof(_fI69324__lam_1326,ptr_lam_64579),
+  offsetof(_fI69324__lam_1326,ptrhandle_pkg),
+  offsetof(_fI69324__lam_1326,ptrflx_pkgconfig),
 };
-static ::flx::gc::generic::offset_data_t const _fI70109_aux_uncurry_offset_data = { 6+FLX_PASS_PTF, _fI70109_aux_uncurry_offsets};
-FLX_FINALISER(_fI70109_aux_uncurry)
-static ::flx::gc::generic::gc_shape_t _fI70109_aux_uncurry_ptr_map ={
-  &_fI70127__lam_1391_ptr_map,
-  "flx_pkgconfig::_fI70109_aux_uncurry",
-  1,sizeof(_fI70109_aux_uncurry),
-  _fI70109_aux_uncurry_finaliser,
+static ::flx::gc::generic::offset_data_t const _fI69324__lam_1326_offset_data = { 5+FLX_PASS_PTF, _fI69324__lam_1326_offsets};
+FLX_FINALISER(_fI69324__lam_1326)
+static ::flx::gc::generic::gc_shape_t _fI69324__lam_1326_ptr_map ={
+  &_fI69333__lam_1398_ptr_map,
+  "flx_pkgconfig::_fI69324__lam_1326",
+  1,sizeof(_fI69324__lam_1326),
+  _fI69324__lam_1326_finaliser,
   0, // fcops
-  &_fI70109_aux_uncurry_offset_data, // scanner data
+  &_fI69324__lam_1326_offset_data, // scanner data
   &::flx::gc::generic::scan_by_offsets, // scanner
   0,
   0,
@@ -705,27 +707,22 @@ static ::flx::gc::generic::gc_shape_t _fI70109_aux_uncurry_ptr_map ={
   0ul,0ul
 };
 
-//OFFSETS for function _fI69639_aux_uncurry
-static ::std::size_t const _fI69639_aux_uncurry_offsets[8+FLX_PASS_PTF]={
-  FLX_EAT_PTF(offsetof(_fI69639_aux_uncurry,ptf)comma)
-  offsetof(_fI69639_aux_uncurry,ptr_lam_65171),
-  offsetof(_fI69639_aux_uncurry,ptr_lam_65160),
-  offsetof(_fI69639_aux_uncurry,ptrhandle_pkg),
-  offsetof(_fI69639_aux_uncurry,ptrflx_pkgconfig),
-  offsetof(_fI69639_aux_uncurry,_vI69646_t_param_std_1268)+0,
-  offsetof(_fI69639_aux_uncurry,_vI69644_aux__apos_2_mv_1387)+0,
-  offsetof(_fI69639_aux_uncurry,_vI69641_y)+0,
-  offsetof(_fI69639_aux_uncurry,_vI69640_x_uncurry)+0,
+//OFFSETS for function _lam_1332
+static ::std::size_t const _lam_1332_offsets[3+FLX_PASS_PTF]={
+  FLX_EAT_PTF(offsetof(_lam_1332,ptf)comma)
+  offsetof(_lam_1332,ptr_fI68551_aux_uncurry),
+  offsetof(_lam_1332,ptradd_val),
+  offsetof(_lam_1332,ptrflx_pkgconfig),
 };
-static ::flx::gc::generic::offset_data_t const _fI69639_aux_uncurry_offset_data = { 8+FLX_PASS_PTF, _fI69639_aux_uncurry_offsets};
-FLX_FINALISER(_fI69639_aux_uncurry)
-static ::flx::gc::generic::gc_shape_t _fI69639_aux_uncurry_ptr_map ={
-  &_fI70109_aux_uncurry_ptr_map,
-  "flx_pkgconfig::_fI69639_aux_uncurry",
-  1,sizeof(_fI69639_aux_uncurry),
-  _fI69639_aux_uncurry_finaliser,
+static ::flx::gc::generic::offset_data_t const _lam_1332_offset_data = { 3+FLX_PASS_PTF, _lam_1332_offsets};
+FLX_FINALISER(_lam_1332)
+static ::flx::gc::generic::gc_shape_t _lam_1332_ptr_map ={
+  &_fI69324__lam_1326_ptr_map,
+  "flx_pkgconfig::_lam_1332",
+  1,sizeof(_lam_1332),
+  _lam_1332_finaliser,
   0, // fcops
-  &_fI69639_aux_uncurry_offset_data, // scanner data
+  &_lam_1332_offset_data, // scanner data
   &::flx::gc::generic::scan_by_offsets, // scanner
   0,
   0,
@@ -733,22 +730,22 @@ static ::flx::gc::generic::gc_shape_t _fI69639_aux_uncurry_ptr_map ={
   0ul,0ul
 };
 
-//OFFSETS for function _lam_1391
-static ::std::size_t const _lam_1391_offsets[3+FLX_PASS_PTF]={
-  FLX_EAT_PTF(offsetof(_lam_1391,ptf)comma)
-  offsetof(_lam_1391,ptr_fI69132_aux_uncurry),
-  offsetof(_lam_1391,ptradd_val),
-  offsetof(_lam_1391,ptrflx_pkgconfig),
+//OFFSETS for function _fI68569__lam_1332
+static ::std::size_t const _fI68569__lam_1332_offsets[3+FLX_PASS_PTF]={
+  FLX_EAT_PTF(offsetof(_fI68569__lam_1332,ptf)comma)
+  offsetof(_fI68569__lam_1332,ptr_fI68561_aux_uncurry),
+  offsetof(_fI68569__lam_1332,ptradd_val),
+  offsetof(_fI68569__lam_1332,ptrflx_pkgconfig),
 };
-static ::flx::gc::generic::offset_data_t const _lam_1391_offset_data = { 3+FLX_PASS_PTF, _lam_1391_offsets};
-FLX_FINALISER(_lam_1391)
-static ::flx::gc::generic::gc_shape_t _lam_1391_ptr_map ={
-  &_fI69639_aux_uncurry_ptr_map,
-  "flx_pkgconfig::_lam_1391",
-  1,sizeof(_lam_1391),
-  _lam_1391_finaliser,
+static ::flx::gc::generic::offset_data_t const _fI68569__lam_1332_offset_data = { 3+FLX_PASS_PTF, _fI68569__lam_1332_offsets};
+FLX_FINALISER(_fI68569__lam_1332)
+static ::flx::gc::generic::gc_shape_t _fI68569__lam_1332_ptr_map ={
+  &_lam_1332_ptr_map,
+  "flx_pkgconfig::_fI68569__lam_1332",
+  1,sizeof(_fI68569__lam_1332),
+  _fI68569__lam_1332_finaliser,
   0, // fcops
-  &_lam_1391_offset_data, // scanner data
+  &_fI68569__lam_1332_offset_data, // scanner data
   &::flx::gc::generic::scan_by_offsets, // scanner
   0,
   0,
@@ -756,24 +753,22 @@ static ::flx::gc::generic::gc_shape_t _lam_1391_ptr_map ={
   0ul,0ul
 };
 
-//OFFSETS for function search_and_replace_uncurry
-static ::std::size_t const search_and_replace_uncurry_offsets[5+FLX_PASS_PTF]={
-  FLX_EAT_PTF(offsetof(search_and_replace_uncurry,ptf)comma)
-  offsetof(search_and_replace_uncurry,_vI69527_xs)+0,
-  offsetof(search_and_replace_uncurry,_genout_urv69526)+0,
-  offsetof(search_and_replace_uncurry,vs_uncurry)+0,
-  offsetof(search_and_replace_uncurry,_generator_strings_7556)+0,
-  offsetof(search_and_replace_uncurry,_vI68737_search_and_replace__apos_2_mv_2360)+0,
+//OFFSETS for function _lam_64547
+static ::std::size_t const _lam_64547_offsets[3+FLX_PASS_PTF]={
+  FLX_EAT_PTF(offsetof(_lam_64547,ptf)comma)
+  offsetof(_lam_64547,ptr_lam_64546),
+  offsetof(_lam_64547,ptrreattach_drive_letters),
+  offsetof(_lam_64547,ptrflx_pkgconfig),
 };
-static ::flx::gc::generic::offset_data_t const search_and_replace_uncurry_offset_data = { 5+FLX_PASS_PTF, search_and_replace_uncurry_offsets};
-FLX_FINALISER(search_and_replace_uncurry)
-static ::flx::gc::generic::gc_shape_t search_and_replace_uncurry_ptr_map ={
-  &_lam_1391_ptr_map,
-  "flx_pkgconfig::search_and_replace_uncurry",
-  1,sizeof(search_and_replace_uncurry),
-  search_and_replace_uncurry_finaliser,
+static ::flx::gc::generic::offset_data_t const _lam_64547_offset_data = { 3+FLX_PASS_PTF, _lam_64547_offsets};
+FLX_FINALISER(_lam_64547)
+static ::flx::gc::generic::gc_shape_t _lam_64547_ptr_map ={
+  &_fI68569__lam_1332_ptr_map,
+  "flx_pkgconfig::_lam_64547",
+  1,sizeof(_lam_64547),
+  _lam_64547_finaliser,
   0, // fcops
-  &search_and_replace_uncurry_offset_data, // scanner data
+  &_lam_64547_offset_data, // scanner data
   &::flx::gc::generic::scan_by_offsets, // scanner
   0,
   0,
@@ -781,22 +776,23 @@ static ::flx::gc::generic::gc_shape_t search_and_replace_uncurry_ptr_map ={
   0ul,0ul
 };
 
-//OFFSETS for function _fI70890_aux
-static ::std::size_t const _fI70890_aux_offsets[3+FLX_PASS_PTF]={
-  FLX_EAT_PTF(offsetof(_fI70890_aux,ptf)comma)
-  offsetof(_fI70890_aux,ptrflx_pkgconfig),
-  offsetof(_fI70890_aux,aux_mv_2285)+0,
-  offsetof(_fI70890_aux,_vI70892_y)+0,
+//OFFSETS for function _fI70149_aux
+static ::std::size_t const _fI70149_aux_offsets[4+FLX_PASS_PTF]={
+  FLX_EAT_PTF(offsetof(_fI70149_aux,ptf)comma)
+  offsetof(_fI70149_aux,ptrparse_args),
+  offsetof(_fI70149_aux,ptrflx_pkgconfig),
+  offsetof(_fI70149_aux,aux_mv_2237)+0,
+  offsetof(_fI70149_aux,_vI70151_y)+0,
 };
-static ::flx::gc::generic::offset_data_t const _fI70890_aux_offset_data = { 3+FLX_PASS_PTF, _fI70890_aux_offsets};
-FLX_FINALISER(_fI70890_aux)
-static ::flx::gc::generic::gc_shape_t _fI70890_aux_ptr_map ={
-  &search_and_replace_uncurry_ptr_map,
-  "flx_pkgconfig::_fI70890_aux",
-  1,sizeof(_fI70890_aux),
-  _fI70890_aux_finaliser,
+static ::flx::gc::generic::offset_data_t const _fI70149_aux_offset_data = { 4+FLX_PASS_PTF, _fI70149_aux_offsets};
+FLX_FINALISER(_fI70149_aux)
+static ::flx::gc::generic::gc_shape_t _fI70149_aux_ptr_map ={
+  &_lam_64547_ptr_map,
+  "flx_pkgconfig::_fI70149_aux",
+  1,sizeof(_fI70149_aux),
+  _fI70149_aux_finaliser,
   0, // fcops
-  &_fI70890_aux_offset_data, // scanner data
+  &_fI70149_aux_offset_data, // scanner data
   &::flx::gc::generic::scan_by_offsets, // scanner
   0,
   0,
@@ -804,21 +800,22 @@ static ::flx::gc::generic::gc_shape_t _fI70890_aux_ptr_map ={
   0ul,0ul
 };
 
-//OFFSETS for function _fI69289__lam_1391
-static ::std::size_t const _fI69289__lam_1391_offsets[2+FLX_PASS_PTF]={
-  FLX_EAT_PTF(offsetof(_fI69289__lam_1391,ptf)comma)
-  offsetof(_fI69289__lam_1391,ptr_fI69281_aux_uncurry),
-  offsetof(_fI69289__lam_1391,ptr_fI68132___plus_),
+//OFFSETS for function _fI70309_aux
+static ::std::size_t const _fI70309_aux_offsets[3+FLX_PASS_PTF]={
+  FLX_EAT_PTF(offsetof(_fI70309_aux,ptf)comma)
+  offsetof(_fI70309_aux,ptrflx_pkgconfig),
+  offsetof(_fI70309_aux,aux_mv_2226)+0,
+  offsetof(_fI70309_aux,_vI70311_y)+0,
 };
-static ::flx::gc::generic::offset_data_t const _fI69289__lam_1391_offset_data = { 2+FLX_PASS_PTF, _fI69289__lam_1391_offsets};
-FLX_FINALISER(_fI69289__lam_1391)
-static ::flx::gc::generic::gc_shape_t _fI69289__lam_1391_ptr_map ={
-  &_fI70890_aux_ptr_map,
-  "flx_pkgconfig::_fI69289__lam_1391",
-  1,sizeof(_fI69289__lam_1391),
-  _fI69289__lam_1391_finaliser,
+static ::flx::gc::generic::offset_data_t const _fI70309_aux_offset_data = { 3+FLX_PASS_PTF, _fI70309_aux_offsets};
+FLX_FINALISER(_fI70309_aux)
+static ::flx::gc::generic::gc_shape_t _fI70309_aux_ptr_map ={
+  &_fI70149_aux_ptr_map,
+  "flx_pkgconfig::_fI70309_aux",
+  1,sizeof(_fI70309_aux),
+  _fI70309_aux_finaliser,
   0, // fcops
-  &_fI69289__lam_1391_offset_data, // scanner data
+  &_fI70309_aux_offset_data, // scanner data
   &::flx::gc::generic::scan_by_offsets, // scanner
   0,
   0,
@@ -826,21 +823,20 @@ static ::flx::gc::generic::gc_shape_t _fI69289__lam_1391_ptr_map ={
   0ul,0ul
 };
 
-//OFFSETS for function _lam_65117
-static ::std::size_t const _lam_65117_offsets[2+FLX_PASS_PTF]={
-  FLX_EAT_PTF(offsetof(_lam_65117,ptf)comma)
-  offsetof(_lam_65117,ptrparse_args),
-  offsetof(_lam_65117,ptrflx_pkgconfig),
+//OFFSETS for function _lam_168
+static ::std::size_t const _lam_168_offsets[1+FLX_PASS_PTF]={
+  FLX_EAT_PTF(offsetof(_lam_168,ptf)comma)
+  offsetof(_lam_168,ptrisidstart),
 };
-static ::flx::gc::generic::offset_data_t const _lam_65117_offset_data = { 2+FLX_PASS_PTF, _lam_65117_offsets};
-FLX_FINALISER(_lam_65117)
-static ::flx::gc::generic::gc_shape_t _lam_65117_ptr_map ={
-  &_fI69289__lam_1391_ptr_map,
-  "flx_pkgconfig::_lam_65117",
-  1,sizeof(_lam_65117),
-  _lam_65117_finaliser,
+static ::flx::gc::generic::offset_data_t const _lam_168_offset_data = { 1+FLX_PASS_PTF, _lam_168_offsets};
+FLX_FINALISER(_lam_168)
+static ::flx::gc::generic::gc_shape_t _lam_168_ptr_map ={
+  &_fI70309_aux_ptr_map,
+  "flx_pkgconfig::_lam_168",
+  1,sizeof(_lam_168),
+  _lam_168_finaliser,
   0, // fcops
-  &_lam_65117_offset_data, // scanner data
+  &_lam_168_offset_data, // scanner data
   &::flx::gc::generic::scan_by_offsets, // scanner
   0,
   0,
@@ -848,20 +844,26 @@ static ::flx::gc::generic::gc_shape_t _lam_65117_ptr_map ={
   0ul,0ul
 };
 
-//OFFSETS for function _lam_1445
-static ::std::size_t const _lam_1445_offsets[1+FLX_PASS_PTF]={
-  FLX_EAT_PTF(offsetof(_lam_1445,ptf)comma)
-  offsetof(_lam_1445,ptrcat_uncurry),
+//OFFSETS for function _fI70133_aux_uncurry
+static ::std::size_t const _fI70133_aux_uncurry_offsets[7+FLX_PASS_PTF]={
+  FLX_EAT_PTF(offsetof(_fI70133_aux_uncurry,ptf)comma)
+  offsetof(_fI70133_aux_uncurry,ptr_fI70125_aux),
+  offsetof(_fI70133_aux_uncurry,ptrparse_args),
+  offsetof(_fI70133_aux_uncurry,ptrflx_pkgconfig),
+  offsetof(_fI70133_aux_uncurry,_vI70140_t_param_std_1209)+0,
+  offsetof(_fI70133_aux_uncurry,_vI70138_aux__apos_2_mv_1328)+0,
+  offsetof(_fI70133_aux_uncurry,_vI70135_y)+0,
+  offsetof(_fI70133_aux_uncurry,_vI70134_x_uncurry)+0,
 };
-static ::flx::gc::generic::offset_data_t const _lam_1445_offset_data = { 1+FLX_PASS_PTF, _lam_1445_offsets};
-FLX_FINALISER(_lam_1445)
-static ::flx::gc::generic::gc_shape_t _lam_1445_ptr_map ={
-  &_lam_65117_ptr_map,
-  "flx_pkgconfig::_lam_1445",
-  1,sizeof(_lam_1445),
-  _lam_1445_finaliser,
+static ::flx::gc::generic::offset_data_t const _fI70133_aux_uncurry_offset_data = { 7+FLX_PASS_PTF, _fI70133_aux_uncurry_offsets};
+FLX_FINALISER(_fI70133_aux_uncurry)
+static ::flx::gc::generic::gc_shape_t _fI70133_aux_uncurry_ptr_map ={
+  &_lam_168_ptr_map,
+  "flx_pkgconfig::_fI70133_aux_uncurry",
+  1,sizeof(_fI70133_aux_uncurry),
+  _fI70133_aux_uncurry_finaliser,
   0, // fcops
-  &_lam_1445_offset_data, // scanner data
+  &_fI70133_aux_uncurry_offset_data, // scanner data
   &::flx::gc::generic::scan_by_offsets, // scanner
   0,
   0,
@@ -869,21 +871,22 @@ static ::flx::gc::generic::gc_shape_t _lam_1445_ptr_map ={
   0ul,0ul
 };
 
-//OFFSETS for function _lam_1566
-static ::std::size_t const _lam_1566_offsets[2+FLX_PASS_PTF]={
-  FLX_EAT_PTF(offsetof(_lam_1566,ptf)comma)
-  offsetof(_lam_1566,ptr_fI69528_iterator__apos_2),
-  offsetof(_lam_1566,ptrsearch_and_replace_uncurry),
+//OFFSETS for function _fI69536__lam_1332
+static ::std::size_t const _fI69536__lam_1332_offsets[3+FLX_PASS_PTF]={
+  FLX_EAT_PTF(offsetof(_fI69536__lam_1332,ptf)comma)
+  offsetof(_fI69536__lam_1332,ptr_fI69528_aux_uncurry),
+  offsetof(_fI69536__lam_1332,ptrhandle_pkg),
+  offsetof(_fI69536__lam_1332,ptrflx_pkgconfig),
 };
-static ::flx::gc::generic::offset_data_t const _lam_1566_offset_data = { 2+FLX_PASS_PTF, _lam_1566_offsets};
-FLX_FINALISER(_lam_1566)
-static ::flx::gc::generic::gc_shape_t _lam_1566_ptr_map ={
-  &_lam_1445_ptr_map,
-  "flx_pkgconfig::_lam_1566",
-  1,sizeof(_lam_1566),
-  _lam_1566_finaliser,
+static ::flx::gc::generic::offset_data_t const _fI69536__lam_1332_offset_data = { 3+FLX_PASS_PTF, _fI69536__lam_1332_offsets};
+FLX_FINALISER(_fI69536__lam_1332)
+static ::flx::gc::generic::gc_shape_t _fI69536__lam_1332_ptr_map ={
+  &_fI70133_aux_uncurry_ptr_map,
+  "flx_pkgconfig::_fI69536__lam_1332",
+  1,sizeof(_fI69536__lam_1332),
+  _fI69536__lam_1332_finaliser,
   0, // fcops
-  &_lam_1566_offset_data, // scanner data
+  &_fI69536__lam_1332_offset_data, // scanner data
   &::flx::gc::generic::scan_by_offsets, // scanner
   0,
   0,
@@ -891,27 +894,26 @@ static ::flx::gc::generic::gc_shape_t _lam_1566_ptr_map ={
   0ul,0ul
 };
 
-//OFFSETS for function _fI69897_aux_uncurry
-static ::std::size_t const _fI69897_aux_uncurry_offsets[8+FLX_PASS_PTF]={
-  FLX_EAT_PTF(offsetof(_fI69897_aux_uncurry,ptf)comma)
-  offsetof(_fI69897_aux_uncurry,ptr_lam_65171),
-  offsetof(_fI69897_aux_uncurry,ptr_lam_65160),
-  offsetof(_fI69897_aux_uncurry,ptrhandle_pkg),
-  offsetof(_fI69897_aux_uncurry,ptrflx_pkgconfig),
-  offsetof(_fI69897_aux_uncurry,_vI69904_t_param_std_1266)+0,
-  offsetof(_fI69897_aux_uncurry,_vI69902_aux__apos_2_mv_1381)+0,
-  offsetof(_fI69897_aux_uncurry,_vI69899_out)+0,
-  offsetof(_fI69897_aux_uncurry,_vI69898_inp_uncurry)+0,
+//OFFSETS for function _fI68666_aux_uncurry
+static ::std::size_t const _fI68666_aux_uncurry_offsets[7+FLX_PASS_PTF]={
+  FLX_EAT_PTF(offsetof(_fI68666_aux_uncurry,ptf)comma)
+  offsetof(_fI68666_aux_uncurry,ptraux),
+  offsetof(_fI68666_aux_uncurry,ptrtail_val),
+  offsetof(_fI68666_aux_uncurry,ptrflx_pkgconfig),
+  offsetof(_fI68666_aux_uncurry,_vI68673_t_param_std_1209)+0,
+  offsetof(_fI68666_aux_uncurry,_vI68671_aux__apos_2_mv_1328)+0,
+  offsetof(_fI68666_aux_uncurry,_vI68668_y)+0,
+  offsetof(_fI68666_aux_uncurry,_vI68667_x_uncurry)+0,
 };
-static ::flx::gc::generic::offset_data_t const _fI69897_aux_uncurry_offset_data = { 8+FLX_PASS_PTF, _fI69897_aux_uncurry_offsets};
-FLX_FINALISER(_fI69897_aux_uncurry)
-static ::flx::gc::generic::gc_shape_t _fI69897_aux_uncurry_ptr_map ={
-  &_lam_1566_ptr_map,
-  "flx_pkgconfig::_fI69897_aux_uncurry",
-  1,sizeof(_fI69897_aux_uncurry),
-  _fI69897_aux_uncurry_finaliser,
+static ::flx::gc::generic::offset_data_t const _fI68666_aux_uncurry_offset_data = { 7+FLX_PASS_PTF, _fI68666_aux_uncurry_offsets};
+FLX_FINALISER(_fI68666_aux_uncurry)
+static ::flx::gc::generic::gc_shape_t _fI68666_aux_uncurry_ptr_map ={
+  &_fI69536__lam_1332_ptr_map,
+  "flx_pkgconfig::_fI68666_aux_uncurry",
+  1,sizeof(_fI68666_aux_uncurry),
+  _fI68666_aux_uncurry_finaliser,
   0, // fcops
-  &_fI69897_aux_uncurry_offset_data, // scanner data
+  &_fI68666_aux_uncurry_offset_data, // scanner data
   &::flx::gc::generic::scan_by_offsets, // scanner
   0,
   0,
@@ -919,21 +921,27 @@ static ::flx::gc::generic::gc_shape_t _fI69897_aux_uncurry_ptr_map ={
   0ul,0ul
 };
 
-//OFFSETS for function get_field
-static ::std::size_t const get_field_offsets[2+FLX_PASS_PTF]={
-  FLX_EAT_PTF(offsetof(get_field,ptf)comma)
-  offsetof(get_field,ptrflx_pkgconfig),
-  offsetof(get_field,get_field_mv_65136)+0,
+//OFFSETS for function _fI69442_aux_uncurry
+static ::std::size_t const _fI69442_aux_uncurry_offsets[8+FLX_PASS_PTF]={
+  FLX_EAT_PTF(offsetof(_fI69442_aux_uncurry,ptf)comma)
+  offsetof(_fI69442_aux_uncurry,ptr_fI69434_aux),
+  offsetof(_fI69442_aux_uncurry,ptr_lam_64579),
+  offsetof(_fI69442_aux_uncurry,ptrhandle_pkg),
+  offsetof(_fI69442_aux_uncurry,ptrflx_pkgconfig),
+  offsetof(_fI69442_aux_uncurry,_vI69449_t_param_std_1209)+0,
+  offsetof(_fI69442_aux_uncurry,_vI69447_aux__apos_2_mv_1328)+0,
+  offsetof(_fI69442_aux_uncurry,_vI69444_y)+0,
+  offsetof(_fI69442_aux_uncurry,_vI69443_x_uncurry)+0,
 };
-static ::flx::gc::generic::offset_data_t const get_field_offset_data = { 2+FLX_PASS_PTF, get_field_offsets};
-FLX_FINALISER(get_field)
-static ::flx::gc::generic::gc_shape_t get_field_ptr_map ={
-  &_fI69897_aux_uncurry_ptr_map,
-  "flx_pkgconfig::get_field",
-  1,sizeof(get_field),
-  get_field_finaliser,
+static ::flx::gc::generic::offset_data_t const _fI69442_aux_uncurry_offset_data = { 8+FLX_PASS_PTF, _fI69442_aux_uncurry_offsets};
+FLX_FINALISER(_fI69442_aux_uncurry)
+static ::flx::gc::generic::gc_shape_t _fI69442_aux_uncurry_ptr_map ={
+  &_fI68666_aux_uncurry_ptr_map,
+  "flx_pkgconfig::_fI69442_aux_uncurry",
+  1,sizeof(_fI69442_aux_uncurry),
+  _fI69442_aux_uncurry_finaliser,
   0, // fcops
-  &get_field_offset_data, // scanner data
+  &_fI69442_aux_uncurry_offset_data, // scanner data
   &::flx::gc::generic::scan_by_offsets, // scanner
   0,
   0,
@@ -941,26 +949,25 @@ static ::flx::gc::generic::gc_shape_t get_field_ptr_map ={
   0ul,0ul
 };
 
-//OFFSETS for function _fI70714_aux_uncurry
-static ::std::size_t const _fI70714_aux_uncurry_offsets[7+FLX_PASS_PTF]={
-  FLX_EAT_PTF(offsetof(_fI70714_aux_uncurry,ptf)comma)
-  offsetof(_fI70714_aux_uncurry,ptr_fI70706_aux),
-  offsetof(_fI70714_aux_uncurry,ptrparse_args),
-  offsetof(_fI70714_aux_uncurry,ptrflx_pkgconfig),
-  offsetof(_fI70714_aux_uncurry,_vI70721_t_param_std_1268)+0,
-  offsetof(_fI70714_aux_uncurry,_vI70719_aux__apos_2_mv_1387)+0,
-  offsetof(_fI70714_aux_uncurry,_vI70716_y)+0,
-  offsetof(_fI70714_aux_uncurry,_vI70715_x_uncurry)+0,
+//OFFSETS for function _fI70162_aux_uncurry
+static ::std::size_t const _fI70162_aux_uncurry_offsets[6+FLX_PASS_PTF]={
+  FLX_EAT_PTF(offsetof(_fI70162_aux_uncurry,ptf)comma)
+  offsetof(_fI70162_aux_uncurry,ptrparse_args),
+  offsetof(_fI70162_aux_uncurry,ptrflx_pkgconfig),
+  offsetof(_fI70162_aux_uncurry,_vI70169_t_param_std_1209)+0,
+  offsetof(_fI70162_aux_uncurry,_vI70167_aux__apos_2_mv_1328)+0,
+  offsetof(_fI70162_aux_uncurry,_vI70164_y)+0,
+  offsetof(_fI70162_aux_uncurry,_vI70163_x_uncurry)+0,
 };
-static ::flx::gc::generic::offset_data_t const _fI70714_aux_uncurry_offset_data = { 7+FLX_PASS_PTF, _fI70714_aux_uncurry_offsets};
-FLX_FINALISER(_fI70714_aux_uncurry)
-static ::flx::gc::generic::gc_shape_t _fI70714_aux_uncurry_ptr_map ={
-  &get_field_ptr_map,
-  "flx_pkgconfig::_fI70714_aux_uncurry",
-  1,sizeof(_fI70714_aux_uncurry),
-  _fI70714_aux_uncurry_finaliser,
+static ::flx::gc::generic::offset_data_t const _fI70162_aux_uncurry_offset_data = { 6+FLX_PASS_PTF, _fI70162_aux_uncurry_offsets};
+FLX_FINALISER(_fI70162_aux_uncurry)
+static ::flx::gc::generic::gc_shape_t _fI70162_aux_uncurry_ptr_map ={
+  &_fI69442_aux_uncurry_ptr_map,
+  "flx_pkgconfig::_fI70162_aux_uncurry",
+  1,sizeof(_fI70162_aux_uncurry),
+  _fI70162_aux_uncurry_finaliser,
   0, // fcops
-  &_fI70714_aux_uncurry_offset_data, // scanner data
+  &_fI70162_aux_uncurry_offset_data, // scanner data
   &::flx::gc::generic::scan_by_offsets, // scanner
   0,
   0,
@@ -968,20 +975,22 @@ static ::flx::gc::generic::gc_shape_t _fI70714_aux_uncurry_ptr_map ={
   0ul,0ul
 };
 
-//OFFSETS for function _lam_1456
-static ::std::size_t const _lam_1456_offsets[1+FLX_PASS_PTF]={
-  FLX_EAT_PTF(offsetof(_lam_1456,ptf)comma)
-  offsetof(_lam_1456,ptrmem_uncurry),
+//OFFSETS for function _fI69406__lam_1398
+static ::std::size_t const _fI69406__lam_1398_offsets[3+FLX_PASS_PTF]={
+  FLX_EAT_PTF(offsetof(_fI69406__lam_1398,ptf)comma)
+  offsetof(_fI69406__lam_1398,ptr_lam_64579),
+  offsetof(_fI69406__lam_1398,ptrhandle_pkg),
+  offsetof(_fI69406__lam_1398,ptrflx_pkgconfig),
 };
-static ::flx::gc::generic::offset_data_t const _lam_1456_offset_data = { 1+FLX_PASS_PTF, _lam_1456_offsets};
-FLX_FINALISER(_lam_1456)
-static ::flx::gc::generic::gc_shape_t _lam_1456_ptr_map ={
-  &_fI70714_aux_uncurry_ptr_map,
-  "flx_pkgconfig::_lam_1456",
-  1,sizeof(_lam_1456),
-  _lam_1456_finaliser,
+static ::flx::gc::generic::offset_data_t const _fI69406__lam_1398_offset_data = { 3+FLX_PASS_PTF, _fI69406__lam_1398_offsets};
+FLX_FINALISER(_fI69406__lam_1398)
+static ::flx::gc::generic::gc_shape_t _fI69406__lam_1398_ptr_map ={
+  &_fI70162_aux_uncurry_ptr_map,
+  "flx_pkgconfig::_fI69406__lam_1398",
+  1,sizeof(_fI69406__lam_1398),
+  _fI69406__lam_1398_finaliser,
   0, // fcops
-  &_lam_1456_offset_data, // scanner data
+  &_fI69406__lam_1398_offset_data, // scanner data
   &::flx::gc::generic::scan_by_offsets, // scanner
   0,
   0,
@@ -989,21 +998,24 @@ static ::flx::gc::generic::gc_shape_t _lam_1456_ptr_map ={
   0ul,0ul
 };
 
-//OFFSETS for function _lam_65127
-static ::std::size_t const _lam_65127_offsets[2+FLX_PASS_PTF]={
-  FLX_EAT_PTF(offsetof(_lam_65127,ptf)comma)
-  offsetof(_lam_65127,ptrreattach_drive_letters),
-  offsetof(_lam_65127,ptrflx_pkgconfig),
+//OFFSETS for function _fI68700_aux_uncurry
+static ::std::size_t const _fI68700_aux_uncurry_offsets[5+FLX_PASS_PTF]={
+  FLX_EAT_PTF(offsetof(_fI68700_aux_uncurry,ptf)comma)
+  offsetof(_fI68700_aux_uncurry,ptr_fI67551___plus_),
+  offsetof(_fI68700_aux_uncurry,_vI68707_t_param_std_1209)+0,
+  offsetof(_fI68700_aux_uncurry,_vI68705_aux__apos_2_mv_1328)+0,
+  offsetof(_fI68700_aux_uncurry,_vI68702_y)+0,
+  offsetof(_fI68700_aux_uncurry,_vI68701_x_uncurry)+0,
 };
-static ::flx::gc::generic::offset_data_t const _lam_65127_offset_data = { 2+FLX_PASS_PTF, _lam_65127_offsets};
-FLX_FINALISER(_lam_65127)
-static ::flx::gc::generic::gc_shape_t _lam_65127_ptr_map ={
-  &_lam_1456_ptr_map,
-  "flx_pkgconfig::_lam_65127",
-  1,sizeof(_lam_65127),
-  _lam_65127_finaliser,
+static ::flx::gc::generic::offset_data_t const _fI68700_aux_uncurry_offset_data = { 5+FLX_PASS_PTF, _fI68700_aux_uncurry_offsets};
+FLX_FINALISER(_fI68700_aux_uncurry)
+static ::flx::gc::generic::gc_shape_t _fI68700_aux_uncurry_ptr_map ={
+  &_fI69406__lam_1398_ptr_map,
+  "flx_pkgconfig::_fI68700_aux_uncurry",
+  1,sizeof(_fI68700_aux_uncurry),
+  _fI68700_aux_uncurry_finaliser,
   0, // fcops
-  &_lam_65127_offset_data, // scanner data
+  &_fI68700_aux_uncurry_offset_data, // scanner data
   &::flx::gc::generic::scan_by_offsets, // scanner
   0,
   0,
@@ -1011,22 +1023,20 @@ static ::flx::gc::generic::gc_shape_t _lam_65127_ptr_map ={
   0ul,0ul
 };
 
-//OFFSETS for function _fI70698__lam_1502
-static ::std::size_t const _fI70698__lam_1502_offsets[3+FLX_PASS_PTF]={
-  FLX_EAT_PTF(offsetof(_fI70698__lam_1502,ptf)comma)
-  offsetof(_fI70698__lam_1502,ptr_fI70680_aux),
-  offsetof(_fI70698__lam_1502,ptrparse_args),
-  offsetof(_fI70698__lam_1502,ptrflx_pkgconfig),
+//OFFSETS for function _lam_1397
+static ::std::size_t const _lam_1397_offsets[1+FLX_PASS_PTF]={
+  FLX_EAT_PTF(offsetof(_lam_1397,ptf)comma)
+  offsetof(_lam_1397,ptrmem_uncurry),
 };
-static ::flx::gc::generic::offset_data_t const _fI70698__lam_1502_offset_data = { 3+FLX_PASS_PTF, _fI70698__lam_1502_offsets};
-FLX_FINALISER(_fI70698__lam_1502)
-static ::flx::gc::generic::gc_shape_t _fI70698__lam_1502_ptr_map ={
-  &_lam_65127_ptr_map,
-  "flx_pkgconfig::_fI70698__lam_1502",
-  1,sizeof(_fI70698__lam_1502),
-  _fI70698__lam_1502_finaliser,
+static ::flx::gc::generic::offset_data_t const _lam_1397_offset_data = { 1+FLX_PASS_PTF, _lam_1397_offsets};
+FLX_FINALISER(_lam_1397)
+static ::flx::gc::generic::gc_shape_t _lam_1397_ptr_map ={
+  &_fI68700_aux_uncurry_ptr_map,
+  "flx_pkgconfig::_lam_1397",
+  1,sizeof(_lam_1397),
+  _lam_1397_finaliser,
   0, // fcops
-  &_fI70698__lam_1502_offset_data, // scanner data
+  &_lam_1397_offset_data, // scanner data
   &::flx::gc::generic::scan_by_offsets, // scanner
   0,
   0,
@@ -1034,24 +1044,23 @@ static ::flx::gc::generic::gc_shape_t _fI70698__lam_1502_ptr_map ={
   0ul,0ul
 };
 
-//OFFSETS for function _fI70903_aux_uncurry
-static ::std::size_t const _fI70903_aux_uncurry_offsets[5+FLX_PASS_PTF]={
-  FLX_EAT_PTF(offsetof(_fI70903_aux_uncurry,ptf)comma)
-  offsetof(_fI70903_aux_uncurry,ptrflx_pkgconfig),
-  offsetof(_fI70903_aux_uncurry,_vI70910_t_param_std_1268)+0,
-  offsetof(_fI70903_aux_uncurry,_vI70908_aux__apos_2_mv_1387)+0,
-  offsetof(_fI70903_aux_uncurry,_vI70905_y)+0,
-  offsetof(_fI70903_aux_uncurry,_vI70904_x_uncurry)+0,
+//OFFSETS for function _fI70141__lam_1332
+static ::std::size_t const _fI70141__lam_1332_offsets[4+FLX_PASS_PTF]={
+  FLX_EAT_PTF(offsetof(_fI70141__lam_1332,ptf)comma)
+  offsetof(_fI70141__lam_1332,ptr_fI70133_aux_uncurry),
+  offsetof(_fI70141__lam_1332,ptr_fI70125_aux),
+  offsetof(_fI70141__lam_1332,ptrparse_args),
+  offsetof(_fI70141__lam_1332,ptrflx_pkgconfig),
 };
-static ::flx::gc::generic::offset_data_t const _fI70903_aux_uncurry_offset_data = { 5+FLX_PASS_PTF, _fI70903_aux_uncurry_offsets};
-FLX_FINALISER(_fI70903_aux_uncurry)
-static ::flx::gc::generic::gc_shape_t _fI70903_aux_uncurry_ptr_map ={
-  &_fI70698__lam_1502_ptr_map,
-  "flx_pkgconfig::_fI70903_aux_uncurry",
-  1,sizeof(_fI70903_aux_uncurry),
-  _fI70903_aux_uncurry_finaliser,
+static ::flx::gc::generic::offset_data_t const _fI70141__lam_1332_offset_data = { 4+FLX_PASS_PTF, _fI70141__lam_1332_offsets};
+FLX_FINALISER(_fI70141__lam_1332)
+static ::flx::gc::generic::gc_shape_t _fI70141__lam_1332_ptr_map ={
+  &_lam_1397_ptr_map,
+  "flx_pkgconfig::_fI70141__lam_1332",
+  1,sizeof(_fI70141__lam_1332),
+  _fI70141__lam_1332_finaliser,
   0, // fcops
-  &_fI70903_aux_uncurry_offset_data, // scanner data
+  &_fI70141__lam_1332_offset_data, // scanner data
   &::flx::gc::generic::scan_by_offsets, // scanner
   0,
   0,
@@ -1059,28 +1068,21 @@ static ::flx::gc::generic::gc_shape_t _fI70903_aux_uncurry_ptr_map ={
   0ul,0ul
 };
 
-//OFFSETS for function cat_uncurry
-static ::std::size_t const cat_uncurry_offsets[9+FLX_PASS_PTF]={
-  FLX_EAT_PTF(offsetof(cat_uncurry,ptf)comma)
-  offsetof(cat_uncurry,xs)+0,
-  offsetof(cat_uncurry,_genout_urv70966)+0,
-  offsetof(cat_uncurry,_vI68645_x)+0,
-  offsetof(cat_uncurry,t_param_std_1290_param_std_1293)+0,
-  offsetof(cat_uncurry,tail_param_std_1287)+0,
-  offsetof(cat_uncurry,_generator_lists_5289)+0,
-  offsetof(cat_uncurry,_vI68631_cat__apos_2_mv_1440)+0,
-  offsetof(cat_uncurry,_vI68628_cat__apos_2_mv_1436)+0,
-  offsetof(cat_uncurry,_vI68625_cat__apos_2_mv_1431)+0,
+//OFFSETS for function _lam_64546
+static ::std::size_t const _lam_64546_offsets[2+FLX_PASS_PTF]={
+  FLX_EAT_PTF(offsetof(_lam_64546,ptf)comma)
+  offsetof(_lam_64546,ptrreattach_drive_letters),
+  offsetof(_lam_64546,ptrflx_pkgconfig),
 };
-static ::flx::gc::generic::offset_data_t const cat_uncurry_offset_data = { 9+FLX_PASS_PTF, cat_uncurry_offsets};
-FLX_FINALISER(cat_uncurry)
-static ::flx::gc::generic::gc_shape_t cat_uncurry_ptr_map ={
-  &_fI70903_aux_uncurry_ptr_map,
-  "flx_pkgconfig::cat_uncurry",
-  1,sizeof(cat_uncurry),
-  cat_uncurry_finaliser,
+static ::flx::gc::generic::offset_data_t const _lam_64546_offset_data = { 2+FLX_PASS_PTF, _lam_64546_offsets};
+FLX_FINALISER(_lam_64546)
+static ::flx::gc::generic::gc_shape_t _lam_64546_ptr_map ={
+  &_fI70141__lam_1332_ptr_map,
+  "flx_pkgconfig::_lam_64546",
+  1,sizeof(_lam_64546),
+  _lam_64546_finaliser,
   0, // fcops
-  &cat_uncurry_offset_data, // scanner data
+  &_lam_64546_offset_data, // scanner data
   &::flx::gc::generic::scan_by_offsets, // scanner
   0,
   0,
@@ -1088,288 +1090,23 @@ static ::flx::gc::generic::gc_shape_t cat_uncurry_ptr_map ={
   0ul,0ul
 };
 
-//OFFSETS for function _lam_1457
-static ::std::size_t const _lam_1457_offsets[2+FLX_PASS_PTF]={
-  FLX_EAT_PTF(offsetof(_lam_1457,ptf)comma)
-  offsetof(_lam_1457,ptradd_val),
-  offsetof(_lam_1457,ptrflx_pkgconfig),
+//OFFSETS for function _fI69452__lam_1443
+static ::std::size_t const _fI69452__lam_1443_offsets[4+FLX_PASS_PTF]={
+  FLX_EAT_PTF(offsetof(_fI69452__lam_1443,ptf)comma)
+  offsetof(_fI69452__lam_1443,ptr_fI69434_aux),
+  offsetof(_fI69452__lam_1443,ptr_lam_64579),
+  offsetof(_fI69452__lam_1443,ptrhandle_pkg),
+  offsetof(_fI69452__lam_1443,ptrflx_pkgconfig),
 };
-static ::flx::gc::generic::offset_data_t const _lam_1457_offset_data = { 2+FLX_PASS_PTF, _lam_1457_offsets};
-FLX_FINALISER(_lam_1457)
-static ::flx::gc::generic::gc_shape_t _lam_1457_ptr_map ={
-  &cat_uncurry_ptr_map,
-  "flx_pkgconfig::_lam_1457",
-  1,sizeof(_lam_1457),
-  _lam_1457_finaliser,
+static ::flx::gc::generic::offset_data_t const _fI69452__lam_1443_offset_data = { 4+FLX_PASS_PTF, _fI69452__lam_1443_offsets};
+FLX_FINALISER(_fI69452__lam_1443)
+static ::flx::gc::generic::gc_shape_t _fI69452__lam_1443_ptr_map ={
+  &_lam_64546_ptr_map,
+  "flx_pkgconfig::_fI69452__lam_1443",
+  1,sizeof(_fI69452__lam_1443),
+  _fI69452__lam_1443_finaliser,
   0, // fcops
-  &_lam_1457_offset_data, // scanner data
-  &::flx::gc::generic::scan_by_offsets, // scanner
-  0,
-  0,
-  ::flx::gc::generic::gc_flags_default,
-  0ul,0ul
-};
-
-//OFFSETS for function get_variable
-static ::std::size_t const get_variable_offsets[2+FLX_PASS_PTF]={
-  FLX_EAT_PTF(offsetof(get_variable,ptf)comma)
-  offsetof(get_variable,ptrflx_pkgconfig),
-  offsetof(get_variable,get_variable_mv_65142)+0,
-};
-static ::flx::gc::generic::offset_data_t const get_variable_offset_data = { 2+FLX_PASS_PTF, get_variable_offsets};
-FLX_FINALISER(get_variable)
-static ::flx::gc::generic::gc_shape_t get_variable_ptr_map ={
-  &_lam_1457_ptr_map,
-  "flx_pkgconfig::get_variable",
-  1,sizeof(get_variable),
-  get_variable_finaliser,
-  0, // fcops
-  &get_variable_offset_data, // scanner data
-  &::flx::gc::generic::scan_by_offsets, // scanner
-  0,
-  0,
-  ::flx::gc::generic::gc_flags_default,
-  0ul,0ul
-};
-
-//OFFSETS for function flx_pkgconfig
-static ::std::size_t const flx_pkgconfig_offsets[9+FLX_PASS_PTF]={
-  FLX_EAT_PTF(offsetof(flx_pkgconfig,ptf)comma)
-  offsetof(flx_pkgconfig,tail_param_flx_pkgconfig_65093)+0,
-  offsetof(flx_pkgconfig,flx_pkgconfig_mv_65185)+0,
-  offsetof(flx_pkgconfig,is_empty_mv_1368)+0,
-  offsetof(flx_pkgconfig,args)+0,
-  offsetof(flx_pkgconfig,result)+0,
-  offsetof(flx_pkgconfig,dirs)+0,
-  offsetof(flx_pkgconfig,recfields)+0,
-  offsetof(flx_pkgconfig,pkgs)+0,
-  offsetof(flx_pkgconfig,fields)+0,
-};
-static ::flx::gc::generic::offset_data_t const flx_pkgconfig_offset_data = { 9+FLX_PASS_PTF, flx_pkgconfig_offsets};
-FLX_FINALISER(flx_pkgconfig)
-static ::flx::gc::generic::gc_shape_t flx_pkgconfig_ptr_map ={
-  &get_variable_ptr_map,
-  "flx_pkgconfig::flx_pkgconfig",
-  1,sizeof(flx_pkgconfig),
-  flx_pkgconfig_finaliser,
-  0, // fcops
-  &flx_pkgconfig_offset_data, // scanner data
-  &::flx::gc::generic::scan_by_offsets, // scanner
-  0,
-  0,
-  ::flx::gc::generic::gc_flags_default,
-  0ul,0ul
-};
-
-//OFFSETS for function _fI70119_aux_uncurry
-static ::std::size_t const _fI70119_aux_uncurry_offsets[6+FLX_PASS_PTF]={
-  FLX_EAT_PTF(offsetof(_fI70119_aux_uncurry,ptf)comma)
-  offsetof(_fI70119_aux_uncurry,ptrhandle_pkg),
-  offsetof(_fI70119_aux_uncurry,ptrflx_pkgconfig),
-  offsetof(_fI70119_aux_uncurry,_vI70126_t_param_std_1268)+0,
-  offsetof(_fI70119_aux_uncurry,_vI70124_aux__apos_2_mv_1387)+0,
-  offsetof(_fI70119_aux_uncurry,_vI70121_y)+0,
-  offsetof(_fI70119_aux_uncurry,_vI70120_x_uncurry)+0,
-};
-static ::flx::gc::generic::offset_data_t const _fI70119_aux_uncurry_offset_data = { 6+FLX_PASS_PTF, _fI70119_aux_uncurry_offsets};
-FLX_FINALISER(_fI70119_aux_uncurry)
-static ::flx::gc::generic::gc_shape_t _fI70119_aux_uncurry_ptr_map ={
-  &flx_pkgconfig_ptr_map,
-  "flx_pkgconfig::_fI70119_aux_uncurry",
-  1,sizeof(_fI70119_aux_uncurry),
-  _fI70119_aux_uncurry_finaliser,
-  0, // fcops
-  &_fI70119_aux_uncurry_offset_data, // scanner data
-  &::flx::gc::generic::scan_by_offsets, // scanner
-  0,
-  0,
-  ::flx::gc::generic::gc_flags_default,
-  0ul,0ul
-};
-
-//OFFSETS for function _lam_65128
-static ::std::size_t const _lam_65128_offsets[3+FLX_PASS_PTF]={
-  FLX_EAT_PTF(offsetof(_lam_65128,ptf)comma)
-  offsetof(_lam_65128,ptr_lam_65127),
-  offsetof(_lam_65128,ptrreattach_drive_letters),
-  offsetof(_lam_65128,ptrflx_pkgconfig),
-};
-static ::flx::gc::generic::offset_data_t const _lam_65128_offset_data = { 3+FLX_PASS_PTF, _lam_65128_offsets};
-FLX_FINALISER(_lam_65128)
-static ::flx::gc::generic::gc_shape_t _lam_65128_ptr_map ={
-  &_fI70119_aux_uncurry_ptr_map,
-  "flx_pkgconfig::_lam_65128",
-  1,sizeof(_lam_65128),
-  _lam_65128_finaliser,
-  0, // fcops
-  &_lam_65128_offset_data, // scanner data
-  &::flx::gc::generic::scan_by_offsets, // scanner
-  0,
-  0,
-  ::flx::gc::generic::gc_flags_default,
-  0ul,0ul
-};
-
-//OFFSETS for function check_id
-static ::std::size_t const check_id_offsets[4+FLX_PASS_PTF]={
-  FLX_EAT_PTF(offsetof(check_id,ptf)comma)
-  offsetof(check_id,ptrflx_pkgconfig),
-  offsetof(check_id,_genout_urv69328)+0,
-  offsetof(check_id,_generator_flx_pkgconfig_10995)+0,
-  offsetof(check_id,check_id_mv_65130)+0,
-};
-static ::flx::gc::generic::offset_data_t const check_id_offset_data = { 4+FLX_PASS_PTF, check_id_offsets};
-FLX_FINALISER(check_id)
-static ::flx::gc::generic::gc_shape_t check_id_ptr_map ={
-  &_lam_65128_ptr_map,
-  "flx_pkgconfig::check_id",
-  1,sizeof(check_id),
-  check_id_finaliser,
-  0, // fcops
-  &check_id_offset_data, // scanner data
-  &::flx::gc::generic::scan_by_offsets, // scanner
-  0,
-  0,
-  ::flx::gc::generic::gc_flags_default,
-  0ul,0ul
-};
-
-//OFFSETS for function _lam_1375
-static ::std::size_t const _lam_1375_offsets[1+FLX_PASS_PTF]={
-  FLX_EAT_PTF(offsetof(_lam_1375,ptf)comma)
-  offsetof(_lam_1375,ptr_init_),
-};
-static ::flx::gc::generic::offset_data_t const _lam_1375_offset_data = { 1+FLX_PASS_PTF, _lam_1375_offsets};
-FLX_FINALISER(_lam_1375)
-static ::flx::gc::generic::gc_shape_t _lam_1375_ptr_map ={
-  &check_id_ptr_map,
-  "flx_pkgconfig::_lam_1375",
-  1,sizeof(_lam_1375),
-  _lam_1375_finaliser,
-  0, // fcops
-  &_lam_1375_offset_data, // scanner data
-  &::flx::gc::generic::scan_by_offsets, // scanner
-  0,
-  0,
-  ::flx::gc::generic::gc_flags_default,
-  0ul,0ul
-};
-
-//OFFSETS for function _fI69637__lam_1457
-static ::std::size_t const _fI69637__lam_1457_offsets[4+FLX_PASS_PTF]={
-  FLX_EAT_PTF(offsetof(_fI69637__lam_1457,ptf)comma)
-  offsetof(_fI69637__lam_1457,ptr_lam_65171),
-  offsetof(_fI69637__lam_1457,ptr_lam_65160),
-  offsetof(_fI69637__lam_1457,ptrhandle_pkg),
-  offsetof(_fI69637__lam_1457,ptrflx_pkgconfig),
-};
-static ::flx::gc::generic::offset_data_t const _fI69637__lam_1457_offset_data = { 4+FLX_PASS_PTF, _fI69637__lam_1457_offsets};
-FLX_FINALISER(_fI69637__lam_1457)
-static ::flx::gc::generic::gc_shape_t _fI69637__lam_1457_ptr_map ={
-  &_lam_1375_ptr_map,
-  "flx_pkgconfig::_fI69637__lam_1457",
-  1,sizeof(_fI69637__lam_1457),
-  _fI69637__lam_1457_finaliser,
-  0, // fcops
-  &_fI69637__lam_1457_offset_data, // scanner data
-  &::flx::gc::generic::scan_by_offsets, // scanner
-  0,
-  0,
-  ::flx::gc::generic::gc_flags_default,
-  0ul,0ul
-};
-
-//OFFSETS for function _fI69766_aux_uncurry
-static ::std::size_t const _fI69766_aux_uncurry_offsets[6+FLX_PASS_PTF]={
-  FLX_EAT_PTF(offsetof(_fI69766_aux_uncurry,ptf)comma)
-  offsetof(_fI69766_aux_uncurry,ptrlexstr),
-  offsetof(_fI69766_aux_uncurry,ptrflx_pkgconfig),
-  offsetof(_fI69766_aux_uncurry,_vI69773_t_param_std_1268)+0,
-  offsetof(_fI69766_aux_uncurry,_vI69771_aux__apos_2_mv_1387)+0,
-  offsetof(_fI69766_aux_uncurry,_vI69768_y)+0,
-  offsetof(_fI69766_aux_uncurry,_vI69767_x_uncurry)+0,
-};
-static ::flx::gc::generic::offset_data_t const _fI69766_aux_uncurry_offset_data = { 6+FLX_PASS_PTF, _fI69766_aux_uncurry_offsets};
-FLX_FINALISER(_fI69766_aux_uncurry)
-static ::flx::gc::generic::gc_shape_t _fI69766_aux_uncurry_ptr_map ={
-  &_fI69637__lam_1457_ptr_map,
-  "flx_pkgconfig::_fI69766_aux_uncurry",
-  1,sizeof(_fI69766_aux_uncurry),
-  _fI69766_aux_uncurry_finaliser,
-  0, // fcops
-  &_fI69766_aux_uncurry_offset_data, // scanner data
-  &::flx::gc::generic::scan_by_offsets, // scanner
-  0,
-  0,
-  ::flx::gc::generic::gc_flags_default,
-  0ul,0ul
-};
-
-//OFFSETS for function _fI69905__lam_1385
-static ::std::size_t const _fI69905__lam_1385_offsets[5+FLX_PASS_PTF]={
-  FLX_EAT_PTF(offsetof(_fI69905__lam_1385,ptf)comma)
-  offsetof(_fI69905__lam_1385,ptr_fI69897_aux_uncurry),
-  offsetof(_fI69905__lam_1385,ptr_lam_65171),
-  offsetof(_fI69905__lam_1385,ptr_lam_65160),
-  offsetof(_fI69905__lam_1385,ptrhandle_pkg),
-  offsetof(_fI69905__lam_1385,ptrflx_pkgconfig),
-};
-static ::flx::gc::generic::offset_data_t const _fI69905__lam_1385_offset_data = { 5+FLX_PASS_PTF, _fI69905__lam_1385_offsets};
-FLX_FINALISER(_fI69905__lam_1385)
-static ::flx::gc::generic::gc_shape_t _fI69905__lam_1385_ptr_map ={
-  &_fI69766_aux_uncurry_ptr_map,
-  "flx_pkgconfig::_fI69905__lam_1385",
-  1,sizeof(_fI69905__lam_1385),
-  _fI69905__lam_1385_finaliser,
-  0, // fcops
-  &_fI69905__lam_1385_offset_data, // scanner data
-  &::flx::gc::generic::scan_by_offsets, // scanner
-  0,
-  0,
-  ::flx::gc::generic::gc_flags_default,
-  0ul,0ul
-};
-
-//OFFSETS for function _fI70730_aux
-static ::std::size_t const _fI70730_aux_offsets[4+FLX_PASS_PTF]={
-  FLX_EAT_PTF(offsetof(_fI70730_aux,ptf)comma)
-  offsetof(_fI70730_aux,ptrparse_args),
-  offsetof(_fI70730_aux,ptrflx_pkgconfig),
-  offsetof(_fI70730_aux,aux_mv_2296)+0,
-  offsetof(_fI70730_aux,_vI70732_y)+0,
-};
-static ::flx::gc::generic::offset_data_t const _fI70730_aux_offset_data = { 4+FLX_PASS_PTF, _fI70730_aux_offsets};
-FLX_FINALISER(_fI70730_aux)
-static ::flx::gc::generic::gc_shape_t _fI70730_aux_ptr_map ={
-  &_fI69905__lam_1385_ptr_map,
-  "flx_pkgconfig::_fI70730_aux",
-  1,sizeof(_fI70730_aux),
-  _fI70730_aux_finaliser,
-  0, // fcops
-  &_fI70730_aux_offset_data, // scanner data
-  &::flx::gc::generic::scan_by_offsets, // scanner
-  0,
-  0,
-  ::flx::gc::generic::gc_flags_default,
-  0ul,0ul
-};
-
-//OFFSETS for function _fI70724__lam_1502
-static ::std::size_t const _fI70724__lam_1502_offsets[3+FLX_PASS_PTF]={
-  FLX_EAT_PTF(offsetof(_fI70724__lam_1502,ptf)comma)
-  offsetof(_fI70724__lam_1502,ptr_fI70706_aux),
-  offsetof(_fI70724__lam_1502,ptrparse_args),
-  offsetof(_fI70724__lam_1502,ptrflx_pkgconfig),
-};
-static ::flx::gc::generic::offset_data_t const _fI70724__lam_1502_offset_data = { 3+FLX_PASS_PTF, _fI70724__lam_1502_offsets};
-FLX_FINALISER(_fI70724__lam_1502)
-static ::flx::gc::generic::gc_shape_t _fI70724__lam_1502_ptr_map ={
-  &_fI70730_aux_ptr_map,
-  "flx_pkgconfig::_fI70724__lam_1502",
-  1,sizeof(_fI70724__lam_1502),
-  _fI70724__lam_1502_finaliser,
-  0, // fcops
-  &_fI70724__lam_1502_offset_data, // scanner data
+  &_fI69452__lam_1443_offset_data, // scanner data
   &::flx::gc::generic::scan_by_offsets, // scanner
   0,
   0,
@@ -1381,15 +1118,15 @@ static ::flx::gc::generic::gc_shape_t _fI70724__lam_1502_ptr_map ={
 static ::std::size_t const aux_uncurry_offsets[5+FLX_PASS_PTF]={
   FLX_EAT_PTF(offsetof(aux_uncurry,ptf)comma)
   offsetof(aux_uncurry,ptr_init_),
-  offsetof(aux_uncurry,t_param_std_1266)+0,
-  offsetof(aux_uncurry,_vI68970_aux__apos_2_mv_1381)+0,
+  offsetof(aux_uncurry,t_param_std_1207)+0,
+  offsetof(aux_uncurry,_vI68389_aux__apos_2_mv_1322)+0,
   offsetof(aux_uncurry,out)+0,
   offsetof(aux_uncurry,inp_uncurry)+0,
 };
 static ::flx::gc::generic::offset_data_t const aux_uncurry_offset_data = { 5+FLX_PASS_PTF, aux_uncurry_offsets};
 FLX_FINALISER(aux_uncurry)
 static ::flx::gc::generic::gc_shape_t aux_uncurry_ptr_map ={
-  &_fI70724__lam_1502_ptr_map,
+  &_fI69452__lam_1443_ptr_map,
   "flx_pkgconfig::aux_uncurry",
   1,sizeof(aux_uncurry),
   aux_uncurry_finaliser,
@@ -1402,20 +1139,21 @@ static ::flx::gc::generic::gc_shape_t aux_uncurry_ptr_map ={
   0ul,0ul
 };
 
-//OFFSETS for function isidstart
-static ::std::size_t const isidstart_offsets[1+FLX_PASS_PTF]={
-  FLX_EAT_PTF(offsetof(isidstart,ptf)comma)
-  offsetof(isidstart,isidstart_mv_165)+0,
+//OFFSETS for function _lam_2230
+static ::std::size_t const _lam_2230_offsets[2+FLX_PASS_PTF]={
+  FLX_EAT_PTF(offsetof(_lam_2230,ptf)comma)
+  offsetof(_lam_2230,ptr_fI70309_aux),
+  offsetof(_lam_2230,ptrflx_pkgconfig),
 };
-static ::flx::gc::generic::offset_data_t const isidstart_offset_data = { 1+FLX_PASS_PTF, isidstart_offsets};
-FLX_FINALISER(isidstart)
-static ::flx::gc::generic::gc_shape_t isidstart_ptr_map ={
+static ::flx::gc::generic::offset_data_t const _lam_2230_offset_data = { 2+FLX_PASS_PTF, _lam_2230_offsets};
+FLX_FINALISER(_lam_2230)
+static ::flx::gc::generic::gc_shape_t _lam_2230_ptr_map ={
   &aux_uncurry_ptr_map,
-  "flx_pkgconfig::isidstart",
-  1,sizeof(isidstart),
-  isidstart_finaliser,
+  "flx_pkgconfig::_lam_2230",
+  1,sizeof(_lam_2230),
+  _lam_2230_finaliser,
   0, // fcops
-  &isidstart_offset_data, // scanner data
+  &_lam_2230_offset_data, // scanner data
   &::flx::gc::generic::scan_by_offsets, // scanner
   0,
   0,
@@ -1423,430 +1161,22 @@ static ::flx::gc::generic::gc_shape_t isidstart_ptr_map ={
   0ul,0ul
 };
 
-//OFFSETS for function _fI70976__lam_1566
-static ::std::size_t const _fI70976__lam_1566_offsets[2+FLX_PASS_PTF]={
-  FLX_EAT_PTF(offsetof(_fI70976__lam_1566,ptf)comma)
-  offsetof(_fI70976__lam_1566,ptr_fI70968_iterator__apos_2),
-  offsetof(_fI70976__lam_1566,ptrcat_uncurry),
+//OFFSETS for function _fI69546__lam_1332
+static ::std::size_t const _fI69546__lam_1332_offsets[3+FLX_PASS_PTF]={
+  FLX_EAT_PTF(offsetof(_fI69546__lam_1332,ptf)comma)
+  offsetof(_fI69546__lam_1332,ptr_fI69538_aux_uncurry),
+  offsetof(_fI69546__lam_1332,ptrhandle_pkg),
+  offsetof(_fI69546__lam_1332,ptrflx_pkgconfig),
 };
-static ::flx::gc::generic::offset_data_t const _fI70976__lam_1566_offset_data = { 2+FLX_PASS_PTF, _fI70976__lam_1566_offsets};
-FLX_FINALISER(_fI70976__lam_1566)
-static ::flx::gc::generic::gc_shape_t _fI70976__lam_1566_ptr_map ={
-  &isidstart_ptr_map,
-  "flx_pkgconfig::_fI70976__lam_1566",
-  1,sizeof(_fI70976__lam_1566),
-  _fI70976__lam_1566_finaliser,
+static ::flx::gc::generic::offset_data_t const _fI69546__lam_1332_offset_data = { 3+FLX_PASS_PTF, _fI69546__lam_1332_offsets};
+FLX_FINALISER(_fI69546__lam_1332)
+static ::flx::gc::generic::gc_shape_t _fI69546__lam_1332_ptr_map ={
+  &_lam_2230_ptr_map,
+  "flx_pkgconfig::_fI69546__lam_1332",
+  1,sizeof(_fI69546__lam_1332),
+  _fI69546__lam_1332_finaliser,
   0, // fcops
-  &_fI70976__lam_1566_offset_data, // scanner data
-  &::flx::gc::generic::scan_by_offsets, // scanner
-  0,
-  0,
-  ::flx::gc::generic::gc_flags_default,
-  0ul,0ul
-};
-
-//OFFSETS for function _fI69150__lam_1391
-static ::std::size_t const _fI69150__lam_1391_offsets[3+FLX_PASS_PTF]={
-  FLX_EAT_PTF(offsetof(_fI69150__lam_1391,ptf)comma)
-  offsetof(_fI69150__lam_1391,ptr_fI69142_aux_uncurry),
-  offsetof(_fI69150__lam_1391,ptradd_val),
-  offsetof(_fI69150__lam_1391,ptrflx_pkgconfig),
-};
-static ::flx::gc::generic::offset_data_t const _fI69150__lam_1391_offset_data = { 3+FLX_PASS_PTF, _fI69150__lam_1391_offsets};
-FLX_FINALISER(_fI69150__lam_1391)
-static ::flx::gc::generic::gc_shape_t _fI69150__lam_1391_ptr_map ={
-  &_fI70976__lam_1566_ptr_map,
-  "flx_pkgconfig::_fI69150__lam_1391",
-  1,sizeof(_fI69150__lam_1391),
-  _fI69150__lam_1391_finaliser,
-  0, // fcops
-  &_fI69150__lam_1391_offset_data, // scanner data
-  &::flx::gc::generic::scan_by_offsets, // scanner
-  0,
-  0,
-  ::flx::gc::generic::gc_flags_default,
-  0ul,0ul
-};
-
-//OFFSETS for function _fI70031__lam_1391
-static ::std::size_t const _fI70031__lam_1391_offsets[5+FLX_PASS_PTF]={
-  FLX_EAT_PTF(offsetof(_fI70031__lam_1391,ptf)comma)
-  offsetof(_fI70031__lam_1391,ptr_fI70023_aux_uncurry),
-  offsetof(_fI70031__lam_1391,ptr_fI70015_aux),
-  offsetof(_fI70031__lam_1391,ptr_lam_65160),
-  offsetof(_fI70031__lam_1391,ptrhandle_pkg),
-  offsetof(_fI70031__lam_1391,ptrflx_pkgconfig),
-};
-static ::flx::gc::generic::offset_data_t const _fI70031__lam_1391_offset_data = { 5+FLX_PASS_PTF, _fI70031__lam_1391_offsets};
-FLX_FINALISER(_fI70031__lam_1391)
-static ::flx::gc::generic::gc_shape_t _fI70031__lam_1391_ptr_map ={
-  &_fI69150__lam_1391_ptr_map,
-  "flx_pkgconfig::_fI70031__lam_1391",
-  1,sizeof(_fI70031__lam_1391),
-  _fI70031__lam_1391_finaliser,
-  0, // fcops
-  &_fI70031__lam_1391_offset_data, // scanner data
-  &::flx::gc::generic::scan_by_offsets, // scanner
-  0,
-  0,
-  ::flx::gc::generic::gc_flags_default,
-  0ul,0ul
-};
-
-//OFFSETS for function _lam_1502
-static ::std::size_t const _lam_1502_offsets[3+FLX_PASS_PTF]={
-  FLX_EAT_PTF(offsetof(_lam_1502,ptf)comma)
-  offsetof(_lam_1502,ptraux),
-  offsetof(_lam_1502,ptrtail_val),
-  offsetof(_lam_1502,ptrflx_pkgconfig),
-};
-static ::flx::gc::generic::offset_data_t const _lam_1502_offset_data = { 3+FLX_PASS_PTF, _lam_1502_offsets};
-FLX_FINALISER(_lam_1502)
-static ::flx::gc::generic::gc_shape_t _lam_1502_ptr_map ={
-  &_fI70031__lam_1391_ptr_map,
-  "flx_pkgconfig::_lam_1502",
-  1,sizeof(_lam_1502),
-  _lam_1502_finaliser,
-  0, // fcops
-  &_lam_1502_offset_data, // scanner data
-  &::flx::gc::generic::scan_by_offsets, // scanner
-  0,
-  0,
-  ::flx::gc::generic::gc_flags_default,
-  0ul,0ul
-};
-
-//OFFSETS for procedure handle_pkg
-static ::std::size_t const handle_pkg_offsets[6+FLX_PASS_PTF]={
-  FLX_EAT_PTF(offsetof(handle_pkg,ptf)comma)
-  offsetof(handle_pkg,p_svc),
-  offsetof(handle_pkg,_caller),
-  offsetof(handle_pkg,ptrflx_pkgconfig),
-  offsetof(handle_pkg,_vI70104__urv69124)+0,
-  offsetof(handle_pkg,trace)+0,
-  offsetof(handle_pkg,variables)+0,
-};
-static ::flx::gc::generic::offset_data_t const handle_pkg_offset_data = { 6+FLX_PASS_PTF, handle_pkg_offsets};
-FLX_FINALISER(handle_pkg)
-static ::flx::gc::generic::gc_shape_t handle_pkg_ptr_map ={
-  &_lam_1502_ptr_map,
-  "flx_pkgconfig::handle_pkg",
-  1,sizeof(handle_pkg),
-  handle_pkg_finaliser,
-  0, // fcops
-  &handle_pkg_offset_data, // scanner data
-  &::flx::gc::generic::scan_by_offsets, // scanner
-  0,
-  0,
-  ::flx::gc::generic::gc_flags_default,
-  0ul,0ul
-};
-
-//OFFSETS for function _fI69774__lam_1391
-static ::std::size_t const _fI69774__lam_1391_offsets[3+FLX_PASS_PTF]={
-  FLX_EAT_PTF(offsetof(_fI69774__lam_1391,ptf)comma)
-  offsetof(_fI69774__lam_1391,ptr_fI69766_aux_uncurry),
-  offsetof(_fI69774__lam_1391,ptrlexstr),
-  offsetof(_fI69774__lam_1391,ptrflx_pkgconfig),
-};
-static ::flx::gc::generic::offset_data_t const _fI69774__lam_1391_offset_data = { 3+FLX_PASS_PTF, _fI69774__lam_1391_offsets};
-FLX_FINALISER(_fI69774__lam_1391)
-static ::flx::gc::generic::gc_shape_t _fI69774__lam_1391_ptr_map ={
-  &handle_pkg_ptr_map,
-  "flx_pkgconfig::_fI69774__lam_1391",
-  1,sizeof(_fI69774__lam_1391),
-  _fI69774__lam_1391_finaliser,
-  0, // fcops
-  &_fI69774__lam_1391_offset_data, // scanner data
-  &::flx::gc::generic::scan_by_offsets, // scanner
-  0,
-  0,
-  ::flx::gc::generic::gc_flags_default,
-  0ul,0ul
-};
-
-//OFFSETS for function _fI70033__lam_1502
-static ::std::size_t const _fI70033__lam_1502_offsets[4+FLX_PASS_PTF]={
-  FLX_EAT_PTF(offsetof(_fI70033__lam_1502,ptf)comma)
-  offsetof(_fI70033__lam_1502,ptr_fI70015_aux),
-  offsetof(_fI70033__lam_1502,ptr_lam_65160),
-  offsetof(_fI70033__lam_1502,ptrhandle_pkg),
-  offsetof(_fI70033__lam_1502,ptrflx_pkgconfig),
-};
-static ::flx::gc::generic::offset_data_t const _fI70033__lam_1502_offset_data = { 4+FLX_PASS_PTF, _fI70033__lam_1502_offsets};
-FLX_FINALISER(_fI70033__lam_1502)
-static ::flx::gc::generic::gc_shape_t _fI70033__lam_1502_ptr_map ={
-  &_fI69774__lam_1391_ptr_map,
-  "flx_pkgconfig::_fI70033__lam_1502",
-  1,sizeof(_fI70033__lam_1502),
-  _fI70033__lam_1502_finaliser,
-  0, // fcops
-  &_fI70033__lam_1502_offset_data, // scanner data
-  &::flx::gc::generic::scan_by_offsets, // scanner
-  0,
-  0,
-  ::flx::gc::generic::gc_flags_default,
-  0ul,0ul
-};
-
-//OFFSETS for procedure _lam_65183
-static ::std::size_t const _lam_65183_offsets[6+FLX_PASS_PTF]={
-  FLX_EAT_PTF(offsetof(_lam_65183,ptf)comma)
-  offsetof(_lam_65183,p_svc),
-  offsetof(_lam_65183,_caller),
-  offsetof(_lam_65183,ptr_lam_65171),
-  offsetof(_lam_65183,ptr_lam_65160),
-  offsetof(_lam_65183,ptrhandle_pkg),
-  offsetof(_lam_65183,ptrflx_pkgconfig),
-};
-static ::flx::gc::generic::offset_data_t const _lam_65183_offset_data = { 6+FLX_PASS_PTF, _lam_65183_offsets};
-FLX_FINALISER(_lam_65183)
-static ::flx::gc::generic::gc_shape_t _lam_65183_ptr_map ={
-  &_fI70033__lam_1502_ptr_map,
-  "flx_pkgconfig::_lam_65183",
-  1,sizeof(_lam_65183),
-  _lam_65183_finaliser,
-  0, // fcops
-  &_lam_65183_offset_data, // scanner data
-  &::flx::gc::generic::scan_by_offsets, // scanner
-  0,
-  0,
-  ::flx::gc::generic::gc_flags_default,
-  0ul,0ul
-};
-
-//OFFSETS for function _fI69935__lam_1457
-static ::std::size_t const _fI69935__lam_1457_offsets[4+FLX_PASS_PTF]={
-  FLX_EAT_PTF(offsetof(_fI69935__lam_1457,ptf)comma)
-  offsetof(_fI69935__lam_1457,ptr_lam_65171),
-  offsetof(_fI69935__lam_1457,ptr_lam_65160),
-  offsetof(_fI69935__lam_1457,ptrhandle_pkg),
-  offsetof(_fI69935__lam_1457,ptrflx_pkgconfig),
-};
-static ::flx::gc::generic::offset_data_t const _fI69935__lam_1457_offset_data = { 4+FLX_PASS_PTF, _fI69935__lam_1457_offsets};
-FLX_FINALISER(_fI69935__lam_1457)
-static ::flx::gc::generic::gc_shape_t _fI69935__lam_1457_ptr_map ={
-  &_lam_65183_ptr_map,
-  "flx_pkgconfig::_fI69935__lam_1457",
-  1,sizeof(_fI69935__lam_1457),
-  _fI69935__lam_1457_finaliser,
-  0, // fcops
-  &_fI69935__lam_1457_offset_data, // scanner data
-  &::flx::gc::generic::scan_by_offsets, // scanner
-  0,
-  0,
-  ::flx::gc::generic::gc_flags_default,
-  0ul,0ul
-};
-
-//OFFSETS for function _fI69853__lam_2365
-static ::std::size_t const _fI69853__lam_2365_offsets[5+FLX_PASS_PTF]={
-  FLX_EAT_PTF(offsetof(_fI69853__lam_2365,ptf)comma)
-  offsetof(_fI69853__lam_2365,ptr_fI69824_search_and_replace__apos_2),
-  offsetof(_fI69853__lam_2365,ptr_lam_65171),
-  offsetof(_fI69853__lam_2365,ptr_lam_65160),
-  offsetof(_fI69853__lam_2365,ptrhandle_pkg),
-  offsetof(_fI69853__lam_2365,ptrflx_pkgconfig),
-};
-static ::flx::gc::generic::offset_data_t const _fI69853__lam_2365_offset_data = { 5+FLX_PASS_PTF, _fI69853__lam_2365_offsets};
-FLX_FINALISER(_fI69853__lam_2365)
-static ::flx::gc::generic::gc_shape_t _fI69853__lam_2365_ptr_map ={
-  &_fI69935__lam_1457_ptr_map,
-  "flx_pkgconfig::_fI69853__lam_2365",
-  1,sizeof(_fI69853__lam_2365),
-  _fI69853__lam_2365_finaliser,
-  0, // fcops
-  &_fI69853__lam_2365_offset_data, // scanner data
-  &::flx::gc::generic::scan_by_offsets, // scanner
-  0,
-  0,
-  ::flx::gc::generic::gc_flags_default,
-  0ul,0ul
-};
-
-//OFFSETS for function _lam_1434
-static ::std::size_t const _lam_1434_offsets[1+FLX_PASS_PTF]={
-  FLX_EAT_PTF(offsetof(_lam_1434,ptf)comma)
-  offsetof(_lam_1434,ptrcat_uncurry),
-};
-static ::flx::gc::generic::offset_data_t const _lam_1434_offset_data = { 1+FLX_PASS_PTF, _lam_1434_offsets};
-FLX_FINALISER(_lam_1434)
-static ::flx::gc::generic::gc_shape_t _lam_1434_ptr_map ={
-  &_fI69853__lam_2365_ptr_map,
-  "flx_pkgconfig::_lam_1434",
-  1,sizeof(_lam_1434),
-  _lam_1434_finaliser,
-  0, // fcops
-  &_lam_1434_offset_data, // scanner data
-  &::flx::gc::generic::scan_by_offsets, // scanner
-  0,
-  0,
-  ::flx::gc::generic::gc_flags_default,
-  0ul,0ul
-};
-
-//OFFSETS for function _fI69276__lam_1391
-static ::std::size_t const _fI69276__lam_1391_offsets[2+FLX_PASS_PTF]={
-  FLX_EAT_PTF(offsetof(_fI69276__lam_1391,ptf)comma)
-  offsetof(_fI69276__lam_1391,ptr_fI69268_aux_uncurry),
-  offsetof(_fI69276__lam_1391,ptr_fI68132___plus_),
-};
-static ::flx::gc::generic::offset_data_t const _fI69276__lam_1391_offset_data = { 2+FLX_PASS_PTF, _fI69276__lam_1391_offsets};
-FLX_FINALISER(_fI69276__lam_1391)
-static ::flx::gc::generic::gc_shape_t _fI69276__lam_1391_ptr_map ={
-  &_lam_1434_ptr_map,
-  "flx_pkgconfig::_fI69276__lam_1391",
-  1,sizeof(_fI69276__lam_1391),
-  _fI69276__lam_1391_finaliser,
-  0, // fcops
-  &_fI69276__lam_1391_offset_data, // scanner data
-  &::flx::gc::generic::scan_by_offsets, // scanner
-  0,
-  0,
-  ::flx::gc::generic::gc_flags_default,
-  0ul,0ul
-};
-
-//OFFSETS for function _fI70007__lam_1391
-static ::std::size_t const _fI70007__lam_1391_offsets[4+FLX_PASS_PTF]={
-  FLX_EAT_PTF(offsetof(_fI70007__lam_1391,ptf)comma)
-  offsetof(_fI70007__lam_1391,ptr_fI69999_aux_uncurry),
-  offsetof(_fI70007__lam_1391,ptr_lam_65160),
-  offsetof(_fI70007__lam_1391,ptrhandle_pkg),
-  offsetof(_fI70007__lam_1391,ptrflx_pkgconfig),
-};
-static ::flx::gc::generic::offset_data_t const _fI70007__lam_1391_offset_data = { 4+FLX_PASS_PTF, _fI70007__lam_1391_offsets};
-FLX_FINALISER(_fI70007__lam_1391)
-static ::flx::gc::generic::gc_shape_t _fI70007__lam_1391_ptr_map ={
-  &_fI69276__lam_1391_ptr_map,
-  "flx_pkgconfig::_fI70007__lam_1391",
-  1,sizeof(_fI70007__lam_1391),
-  _fI70007__lam_1391_finaliser,
-  0, // fcops
-  &_fI70007__lam_1391_offset_data, // scanner data
-  &::flx::gc::generic::scan_by_offsets, // scanner
-  0,
-  0,
-  ::flx::gc::generic::gc_flags_default,
-  0ul,0ul
-};
-
-//OFFSETS for function _fI70015_aux
-static ::std::size_t const _fI70015_aux_offsets[7+FLX_PASS_PTF]={
-  FLX_EAT_PTF(offsetof(_fI70015_aux,ptf)comma)
-  offsetof(_fI70015_aux,ptr_lam_65160),
-  offsetof(_fI70015_aux,ptrhandle_pkg),
-  offsetof(_fI70015_aux,ptrflx_pkgconfig),
-  offsetof(_fI70015_aux,_vI70022_t_param_std_1301)+0,
-  offsetof(_fI70015_aux,_vI70020_aux_mv_1493)+0,
-  offsetof(_fI70015_aux,_vI70017_out)+0,
-  offsetof(_fI70015_aux,_vI70016_inp)+0,
-};
-static ::flx::gc::generic::offset_data_t const _fI70015_aux_offset_data = { 7+FLX_PASS_PTF, _fI70015_aux_offsets};
-FLX_FINALISER(_fI70015_aux)
-static ::flx::gc::generic::gc_shape_t _fI70015_aux_ptr_map ={
-  &_fI70007__lam_1391_ptr_map,
-  "flx_pkgconfig::_fI70015_aux",
-  1,sizeof(_fI70015_aux),
-  _fI70015_aux_finaliser,
-  0, // fcops
-  &_fI70015_aux_offset_data, // scanner data
-  &::flx::gc::generic::scan_by_offsets, // scanner
-  0,
-  0,
-  ::flx::gc::generic::gc_flags_default,
-  0ul,0ul
-};
-
-//OFFSETS for function _fI70107__lam_1457
-static ::std::size_t const _fI70107__lam_1457_offsets[2+FLX_PASS_PTF]={
-  FLX_EAT_PTF(offsetof(_fI70107__lam_1457,ptf)comma)
-  offsetof(_fI70107__lam_1457,ptrhandle_pkg),
-  offsetof(_fI70107__lam_1457,ptrflx_pkgconfig),
-};
-static ::flx::gc::generic::offset_data_t const _fI70107__lam_1457_offset_data = { 2+FLX_PASS_PTF, _fI70107__lam_1457_offsets};
-FLX_FINALISER(_fI70107__lam_1457)
-static ::flx::gc::generic::gc_shape_t _fI70107__lam_1457_ptr_map ={
-  &_fI70015_aux_ptr_map,
-  "flx_pkgconfig::_fI70107__lam_1457",
-  1,sizeof(_fI70107__lam_1457),
-  _fI70107__lam_1457_finaliser,
-  0, // fcops
-  &_fI70107__lam_1457_offset_data, // scanner data
-  &::flx::gc::generic::scan_by_offsets, // scanner
-  0,
-  0,
-  ::flx::gc::generic::gc_flags_default,
-  0ul,0ul
-};
-
-//OFFSETS for function _lam_1385
-static ::std::size_t const _lam_1385_offsets[2+FLX_PASS_PTF]={
-  FLX_EAT_PTF(offsetof(_lam_1385,ptf)comma)
-  offsetof(_lam_1385,ptraux_uncurry),
-  offsetof(_lam_1385,ptr_init_),
-};
-static ::flx::gc::generic::offset_data_t const _lam_1385_offset_data = { 2+FLX_PASS_PTF, _lam_1385_offsets};
-FLX_FINALISER(_lam_1385)
-static ::flx::gc::generic::gc_shape_t _lam_1385_ptr_map ={
-  &_fI70107__lam_1457_ptr_map,
-  "flx_pkgconfig::_lam_1385",
-  1,sizeof(_lam_1385),
-  _lam_1385_finaliser,
-  0, // fcops
-  &_lam_1385_offset_data, // scanner data
-  &::flx::gc::generic::scan_by_offsets, // scanner
-  0,
-  0,
-  ::flx::gc::generic::gc_flags_default,
-  0ul,0ul
-};
-
-//OFFSETS for function _fI69845__lam_1566
-static ::std::size_t const _fI69845__lam_1566_offsets[6+FLX_PASS_PTF]={
-  FLX_EAT_PTF(offsetof(_fI69845__lam_1566,ptf)comma)
-  offsetof(_fI69845__lam_1566,ptr_fI69837_iterator__apos_2),
-  offsetof(_fI69845__lam_1566,ptr_fI69824_search_and_replace__apos_2),
-  offsetof(_fI69845__lam_1566,ptr_lam_65171),
-  offsetof(_fI69845__lam_1566,ptr_lam_65160),
-  offsetof(_fI69845__lam_1566,ptrhandle_pkg),
-  offsetof(_fI69845__lam_1566,ptrflx_pkgconfig),
-};
-static ::flx::gc::generic::offset_data_t const _fI69845__lam_1566_offset_data = { 6+FLX_PASS_PTF, _fI69845__lam_1566_offsets};
-FLX_FINALISER(_fI69845__lam_1566)
-static ::flx::gc::generic::gc_shape_t _fI69845__lam_1566_ptr_map ={
-  &_lam_1385_ptr_map,
-  "flx_pkgconfig::_fI69845__lam_1566",
-  1,sizeof(_fI69845__lam_1566),
-  _fI69845__lam_1566_finaliser,
-  0, // fcops
-  &_fI69845__lam_1566_offset_data, // scanner data
-  &::flx::gc::generic::scan_by_offsets, // scanner
-  0,
-  0,
-  ::flx::gc::generic::gc_flags_default,
-  0ul,0ul
-};
-
-//OFFSETS for function _fI70743_aux_uncurry
-static ::std::size_t const _fI70743_aux_uncurry_offsets[6+FLX_PASS_PTF]={
-  FLX_EAT_PTF(offsetof(_fI70743_aux_uncurry,ptf)comma)
-  offsetof(_fI70743_aux_uncurry,ptrparse_args),
-  offsetof(_fI70743_aux_uncurry,ptrflx_pkgconfig),
-  offsetof(_fI70743_aux_uncurry,_vI70750_t_param_std_1268)+0,
-  offsetof(_fI70743_aux_uncurry,_vI70748_aux__apos_2_mv_1387)+0,
-  offsetof(_fI70743_aux_uncurry,_vI70745_y)+0,
-  offsetof(_fI70743_aux_uncurry,_vI70744_x_uncurry)+0,
-};
-static ::flx::gc::generic::offset_data_t const _fI70743_aux_uncurry_offset_data = { 6+FLX_PASS_PTF, _fI70743_aux_uncurry_offsets};
-FLX_FINALISER(_fI70743_aux_uncurry)
-static ::flx::gc::generic::gc_shape_t _fI70743_aux_uncurry_ptr_map ={
-  &_fI69845__lam_1566_ptr_map,
-  "flx_pkgconfig::_fI70743_aux_uncurry",
-  1,sizeof(_fI70743_aux_uncurry),
-  _fI70743_aux_uncurry_finaliser,
-  0, // fcops
-  &_fI70743_aux_uncurry_offset_data, // scanner data
+  &_fI69546__lam_1332_offset_data, // scanner data
   &::flx::gc::generic::scan_by_offsets, // scanner
   0,
   0,
@@ -1864,7 +1194,7 @@ static ::std::size_t const tail_val_offsets[3+FLX_PASS_PTF]={
 static ::flx::gc::generic::offset_data_t const tail_val_offset_data = { 3+FLX_PASS_PTF, tail_val_offsets};
 FLX_FINALISER(tail_val)
 static ::flx::gc::generic::gc_shape_t tail_val_ptr_map ={
-  &_fI70743_aux_uncurry_ptr_map,
+  &_fI69546__lam_1332_ptr_map,
   "flx_pkgconfig::tail_val",
   1,sizeof(tail_val),
   tail_val_finaliser,
@@ -1877,23 +1207,20 @@ static ::flx::gc::generic::gc_shape_t tail_val_ptr_map ={
   0ul,0ul
 };
 
-//OFFSETS for function mem_uncurry
-static ::std::size_t const mem_uncurry_offsets[4+FLX_PASS_PTF]={
-  FLX_EAT_PTF(offsetof(mem_uncurry,ptf)comma)
-  offsetof(mem_uncurry,t_param_std_1295)+0,
-  offsetof(mem_uncurry,_vI69031_mem__apos_2_mv_1447)+0,
-  offsetof(mem_uncurry,_vI68659_xs)+0,
-  offsetof(mem_uncurry,eq_uncurry)+0,
+//OFFSETS for function _lam_2304
+static ::std::size_t const _lam_2304_offsets[1+FLX_PASS_PTF]={
+  FLX_EAT_PTF(offsetof(_lam_2304,ptf)comma)
+  offsetof(_lam_2304,ptrsearch_and_replace_uncurry),
 };
-static ::flx::gc::generic::offset_data_t const mem_uncurry_offset_data = { 4+FLX_PASS_PTF, mem_uncurry_offsets};
-FLX_FINALISER(mem_uncurry)
-static ::flx::gc::generic::gc_shape_t mem_uncurry_ptr_map ={
+static ::flx::gc::generic::offset_data_t const _lam_2304_offset_data = { 1+FLX_PASS_PTF, _lam_2304_offsets};
+FLX_FINALISER(_lam_2304)
+static ::flx::gc::generic::gc_shape_t _lam_2304_ptr_map ={
   &tail_val_ptr_map,
-  "flx_pkgconfig::mem_uncurry",
-  1,sizeof(mem_uncurry),
-  mem_uncurry_finaliser,
+  "flx_pkgconfig::_lam_2304",
+  1,sizeof(_lam_2304),
+  _lam_2304_finaliser,
   0, // fcops
-  &mem_uncurry_offset_data, // scanner data
+  &_lam_2304_offset_data, // scanner data
   &::flx::gc::generic::scan_by_offsets, // scanner
   0,
   0,
@@ -1901,26 +1228,26 @@ static ::flx::gc::generic::gc_shape_t mem_uncurry_ptr_map ={
   0ul,0ul
 };
 
-//OFFSETS for function _fI70079_aux_uncurry
-static ::std::size_t const _fI70079_aux_uncurry_offsets[7+FLX_PASS_PTF]={
-  FLX_EAT_PTF(offsetof(_fI70079_aux_uncurry,ptf)comma)
-  offsetof(_fI70079_aux_uncurry,ptr_lam_65160),
-  offsetof(_fI70079_aux_uncurry,ptrhandle_pkg),
-  offsetof(_fI70079_aux_uncurry,ptrflx_pkgconfig),
-  offsetof(_fI70079_aux_uncurry,_vI70086_t_param_std_1268)+0,
-  offsetof(_fI70079_aux_uncurry,_vI70084_aux__apos_2_mv_1387)+0,
-  offsetof(_fI70079_aux_uncurry,_vI70081_y)+0,
-  offsetof(_fI70079_aux_uncurry,_vI70080_x_uncurry)+0,
+//OFFSETS for function _fI69418_aux_uncurry
+static ::std::size_t const _fI69418_aux_uncurry_offsets[7+FLX_PASS_PTF]={
+  FLX_EAT_PTF(offsetof(_fI69418_aux_uncurry,ptf)comma)
+  offsetof(_fI69418_aux_uncurry,ptr_lam_64579),
+  offsetof(_fI69418_aux_uncurry,ptrhandle_pkg),
+  offsetof(_fI69418_aux_uncurry,ptrflx_pkgconfig),
+  offsetof(_fI69418_aux_uncurry,_vI69425_t_param_std_1209)+0,
+  offsetof(_fI69418_aux_uncurry,_vI69423_aux__apos_2_mv_1328)+0,
+  offsetof(_fI69418_aux_uncurry,_vI69420_y)+0,
+  offsetof(_fI69418_aux_uncurry,_vI69419_x_uncurry)+0,
 };
-static ::flx::gc::generic::offset_data_t const _fI70079_aux_uncurry_offset_data = { 7+FLX_PASS_PTF, _fI70079_aux_uncurry_offsets};
-FLX_FINALISER(_fI70079_aux_uncurry)
-static ::flx::gc::generic::gc_shape_t _fI70079_aux_uncurry_ptr_map ={
-  &mem_uncurry_ptr_map,
-  "flx_pkgconfig::_fI70079_aux_uncurry",
-  1,sizeof(_fI70079_aux_uncurry),
-  _fI70079_aux_uncurry_finaliser,
+static ::flx::gc::generic::offset_data_t const _fI69418_aux_uncurry_offset_data = { 7+FLX_PASS_PTF, _fI69418_aux_uncurry_offsets};
+FLX_FINALISER(_fI69418_aux_uncurry)
+static ::flx::gc::generic::gc_shape_t _fI69418_aux_uncurry_ptr_map ={
+  &_lam_2304_ptr_map,
+  "flx_pkgconfig::_fI69418_aux_uncurry",
+  1,sizeof(_fI69418_aux_uncurry),
+  _fI69418_aux_uncurry_finaliser,
   0, // fcops
-  &_fI70079_aux_uncurry_offset_data, // scanner data
+  &_fI69418_aux_uncurry_offset_data, // scanner data
   &::flx::gc::generic::scan_by_offsets, // scanner
   0,
   0,
@@ -1928,21 +1255,20 @@ static ::flx::gc::generic::gc_shape_t _fI70079_aux_uncurry_ptr_map ={
   0ul,0ul
 };
 
-//OFFSETS for function _fI69329_iterator__apos_2
-static ::std::size_t const _fI69329_iterator__apos_2_offsets[2+FLX_PASS_PTF]={
-  FLX_EAT_PTF(offsetof(_fI69329_iterator__apos_2,ptf)comma)
-  offsetof(_fI69329_iterator__apos_2,ptrcheck_id),
-  offsetof(_fI69329_iterator__apos_2,ptrflx_pkgconfig),
+//OFFSETS for function isidstart
+static ::std::size_t const isidstart_offsets[1+FLX_PASS_PTF]={
+  FLX_EAT_PTF(offsetof(isidstart,ptf)comma)
+  offsetof(isidstart,isidstart_mv_165)+0,
 };
-static ::flx::gc::generic::offset_data_t const _fI69329_iterator__apos_2_offset_data = { 2+FLX_PASS_PTF, _fI69329_iterator__apos_2_offsets};
-FLX_FINALISER(_fI69329_iterator__apos_2)
-static ::flx::gc::generic::gc_shape_t _fI69329_iterator__apos_2_ptr_map ={
-  &_fI70079_aux_uncurry_ptr_map,
-  "flx_pkgconfig::_fI69329_iterator__apos_2",
-  1,sizeof(_fI69329_iterator__apos_2),
-  _fI69329_iterator__apos_2_finaliser,
+static ::flx::gc::generic::offset_data_t const isidstart_offset_data = { 1+FLX_PASS_PTF, isidstart_offsets};
+FLX_FINALISER(isidstart)
+static ::flx::gc::generic::gc_shape_t isidstart_ptr_map ={
+  &_fI69418_aux_uncurry_ptr_map,
+  "flx_pkgconfig::isidstart",
+  1,sizeof(isidstart),
+  isidstart_finaliser,
   0, // fcops
-  &_fI69329_iterator__apos_2_offset_data, // scanner data
+  &isidstart_offset_data, // scanner data
   &::flx::gc::generic::scan_by_offsets, // scanner
   0,
   0,
@@ -1950,20 +1276,25 @@ static ::flx::gc::generic::gc_shape_t _fI69329_iterator__apos_2_ptr_map ={
   0ul,0ul
 };
 
-//OFFSETS for function _lam_65191
-static ::std::size_t const _lam_65191_offsets[1+FLX_PASS_PTF]={
-  FLX_EAT_PTF(offsetof(_lam_65191,ptf)comma)
-  offsetof(_lam_65191,ptrflx_pkgconfig),
+//OFFSETS for function _fI68561_aux_uncurry
+static ::std::size_t const _fI68561_aux_uncurry_offsets[6+FLX_PASS_PTF]={
+  FLX_EAT_PTF(offsetof(_fI68561_aux_uncurry,ptf)comma)
+  offsetof(_fI68561_aux_uncurry,ptradd_val),
+  offsetof(_fI68561_aux_uncurry,ptrflx_pkgconfig),
+  offsetof(_fI68561_aux_uncurry,_vI68568_t_param_std_1209)+0,
+  offsetof(_fI68561_aux_uncurry,_vI68566_aux__apos_2_mv_1328)+0,
+  offsetof(_fI68561_aux_uncurry,_vI68563_y)+0,
+  offsetof(_fI68561_aux_uncurry,_vI68562_x_uncurry)+0,
 };
-static ::flx::gc::generic::offset_data_t const _lam_65191_offset_data = { 1+FLX_PASS_PTF, _lam_65191_offsets};
-FLX_FINALISER(_lam_65191)
-static ::flx::gc::generic::gc_shape_t _lam_65191_ptr_map ={
-  &_fI69329_iterator__apos_2_ptr_map,
-  "flx_pkgconfig::_lam_65191",
-  1,sizeof(_lam_65191),
-  _lam_65191_finaliser,
+static ::flx::gc::generic::offset_data_t const _fI68561_aux_uncurry_offset_data = { 6+FLX_PASS_PTF, _fI68561_aux_uncurry_offsets};
+FLX_FINALISER(_fI68561_aux_uncurry)
+static ::flx::gc::generic::gc_shape_t _fI68561_aux_uncurry_ptr_map ={
+  &isidstart_ptr_map,
+  "flx_pkgconfig::_fI68561_aux_uncurry",
+  1,sizeof(_fI68561_aux_uncurry),
+  _fI68561_aux_uncurry_finaliser,
   0, // fcops
-  &_lam_65191_offset_data, // scanner data
+  &_fI68561_aux_uncurry_offset_data, // scanner data
   &::flx::gc::generic::scan_by_offsets, // scanner
   0,
   0,
@@ -1971,20 +1302,22 @@ static ::flx::gc::generic::gc_shape_t _lam_65191_ptr_map ={
   0ul,0ul
 };
 
-//OFFSETS for function _lam_168
-static ::std::size_t const _lam_168_offsets[1+FLX_PASS_PTF]={
-  FLX_EAT_PTF(offsetof(_lam_168,ptf)comma)
-  offsetof(_lam_168,ptrisidstart),
+//OFFSETS for function _fI70387_iterator__apos_2
+static ::std::size_t const _fI70387_iterator__apos_2_offsets[3+FLX_PASS_PTF]={
+  FLX_EAT_PTF(offsetof(_fI70387_iterator__apos_2,ptf)comma)
+  offsetof(_fI70387_iterator__apos_2,ptrcat_uncurry),
+  offsetof(_fI70387_iterator__apos_2,_vI70394_t_param_std_1259)+0,
+  offsetof(_fI70387_iterator__apos_2,_vI70392_iterator__apos_2_mv_1504)+0,
 };
-static ::flx::gc::generic::offset_data_t const _lam_168_offset_data = { 1+FLX_PASS_PTF, _lam_168_offsets};
-FLX_FINALISER(_lam_168)
-static ::flx::gc::generic::gc_shape_t _lam_168_ptr_map ={
-  &_lam_65191_ptr_map,
-  "flx_pkgconfig::_lam_168",
-  1,sizeof(_lam_168),
-  _lam_168_finaliser,
+static ::flx::gc::generic::offset_data_t const _fI70387_iterator__apos_2_offset_data = { 3+FLX_PASS_PTF, _fI70387_iterator__apos_2_offsets};
+FLX_FINALISER(_fI70387_iterator__apos_2)
+static ::flx::gc::generic::gc_shape_t _fI70387_iterator__apos_2_ptr_map ={
+  &_fI68561_aux_uncurry_ptr_map,
+  "flx_pkgconfig::_fI70387_iterator__apos_2",
+  1,sizeof(_fI70387_iterator__apos_2),
+  _fI70387_iterator__apos_2_finaliser,
   0, // fcops
-  &_lam_168_offset_data, // scanner data
+  &_fI70387_iterator__apos_2_offset_data, // scanner data
   &::flx::gc::generic::scan_by_offsets, // scanner
   0,
   0,
@@ -1992,22 +1325,24 @@ static ::flx::gc::generic::gc_shape_t _lam_168_ptr_map ={
   0ul,0ul
 };
 
-//OFFSETS for function _fI70968_iterator__apos_2
-static ::std::size_t const _fI70968_iterator__apos_2_offsets[3+FLX_PASS_PTF]={
-  FLX_EAT_PTF(offsetof(_fI70968_iterator__apos_2,ptf)comma)
-  offsetof(_fI70968_iterator__apos_2,ptrcat_uncurry),
-  offsetof(_fI70968_iterator__apos_2,_vI70975_t_param_std_1318)+0,
-  offsetof(_fI70968_iterator__apos_2,_vI70973_iterator__apos_2_mv_1563)+0,
+//OFFSETS for function _fI69265__lam_2304
+static ::std::size_t const _fI69265__lam_2304_offsets[5+FLX_PASS_PTF]={
+  FLX_EAT_PTF(offsetof(_fI69265__lam_2304,ptf)comma)
+  offsetof(_fI69265__lam_2304,ptr_fI69243_search_and_replace__apos_2),
+  offsetof(_fI69265__lam_2304,ptr_lam_64590),
+  offsetof(_fI69265__lam_2304,ptr_lam_64579),
+  offsetof(_fI69265__lam_2304,ptrhandle_pkg),
+  offsetof(_fI69265__lam_2304,ptrflx_pkgconfig),
 };
-static ::flx::gc::generic::offset_data_t const _fI70968_iterator__apos_2_offset_data = { 3+FLX_PASS_PTF, _fI70968_iterator__apos_2_offsets};
-FLX_FINALISER(_fI70968_iterator__apos_2)
-static ::flx::gc::generic::gc_shape_t _fI70968_iterator__apos_2_ptr_map ={
-  &_lam_168_ptr_map,
-  "flx_pkgconfig::_fI70968_iterator__apos_2",
-  1,sizeof(_fI70968_iterator__apos_2),
-  _fI70968_iterator__apos_2_finaliser,
+static ::flx::gc::generic::offset_data_t const _fI69265__lam_2304_offset_data = { 5+FLX_PASS_PTF, _fI69265__lam_2304_offsets};
+FLX_FINALISER(_fI69265__lam_2304)
+static ::flx::gc::generic::gc_shape_t _fI69265__lam_2304_ptr_map ={
+  &_fI70387_iterator__apos_2_ptr_map,
+  "flx_pkgconfig::_fI69265__lam_2304",
+  1,sizeof(_fI69265__lam_2304),
+  _fI69265__lam_2304_finaliser,
   0, // fcops
-  &_fI70968_iterator__apos_2_offset_data, // scanner data
+  &_fI69265__lam_2304_offset_data, // scanner data
   &::flx::gc::generic::scan_by_offsets, // scanner
   0,
   0,
@@ -2015,27 +1350,23 @@ static ::flx::gc::generic::gc_shape_t _fI70968_iterator__apos_2_ptr_map ={
   0ul,0ul
 };
 
-//OFFSETS for function _fI70023_aux_uncurry
-static ::std::size_t const _fI70023_aux_uncurry_offsets[8+FLX_PASS_PTF]={
-  FLX_EAT_PTF(offsetof(_fI70023_aux_uncurry,ptf)comma)
-  offsetof(_fI70023_aux_uncurry,ptr_fI70015_aux),
-  offsetof(_fI70023_aux_uncurry,ptr_lam_65160),
-  offsetof(_fI70023_aux_uncurry,ptrhandle_pkg),
-  offsetof(_fI70023_aux_uncurry,ptrflx_pkgconfig),
-  offsetof(_fI70023_aux_uncurry,_vI70030_t_param_std_1268)+0,
-  offsetof(_fI70023_aux_uncurry,_vI70028_aux__apos_2_mv_1387)+0,
-  offsetof(_fI70023_aux_uncurry,_vI70025_y)+0,
-  offsetof(_fI70023_aux_uncurry,_vI70024_x_uncurry)+0,
+//OFFSETS for function _fI69506__lam_1332
+static ::std::size_t const _fI69506__lam_1332_offsets[4+FLX_PASS_PTF]={
+  FLX_EAT_PTF(offsetof(_fI69506__lam_1332,ptf)comma)
+  offsetof(_fI69506__lam_1332,ptr_fI69498_aux_uncurry),
+  offsetof(_fI69506__lam_1332,ptr_lam_64579),
+  offsetof(_fI69506__lam_1332,ptrhandle_pkg),
+  offsetof(_fI69506__lam_1332,ptrflx_pkgconfig),
 };
-static ::flx::gc::generic::offset_data_t const _fI70023_aux_uncurry_offset_data = { 8+FLX_PASS_PTF, _fI70023_aux_uncurry_offsets};
-FLX_FINALISER(_fI70023_aux_uncurry)
-static ::flx::gc::generic::gc_shape_t _fI70023_aux_uncurry_ptr_map ={
-  &_fI70968_iterator__apos_2_ptr_map,
-  "flx_pkgconfig::_fI70023_aux_uncurry",
-  1,sizeof(_fI70023_aux_uncurry),
-  _fI70023_aux_uncurry_finaliser,
+static ::flx::gc::generic::offset_data_t const _fI69506__lam_1332_offset_data = { 4+FLX_PASS_PTF, _fI69506__lam_1332_offsets};
+FLX_FINALISER(_fI69506__lam_1332)
+static ::flx::gc::generic::gc_shape_t _fI69506__lam_1332_ptr_map ={
+  &_fI69265__lam_2304_ptr_map,
+  "flx_pkgconfig::_fI69506__lam_1332",
+  1,sizeof(_fI69506__lam_1332),
+  _fI69506__lam_1332_finaliser,
   0, // fcops
-  &_fI70023_aux_uncurry_offset_data, // scanner data
+  &_fI69506__lam_1332_offset_data, // scanner data
   &::flx::gc::generic::scan_by_offsets, // scanner
   0,
   0,
@@ -2043,23 +1374,26 @@ static ::flx::gc::generic::gc_shape_t _fI70023_aux_uncurry_ptr_map ={
   0ul,0ul
 };
 
-//OFFSETS for function _fI70722__lam_1391
-static ::std::size_t const _fI70722__lam_1391_offsets[4+FLX_PASS_PTF]={
-  FLX_EAT_PTF(offsetof(_fI70722__lam_1391,ptf)comma)
-  offsetof(_fI70722__lam_1391,ptr_fI70714_aux_uncurry),
-  offsetof(_fI70722__lam_1391,ptr_fI70706_aux),
-  offsetof(_fI70722__lam_1391,ptrparse_args),
-  offsetof(_fI70722__lam_1391,ptrflx_pkgconfig),
+//OFFSETS for function _fI69408_aux_uncurry
+static ::std::size_t const _fI69408_aux_uncurry_offsets[7+FLX_PASS_PTF]={
+  FLX_EAT_PTF(offsetof(_fI69408_aux_uncurry,ptf)comma)
+  offsetof(_fI69408_aux_uncurry,ptr_lam_64579),
+  offsetof(_fI69408_aux_uncurry,ptrhandle_pkg),
+  offsetof(_fI69408_aux_uncurry,ptrflx_pkgconfig),
+  offsetof(_fI69408_aux_uncurry,_vI69415_t_param_std_1209)+0,
+  offsetof(_fI69408_aux_uncurry,_vI69413_aux__apos_2_mv_1328)+0,
+  offsetof(_fI69408_aux_uncurry,_vI69410_y)+0,
+  offsetof(_fI69408_aux_uncurry,_vI69409_x_uncurry)+0,
 };
-static ::flx::gc::generic::offset_data_t const _fI70722__lam_1391_offset_data = { 4+FLX_PASS_PTF, _fI70722__lam_1391_offsets};
-FLX_FINALISER(_fI70722__lam_1391)
-static ::flx::gc::generic::gc_shape_t _fI70722__lam_1391_ptr_map ={
-  &_fI70023_aux_uncurry_ptr_map,
-  "flx_pkgconfig::_fI70722__lam_1391",
-  1,sizeof(_fI70722__lam_1391),
-  _fI70722__lam_1391_finaliser,
+static ::flx::gc::generic::offset_data_t const _fI69408_aux_uncurry_offset_data = { 7+FLX_PASS_PTF, _fI69408_aux_uncurry_offsets};
+FLX_FINALISER(_fI69408_aux_uncurry)
+static ::flx::gc::generic::gc_shape_t _fI69408_aux_uncurry_ptr_map ={
+  &_fI69506__lam_1332_ptr_map,
+  "flx_pkgconfig::_fI69408_aux_uncurry",
+  1,sizeof(_fI69408_aux_uncurry),
+  _fI69408_aux_uncurry_finaliser,
   0, // fcops
-  &_fI70722__lam_1391_offset_data, // scanner data
+  &_fI69408_aux_uncurry_offset_data, // scanner data
   &::flx::gc::generic::scan_by_offsets, // scanner
   0,
   0,
@@ -2067,25 +1401,25 @@ static ::flx::gc::generic::gc_shape_t _fI70722__lam_1391_ptr_map ={
   0ul,0ul
 };
 
-//OFFSETS for function _fI69142_aux_uncurry
-static ::std::size_t const _fI69142_aux_uncurry_offsets[6+FLX_PASS_PTF]={
-  FLX_EAT_PTF(offsetof(_fI69142_aux_uncurry,ptf)comma)
-  offsetof(_fI69142_aux_uncurry,ptradd_val),
-  offsetof(_fI69142_aux_uncurry,ptrflx_pkgconfig),
-  offsetof(_fI69142_aux_uncurry,_vI69149_t_param_std_1268)+0,
-  offsetof(_fI69142_aux_uncurry,_vI69147_aux__apos_2_mv_1387)+0,
-  offsetof(_fI69142_aux_uncurry,_vI69144_y)+0,
-  offsetof(_fI69142_aux_uncurry,_vI69143_x_uncurry)+0,
+//OFFSETS for function _fI69185_aux_uncurry
+static ::std::size_t const _fI69185_aux_uncurry_offsets[6+FLX_PASS_PTF]={
+  FLX_EAT_PTF(offsetof(_fI69185_aux_uncurry,ptf)comma)
+  offsetof(_fI69185_aux_uncurry,ptrlexstr),
+  offsetof(_fI69185_aux_uncurry,ptrflx_pkgconfig),
+  offsetof(_fI69185_aux_uncurry,_vI69192_t_param_std_1209)+0,
+  offsetof(_fI69185_aux_uncurry,_vI69190_aux__apos_2_mv_1328)+0,
+  offsetof(_fI69185_aux_uncurry,_vI69187_y)+0,
+  offsetof(_fI69185_aux_uncurry,_vI69186_x_uncurry)+0,
 };
-static ::flx::gc::generic::offset_data_t const _fI69142_aux_uncurry_offset_data = { 6+FLX_PASS_PTF, _fI69142_aux_uncurry_offsets};
-FLX_FINALISER(_fI69142_aux_uncurry)
-static ::flx::gc::generic::gc_shape_t _fI69142_aux_uncurry_ptr_map ={
-  &_fI70722__lam_1391_ptr_map,
-  "flx_pkgconfig::_fI69142_aux_uncurry",
-  1,sizeof(_fI69142_aux_uncurry),
-  _fI69142_aux_uncurry_finaliser,
+static ::flx::gc::generic::offset_data_t const _fI69185_aux_uncurry_offset_data = { 6+FLX_PASS_PTF, _fI69185_aux_uncurry_offsets};
+FLX_FINALISER(_fI69185_aux_uncurry)
+static ::flx::gc::generic::gc_shape_t _fI69185_aux_uncurry_ptr_map ={
+  &_fI69408_aux_uncurry_ptr_map,
+  "flx_pkgconfig::_fI69185_aux_uncurry",
+  1,sizeof(_fI69185_aux_uncurry),
+  _fI69185_aux_uncurry_finaliser,
   0, // fcops
-  &_fI69142_aux_uncurry_offset_data, // scanner data
+  &_fI69185_aux_uncurry_offset_data, // scanner data
   &::flx::gc::generic::scan_by_offsets, // scanner
   0,
   0,
@@ -2093,24 +1427,21 @@ static ::flx::gc::generic::gc_shape_t _fI69142_aux_uncurry_ptr_map ={
   0ul,0ul
 };
 
-//OFFSETS for function _fI69657__lam_1391
-static ::std::size_t const _fI69657__lam_1391_offsets[5+FLX_PASS_PTF]={
-  FLX_EAT_PTF(offsetof(_fI69657__lam_1391,ptf)comma)
-  offsetof(_fI69657__lam_1391,ptr_fI69649_aux_uncurry),
-  offsetof(_fI69657__lam_1391,ptr_lam_65171),
-  offsetof(_fI69657__lam_1391,ptr_lam_65160),
-  offsetof(_fI69657__lam_1391,ptrhandle_pkg),
-  offsetof(_fI69657__lam_1391,ptrflx_pkgconfig),
+//OFFSETS for function _lam_1326
+static ::std::size_t const _lam_1326_offsets[2+FLX_PASS_PTF]={
+  FLX_EAT_PTF(offsetof(_lam_1326,ptf)comma)
+  offsetof(_lam_1326,ptraux_uncurry),
+  offsetof(_lam_1326,ptr_init_),
 };
-static ::flx::gc::generic::offset_data_t const _fI69657__lam_1391_offset_data = { 5+FLX_PASS_PTF, _fI69657__lam_1391_offsets};
-FLX_FINALISER(_fI69657__lam_1391)
-static ::flx::gc::generic::gc_shape_t _fI69657__lam_1391_ptr_map ={
-  &_fI69142_aux_uncurry_ptr_map,
-  "flx_pkgconfig::_fI69657__lam_1391",
-  1,sizeof(_fI69657__lam_1391),
-  _fI69657__lam_1391_finaliser,
+static ::flx::gc::generic::offset_data_t const _lam_1326_offset_data = { 2+FLX_PASS_PTF, _lam_1326_offsets};
+FLX_FINALISER(_lam_1326)
+static ::flx::gc::generic::gc_shape_t _lam_1326_ptr_map ={
+  &_fI69185_aux_uncurry_ptr_map,
+  "flx_pkgconfig::_lam_1326",
+  1,sizeof(_lam_1326),
+  _lam_1326_finaliser,
   0, // fcops
-  &_fI69657__lam_1391_offset_data, // scanner data
+  &_lam_1326_offset_data, // scanner data
   &::flx::gc::generic::scan_by_offsets, // scanner
   0,
   0,
@@ -2118,23 +1449,23 @@ static ::flx::gc::generic::gc_shape_t _fI69657__lam_1391_ptr_map ={
   0ul,0ul
 };
 
-//OFFSETS for function _fI69997__lam_1391
-static ::std::size_t const _fI69997__lam_1391_offsets[4+FLX_PASS_PTF]={
-  FLX_EAT_PTF(offsetof(_fI69997__lam_1391,ptf)comma)
-  offsetof(_fI69997__lam_1391,ptr_fI69989_aux_uncurry),
-  offsetof(_fI69997__lam_1391,ptr_lam_65160),
-  offsetof(_fI69997__lam_1391,ptrhandle_pkg),
-  offsetof(_fI69997__lam_1391,ptrflx_pkgconfig),
+//OFFSETS for function _fI70115__lam_1332
+static ::std::size_t const _fI70115__lam_1332_offsets[4+FLX_PASS_PTF]={
+  FLX_EAT_PTF(offsetof(_fI70115__lam_1332,ptf)comma)
+  offsetof(_fI70115__lam_1332,ptr_fI70107_aux_uncurry),
+  offsetof(_fI70115__lam_1332,ptr_fI70099_aux),
+  offsetof(_fI70115__lam_1332,ptrparse_args),
+  offsetof(_fI70115__lam_1332,ptrflx_pkgconfig),
 };
-static ::flx::gc::generic::offset_data_t const _fI69997__lam_1391_offset_data = { 4+FLX_PASS_PTF, _fI69997__lam_1391_offsets};
-FLX_FINALISER(_fI69997__lam_1391)
-static ::flx::gc::generic::gc_shape_t _fI69997__lam_1391_ptr_map ={
-  &_fI69657__lam_1391_ptr_map,
-  "flx_pkgconfig::_fI69997__lam_1391",
-  1,sizeof(_fI69997__lam_1391),
-  _fI69997__lam_1391_finaliser,
+static ::flx::gc::generic::offset_data_t const _fI70115__lam_1332_offset_data = { 4+FLX_PASS_PTF, _fI70115__lam_1332_offsets};
+FLX_FINALISER(_fI70115__lam_1332)
+static ::flx::gc::generic::gc_shape_t _fI70115__lam_1332_ptr_map ={
+  &_lam_1326_ptr_map,
+  "flx_pkgconfig::_fI70115__lam_1332",
+  1,sizeof(_fI70115__lam_1332),
+  _fI70115__lam_1332_finaliser,
   0, // fcops
-  &_fI69997__lam_1391_offset_data, // scanner data
+  &_fI70115__lam_1332_offset_data, // scanner data
   &::flx::gc::generic::scan_by_offsets, // scanner
   0,
   0,
@@ -2142,21 +1473,25 @@ static ::flx::gc::generic::gc_shape_t _fI69997__lam_1391_ptr_map ={
   0ul,0ul
 };
 
-//OFFSETS for function _lam_65159
-static ::std::size_t const _lam_65159_offsets[2+FLX_PASS_PTF]={
-  FLX_EAT_PTF(offsetof(_lam_65159,ptf)comma)
-  offsetof(_lam_65159,ptrget_variable),
-  offsetof(_lam_65159,ptrflx_pkgconfig),
+//OFFSETS for procedure handle_pkg
+static ::std::size_t const handle_pkg_offsets[6+FLX_PASS_PTF]={
+  FLX_EAT_PTF(offsetof(handle_pkg,ptf)comma)
+  offsetof(handle_pkg,p_svc),
+  offsetof(handle_pkg,_caller),
+  offsetof(handle_pkg,ptrflx_pkgconfig),
+  offsetof(handle_pkg,_vI69523__urv68543)+0,
+  offsetof(handle_pkg,trace)+0,
+  offsetof(handle_pkg,variables)+0,
 };
-static ::flx::gc::generic::offset_data_t const _lam_65159_offset_data = { 2+FLX_PASS_PTF, _lam_65159_offsets};
-FLX_FINALISER(_lam_65159)
-static ::flx::gc::generic::gc_shape_t _lam_65159_ptr_map ={
-  &_fI69997__lam_1391_ptr_map,
-  "flx_pkgconfig::_lam_65159",
-  1,sizeof(_lam_65159),
-  _lam_65159_finaliser,
+static ::flx::gc::generic::offset_data_t const handle_pkg_offset_data = { 6+FLX_PASS_PTF, handle_pkg_offsets};
+FLX_FINALISER(handle_pkg)
+static ::flx::gc::generic::gc_shape_t handle_pkg_ptr_map ={
+  &_fI70115__lam_1332_ptr_map,
+  "flx_pkgconfig::handle_pkg",
+  1,sizeof(handle_pkg),
+  handle_pkg_finaliser,
   0, // fcops
-  &_lam_65159_offset_data, // scanner data
+  &handle_pkg_offset_data, // scanner data
   &::flx::gc::generic::scan_by_offsets, // scanner
   0,
   0,
@@ -2164,22 +1499,20 @@ static ::flx::gc::generic::gc_shape_t _lam_65159_ptr_map ={
   0ul,0ul
 };
 
-//OFFSETS for function _fI70751__lam_1391
-static ::std::size_t const _fI70751__lam_1391_offsets[3+FLX_PASS_PTF]={
-  FLX_EAT_PTF(offsetof(_fI70751__lam_1391,ptf)comma)
-  offsetof(_fI70751__lam_1391,ptr_fI70743_aux_uncurry),
-  offsetof(_fI70751__lam_1391,ptrparse_args),
-  offsetof(_fI70751__lam_1391,ptrflx_pkgconfig),
+//OFFSETS for function _lam_1385
+static ::std::size_t const _lam_1385_offsets[1+FLX_PASS_PTF]={
+  FLX_EAT_PTF(offsetof(_lam_1385,ptf)comma)
+  offsetof(_lam_1385,ptrcat_uncurry),
 };
-static ::flx::gc::generic::offset_data_t const _fI70751__lam_1391_offset_data = { 3+FLX_PASS_PTF, _fI70751__lam_1391_offsets};
-FLX_FINALISER(_fI70751__lam_1391)
-static ::flx::gc::generic::gc_shape_t _fI70751__lam_1391_ptr_map ={
-  &_lam_65159_ptr_map,
-  "flx_pkgconfig::_fI70751__lam_1391",
-  1,sizeof(_fI70751__lam_1391),
-  _fI70751__lam_1391_finaliser,
+static ::flx::gc::generic::offset_data_t const _lam_1385_offset_data = { 1+FLX_PASS_PTF, _lam_1385_offsets};
+FLX_FINALISER(_lam_1385)
+static ::flx::gc::generic::gc_shape_t _lam_1385_ptr_map ={
+  &handle_pkg_ptr_map,
+  "flx_pkgconfig::_lam_1385",
+  1,sizeof(_lam_1385),
+  _lam_1385_finaliser,
   0, // fcops
-  &_fI70751__lam_1391_offset_data, // scanner data
+  &_lam_1385_offset_data, // scanner data
   &::flx::gc::generic::scan_by_offsets, // scanner
   0,
   0,
@@ -2187,24 +1520,27 @@ static ::flx::gc::generic::gc_shape_t _fI70751__lam_1391_ptr_map ={
   0ul,0ul
 };
 
-//OFFSETS for function reattach_drive_letters
-static ::std::size_t const reattach_drive_letters_offsets[5+FLX_PASS_PTF]={
-  FLX_EAT_PTF(offsetof(reattach_drive_letters,ptf)comma)
-  offsetof(reattach_drive_letters,ptrflx_pkgconfig),
-  offsetof(reattach_drive_letters,other_param_flx_pkgconfig_65060)+0,
-  offsetof(reattach_drive_letters,tail_param_flx_pkgconfig_65059)+0,
-  offsetof(reattach_drive_letters,reattach_drive_letters_mv_65119)+0,
-  offsetof(reattach_drive_letters,_a)+0,
+//OFFSETS for function _fI69243_search_and_replace__apos_2
+static ::std::size_t const _fI69243_search_and_replace__apos_2_offsets[8+FLX_PASS_PTF]={
+  FLX_EAT_PTF(offsetof(_fI69243_search_and_replace__apos_2,ptf)comma)
+  offsetof(_fI69243_search_and_replace__apos_2,ptr_lam_64590),
+  offsetof(_fI69243_search_and_replace__apos_2,ptr_lam_64579),
+  offsetof(_fI69243_search_and_replace__apos_2,ptrhandle_pkg),
+  offsetof(_fI69243_search_and_replace__apos_2,ptrflx_pkgconfig),
+  offsetof(_fI69243_search_and_replace__apos_2,_vI69255_xs)+0,
+  offsetof(_fI69243_search_and_replace__apos_2,_genout_urv69202)+0,
+  offsetof(_fI69243_search_and_replace__apos_2,_vI69244__generator_strings_7324)+0,
+  offsetof(_fI69243_search_and_replace__apos_2,_vI69242_search_and_replace__apos_2_mv_2301)+0,
 };
-static ::flx::gc::generic::offset_data_t const reattach_drive_letters_offset_data = { 5+FLX_PASS_PTF, reattach_drive_letters_offsets};
-FLX_FINALISER(reattach_drive_letters)
-static ::flx::gc::generic::gc_shape_t reattach_drive_letters_ptr_map ={
-  &_fI70751__lam_1391_ptr_map,
-  "flx_pkgconfig::reattach_drive_letters",
-  1,sizeof(reattach_drive_letters),
-  reattach_drive_letters_finaliser,
+static ::flx::gc::generic::offset_data_t const _fI69243_search_and_replace__apos_2_offset_data = { 8+FLX_PASS_PTF, _fI69243_search_and_replace__apos_2_offsets};
+FLX_FINALISER(_fI69243_search_and_replace__apos_2)
+static ::flx::gc::generic::gc_shape_t _fI69243_search_and_replace__apos_2_ptr_map ={
+  &_lam_1385_ptr_map,
+  "flx_pkgconfig::_fI69243_search_and_replace__apos_2",
+  1,sizeof(_fI69243_search_and_replace__apos_2),
+  _fI69243_search_and_replace__apos_2_finaliser,
   0, // fcops
-  &reattach_drive_letters_offset_data, // scanner data
+  &_fI69243_search_and_replace__apos_2_offset_data, // scanner data
   &::flx::gc::generic::scan_by_offsets, // scanner
   0,
   0,
@@ -2212,21 +1548,92 @@ static ::flx::gc::generic::gc_shape_t reattach_drive_letters_ptr_map ={
   0ul,0ul
 };
 
-//OFFSETS for function _fI70096__lam_1457
-static ::std::size_t const _fI70096__lam_1457_offsets[2+FLX_PASS_PTF]={
-  FLX_EAT_PTF(offsetof(_fI70096__lam_1457,ptf)comma)
-  offsetof(_fI70096__lam_1457,ptrhandle_pkg),
-  offsetof(_fI70096__lam_1457,ptrflx_pkgconfig),
+//OFFSETS for function _fI69426__lam_1332
+static ::std::size_t const _fI69426__lam_1332_offsets[4+FLX_PASS_PTF]={
+  FLX_EAT_PTF(offsetof(_fI69426__lam_1332,ptf)comma)
+  offsetof(_fI69426__lam_1332,ptr_fI69418_aux_uncurry),
+  offsetof(_fI69426__lam_1332,ptr_lam_64579),
+  offsetof(_fI69426__lam_1332,ptrhandle_pkg),
+  offsetof(_fI69426__lam_1332,ptrflx_pkgconfig),
 };
-static ::flx::gc::generic::offset_data_t const _fI70096__lam_1457_offset_data = { 2+FLX_PASS_PTF, _fI70096__lam_1457_offsets};
-FLX_FINALISER(_fI70096__lam_1457)
-static ::flx::gc::generic::gc_shape_t _fI70096__lam_1457_ptr_map ={
-  &reattach_drive_letters_ptr_map,
-  "flx_pkgconfig::_fI70096__lam_1457",
-  1,sizeof(_fI70096__lam_1457),
-  _fI70096__lam_1457_finaliser,
+static ::flx::gc::generic::offset_data_t const _fI69426__lam_1332_offset_data = { 4+FLX_PASS_PTF, _fI69426__lam_1332_offsets};
+FLX_FINALISER(_fI69426__lam_1332)
+static ::flx::gc::generic::gc_shape_t _fI69426__lam_1332_ptr_map ={
+  &_fI69243_search_and_replace__apos_2_ptr_map,
+  "flx_pkgconfig::_fI69426__lam_1332",
+  1,sizeof(_fI69426__lam_1332),
+  _fI69426__lam_1332_finaliser,
   0, // fcops
-  &_fI70096__lam_1457_offset_data, // scanner data
+  &_fI69426__lam_1332_offset_data, // scanner data
+  &::flx::gc::generic::scan_by_offsets, // scanner
+  0,
+  0,
+  ::flx::gc::generic::gc_flags_default,
+  0ul,0ul
+};
+
+//OFFSETS for procedure _lam_64579
+static ::std::size_t const _lam_64579_offsets[6+FLX_PASS_PTF]={
+  FLX_EAT_PTF(offsetof(_lam_64579,ptf)comma)
+  offsetof(_lam_64579,p_svc),
+  offsetof(_lam_64579,_caller),
+  offsetof(_lam_64579,ptrhandle_pkg),
+  offsetof(_lam_64579,ptrflx_pkgconfig),
+  offsetof(_lam_64579,_vI69403__urv68543)+0,
+  offsetof(_lam_64579,lines)+0,
+};
+static ::flx::gc::generic::offset_data_t const _lam_64579_offset_data = { 6+FLX_PASS_PTF, _lam_64579_offsets};
+FLX_FINALISER(_lam_64579)
+static ::flx::gc::generic::gc_shape_t _lam_64579_ptr_map ={
+  &_fI69426__lam_1332_ptr_map,
+  "flx_pkgconfig::_lam_64579",
+  1,sizeof(_lam_64579),
+  _lam_64579_finaliser,
+  0, // fcops
+  &_lam_64579_offset_data, // scanner data
+  &::flx::gc::generic::scan_by_offsets, // scanner
+  0,
+  0,
+  ::flx::gc::generic::gc_flags_default,
+  0ul,0ul
+};
+
+//OFFSETS for function _lam_1386
+static ::std::size_t const _lam_1386_offsets[1+FLX_PASS_PTF]={
+  FLX_EAT_PTF(offsetof(_lam_1386,ptf)comma)
+  offsetof(_lam_1386,ptrcat_uncurry),
+};
+static ::flx::gc::generic::offset_data_t const _lam_1386_offset_data = { 1+FLX_PASS_PTF, _lam_1386_offsets};
+FLX_FINALISER(_lam_1386)
+static ::flx::gc::generic::gc_shape_t _lam_1386_ptr_map ={
+  &_lam_64579_ptr_map,
+  "flx_pkgconfig::_lam_1386",
+  1,sizeof(_lam_1386),
+  _lam_1386_finaliser,
+  0, // fcops
+  &_lam_1386_offset_data, // scanner data
+  &::flx::gc::generic::scan_by_offsets, // scanner
+  0,
+  0,
+  ::flx::gc::generic::gc_flags_default,
+  0ul,0ul
+};
+
+//OFFSETS for function xfind
+static ::std::size_t const xfind_offsets[2+FLX_PASS_PTF]={
+  FLX_EAT_PTF(offsetof(xfind,ptf)comma)
+  offsetof(xfind,ptrflx_pkgconfig),
+  offsetof(xfind,xfind_mv_64519)+0,
+};
+static ::flx::gc::generic::offset_data_t const xfind_offset_data = { 2+FLX_PASS_PTF, xfind_offsets};
+FLX_FINALISER(xfind)
+static ::flx::gc::generic::gc_shape_t xfind_ptr_map ={
+  &_lam_1386_ptr_map,
+  "flx_pkgconfig::xfind",
+  1,sizeof(xfind),
+  xfind_finaliser,
+  0, // fcops
+  &xfind_offset_data, // scanner data
   &::flx::gc::generic::scan_by_offsets, // scanner
   0,
   0,
@@ -2244,7 +1651,7 @@ static ::std::size_t const keep_val_offsets[3+FLX_PASS_PTF]={
 static ::flx::gc::generic::offset_data_t const keep_val_offset_data = { 3+FLX_PASS_PTF, keep_val_offsets};
 FLX_FINALISER(keep_val)
 static ::flx::gc::generic::gc_shape_t keep_val_ptr_map ={
-  &_fI70096__lam_1457_ptr_map,
+  &xfind_ptr_map,
   "flx_pkgconfig::keep_val",
   1,sizeof(keep_val),
   keep_val_finaliser,
@@ -2257,25 +1664,24 @@ static ::flx::gc::generic::gc_shape_t keep_val_ptr_map ={
   0ul,0ul
 };
 
-//OFFSETS for function _fI69132_aux_uncurry
-static ::std::size_t const _fI69132_aux_uncurry_offsets[6+FLX_PASS_PTF]={
-  FLX_EAT_PTF(offsetof(_fI69132_aux_uncurry,ptf)comma)
-  offsetof(_fI69132_aux_uncurry,ptradd_val),
-  offsetof(_fI69132_aux_uncurry,ptrflx_pkgconfig),
-  offsetof(_fI69132_aux_uncurry,t_param_std_1268)+0,
-  offsetof(_fI69132_aux_uncurry,_vI69137_aux__apos_2_mv_1387)+0,
-  offsetof(_fI69132_aux_uncurry,_vI69134_y)+0,
-  offsetof(_fI69132_aux_uncurry,x_uncurry)+0,
+//OFFSETS for function _fI68687_aux_uncurry
+static ::std::size_t const _fI68687_aux_uncurry_offsets[5+FLX_PASS_PTF]={
+  FLX_EAT_PTF(offsetof(_fI68687_aux_uncurry,ptf)comma)
+  offsetof(_fI68687_aux_uncurry,ptr_fI67551___plus_),
+  offsetof(_fI68687_aux_uncurry,_vI68694_t_param_std_1209)+0,
+  offsetof(_fI68687_aux_uncurry,_vI68692_aux__apos_2_mv_1328)+0,
+  offsetof(_fI68687_aux_uncurry,_vI68689_y)+0,
+  offsetof(_fI68687_aux_uncurry,_vI68688_x_uncurry)+0,
 };
-static ::flx::gc::generic::offset_data_t const _fI69132_aux_uncurry_offset_data = { 6+FLX_PASS_PTF, _fI69132_aux_uncurry_offsets};
-FLX_FINALISER(_fI69132_aux_uncurry)
-static ::flx::gc::generic::gc_shape_t _fI69132_aux_uncurry_ptr_map ={
+static ::flx::gc::generic::offset_data_t const _fI68687_aux_uncurry_offset_data = { 5+FLX_PASS_PTF, _fI68687_aux_uncurry_offsets};
+FLX_FINALISER(_fI68687_aux_uncurry)
+static ::flx::gc::generic::gc_shape_t _fI68687_aux_uncurry_ptr_map ={
   &keep_val_ptr_map,
-  "flx_pkgconfig::_fI69132_aux_uncurry",
-  1,sizeof(_fI69132_aux_uncurry),
-  _fI69132_aux_uncurry_finaliser,
+  "flx_pkgconfig::_fI68687_aux_uncurry",
+  1,sizeof(_fI68687_aux_uncurry),
+  _fI68687_aux_uncurry_finaliser,
   0, // fcops
-  &_fI69132_aux_uncurry_offset_data, // scanner data
+  &_fI68687_aux_uncurry_offset_data, // scanner data
   &::flx::gc::generic::scan_by_offsets, // scanner
   0,
   0,
@@ -2283,26 +1689,883 @@ static ::flx::gc::generic::gc_shape_t _fI69132_aux_uncurry_ptr_map ={
   0ul,0ul
 };
 
-//OFFSETS for function _fI69989_aux_uncurry
-static ::std::size_t const _fI69989_aux_uncurry_offsets[7+FLX_PASS_PTF]={
-  FLX_EAT_PTF(offsetof(_fI69989_aux_uncurry,ptf)comma)
-  offsetof(_fI69989_aux_uncurry,ptr_lam_65160),
-  offsetof(_fI69989_aux_uncurry,ptrhandle_pkg),
-  offsetof(_fI69989_aux_uncurry,ptrflx_pkgconfig),
-  offsetof(_fI69989_aux_uncurry,_vI69996_t_param_std_1268)+0,
-  offsetof(_fI69989_aux_uncurry,_vI69994_aux__apos_2_mv_1387)+0,
-  offsetof(_fI69989_aux_uncurry,_vI69991_y)+0,
-  offsetof(_fI69989_aux_uncurry,_vI69990_x_uncurry)+0,
+//OFFSETS for function _fI69066__lam_1332
+static ::std::size_t const _fI69066__lam_1332_offsets[5+FLX_PASS_PTF]={
+  FLX_EAT_PTF(offsetof(_fI69066__lam_1332,ptf)comma)
+  offsetof(_fI69066__lam_1332,ptr_fI69058_aux_uncurry),
+  offsetof(_fI69066__lam_1332,ptr_lam_64590),
+  offsetof(_fI69066__lam_1332,ptr_lam_64579),
+  offsetof(_fI69066__lam_1332,ptrhandle_pkg),
+  offsetof(_fI69066__lam_1332,ptrflx_pkgconfig),
 };
-static ::flx::gc::generic::offset_data_t const _fI69989_aux_uncurry_offset_data = { 7+FLX_PASS_PTF, _fI69989_aux_uncurry_offsets};
-FLX_FINALISER(_fI69989_aux_uncurry)
-static ::flx::gc::generic::gc_shape_t _fI69989_aux_uncurry_ptr_map ={
-  &_fI69132_aux_uncurry_ptr_map,
-  "flx_pkgconfig::_fI69989_aux_uncurry",
-  1,sizeof(_fI69989_aux_uncurry),
-  _fI69989_aux_uncurry_finaliser,
+static ::flx::gc::generic::offset_data_t const _fI69066__lam_1332_offset_data = { 5+FLX_PASS_PTF, _fI69066__lam_1332_offsets};
+FLX_FINALISER(_fI69066__lam_1332)
+static ::flx::gc::generic::gc_shape_t _fI69066__lam_1332_ptr_map ={
+  &_fI68687_aux_uncurry_ptr_map,
+  "flx_pkgconfig::_fI69066__lam_1332",
+  1,sizeof(_fI69066__lam_1332),
+  _fI69066__lam_1332_finaliser,
   0, // fcops
-  &_fI69989_aux_uncurry_offset_data, // scanner data
+  &_fI69066__lam_1332_offset_data, // scanner data
+  &::flx::gc::generic::scan_by_offsets, // scanner
+  0,
+  0,
+  ::flx::gc::generic::gc_flags_default,
+  0ul,0ul
+};
+
+//OFFSETS for function _fI69264__lam_1507
+static ::std::size_t const _fI69264__lam_1507_offsets[6+FLX_PASS_PTF]={
+  FLX_EAT_PTF(offsetof(_fI69264__lam_1507,ptf)comma)
+  offsetof(_fI69264__lam_1507,ptr_fI69256_iterator__apos_2),
+  offsetof(_fI69264__lam_1507,ptr_fI69243_search_and_replace__apos_2),
+  offsetof(_fI69264__lam_1507,ptr_lam_64590),
+  offsetof(_fI69264__lam_1507,ptr_lam_64579),
+  offsetof(_fI69264__lam_1507,ptrhandle_pkg),
+  offsetof(_fI69264__lam_1507,ptrflx_pkgconfig),
+};
+static ::flx::gc::generic::offset_data_t const _fI69264__lam_1507_offset_data = { 6+FLX_PASS_PTF, _fI69264__lam_1507_offsets};
+FLX_FINALISER(_fI69264__lam_1507)
+static ::flx::gc::generic::gc_shape_t _fI69264__lam_1507_ptr_map ={
+  &_fI69066__lam_1332_ptr_map,
+  "flx_pkgconfig::_fI69264__lam_1507",
+  1,sizeof(_fI69264__lam_1507),
+  _fI69264__lam_1507_finaliser,
+  0, // fcops
+  &_fI69264__lam_1507_offset_data, // scanner data
+  &::flx::gc::generic::scan_by_offsets, // scanner
+  0,
+  0,
+  ::flx::gc::generic::gc_flags_default,
+  0ul,0ul
+};
+
+//OFFSETS for function _fI70099_aux
+static ::std::size_t const _fI70099_aux_offsets[6+FLX_PASS_PTF]={
+  FLX_EAT_PTF(offsetof(_fI70099_aux,ptf)comma)
+  offsetof(_fI70099_aux,ptrparse_args),
+  offsetof(_fI70099_aux,ptrflx_pkgconfig),
+  offsetof(_fI70099_aux,_vI70106_t_param_std_1242)+0,
+  offsetof(_fI70099_aux,_vI70104_aux_mv_1434)+0,
+  offsetof(_fI70099_aux,_vI70101_out)+0,
+  offsetof(_fI70099_aux,_vI70100_inp)+0,
+};
+static ::flx::gc::generic::offset_data_t const _fI70099_aux_offset_data = { 6+FLX_PASS_PTF, _fI70099_aux_offsets};
+FLX_FINALISER(_fI70099_aux)
+static ::flx::gc::generic::gc_shape_t _fI70099_aux_ptr_map ={
+  &_fI69264__lam_1507_ptr_map,
+  "flx_pkgconfig::_fI70099_aux",
+  1,sizeof(_fI70099_aux),
+  _fI70099_aux_finaliser,
+  0, // fcops
+  &_fI70099_aux_offset_data, // scanner data
+  &::flx::gc::generic::scan_by_offsets, // scanner
+  0,
+  0,
+  ::flx::gc::generic::gc_flags_default,
+  0ul,0ul
+};
+
+//OFFSETS for function _fI69056__lam_1398
+static ::std::size_t const _fI69056__lam_1398_offsets[4+FLX_PASS_PTF]={
+  FLX_EAT_PTF(offsetof(_fI69056__lam_1398,ptf)comma)
+  offsetof(_fI69056__lam_1398,ptr_lam_64590),
+  offsetof(_fI69056__lam_1398,ptr_lam_64579),
+  offsetof(_fI69056__lam_1398,ptrhandle_pkg),
+  offsetof(_fI69056__lam_1398,ptrflx_pkgconfig),
+};
+static ::flx::gc::generic::offset_data_t const _fI69056__lam_1398_offset_data = { 4+FLX_PASS_PTF, _fI69056__lam_1398_offsets};
+FLX_FINALISER(_fI69056__lam_1398)
+static ::flx::gc::generic::gc_shape_t _fI69056__lam_1398_ptr_map ={
+  &_fI70099_aux_ptr_map,
+  "flx_pkgconfig::_fI69056__lam_1398",
+  1,sizeof(_fI69056__lam_1398),
+  _fI69056__lam_1398_finaliser,
+  0, // fcops
+  &_fI69056__lam_1398_offset_data, // scanner data
+  &::flx::gc::generic::scan_by_offsets, // scanner
+  0,
+  0,
+  ::flx::gc::generic::gc_flags_default,
+  0ul,0ul
+};
+
+//OFFSETS for function _fI69076__lam_1332
+static ::std::size_t const _fI69076__lam_1332_offsets[5+FLX_PASS_PTF]={
+  FLX_EAT_PTF(offsetof(_fI69076__lam_1332,ptf)comma)
+  offsetof(_fI69076__lam_1332,ptr_fI69068_aux_uncurry),
+  offsetof(_fI69076__lam_1332,ptr_lam_64590),
+  offsetof(_fI69076__lam_1332,ptr_lam_64579),
+  offsetof(_fI69076__lam_1332,ptrhandle_pkg),
+  offsetof(_fI69076__lam_1332,ptrflx_pkgconfig),
+};
+static ::flx::gc::generic::offset_data_t const _fI69076__lam_1332_offset_data = { 5+FLX_PASS_PTF, _fI69076__lam_1332_offsets};
+FLX_FINALISER(_fI69076__lam_1332)
+static ::flx::gc::generic::gc_shape_t _fI69076__lam_1332_ptr_map ={
+  &_fI69056__lam_1398_ptr_map,
+  "flx_pkgconfig::_fI69076__lam_1332",
+  1,sizeof(_fI69076__lam_1332),
+  _fI69076__lam_1332_finaliser,
+  0, // fcops
+  &_fI69076__lam_1332_offset_data, // scanner data
+  &::flx::gc::generic::scan_by_offsets, // scanner
+  0,
+  0,
+  ::flx::gc::generic::gc_flags_default,
+  0ul,0ul
+};
+
+//OFFSETS for function _lam_64523
+static ::std::size_t const _lam_64523_offsets[2+FLX_PASS_PTF]={
+  FLX_EAT_PTF(offsetof(_lam_64523,ptf)comma)
+  offsetof(_lam_64523,ptrxfind),
+  offsetof(_lam_64523,ptrflx_pkgconfig),
+};
+static ::flx::gc::generic::offset_data_t const _lam_64523_offset_data = { 2+FLX_PASS_PTF, _lam_64523_offsets};
+FLX_FINALISER(_lam_64523)
+static ::flx::gc::generic::gc_shape_t _lam_64523_ptr_map ={
+  &_fI69076__lam_1332_ptr_map,
+  "flx_pkgconfig::_lam_64523",
+  1,sizeof(_lam_64523),
+  _lam_64523_finaliser,
+  0, // fcops
+  &_lam_64523_offset_data, // scanner data
+  &::flx::gc::generic::scan_by_offsets, // scanner
+  0,
+  0,
+  ::flx::gc::generic::gc_flags_default,
+  0ul,0ul
+};
+
+//OFFSETS for function _lam_1507
+static ::std::size_t const _lam_1507_offsets[2+FLX_PASS_PTF]={
+  FLX_EAT_PTF(offsetof(_lam_1507,ptf)comma)
+  offsetof(_lam_1507,ptr_fI68947_iterator__apos_2),
+  offsetof(_lam_1507,ptrsearch_and_replace_uncurry),
+};
+static ::flx::gc::generic::offset_data_t const _lam_1507_offset_data = { 2+FLX_PASS_PTF, _lam_1507_offsets};
+FLX_FINALISER(_lam_1507)
+static ::flx::gc::generic::gc_shape_t _lam_1507_ptr_map ={
+  &_lam_64523_ptr_map,
+  "flx_pkgconfig::_lam_1507",
+  1,sizeof(_lam_1507),
+  _lam_1507_finaliser,
+  0, // fcops
+  &_lam_1507_offset_data, // scanner data
+  &::flx::gc::generic::scan_by_offsets, // scanner
+  0,
+  0,
+  ::flx::gc::generic::gc_flags_default,
+  0ul,0ul
+};
+
+//OFFSETS for function _fI67551___plus_
+static ::std::size_t const _fI67551___plus__offsets[1+FLX_PASS_PTF]={
+  FLX_EAT_PTF(offsetof(_fI67551___plus_,ptf)comma)
+  offsetof(_fI67551___plus_,_vI67552_x)+0,
+};
+static ::flx::gc::generic::offset_data_t const _fI67551___plus__offset_data = { 1+FLX_PASS_PTF, _fI67551___plus__offsets};
+FLX_FINALISER(_fI67551___plus_)
+static ::flx::gc::generic::gc_shape_t _fI67551___plus__ptr_map ={
+  &_lam_1507_ptr_map,
+  "flx_pkgconfig::_fI67551___plus_",
+  1,sizeof(_fI67551___plus_),
+  _fI67551___plus__finaliser,
+  0, // fcops
+  &_fI67551___plus__offset_data, // scanner data
+  &::flx::gc::generic::scan_by_offsets, // scanner
+  0,
+  0,
+  ::flx::gc::generic::gc_flags_default,
+  0ul,0ul
+};
+
+//OFFSETS for function _fI69058_aux_uncurry
+static ::std::size_t const _fI69058_aux_uncurry_offsets[8+FLX_PASS_PTF]={
+  FLX_EAT_PTF(offsetof(_fI69058_aux_uncurry,ptf)comma)
+  offsetof(_fI69058_aux_uncurry,ptr_lam_64590),
+  offsetof(_fI69058_aux_uncurry,ptr_lam_64579),
+  offsetof(_fI69058_aux_uncurry,ptrhandle_pkg),
+  offsetof(_fI69058_aux_uncurry,ptrflx_pkgconfig),
+  offsetof(_fI69058_aux_uncurry,_vI69065_t_param_std_1209)+0,
+  offsetof(_fI69058_aux_uncurry,_vI69063_aux__apos_2_mv_1328)+0,
+  offsetof(_fI69058_aux_uncurry,_vI69060_y)+0,
+  offsetof(_fI69058_aux_uncurry,_vI69059_x_uncurry)+0,
+};
+static ::flx::gc::generic::offset_data_t const _fI69058_aux_uncurry_offset_data = { 8+FLX_PASS_PTF, _fI69058_aux_uncurry_offsets};
+FLX_FINALISER(_fI69058_aux_uncurry)
+static ::flx::gc::generic::gc_shape_t _fI69058_aux_uncurry_ptr_map ={
+  &_fI67551___plus__ptr_map,
+  "flx_pkgconfig::_fI69058_aux_uncurry",
+  1,sizeof(_fI69058_aux_uncurry),
+  _fI69058_aux_uncurry_finaliser,
+  0, // fcops
+  &_fI69058_aux_uncurry_offset_data, // scanner data
+  &::flx::gc::generic::scan_by_offsets, // scanner
+  0,
+  0,
+  ::flx::gc::generic::gc_flags_default,
+  0ul,0ul
+};
+
+//OFFSETS for function _fI69256_iterator__apos_2
+static ::std::size_t const _fI69256_iterator__apos_2_offsets[7+FLX_PASS_PTF]={
+  FLX_EAT_PTF(offsetof(_fI69256_iterator__apos_2,ptf)comma)
+  offsetof(_fI69256_iterator__apos_2,ptr_fI69243_search_and_replace__apos_2),
+  offsetof(_fI69256_iterator__apos_2,ptr_lam_64590),
+  offsetof(_fI69256_iterator__apos_2,ptr_lam_64579),
+  offsetof(_fI69256_iterator__apos_2,ptrhandle_pkg),
+  offsetof(_fI69256_iterator__apos_2,ptrflx_pkgconfig),
+  offsetof(_fI69256_iterator__apos_2,_vI69263_t_param_std_1259)+0,
+  offsetof(_fI69256_iterator__apos_2,_vI69261_iterator__apos_2_mv_1504)+0,
+};
+static ::flx::gc::generic::offset_data_t const _fI69256_iterator__apos_2_offset_data = { 7+FLX_PASS_PTF, _fI69256_iterator__apos_2_offsets};
+FLX_FINALISER(_fI69256_iterator__apos_2)
+static ::flx::gc::generic::gc_shape_t _fI69256_iterator__apos_2_ptr_map ={
+  &_fI69058_aux_uncurry_ptr_map,
+  "flx_pkgconfig::_fI69256_iterator__apos_2",
+  1,sizeof(_fI69256_iterator__apos_2),
+  _fI69256_iterator__apos_2_finaliser,
+  0, // fcops
+  &_fI69256_iterator__apos_2_offset_data, // scanner data
+  &::flx::gc::generic::scan_by_offsets, // scanner
+  0,
+  0,
+  ::flx::gc::generic::gc_flags_default,
+  0ul,0ul
+};
+
+//OFFSETS for function _lam_1316
+static ::std::size_t const _lam_1316_offsets[1+FLX_PASS_PTF]={
+  FLX_EAT_PTF(offsetof(_lam_1316,ptf)comma)
+  offsetof(_lam_1316,ptr_init_),
+};
+static ::flx::gc::generic::offset_data_t const _lam_1316_offset_data = { 1+FLX_PASS_PTF, _lam_1316_offsets};
+FLX_FINALISER(_lam_1316)
+static ::flx::gc::generic::gc_shape_t _lam_1316_ptr_map ={
+  &_fI69256_iterator__apos_2_ptr_map,
+  "flx_pkgconfig::_lam_1316",
+  1,sizeof(_lam_1316),
+  _lam_1316_finaliser,
+  0, // fcops
+  &_lam_1316_offset_data, // scanner data
+  &::flx::gc::generic::scan_by_offsets, // scanner
+  0,
+  0,
+  ::flx::gc::generic::gc_flags_default,
+  0ul,0ul
+};
+
+//OFFSETS for function _fI70322_aux_uncurry
+static ::std::size_t const _fI70322_aux_uncurry_offsets[5+FLX_PASS_PTF]={
+  FLX_EAT_PTF(offsetof(_fI70322_aux_uncurry,ptf)comma)
+  offsetof(_fI70322_aux_uncurry,ptrflx_pkgconfig),
+  offsetof(_fI70322_aux_uncurry,_vI70329_t_param_std_1209)+0,
+  offsetof(_fI70322_aux_uncurry,_vI70327_aux__apos_2_mv_1328)+0,
+  offsetof(_fI70322_aux_uncurry,_vI70324_y)+0,
+  offsetof(_fI70322_aux_uncurry,_vI70323_x_uncurry)+0,
+};
+static ::flx::gc::generic::offset_data_t const _fI70322_aux_uncurry_offset_data = { 5+FLX_PASS_PTF, _fI70322_aux_uncurry_offsets};
+FLX_FINALISER(_fI70322_aux_uncurry)
+static ::flx::gc::generic::gc_shape_t _fI70322_aux_uncurry_ptr_map ={
+  &_lam_1316_ptr_map,
+  "flx_pkgconfig::_fI70322_aux_uncurry",
+  1,sizeof(_fI70322_aux_uncurry),
+  _fI70322_aux_uncurry_finaliser,
+  0, // fcops
+  &_fI70322_aux_uncurry_offset_data, // scanner data
+  &::flx::gc::generic::scan_by_offsets, // scanner
+  0,
+  0,
+  ::flx::gc::generic::gc_flags_default,
+  0ul,0ul
+};
+
+//OFFSETS for function _fI70107_aux_uncurry
+static ::std::size_t const _fI70107_aux_uncurry_offsets[7+FLX_PASS_PTF]={
+  FLX_EAT_PTF(offsetof(_fI70107_aux_uncurry,ptf)comma)
+  offsetof(_fI70107_aux_uncurry,ptr_fI70099_aux),
+  offsetof(_fI70107_aux_uncurry,ptrparse_args),
+  offsetof(_fI70107_aux_uncurry,ptrflx_pkgconfig),
+  offsetof(_fI70107_aux_uncurry,_vI70114_t_param_std_1209)+0,
+  offsetof(_fI70107_aux_uncurry,_vI70112_aux__apos_2_mv_1328)+0,
+  offsetof(_fI70107_aux_uncurry,_vI70109_y)+0,
+  offsetof(_fI70107_aux_uncurry,_vI70108_x_uncurry)+0,
+};
+static ::flx::gc::generic::offset_data_t const _fI70107_aux_uncurry_offset_data = { 7+FLX_PASS_PTF, _fI70107_aux_uncurry_offsets};
+FLX_FINALISER(_fI70107_aux_uncurry)
+static ::flx::gc::generic::gc_shape_t _fI70107_aux_uncurry_ptr_map ={
+  &_fI70322_aux_uncurry_ptr_map,
+  "flx_pkgconfig::_fI70107_aux_uncurry",
+  1,sizeof(_fI70107_aux_uncurry),
+  _fI70107_aux_uncurry_finaliser,
+  0, // fcops
+  &_fI70107_aux_uncurry_offset_data, // scanner data
+  &::flx::gc::generic::scan_by_offsets, // scanner
+  0,
+  0,
+  ::flx::gc::generic::gc_flags_default,
+  0ul,0ul
+};
+
+//OFFSETS for function get_variable
+static ::std::size_t const get_variable_offsets[2+FLX_PASS_PTF]={
+  FLX_EAT_PTF(offsetof(get_variable,ptf)comma)
+  offsetof(get_variable,ptrflx_pkgconfig),
+  offsetof(get_variable,get_variable_mv_64561)+0,
+};
+static ::flx::gc::generic::offset_data_t const get_variable_offset_data = { 2+FLX_PASS_PTF, get_variable_offsets};
+FLX_FINALISER(get_variable)
+static ::flx::gc::generic::gc_shape_t get_variable_ptr_map ={
+  &_fI70107_aux_uncurry_ptr_map,
+  "flx_pkgconfig::get_variable",
+  1,sizeof(get_variable),
+  get_variable_finaliser,
+  0, // fcops
+  &get_variable_offset_data, // scanner data
+  &::flx::gc::generic::scan_by_offsets, // scanner
+  0,
+  0,
+  ::flx::gc::generic::gc_flags_default,
+  0ul,0ul
+};
+
+//OFFSETS for function _lam_2241
+static ::std::size_t const _lam_2241_offsets[3+FLX_PASS_PTF]={
+  FLX_EAT_PTF(offsetof(_lam_2241,ptf)comma)
+  offsetof(_lam_2241,ptr_fI70149_aux),
+  offsetof(_lam_2241,ptrparse_args),
+  offsetof(_lam_2241,ptrflx_pkgconfig),
+};
+static ::flx::gc::generic::offset_data_t const _lam_2241_offset_data = { 3+FLX_PASS_PTF, _lam_2241_offsets};
+FLX_FINALISER(_lam_2241)
+static ::flx::gc::generic::gc_shape_t _lam_2241_ptr_map ={
+  &get_variable_ptr_map,
+  "flx_pkgconfig::_lam_2241",
+  1,sizeof(_lam_2241),
+  _lam_2241_finaliser,
+  0, // fcops
+  &_lam_2241_offset_data, // scanner data
+  &::flx::gc::generic::scan_by_offsets, // scanner
+  0,
+  0,
+  ::flx::gc::generic::gc_flags_default,
+  0ul,0ul
+};
+
+//OFFSETS for function _fI69193__lam_1332
+static ::std::size_t const _fI69193__lam_1332_offsets[3+FLX_PASS_PTF]={
+  FLX_EAT_PTF(offsetof(_fI69193__lam_1332,ptf)comma)
+  offsetof(_fI69193__lam_1332,ptr_fI69185_aux_uncurry),
+  offsetof(_fI69193__lam_1332,ptrlexstr),
+  offsetof(_fI69193__lam_1332,ptrflx_pkgconfig),
+};
+static ::flx::gc::generic::offset_data_t const _fI69193__lam_1332_offset_data = { 3+FLX_PASS_PTF, _fI69193__lam_1332_offsets};
+FLX_FINALISER(_fI69193__lam_1332)
+static ::flx::gc::generic::gc_shape_t _fI69193__lam_1332_ptr_map ={
+  &_lam_2241_ptr_map,
+  "flx_pkgconfig::_fI69193__lam_1332",
+  1,sizeof(_fI69193__lam_1332),
+  _fI69193__lam_1332_finaliser,
+  0, // fcops
+  &_fI69193__lam_1332_offset_data, // scanner data
+  &::flx::gc::generic::scan_by_offsets, // scanner
+  0,
+  0,
+  ::flx::gc::generic::gc_flags_default,
+  0ul,0ul
+};
+
+//OFFSETS for function _fI69068_aux_uncurry
+static ::std::size_t const _fI69068_aux_uncurry_offsets[8+FLX_PASS_PTF]={
+  FLX_EAT_PTF(offsetof(_fI69068_aux_uncurry,ptf)comma)
+  offsetof(_fI69068_aux_uncurry,ptr_lam_64590),
+  offsetof(_fI69068_aux_uncurry,ptr_lam_64579),
+  offsetof(_fI69068_aux_uncurry,ptrhandle_pkg),
+  offsetof(_fI69068_aux_uncurry,ptrflx_pkgconfig),
+  offsetof(_fI69068_aux_uncurry,_vI69075_t_param_std_1209)+0,
+  offsetof(_fI69068_aux_uncurry,_vI69073_aux__apos_2_mv_1328)+0,
+  offsetof(_fI69068_aux_uncurry,_vI69070_y)+0,
+  offsetof(_fI69068_aux_uncurry,_vI69069_x_uncurry)+0,
+};
+static ::flx::gc::generic::offset_data_t const _fI69068_aux_uncurry_offset_data = { 8+FLX_PASS_PTF, _fI69068_aux_uncurry_offsets};
+FLX_FINALISER(_fI69068_aux_uncurry)
+static ::flx::gc::generic::gc_shape_t _fI69068_aux_uncurry_ptr_map ={
+  &_fI69193__lam_1332_ptr_map,
+  "flx_pkgconfig::_fI69068_aux_uncurry",
+  1,sizeof(_fI69068_aux_uncurry),
+  _fI69068_aux_uncurry_finaliser,
+  0, // fcops
+  &_fI69068_aux_uncurry_offset_data, // scanner data
+  &::flx::gc::generic::scan_by_offsets, // scanner
+  0,
+  0,
+  ::flx::gc::generic::gc_flags_default,
+  0ul,0ul
+};
+
+//OFFSETS for function _lam_1375
+static ::std::size_t const _lam_1375_offsets[1+FLX_PASS_PTF]={
+  FLX_EAT_PTF(offsetof(_lam_1375,ptf)comma)
+  offsetof(_lam_1375,ptrcat_uncurry),
+};
+static ::flx::gc::generic::offset_data_t const _lam_1375_offset_data = { 1+FLX_PASS_PTF, _lam_1375_offsets};
+FLX_FINALISER(_lam_1375)
+static ::flx::gc::generic::gc_shape_t _lam_1375_ptr_map ={
+  &_fI69068_aux_uncurry_ptr_map,
+  "flx_pkgconfig::_lam_1375",
+  1,sizeof(_lam_1375),
+  _lam_1375_finaliser,
+  0, // fcops
+  &_lam_1375_offset_data, // scanner data
+  &::flx::gc::generic::scan_by_offsets, // scanner
+  0,
+  0,
+  ::flx::gc::generic::gc_flags_default,
+  0ul,0ul
+};
+
+//OFFSETS for function _fI69526__lam_1398
+static ::std::size_t const _fI69526__lam_1398_offsets[2+FLX_PASS_PTF]={
+  FLX_EAT_PTF(offsetof(_fI69526__lam_1398,ptf)comma)
+  offsetof(_fI69526__lam_1398,ptrhandle_pkg),
+  offsetof(_fI69526__lam_1398,ptrflx_pkgconfig),
+};
+static ::flx::gc::generic::offset_data_t const _fI69526__lam_1398_offset_data = { 2+FLX_PASS_PTF, _fI69526__lam_1398_offsets};
+FLX_FINALISER(_fI69526__lam_1398)
+static ::flx::gc::generic::gc_shape_t _fI69526__lam_1398_ptr_map ={
+  &_lam_1375_ptr_map,
+  "flx_pkgconfig::_fI69526__lam_1398",
+  1,sizeof(_fI69526__lam_1398),
+  _fI69526__lam_1398_finaliser,
+  0, // fcops
+  &_fI69526__lam_1398_offset_data, // scanner data
+  &::flx::gc::generic::scan_by_offsets, // scanner
+  0,
+  0,
+  ::flx::gc::generic::gc_flags_default,
+  0ul,0ul
+};
+
+//OFFSETS for function _fI69515__lam_1398
+static ::std::size_t const _fI69515__lam_1398_offsets[2+FLX_PASS_PTF]={
+  FLX_EAT_PTF(offsetof(_fI69515__lam_1398,ptf)comma)
+  offsetof(_fI69515__lam_1398,ptrhandle_pkg),
+  offsetof(_fI69515__lam_1398,ptrflx_pkgconfig),
+};
+static ::flx::gc::generic::offset_data_t const _fI69515__lam_1398_offset_data = { 2+FLX_PASS_PTF, _fI69515__lam_1398_offsets};
+FLX_FINALISER(_fI69515__lam_1398)
+static ::flx::gc::generic::gc_shape_t _fI69515__lam_1398_ptr_map ={
+  &_fI69526__lam_1398_ptr_map,
+  "flx_pkgconfig::_fI69515__lam_1398",
+  1,sizeof(_fI69515__lam_1398),
+  _fI69515__lam_1398_finaliser,
+  0, // fcops
+  &_fI69515__lam_1398_offset_data, // scanner data
+  &::flx::gc::generic::scan_by_offsets, // scanner
+  0,
+  0,
+  ::flx::gc::generic::gc_flags_default,
+  0ul,0ul
+};
+
+//OFFSETS for function _fI68674__lam_1332
+static ::std::size_t const _fI68674__lam_1332_offsets[4+FLX_PASS_PTF]={
+  FLX_EAT_PTF(offsetof(_fI68674__lam_1332,ptf)comma)
+  offsetof(_fI68674__lam_1332,ptr_fI68666_aux_uncurry),
+  offsetof(_fI68674__lam_1332,ptraux),
+  offsetof(_fI68674__lam_1332,ptrtail_val),
+  offsetof(_fI68674__lam_1332,ptrflx_pkgconfig),
+};
+static ::flx::gc::generic::offset_data_t const _fI68674__lam_1332_offset_data = { 4+FLX_PASS_PTF, _fI68674__lam_1332_offsets};
+FLX_FINALISER(_fI68674__lam_1332)
+static ::flx::gc::generic::gc_shape_t _fI68674__lam_1332_ptr_map ={
+  &_fI69515__lam_1398_ptr_map,
+  "flx_pkgconfig::_fI68674__lam_1332",
+  1,sizeof(_fI68674__lam_1332),
+  _fI68674__lam_1332_finaliser,
+  0, // fcops
+  &_fI68674__lam_1332_offset_data, // scanner data
+  &::flx::gc::generic::scan_by_offsets, // scanner
+  0,
+  0,
+  ::flx::gc::generic::gc_flags_default,
+  0ul,0ul
+};
+
+//OFFSETS for function _fI69450__lam_1332
+static ::std::size_t const _fI69450__lam_1332_offsets[5+FLX_PASS_PTF]={
+  FLX_EAT_PTF(offsetof(_fI69450__lam_1332,ptf)comma)
+  offsetof(_fI69450__lam_1332,ptr_fI69442_aux_uncurry),
+  offsetof(_fI69450__lam_1332,ptr_fI69434_aux),
+  offsetof(_fI69450__lam_1332,ptr_lam_64579),
+  offsetof(_fI69450__lam_1332,ptrhandle_pkg),
+  offsetof(_fI69450__lam_1332,ptrflx_pkgconfig),
+};
+static ::flx::gc::generic::offset_data_t const _fI69450__lam_1332_offset_data = { 5+FLX_PASS_PTF, _fI69450__lam_1332_offsets};
+FLX_FINALISER(_fI69450__lam_1332)
+static ::flx::gc::generic::gc_shape_t _fI69450__lam_1332_ptr_map ={
+  &_fI68674__lam_1332_ptr_map,
+  "flx_pkgconfig::_fI69450__lam_1332",
+  1,sizeof(_fI69450__lam_1332),
+  _fI69450__lam_1332_finaliser,
+  0, // fcops
+  &_fI69450__lam_1332_offset_data, // scanner data
+  &::flx::gc::generic::scan_by_offsets, // scanner
+  0,
+  0,
+  ::flx::gc::generic::gc_flags_default,
+  0ul,0ul
+};
+
+//OFFSETS for function _fI69434_aux
+static ::std::size_t const _fI69434_aux_offsets[7+FLX_PASS_PTF]={
+  FLX_EAT_PTF(offsetof(_fI69434_aux,ptf)comma)
+  offsetof(_fI69434_aux,ptr_lam_64579),
+  offsetof(_fI69434_aux,ptrhandle_pkg),
+  offsetof(_fI69434_aux,ptrflx_pkgconfig),
+  offsetof(_fI69434_aux,_vI69441_t_param_std_1242)+0,
+  offsetof(_fI69434_aux,_vI69439_aux_mv_1434)+0,
+  offsetof(_fI69434_aux,_vI69436_out)+0,
+  offsetof(_fI69434_aux,_vI69435_inp)+0,
+};
+static ::flx::gc::generic::offset_data_t const _fI69434_aux_offset_data = { 7+FLX_PASS_PTF, _fI69434_aux_offsets};
+FLX_FINALISER(_fI69434_aux)
+static ::flx::gc::generic::gc_shape_t _fI69434_aux_ptr_map ={
+  &_fI69450__lam_1332_ptr_map,
+  "flx_pkgconfig::_fI69434_aux",
+  1,sizeof(_fI69434_aux),
+  _fI69434_aux_finaliser,
+  0, // fcops
+  &_fI69434_aux_offset_data, // scanner data
+  &::flx::gc::generic::scan_by_offsets, // scanner
+  0,
+  0,
+  ::flx::gc::generic::gc_flags_default,
+  0ul,0ul
+};
+
+//OFFSETS for function _fI69538_aux_uncurry
+static ::std::size_t const _fI69538_aux_uncurry_offsets[6+FLX_PASS_PTF]={
+  FLX_EAT_PTF(offsetof(_fI69538_aux_uncurry,ptf)comma)
+  offsetof(_fI69538_aux_uncurry,ptrhandle_pkg),
+  offsetof(_fI69538_aux_uncurry,ptrflx_pkgconfig),
+  offsetof(_fI69538_aux_uncurry,_vI69545_t_param_std_1209)+0,
+  offsetof(_fI69538_aux_uncurry,_vI69543_aux__apos_2_mv_1328)+0,
+  offsetof(_fI69538_aux_uncurry,_vI69540_y)+0,
+  offsetof(_fI69538_aux_uncurry,_vI69539_x_uncurry)+0,
+};
+static ::flx::gc::generic::offset_data_t const _fI69538_aux_uncurry_offset_data = { 6+FLX_PASS_PTF, _fI69538_aux_uncurry_offsets};
+FLX_FINALISER(_fI69538_aux_uncurry)
+static ::flx::gc::generic::gc_shape_t _fI69538_aux_uncurry_ptr_map ={
+  &_fI69434_aux_ptr_map,
+  "flx_pkgconfig::_fI69538_aux_uncurry",
+  1,sizeof(_fI69538_aux_uncurry),
+  _fI69538_aux_uncurry_finaliser,
+  0, // fcops
+  &_fI69538_aux_uncurry_offset_data, // scanner data
+  &::flx::gc::generic::scan_by_offsets, // scanner
+  0,
+  0,
+  ::flx::gc::generic::gc_flags_default,
+  0ul,0ul
+};
+
+//OFFSETS for function get_field
+static ::std::size_t const get_field_offsets[2+FLX_PASS_PTF]={
+  FLX_EAT_PTF(offsetof(get_field,ptf)comma)
+  offsetof(get_field,ptrflx_pkgconfig),
+  offsetof(get_field,get_field_mv_64555)+0,
+};
+static ::flx::gc::generic::offset_data_t const get_field_offset_data = { 2+FLX_PASS_PTF, get_field_offsets};
+FLX_FINALISER(get_field)
+static ::flx::gc::generic::gc_shape_t get_field_ptr_map ={
+  &_fI69538_aux_uncurry_ptr_map,
+  "flx_pkgconfig::get_field",
+  1,sizeof(get_field),
+  get_field_finaliser,
+  0, // fcops
+  &get_field_offset_data, // scanner data
+  &::flx::gc::generic::scan_by_offsets, // scanner
+  0,
+  0,
+  ::flx::gc::generic::gc_flags_default,
+  0ul,0ul
+};
+
+//OFFSETS for function _lam_1295
+static ::std::size_t const _lam_1295_offsets[1+FLX_PASS_PTF]={
+  FLX_EAT_PTF(offsetof(_lam_1295,ptf)comma)
+  offsetof(_lam_1295,ptriter_uncurry),
+};
+static ::flx::gc::generic::offset_data_t const _lam_1295_offset_data = { 1+FLX_PASS_PTF, _lam_1295_offsets};
+FLX_FINALISER(_lam_1295)
+static ::flx::gc::generic::gc_shape_t _lam_1295_ptr_map ={
+  &get_field_ptr_map,
+  "flx_pkgconfig::_lam_1295",
+  1,sizeof(_lam_1295),
+  _lam_1295_finaliser,
+  0, // fcops
+  &_lam_1295_offset_data, // scanner data
+  &::flx::gc::generic::scan_by_offsets, // scanner
+  0,
+  0,
+  ::flx::gc::generic::gc_flags_default,
+  0ul,0ul
+};
+
+//OFFSETS for function _fI70125_aux
+static ::std::size_t const _fI70125_aux_offsets[6+FLX_PASS_PTF]={
+  FLX_EAT_PTF(offsetof(_fI70125_aux,ptf)comma)
+  offsetof(_fI70125_aux,ptrparse_args),
+  offsetof(_fI70125_aux,ptrflx_pkgconfig),
+  offsetof(_fI70125_aux,_vI70132_t_param_std_1242)+0,
+  offsetof(_fI70125_aux,_vI70130_aux_mv_1434)+0,
+  offsetof(_fI70125_aux,_vI70127_out)+0,
+  offsetof(_fI70125_aux,_vI70126_inp)+0,
+};
+static ::flx::gc::generic::offset_data_t const _fI70125_aux_offset_data = { 6+FLX_PASS_PTF, _fI70125_aux_offsets};
+FLX_FINALISER(_fI70125_aux)
+static ::flx::gc::generic::gc_shape_t _fI70125_aux_ptr_map ={
+  &_lam_1295_ptr_map,
+  "flx_pkgconfig::_fI70125_aux",
+  1,sizeof(_fI70125_aux),
+  _fI70125_aux_finaliser,
+  0, // fcops
+  &_fI70125_aux_offset_data, // scanner data
+  &::flx::gc::generic::scan_by_offsets, // scanner
+  0,
+  0,
+  ::flx::gc::generic::gc_flags_default,
+  0ul,0ul
+};
+
+//OFFSETS for function _fI68748_iterator__apos_2
+static ::std::size_t const _fI68748_iterator__apos_2_offsets[2+FLX_PASS_PTF]={
+  FLX_EAT_PTF(offsetof(_fI68748_iterator__apos_2,ptf)comma)
+  offsetof(_fI68748_iterator__apos_2,ptrcheck_id),
+  offsetof(_fI68748_iterator__apos_2,ptrflx_pkgconfig),
+};
+static ::flx::gc::generic::offset_data_t const _fI68748_iterator__apos_2_offset_data = { 2+FLX_PASS_PTF, _fI68748_iterator__apos_2_offsets};
+FLX_FINALISER(_fI68748_iterator__apos_2)
+static ::flx::gc::generic::gc_shape_t _fI68748_iterator__apos_2_ptr_map ={
+  &_fI70125_aux_ptr_map,
+  "flx_pkgconfig::_fI68748_iterator__apos_2",
+  1,sizeof(_fI68748_iterator__apos_2),
+  _fI68748_iterator__apos_2_finaliser,
+  0, // fcops
+  &_fI68748_iterator__apos_2_offset_data, // scanner data
+  &::flx::gc::generic::scan_by_offsets, // scanner
+  0,
+  0,
+  ::flx::gc::generic::gc_flags_default,
+  0ul,0ul
+};
+
+//OFFSETS for function _lam_1398
+static ::std::size_t const _lam_1398_offsets[2+FLX_PASS_PTF]={
+  FLX_EAT_PTF(offsetof(_lam_1398,ptf)comma)
+  offsetof(_lam_1398,ptradd_val),
+  offsetof(_lam_1398,ptrflx_pkgconfig),
+};
+static ::flx::gc::generic::offset_data_t const _lam_1398_offset_data = { 2+FLX_PASS_PTF, _lam_1398_offsets};
+FLX_FINALISER(_lam_1398)
+static ::flx::gc::generic::gc_shape_t _lam_1398_ptr_map ={
+  &_fI68748_iterator__apos_2_ptr_map,
+  "flx_pkgconfig::_lam_1398",
+  1,sizeof(_lam_1398),
+  _lam_1398_finaliser,
+  0, // fcops
+  &_lam_1398_offset_data, // scanner data
+  &::flx::gc::generic::scan_by_offsets, // scanner
+  0,
+  0,
+  ::flx::gc::generic::gc_flags_default,
+  0ul,0ul
+};
+
+//OFFSETS for function search_and_replace_uncurry
+static ::std::size_t const search_and_replace_uncurry_offsets[5+FLX_PASS_PTF]={
+  FLX_EAT_PTF(offsetof(search_and_replace_uncurry,ptf)comma)
+  offsetof(search_and_replace_uncurry,_vI68946_xs)+0,
+  offsetof(search_and_replace_uncurry,_genout_urv68945)+0,
+  offsetof(search_and_replace_uncurry,vs_uncurry)+0,
+  offsetof(search_and_replace_uncurry,_generator_strings_7324)+0,
+  offsetof(search_and_replace_uncurry,_vI68141_search_and_replace__apos_2_mv_2301)+0,
+};
+static ::flx::gc::generic::offset_data_t const search_and_replace_uncurry_offset_data = { 5+FLX_PASS_PTF, search_and_replace_uncurry_offsets};
+FLX_FINALISER(search_and_replace_uncurry)
+static ::flx::gc::generic::gc_shape_t search_and_replace_uncurry_ptr_map ={
+  &_lam_1398_ptr_map,
+  "flx_pkgconfig::search_and_replace_uncurry",
+  1,sizeof(search_and_replace_uncurry),
+  search_and_replace_uncurry_finaliser,
+  0, // fcops
+  &search_and_replace_uncurry_offset_data, // scanner data
+  &::flx::gc::generic::scan_by_offsets, // scanner
+  0,
+  0,
+  ::flx::gc::generic::gc_flags_default,
+  0ul,0ul
+};
+
+//OFFSETS for function _lam_64552
+static ::std::size_t const _lam_64552_offsets[2+FLX_PASS_PTF]={
+  FLX_EAT_PTF(offsetof(_lam_64552,ptf)comma)
+  offsetof(_lam_64552,ptrcheck_id),
+  offsetof(_lam_64552,ptrflx_pkgconfig),
+};
+static ::flx::gc::generic::offset_data_t const _lam_64552_offset_data = { 2+FLX_PASS_PTF, _lam_64552_offsets};
+FLX_FINALISER(_lam_64552)
+static ::flx::gc::generic::gc_shape_t _lam_64552_ptr_map ={
+  &search_and_replace_uncurry_ptr_map,
+  "flx_pkgconfig::_lam_64552",
+  1,sizeof(_lam_64552),
+  _lam_64552_finaliser,
+  0, // fcops
+  &_lam_64552_offset_data, // scanner data
+  &::flx::gc::generic::scan_by_offsets, // scanner
+  0,
+  0,
+  ::flx::gc::generic::gc_flags_default,
+  0ul,0ul
+};
+
+//OFFSETS for function _lam_64559
+static ::std::size_t const _lam_64559_offsets[2+FLX_PASS_PTF]={
+  FLX_EAT_PTF(offsetof(_lam_64559,ptf)comma)
+  offsetof(_lam_64559,ptrget_field),
+  offsetof(_lam_64559,ptrflx_pkgconfig),
+};
+static ::flx::gc::generic::offset_data_t const _lam_64559_offset_data = { 2+FLX_PASS_PTF, _lam_64559_offsets};
+FLX_FINALISER(_lam_64559)
+static ::flx::gc::generic::gc_shape_t _lam_64559_ptr_map ={
+  &_lam_64552_ptr_map,
+  "flx_pkgconfig::_lam_64559",
+  1,sizeof(_lam_64559),
+  _lam_64559_finaliser,
+  0, // fcops
+  &_lam_64559_offset_data, // scanner data
+  &::flx::gc::generic::scan_by_offsets, // scanner
+  0,
+  0,
+  ::flx::gc::generic::gc_flags_default,
+  0ul,0ul
+};
+
+//OFFSETS for function aux
+static ::std::size_t const aux_offsets[6+FLX_PASS_PTF]={
+  FLX_EAT_PTF(offsetof(aux,ptf)comma)
+  offsetof(aux,ptrtail_val),
+  offsetof(aux,ptrflx_pkgconfig),
+  offsetof(aux,t_param_std_1242)+0,
+  offsetof(aux,aux_mv_1434)+0,
+  offsetof(aux,_vI68660_out)+0,
+  offsetof(aux,inp)+0,
+};
+static ::flx::gc::generic::offset_data_t const aux_offset_data = { 6+FLX_PASS_PTF, aux_offsets};
+FLX_FINALISER(aux)
+static ::flx::gc::generic::gc_shape_t aux_ptr_map ={
+  &_lam_64559_ptr_map,
+  "flx_pkgconfig::aux",
+  1,sizeof(aux),
+  aux_finaliser,
+  0, // fcops
+  &aux_offset_data, // scanner data
+  &::flx::gc::generic::scan_by_offsets, // scanner
+  0,
+  0,
+  ::flx::gc::generic::gc_flags_default,
+  0ul,0ul
+};
+
+//OFFSETS for function _lam_1443
+static ::std::size_t const _lam_1443_offsets[3+FLX_PASS_PTF]={
+  FLX_EAT_PTF(offsetof(_lam_1443,ptf)comma)
+  offsetof(_lam_1443,ptraux),
+  offsetof(_lam_1443,ptrtail_val),
+  offsetof(_lam_1443,ptrflx_pkgconfig),
+};
+static ::flx::gc::generic::offset_data_t const _lam_1443_offset_data = { 3+FLX_PASS_PTF, _lam_1443_offsets};
+FLX_FINALISER(_lam_1443)
+static ::flx::gc::generic::gc_shape_t _lam_1443_ptr_map ={
+  &aux_ptr_map,
+  "flx_pkgconfig::_lam_1443",
+  1,sizeof(_lam_1443),
+  _lam_1443_finaliser,
+  0, // fcops
+  &_lam_1443_offset_data, // scanner data
+  &::flx::gc::generic::scan_by_offsets, // scanner
+  0,
+  0,
+  ::flx::gc::generic::gc_flags_default,
+  0ul,0ul
+};
+
+//OFFSETS for function _fI69354__lam_1398
+static ::std::size_t const _fI69354__lam_1398_offsets[4+FLX_PASS_PTF]={
+  FLX_EAT_PTF(offsetof(_fI69354__lam_1398,ptf)comma)
+  offsetof(_fI69354__lam_1398,ptr_lam_64590),
+  offsetof(_fI69354__lam_1398,ptr_lam_64579),
+  offsetof(_fI69354__lam_1398,ptrhandle_pkg),
+  offsetof(_fI69354__lam_1398,ptrflx_pkgconfig),
+};
+static ::flx::gc::generic::offset_data_t const _fI69354__lam_1398_offset_data = { 4+FLX_PASS_PTF, _fI69354__lam_1398_offsets};
+FLX_FINALISER(_fI69354__lam_1398)
+static ::flx::gc::generic::gc_shape_t _fI69354__lam_1398_ptr_map ={
+  &_lam_1443_ptr_map,
+  "flx_pkgconfig::_fI69354__lam_1398",
+  1,sizeof(_fI69354__lam_1398),
+  _fI69354__lam_1398_finaliser,
+  0, // fcops
+  &_fI69354__lam_1398_offset_data, // scanner data
+  &::flx::gc::generic::scan_by_offsets, // scanner
+  0,
+  0,
+  ::flx::gc::generic::gc_flags_default,
+  0ul,0ul
+};
+
+//OFFSETS for function _fI69528_aux_uncurry
+static ::std::size_t const _fI69528_aux_uncurry_offsets[6+FLX_PASS_PTF]={
+  FLX_EAT_PTF(offsetof(_fI69528_aux_uncurry,ptf)comma)
+  offsetof(_fI69528_aux_uncurry,ptrhandle_pkg),
+  offsetof(_fI69528_aux_uncurry,ptrflx_pkgconfig),
+  offsetof(_fI69528_aux_uncurry,_vI69535_t_param_std_1209)+0,
+  offsetof(_fI69528_aux_uncurry,_vI69533_aux__apos_2_mv_1328)+0,
+  offsetof(_fI69528_aux_uncurry,_vI69530_y)+0,
+  offsetof(_fI69528_aux_uncurry,_vI69529_x_uncurry)+0,
+};
+static ::flx::gc::generic::offset_data_t const _fI69528_aux_uncurry_offset_data = { 6+FLX_PASS_PTF, _fI69528_aux_uncurry_offsets};
+FLX_FINALISER(_fI69528_aux_uncurry)
+static ::flx::gc::generic::gc_shape_t _fI69528_aux_uncurry_ptr_map ={
+  &_fI69354__lam_1398_ptr_map,
+  "flx_pkgconfig::_fI69528_aux_uncurry",
+  1,sizeof(_fI69528_aux_uncurry),
+  _fI69528_aux_uncurry_finaliser,
+  0, // fcops
+  &_fI69528_aux_uncurry_offset_data, // scanner data
+  &::flx::gc::generic::scan_by_offsets, // scanner
+  0,
+  0,
+  ::flx::gc::generic::gc_flags_default,
+  0ul,0ul
+};
+
+//OFFSETS for function _lam_2306
+static ::std::size_t const _lam_2306_offsets[1+FLX_PASS_PTF]={
+  FLX_EAT_PTF(offsetof(_lam_2306,ptf)comma)
+  offsetof(_lam_2306,ptrsearch_and_replace_uncurry),
+};
+static ::flx::gc::generic::offset_data_t const _lam_2306_offset_data = { 1+FLX_PASS_PTF, _lam_2306_offsets};
+FLX_FINALISER(_lam_2306)
+static ::flx::gc::generic::gc_shape_t _lam_2306_ptr_map ={
+  &_fI69528_aux_uncurry_ptr_map,
+  "flx_pkgconfig::_lam_2306",
+  1,sizeof(_lam_2306),
+  _lam_2306_finaliser,
+  0, // fcops
+  &_lam_2306_offset_data, // scanner data
   &::flx::gc::generic::scan_by_offsets, // scanner
   0,
   0,
@@ -2315,15 +2578,15 @@ static ::std::size_t const iter_uncurry_offsets[6+FLX_PASS_PTF]={
   FLX_EAT_PTF(offsetof(iter_uncurry,ptf)comma)
   offsetof(iter_uncurry,p_svc),
   offsetof(iter_uncurry,_caller),
-  offsetof(iter_uncurry,t_param_std_1256)+0,
-  offsetof(iter_uncurry,_vI69171_iter__apos_2_mv_1348)+0,
-  offsetof(iter_uncurry,_vI68725_x)+0,
+  offsetof(iter_uncurry,t_param_std_1197)+0,
+  offsetof(iter_uncurry,_vI68590_iter__apos_2_mv_1289)+0,
+  offsetof(iter_uncurry,_vI68032_x)+0,
   offsetof(iter_uncurry,_f_uncurry)+0,
 };
 static ::flx::gc::generic::offset_data_t const iter_uncurry_offset_data = { 6+FLX_PASS_PTF, iter_uncurry_offsets};
 FLX_FINALISER(iter_uncurry)
 static ::flx::gc::generic::gc_shape_t iter_uncurry_ptr_map ={
-  &_fI69989_aux_uncurry_ptr_map,
+  &_lam_2306_ptr_map,
   "flx_pkgconfig::iter_uncurry",
   1,sizeof(iter_uncurry),
   iter_uncurry_finaliser,
@@ -2336,278 +2599,15 @@ static ::flx::gc::generic::gc_shape_t iter_uncurry_ptr_map ={
   0ul,0ul
 };
 
-//OFFSETS for function _lam_65140
-static ::std::size_t const _lam_65140_offsets[2+FLX_PASS_PTF]={
-  FLX_EAT_PTF(offsetof(_lam_65140,ptf)comma)
-  offsetof(_lam_65140,ptrget_field),
-  offsetof(_lam_65140,ptrflx_pkgconfig),
-};
-static ::flx::gc::generic::offset_data_t const _lam_65140_offset_data = { 2+FLX_PASS_PTF, _lam_65140_offsets};
-FLX_FINALISER(_lam_65140)
-static ::flx::gc::generic::gc_shape_t _lam_65140_ptr_map ={
-  &iter_uncurry_ptr_map,
-  "flx_pkgconfig::_lam_65140",
-  1,sizeof(_lam_65140),
-  _lam_65140_finaliser,
-  0, // fcops
-  &_lam_65140_offset_data, // scanner data
-  &::flx::gc::generic::scan_by_offsets, // scanner
-  0,
-  0,
-  ::flx::gc::generic::gc_flags_default,
-  0ul,0ul
-};
-
-//OFFSETS for function _fI69255__lam_1391
-static ::std::size_t const _fI69255__lam_1391_offsets[4+FLX_PASS_PTF]={
-  FLX_EAT_PTF(offsetof(_fI69255__lam_1391,ptf)comma)
-  offsetof(_fI69255__lam_1391,ptr_fI69247_aux_uncurry),
-  offsetof(_fI69255__lam_1391,ptraux),
-  offsetof(_fI69255__lam_1391,ptrtail_val),
-  offsetof(_fI69255__lam_1391,ptrflx_pkgconfig),
-};
-static ::flx::gc::generic::offset_data_t const _fI69255__lam_1391_offset_data = { 4+FLX_PASS_PTF, _fI69255__lam_1391_offsets};
-FLX_FINALISER(_fI69255__lam_1391)
-static ::flx::gc::generic::gc_shape_t _fI69255__lam_1391_ptr_map ={
-  &_lam_65140_ptr_map,
-  "flx_pkgconfig::_fI69255__lam_1391",
-  1,sizeof(_fI69255__lam_1391),
-  _fI69255__lam_1391_finaliser,
-  0, // fcops
-  &_fI69255__lam_1391_offset_data, // scanner data
-  &::flx::gc::generic::scan_by_offsets, // scanner
-  0,
-  0,
-  ::flx::gc::generic::gc_flags_default,
-  0ul,0ul
-};
-
-//OFFSETS for procedure add_val
-static ::std::size_t const add_val_offsets[4+FLX_PASS_PTF]={
-  FLX_EAT_PTF(offsetof(add_val,ptf)comma)
-  offsetof(add_val,p_svc),
-  offsetof(add_val,_caller),
-  offsetof(add_val,ptrflx_pkgconfig),
-  offsetof(add_val,_urv69124)+0,
-};
-static ::flx::gc::generic::offset_data_t const add_val_offset_data = { 4+FLX_PASS_PTF, add_val_offsets};
-FLX_FINALISER(add_val)
-static ::flx::gc::generic::gc_shape_t add_val_ptr_map ={
-  &_fI69255__lam_1391_ptr_map,
-  "flx_pkgconfig::add_val",
-  1,sizeof(add_val),
-  add_val_finaliser,
-  0, // fcops
-  &add_val_offset_data, // scanner data
-  &::flx::gc::generic::scan_by_offsets, // scanner
-  0,
-  0,
-  ::flx::gc::generic::gc_flags_default,
-  0ul,0ul
-};
-
-//OFFSETS for function _lam_2300
-static ::std::size_t const _lam_2300_offsets[3+FLX_PASS_PTF]={
-  FLX_EAT_PTF(offsetof(_lam_2300,ptf)comma)
-  offsetof(_lam_2300,ptr_fI70730_aux),
-  offsetof(_lam_2300,ptrparse_args),
-  offsetof(_lam_2300,ptrflx_pkgconfig),
-};
-static ::flx::gc::generic::offset_data_t const _lam_2300_offset_data = { 3+FLX_PASS_PTF, _lam_2300_offsets};
-FLX_FINALISER(_lam_2300)
-static ::flx::gc::generic::gc_shape_t _lam_2300_ptr_map ={
-  &add_val_ptr_map,
-  "flx_pkgconfig::_lam_2300",
-  1,sizeof(_lam_2300),
-  _lam_2300_finaliser,
-  0, // fcops
-  &_lam_2300_offset_data, // scanner data
-  &::flx::gc::generic::scan_by_offsets, // scanner
-  0,
-  0,
-  ::flx::gc::generic::gc_flags_default,
-  0ul,0ul
-};
-
-//OFFSETS for function _fI69528_iterator__apos_2
-static ::std::size_t const _fI69528_iterator__apos_2_offsets[3+FLX_PASS_PTF]={
-  FLX_EAT_PTF(offsetof(_fI69528_iterator__apos_2,ptf)comma)
-  offsetof(_fI69528_iterator__apos_2,ptrsearch_and_replace_uncurry),
-  offsetof(_fI69528_iterator__apos_2,t_param_std_1318)+0,
-  offsetof(_fI69528_iterator__apos_2,_vI69533_iterator__apos_2_mv_1563)+0,
-};
-static ::flx::gc::generic::offset_data_t const _fI69528_iterator__apos_2_offset_data = { 3+FLX_PASS_PTF, _fI69528_iterator__apos_2_offsets};
-FLX_FINALISER(_fI69528_iterator__apos_2)
-static ::flx::gc::generic::gc_shape_t _fI69528_iterator__apos_2_ptr_map ={
-  &_lam_2300_ptr_map,
-  "flx_pkgconfig::_fI69528_iterator__apos_2",
-  1,sizeof(_fI69528_iterator__apos_2),
-  _fI69528_iterator__apos_2_finaliser,
-  0, // fcops
-  &_fI69528_iterator__apos_2_offset_data, // scanner data
-  &::flx::gc::generic::scan_by_offsets, // scanner
-  0,
-  0,
-  ::flx::gc::generic::gc_flags_default,
-  0ul,0ul
-};
-
-//OFFSETS for function _fI70696__lam_1391
-static ::std::size_t const _fI70696__lam_1391_offsets[4+FLX_PASS_PTF]={
-  FLX_EAT_PTF(offsetof(_fI70696__lam_1391,ptf)comma)
-  offsetof(_fI70696__lam_1391,ptr_fI70688_aux_uncurry),
-  offsetof(_fI70696__lam_1391,ptr_fI70680_aux),
-  offsetof(_fI70696__lam_1391,ptrparse_args),
-  offsetof(_fI70696__lam_1391,ptrflx_pkgconfig),
-};
-static ::flx::gc::generic::offset_data_t const _fI70696__lam_1391_offset_data = { 4+FLX_PASS_PTF, _fI70696__lam_1391_offsets};
-FLX_FINALISER(_fI70696__lam_1391)
-static ::flx::gc::generic::gc_shape_t _fI70696__lam_1391_ptr_map ={
-  &_fI69528_iterator__apos_2_ptr_map,
-  "flx_pkgconfig::_fI70696__lam_1391",
-  1,sizeof(_fI70696__lam_1391),
-  _fI70696__lam_1391_finaliser,
-  0, // fcops
-  &_fI70696__lam_1391_offset_data, // scanner data
-  &::flx::gc::generic::scan_by_offsets, // scanner
-  0,
-  0,
-  ::flx::gc::generic::gc_flags_default,
-  0ul,0ul
-};
-
-//OFFSETS for function _lam_2289
-static ::std::size_t const _lam_2289_offsets[2+FLX_PASS_PTF]={
-  FLX_EAT_PTF(offsetof(_lam_2289,ptf)comma)
-  offsetof(_lam_2289,ptr_fI70890_aux),
-  offsetof(_lam_2289,ptrflx_pkgconfig),
-};
-static ::flx::gc::generic::offset_data_t const _lam_2289_offset_data = { 2+FLX_PASS_PTF, _lam_2289_offsets};
-FLX_FINALISER(_lam_2289)
-static ::flx::gc::generic::gc_shape_t _lam_2289_ptr_map ={
-  &_fI70696__lam_1391_ptr_map,
-  "flx_pkgconfig::_lam_2289",
-  1,sizeof(_lam_2289),
-  _lam_2289_finaliser,
-  0, // fcops
-  &_lam_2289_offset_data, // scanner data
-  &::flx::gc::generic::scan_by_offsets, // scanner
-  0,
-  0,
-  ::flx::gc::generic::gc_flags_default,
-  0ul,0ul
-};
-
-//OFFSETS for function _lam_1444
-static ::std::size_t const _lam_1444_offsets[1+FLX_PASS_PTF]={
-  FLX_EAT_PTF(offsetof(_lam_1444,ptf)comma)
-  offsetof(_lam_1444,ptrcat_uncurry),
-};
-static ::flx::gc::generic::offset_data_t const _lam_1444_offset_data = { 1+FLX_PASS_PTF, _lam_1444_offsets};
-FLX_FINALISER(_lam_1444)
-static ::flx::gc::generic::gc_shape_t _lam_1444_ptr_map ={
-  &_lam_2289_ptr_map,
-  "flx_pkgconfig::_lam_1444",
-  1,sizeof(_lam_1444),
-  _lam_1444_finaliser,
-  0, // fcops
-  &_lam_1444_offset_data, // scanner data
-  &::flx::gc::generic::scan_by_offsets, // scanner
-  0,
-  0,
-  ::flx::gc::generic::gc_flags_default,
-  0ul,0ul
-};
-
-//OFFSETS for procedure parse_args
-static ::std::size_t const parse_args_offsets[6+FLX_PASS_PTF]={
-  FLX_EAT_PTF(offsetof(parse_args,ptf)comma)
-  offsetof(parse_args,p_svc),
-  offsetof(parse_args,_caller),
-  offsetof(parse_args,ptrflx_pkgconfig),
-  offsetof(parse_args,tail_param_flx_pkgconfig_65010)+0,
-  offsetof(parse_args,parse_args_mv_65106)+0,
-  offsetof(parse_args,_vI65510_args)+0,
-};
-static ::flx::gc::generic::offset_data_t const parse_args_offset_data = { 6+FLX_PASS_PTF, parse_args_offsets};
-FLX_FINALISER(parse_args)
-static ::flx::gc::generic::gc_shape_t parse_args_ptr_map ={
-  &_lam_1444_ptr_map,
-  "flx_pkgconfig::parse_args",
-  1,sizeof(parse_args),
-  parse_args_finaliser,
-  0, // fcops
-  &parse_args_offset_data, // scanner data
-  &::flx::gc::generic::scan_by_offsets, // scanner
-  0,
-  0,
-  ::flx::gc::generic::gc_flags_default,
-  0ul,0ul
-};
-
-//OFFSETS for function _fI69247_aux_uncurry
-static ::std::size_t const _fI69247_aux_uncurry_offsets[7+FLX_PASS_PTF]={
-  FLX_EAT_PTF(offsetof(_fI69247_aux_uncurry,ptf)comma)
-  offsetof(_fI69247_aux_uncurry,ptraux),
-  offsetof(_fI69247_aux_uncurry,ptrtail_val),
-  offsetof(_fI69247_aux_uncurry,ptrflx_pkgconfig),
-  offsetof(_fI69247_aux_uncurry,_vI69254_t_param_std_1268)+0,
-  offsetof(_fI69247_aux_uncurry,_vI69252_aux__apos_2_mv_1387)+0,
-  offsetof(_fI69247_aux_uncurry,_vI69249_y)+0,
-  offsetof(_fI69247_aux_uncurry,_vI69248_x_uncurry)+0,
-};
-static ::flx::gc::generic::offset_data_t const _fI69247_aux_uncurry_offset_data = { 7+FLX_PASS_PTF, _fI69247_aux_uncurry_offsets};
-FLX_FINALISER(_fI69247_aux_uncurry)
-static ::flx::gc::generic::gc_shape_t _fI69247_aux_uncurry_ptr_map ={
-  &parse_args_ptr_map,
-  "flx_pkgconfig::_fI69247_aux_uncurry",
-  1,sizeof(_fI69247_aux_uncurry),
-  _fI69247_aux_uncurry_finaliser,
-  0, // fcops
-  &_fI69247_aux_uncurry_offset_data, // scanner data
-  &::flx::gc::generic::scan_by_offsets, // scanner
-  0,
-  0,
-  ::flx::gc::generic::gc_flags_default,
-  0ul,0ul
-};
-
-//OFFSETS for function _fI69837_iterator__apos_2
-static ::std::size_t const _fI69837_iterator__apos_2_offsets[7+FLX_PASS_PTF]={
-  FLX_EAT_PTF(offsetof(_fI69837_iterator__apos_2,ptf)comma)
-  offsetof(_fI69837_iterator__apos_2,ptr_fI69824_search_and_replace__apos_2),
-  offsetof(_fI69837_iterator__apos_2,ptr_lam_65171),
-  offsetof(_fI69837_iterator__apos_2,ptr_lam_65160),
-  offsetof(_fI69837_iterator__apos_2,ptrhandle_pkg),
-  offsetof(_fI69837_iterator__apos_2,ptrflx_pkgconfig),
-  offsetof(_fI69837_iterator__apos_2,_vI69844_t_param_std_1318)+0,
-  offsetof(_fI69837_iterator__apos_2,_vI69842_iterator__apos_2_mv_1563)+0,
-};
-static ::flx::gc::generic::offset_data_t const _fI69837_iterator__apos_2_offset_data = { 7+FLX_PASS_PTF, _fI69837_iterator__apos_2_offsets};
-FLX_FINALISER(_fI69837_iterator__apos_2)
-static ::flx::gc::generic::gc_shape_t _fI69837_iterator__apos_2_ptr_map ={
-  &_fI69247_aux_uncurry_ptr_map,
-  "flx_pkgconfig::_fI69837_iterator__apos_2",
-  1,sizeof(_fI69837_iterator__apos_2),
-  _fI69837_iterator__apos_2_finaliser,
-  0, // fcops
-  &_fI69837_iterator__apos_2_offset_data, // scanner data
-  &::flx::gc::generic::scan_by_offsets, // scanner
-  0,
-  0,
-  ::flx::gc::generic::gc_flags_default,
-  0ul,0ul
-};
-
 //OFFSETS for thread_frame_t
 static ::std::size_t const thread_frame_t_offsets[2]={
-  offsetof(thread_frame_t,_ds2_64992)+offsetof(_tt71038,mem_1)+0,
-  offsetof(thread_frame_t,_vI65670_result)+0,
+  offsetof(thread_frame_t,_vI65089_result)+0,
+  offsetof(thread_frame_t,_ds2_64411)+offsetof(_tt70457,mem_1)+0,
 };
 static ::flx::gc::generic::offset_data_t const thread_frame_t_offset_data = { 2, thread_frame_t_offsets};
 FLX_FINALISER(thread_frame_t)
 static ::flx::gc::generic::gc_shape_t thread_frame_t_ptr_map ={
-  &_fI69837_iterator__apos_2_ptr_map,
+  &iter_uncurry_ptr_map,
   "flx_pkgconfig::thread_frame_t",
   1,sizeof(thread_frame_t),
   thread_frame_t_finaliser,
@@ -2620,155 +2620,51 @@ static ::flx::gc::generic::gc_shape_t thread_frame_t_ptr_map ={
   0ul,0ul
 };
 
-// ENCODER for type list * int
-  ::std::string _tt71029_encoder(void *d) {
-    char *p = (char*)d;
-    ::std::string b = "";
-   b+=::flx::gc::generic::blit(p,sizeof(_tt71029)); // pod
-    return b;
-  }
-
-// DECODER for type list * int
-  size_t _tt71029_decoder(void *d,char *s, size_t i) {
-    char *p = (char*)d;
-   i=::flx::gc::generic::unblit(p,sizeof(_tt71029),s,i); // pod
-    return i;
-  }
-
-CxxValueType<_tt71029> _tt71029_fcops;
-
-//OFFSETS for tuple type 71029
-static ::std::size_t const _tt71029_offsets[1]={
-  offsetof(_tt71029,mem_0)+0,
-};
-static ::flx::gc::generic::offset_data_t const _tt71029_offset_data = { 1, _tt71029_offsets};
-FLX_FINALISER(_tt71029)
-static ::flx::gc::generic::gc_shape_t _tt71029_ptr_map ={
-  &thread_frame_t_ptr_map,
-  "flx_pkgconfig::_tt71029",
-  1,sizeof(_tt71029),
-  _tt71029_finaliser,
-  0, // fcops
-  &_tt71029_offset_data, // scanner data
-  &::flx::gc::generic::scan_by_offsets, // scanner
-  _tt71029_encoder,
-  _tt71029_decoder,
-  ::flx::gc::generic::gc_flags_default,
-  0ul,0ul
-};
-
 // ENCODER for type list * string^2
-  ::std::string _tt71060_encoder(void *d) {
+  ::std::string _tt70479_encoder(void *d) {
     char *p = (char*)d;
     ::std::string b = "";
    //Tuple
-   b+=::flx::gc::generic::blit(p+offsetof(_tt71060,mem_0),sizeof(void*)); // pod
+   b+=::flx::gc::generic::blit(p+offsetof(_tt70479,mem_0),sizeof(void*)); // pod
    //Array
-   for(::std::size_t i71273=0; i71273<2; ++i71273) {
-   b+=::flx::gc::generic::string_blit(::flx::gc::generic::string_encoder(p+offsetof(_tt71060,mem_1)+i71273*sizeof(_a14239t_71023))); //prim
+   for(::std::size_t i70692=0; i70692<2; ++i70692) {
+   b+=::flx::gc::generic::string_blit(::flx::gc::generic::string_encoder(p+offsetof(_tt70479,mem_1)+i70692*sizeof(_a13708t_70442))); //prim
    }
     return b;
   }
 
 // DECODER for type list * string^2
-  size_t _tt71060_decoder(void *d,char *s, size_t i) {
+  size_t _tt70479_decoder(void *d,char *s, size_t i) {
     char *p = (char*)d;
    //Tuple
-   i=::flx::gc::generic::unblit(p+offsetof(_tt71060,mem_0),sizeof(void*),s,i); // pod
+   i=::flx::gc::generic::unblit(p+offsetof(_tt70479,mem_0),sizeof(void*),s,i); // pod
    //Array
-   for(::std::size_t i71274=0; i71274<2; ++i71274) {
-   i=::flx::gc::generic::string_decoder(p+offsetof(_tt71060,mem_1)+i71274*sizeof(_a14239t_71023),s,i); //prim
+   for(::std::size_t i70693=0; i70693<2; ++i70693) {
+   i=::flx::gc::generic::string_decoder(p+offsetof(_tt70479,mem_1)+i70693*sizeof(_a13708t_70442),s,i); //prim
    }
     return i;
   }
 
-CxxValueType<_tt71060> _tt71060_fcops;
+CxxValueType<_tt70479> _tt70479_fcops;
 
-//OFFSETS for tuple type 71060
-static ::std::size_t const _tt71060_offsets[1]={
-  offsetof(_tt71060,mem_0)+0,
+//OFFSETS for tuple type 70479
+static ::std::size_t const _tt70479_offsets[1]={
+  offsetof(_tt70479,mem_0)+0,
 };
-static ::flx::gc::generic::offset_data_t const _tt71060_offset_data = { 1, _tt71060_offsets};
-FLX_FINALISER(_tt71060)
-static ::flx::gc::generic::gc_shape_t _tt71060_ptr_map ={
-  &_tt71029_ptr_map,
-  "flx_pkgconfig::_tt71060",
-  1,sizeof(_tt71060),
-  _tt71060_finaliser,
+static ::flx::gc::generic::offset_data_t const _tt70479_offset_data = { 1, _tt70479_offsets};
+FLX_FINALISER(_tt70479)
+static ::flx::gc::generic::gc_shape_t _tt70479_ptr_map ={
+  &thread_frame_t_ptr_map,
+  "flx_pkgconfig::_tt70479",
+  1,sizeof(_tt70479),
+  _tt70479_finaliser,
   0, // fcops
-  &_tt71060_offset_data, // scanner data
+  &_tt70479_offset_data, // scanner data
   &::flx::gc::generic::scan_by_offsets, // scanner
-  _tt71060_encoder,
-  _tt71060_decoder,
+  _tt70479_encoder,
+  _tt70479_decoder,
   ::flx::gc::generic::gc_flags_default,
   0ul,0ul
-};
-
-//ABSTRACT TYPE _a14239t_71023
-
-CxxValueType<_a14239t_71023> _a14239t_71023_fcops;
-
-// ENCODER for type string
-  ::std::string _a14239t_71023_encoder(void *d) {
-    char *p = (char*)d;
-    ::std::string b = "";
-   b+=::flx::gc::generic::string_blit(::flx::gc::generic::string_encoder(p)); //prim
-    return b;
-  }
-
-// DECODER for type string
-  size_t _a14239t_71023_decoder(void *d,char *s, size_t i) {
-    char *p = (char*)d;
-   i=::flx::gc::generic::string_decoder(p,s,i); //prim
-    return i;
-  }
-
-//OFFSETS for complete abstract finalisable type _a14239t_71023=string instance  
-FLX_FINALISER(_a14239t_71023)
-static ::flx::gc::generic::gc_shape_t _a14239t_71023_ptr_map = {
-  &_tt71060_ptr_map,
-  "flx_pkgconfig::_a14239t_71023",
-  1,sizeof(_a14239t_71023),
-  _a14239t_71023_finaliser,
-  &_a14239t_71023_fcops,
-  0, // no client data
-  0, // scanner
-  _a14239t_71023_encoder, // encoder
-  _a14239t_71023_decoder, //decoder
-  ::flx::gc::generic::gc_flags_default,0ul,0ul
-};
-
-//ABSTRACT TYPE _a5094t_71046
-
-CxxValueType<_a5094t_71046> _a5094t_71046_fcops;
-
-// ENCODER for type size
-  ::std::string _a5094t_71046_encoder(void *d) {
-    char *p = (char*)d;
-    ::std::string b = "";
-   b+=::flx::gc::generic::blit(p,sizeof(_a5094t_71046)); // pod
-    return b;
-  }
-
-// DECODER for type size
-  size_t _a5094t_71046_decoder(void *d,char *s, size_t i) {
-    char *p = (char*)d;
-   i=::flx::gc::generic::unblit(p,sizeof(_a5094t_71046),s,i); // pod
-    return i;
-  }
-
-//OFFSETS for complete abstract pod type _a5094t_71046=size instance  
-static ::flx::gc::generic::gc_shape_t _a5094t_71046_ptr_map = {
-  &_a14239t_71023_ptr_map,
-  "flx_pkgconfig::_a5094t_71046",
-  1,sizeof(_a5094t_71046),
-  0, // no finaliser
-  &_a5094t_71046_fcops,
-  0, // no client data
-  0, // scanner
-  _a5094t_71046_encoder, // encoder
-  _a5094t_71046_decoder, //decoder
-  ::flx::gc::generic::gc_flags_default,0ul,0ul
 };
 
 //ABSTRACT TYPE char
@@ -2792,7 +2688,7 @@ CxxValueType<char> char_fcops;
 
 //OFFSETS for complete abstract pod type char=char instance  
 static ::flx::gc::generic::gc_shape_t char_ptr_map = {
-  &_a5094t_71046_ptr_map,
+  &_tt70479_ptr_map,
   "flx_pkgconfig::char",
   1,sizeof(char),
   0, // no finaliser
@@ -2804,88 +2700,192 @@ static ::flx::gc::generic::gc_shape_t char_ptr_map = {
   ::flx::gc::generic::gc_flags_default,0ul,0ul
 };
 
-// ENCODER for type list * string
-  ::std::string _tt71026_encoder(void *d) {
+//ABSTRACT TYPE _a5038t_70465
+
+CxxValueType<_a5038t_70465> _a5038t_70465_fcops;
+
+// ENCODER for type size
+  ::std::string _a5038t_70465_encoder(void *d) {
     char *p = (char*)d;
     ::std::string b = "";
-   //Tuple
-   b+=::flx::gc::generic::blit(p+offsetof(_tt71026,mem_0),sizeof(void*)); // pod
-   b+=::flx::gc::generic::string_blit(::flx::gc::generic::string_encoder(p+offsetof(_tt71026,mem_1))); //prim
+   b+=::flx::gc::generic::blit(p,sizeof(_a5038t_70465)); // pod
     return b;
   }
 
-// DECODER for type list * string
-  size_t _tt71026_decoder(void *d,char *s, size_t i) {
+// DECODER for type size
+  size_t _a5038t_70465_decoder(void *d,char *s, size_t i) {
     char *p = (char*)d;
-   //Tuple
-   i=::flx::gc::generic::unblit(p+offsetof(_tt71026,mem_0),sizeof(void*),s,i); // pod
-   i=::flx::gc::generic::string_decoder(p+offsetof(_tt71026,mem_1),s,i); //prim
+   i=::flx::gc::generic::unblit(p,sizeof(_a5038t_70465),s,i); // pod
     return i;
   }
 
-CxxValueType<_tt71026> _tt71026_fcops;
-
-//OFFSETS for tuple type 71026
-static ::std::size_t const _tt71026_offsets[1]={
-  offsetof(_tt71026,mem_0)+0,
-};
-static ::flx::gc::generic::offset_data_t const _tt71026_offset_data = { 1, _tt71026_offsets};
-FLX_FINALISER(_tt71026)
-static ::flx::gc::generic::gc_shape_t _tt71026_ptr_map ={
+//OFFSETS for complete abstract pod type _a5038t_70465=size instance  
+static ::flx::gc::generic::gc_shape_t _a5038t_70465_ptr_map = {
   &char_ptr_map,
-  "flx_pkgconfig::_tt71026",
-  1,sizeof(_tt71026),
-  _tt71026_finaliser,
-  0, // fcops
-  &_tt71026_offset_data, // scanner data
-  &::flx::gc::generic::scan_by_offsets, // scanner
-  _tt71026_encoder,
-  _tt71026_decoder,
-  ::flx::gc::generic::gc_flags_default,
-  0ul,0ul
+  "flx_pkgconfig::_a5038t_70465",
+  1,sizeof(_a5038t_70465),
+  0, // no finaliser
+  &_a5038t_70465_fcops,
+  0, // no client data
+  0, // scanner
+  _a5038t_70465_encoder, // encoder
+  _a5038t_70465_decoder, //decoder
+  ::flx::gc::generic::gc_flags_default,0ul,0ul
 };
 
 // ENCODER for type string^2
-  ::std::string _at71025_encoder(void *d) {
+  ::std::string _at70444_encoder(void *d) {
     char *p = (char*)d;
     ::std::string b = "";
    //Array
-   for(::std::size_t i71275=0; i71275<2; ++i71275) {
-   b+=::flx::gc::generic::string_blit(::flx::gc::generic::string_encoder(p+i71275*sizeof(_a14239t_71023))); //prim
+   for(::std::size_t i70694=0; i70694<2; ++i70694) {
+   b+=::flx::gc::generic::string_blit(::flx::gc::generic::string_encoder(p+i70694*sizeof(_a13708t_70442))); //prim
    }
     return b;
   }
 
 // DECODER for type string^2
-  size_t _at71025_decoder(void *d,char *s, size_t i) {
+  size_t _at70444_decoder(void *d,char *s, size_t i) {
     char *p = (char*)d;
    //Array
-   for(::std::size_t i71276=0; i71276<2; ++i71276) {
-   i=::flx::gc::generic::string_decoder(p+i71276*sizeof(_a14239t_71023),s,i); //prim
+   for(::std::size_t i70695=0; i70695<2; ++i70695) {
+   i=::flx::gc::generic::string_decoder(p+i70695*sizeof(_a13708t_70442),s,i); //prim
    }
     return i;
   }
 
-//OFFSETS for array type 71025
-static void _at71025_finaliser(::flx::gc::generic::collector_t *, void *p){
-  ((_a14239t_71023*)p)->~_a14239t_71023();
+//OFFSETS for array type 70444
+static void _at70444_finaliser(::flx::gc::generic::collector_t *, void *p){
+  ((_a13708t_70442*)p)->~_a13708t_70442();
 }
-static ::flx::gc::generic::gc_shape_t _at71025_ptr_map = {
-  &_tt71026_ptr_map,
-  "flx_pkgconfig::_at71025",
+static ::flx::gc::generic::gc_shape_t _at70444_ptr_map = {
+  &_a5038t_70465_ptr_map,
+  "flx_pkgconfig::_at70444",
   2,
-  sizeof(_a14239t_71023),
-  _at71025_finaliser,
+  sizeof(_a13708t_70442),
+  _at70444_finaliser,
   0, // fcops
   0,
   0,
-  _at71025_encoder,
-  _at71025_decoder,
+  _at70444_encoder,
+  _at70444_decoder,
   ::flx::gc::generic::gc_flags_default,0ul,0ul
+};
+
+//ABSTRACT TYPE _a13708t_70442
+
+CxxValueType<_a13708t_70442> _a13708t_70442_fcops;
+
+// ENCODER for type string
+  ::std::string _a13708t_70442_encoder(void *d) {
+    char *p = (char*)d;
+    ::std::string b = "";
+   b+=::flx::gc::generic::string_blit(::flx::gc::generic::string_encoder(p)); //prim
+    return b;
+  }
+
+// DECODER for type string
+  size_t _a13708t_70442_decoder(void *d,char *s, size_t i) {
+    char *p = (char*)d;
+   i=::flx::gc::generic::string_decoder(p,s,i); //prim
+    return i;
+  }
+
+//OFFSETS for complete abstract finalisable type _a13708t_70442=string instance  
+FLX_FINALISER(_a13708t_70442)
+static ::flx::gc::generic::gc_shape_t _a13708t_70442_ptr_map = {
+  &_at70444_ptr_map,
+  "flx_pkgconfig::_a13708t_70442",
+  1,sizeof(_a13708t_70442),
+  _a13708t_70442_finaliser,
+  &_a13708t_70442_fcops,
+  0, // no client data
+  0, // scanner
+  _a13708t_70442_encoder, // encoder
+  _a13708t_70442_decoder, //decoder
+  ::flx::gc::generic::gc_flags_default,0ul,0ul
+};
+
+// ENCODER for type list * int
+  ::std::string _tt70448_encoder(void *d) {
+    char *p = (char*)d;
+    ::std::string b = "";
+   b+=::flx::gc::generic::blit(p,sizeof(_tt70448)); // pod
+    return b;
+  }
+
+// DECODER for type list * int
+  size_t _tt70448_decoder(void *d,char *s, size_t i) {
+    char *p = (char*)d;
+   i=::flx::gc::generic::unblit(p,sizeof(_tt70448),s,i); // pod
+    return i;
+  }
+
+CxxValueType<_tt70448> _tt70448_fcops;
+
+//OFFSETS for tuple type 70448
+static ::std::size_t const _tt70448_offsets[1]={
+  offsetof(_tt70448,mem_0)+0,
+};
+static ::flx::gc::generic::offset_data_t const _tt70448_offset_data = { 1, _tt70448_offsets};
+FLX_FINALISER(_tt70448)
+static ::flx::gc::generic::gc_shape_t _tt70448_ptr_map ={
+  &_a13708t_70442_ptr_map,
+  "flx_pkgconfig::_tt70448",
+  1,sizeof(_tt70448),
+  _tt70448_finaliser,
+  0, // fcops
+  &_tt70448_offset_data, // scanner data
+  &::flx::gc::generic::scan_by_offsets, // scanner
+  _tt70448_encoder,
+  _tt70448_decoder,
+  ::flx::gc::generic::gc_flags_default,
+  0ul,0ul
+};
+
+// ENCODER for type list * string
+  ::std::string _tt70445_encoder(void *d) {
+    char *p = (char*)d;
+    ::std::string b = "";
+   //Tuple
+   b+=::flx::gc::generic::blit(p+offsetof(_tt70445,mem_0),sizeof(void*)); // pod
+   b+=::flx::gc::generic::string_blit(::flx::gc::generic::string_encoder(p+offsetof(_tt70445,mem_1))); //prim
+    return b;
+  }
+
+// DECODER for type list * string
+  size_t _tt70445_decoder(void *d,char *s, size_t i) {
+    char *p = (char*)d;
+   //Tuple
+   i=::flx::gc::generic::unblit(p+offsetof(_tt70445,mem_0),sizeof(void*),s,i); // pod
+   i=::flx::gc::generic::string_decoder(p+offsetof(_tt70445,mem_1),s,i); //prim
+    return i;
+  }
+
+CxxValueType<_tt70445> _tt70445_fcops;
+
+//OFFSETS for tuple type 70445
+static ::std::size_t const _tt70445_offsets[1]={
+  offsetof(_tt70445,mem_0)+0,
+};
+static ::flx::gc::generic::offset_data_t const _tt70445_offset_data = { 1, _tt70445_offsets};
+FLX_FINALISER(_tt70445)
+static ::flx::gc::generic::gc_shape_t _tt70445_ptr_map ={
+  &_tt70448_ptr_map,
+  "flx_pkgconfig::_tt70445",
+  1,sizeof(_tt70445),
+  _tt70445_finaliser,
+  0, // fcops
+  &_tt70445_offset_data, // scanner data
+  &::flx::gc::generic::scan_by_offsets, // scanner
+  _tt70445_encoder,
+  _tt70445_decoder,
+  ::flx::gc::generic::gc_flags_default,
+  0ul,0ul
 };
 
 // Head of shape list, included so dlsym() can find it when
 // this file is a shared lib, uses module name for uniqueness.
 extern "C" FLX_EXPORT ::flx::gc::generic::gc_shape_t * const flx_pkgconfig_head_shape;
-::flx::gc::generic::gc_shape_t * const flx_pkgconfig_head_shape=&_at71025_ptr_map;
+::flx::gc::generic::gc_shape_t * const flx_pkgconfig_head_shape=&_tt70445_ptr_map;
 

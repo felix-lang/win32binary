@@ -1,91 +1,23 @@
-//FUNCTION <69540>: search_and_replace_uncurry::_lam_2363: Constructor
-_lam_2363::_lam_2363
+//FUNCTION <69498>: flx_pkgconfig::handle_pkg::_lam_64579::aux_uncurry: Constructor
+_fI69498_aux_uncurry::_fI69498_aux_uncurry
   (
     FLX_FPAR_DECL
-    search_and_replace_uncurry *pptrsearch_and_replace_uncurry
-  )
-  FLX_FMEM_INIT   ptrsearch_and_replace_uncurry(pptrsearch_and_replace_uncurry) {}
-
-
-//FUNCTION <69540>: search_and_replace_uncurry::_lam_2363: Clone method
-  _lam_2363* _lam_2363::clone(){
-  return new(*PTF gcp,_lam_2363_ptr_map,true) _lam_2363(*this);
-}
-
-//FUNCTION <69281>: +::aux_uncurry: Constructor
-_fI69281_aux_uncurry::_fI69281_aux_uncurry
-  (
-    FLX_FPAR_DECL
-    _fI68132___plus_ *pptr_fI68132___plus_
-  )
-  FLX_FMEM_INIT   ptr_fI68132___plus_(pptr_fI68132___plus_) {}
-
-
-//FUNCTION <69281>: +::aux_uncurry: Clone method
-  _fI69281_aux_uncurry* _fI69281_aux_uncurry::clone(){
-  return new(*PTF gcp,_fI69281_aux_uncurry_ptr_map,true) _fI69281_aux_uncurry(*this);
-}
-
-//FUNCTION <70232>: flx_pkgconfig::xfind::_lam_65104: Constructor
-_lam_65104::_lam_65104
-  (
-    FLX_FPAR_DECL
-    xfind *pptrxfind,
-    flx_pkgconfig *pptrflx_pkgconfig
-  )
-  FLX_FMEM_INIT   ptrxfind(pptrxfind),
-  ptrflx_pkgconfig(pptrflx_pkgconfig) {}
-
-
-//FUNCTION <70232>: flx_pkgconfig::xfind::_lam_65104: Clone method
-  _lam_65104* _lam_65104::clone(){
-  return new(*PTF gcp,_lam_65104_ptr_map,true) _lam_65104(*this);
-}
-
-//FUNCTION <69647>: flx_pkgconfig::handle_pkg::_lam_65160::_lam_65171::aux_uncurry::_lam_1391: Constructor
-_fI69647__lam_1391::_fI69647__lam_1391
-  (
-    FLX_FPAR_DECL
-    _fI69639_aux_uncurry *pptr_fI69639_aux_uncurry,
-    _lam_65171 *pptr_lam_65171,
-    _lam_65160 *pptr_lam_65160,
+    _lam_64579 *pptr_lam_64579,
     handle_pkg *pptrhandle_pkg,
     flx_pkgconfig *pptrflx_pkgconfig
   )
-  FLX_FMEM_INIT   ptr_fI69639_aux_uncurry(pptr_fI69639_aux_uncurry),
-  ptr_lam_65171(pptr_lam_65171),
-  ptr_lam_65160(pptr_lam_65160),
+  FLX_FMEM_INIT   ptr_lam_64579(pptr_lam_64579),
   ptrhandle_pkg(pptrhandle_pkg),
   ptrflx_pkgconfig(pptrflx_pkgconfig) {}
 
 
-//FUNCTION <69647>: flx_pkgconfig::handle_pkg::_lam_65160::_lam_65171::aux_uncurry::_lam_1391: Clone method
-  _fI69647__lam_1391* _fI69647__lam_1391::clone(){
-  return new(*PTF gcp,_fI69647__lam_1391_ptr_map,true) _fI69647__lam_1391(*this);
+//FUNCTION <69498>: flx_pkgconfig::handle_pkg::_lam_64579::aux_uncurry: Clone method
+  _fI69498_aux_uncurry* _fI69498_aux_uncurry::clone(){
+  return new(*PTF gcp,_fI69498_aux_uncurry_ptr_map,true) _fI69498_aux_uncurry(*this);
 }
 
-//FUNCTION <69649>: flx_pkgconfig::handle_pkg::_lam_65160::_lam_65171::aux_uncurry: Constructor
-_fI69649_aux_uncurry::_fI69649_aux_uncurry
-  (
-    FLX_FPAR_DECL
-    _lam_65171 *pptr_lam_65171,
-    _lam_65160 *pptr_lam_65160,
-    handle_pkg *pptrhandle_pkg,
-    flx_pkgconfig *pptrflx_pkgconfig
-  )
-  FLX_FMEM_INIT   ptr_lam_65171(pptr_lam_65171),
-  ptr_lam_65160(pptr_lam_65160),
-  ptrhandle_pkg(pptrhandle_pkg),
-  ptrflx_pkgconfig(pptrflx_pkgconfig) {}
-
-
-//FUNCTION <69649>: flx_pkgconfig::handle_pkg::_lam_65160::_lam_65171::aux_uncurry: Clone method
-  _fI69649_aux_uncurry* _fI69649_aux_uncurry::clone(){
-  return new(*PTF gcp,_fI69649_aux_uncurry_ptr_map,true) _fI69649_aux_uncurry(*this);
-}
-
-//FUNCTION <65435>: flx_pkgconfig::xfind: Constructor
-xfind::xfind
+//FUNCTION <70357>: flx_pkgconfig::_lam_64610: Constructor
+_lam_64610::_lam_64610
   (
     FLX_FPAR_DECL
     flx_pkgconfig *pptrflx_pkgconfig
@@ -93,337 +25,146 @@ xfind::xfind
   FLX_FMEM_INIT   ptrflx_pkgconfig(pptrflx_pkgconfig) {}
 
 
-//FUNCTION <65435>: flx_pkgconfig::xfind: Clone method
-  xfind* xfind::clone(){
-  return new(*PTF gcp,xfind_ptr_map,true) xfind(*this);
+//FUNCTION <70357>: flx_pkgconfig::_lam_64610: Clone method
+  _lam_64610* _lam_64610::clone(){
+  return new(*PTF gcp,_lam_64610_ptr_map,true) _lam_64610(*this);
 }
 
-//FUNCTION <69268>: +::aux_uncurry: Constructor
-_fI69268_aux_uncurry::_fI69268_aux_uncurry
+//FUNCTION <70045>: flx_pkgconfig::parse_args::_lam_64536: Constructor
+_lam_64536::_lam_64536
   (
     FLX_FPAR_DECL
-    _fI68132___plus_ *pptr_fI68132___plus_
-  )
-  FLX_FMEM_INIT   ptr_fI68132___plus_(pptr_fI68132___plus_) {}
-
-
-//FUNCTION <69268>: +::aux_uncurry: Clone method
-  _fI69268_aux_uncurry* _fI69268_aux_uncurry::clone(){
-  return new(*PTF gcp,_fI69268_aux_uncurry_ptr_map,true) _fI69268_aux_uncurry(*this);
-}
-
-//FUNCTION <70688>: flx_pkgconfig::parse_args::aux::aux_uncurry: Constructor
-_fI70688_aux_uncurry::_fI70688_aux_uncurry
-  (
-    FLX_FPAR_DECL
-    _fI70680_aux *pptr_fI70680_aux,
     parse_args *pptrparse_args,
     flx_pkgconfig *pptrflx_pkgconfig
   )
-  FLX_FMEM_INIT   ptr_fI70680_aux(pptr_fI70680_aux),
+  FLX_FMEM_INIT   ptrparse_args(pptrparse_args),
+  ptrflx_pkgconfig(pptrflx_pkgconfig) {}
+
+
+//FUNCTION <70045>: flx_pkgconfig::parse_args::_lam_64536: Clone method
+  _lam_64536* _lam_64536::clone(){
+  return new(*PTF gcp,_lam_64536_ptr_map,true) _lam_64536(*this);
+}
+
+//FUNCTION <68912>: flx_pkgconfig::get_variable::_lam_64578: Constructor
+_lam_64578::_lam_64578
+  (
+    FLX_FPAR_DECL
+    get_variable *pptrget_variable,
+    flx_pkgconfig *pptrflx_pkgconfig
+  )
+  FLX_FMEM_INIT   ptrget_variable(pptrget_variable),
+  ptrflx_pkgconfig(pptrflx_pkgconfig) {}
+
+
+//FUNCTION <68912>: flx_pkgconfig::get_variable::_lam_64578: Clone method
+  _lam_64578* _lam_64578::clone(){
+  return new(*PTF gcp,_lam_64578_ptr_map,true) _lam_64578(*this);
+}
+
+//PROCEDURE <64983:> flx_pkgconfig::add_val: Constructor
+add_val::add_val
+  (
+    FLX_FPAR_DECL
+    flx_pkgconfig *pptrflx_pkgconfig
+  )
+  FLX_FMEM_INIT   ptrflx_pkgconfig(pptrflx_pkgconfig) {}
+
+//PROCEDURE <64983:> flx_pkgconfig::add_val: Clone method
+  add_val* add_val::clone(){
+  return new(*PTF gcp,add_val_ptr_map,true) add_val(*this);
+}
+//PROCEDURE <65026:> flx_pkgconfig::handle_pkg::_lam_64579::_lam_64590::_lam_64602: Constructor
+_lam_64602::_lam_64602
+  (
+    FLX_FPAR_DECL
+    _lam_64590 *pptr_lam_64590,
+    _lam_64579 *pptr_lam_64579,
+    handle_pkg *pptrhandle_pkg,
+    flx_pkgconfig *pptrflx_pkgconfig
+  )
+  FLX_FMEM_INIT   ptr_lam_64590(pptr_lam_64590),
+  ptr_lam_64579(pptr_lam_64579),
+  ptrhandle_pkg(pptrhandle_pkg),
+  ptrflx_pkgconfig(pptrflx_pkgconfig) {}
+
+//PROCEDURE <65026:> flx_pkgconfig::handle_pkg::_lam_64579::_lam_64590::_lam_64602: Clone method
+  _lam_64602* _lam_64602::clone(){
+  return new(*PTF gcp,_lam_64602_ptr_map,true) _lam_64602(*this);
+}
+//PROCEDURE <64862:> flx_pkgconfig::parse_args: Constructor
+parse_args::parse_args
+  (
+    FLX_FPAR_DECL
+    flx_pkgconfig *pptrflx_pkgconfig
+  )
+  FLX_FMEM_INIT   ptrflx_pkgconfig(pptrflx_pkgconfig) {}
+
+//PROCEDURE <64862:> flx_pkgconfig::parse_args: Clone method
+  parse_args* parse_args::clone(){
+  return new(*PTF gcp,parse_args_ptr_map,true) parse_args(*this);
+}
+//FUNCTION <64948>: flx_pkgconfig::check_id: Constructor
+check_id::check_id
+  (
+    FLX_FPAR_DECL
+    flx_pkgconfig *pptrflx_pkgconfig
+  )
+  FLX_FMEM_INIT   ptrflx_pkgconfig(pptrflx_pkgconfig),
+_genout_urv68747(0),
+_generator_flx_pkgconfig_10763(0) {}
+
+
+//FUNCTION <64948>: flx_pkgconfig::check_id: Clone method
+  check_id* check_id::clone(){
+  return new(*PTF gcp,check_id_ptr_map,true) check_id(*this);
+}
+
+//FUNCTION <64784>: flx_pkgconfig: Constructor
+flx_pkgconfig::flx_pkgconfig(FLX_FPAR_DECL_ONLY)FLX_FMEM_INIT_ONLY {}
+
+
+//FUNCTION <64784>: flx_pkgconfig: Clone method
+  flx_pkgconfig* flx_pkgconfig::clone(){
+  return this;
+}
+
+//FUNCTION <70117>: flx_pkgconfig::parse_args::aux::_lam_1443: Constructor
+_fI70117__lam_1443::_fI70117__lam_1443
+  (
+    FLX_FPAR_DECL
+    _fI70099_aux *pptr_fI70099_aux,
+    parse_args *pptrparse_args,
+    flx_pkgconfig *pptrflx_pkgconfig
+  )
+  FLX_FMEM_INIT   ptr_fI70099_aux(pptr_fI70099_aux),
   ptrparse_args(pptrparse_args),
   ptrflx_pkgconfig(pptrflx_pkgconfig) {}
 
 
-//FUNCTION <70688>: flx_pkgconfig::parse_args::aux::aux_uncurry: Clone method
-  _fI70688_aux_uncurry* _fI70688_aux_uncurry::clone(){
-  return new(*PTF gcp,_fI70688_aux_uncurry_ptr_map,true) _fI70688_aux_uncurry(*this);
+//FUNCTION <70117>: flx_pkgconfig::parse_args::aux::_lam_1443: Clone method
+  _fI70117__lam_1443* _fI70117__lam_1443::clone(){
+  return new(*PTF gcp,_fI70117__lam_1443_ptr_map,true) _fI70117__lam_1443(*this);
 }
 
-//FUNCTION <69337>: flx_pkgconfig::check_id::_lam_65133: Constructor
-_lam_65133::_lam_65133
+//FUNCTION <68708>: +::aux_uncurry::_lam_1332: Constructor
+_fI68708__lam_1332::_fI68708__lam_1332
   (
     FLX_FPAR_DECL
-    check_id *pptrcheck_id,
-    flx_pkgconfig *pptrflx_pkgconfig
+    _fI68700_aux_uncurry *pptr_fI68700_aux_uncurry,
+    _fI67551___plus_ *pptr_fI67551___plus_
   )
-  FLX_FMEM_INIT   ptrcheck_id(pptrcheck_id),
-  ptrflx_pkgconfig(pptrflx_pkgconfig) {}
+  FLX_FMEM_INIT   ptr_fI68700_aux_uncurry(pptr_fI68700_aux_uncurry),
+  ptr_fI67551___plus_(pptr_fI67551___plus_) {}
 
 
-//FUNCTION <69337>: flx_pkgconfig::check_id::_lam_65133: Clone method
-  _lam_65133* _lam_65133::clone(){
-  return new(*PTF gcp,_lam_65133_ptr_map,true) _lam_65133(*this);
+//FUNCTION <68708>: +::aux_uncurry::_lam_1332: Clone method
+  _fI68708__lam_1332* _fI68708__lam_1332::clone(){
+  return new(*PTF gcp,_fI68708__lam_1332_ptr_map,true) _fI68708__lam_1332(*this);
 }
 
-//FUNCTION <69914>: flx_pkgconfig::handle_pkg::_lam_65160::_lam_65171::_lam_1457: Constructor
-_fI69914__lam_1457::_fI69914__lam_1457
-  (
-    FLX_FPAR_DECL
-    _lam_65171 *pptr_lam_65171,
-    _lam_65160 *pptr_lam_65160,
-    handle_pkg *pptrhandle_pkg,
-    flx_pkgconfig *pptrflx_pkgconfig
-  )
-  FLX_FMEM_INIT   ptr_lam_65171(pptr_lam_65171),
-  ptr_lam_65160(pptr_lam_65160),
-  ptrhandle_pkg(pptrhandle_pkg),
-  ptrflx_pkgconfig(pptrflx_pkgconfig) {}
-
-
-//FUNCTION <69914>: flx_pkgconfig::handle_pkg::_lam_65160::_lam_65171::_lam_1457: Clone method
-  _fI69914__lam_1457* _fI69914__lam_1457::clone(){
-  return new(*PTF gcp,_fI69914__lam_1457_ptr_map,true) _fI69914__lam_1457(*this);
-}
-
-//FUNCTION <69824>: flx_pkgconfig::handle_pkg::_lam_65160::_lam_65171::search_and_replace'2: Constructor
-_fI69824_search_and_replace__apos_2::_fI69824_search_and_replace__apos_2
-  (
-    FLX_FPAR_DECL
-    _lam_65171 *pptr_lam_65171,
-    _lam_65160 *pptr_lam_65160,
-    handle_pkg *pptrhandle_pkg,
-    flx_pkgconfig *pptrflx_pkgconfig
-  )
-  FLX_FMEM_INIT   ptr_lam_65171(pptr_lam_65171),
-  ptr_lam_65160(pptr_lam_65160),
-  ptrhandle_pkg(pptrhandle_pkg),
-  ptrflx_pkgconfig(pptrflx_pkgconfig),
-_genout_urv69783(0),
-_vI69825__generator_strings_7556(0) {}
-
-
-//FUNCTION <69824>: flx_pkgconfig::handle_pkg::_lam_65160::_lam_65171::search_and_replace'2: Clone method
-  _fI69824_search_and_replace__apos_2* _fI69824_search_and_replace__apos_2::clone(){
-  return new(*PTF gcp,_fI69824_search_and_replace__apos_2_ptr_map,true) _fI69824_search_and_replace__apos_2(*this);
-}
-
-//FUNCTION <70117>: flx_pkgconfig::handle_pkg::aux_uncurry::_lam_1391: Constructor
-_fI70117__lam_1391::_fI70117__lam_1391
-  (
-    FLX_FPAR_DECL
-    _fI70109_aux_uncurry *pptr_fI70109_aux_uncurry,
-    handle_pkg *pptrhandle_pkg,
-    flx_pkgconfig *pptrflx_pkgconfig
-  )
-  FLX_FMEM_INIT   ptr_fI70109_aux_uncurry(pptr_fI70109_aux_uncurry),
-  ptrhandle_pkg(pptrhandle_pkg),
-  ptrflx_pkgconfig(pptrflx_pkgconfig) {}
-
-
-//FUNCTION <70117>: flx_pkgconfig::handle_pkg::aux_uncurry::_lam_1391: Clone method
-  _fI70117__lam_1391* _fI70117__lam_1391::clone(){
-  return new(*PTF gcp,_fI70117__lam_1391_ptr_map,true) _fI70117__lam_1391(*this);
-}
-
-//FUNCTION <70706>: flx_pkgconfig::parse_args::aux: Constructor
-_fI70706_aux::_fI70706_aux
-  (
-    FLX_FPAR_DECL
-    parse_args *pptrparse_args,
-    flx_pkgconfig *pptrflx_pkgconfig
-  )
-  FLX_FMEM_INIT   ptrparse_args(pptrparse_args),
-  ptrflx_pkgconfig(pptrflx_pkgconfig) {}
-
-
-//FUNCTION <70706>: flx_pkgconfig::parse_args::aux: Clone method
-  _fI70706_aux* _fI70706_aux::clone(){
-  return new(*PTF gcp,_fI70706_aux_ptr_map,true) _fI70706_aux(*this);
-}
-
-//FUNCTION <69239>: flx_pkgconfig::tail_val::aux: Constructor
-aux::aux
-  (
-    FLX_FPAR_DECL
-    tail_val *pptrtail_val,
-    flx_pkgconfig *pptrflx_pkgconfig
-  )
-  FLX_FMEM_INIT   ptrtail_val(pptrtail_val),
-  ptrflx_pkgconfig(pptrflx_pkgconfig) {}
-
-
-//FUNCTION <69239>: flx_pkgconfig::tail_val::aux: Clone method
-  aux* aux::clone(){
-  return new(*PTF gcp,aux_ptr_map,true) aux(*this);
-}
-
-//PROCEDURE <65580:> flx_pkgconfig::handle_pkg::_lam_65160: Constructor
-_lam_65160::_lam_65160
-  (
-    FLX_FPAR_DECL
-    handle_pkg *pptrhandle_pkg,
-    flx_pkgconfig *pptrflx_pkgconfig
-  )
-  FLX_FMEM_INIT   ptrhandle_pkg(pptrhandle_pkg),
-  ptrflx_pkgconfig(pptrflx_pkgconfig) {}
-
-//PROCEDURE <65580:> flx_pkgconfig::handle_pkg::_lam_65160: Clone method
-  _lam_65160* _lam_65160::clone(){
-  return new(*PTF gcp,_lam_65160_ptr_map,true) _lam_65160(*this);
-}
-//FUNCTION <69846>: flx_pkgconfig::handle_pkg::_lam_65160::_lam_65171::search_and_replace'2::_lam_2363: Constructor
-_fI69846__lam_2363::_fI69846__lam_2363
-  (
-    FLX_FPAR_DECL
-    _fI69824_search_and_replace__apos_2 *pptr_fI69824_search_and_replace__apos_2,
-    _lam_65171 *pptr_lam_65171,
-    _lam_65160 *pptr_lam_65160,
-    handle_pkg *pptrhandle_pkg,
-    flx_pkgconfig *pptrflx_pkgconfig
-  )
-  FLX_FMEM_INIT   ptr_fI69824_search_and_replace__apos_2(pptr_fI69824_search_and_replace__apos_2),
-  ptr_lam_65171(pptr_lam_65171),
-  ptr_lam_65160(pptr_lam_65160),
-  ptrhandle_pkg(pptrhandle_pkg),
-  ptrflx_pkgconfig(pptrflx_pkgconfig) {}
-
-
-//FUNCTION <69846>: flx_pkgconfig::handle_pkg::_lam_65160::_lam_65171::search_and_replace'2::_lam_2363: Clone method
-  _fI69846__lam_2363* _fI69846__lam_2363::clone(){
-  return new(*PTF gcp,_fI69846__lam_2363_ptr_map,true) _fI69846__lam_2363(*this);
-}
-
-//FUNCTION <70680>: flx_pkgconfig::parse_args::aux: Constructor
-_fI70680_aux::_fI70680_aux
-  (
-    FLX_FPAR_DECL
-    parse_args *pptrparse_args,
-    flx_pkgconfig *pptrflx_pkgconfig
-  )
-  FLX_FMEM_INIT   ptrparse_args(pptrparse_args),
-  ptrflx_pkgconfig(pptrflx_pkgconfig) {}
-
-
-//FUNCTION <70680>: flx_pkgconfig::parse_args::aux: Clone method
-  _fI70680_aux* _fI70680_aux::clone(){
-  return new(*PTF gcp,_fI70680_aux_ptr_map,true) _fI70680_aux(*this);
-}
-
-//FUNCTION <69987>: flx_pkgconfig::handle_pkg::_lam_65160::_lam_1457: Constructor
-_fI69987__lam_1457::_fI69987__lam_1457
-  (
-    FLX_FPAR_DECL
-    _lam_65160 *pptr_lam_65160,
-    handle_pkg *pptrhandle_pkg,
-    flx_pkgconfig *pptrflx_pkgconfig
-  )
-  FLX_FMEM_INIT   ptr_lam_65160(pptr_lam_65160),
-  ptrhandle_pkg(pptrhandle_pkg),
-  ptrflx_pkgconfig(pptrflx_pkgconfig) {}
-
-
-//FUNCTION <69987>: flx_pkgconfig::handle_pkg::_lam_65160::_lam_1457: Clone method
-  _fI69987__lam_1457* _fI69987__lam_1457::clone(){
-  return new(*PTF gcp,_fI69987__lam_1457_ptr_map,true) _fI69987__lam_1457(*this);
-}
-
-//PROCEDURE <65588:> flx_pkgconfig::handle_pkg::_lam_65160::_lam_65171: Constructor
-_lam_65171::_lam_65171
-  (
-    FLX_FPAR_DECL
-    _lam_65160 *pptr_lam_65160,
-    handle_pkg *pptrhandle_pkg,
-    flx_pkgconfig *pptrflx_pkgconfig
-  )
-  FLX_FMEM_INIT   ptr_lam_65160(pptr_lam_65160),
-  ptrhandle_pkg(pptrhandle_pkg),
-  ptrflx_pkgconfig(pptrflx_pkgconfig) {}
-
-//PROCEDURE <65588:> flx_pkgconfig::handle_pkg::_lam_65160::_lam_65171: Clone method
-  _lam_65171* _lam_65171::clone(){
-  return new(*PTF gcp,_lam_65171_ptr_map,true) _lam_65171(*this);
-}
-//PROCEDURE <65671:> _init_: Constructor
-_init_::_init_(FLX_FPAR_DECL_ONLY)FLX_FMEM_INIT_ONLY {}
-
-//PROCEDURE <65671:> _init_: Clone method
-  _init_* _init_::clone(){
-  return new(*PTF gcp,_init__ptr_map,true) _init_(*this);
-}
-//FUNCTION <69176>: iter_uncurry::_lam_1354: Constructor
-_lam_1354::_lam_1354
-  (
-    FLX_FPAR_DECL
-    iter_uncurry *pptriter_uncurry
-  )
-  FLX_FMEM_INIT   ptriter_uncurry(pptriter_uncurry) {}
-
-
-//FUNCTION <69176>: iter_uncurry::_lam_1354: Clone method
-  _lam_1354* _lam_1354::clone(){
-  return new(*PTF gcp,_lam_1354_ptr_map,true) _lam_1354(*this);
-}
-
-//FUNCTION <69999>: flx_pkgconfig::handle_pkg::_lam_65160::aux_uncurry: Constructor
-_fI69999_aux_uncurry::_fI69999_aux_uncurry
-  (
-    FLX_FPAR_DECL
-    _lam_65160 *pptr_lam_65160,
-    handle_pkg *pptrhandle_pkg,
-    flx_pkgconfig *pptrflx_pkgconfig
-  )
-  FLX_FMEM_INIT   ptr_lam_65160(pptr_lam_65160),
-  ptrhandle_pkg(pptrhandle_pkg),
-  ptrflx_pkgconfig(pptrflx_pkgconfig) {}
-
-
-//FUNCTION <69999>: flx_pkgconfig::handle_pkg::_lam_65160::aux_uncurry: Clone method
-  _fI69999_aux_uncurry* _fI69999_aux_uncurry::clone(){
-  return new(*PTF gcp,_fI69999_aux_uncurry_ptr_map,true) _fI69999_aux_uncurry(*this);
-}
-
-//FUNCTION <68132>: +: Constructor
-_fI68132___plus_::_fI68132___plus_(FLX_FPAR_DECL_ONLY)FLX_FMEM_INIT_ONLY {}
-
-
-//FUNCTION <68132>: +: Clone method
-  _fI68132___plus_* _fI68132___plus_::clone(){
-  return new(*PTF gcp,_fI68132___plus__ptr_map,true) _fI68132___plus_(*this);
-}
-
-//FUNCTION <70087>: flx_pkgconfig::handle_pkg::_lam_65160::aux_uncurry::_lam_1391: Constructor
-_fI70087__lam_1391::_fI70087__lam_1391
-  (
-    FLX_FPAR_DECL
-    _fI70079_aux_uncurry *pptr_fI70079_aux_uncurry,
-    _lam_65160 *pptr_lam_65160,
-    handle_pkg *pptrhandle_pkg,
-    flx_pkgconfig *pptrflx_pkgconfig
-  )
-  FLX_FMEM_INIT   ptr_fI70079_aux_uncurry(pptr_fI70079_aux_uncurry),
-  ptr_lam_65160(pptr_lam_65160),
-  ptrhandle_pkg(pptrhandle_pkg),
-  ptrflx_pkgconfig(pptrflx_pkgconfig) {}
-
-
-//FUNCTION <70087>: flx_pkgconfig::handle_pkg::_lam_65160::aux_uncurry::_lam_1391: Clone method
-  _fI70087__lam_1391* _fI70087__lam_1391::clone(){
-  return new(*PTF gcp,_fI70087__lam_1391_ptr_map,true) _fI70087__lam_1391(*this);
-}
-
-//FUNCTION <69577>: search_and_replace_uncurry::_lam_2365: Constructor
-_lam_2365::_lam_2365
-  (
-    FLX_FPAR_DECL
-    search_and_replace_uncurry *pptrsearch_and_replace_uncurry
-  )
-  FLX_FMEM_INIT   ptrsearch_and_replace_uncurry(pptrsearch_and_replace_uncurry) {}
-
-
-//FUNCTION <69577>: search_and_replace_uncurry::_lam_2365: Clone method
-  _lam_2365* _lam_2365::clone(){
-  return new(*PTF gcp,_lam_2365_ptr_map,true) _lam_2365(*this);
-}
-
-//FUNCTION <70911>: flx_pkgconfig::aux_uncurry::_lam_1391: Constructor
-_fI70911__lam_1391::_fI70911__lam_1391
-  (
-    FLX_FPAR_DECL
-    _fI70903_aux_uncurry *pptr_fI70903_aux_uncurry,
-    flx_pkgconfig *pptrflx_pkgconfig
-  )
-  FLX_FMEM_INIT   ptr_fI70903_aux_uncurry(pptr_fI70903_aux_uncurry),
-  ptrflx_pkgconfig(pptrflx_pkgconfig) {}
-
-
-//FUNCTION <70911>: flx_pkgconfig::aux_uncurry::_lam_1391: Clone method
-  _fI70911__lam_1391* _fI70911__lam_1391::clone(){
-  return new(*PTF gcp,_fI70911__lam_1391_ptr_map,true) _fI70911__lam_1391(*this);
-}
-
-//FUNCTION <65393>: flx_pkgconfig::lexstr: Constructor
-lexstr::lexstr
+//FUNCTION <64931>: flx_pkgconfig::reattach_drive_letters: Constructor
+reattach_drive_letters::reattach_drive_letters
   (
     FLX_FPAR_DECL
     flx_pkgconfig *pptrflx_pkgconfig
@@ -431,301 +172,102 @@ lexstr::lexstr
   FLX_FMEM_INIT   ptrflx_pkgconfig(pptrflx_pkgconfig) {}
 
 
-//FUNCTION <65393>: flx_pkgconfig::lexstr: Clone method
-  lexstr* lexstr::clone(){
-  return new(*PTF gcp,lexstr_ptr_map,true) lexstr(*this);
+//FUNCTION <64931>: flx_pkgconfig::reattach_drive_letters: Clone method
+  reattach_drive_letters* reattach_drive_letters::clone(){
+  return new(*PTF gcp,reattach_drive_letters_ptr_map,true) reattach_drive_letters(*this);
 }
 
-//FUNCTION <70127>: flx_pkgconfig::handle_pkg::aux_uncurry::_lam_1391: Constructor
-_fI70127__lam_1391::_fI70127__lam_1391
+//FUNCTION <68947>: search_and_replace_uncurry::iterator'2: Constructor
+_fI68947_iterator__apos_2::_fI68947_iterator__apos_2
   (
     FLX_FPAR_DECL
-    _fI70119_aux_uncurry *pptr_fI70119_aux_uncurry,
-    handle_pkg *pptrhandle_pkg,
-    flx_pkgconfig *pptrflx_pkgconfig
-  )
-  FLX_FMEM_INIT   ptr_fI70119_aux_uncurry(pptr_fI70119_aux_uncurry),
-  ptrhandle_pkg(pptrhandle_pkg),
-  ptrflx_pkgconfig(pptrflx_pkgconfig) {}
-
-
-//FUNCTION <70127>: flx_pkgconfig::handle_pkg::aux_uncurry::_lam_1391: Clone method
-  _fI70127__lam_1391* _fI70127__lam_1391::clone(){
-  return new(*PTF gcp,_fI70127__lam_1391_ptr_map,true) _fI70127__lam_1391(*this);
-}
-
-//FUNCTION <70109>: flx_pkgconfig::handle_pkg::aux_uncurry: Constructor
-_fI70109_aux_uncurry::_fI70109_aux_uncurry
-  (
-    FLX_FPAR_DECL
-    handle_pkg *pptrhandle_pkg,
-    flx_pkgconfig *pptrflx_pkgconfig
-  )
-  FLX_FMEM_INIT   ptrhandle_pkg(pptrhandle_pkg),
-  ptrflx_pkgconfig(pptrflx_pkgconfig) {}
-
-
-//FUNCTION <70109>: flx_pkgconfig::handle_pkg::aux_uncurry: Clone method
-  _fI70109_aux_uncurry* _fI70109_aux_uncurry::clone(){
-  return new(*PTF gcp,_fI70109_aux_uncurry_ptr_map,true) _fI70109_aux_uncurry(*this);
-}
-
-//FUNCTION <69639>: flx_pkgconfig::handle_pkg::_lam_65160::_lam_65171::aux_uncurry: Constructor
-_fI69639_aux_uncurry::_fI69639_aux_uncurry
-  (
-    FLX_FPAR_DECL
-    _lam_65171 *pptr_lam_65171,
-    _lam_65160 *pptr_lam_65160,
-    handle_pkg *pptrhandle_pkg,
-    flx_pkgconfig *pptrflx_pkgconfig
-  )
-  FLX_FMEM_INIT   ptr_lam_65171(pptr_lam_65171),
-  ptr_lam_65160(pptr_lam_65160),
-  ptrhandle_pkg(pptrhandle_pkg),
-  ptrflx_pkgconfig(pptrflx_pkgconfig) {}
-
-
-//FUNCTION <69639>: flx_pkgconfig::handle_pkg::_lam_65160::_lam_65171::aux_uncurry: Clone method
-  _fI69639_aux_uncurry* _fI69639_aux_uncurry::clone(){
-  return new(*PTF gcp,_fI69639_aux_uncurry_ptr_map,true) _fI69639_aux_uncurry(*this);
-}
-
-//FUNCTION <69140>: flx_pkgconfig::add_val::aux_uncurry::_lam_1391: Constructor
-_lam_1391::_lam_1391
-  (
-    FLX_FPAR_DECL
-    _fI69132_aux_uncurry *pptr_fI69132_aux_uncurry,
-    add_val *pptradd_val,
-    flx_pkgconfig *pptrflx_pkgconfig
-  )
-  FLX_FMEM_INIT   ptr_fI69132_aux_uncurry(pptr_fI69132_aux_uncurry),
-  ptradd_val(pptradd_val),
-  ptrflx_pkgconfig(pptrflx_pkgconfig) {}
-
-
-//FUNCTION <69140>: flx_pkgconfig::add_val::aux_uncurry::_lam_1391: Clone method
-  _lam_1391* _lam_1391::clone(){
-  return new(*PTF gcp,_lam_1391_ptr_map,true) _lam_1391(*this);
-}
-
-//FUNCTION <68589>: search_and_replace_uncurry: Constructor
-search_and_replace_uncurry::search_and_replace_uncurry(FLX_FPAR_DECL_ONLY)  FLX_FMEM_INIT _genout_urv69526(0),
-_generator_strings_7556(0) {}
-
-
-//FUNCTION <68589>: search_and_replace_uncurry: Clone method
-  search_and_replace_uncurry* search_and_replace_uncurry::clone(){
-  return new(*PTF gcp,search_and_replace_uncurry_ptr_map,true) search_and_replace_uncurry(*this);
-}
-
-//FUNCTION <70890>: flx_pkgconfig::aux: Constructor
-_fI70890_aux::_fI70890_aux
-  (
-    FLX_FPAR_DECL
-    flx_pkgconfig *pptrflx_pkgconfig
-  )
-  FLX_FMEM_INIT   ptrflx_pkgconfig(pptrflx_pkgconfig) {}
-
-
-//FUNCTION <70890>: flx_pkgconfig::aux: Clone method
-  _fI70890_aux* _fI70890_aux::clone(){
-  return new(*PTF gcp,_fI70890_aux_ptr_map,true) _fI70890_aux(*this);
-}
-
-//FUNCTION <69289>: +::aux_uncurry::_lam_1391: Constructor
-_fI69289__lam_1391::_fI69289__lam_1391
-  (
-    FLX_FPAR_DECL
-    _fI69281_aux_uncurry *pptr_fI69281_aux_uncurry,
-    _fI68132___plus_ *pptr_fI68132___plus_
-  )
-  FLX_FMEM_INIT   ptr_fI69281_aux_uncurry(pptr_fI69281_aux_uncurry),
-  ptr_fI68132___plus_(pptr_fI68132___plus_) {}
-
-
-//FUNCTION <69289>: +::aux_uncurry::_lam_1391: Clone method
-  _fI69289__lam_1391* _fI69289__lam_1391::clone(){
-  return new(*PTF gcp,_fI69289__lam_1391_ptr_map,true) _fI69289__lam_1391(*this);
-}
-
-//FUNCTION <70626>: flx_pkgconfig::parse_args::_lam_65117: Constructor
-_lam_65117::_lam_65117
-  (
-    FLX_FPAR_DECL
-    parse_args *pptrparse_args,
-    flx_pkgconfig *pptrflx_pkgconfig
-  )
-  FLX_FMEM_INIT   ptrparse_args(pptrparse_args),
-  ptrflx_pkgconfig(pptrflx_pkgconfig) {}
-
-
-//FUNCTION <70626>: flx_pkgconfig::parse_args::_lam_65117: Clone method
-  _lam_65117* _lam_65117::clone(){
-  return new(*PTF gcp,_lam_65117_ptr_map,true) _lam_65117(*this);
-}
-
-//FUNCTION <70990>: cat_uncurry::_lam_1445: Constructor
-_lam_1445::_lam_1445
-  (
-    FLX_FPAR_DECL
-    cat_uncurry *pptrcat_uncurry
-  )
-  FLX_FMEM_INIT   ptrcat_uncurry(pptrcat_uncurry) {}
-
-
-//FUNCTION <70990>: cat_uncurry::_lam_1445: Clone method
-  _lam_1445* _lam_1445::clone(){
-  return new(*PTF gcp,_lam_1445_ptr_map,true) _lam_1445(*this);
-}
-
-//FUNCTION <69536>: search_and_replace_uncurry::iterator'2::_lam_1566: Constructor
-_lam_1566::_lam_1566
-  (
-    FLX_FPAR_DECL
-    _fI69528_iterator__apos_2 *pptr_fI69528_iterator__apos_2,
     search_and_replace_uncurry *pptrsearch_and_replace_uncurry
   )
-  FLX_FMEM_INIT   ptr_fI69528_iterator__apos_2(pptr_fI69528_iterator__apos_2),
+  FLX_FMEM_INIT pc(0),
   ptrsearch_and_replace_uncurry(pptrsearch_and_replace_uncurry) {}
 
 
-//FUNCTION <69536>: search_and_replace_uncurry::iterator'2::_lam_1566: Clone method
-  _lam_1566* _lam_1566::clone(){
-  return new(*PTF gcp,_lam_1566_ptr_map,true) _lam_1566(*this);
+//FUNCTION <68947>: search_and_replace_uncurry::iterator'2: Clone method
+  _fI68947_iterator__apos_2* _fI68947_iterator__apos_2::clone(){
+  return this;
 }
 
-//FUNCTION <69897>: flx_pkgconfig::handle_pkg::_lam_65160::_lam_65171::aux_uncurry: Constructor
-_fI69897_aux_uncurry::_fI69897_aux_uncurry
+//FUNCTION <70330>: flx_pkgconfig::aux_uncurry::_lam_1332: Constructor
+_fI70330__lam_1332::_fI70330__lam_1332
   (
     FLX_FPAR_DECL
-    _lam_65171 *pptr_lam_65171,
-    _lam_65160 *pptr_lam_65160,
+    _fI70322_aux_uncurry *pptr_fI70322_aux_uncurry,
+    flx_pkgconfig *pptrflx_pkgconfig
+  )
+  FLX_FMEM_INIT   ptr_fI70322_aux_uncurry(pptr_fI70322_aux_uncurry),
+  ptrflx_pkgconfig(pptrflx_pkgconfig) {}
+
+
+//FUNCTION <70330>: flx_pkgconfig::aux_uncurry::_lam_1332: Clone method
+  _fI70330__lam_1332* _fI70330__lam_1332::clone(){
+  return new(*PTF gcp,_fI70330__lam_1332_ptr_map,true) _fI70330__lam_1332(*this);
+}
+
+//FUNCTION <69316>: flx_pkgconfig::handle_pkg::_lam_64579::_lam_64590::aux_uncurry: Constructor
+_fI69316_aux_uncurry::_fI69316_aux_uncurry
+  (
+    FLX_FPAR_DECL
+    _lam_64590 *pptr_lam_64590,
+    _lam_64579 *pptr_lam_64579,
     handle_pkg *pptrhandle_pkg,
     flx_pkgconfig *pptrflx_pkgconfig
   )
-  FLX_FMEM_INIT   ptr_lam_65171(pptr_lam_65171),
-  ptr_lam_65160(pptr_lam_65160),
+  FLX_FMEM_INIT   ptr_lam_64590(pptr_lam_64590),
+  ptr_lam_64579(pptr_lam_64579),
   ptrhandle_pkg(pptrhandle_pkg),
   ptrflx_pkgconfig(pptrflx_pkgconfig) {}
 
 
-//FUNCTION <69897>: flx_pkgconfig::handle_pkg::_lam_65160::_lam_65171::aux_uncurry: Clone method
-  _fI69897_aux_uncurry* _fI69897_aux_uncurry::clone(){
-  return new(*PTF gcp,_fI69897_aux_uncurry_ptr_map,true) _fI69897_aux_uncurry(*this);
+//FUNCTION <69316>: flx_pkgconfig::handle_pkg::_lam_64579::_lam_64590::aux_uncurry: Clone method
+  _fI69316_aux_uncurry* _fI69316_aux_uncurry::clone(){
+  return new(*PTF gcp,_fI69316_aux_uncurry_ptr_map,true) _fI69316_aux_uncurry(*this);
 }
 
-//FUNCTION <65542>: flx_pkgconfig::get_field: Constructor
-get_field::get_field
+//FUNCTION <70170>: flx_pkgconfig::parse_args::aux_uncurry::_lam_1332: Constructor
+_fI70170__lam_1332::_fI70170__lam_1332
   (
     FLX_FPAR_DECL
-    flx_pkgconfig *pptrflx_pkgconfig
-  )
-  FLX_FMEM_INIT   ptrflx_pkgconfig(pptrflx_pkgconfig) {}
-
-
-//FUNCTION <65542>: flx_pkgconfig::get_field: Clone method
-  get_field* get_field::clone(){
-  return new(*PTF gcp,get_field_ptr_map,true) get_field(*this);
-}
-
-//FUNCTION <70714>: flx_pkgconfig::parse_args::aux::aux_uncurry: Constructor
-_fI70714_aux_uncurry::_fI70714_aux_uncurry
-  (
-    FLX_FPAR_DECL
-    _fI70706_aux *pptr_fI70706_aux,
+    _fI70162_aux_uncurry *pptr_fI70162_aux_uncurry,
     parse_args *pptrparse_args,
     flx_pkgconfig *pptrflx_pkgconfig
   )
-  FLX_FMEM_INIT   ptr_fI70706_aux(pptr_fI70706_aux),
+  FLX_FMEM_INIT   ptr_fI70162_aux_uncurry(pptr_fI70162_aux_uncurry),
   ptrparse_args(pptrparse_args),
   ptrflx_pkgconfig(pptrflx_pkgconfig) {}
 
 
-//FUNCTION <70714>: flx_pkgconfig::parse_args::aux::aux_uncurry: Clone method
-  _fI70714_aux_uncurry* _fI70714_aux_uncurry::clone(){
-  return new(*PTF gcp,_fI70714_aux_uncurry_ptr_map,true) _fI70714_aux_uncurry(*this);
+//FUNCTION <70170>: flx_pkgconfig::parse_args::aux_uncurry::_lam_1332: Clone method
+  _fI70170__lam_1332* _fI70170__lam_1332::clone(){
+  return new(*PTF gcp,_fI70170__lam_1332_ptr_map,true) _fI70170__lam_1332(*this);
 }
 
-//FUNCTION <69034>: mem_uncurry::_lam_1456: Constructor
-_lam_1456::_lam_1456
+//FUNCTION <69416>: flx_pkgconfig::handle_pkg::_lam_64579::aux_uncurry::_lam_1332: Constructor
+_fI69416__lam_1332::_fI69416__lam_1332
   (
     FLX_FPAR_DECL
-    mem_uncurry *pptrmem_uncurry
-  )
-  FLX_FMEM_INIT   ptrmem_uncurry(pptrmem_uncurry) {}
-
-
-//FUNCTION <69034>: mem_uncurry::_lam_1456: Clone method
-  _lam_1456* _lam_1456::clone(){
-  return new(*PTF gcp,_lam_1456_ptr_map,true) _lam_1456(*this);
-}
-
-//PROCEDURE <65367:> flx_pkgconfig::print_help: Constructor
-print_help::print_help
-  (
+    _fI69408_aux_uncurry *pptr_fI69408_aux_uncurry,
+    _lam_64579 *pptr_lam_64579,
+    handle_pkg *pptrhandle_pkg,
     flx_pkgconfig *pptrflx_pkgconfig
   )
- :   ptrflx_pkgconfig(pptrflx_pkgconfig) {}
-//FUNCTION <70804>: flx_pkgconfig::reattach_drive_letters::_lam_65127: Constructor
-_lam_65127::_lam_65127
-  (
-    FLX_FPAR_DECL
-    reattach_drive_letters *pptrreattach_drive_letters,
-    flx_pkgconfig *pptrflx_pkgconfig
-  )
-  FLX_FMEM_INIT   ptrreattach_drive_letters(pptrreattach_drive_letters),
+  FLX_FMEM_INIT   ptr_fI69408_aux_uncurry(pptr_fI69408_aux_uncurry),
+  ptr_lam_64579(pptr_lam_64579),
+  ptrhandle_pkg(pptrhandle_pkg),
   ptrflx_pkgconfig(pptrflx_pkgconfig) {}
 
 
-//FUNCTION <70804>: flx_pkgconfig::reattach_drive_letters::_lam_65127: Clone method
-  _lam_65127* _lam_65127::clone(){
-  return new(*PTF gcp,_lam_65127_ptr_map,true) _lam_65127(*this);
+//FUNCTION <69416>: flx_pkgconfig::handle_pkg::_lam_64579::aux_uncurry::_lam_1332: Clone method
+  _fI69416__lam_1332* _fI69416__lam_1332::clone(){
+  return new(*PTF gcp,_fI69416__lam_1332_ptr_map,true) _fI69416__lam_1332(*this);
 }
 
-//FUNCTION <70698>: flx_pkgconfig::parse_args::aux::_lam_1502: Constructor
-_fI70698__lam_1502::_fI70698__lam_1502
-  (
-    FLX_FPAR_DECL
-    _fI70680_aux *pptr_fI70680_aux,
-    parse_args *pptrparse_args,
-    flx_pkgconfig *pptrflx_pkgconfig
-  )
-  FLX_FMEM_INIT   ptr_fI70680_aux(pptr_fI70680_aux),
-  ptrparse_args(pptrparse_args),
-  ptrflx_pkgconfig(pptrflx_pkgconfig) {}
-
-
-//FUNCTION <70698>: flx_pkgconfig::parse_args::aux::_lam_1502: Clone method
-  _fI70698__lam_1502* _fI70698__lam_1502::clone(){
-  return new(*PTF gcp,_fI70698__lam_1502_ptr_map,true) _fI70698__lam_1502(*this);
-}
-
-//FUNCTION <70903>: flx_pkgconfig::aux_uncurry: Constructor
-_fI70903_aux_uncurry::_fI70903_aux_uncurry
-  (
-    FLX_FPAR_DECL
-    flx_pkgconfig *pptrflx_pkgconfig
-  )
-  FLX_FMEM_INIT   ptrflx_pkgconfig(pptrflx_pkgconfig) {}
-
-
-//FUNCTION <70903>: flx_pkgconfig::aux_uncurry: Clone method
-  _fI70903_aux_uncurry* _fI70903_aux_uncurry::clone(){
-  return new(*PTF gcp,_fI70903_aux_uncurry_ptr_map,true) _fI70903_aux_uncurry(*this);
-}
-
-//FUNCTION <68581>: cat_uncurry: Constructor
-cat_uncurry::cat_uncurry(FLX_FPAR_DECL_ONLY)  FLX_FMEM_INIT _genout_urv70966(0),
-_generator_lists_5289(0) {}
-
-
-//FUNCTION <68581>: cat_uncurry: Clone method
-  cat_uncurry* cat_uncurry::clone(){
-  return new(*PTF gcp,cat_uncurry_ptr_map,true) cat_uncurry(*this);
-}
-
-//FUNCTION <69130>: flx_pkgconfig::add_val::_lam_1457: Constructor
-_lam_1457::_lam_1457
+//FUNCTION <68551>: flx_pkgconfig::add_val::aux_uncurry: Constructor
+_fI68551_aux_uncurry::_fI68551_aux_uncurry
   (
     FLX_FPAR_DECL
     add_val *pptradd_val,
@@ -735,13 +277,134 @@ _lam_1457::_lam_1457
   ptrflx_pkgconfig(pptrflx_pkgconfig) {}
 
 
-//FUNCTION <69130>: flx_pkgconfig::add_val::_lam_1457: Clone method
-  _lam_1457* _lam_1457::clone(){
-  return new(*PTF gcp,_lam_1457_ptr_map,true) _lam_1457(*this);
+//FUNCTION <68551>: flx_pkgconfig::add_val::aux_uncurry: Clone method
+  _fI68551_aux_uncurry* _fI68551_aux_uncurry::clone(){
+  return new(*PTF gcp,_fI68551_aux_uncurry_ptr_map,true) _fI68551_aux_uncurry(*this);
 }
 
-//FUNCTION <65550>: flx_pkgconfig::get_variable: Constructor
-get_variable::get_variable
+//PROCEDURE <65007:> flx_pkgconfig::handle_pkg::_lam_64579::_lam_64590: Constructor
+_lam_64590::_lam_64590
+  (
+    FLX_FPAR_DECL
+    _lam_64579 *pptr_lam_64579,
+    handle_pkg *pptrhandle_pkg,
+    flx_pkgconfig *pptrflx_pkgconfig
+  )
+  FLX_FMEM_INIT   ptr_lam_64579(pptr_lam_64579),
+  ptrhandle_pkg(pptrhandle_pkg),
+  ptrflx_pkgconfig(pptrflx_pkgconfig) {}
+
+//PROCEDURE <65007:> flx_pkgconfig::handle_pkg::_lam_64579::_lam_64590: Clone method
+  _lam_64590* _lam_64590::clone(){
+  return new(*PTF gcp,_lam_64590_ptr_map,true) _lam_64590(*this);
+}
+//FUNCTION <68005>: cat_uncurry: Constructor
+cat_uncurry::cat_uncurry(FLX_FPAR_DECL_ONLY)  FLX_FMEM_INIT _genout_urv70385(0),
+_generator_lists_5045(0) {}
+
+
+//FUNCTION <68005>: cat_uncurry: Clone method
+  cat_uncurry* cat_uncurry::clone(){
+  return new(*PTF gcp,cat_uncurry_ptr_map,true) cat_uncurry(*this);
+}
+
+//FUNCTION <69272>: flx_pkgconfig::handle_pkg::_lam_64579::_lam_64590::search_and_replace'2::_lam_2306: Constructor
+_fI69272__lam_2306::_fI69272__lam_2306
+  (
+    FLX_FPAR_DECL
+    _fI69243_search_and_replace__apos_2 *pptr_fI69243_search_and_replace__apos_2,
+    _lam_64590 *pptr_lam_64590,
+    _lam_64579 *pptr_lam_64579,
+    handle_pkg *pptrhandle_pkg,
+    flx_pkgconfig *pptrflx_pkgconfig
+  )
+  FLX_FMEM_INIT   ptr_fI69243_search_and_replace__apos_2(pptr_fI69243_search_and_replace__apos_2),
+  ptr_lam_64590(pptr_lam_64590),
+  ptr_lam_64579(pptr_lam_64579),
+  ptrhandle_pkg(pptrhandle_pkg),
+  ptrflx_pkgconfig(pptrflx_pkgconfig) {}
+
+
+//FUNCTION <69272>: flx_pkgconfig::handle_pkg::_lam_64579::_lam_64590::search_and_replace'2::_lam_2306: Clone method
+  _fI69272__lam_2306* _fI69272__lam_2306::clone(){
+  return new(*PTF gcp,_fI69272__lam_2306_ptr_map,true) _fI69272__lam_2306(*this);
+}
+
+//FUNCTION <70143>: flx_pkgconfig::parse_args::aux::_lam_1443: Constructor
+_fI70143__lam_1443::_fI70143__lam_1443
+  (
+    FLX_FPAR_DECL
+    _fI70125_aux *pptr_fI70125_aux,
+    parse_args *pptrparse_args,
+    flx_pkgconfig *pptrflx_pkgconfig
+  )
+  FLX_FMEM_INIT   ptr_fI70125_aux(pptr_fI70125_aux),
+  ptrparse_args(pptrparse_args),
+  ptrflx_pkgconfig(pptrflx_pkgconfig) {}
+
+
+//FUNCTION <70143>: flx_pkgconfig::parse_args::aux::_lam_1443: Clone method
+  _fI70143__lam_1443* _fI70143__lam_1443::clone(){
+  return new(*PTF gcp,_fI70143__lam_1443_ptr_map,true) _fI70143__lam_1443(*this);
+}
+
+//FUNCTION <70395>: cat_uncurry::iterator'2::_lam_1507: Constructor
+_fI70395__lam_1507::_fI70395__lam_1507
+  (
+    FLX_FPAR_DECL
+    _fI70387_iterator__apos_2 *pptr_fI70387_iterator__apos_2,
+    cat_uncurry *pptrcat_uncurry
+  )
+  FLX_FMEM_INIT   ptr_fI70387_iterator__apos_2(pptr_fI70387_iterator__apos_2),
+  ptrcat_uncurry(pptrcat_uncurry) {}
+
+
+//FUNCTION <70395>: cat_uncurry::iterator'2::_lam_1507: Clone method
+  _fI70395__lam_1507* _fI70395__lam_1507::clone(){
+  return new(*PTF gcp,_fI70395__lam_1507_ptr_map,true) _fI70395__lam_1507(*this);
+}
+
+//FUNCTION <64790>: flx_pkgconfig::lexit: Constructor
+lexit::lexit
+  (
+    flx_pkgconfig *pptrflx_pkgconfig
+  )
+ :   ptrflx_pkgconfig(pptrflx_pkgconfig) {}
+
+//FUNCTION <68007>: mem_uncurry: Constructor
+mem_uncurry::mem_uncurry(FLX_FPAR_DECL_ONLY)  FLX_FMEM_INIT eq_uncurry(0) {}
+
+
+//FUNCTION <68007>: mem_uncurry: Clone method
+  mem_uncurry* mem_uncurry::clone(){
+  return new(*PTF gcp,mem_uncurry_ptr_map,true) mem_uncurry(*this);
+}
+
+//PROCEDURE <65090:> _init_: Constructor
+_init_::_init_(FLX_FPAR_DECL_ONLY)FLX_FMEM_INIT_ONLY {}
+
+//PROCEDURE <65090:> _init_: Clone method
+  _init_* _init_::clone(){
+  return new(*PTF gcp,_init__ptr_map,true) _init_(*this);
+}
+//FUNCTION <68695>: +::aux_uncurry::_lam_1332: Constructor
+_fI68695__lam_1332::_fI68695__lam_1332
+  (
+    FLX_FPAR_DECL
+    _fI68687_aux_uncurry *pptr_fI68687_aux_uncurry,
+    _fI67551___plus_ *pptr_fI67551___plus_
+  )
+  FLX_FMEM_INIT   ptr_fI68687_aux_uncurry(pptr_fI68687_aux_uncurry),
+  ptr_fI67551___plus_(pptr_fI67551___plus_) {}
+
+
+//FUNCTION <68695>: +::aux_uncurry::_lam_1332: Clone method
+  _fI68695__lam_1332* _fI68695__lam_1332::clone(){
+  return new(*PTF gcp,_fI68695__lam_1332_ptr_map,true) _fI68695__lam_1332(*this);
+}
+
+//FUNCTION <64812>: flx_pkgconfig::lexstr: Constructor
+lexstr::lexstr
   (
     FLX_FPAR_DECL
     flx_pkgconfig *pptrflx_pkgconfig
@@ -749,144 +412,115 @@ get_variable::get_variable
   FLX_FMEM_INIT   ptrflx_pkgconfig(pptrflx_pkgconfig) {}
 
 
-//FUNCTION <65550>: flx_pkgconfig::get_variable: Clone method
-  get_variable* get_variable::clone(){
-  return new(*PTF gcp,get_variable_ptr_map,true) get_variable(*this);
+//FUNCTION <64812>: flx_pkgconfig::lexstr: Clone method
+  lexstr* lexstr::clone(){
+  return new(*PTF gcp,lexstr_ptr_map,true) lexstr(*this);
 }
 
-//FUNCTION <65365>: flx_pkgconfig: Constructor
-flx_pkgconfig::flx_pkgconfig(FLX_FPAR_DECL_ONLY)FLX_FMEM_INIT_ONLY {}
-
-
-//FUNCTION <65365>: flx_pkgconfig: Clone method
-  flx_pkgconfig* flx_pkgconfig::clone(){
-  return this;
-}
-
-//FUNCTION <70119>: flx_pkgconfig::handle_pkg::aux_uncurry: Constructor
-_fI70119_aux_uncurry::_fI70119_aux_uncurry
+//FUNCTION <69333>: flx_pkgconfig::handle_pkg::_lam_64579::_lam_64590::_lam_1398: Constructor
+_fI69333__lam_1398::_fI69333__lam_1398
   (
     FLX_FPAR_DECL
+    _lam_64590 *pptr_lam_64590,
+    _lam_64579 *pptr_lam_64579,
     handle_pkg *pptrhandle_pkg,
     flx_pkgconfig *pptrflx_pkgconfig
   )
-  FLX_FMEM_INIT   ptrhandle_pkg(pptrhandle_pkg),
+  FLX_FMEM_INIT   ptr_lam_64590(pptr_lam_64590),
+  ptr_lam_64579(pptr_lam_64579),
+  ptrhandle_pkg(pptrhandle_pkg),
   ptrflx_pkgconfig(pptrflx_pkgconfig) {}
 
 
-//FUNCTION <70119>: flx_pkgconfig::handle_pkg::aux_uncurry: Clone method
-  _fI70119_aux_uncurry* _fI70119_aux_uncurry::clone(){
-  return new(*PTF gcp,_fI70119_aux_uncurry_ptr_map,true) _fI70119_aux_uncurry(*this);
+//FUNCTION <69333>: flx_pkgconfig::handle_pkg::_lam_64579::_lam_64590::_lam_1398: Clone method
+  _fI69333__lam_1398* _fI69333__lam_1398::clone(){
+  return new(*PTF gcp,_fI69333__lam_1398_ptr_map,true) _fI69333__lam_1398(*this);
 }
 
-//FUNCTION <70805>: flx_pkgconfig::reattach_drive_letters::_lam_65127::_lam_65128: Constructor
-_lam_65128::_lam_65128
+//PROCEDURE <64786:> flx_pkgconfig::print_help: Constructor
+print_help::print_help
+  (
+    flx_pkgconfig *pptrflx_pkgconfig
+  )
+ :   ptrflx_pkgconfig(pptrflx_pkgconfig) {}
+//FUNCTION <69324>: flx_pkgconfig::handle_pkg::_lam_64579::_lam_64590::aux_uncurry::_lam_1326: Constructor
+_fI69324__lam_1326::_fI69324__lam_1326
   (
     FLX_FPAR_DECL
-    _lam_65127 *pptr_lam_65127,
+    _fI69316_aux_uncurry *pptr_fI69316_aux_uncurry,
+    _lam_64590 *pptr_lam_64590,
+    _lam_64579 *pptr_lam_64579,
+    handle_pkg *pptrhandle_pkg,
+    flx_pkgconfig *pptrflx_pkgconfig
+  )
+  FLX_FMEM_INIT   ptr_fI69316_aux_uncurry(pptr_fI69316_aux_uncurry),
+  ptr_lam_64590(pptr_lam_64590),
+  ptr_lam_64579(pptr_lam_64579),
+  ptrhandle_pkg(pptrhandle_pkg),
+  ptrflx_pkgconfig(pptrflx_pkgconfig) {}
+
+
+//FUNCTION <69324>: flx_pkgconfig::handle_pkg::_lam_64579::_lam_64590::aux_uncurry::_lam_1326: Clone method
+  _fI69324__lam_1326* _fI69324__lam_1326::clone(){
+  return new(*PTF gcp,_fI69324__lam_1326_ptr_map,true) _fI69324__lam_1326(*this);
+}
+
+//FUNCTION <68559>: flx_pkgconfig::add_val::aux_uncurry::_lam_1332: Constructor
+_lam_1332::_lam_1332
+  (
+    FLX_FPAR_DECL
+    _fI68551_aux_uncurry *pptr_fI68551_aux_uncurry,
+    add_val *pptradd_val,
+    flx_pkgconfig *pptrflx_pkgconfig
+  )
+  FLX_FMEM_INIT   ptr_fI68551_aux_uncurry(pptr_fI68551_aux_uncurry),
+  ptradd_val(pptradd_val),
+  ptrflx_pkgconfig(pptrflx_pkgconfig) {}
+
+
+//FUNCTION <68559>: flx_pkgconfig::add_val::aux_uncurry::_lam_1332: Clone method
+  _lam_1332* _lam_1332::clone(){
+  return new(*PTF gcp,_lam_1332_ptr_map,true) _lam_1332(*this);
+}
+
+//FUNCTION <68569>: flx_pkgconfig::add_val::aux_uncurry::_lam_1332: Constructor
+_fI68569__lam_1332::_fI68569__lam_1332
+  (
+    FLX_FPAR_DECL
+    _fI68561_aux_uncurry *pptr_fI68561_aux_uncurry,
+    add_val *pptradd_val,
+    flx_pkgconfig *pptrflx_pkgconfig
+  )
+  FLX_FMEM_INIT   ptr_fI68561_aux_uncurry(pptr_fI68561_aux_uncurry),
+  ptradd_val(pptradd_val),
+  ptrflx_pkgconfig(pptrflx_pkgconfig) {}
+
+
+//FUNCTION <68569>: flx_pkgconfig::add_val::aux_uncurry::_lam_1332: Clone method
+  _fI68569__lam_1332* _fI68569__lam_1332::clone(){
+  return new(*PTF gcp,_fI68569__lam_1332_ptr_map,true) _fI68569__lam_1332(*this);
+}
+
+//FUNCTION <70224>: flx_pkgconfig::reattach_drive_letters::_lam_64546::_lam_64547: Constructor
+_lam_64547::_lam_64547
+  (
+    FLX_FPAR_DECL
+    _lam_64546 *pptr_lam_64546,
     reattach_drive_letters *pptrreattach_drive_letters,
     flx_pkgconfig *pptrflx_pkgconfig
   )
-  FLX_FMEM_INIT   ptr_lam_65127(pptr_lam_65127),
+  FLX_FMEM_INIT   ptr_lam_64546(pptr_lam_64546),
   ptrreattach_drive_letters(pptrreattach_drive_letters),
   ptrflx_pkgconfig(pptrflx_pkgconfig) {}
 
 
-//FUNCTION <70805>: flx_pkgconfig::reattach_drive_letters::_lam_65127::_lam_65128: Clone method
-  _lam_65128* _lam_65128::clone(){
-  return new(*PTF gcp,_lam_65128_ptr_map,true) _lam_65128(*this);
+//FUNCTION <70224>: flx_pkgconfig::reattach_drive_letters::_lam_64546::_lam_64547: Clone method
+  _lam_64547* _lam_64547::clone(){
+  return new(*PTF gcp,_lam_64547_ptr_map,true) _lam_64547(*this);
 }
 
-//FUNCTION <65529>: flx_pkgconfig::check_id: Constructor
-check_id::check_id
-  (
-    FLX_FPAR_DECL
-    flx_pkgconfig *pptrflx_pkgconfig
-  )
-  FLX_FMEM_INIT   ptrflx_pkgconfig(pptrflx_pkgconfig),
-_genout_urv69328(0),
-_generator_flx_pkgconfig_10995(0) {}
-
-
-//FUNCTION <65529>: flx_pkgconfig::check_id: Clone method
-  check_id* check_id::clone(){
-  return new(*PTF gcp,check_id_ptr_map,true) check_id(*this);
-}
-
-//FUNCTION <68989>: _init_::_lam_1375: Constructor
-_lam_1375::_lam_1375
-  (
-    FLX_FPAR_DECL
-    _init_ *pptr_init_
-  )
-  FLX_FMEM_INIT   ptr_init_(pptr_init_) {}
-
-
-//FUNCTION <68989>: _init_::_lam_1375: Clone method
-  _lam_1375* _lam_1375::clone(){
-  return new(*PTF gcp,_lam_1375_ptr_map,true) _lam_1375(*this);
-}
-
-//FUNCTION <69637>: flx_pkgconfig::handle_pkg::_lam_65160::_lam_65171::_lam_1457: Constructor
-_fI69637__lam_1457::_fI69637__lam_1457
-  (
-    FLX_FPAR_DECL
-    _lam_65171 *pptr_lam_65171,
-    _lam_65160 *pptr_lam_65160,
-    handle_pkg *pptrhandle_pkg,
-    flx_pkgconfig *pptrflx_pkgconfig
-  )
-  FLX_FMEM_INIT   ptr_lam_65171(pptr_lam_65171),
-  ptr_lam_65160(pptr_lam_65160),
-  ptrhandle_pkg(pptrhandle_pkg),
-  ptrflx_pkgconfig(pptrflx_pkgconfig) {}
-
-
-//FUNCTION <69637>: flx_pkgconfig::handle_pkg::_lam_65160::_lam_65171::_lam_1457: Clone method
-  _fI69637__lam_1457* _fI69637__lam_1457::clone(){
-  return new(*PTF gcp,_fI69637__lam_1457_ptr_map,true) _fI69637__lam_1457(*this);
-}
-
-//FUNCTION <69766>: flx_pkgconfig::lexstr::aux_uncurry: Constructor
-_fI69766_aux_uncurry::_fI69766_aux_uncurry
-  (
-    FLX_FPAR_DECL
-    lexstr *pptrlexstr,
-    flx_pkgconfig *pptrflx_pkgconfig
-  )
-  FLX_FMEM_INIT   ptrlexstr(pptrlexstr),
-  ptrflx_pkgconfig(pptrflx_pkgconfig) {}
-
-
-//FUNCTION <69766>: flx_pkgconfig::lexstr::aux_uncurry: Clone method
-  _fI69766_aux_uncurry* _fI69766_aux_uncurry::clone(){
-  return new(*PTF gcp,_fI69766_aux_uncurry_ptr_map,true) _fI69766_aux_uncurry(*this);
-}
-
-//FUNCTION <69905>: flx_pkgconfig::handle_pkg::_lam_65160::_lam_65171::aux_uncurry::_lam_1385: Constructor
-_fI69905__lam_1385::_fI69905__lam_1385
-  (
-    FLX_FPAR_DECL
-    _fI69897_aux_uncurry *pptr_fI69897_aux_uncurry,
-    _lam_65171 *pptr_lam_65171,
-    _lam_65160 *pptr_lam_65160,
-    handle_pkg *pptrhandle_pkg,
-    flx_pkgconfig *pptrflx_pkgconfig
-  )
-  FLX_FMEM_INIT   ptr_fI69897_aux_uncurry(pptr_fI69897_aux_uncurry),
-  ptr_lam_65171(pptr_lam_65171),
-  ptr_lam_65160(pptr_lam_65160),
-  ptrhandle_pkg(pptrhandle_pkg),
-  ptrflx_pkgconfig(pptrflx_pkgconfig) {}
-
-
-//FUNCTION <69905>: flx_pkgconfig::handle_pkg::_lam_65160::_lam_65171::aux_uncurry::_lam_1385: Clone method
-  _fI69905__lam_1385* _fI69905__lam_1385::clone(){
-  return new(*PTF gcp,_fI69905__lam_1385_ptr_map,true) _fI69905__lam_1385(*this);
-}
-
-//FUNCTION <70730>: flx_pkgconfig::parse_args::aux: Constructor
-_fI70730_aux::_fI70730_aux
+//FUNCTION <70149>: flx_pkgconfig::parse_args::aux: Constructor
+_fI70149_aux::_fI70149_aux
   (
     FLX_FPAR_DECL
     parse_args *pptrparse_args,
@@ -896,110 +530,77 @@ _fI70730_aux::_fI70730_aux
   ptrflx_pkgconfig(pptrflx_pkgconfig) {}
 
 
-//FUNCTION <70730>: flx_pkgconfig::parse_args::aux: Clone method
-  _fI70730_aux* _fI70730_aux::clone(){
-  return new(*PTF gcp,_fI70730_aux_ptr_map,true) _fI70730_aux(*this);
+//FUNCTION <70149>: flx_pkgconfig::parse_args::aux: Clone method
+  _fI70149_aux* _fI70149_aux::clone(){
+  return new(*PTF gcp,_fI70149_aux_ptr_map,true) _fI70149_aux(*this);
 }
 
-//FUNCTION <70724>: flx_pkgconfig::parse_args::aux::_lam_1502: Constructor
-_fI70724__lam_1502::_fI70724__lam_1502
+//FUNCTION <70309>: flx_pkgconfig::aux: Constructor
+_fI70309_aux::_fI70309_aux
   (
     FLX_FPAR_DECL
-    _fI70706_aux *pptr_fI70706_aux,
+    flx_pkgconfig *pptrflx_pkgconfig
+  )
+  FLX_FMEM_INIT   ptrflx_pkgconfig(pptrflx_pkgconfig) {}
+
+
+//FUNCTION <70309>: flx_pkgconfig::aux: Clone method
+  _fI70309_aux* _fI70309_aux::clone(){
+  return new(*PTF gcp,_fI70309_aux_ptr_map,true) _fI70309_aux(*this);
+}
+
+//FUNCTION <68795>: isidstart::_lam_168: Constructor
+_lam_168::_lam_168
+  (
+    FLX_FPAR_DECL
+    isidstart *pptrisidstart
+  )
+  FLX_FMEM_INIT   ptrisidstart(pptrisidstart) {}
+
+
+//FUNCTION <68795>: isidstart::_lam_168: Clone method
+  _lam_168* _lam_168::clone(){
+  return new(*PTF gcp,_lam_168_ptr_map,true) _lam_168(*this);
+}
+
+//FUNCTION <70133>: flx_pkgconfig::parse_args::aux::aux_uncurry: Constructor
+_fI70133_aux_uncurry::_fI70133_aux_uncurry
+  (
+    FLX_FPAR_DECL
+    _fI70125_aux *pptr_fI70125_aux,
     parse_args *pptrparse_args,
     flx_pkgconfig *pptrflx_pkgconfig
   )
-  FLX_FMEM_INIT   ptr_fI70706_aux(pptr_fI70706_aux),
+  FLX_FMEM_INIT   ptr_fI70125_aux(pptr_fI70125_aux),
   ptrparse_args(pptrparse_args),
   ptrflx_pkgconfig(pptrflx_pkgconfig) {}
 
 
-//FUNCTION <70724>: flx_pkgconfig::parse_args::aux::_lam_1502: Clone method
-  _fI70724__lam_1502* _fI70724__lam_1502::clone(){
-  return new(*PTF gcp,_fI70724__lam_1502_ptr_map,true) _fI70724__lam_1502(*this);
+//FUNCTION <70133>: flx_pkgconfig::parse_args::aux::aux_uncurry: Clone method
+  _fI70133_aux_uncurry* _fI70133_aux_uncurry::clone(){
+  return new(*PTF gcp,_fI70133_aux_uncurry_ptr_map,true) _fI70133_aux_uncurry(*this);
 }
 
-//FUNCTION <68965>: _init_::aux_uncurry: Constructor
-aux_uncurry::aux_uncurry
+//FUNCTION <69536>: flx_pkgconfig::handle_pkg::aux_uncurry::_lam_1332: Constructor
+_fI69536__lam_1332::_fI69536__lam_1332
   (
     FLX_FPAR_DECL
-    _init_ *pptr_init_
-  )
-  FLX_FMEM_INIT   ptr_init_(pptr_init_) {}
-
-
-//FUNCTION <68965>: _init_::aux_uncurry: Clone method
-  aux_uncurry* aux_uncurry::clone(){
-  return new(*PTF gcp,aux_uncurry_ptr_map,true) aux_uncurry(*this);
-}
-
-//FUNCTION <5714>: isidstart: Constructor
-isidstart::isidstart(FLX_FPAR_DECL_ONLY)FLX_FMEM_INIT_ONLY {}
-
-
-//FUNCTION <5714>: isidstart: Clone method
-  isidstart* isidstart::clone(){
-  return new(*PTF gcp,isidstart_ptr_map,true) isidstart(*this);
-}
-
-//FUNCTION <70976>: cat_uncurry::iterator'2::_lam_1566: Constructor
-_fI70976__lam_1566::_fI70976__lam_1566
-  (
-    FLX_FPAR_DECL
-    _fI70968_iterator__apos_2 *pptr_fI70968_iterator__apos_2,
-    cat_uncurry *pptrcat_uncurry
-  )
-  FLX_FMEM_INIT   ptr_fI70968_iterator__apos_2(pptr_fI70968_iterator__apos_2),
-  ptrcat_uncurry(pptrcat_uncurry) {}
-
-
-//FUNCTION <70976>: cat_uncurry::iterator'2::_lam_1566: Clone method
-  _fI70976__lam_1566* _fI70976__lam_1566::clone(){
-  return new(*PTF gcp,_fI70976__lam_1566_ptr_map,true) _fI70976__lam_1566(*this);
-}
-
-//FUNCTION <69150>: flx_pkgconfig::add_val::aux_uncurry::_lam_1391: Constructor
-_fI69150__lam_1391::_fI69150__lam_1391
-  (
-    FLX_FPAR_DECL
-    _fI69142_aux_uncurry *pptr_fI69142_aux_uncurry,
-    add_val *pptradd_val,
-    flx_pkgconfig *pptrflx_pkgconfig
-  )
-  FLX_FMEM_INIT   ptr_fI69142_aux_uncurry(pptr_fI69142_aux_uncurry),
-  ptradd_val(pptradd_val),
-  ptrflx_pkgconfig(pptrflx_pkgconfig) {}
-
-
-//FUNCTION <69150>: flx_pkgconfig::add_val::aux_uncurry::_lam_1391: Clone method
-  _fI69150__lam_1391* _fI69150__lam_1391::clone(){
-  return new(*PTF gcp,_fI69150__lam_1391_ptr_map,true) _fI69150__lam_1391(*this);
-}
-
-//FUNCTION <70031>: flx_pkgconfig::handle_pkg::_lam_65160::aux::aux_uncurry::_lam_1391: Constructor
-_fI70031__lam_1391::_fI70031__lam_1391
-  (
-    FLX_FPAR_DECL
-    _fI70023_aux_uncurry *pptr_fI70023_aux_uncurry,
-    _fI70015_aux *pptr_fI70015_aux,
-    _lam_65160 *pptr_lam_65160,
+    _fI69528_aux_uncurry *pptr_fI69528_aux_uncurry,
     handle_pkg *pptrhandle_pkg,
     flx_pkgconfig *pptrflx_pkgconfig
   )
-  FLX_FMEM_INIT   ptr_fI70023_aux_uncurry(pptr_fI70023_aux_uncurry),
-  ptr_fI70015_aux(pptr_fI70015_aux),
-  ptr_lam_65160(pptr_lam_65160),
+  FLX_FMEM_INIT   ptr_fI69528_aux_uncurry(pptr_fI69528_aux_uncurry),
   ptrhandle_pkg(pptrhandle_pkg),
   ptrflx_pkgconfig(pptrflx_pkgconfig) {}
 
 
-//FUNCTION <70031>: flx_pkgconfig::handle_pkg::_lam_65160::aux::aux_uncurry::_lam_1391: Clone method
-  _fI70031__lam_1391* _fI70031__lam_1391::clone(){
-  return new(*PTF gcp,_fI70031__lam_1391_ptr_map,true) _fI70031__lam_1391(*this);
+//FUNCTION <69536>: flx_pkgconfig::handle_pkg::aux_uncurry::_lam_1332: Clone method
+  _fI69536__lam_1332* _fI69536__lam_1332::clone(){
+  return new(*PTF gcp,_fI69536__lam_1332_ptr_map,true) _fI69536__lam_1332(*this);
 }
 
-//FUNCTION <69257>: flx_pkgconfig::tail_val::aux::_lam_1502: Constructor
-_lam_1502::_lam_1502
+//FUNCTION <68666>: flx_pkgconfig::tail_val::aux::aux_uncurry: Constructor
+_fI68666_aux_uncurry::_fI68666_aux_uncurry
   (
     FLX_FPAR_DECL
     aux *pptraux,
@@ -1011,247 +612,33 @@ _lam_1502::_lam_1502
   ptrflx_pkgconfig(pptrflx_pkgconfig) {}
 
 
-//FUNCTION <69257>: flx_pkgconfig::tail_val::aux::_lam_1502: Clone method
-  _lam_1502* _lam_1502::clone(){
-  return new(*PTF gcp,_lam_1502_ptr_map,true) _lam_1502(*this);
+//FUNCTION <68666>: flx_pkgconfig::tail_val::aux::aux_uncurry: Clone method
+  _fI68666_aux_uncurry* _fI68666_aux_uncurry::clone(){
+  return new(*PTF gcp,_fI68666_aux_uncurry_ptr_map,true) _fI68666_aux_uncurry(*this);
 }
 
-//PROCEDURE <65576:> flx_pkgconfig::handle_pkg: Constructor
-handle_pkg::handle_pkg
+//FUNCTION <69442>: flx_pkgconfig::handle_pkg::_lam_64579::aux::aux_uncurry: Constructor
+_fI69442_aux_uncurry::_fI69442_aux_uncurry
   (
     FLX_FPAR_DECL
-    flx_pkgconfig *pptrflx_pkgconfig
-  )
-  FLX_FMEM_INIT   ptrflx_pkgconfig(pptrflx_pkgconfig) {}
-
-//PROCEDURE <65576:> flx_pkgconfig::handle_pkg: Clone method
-  handle_pkg* handle_pkg::clone(){
-  return new(*PTF gcp,handle_pkg_ptr_map,true) handle_pkg(*this);
-}
-//FUNCTION <69774>: flx_pkgconfig::lexstr::aux_uncurry::_lam_1391: Constructor
-_fI69774__lam_1391::_fI69774__lam_1391
-  (
-    FLX_FPAR_DECL
-    _fI69766_aux_uncurry *pptr_fI69766_aux_uncurry,
-    lexstr *pptrlexstr,
-    flx_pkgconfig *pptrflx_pkgconfig
-  )
-  FLX_FMEM_INIT   ptr_fI69766_aux_uncurry(pptr_fI69766_aux_uncurry),
-  ptrlexstr(pptrlexstr),
-  ptrflx_pkgconfig(pptrflx_pkgconfig) {}
-
-
-//FUNCTION <69774>: flx_pkgconfig::lexstr::aux_uncurry::_lam_1391: Clone method
-  _fI69774__lam_1391* _fI69774__lam_1391::clone(){
-  return new(*PTF gcp,_fI69774__lam_1391_ptr_map,true) _fI69774__lam_1391(*this);
-}
-
-//FUNCTION <70033>: flx_pkgconfig::handle_pkg::_lam_65160::aux::_lam_1502: Constructor
-_fI70033__lam_1502::_fI70033__lam_1502
-  (
-    FLX_FPAR_DECL
-    _fI70015_aux *pptr_fI70015_aux,
-    _lam_65160 *pptr_lam_65160,
+    _fI69434_aux *pptr_fI69434_aux,
+    _lam_64579 *pptr_lam_64579,
     handle_pkg *pptrhandle_pkg,
     flx_pkgconfig *pptrflx_pkgconfig
   )
-  FLX_FMEM_INIT   ptr_fI70015_aux(pptr_fI70015_aux),
-  ptr_lam_65160(pptr_lam_65160),
+  FLX_FMEM_INIT   ptr_fI69434_aux(pptr_fI69434_aux),
+  ptr_lam_64579(pptr_lam_64579),
   ptrhandle_pkg(pptrhandle_pkg),
   ptrflx_pkgconfig(pptrflx_pkgconfig) {}
 
 
-//FUNCTION <70033>: flx_pkgconfig::handle_pkg::_lam_65160::aux::_lam_1502: Clone method
-  _fI70033__lam_1502* _fI70033__lam_1502::clone(){
-  return new(*PTF gcp,_fI70033__lam_1502_ptr_map,true) _fI70033__lam_1502(*this);
+//FUNCTION <69442>: flx_pkgconfig::handle_pkg::_lam_64579::aux::aux_uncurry: Clone method
+  _fI69442_aux_uncurry* _fI69442_aux_uncurry::clone(){
+  return new(*PTF gcp,_fI69442_aux_uncurry_ptr_map,true) _fI69442_aux_uncurry(*this);
 }
 
-//PROCEDURE <65607:> flx_pkgconfig::handle_pkg::_lam_65160::_lam_65171::_lam_65183: Constructor
-_lam_65183::_lam_65183
-  (
-    FLX_FPAR_DECL
-    _lam_65171 *pptr_lam_65171,
-    _lam_65160 *pptr_lam_65160,
-    handle_pkg *pptrhandle_pkg,
-    flx_pkgconfig *pptrflx_pkgconfig
-  )
-  FLX_FMEM_INIT   ptr_lam_65171(pptr_lam_65171),
-  ptr_lam_65160(pptr_lam_65160),
-  ptrhandle_pkg(pptrhandle_pkg),
-  ptrflx_pkgconfig(pptrflx_pkgconfig) {}
-
-//PROCEDURE <65607:> flx_pkgconfig::handle_pkg::_lam_65160::_lam_65171::_lam_65183: Clone method
-  _lam_65183* _lam_65183::clone(){
-  return new(*PTF gcp,_lam_65183_ptr_map,true) _lam_65183(*this);
-}
-//FUNCTION <69935>: flx_pkgconfig::handle_pkg::_lam_65160::_lam_65171::_lam_1457: Constructor
-_fI69935__lam_1457::_fI69935__lam_1457
-  (
-    FLX_FPAR_DECL
-    _lam_65171 *pptr_lam_65171,
-    _lam_65160 *pptr_lam_65160,
-    handle_pkg *pptrhandle_pkg,
-    flx_pkgconfig *pptrflx_pkgconfig
-  )
-  FLX_FMEM_INIT   ptr_lam_65171(pptr_lam_65171),
-  ptr_lam_65160(pptr_lam_65160),
-  ptrhandle_pkg(pptrhandle_pkg),
-  ptrflx_pkgconfig(pptrflx_pkgconfig) {}
-
-
-//FUNCTION <69935>: flx_pkgconfig::handle_pkg::_lam_65160::_lam_65171::_lam_1457: Clone method
-  _fI69935__lam_1457* _fI69935__lam_1457::clone(){
-  return new(*PTF gcp,_fI69935__lam_1457_ptr_map,true) _fI69935__lam_1457(*this);
-}
-
-//FUNCTION <69853>: flx_pkgconfig::handle_pkg::_lam_65160::_lam_65171::search_and_replace'2::_lam_2365: Constructor
-_fI69853__lam_2365::_fI69853__lam_2365
-  (
-    FLX_FPAR_DECL
-    _fI69824_search_and_replace__apos_2 *pptr_fI69824_search_and_replace__apos_2,
-    _lam_65171 *pptr_lam_65171,
-    _lam_65160 *pptr_lam_65160,
-    handle_pkg *pptrhandle_pkg,
-    flx_pkgconfig *pptrflx_pkgconfig
-  )
-  FLX_FMEM_INIT   ptr_fI69824_search_and_replace__apos_2(pptr_fI69824_search_and_replace__apos_2),
-  ptr_lam_65171(pptr_lam_65171),
-  ptr_lam_65160(pptr_lam_65160),
-  ptrhandle_pkg(pptrhandle_pkg),
-  ptrflx_pkgconfig(pptrflx_pkgconfig) {}
-
-
-//FUNCTION <69853>: flx_pkgconfig::handle_pkg::_lam_65160::_lam_65171::search_and_replace'2::_lam_2365: Clone method
-  _fI69853__lam_2365* _fI69853__lam_2365::clone(){
-  return new(*PTF gcp,_fI69853__lam_2365_ptr_map,true) _fI69853__lam_2365(*this);
-}
-
-//FUNCTION <70980>: cat_uncurry::_lam_1434: Constructor
-_lam_1434::_lam_1434
-  (
-    FLX_FPAR_DECL
-    cat_uncurry *pptrcat_uncurry
-  )
-  FLX_FMEM_INIT   ptrcat_uncurry(pptrcat_uncurry) {}
-
-
-//FUNCTION <70980>: cat_uncurry::_lam_1434: Clone method
-  _lam_1434* _lam_1434::clone(){
-  return new(*PTF gcp,_lam_1434_ptr_map,true) _lam_1434(*this);
-}
-
-//FUNCTION <69276>: +::aux_uncurry::_lam_1391: Constructor
-_fI69276__lam_1391::_fI69276__lam_1391
-  (
-    FLX_FPAR_DECL
-    _fI69268_aux_uncurry *pptr_fI69268_aux_uncurry,
-    _fI68132___plus_ *pptr_fI68132___plus_
-  )
-  FLX_FMEM_INIT   ptr_fI69268_aux_uncurry(pptr_fI69268_aux_uncurry),
-  ptr_fI68132___plus_(pptr_fI68132___plus_) {}
-
-
-//FUNCTION <69276>: +::aux_uncurry::_lam_1391: Clone method
-  _fI69276__lam_1391* _fI69276__lam_1391::clone(){
-  return new(*PTF gcp,_fI69276__lam_1391_ptr_map,true) _fI69276__lam_1391(*this);
-}
-
-//FUNCTION <70007>: flx_pkgconfig::handle_pkg::_lam_65160::aux_uncurry::_lam_1391: Constructor
-_fI70007__lam_1391::_fI70007__lam_1391
-  (
-    FLX_FPAR_DECL
-    _fI69999_aux_uncurry *pptr_fI69999_aux_uncurry,
-    _lam_65160 *pptr_lam_65160,
-    handle_pkg *pptrhandle_pkg,
-    flx_pkgconfig *pptrflx_pkgconfig
-  )
-  FLX_FMEM_INIT   ptr_fI69999_aux_uncurry(pptr_fI69999_aux_uncurry),
-  ptr_lam_65160(pptr_lam_65160),
-  ptrhandle_pkg(pptrhandle_pkg),
-  ptrflx_pkgconfig(pptrflx_pkgconfig) {}
-
-
-//FUNCTION <70007>: flx_pkgconfig::handle_pkg::_lam_65160::aux_uncurry::_lam_1391: Clone method
-  _fI70007__lam_1391* _fI70007__lam_1391::clone(){
-  return new(*PTF gcp,_fI70007__lam_1391_ptr_map,true) _fI70007__lam_1391(*this);
-}
-
-//FUNCTION <70015>: flx_pkgconfig::handle_pkg::_lam_65160::aux: Constructor
-_fI70015_aux::_fI70015_aux
-  (
-    FLX_FPAR_DECL
-    _lam_65160 *pptr_lam_65160,
-    handle_pkg *pptrhandle_pkg,
-    flx_pkgconfig *pptrflx_pkgconfig
-  )
-  FLX_FMEM_INIT   ptr_lam_65160(pptr_lam_65160),
-  ptrhandle_pkg(pptrhandle_pkg),
-  ptrflx_pkgconfig(pptrflx_pkgconfig) {}
-
-
-//FUNCTION <70015>: flx_pkgconfig::handle_pkg::_lam_65160::aux: Clone method
-  _fI70015_aux* _fI70015_aux::clone(){
-  return new(*PTF gcp,_fI70015_aux_ptr_map,true) _fI70015_aux(*this);
-}
-
-//FUNCTION <70107>: flx_pkgconfig::handle_pkg::_lam_1457: Constructor
-_fI70107__lam_1457::_fI70107__lam_1457
-  (
-    FLX_FPAR_DECL
-    handle_pkg *pptrhandle_pkg,
-    flx_pkgconfig *pptrflx_pkgconfig
-  )
-  FLX_FMEM_INIT   ptrhandle_pkg(pptrhandle_pkg),
-  ptrflx_pkgconfig(pptrflx_pkgconfig) {}
-
-
-//FUNCTION <70107>: flx_pkgconfig::handle_pkg::_lam_1457: Clone method
-  _fI70107__lam_1457* _fI70107__lam_1457::clone(){
-  return new(*PTF gcp,_fI70107__lam_1457_ptr_map,true) _fI70107__lam_1457(*this);
-}
-
-//FUNCTION <68973>: _init_::aux_uncurry::_lam_1385: Constructor
-_lam_1385::_lam_1385
-  (
-    FLX_FPAR_DECL
-    aux_uncurry *pptraux_uncurry,
-    _init_ *pptr_init_
-  )
-  FLX_FMEM_INIT   ptraux_uncurry(pptraux_uncurry),
-  ptr_init_(pptr_init_) {}
-
-
-//FUNCTION <68973>: _init_::aux_uncurry::_lam_1385: Clone method
-  _lam_1385* _lam_1385::clone(){
-  return new(*PTF gcp,_lam_1385_ptr_map,true) _lam_1385(*this);
-}
-
-//FUNCTION <69845>: flx_pkgconfig::handle_pkg::_lam_65160::_lam_65171::search_and_replace'2::iterator'2::_lam_1566: Constructor
-_fI69845__lam_1566::_fI69845__lam_1566
-  (
-    FLX_FPAR_DECL
-    _fI69837_iterator__apos_2 *pptr_fI69837_iterator__apos_2,
-    _fI69824_search_and_replace__apos_2 *pptr_fI69824_search_and_replace__apos_2,
-    _lam_65171 *pptr_lam_65171,
-    _lam_65160 *pptr_lam_65160,
-    handle_pkg *pptrhandle_pkg,
-    flx_pkgconfig *pptrflx_pkgconfig
-  )
-  FLX_FMEM_INIT   ptr_fI69837_iterator__apos_2(pptr_fI69837_iterator__apos_2),
-  ptr_fI69824_search_and_replace__apos_2(pptr_fI69824_search_and_replace__apos_2),
-  ptr_lam_65171(pptr_lam_65171),
-  ptr_lam_65160(pptr_lam_65160),
-  ptrhandle_pkg(pptrhandle_pkg),
-  ptrflx_pkgconfig(pptrflx_pkgconfig) {}
-
-
-//FUNCTION <69845>: flx_pkgconfig::handle_pkg::_lam_65160::_lam_65171::search_and_replace'2::iterator'2::_lam_1566: Clone method
-  _fI69845__lam_1566* _fI69845__lam_1566::clone(){
-  return new(*PTF gcp,_fI69845__lam_1566_ptr_map,true) _fI69845__lam_1566(*this);
-}
-
-//FUNCTION <70743>: flx_pkgconfig::parse_args::aux_uncurry: Constructor
-_fI70743_aux_uncurry::_fI70743_aux_uncurry
+//FUNCTION <70162>: flx_pkgconfig::parse_args::aux_uncurry: Constructor
+_fI70162_aux_uncurry::_fI70162_aux_uncurry
   (
     FLX_FPAR_DECL
     parse_args *pptrparse_args,
@@ -1261,12 +648,162 @@ _fI70743_aux_uncurry::_fI70743_aux_uncurry
   ptrflx_pkgconfig(pptrflx_pkgconfig) {}
 
 
-//FUNCTION <70743>: flx_pkgconfig::parse_args::aux_uncurry: Clone method
-  _fI70743_aux_uncurry* _fI70743_aux_uncurry::clone(){
-  return new(*PTF gcp,_fI70743_aux_uncurry_ptr_map,true) _fI70743_aux_uncurry(*this);
+//FUNCTION <70162>: flx_pkgconfig::parse_args::aux_uncurry: Clone method
+  _fI70162_aux_uncurry* _fI70162_aux_uncurry::clone(){
+  return new(*PTF gcp,_fI70162_aux_uncurry_ptr_map,true) _fI70162_aux_uncurry(*this);
 }
 
-//PROCEDURE <65568:> flx_pkgconfig::tail_val: Constructor
+//FUNCTION <69406>: flx_pkgconfig::handle_pkg::_lam_64579::_lam_1398: Constructor
+_fI69406__lam_1398::_fI69406__lam_1398
+  (
+    FLX_FPAR_DECL
+    _lam_64579 *pptr_lam_64579,
+    handle_pkg *pptrhandle_pkg,
+    flx_pkgconfig *pptrflx_pkgconfig
+  )
+  FLX_FMEM_INIT   ptr_lam_64579(pptr_lam_64579),
+  ptrhandle_pkg(pptrhandle_pkg),
+  ptrflx_pkgconfig(pptrflx_pkgconfig) {}
+
+
+//FUNCTION <69406>: flx_pkgconfig::handle_pkg::_lam_64579::_lam_1398: Clone method
+  _fI69406__lam_1398* _fI69406__lam_1398::clone(){
+  return new(*PTF gcp,_fI69406__lam_1398_ptr_map,true) _fI69406__lam_1398(*this);
+}
+
+//FUNCTION <68700>: +::aux_uncurry: Constructor
+_fI68700_aux_uncurry::_fI68700_aux_uncurry
+  (
+    FLX_FPAR_DECL
+    _fI67551___plus_ *pptr_fI67551___plus_
+  )
+  FLX_FMEM_INIT   ptr_fI67551___plus_(pptr_fI67551___plus_) {}
+
+
+//FUNCTION <68700>: +::aux_uncurry: Clone method
+  _fI68700_aux_uncurry* _fI68700_aux_uncurry::clone(){
+  return new(*PTF gcp,_fI68700_aux_uncurry_ptr_map,true) _fI68700_aux_uncurry(*this);
+}
+
+//FUNCTION <68453>: mem_uncurry::_lam_1397: Constructor
+_lam_1397::_lam_1397
+  (
+    FLX_FPAR_DECL
+    mem_uncurry *pptrmem_uncurry
+  )
+  FLX_FMEM_INIT   ptrmem_uncurry(pptrmem_uncurry) {}
+
+
+//FUNCTION <68453>: mem_uncurry::_lam_1397: Clone method
+  _lam_1397* _lam_1397::clone(){
+  return new(*PTF gcp,_lam_1397_ptr_map,true) _lam_1397(*this);
+}
+
+//FUNCTION <70141>: flx_pkgconfig::parse_args::aux::aux_uncurry::_lam_1332: Constructor
+_fI70141__lam_1332::_fI70141__lam_1332
+  (
+    FLX_FPAR_DECL
+    _fI70133_aux_uncurry *pptr_fI70133_aux_uncurry,
+    _fI70125_aux *pptr_fI70125_aux,
+    parse_args *pptrparse_args,
+    flx_pkgconfig *pptrflx_pkgconfig
+  )
+  FLX_FMEM_INIT   ptr_fI70133_aux_uncurry(pptr_fI70133_aux_uncurry),
+  ptr_fI70125_aux(pptr_fI70125_aux),
+  ptrparse_args(pptrparse_args),
+  ptrflx_pkgconfig(pptrflx_pkgconfig) {}
+
+
+//FUNCTION <70141>: flx_pkgconfig::parse_args::aux::aux_uncurry::_lam_1332: Clone method
+  _fI70141__lam_1332* _fI70141__lam_1332::clone(){
+  return new(*PTF gcp,_fI70141__lam_1332_ptr_map,true) _fI70141__lam_1332(*this);
+}
+
+//FUNCTION <70223>: flx_pkgconfig::reattach_drive_letters::_lam_64546: Constructor
+_lam_64546::_lam_64546
+  (
+    FLX_FPAR_DECL
+    reattach_drive_letters *pptrreattach_drive_letters,
+    flx_pkgconfig *pptrflx_pkgconfig
+  )
+  FLX_FMEM_INIT   ptrreattach_drive_letters(pptrreattach_drive_letters),
+  ptrflx_pkgconfig(pptrflx_pkgconfig) {}
+
+
+//FUNCTION <70223>: flx_pkgconfig::reattach_drive_letters::_lam_64546: Clone method
+  _lam_64546* _lam_64546::clone(){
+  return new(*PTF gcp,_lam_64546_ptr_map,true) _lam_64546(*this);
+}
+
+//FUNCTION <69452>: flx_pkgconfig::handle_pkg::_lam_64579::aux::_lam_1443: Constructor
+_fI69452__lam_1443::_fI69452__lam_1443
+  (
+    FLX_FPAR_DECL
+    _fI69434_aux *pptr_fI69434_aux,
+    _lam_64579 *pptr_lam_64579,
+    handle_pkg *pptrhandle_pkg,
+    flx_pkgconfig *pptrflx_pkgconfig
+  )
+  FLX_FMEM_INIT   ptr_fI69434_aux(pptr_fI69434_aux),
+  ptr_lam_64579(pptr_lam_64579),
+  ptrhandle_pkg(pptrhandle_pkg),
+  ptrflx_pkgconfig(pptrflx_pkgconfig) {}
+
+
+//FUNCTION <69452>: flx_pkgconfig::handle_pkg::_lam_64579::aux::_lam_1443: Clone method
+  _fI69452__lam_1443* _fI69452__lam_1443::clone(){
+  return new(*PTF gcp,_fI69452__lam_1443_ptr_map,true) _fI69452__lam_1443(*this);
+}
+
+//FUNCTION <68384>: _init_::aux_uncurry: Constructor
+aux_uncurry::aux_uncurry
+  (
+    FLX_FPAR_DECL
+    _init_ *pptr_init_
+  )
+  FLX_FMEM_INIT   ptr_init_(pptr_init_) {}
+
+
+//FUNCTION <68384>: _init_::aux_uncurry: Clone method
+  aux_uncurry* aux_uncurry::clone(){
+  return new(*PTF gcp,aux_uncurry_ptr_map,true) aux_uncurry(*this);
+}
+
+//FUNCTION <70320>: flx_pkgconfig::aux::_lam_2230: Constructor
+_lam_2230::_lam_2230
+  (
+    FLX_FPAR_DECL
+    _fI70309_aux *pptr_fI70309_aux,
+    flx_pkgconfig *pptrflx_pkgconfig
+  )
+  FLX_FMEM_INIT   ptr_fI70309_aux(pptr_fI70309_aux),
+  ptrflx_pkgconfig(pptrflx_pkgconfig) {}
+
+
+//FUNCTION <70320>: flx_pkgconfig::aux::_lam_2230: Clone method
+  _lam_2230* _lam_2230::clone(){
+  return new(*PTF gcp,_lam_2230_ptr_map,true) _lam_2230(*this);
+}
+
+//FUNCTION <69546>: flx_pkgconfig::handle_pkg::aux_uncurry::_lam_1332: Constructor
+_fI69546__lam_1332::_fI69546__lam_1332
+  (
+    FLX_FPAR_DECL
+    _fI69538_aux_uncurry *pptr_fI69538_aux_uncurry,
+    handle_pkg *pptrhandle_pkg,
+    flx_pkgconfig *pptrflx_pkgconfig
+  )
+  FLX_FMEM_INIT   ptr_fI69538_aux_uncurry(pptr_fI69538_aux_uncurry),
+  ptrhandle_pkg(pptrhandle_pkg),
+  ptrflx_pkgconfig(pptrflx_pkgconfig) {}
+
+
+//FUNCTION <69546>: flx_pkgconfig::handle_pkg::aux_uncurry::_lam_1332: Clone method
+  _fI69546__lam_1332* _fI69546__lam_1332::clone(){
+  return new(*PTF gcp,_fI69546__lam_1332_ptr_map,true) _fI69546__lam_1332(*this);
+}
+
+//PROCEDURE <64987:> flx_pkgconfig::tail_val: Constructor
 tail_val::tail_val
   (
     FLX_FPAR_DECL
@@ -1274,39 +811,802 @@ tail_val::tail_val
   )
   FLX_FMEM_INIT   ptrflx_pkgconfig(pptrflx_pkgconfig) {}
 
-//PROCEDURE <65568:> flx_pkgconfig::tail_val: Clone method
+//PROCEDURE <64987:> flx_pkgconfig::tail_val: Clone method
   tail_val* tail_val::clone(){
   return new(*PTF gcp,tail_val_ptr_map,true) tail_val(*this);
 }
-//FUNCTION <68588>: mem_uncurry: Constructor
-mem_uncurry::mem_uncurry(FLX_FPAR_DECL_ONLY)  FLX_FMEM_INIT eq_uncurry(0) {}
-
-
-//FUNCTION <68588>: mem_uncurry: Clone method
-  mem_uncurry* mem_uncurry::clone(){
-  return new(*PTF gcp,mem_uncurry_ptr_map,true) mem_uncurry(*this);
-}
-
-//FUNCTION <70079>: flx_pkgconfig::handle_pkg::_lam_65160::aux_uncurry: Constructor
-_fI70079_aux_uncurry::_fI70079_aux_uncurry
+//FUNCTION <68959>: search_and_replace_uncurry::_lam_2304: Constructor
+_lam_2304::_lam_2304
   (
     FLX_FPAR_DECL
-    _lam_65160 *pptr_lam_65160,
+    search_and_replace_uncurry *pptrsearch_and_replace_uncurry
+  )
+  FLX_FMEM_INIT   ptrsearch_and_replace_uncurry(pptrsearch_and_replace_uncurry) {}
+
+
+//FUNCTION <68959>: search_and_replace_uncurry::_lam_2304: Clone method
+  _lam_2304* _lam_2304::clone(){
+  return new(*PTF gcp,_lam_2304_ptr_map,true) _lam_2304(*this);
+}
+
+//FUNCTION <69418>: flx_pkgconfig::handle_pkg::_lam_64579::aux_uncurry: Constructor
+_fI69418_aux_uncurry::_fI69418_aux_uncurry
+  (
+    FLX_FPAR_DECL
+    _lam_64579 *pptr_lam_64579,
     handle_pkg *pptrhandle_pkg,
     flx_pkgconfig *pptrflx_pkgconfig
   )
-  FLX_FMEM_INIT   ptr_lam_65160(pptr_lam_65160),
+  FLX_FMEM_INIT   ptr_lam_64579(pptr_lam_64579),
   ptrhandle_pkg(pptrhandle_pkg),
   ptrflx_pkgconfig(pptrflx_pkgconfig) {}
 
 
-//FUNCTION <70079>: flx_pkgconfig::handle_pkg::_lam_65160::aux_uncurry: Clone method
-  _fI70079_aux_uncurry* _fI70079_aux_uncurry::clone(){
-  return new(*PTF gcp,_fI70079_aux_uncurry_ptr_map,true) _fI70079_aux_uncurry(*this);
+//FUNCTION <69418>: flx_pkgconfig::handle_pkg::_lam_64579::aux_uncurry: Clone method
+  _fI69418_aux_uncurry* _fI69418_aux_uncurry::clone(){
+  return new(*PTF gcp,_fI69418_aux_uncurry_ptr_map,true) _fI69418_aux_uncurry(*this);
 }
 
-//FUNCTION <69329>: flx_pkgconfig::check_id::iterator'2: Constructor
-_fI69329_iterator__apos_2::_fI69329_iterator__apos_2
+//FUNCTION <5658>: isidstart: Constructor
+isidstart::isidstart(FLX_FPAR_DECL_ONLY)FLX_FMEM_INIT_ONLY {}
+
+
+//FUNCTION <5658>: isidstart: Clone method
+  isidstart* isidstart::clone(){
+  return new(*PTF gcp,isidstart_ptr_map,true) isidstart(*this);
+}
+
+//FUNCTION <68561>: flx_pkgconfig::add_val::aux_uncurry: Constructor
+_fI68561_aux_uncurry::_fI68561_aux_uncurry
+  (
+    FLX_FPAR_DECL
+    add_val *pptradd_val,
+    flx_pkgconfig *pptrflx_pkgconfig
+  )
+  FLX_FMEM_INIT   ptradd_val(pptradd_val),
+  ptrflx_pkgconfig(pptrflx_pkgconfig) {}
+
+
+//FUNCTION <68561>: flx_pkgconfig::add_val::aux_uncurry: Clone method
+  _fI68561_aux_uncurry* _fI68561_aux_uncurry::clone(){
+  return new(*PTF gcp,_fI68561_aux_uncurry_ptr_map,true) _fI68561_aux_uncurry(*this);
+}
+
+//FUNCTION <70387>: cat_uncurry::iterator'2: Constructor
+_fI70387_iterator__apos_2::_fI70387_iterator__apos_2
+  (
+    FLX_FPAR_DECL
+    cat_uncurry *pptrcat_uncurry
+  )
+  FLX_FMEM_INIT pc(0),
+  ptrcat_uncurry(pptrcat_uncurry) {}
+
+
+//FUNCTION <70387>: cat_uncurry::iterator'2: Clone method
+  _fI70387_iterator__apos_2* _fI70387_iterator__apos_2::clone(){
+  return this;
+}
+
+//FUNCTION <69265>: flx_pkgconfig::handle_pkg::_lam_64579::_lam_64590::search_and_replace'2::_lam_2304: Constructor
+_fI69265__lam_2304::_fI69265__lam_2304
+  (
+    FLX_FPAR_DECL
+    _fI69243_search_and_replace__apos_2 *pptr_fI69243_search_and_replace__apos_2,
+    _lam_64590 *pptr_lam_64590,
+    _lam_64579 *pptr_lam_64579,
+    handle_pkg *pptrhandle_pkg,
+    flx_pkgconfig *pptrflx_pkgconfig
+  )
+  FLX_FMEM_INIT   ptr_fI69243_search_and_replace__apos_2(pptr_fI69243_search_and_replace__apos_2),
+  ptr_lam_64590(pptr_lam_64590),
+  ptr_lam_64579(pptr_lam_64579),
+  ptrhandle_pkg(pptrhandle_pkg),
+  ptrflx_pkgconfig(pptrflx_pkgconfig) {}
+
+
+//FUNCTION <69265>: flx_pkgconfig::handle_pkg::_lam_64579::_lam_64590::search_and_replace'2::_lam_2304: Clone method
+  _fI69265__lam_2304* _fI69265__lam_2304::clone(){
+  return new(*PTF gcp,_fI69265__lam_2304_ptr_map,true) _fI69265__lam_2304(*this);
+}
+
+//FUNCTION <69506>: flx_pkgconfig::handle_pkg::_lam_64579::aux_uncurry::_lam_1332: Constructor
+_fI69506__lam_1332::_fI69506__lam_1332
+  (
+    FLX_FPAR_DECL
+    _fI69498_aux_uncurry *pptr_fI69498_aux_uncurry,
+    _lam_64579 *pptr_lam_64579,
+    handle_pkg *pptrhandle_pkg,
+    flx_pkgconfig *pptrflx_pkgconfig
+  )
+  FLX_FMEM_INIT   ptr_fI69498_aux_uncurry(pptr_fI69498_aux_uncurry),
+  ptr_lam_64579(pptr_lam_64579),
+  ptrhandle_pkg(pptrhandle_pkg),
+  ptrflx_pkgconfig(pptrflx_pkgconfig) {}
+
+
+//FUNCTION <69506>: flx_pkgconfig::handle_pkg::_lam_64579::aux_uncurry::_lam_1332: Clone method
+  _fI69506__lam_1332* _fI69506__lam_1332::clone(){
+  return new(*PTF gcp,_fI69506__lam_1332_ptr_map,true) _fI69506__lam_1332(*this);
+}
+
+//FUNCTION <69408>: flx_pkgconfig::handle_pkg::_lam_64579::aux_uncurry: Constructor
+_fI69408_aux_uncurry::_fI69408_aux_uncurry
+  (
+    FLX_FPAR_DECL
+    _lam_64579 *pptr_lam_64579,
+    handle_pkg *pptrhandle_pkg,
+    flx_pkgconfig *pptrflx_pkgconfig
+  )
+  FLX_FMEM_INIT   ptr_lam_64579(pptr_lam_64579),
+  ptrhandle_pkg(pptrhandle_pkg),
+  ptrflx_pkgconfig(pptrflx_pkgconfig) {}
+
+
+//FUNCTION <69408>: flx_pkgconfig::handle_pkg::_lam_64579::aux_uncurry: Clone method
+  _fI69408_aux_uncurry* _fI69408_aux_uncurry::clone(){
+  return new(*PTF gcp,_fI69408_aux_uncurry_ptr_map,true) _fI69408_aux_uncurry(*this);
+}
+
+//FUNCTION <69185>: flx_pkgconfig::lexstr::aux_uncurry: Constructor
+_fI69185_aux_uncurry::_fI69185_aux_uncurry
+  (
+    FLX_FPAR_DECL
+    lexstr *pptrlexstr,
+    flx_pkgconfig *pptrflx_pkgconfig
+  )
+  FLX_FMEM_INIT   ptrlexstr(pptrlexstr),
+  ptrflx_pkgconfig(pptrflx_pkgconfig) {}
+
+
+//FUNCTION <69185>: flx_pkgconfig::lexstr::aux_uncurry: Clone method
+  _fI69185_aux_uncurry* _fI69185_aux_uncurry::clone(){
+  return new(*PTF gcp,_fI69185_aux_uncurry_ptr_map,true) _fI69185_aux_uncurry(*this);
+}
+
+//FUNCTION <68392>: _init_::aux_uncurry::_lam_1326: Constructor
+_lam_1326::_lam_1326
+  (
+    FLX_FPAR_DECL
+    aux_uncurry *pptraux_uncurry,
+    _init_ *pptr_init_
+  )
+  FLX_FMEM_INIT   ptraux_uncurry(pptraux_uncurry),
+  ptr_init_(pptr_init_) {}
+
+
+//FUNCTION <68392>: _init_::aux_uncurry::_lam_1326: Clone method
+  _lam_1326* _lam_1326::clone(){
+  return new(*PTF gcp,_lam_1326_ptr_map,true) _lam_1326(*this);
+}
+
+//FUNCTION <70115>: flx_pkgconfig::parse_args::aux::aux_uncurry::_lam_1332: Constructor
+_fI70115__lam_1332::_fI70115__lam_1332
+  (
+    FLX_FPAR_DECL
+    _fI70107_aux_uncurry *pptr_fI70107_aux_uncurry,
+    _fI70099_aux *pptr_fI70099_aux,
+    parse_args *pptrparse_args,
+    flx_pkgconfig *pptrflx_pkgconfig
+  )
+  FLX_FMEM_INIT   ptr_fI70107_aux_uncurry(pptr_fI70107_aux_uncurry),
+  ptr_fI70099_aux(pptr_fI70099_aux),
+  ptrparse_args(pptrparse_args),
+  ptrflx_pkgconfig(pptrflx_pkgconfig) {}
+
+
+//FUNCTION <70115>: flx_pkgconfig::parse_args::aux::aux_uncurry::_lam_1332: Clone method
+  _fI70115__lam_1332* _fI70115__lam_1332::clone(){
+  return new(*PTF gcp,_fI70115__lam_1332_ptr_map,true) _fI70115__lam_1332(*this);
+}
+
+//PROCEDURE <64995:> flx_pkgconfig::handle_pkg: Constructor
+handle_pkg::handle_pkg
+  (
+    FLX_FPAR_DECL
+    flx_pkgconfig *pptrflx_pkgconfig
+  )
+  FLX_FMEM_INIT   ptrflx_pkgconfig(pptrflx_pkgconfig) {}
+
+//PROCEDURE <64995:> flx_pkgconfig::handle_pkg: Clone method
+  handle_pkg* handle_pkg::clone(){
+  return new(*PTF gcp,handle_pkg_ptr_map,true) handle_pkg(*this);
+}
+//FUNCTION <70416>: cat_uncurry::_lam_1385: Constructor
+_lam_1385::_lam_1385
+  (
+    FLX_FPAR_DECL
+    cat_uncurry *pptrcat_uncurry
+  )
+  FLX_FMEM_INIT   ptrcat_uncurry(pptrcat_uncurry) {}
+
+
+//FUNCTION <70416>: cat_uncurry::_lam_1385: Clone method
+  _lam_1385* _lam_1385::clone(){
+  return new(*PTF gcp,_lam_1385_ptr_map,true) _lam_1385(*this);
+}
+
+//FUNCTION <69243>: flx_pkgconfig::handle_pkg::_lam_64579::_lam_64590::search_and_replace'2: Constructor
+_fI69243_search_and_replace__apos_2::_fI69243_search_and_replace__apos_2
+  (
+    FLX_FPAR_DECL
+    _lam_64590 *pptr_lam_64590,
+    _lam_64579 *pptr_lam_64579,
+    handle_pkg *pptrhandle_pkg,
+    flx_pkgconfig *pptrflx_pkgconfig
+  )
+  FLX_FMEM_INIT   ptr_lam_64590(pptr_lam_64590),
+  ptr_lam_64579(pptr_lam_64579),
+  ptrhandle_pkg(pptrhandle_pkg),
+  ptrflx_pkgconfig(pptrflx_pkgconfig),
+_genout_urv69202(0),
+_vI69244__generator_strings_7324(0) {}
+
+
+//FUNCTION <69243>: flx_pkgconfig::handle_pkg::_lam_64579::_lam_64590::search_and_replace'2: Clone method
+  _fI69243_search_and_replace__apos_2* _fI69243_search_and_replace__apos_2::clone(){
+  return new(*PTF gcp,_fI69243_search_and_replace__apos_2_ptr_map,true) _fI69243_search_and_replace__apos_2(*this);
+}
+
+//FUNCTION <69426>: flx_pkgconfig::handle_pkg::_lam_64579::aux_uncurry::_lam_1332: Constructor
+_fI69426__lam_1332::_fI69426__lam_1332
+  (
+    FLX_FPAR_DECL
+    _fI69418_aux_uncurry *pptr_fI69418_aux_uncurry,
+    _lam_64579 *pptr_lam_64579,
+    handle_pkg *pptrhandle_pkg,
+    flx_pkgconfig *pptrflx_pkgconfig
+  )
+  FLX_FMEM_INIT   ptr_fI69418_aux_uncurry(pptr_fI69418_aux_uncurry),
+  ptr_lam_64579(pptr_lam_64579),
+  ptrhandle_pkg(pptrhandle_pkg),
+  ptrflx_pkgconfig(pptrflx_pkgconfig) {}
+
+
+//FUNCTION <69426>: flx_pkgconfig::handle_pkg::_lam_64579::aux_uncurry::_lam_1332: Clone method
+  _fI69426__lam_1332* _fI69426__lam_1332::clone(){
+  return new(*PTF gcp,_fI69426__lam_1332_ptr_map,true) _fI69426__lam_1332(*this);
+}
+
+//PROCEDURE <64999:> flx_pkgconfig::handle_pkg::_lam_64579: Constructor
+_lam_64579::_lam_64579
+  (
+    FLX_FPAR_DECL
+    handle_pkg *pptrhandle_pkg,
+    flx_pkgconfig *pptrflx_pkgconfig
+  )
+  FLX_FMEM_INIT   ptrhandle_pkg(pptrhandle_pkg),
+  ptrflx_pkgconfig(pptrflx_pkgconfig) {}
+
+//PROCEDURE <64999:> flx_pkgconfig::handle_pkg::_lam_64579: Clone method
+  _lam_64579* _lam_64579::clone(){
+  return new(*PTF gcp,_lam_64579_ptr_map,true) _lam_64579(*this);
+}
+//FUNCTION <70409>: cat_uncurry::_lam_1386: Constructor
+_lam_1386::_lam_1386
+  (
+    FLX_FPAR_DECL
+    cat_uncurry *pptrcat_uncurry
+  )
+  FLX_FMEM_INIT   ptrcat_uncurry(pptrcat_uncurry) {}
+
+
+//FUNCTION <70409>: cat_uncurry::_lam_1386: Clone method
+  _lam_1386* _lam_1386::clone(){
+  return new(*PTF gcp,_lam_1386_ptr_map,true) _lam_1386(*this);
+}
+
+//FUNCTION <64854>: flx_pkgconfig::xfind: Constructor
+xfind::xfind
+  (
+    FLX_FPAR_DECL
+    flx_pkgconfig *pptrflx_pkgconfig
+  )
+  FLX_FMEM_INIT   ptrflx_pkgconfig(pptrflx_pkgconfig) {}
+
+
+//FUNCTION <64854>: flx_pkgconfig::xfind: Clone method
+  xfind* xfind::clone(){
+  return new(*PTF gcp,xfind_ptr_map,true) xfind(*this);
+}
+
+//PROCEDURE <64991:> flx_pkgconfig::keep_val: Constructor
+keep_val::keep_val
+  (
+    FLX_FPAR_DECL
+    flx_pkgconfig *pptrflx_pkgconfig
+  )
+  FLX_FMEM_INIT   ptrflx_pkgconfig(pptrflx_pkgconfig) {}
+
+//PROCEDURE <64991:> flx_pkgconfig::keep_val: Clone method
+  keep_val* keep_val::clone(){
+  return new(*PTF gcp,keep_val_ptr_map,true) keep_val(*this);
+}
+//FUNCTION <68687>: +::aux_uncurry: Constructor
+_fI68687_aux_uncurry::_fI68687_aux_uncurry
+  (
+    FLX_FPAR_DECL
+    _fI67551___plus_ *pptr_fI67551___plus_
+  )
+  FLX_FMEM_INIT   ptr_fI67551___plus_(pptr_fI67551___plus_) {}
+
+
+//FUNCTION <68687>: +::aux_uncurry: Clone method
+  _fI68687_aux_uncurry* _fI68687_aux_uncurry::clone(){
+  return new(*PTF gcp,_fI68687_aux_uncurry_ptr_map,true) _fI68687_aux_uncurry(*this);
+}
+
+//FUNCTION <69066>: flx_pkgconfig::handle_pkg::_lam_64579::_lam_64590::aux_uncurry::_lam_1332: Constructor
+_fI69066__lam_1332::_fI69066__lam_1332
+  (
+    FLX_FPAR_DECL
+    _fI69058_aux_uncurry *pptr_fI69058_aux_uncurry,
+    _lam_64590 *pptr_lam_64590,
+    _lam_64579 *pptr_lam_64579,
+    handle_pkg *pptrhandle_pkg,
+    flx_pkgconfig *pptrflx_pkgconfig
+  )
+  FLX_FMEM_INIT   ptr_fI69058_aux_uncurry(pptr_fI69058_aux_uncurry),
+  ptr_lam_64590(pptr_lam_64590),
+  ptr_lam_64579(pptr_lam_64579),
+  ptrhandle_pkg(pptrhandle_pkg),
+  ptrflx_pkgconfig(pptrflx_pkgconfig) {}
+
+
+//FUNCTION <69066>: flx_pkgconfig::handle_pkg::_lam_64579::_lam_64590::aux_uncurry::_lam_1332: Clone method
+  _fI69066__lam_1332* _fI69066__lam_1332::clone(){
+  return new(*PTF gcp,_fI69066__lam_1332_ptr_map,true) _fI69066__lam_1332(*this);
+}
+
+//FUNCTION <69264>: flx_pkgconfig::handle_pkg::_lam_64579::_lam_64590::search_and_replace'2::iterator'2::_lam_1507: Constructor
+_fI69264__lam_1507::_fI69264__lam_1507
+  (
+    FLX_FPAR_DECL
+    _fI69256_iterator__apos_2 *pptr_fI69256_iterator__apos_2,
+    _fI69243_search_and_replace__apos_2 *pptr_fI69243_search_and_replace__apos_2,
+    _lam_64590 *pptr_lam_64590,
+    _lam_64579 *pptr_lam_64579,
+    handle_pkg *pptrhandle_pkg,
+    flx_pkgconfig *pptrflx_pkgconfig
+  )
+  FLX_FMEM_INIT   ptr_fI69256_iterator__apos_2(pptr_fI69256_iterator__apos_2),
+  ptr_fI69243_search_and_replace__apos_2(pptr_fI69243_search_and_replace__apos_2),
+  ptr_lam_64590(pptr_lam_64590),
+  ptr_lam_64579(pptr_lam_64579),
+  ptrhandle_pkg(pptrhandle_pkg),
+  ptrflx_pkgconfig(pptrflx_pkgconfig) {}
+
+
+//FUNCTION <69264>: flx_pkgconfig::handle_pkg::_lam_64579::_lam_64590::search_and_replace'2::iterator'2::_lam_1507: Clone method
+  _fI69264__lam_1507* _fI69264__lam_1507::clone(){
+  return new(*PTF gcp,_fI69264__lam_1507_ptr_map,true) _fI69264__lam_1507(*this);
+}
+
+//FUNCTION <70099>: flx_pkgconfig::parse_args::aux: Constructor
+_fI70099_aux::_fI70099_aux
+  (
+    FLX_FPAR_DECL
+    parse_args *pptrparse_args,
+    flx_pkgconfig *pptrflx_pkgconfig
+  )
+  FLX_FMEM_INIT   ptrparse_args(pptrparse_args),
+  ptrflx_pkgconfig(pptrflx_pkgconfig) {}
+
+
+//FUNCTION <70099>: flx_pkgconfig::parse_args::aux: Clone method
+  _fI70099_aux* _fI70099_aux::clone(){
+  return new(*PTF gcp,_fI70099_aux_ptr_map,true) _fI70099_aux(*this);
+}
+
+//FUNCTION <69056>: flx_pkgconfig::handle_pkg::_lam_64579::_lam_64590::_lam_1398: Constructor
+_fI69056__lam_1398::_fI69056__lam_1398
+  (
+    FLX_FPAR_DECL
+    _lam_64590 *pptr_lam_64590,
+    _lam_64579 *pptr_lam_64579,
+    handle_pkg *pptrhandle_pkg,
+    flx_pkgconfig *pptrflx_pkgconfig
+  )
+  FLX_FMEM_INIT   ptr_lam_64590(pptr_lam_64590),
+  ptr_lam_64579(pptr_lam_64579),
+  ptrhandle_pkg(pptrhandle_pkg),
+  ptrflx_pkgconfig(pptrflx_pkgconfig) {}
+
+
+//FUNCTION <69056>: flx_pkgconfig::handle_pkg::_lam_64579::_lam_64590::_lam_1398: Clone method
+  _fI69056__lam_1398* _fI69056__lam_1398::clone(){
+  return new(*PTF gcp,_fI69056__lam_1398_ptr_map,true) _fI69056__lam_1398(*this);
+}
+
+//FUNCTION <69076>: flx_pkgconfig::handle_pkg::_lam_64579::_lam_64590::aux_uncurry::_lam_1332: Constructor
+_fI69076__lam_1332::_fI69076__lam_1332
+  (
+    FLX_FPAR_DECL
+    _fI69068_aux_uncurry *pptr_fI69068_aux_uncurry,
+    _lam_64590 *pptr_lam_64590,
+    _lam_64579 *pptr_lam_64579,
+    handle_pkg *pptrhandle_pkg,
+    flx_pkgconfig *pptrflx_pkgconfig
+  )
+  FLX_FMEM_INIT   ptr_fI69068_aux_uncurry(pptr_fI69068_aux_uncurry),
+  ptr_lam_64590(pptr_lam_64590),
+  ptr_lam_64579(pptr_lam_64579),
+  ptrhandle_pkg(pptrhandle_pkg),
+  ptrflx_pkgconfig(pptrflx_pkgconfig) {}
+
+
+//FUNCTION <69076>: flx_pkgconfig::handle_pkg::_lam_64579::_lam_64590::aux_uncurry::_lam_1332: Clone method
+  _fI69076__lam_1332* _fI69076__lam_1332::clone(){
+  return new(*PTF gcp,_fI69076__lam_1332_ptr_map,true) _fI69076__lam_1332(*this);
+}
+
+//FUNCTION <69651>: flx_pkgconfig::xfind::_lam_64523: Constructor
+_lam_64523::_lam_64523
+  (
+    FLX_FPAR_DECL
+    xfind *pptrxfind,
+    flx_pkgconfig *pptrflx_pkgconfig
+  )
+  FLX_FMEM_INIT   ptrxfind(pptrxfind),
+  ptrflx_pkgconfig(pptrflx_pkgconfig) {}
+
+
+//FUNCTION <69651>: flx_pkgconfig::xfind::_lam_64523: Clone method
+  _lam_64523* _lam_64523::clone(){
+  return new(*PTF gcp,_lam_64523_ptr_map,true) _lam_64523(*this);
+}
+
+//FUNCTION <68955>: search_and_replace_uncurry::iterator'2::_lam_1507: Constructor
+_lam_1507::_lam_1507
+  (
+    FLX_FPAR_DECL
+    _fI68947_iterator__apos_2 *pptr_fI68947_iterator__apos_2,
+    search_and_replace_uncurry *pptrsearch_and_replace_uncurry
+  )
+  FLX_FMEM_INIT   ptr_fI68947_iterator__apos_2(pptr_fI68947_iterator__apos_2),
+  ptrsearch_and_replace_uncurry(pptrsearch_and_replace_uncurry) {}
+
+
+//FUNCTION <68955>: search_and_replace_uncurry::iterator'2::_lam_1507: Clone method
+  _lam_1507* _lam_1507::clone(){
+  return new(*PTF gcp,_lam_1507_ptr_map,true) _lam_1507(*this);
+}
+
+//FUNCTION <67551>: +: Constructor
+_fI67551___plus_::_fI67551___plus_(FLX_FPAR_DECL_ONLY)FLX_FMEM_INIT_ONLY {}
+
+
+//FUNCTION <67551>: +: Clone method
+  _fI67551___plus_* _fI67551___plus_::clone(){
+  return new(*PTF gcp,_fI67551___plus__ptr_map,true) _fI67551___plus_(*this);
+}
+
+//FUNCTION <69058>: flx_pkgconfig::handle_pkg::_lam_64579::_lam_64590::aux_uncurry: Constructor
+_fI69058_aux_uncurry::_fI69058_aux_uncurry
+  (
+    FLX_FPAR_DECL
+    _lam_64590 *pptr_lam_64590,
+    _lam_64579 *pptr_lam_64579,
+    handle_pkg *pptrhandle_pkg,
+    flx_pkgconfig *pptrflx_pkgconfig
+  )
+  FLX_FMEM_INIT   ptr_lam_64590(pptr_lam_64590),
+  ptr_lam_64579(pptr_lam_64579),
+  ptrhandle_pkg(pptrhandle_pkg),
+  ptrflx_pkgconfig(pptrflx_pkgconfig) {}
+
+
+//FUNCTION <69058>: flx_pkgconfig::handle_pkg::_lam_64579::_lam_64590::aux_uncurry: Clone method
+  _fI69058_aux_uncurry* _fI69058_aux_uncurry::clone(){
+  return new(*PTF gcp,_fI69058_aux_uncurry_ptr_map,true) _fI69058_aux_uncurry(*this);
+}
+
+//FUNCTION <69256>: flx_pkgconfig::handle_pkg::_lam_64579::_lam_64590::search_and_replace'2::iterator'2: Constructor
+_fI69256_iterator__apos_2::_fI69256_iterator__apos_2
+  (
+    FLX_FPAR_DECL
+    _fI69243_search_and_replace__apos_2 *pptr_fI69243_search_and_replace__apos_2,
+    _lam_64590 *pptr_lam_64590,
+    _lam_64579 *pptr_lam_64579,
+    handle_pkg *pptrhandle_pkg,
+    flx_pkgconfig *pptrflx_pkgconfig
+  )
+  FLX_FMEM_INIT pc(0),
+  ptr_fI69243_search_and_replace__apos_2(pptr_fI69243_search_and_replace__apos_2),
+  ptr_lam_64590(pptr_lam_64590),
+  ptr_lam_64579(pptr_lam_64579),
+  ptrhandle_pkg(pptrhandle_pkg),
+  ptrflx_pkgconfig(pptrflx_pkgconfig) {}
+
+
+//FUNCTION <69256>: flx_pkgconfig::handle_pkg::_lam_64579::_lam_64590::search_and_replace'2::iterator'2: Clone method
+  _fI69256_iterator__apos_2* _fI69256_iterator__apos_2::clone(){
+  return this;
+}
+
+//FUNCTION <68408>: _init_::_lam_1316: Constructor
+_lam_1316::_lam_1316
+  (
+    FLX_FPAR_DECL
+    _init_ *pptr_init_
+  )
+  FLX_FMEM_INIT   ptr_init_(pptr_init_) {}
+
+
+//FUNCTION <68408>: _init_::_lam_1316: Clone method
+  _lam_1316* _lam_1316::clone(){
+  return new(*PTF gcp,_lam_1316_ptr_map,true) _lam_1316(*this);
+}
+
+//FUNCTION <70322>: flx_pkgconfig::aux_uncurry: Constructor
+_fI70322_aux_uncurry::_fI70322_aux_uncurry
+  (
+    FLX_FPAR_DECL
+    flx_pkgconfig *pptrflx_pkgconfig
+  )
+  FLX_FMEM_INIT   ptrflx_pkgconfig(pptrflx_pkgconfig) {}
+
+
+//FUNCTION <70322>: flx_pkgconfig::aux_uncurry: Clone method
+  _fI70322_aux_uncurry* _fI70322_aux_uncurry::clone(){
+  return new(*PTF gcp,_fI70322_aux_uncurry_ptr_map,true) _fI70322_aux_uncurry(*this);
+}
+
+//FUNCTION <70107>: flx_pkgconfig::parse_args::aux::aux_uncurry: Constructor
+_fI70107_aux_uncurry::_fI70107_aux_uncurry
+  (
+    FLX_FPAR_DECL
+    _fI70099_aux *pptr_fI70099_aux,
+    parse_args *pptrparse_args,
+    flx_pkgconfig *pptrflx_pkgconfig
+  )
+  FLX_FMEM_INIT   ptr_fI70099_aux(pptr_fI70099_aux),
+  ptrparse_args(pptrparse_args),
+  ptrflx_pkgconfig(pptrflx_pkgconfig) {}
+
+
+//FUNCTION <70107>: flx_pkgconfig::parse_args::aux::aux_uncurry: Clone method
+  _fI70107_aux_uncurry* _fI70107_aux_uncurry::clone(){
+  return new(*PTF gcp,_fI70107_aux_uncurry_ptr_map,true) _fI70107_aux_uncurry(*this);
+}
+
+//FUNCTION <64969>: flx_pkgconfig::get_variable: Constructor
+get_variable::get_variable
+  (
+    FLX_FPAR_DECL
+    flx_pkgconfig *pptrflx_pkgconfig
+  )
+  FLX_FMEM_INIT   ptrflx_pkgconfig(pptrflx_pkgconfig) {}
+
+
+//FUNCTION <64969>: flx_pkgconfig::get_variable: Clone method
+  get_variable* get_variable::clone(){
+  return new(*PTF gcp,get_variable_ptr_map,true) get_variable(*this);
+}
+
+//FUNCTION <70160>: flx_pkgconfig::parse_args::aux::_lam_2241: Constructor
+_lam_2241::_lam_2241
+  (
+    FLX_FPAR_DECL
+    _fI70149_aux *pptr_fI70149_aux,
+    parse_args *pptrparse_args,
+    flx_pkgconfig *pptrflx_pkgconfig
+  )
+  FLX_FMEM_INIT   ptr_fI70149_aux(pptr_fI70149_aux),
+  ptrparse_args(pptrparse_args),
+  ptrflx_pkgconfig(pptrflx_pkgconfig) {}
+
+
+//FUNCTION <70160>: flx_pkgconfig::parse_args::aux::_lam_2241: Clone method
+  _lam_2241* _lam_2241::clone(){
+  return new(*PTF gcp,_lam_2241_ptr_map,true) _lam_2241(*this);
+}
+
+//FUNCTION <69193>: flx_pkgconfig::lexstr::aux_uncurry::_lam_1332: Constructor
+_fI69193__lam_1332::_fI69193__lam_1332
+  (
+    FLX_FPAR_DECL
+    _fI69185_aux_uncurry *pptr_fI69185_aux_uncurry,
+    lexstr *pptrlexstr,
+    flx_pkgconfig *pptrflx_pkgconfig
+  )
+  FLX_FMEM_INIT   ptr_fI69185_aux_uncurry(pptr_fI69185_aux_uncurry),
+  ptrlexstr(pptrlexstr),
+  ptrflx_pkgconfig(pptrflx_pkgconfig) {}
+
+
+//FUNCTION <69193>: flx_pkgconfig::lexstr::aux_uncurry::_lam_1332: Clone method
+  _fI69193__lam_1332* _fI69193__lam_1332::clone(){
+  return new(*PTF gcp,_fI69193__lam_1332_ptr_map,true) _fI69193__lam_1332(*this);
+}
+
+//FUNCTION <69068>: flx_pkgconfig::handle_pkg::_lam_64579::_lam_64590::aux_uncurry: Constructor
+_fI69068_aux_uncurry::_fI69068_aux_uncurry
+  (
+    FLX_FPAR_DECL
+    _lam_64590 *pptr_lam_64590,
+    _lam_64579 *pptr_lam_64579,
+    handle_pkg *pptrhandle_pkg,
+    flx_pkgconfig *pptrflx_pkgconfig
+  )
+  FLX_FMEM_INIT   ptr_lam_64590(pptr_lam_64590),
+  ptr_lam_64579(pptr_lam_64579),
+  ptrhandle_pkg(pptrhandle_pkg),
+  ptrflx_pkgconfig(pptrflx_pkgconfig) {}
+
+
+//FUNCTION <69068>: flx_pkgconfig::handle_pkg::_lam_64579::_lam_64590::aux_uncurry: Clone method
+  _fI69068_aux_uncurry* _fI69068_aux_uncurry::clone(){
+  return new(*PTF gcp,_fI69068_aux_uncurry_ptr_map,true) _fI69068_aux_uncurry(*this);
+}
+
+//FUNCTION <70399>: cat_uncurry::_lam_1375: Constructor
+_lam_1375::_lam_1375
+  (
+    FLX_FPAR_DECL
+    cat_uncurry *pptrcat_uncurry
+  )
+  FLX_FMEM_INIT   ptrcat_uncurry(pptrcat_uncurry) {}
+
+
+//FUNCTION <70399>: cat_uncurry::_lam_1375: Clone method
+  _lam_1375* _lam_1375::clone(){
+  return new(*PTF gcp,_lam_1375_ptr_map,true) _lam_1375(*this);
+}
+
+//FUNCTION <69526>: flx_pkgconfig::handle_pkg::_lam_1398: Constructor
+_fI69526__lam_1398::_fI69526__lam_1398
+  (
+    FLX_FPAR_DECL
+    handle_pkg *pptrhandle_pkg,
+    flx_pkgconfig *pptrflx_pkgconfig
+  )
+  FLX_FMEM_INIT   ptrhandle_pkg(pptrhandle_pkg),
+  ptrflx_pkgconfig(pptrflx_pkgconfig) {}
+
+
+//FUNCTION <69526>: flx_pkgconfig::handle_pkg::_lam_1398: Clone method
+  _fI69526__lam_1398* _fI69526__lam_1398::clone(){
+  return new(*PTF gcp,_fI69526__lam_1398_ptr_map,true) _fI69526__lam_1398(*this);
+}
+
+//FUNCTION <69515>: flx_pkgconfig::handle_pkg::_lam_1398: Constructor
+_fI69515__lam_1398::_fI69515__lam_1398
+  (
+    FLX_FPAR_DECL
+    handle_pkg *pptrhandle_pkg,
+    flx_pkgconfig *pptrflx_pkgconfig
+  )
+  FLX_FMEM_INIT   ptrhandle_pkg(pptrhandle_pkg),
+  ptrflx_pkgconfig(pptrflx_pkgconfig) {}
+
+
+//FUNCTION <69515>: flx_pkgconfig::handle_pkg::_lam_1398: Clone method
+  _fI69515__lam_1398* _fI69515__lam_1398::clone(){
+  return new(*PTF gcp,_fI69515__lam_1398_ptr_map,true) _fI69515__lam_1398(*this);
+}
+
+//FUNCTION <68674>: flx_pkgconfig::tail_val::aux::aux_uncurry::_lam_1332: Constructor
+_fI68674__lam_1332::_fI68674__lam_1332
+  (
+    FLX_FPAR_DECL
+    _fI68666_aux_uncurry *pptr_fI68666_aux_uncurry,
+    aux *pptraux,
+    tail_val *pptrtail_val,
+    flx_pkgconfig *pptrflx_pkgconfig
+  )
+  FLX_FMEM_INIT   ptr_fI68666_aux_uncurry(pptr_fI68666_aux_uncurry),
+  ptraux(pptraux),
+  ptrtail_val(pptrtail_val),
+  ptrflx_pkgconfig(pptrflx_pkgconfig) {}
+
+
+//FUNCTION <68674>: flx_pkgconfig::tail_val::aux::aux_uncurry::_lam_1332: Clone method
+  _fI68674__lam_1332* _fI68674__lam_1332::clone(){
+  return new(*PTF gcp,_fI68674__lam_1332_ptr_map,true) _fI68674__lam_1332(*this);
+}
+
+//FUNCTION <69450>: flx_pkgconfig::handle_pkg::_lam_64579::aux::aux_uncurry::_lam_1332: Constructor
+_fI69450__lam_1332::_fI69450__lam_1332
+  (
+    FLX_FPAR_DECL
+    _fI69442_aux_uncurry *pptr_fI69442_aux_uncurry,
+    _fI69434_aux *pptr_fI69434_aux,
+    _lam_64579 *pptr_lam_64579,
+    handle_pkg *pptrhandle_pkg,
+    flx_pkgconfig *pptrflx_pkgconfig
+  )
+  FLX_FMEM_INIT   ptr_fI69442_aux_uncurry(pptr_fI69442_aux_uncurry),
+  ptr_fI69434_aux(pptr_fI69434_aux),
+  ptr_lam_64579(pptr_lam_64579),
+  ptrhandle_pkg(pptrhandle_pkg),
+  ptrflx_pkgconfig(pptrflx_pkgconfig) {}
+
+
+//FUNCTION <69450>: flx_pkgconfig::handle_pkg::_lam_64579::aux::aux_uncurry::_lam_1332: Clone method
+  _fI69450__lam_1332* _fI69450__lam_1332::clone(){
+  return new(*PTF gcp,_fI69450__lam_1332_ptr_map,true) _fI69450__lam_1332(*this);
+}
+
+//FUNCTION <69434>: flx_pkgconfig::handle_pkg::_lam_64579::aux: Constructor
+_fI69434_aux::_fI69434_aux
+  (
+    FLX_FPAR_DECL
+    _lam_64579 *pptr_lam_64579,
+    handle_pkg *pptrhandle_pkg,
+    flx_pkgconfig *pptrflx_pkgconfig
+  )
+  FLX_FMEM_INIT   ptr_lam_64579(pptr_lam_64579),
+  ptrhandle_pkg(pptrhandle_pkg),
+  ptrflx_pkgconfig(pptrflx_pkgconfig) {}
+
+
+//FUNCTION <69434>: flx_pkgconfig::handle_pkg::_lam_64579::aux: Clone method
+  _fI69434_aux* _fI69434_aux::clone(){
+  return new(*PTF gcp,_fI69434_aux_ptr_map,true) _fI69434_aux(*this);
+}
+
+//FUNCTION <69538>: flx_pkgconfig::handle_pkg::aux_uncurry: Constructor
+_fI69538_aux_uncurry::_fI69538_aux_uncurry
+  (
+    FLX_FPAR_DECL
+    handle_pkg *pptrhandle_pkg,
+    flx_pkgconfig *pptrflx_pkgconfig
+  )
+  FLX_FMEM_INIT   ptrhandle_pkg(pptrhandle_pkg),
+  ptrflx_pkgconfig(pptrflx_pkgconfig) {}
+
+
+//FUNCTION <69538>: flx_pkgconfig::handle_pkg::aux_uncurry: Clone method
+  _fI69538_aux_uncurry* _fI69538_aux_uncurry::clone(){
+  return new(*PTF gcp,_fI69538_aux_uncurry_ptr_map,true) _fI69538_aux_uncurry(*this);
+}
+
+//FUNCTION <64961>: flx_pkgconfig::get_field: Constructor
+get_field::get_field
+  (
+    FLX_FPAR_DECL
+    flx_pkgconfig *pptrflx_pkgconfig
+  )
+  FLX_FMEM_INIT   ptrflx_pkgconfig(pptrflx_pkgconfig) {}
+
+
+//FUNCTION <64961>: flx_pkgconfig::get_field: Clone method
+  get_field* get_field::clone(){
+  return new(*PTF gcp,get_field_ptr_map,true) get_field(*this);
+}
+
+//FUNCTION <68595>: iter_uncurry::_lam_1295: Constructor
+_lam_1295::_lam_1295
+  (
+    FLX_FPAR_DECL
+    iter_uncurry *pptriter_uncurry
+  )
+  FLX_FMEM_INIT   ptriter_uncurry(pptriter_uncurry) {}
+
+
+//FUNCTION <68595>: iter_uncurry::_lam_1295: Clone method
+  _lam_1295* _lam_1295::clone(){
+  return new(*PTF gcp,_lam_1295_ptr_map,true) _lam_1295(*this);
+}
+
+//FUNCTION <70125>: flx_pkgconfig::parse_args::aux: Constructor
+_fI70125_aux::_fI70125_aux
+  (
+    FLX_FPAR_DECL
+    parse_args *pptrparse_args,
+    flx_pkgconfig *pptrflx_pkgconfig
+  )
+  FLX_FMEM_INIT   ptrparse_args(pptrparse_args),
+  ptrflx_pkgconfig(pptrflx_pkgconfig) {}
+
+
+//FUNCTION <70125>: flx_pkgconfig::parse_args::aux: Clone method
+  _fI70125_aux* _fI70125_aux::clone(){
+  return new(*PTF gcp,_fI70125_aux_ptr_map,true) _fI70125_aux(*this);
+}
+
+//FUNCTION <68748>: flx_pkgconfig::check_id::iterator'2: Constructor
+_fI68748_iterator__apos_2::_fI68748_iterator__apos_2
   (
     FLX_FPAR_DECL
     check_id *pptrcheck_id,
@@ -1317,96 +1617,13 @@ _fI69329_iterator__apos_2::_fI69329_iterator__apos_2
   ptrflx_pkgconfig(pptrflx_pkgconfig) {}
 
 
-//FUNCTION <69329>: flx_pkgconfig::check_id::iterator'2: Clone method
-  _fI69329_iterator__apos_2* _fI69329_iterator__apos_2::clone(){
+//FUNCTION <68748>: flx_pkgconfig::check_id::iterator'2: Clone method
+  _fI68748_iterator__apos_2* _fI68748_iterator__apos_2::clone(){
   return this;
 }
 
-//FUNCTION <70938>: flx_pkgconfig::_lam_65191: Constructor
-_lam_65191::_lam_65191
-  (
-    FLX_FPAR_DECL
-    flx_pkgconfig *pptrflx_pkgconfig
-  )
-  FLX_FMEM_INIT   ptrflx_pkgconfig(pptrflx_pkgconfig) {}
-
-
-//FUNCTION <70938>: flx_pkgconfig::_lam_65191: Clone method
-  _lam_65191* _lam_65191::clone(){
-  return new(*PTF gcp,_lam_65191_ptr_map,true) _lam_65191(*this);
-}
-
-//FUNCTION <69376>: isidstart::_lam_168: Constructor
-_lam_168::_lam_168
-  (
-    FLX_FPAR_DECL
-    isidstart *pptrisidstart
-  )
-  FLX_FMEM_INIT   ptrisidstart(pptrisidstart) {}
-
-
-//FUNCTION <69376>: isidstart::_lam_168: Clone method
-  _lam_168* _lam_168::clone(){
-  return new(*PTF gcp,_lam_168_ptr_map,true) _lam_168(*this);
-}
-
-//FUNCTION <70968>: cat_uncurry::iterator'2: Constructor
-_fI70968_iterator__apos_2::_fI70968_iterator__apos_2
-  (
-    FLX_FPAR_DECL
-    cat_uncurry *pptrcat_uncurry
-  )
-  FLX_FMEM_INIT pc(0),
-  ptrcat_uncurry(pptrcat_uncurry) {}
-
-
-//FUNCTION <70968>: cat_uncurry::iterator'2: Clone method
-  _fI70968_iterator__apos_2* _fI70968_iterator__apos_2::clone(){
-  return this;
-}
-
-//FUNCTION <70023>: flx_pkgconfig::handle_pkg::_lam_65160::aux::aux_uncurry: Constructor
-_fI70023_aux_uncurry::_fI70023_aux_uncurry
-  (
-    FLX_FPAR_DECL
-    _fI70015_aux *pptr_fI70015_aux,
-    _lam_65160 *pptr_lam_65160,
-    handle_pkg *pptrhandle_pkg,
-    flx_pkgconfig *pptrflx_pkgconfig
-  )
-  FLX_FMEM_INIT   ptr_fI70015_aux(pptr_fI70015_aux),
-  ptr_lam_65160(pptr_lam_65160),
-  ptrhandle_pkg(pptrhandle_pkg),
-  ptrflx_pkgconfig(pptrflx_pkgconfig) {}
-
-
-//FUNCTION <70023>: flx_pkgconfig::handle_pkg::_lam_65160::aux::aux_uncurry: Clone method
-  _fI70023_aux_uncurry* _fI70023_aux_uncurry::clone(){
-  return new(*PTF gcp,_fI70023_aux_uncurry_ptr_map,true) _fI70023_aux_uncurry(*this);
-}
-
-//FUNCTION <70722>: flx_pkgconfig::parse_args::aux::aux_uncurry::_lam_1391: Constructor
-_fI70722__lam_1391::_fI70722__lam_1391
-  (
-    FLX_FPAR_DECL
-    _fI70714_aux_uncurry *pptr_fI70714_aux_uncurry,
-    _fI70706_aux *pptr_fI70706_aux,
-    parse_args *pptrparse_args,
-    flx_pkgconfig *pptrflx_pkgconfig
-  )
-  FLX_FMEM_INIT   ptr_fI70714_aux_uncurry(pptr_fI70714_aux_uncurry),
-  ptr_fI70706_aux(pptr_fI70706_aux),
-  ptrparse_args(pptrparse_args),
-  ptrflx_pkgconfig(pptrflx_pkgconfig) {}
-
-
-//FUNCTION <70722>: flx_pkgconfig::parse_args::aux::aux_uncurry::_lam_1391: Clone method
-  _fI70722__lam_1391* _fI70722__lam_1391::clone(){
-  return new(*PTF gcp,_fI70722__lam_1391_ptr_map,true) _fI70722__lam_1391(*this);
-}
-
-//FUNCTION <69142>: flx_pkgconfig::add_val::aux_uncurry: Constructor
-_fI69142_aux_uncurry::_fI69142_aux_uncurry
+//FUNCTION <68549>: flx_pkgconfig::add_val::_lam_1398: Constructor
+_lam_1398::_lam_1398
   (
     FLX_FPAR_DECL
     add_val *pptradd_val,
@@ -1416,179 +1633,39 @@ _fI69142_aux_uncurry::_fI69142_aux_uncurry
   ptrflx_pkgconfig(pptrflx_pkgconfig) {}
 
 
-//FUNCTION <69142>: flx_pkgconfig::add_val::aux_uncurry: Clone method
-  _fI69142_aux_uncurry* _fI69142_aux_uncurry::clone(){
-  return new(*PTF gcp,_fI69142_aux_uncurry_ptr_map,true) _fI69142_aux_uncurry(*this);
+//FUNCTION <68549>: flx_pkgconfig::add_val::_lam_1398: Clone method
+  _lam_1398* _lam_1398::clone(){
+  return new(*PTF gcp,_lam_1398_ptr_map,true) _lam_1398(*this);
 }
 
-//FUNCTION <69657>: flx_pkgconfig::handle_pkg::_lam_65160::_lam_65171::aux_uncurry::_lam_1391: Constructor
-_fI69657__lam_1391::_fI69657__lam_1391
+//FUNCTION <68006>: search_and_replace_uncurry: Constructor
+search_and_replace_uncurry::search_and_replace_uncurry(FLX_FPAR_DECL_ONLY)  FLX_FMEM_INIT _genout_urv68945(0),
+_generator_strings_7324(0) {}
+
+
+//FUNCTION <68006>: search_and_replace_uncurry: Clone method
+  search_and_replace_uncurry* search_and_replace_uncurry::clone(){
+  return new(*PTF gcp,search_and_replace_uncurry_ptr_map,true) search_and_replace_uncurry(*this);
+}
+
+//FUNCTION <68756>: flx_pkgconfig::check_id::_lam_64552: Constructor
+_lam_64552::_lam_64552
   (
     FLX_FPAR_DECL
-    _fI69649_aux_uncurry *pptr_fI69649_aux_uncurry,
-    _lam_65171 *pptr_lam_65171,
-    _lam_65160 *pptr_lam_65160,
-    handle_pkg *pptrhandle_pkg,
+    check_id *pptrcheck_id,
     flx_pkgconfig *pptrflx_pkgconfig
   )
-  FLX_FMEM_INIT   ptr_fI69649_aux_uncurry(pptr_fI69649_aux_uncurry),
-  ptr_lam_65171(pptr_lam_65171),
-  ptr_lam_65160(pptr_lam_65160),
-  ptrhandle_pkg(pptrhandle_pkg),
+  FLX_FMEM_INIT   ptrcheck_id(pptrcheck_id),
   ptrflx_pkgconfig(pptrflx_pkgconfig) {}
 
 
-//FUNCTION <69657>: flx_pkgconfig::handle_pkg::_lam_65160::_lam_65171::aux_uncurry::_lam_1391: Clone method
-  _fI69657__lam_1391* _fI69657__lam_1391::clone(){
-  return new(*PTF gcp,_fI69657__lam_1391_ptr_map,true) _fI69657__lam_1391(*this);
+//FUNCTION <68756>: flx_pkgconfig::check_id::_lam_64552: Clone method
+  _lam_64552* _lam_64552::clone(){
+  return new(*PTF gcp,_lam_64552_ptr_map,true) _lam_64552(*this);
 }
 
-//FUNCTION <69997>: flx_pkgconfig::handle_pkg::_lam_65160::aux_uncurry::_lam_1391: Constructor
-_fI69997__lam_1391::_fI69997__lam_1391
-  (
-    FLX_FPAR_DECL
-    _fI69989_aux_uncurry *pptr_fI69989_aux_uncurry,
-    _lam_65160 *pptr_lam_65160,
-    handle_pkg *pptrhandle_pkg,
-    flx_pkgconfig *pptrflx_pkgconfig
-  )
-  FLX_FMEM_INIT   ptr_fI69989_aux_uncurry(pptr_fI69989_aux_uncurry),
-  ptr_lam_65160(pptr_lam_65160),
-  ptrhandle_pkg(pptrhandle_pkg),
-  ptrflx_pkgconfig(pptrflx_pkgconfig) {}
-
-
-//FUNCTION <69997>: flx_pkgconfig::handle_pkg::_lam_65160::aux_uncurry::_lam_1391: Clone method
-  _fI69997__lam_1391* _fI69997__lam_1391::clone(){
-  return new(*PTF gcp,_fI69997__lam_1391_ptr_map,true) _fI69997__lam_1391(*this);
-}
-
-//FUNCTION <69493>: flx_pkgconfig::get_variable::_lam_65159: Constructor
-_lam_65159::_lam_65159
-  (
-    FLX_FPAR_DECL
-    get_variable *pptrget_variable,
-    flx_pkgconfig *pptrflx_pkgconfig
-  )
-  FLX_FMEM_INIT   ptrget_variable(pptrget_variable),
-  ptrflx_pkgconfig(pptrflx_pkgconfig) {}
-
-
-//FUNCTION <69493>: flx_pkgconfig::get_variable::_lam_65159: Clone method
-  _lam_65159* _lam_65159::clone(){
-  return new(*PTF gcp,_lam_65159_ptr_map,true) _lam_65159(*this);
-}
-
-//FUNCTION <70751>: flx_pkgconfig::parse_args::aux_uncurry::_lam_1391: Constructor
-_fI70751__lam_1391::_fI70751__lam_1391
-  (
-    FLX_FPAR_DECL
-    _fI70743_aux_uncurry *pptr_fI70743_aux_uncurry,
-    parse_args *pptrparse_args,
-    flx_pkgconfig *pptrflx_pkgconfig
-  )
-  FLX_FMEM_INIT   ptr_fI70743_aux_uncurry(pptr_fI70743_aux_uncurry),
-  ptrparse_args(pptrparse_args),
-  ptrflx_pkgconfig(pptrflx_pkgconfig) {}
-
-
-//FUNCTION <70751>: flx_pkgconfig::parse_args::aux_uncurry::_lam_1391: Clone method
-  _fI70751__lam_1391* _fI70751__lam_1391::clone(){
-  return new(*PTF gcp,_fI70751__lam_1391_ptr_map,true) _fI70751__lam_1391(*this);
-}
-
-//FUNCTION <65512>: flx_pkgconfig::reattach_drive_letters: Constructor
-reattach_drive_letters::reattach_drive_letters
-  (
-    FLX_FPAR_DECL
-    flx_pkgconfig *pptrflx_pkgconfig
-  )
-  FLX_FMEM_INIT   ptrflx_pkgconfig(pptrflx_pkgconfig) {}
-
-
-//FUNCTION <65512>: flx_pkgconfig::reattach_drive_letters: Clone method
-  reattach_drive_letters* reattach_drive_letters::clone(){
-  return new(*PTF gcp,reattach_drive_letters_ptr_map,true) reattach_drive_letters(*this);
-}
-
-//FUNCTION <70096>: flx_pkgconfig::handle_pkg::_lam_1457: Constructor
-_fI70096__lam_1457::_fI70096__lam_1457
-  (
-    FLX_FPAR_DECL
-    handle_pkg *pptrhandle_pkg,
-    flx_pkgconfig *pptrflx_pkgconfig
-  )
-  FLX_FMEM_INIT   ptrhandle_pkg(pptrhandle_pkg),
-  ptrflx_pkgconfig(pptrflx_pkgconfig) {}
-
-
-//FUNCTION <70096>: flx_pkgconfig::handle_pkg::_lam_1457: Clone method
-  _fI70096__lam_1457* _fI70096__lam_1457::clone(){
-  return new(*PTF gcp,_fI70096__lam_1457_ptr_map,true) _fI70096__lam_1457(*this);
-}
-
-//PROCEDURE <65572:> flx_pkgconfig::keep_val: Constructor
-keep_val::keep_val
-  (
-    FLX_FPAR_DECL
-    flx_pkgconfig *pptrflx_pkgconfig
-  )
-  FLX_FMEM_INIT   ptrflx_pkgconfig(pptrflx_pkgconfig) {}
-
-//PROCEDURE <65572:> flx_pkgconfig::keep_val: Clone method
-  keep_val* keep_val::clone(){
-  return new(*PTF gcp,keep_val_ptr_map,true) keep_val(*this);
-}
-//FUNCTION <69132>: flx_pkgconfig::add_val::aux_uncurry: Constructor
-_fI69132_aux_uncurry::_fI69132_aux_uncurry
-  (
-    FLX_FPAR_DECL
-    add_val *pptradd_val,
-    flx_pkgconfig *pptrflx_pkgconfig
-  )
-  FLX_FMEM_INIT   ptradd_val(pptradd_val),
-  ptrflx_pkgconfig(pptrflx_pkgconfig) {}
-
-
-//FUNCTION <69132>: flx_pkgconfig::add_val::aux_uncurry: Clone method
-  _fI69132_aux_uncurry* _fI69132_aux_uncurry::clone(){
-  return new(*PTF gcp,_fI69132_aux_uncurry_ptr_map,true) _fI69132_aux_uncurry(*this);
-}
-
-//FUNCTION <69989>: flx_pkgconfig::handle_pkg::_lam_65160::aux_uncurry: Constructor
-_fI69989_aux_uncurry::_fI69989_aux_uncurry
-  (
-    FLX_FPAR_DECL
-    _lam_65160 *pptr_lam_65160,
-    handle_pkg *pptrhandle_pkg,
-    flx_pkgconfig *pptrflx_pkgconfig
-  )
-  FLX_FMEM_INIT   ptr_lam_65160(pptr_lam_65160),
-  ptrhandle_pkg(pptrhandle_pkg),
-  ptrflx_pkgconfig(pptrflx_pkgconfig) {}
-
-
-//FUNCTION <69989>: flx_pkgconfig::handle_pkg::_lam_65160::aux_uncurry: Clone method
-  _fI69989_aux_uncurry* _fI69989_aux_uncurry::clone(){
-  return new(*PTF gcp,_fI69989_aux_uncurry_ptr_map,true) _fI69989_aux_uncurry(*this);
-}
-
-//PROCEDURE <68595:> iter_uncurry: Constructor
-iter_uncurry::iter_uncurry(FLX_FPAR_DECL_ONLY)  FLX_FMEM_INIT _f_uncurry(0) {}
-
-//PROCEDURE <68595:> iter_uncurry: Clone method
-  iter_uncurry* iter_uncurry::clone(){
-  return new(*PTF gcp,iter_uncurry_ptr_map,true) iter_uncurry(*this);
-}
-//FUNCTION <65371>: flx_pkgconfig::lexit: Constructor
-lexit::lexit
-  (
-    flx_pkgconfig *pptrflx_pkgconfig
-  )
- :   ptrflx_pkgconfig(pptrflx_pkgconfig) {}
-
-//FUNCTION <69630>: flx_pkgconfig::get_field::_lam_65140: Constructor
-_lam_65140::_lam_65140
+//FUNCTION <69049>: flx_pkgconfig::get_field::_lam_64559: Constructor
+_lam_64559::_lam_64559
   (
     FLX_FPAR_DECL
     get_field *pptrget_field,
@@ -1598,140 +1675,29 @@ _lam_65140::_lam_65140
   ptrflx_pkgconfig(pptrflx_pkgconfig) {}
 
 
-//FUNCTION <69630>: flx_pkgconfig::get_field::_lam_65140: Clone method
-  _lam_65140* _lam_65140::clone(){
-  return new(*PTF gcp,_lam_65140_ptr_map,true) _lam_65140(*this);
+//FUNCTION <69049>: flx_pkgconfig::get_field::_lam_64559: Clone method
+  _lam_64559* _lam_64559::clone(){
+  return new(*PTF gcp,_lam_64559_ptr_map,true) _lam_64559(*this);
 }
 
-//FUNCTION <69255>: flx_pkgconfig::tail_val::aux::aux_uncurry::_lam_1391: Constructor
-_fI69255__lam_1391::_fI69255__lam_1391
+//FUNCTION <68658>: flx_pkgconfig::tail_val::aux: Constructor
+aux::aux
   (
     FLX_FPAR_DECL
-    _fI69247_aux_uncurry *pptr_fI69247_aux_uncurry,
-    aux *pptraux,
     tail_val *pptrtail_val,
     flx_pkgconfig *pptrflx_pkgconfig
   )
-  FLX_FMEM_INIT   ptr_fI69247_aux_uncurry(pptr_fI69247_aux_uncurry),
-  ptraux(pptraux),
-  ptrtail_val(pptrtail_val),
+  FLX_FMEM_INIT   ptrtail_val(pptrtail_val),
   ptrflx_pkgconfig(pptrflx_pkgconfig) {}
 
 
-//FUNCTION <69255>: flx_pkgconfig::tail_val::aux::aux_uncurry::_lam_1391: Clone method
-  _fI69255__lam_1391* _fI69255__lam_1391::clone(){
-  return new(*PTF gcp,_fI69255__lam_1391_ptr_map,true) _fI69255__lam_1391(*this);
+//FUNCTION <68658>: flx_pkgconfig::tail_val::aux: Clone method
+  aux* aux::clone(){
+  return new(*PTF gcp,aux_ptr_map,true) aux(*this);
 }
 
-//PROCEDURE <65564:> flx_pkgconfig::add_val: Constructor
-add_val::add_val
-  (
-    FLX_FPAR_DECL
-    flx_pkgconfig *pptrflx_pkgconfig
-  )
-  FLX_FMEM_INIT   ptrflx_pkgconfig(pptrflx_pkgconfig) {}
-
-//PROCEDURE <65564:> flx_pkgconfig::add_val: Clone method
-  add_val* add_val::clone(){
-  return new(*PTF gcp,add_val_ptr_map,true) add_val(*this);
-}
-//FUNCTION <70741>: flx_pkgconfig::parse_args::aux::_lam_2300: Constructor
-_lam_2300::_lam_2300
-  (
-    FLX_FPAR_DECL
-    _fI70730_aux *pptr_fI70730_aux,
-    parse_args *pptrparse_args,
-    flx_pkgconfig *pptrflx_pkgconfig
-  )
-  FLX_FMEM_INIT   ptr_fI70730_aux(pptr_fI70730_aux),
-  ptrparse_args(pptrparse_args),
-  ptrflx_pkgconfig(pptrflx_pkgconfig) {}
-
-
-//FUNCTION <70741>: flx_pkgconfig::parse_args::aux::_lam_2300: Clone method
-  _lam_2300* _lam_2300::clone(){
-  return new(*PTF gcp,_lam_2300_ptr_map,true) _lam_2300(*this);
-}
-
-//FUNCTION <69528>: search_and_replace_uncurry::iterator'2: Constructor
-_fI69528_iterator__apos_2::_fI69528_iterator__apos_2
-  (
-    FLX_FPAR_DECL
-    search_and_replace_uncurry *pptrsearch_and_replace_uncurry
-  )
-  FLX_FMEM_INIT pc(0),
-  ptrsearch_and_replace_uncurry(pptrsearch_and_replace_uncurry) {}
-
-
-//FUNCTION <69528>: search_and_replace_uncurry::iterator'2: Clone method
-  _fI69528_iterator__apos_2* _fI69528_iterator__apos_2::clone(){
-  return this;
-}
-
-//FUNCTION <70696>: flx_pkgconfig::parse_args::aux::aux_uncurry::_lam_1391: Constructor
-_fI70696__lam_1391::_fI70696__lam_1391
-  (
-    FLX_FPAR_DECL
-    _fI70688_aux_uncurry *pptr_fI70688_aux_uncurry,
-    _fI70680_aux *pptr_fI70680_aux,
-    parse_args *pptrparse_args,
-    flx_pkgconfig *pptrflx_pkgconfig
-  )
-  FLX_FMEM_INIT   ptr_fI70688_aux_uncurry(pptr_fI70688_aux_uncurry),
-  ptr_fI70680_aux(pptr_fI70680_aux),
-  ptrparse_args(pptrparse_args),
-  ptrflx_pkgconfig(pptrflx_pkgconfig) {}
-
-
-//FUNCTION <70696>: flx_pkgconfig::parse_args::aux::aux_uncurry::_lam_1391: Clone method
-  _fI70696__lam_1391* _fI70696__lam_1391::clone(){
-  return new(*PTF gcp,_fI70696__lam_1391_ptr_map,true) _fI70696__lam_1391(*this);
-}
-
-//FUNCTION <70901>: flx_pkgconfig::aux::_lam_2289: Constructor
-_lam_2289::_lam_2289
-  (
-    FLX_FPAR_DECL
-    _fI70890_aux *pptr_fI70890_aux,
-    flx_pkgconfig *pptrflx_pkgconfig
-  )
-  FLX_FMEM_INIT   ptr_fI70890_aux(pptr_fI70890_aux),
-  ptrflx_pkgconfig(pptrflx_pkgconfig) {}
-
-
-//FUNCTION <70901>: flx_pkgconfig::aux::_lam_2289: Clone method
-  _lam_2289* _lam_2289::clone(){
-  return new(*PTF gcp,_lam_2289_ptr_map,true) _lam_2289(*this);
-}
-
-//FUNCTION <70997>: cat_uncurry::_lam_1444: Constructor
-_lam_1444::_lam_1444
-  (
-    FLX_FPAR_DECL
-    cat_uncurry *pptrcat_uncurry
-  )
-  FLX_FMEM_INIT   ptrcat_uncurry(pptrcat_uncurry) {}
-
-
-//FUNCTION <70997>: cat_uncurry::_lam_1444: Clone method
-  _lam_1444* _lam_1444::clone(){
-  return new(*PTF gcp,_lam_1444_ptr_map,true) _lam_1444(*this);
-}
-
-//PROCEDURE <65443:> flx_pkgconfig::parse_args: Constructor
-parse_args::parse_args
-  (
-    FLX_FPAR_DECL
-    flx_pkgconfig *pptrflx_pkgconfig
-  )
-  FLX_FMEM_INIT   ptrflx_pkgconfig(pptrflx_pkgconfig) {}
-
-//PROCEDURE <65443:> flx_pkgconfig::parse_args: Clone method
-  parse_args* parse_args::clone(){
-  return new(*PTF gcp,parse_args_ptr_map,true) parse_args(*this);
-}
-//FUNCTION <69247>: flx_pkgconfig::tail_val::aux::aux_uncurry: Constructor
-_fI69247_aux_uncurry::_fI69247_aux_uncurry
+//FUNCTION <68676>: flx_pkgconfig::tail_val::aux::_lam_1443: Constructor
+_lam_1443::_lam_1443
   (
     FLX_FPAR_DECL
     aux *pptraux,
@@ -1743,31 +1709,65 @@ _fI69247_aux_uncurry::_fI69247_aux_uncurry
   ptrflx_pkgconfig(pptrflx_pkgconfig) {}
 
 
-//FUNCTION <69247>: flx_pkgconfig::tail_val::aux::aux_uncurry: Clone method
-  _fI69247_aux_uncurry* _fI69247_aux_uncurry::clone(){
-  return new(*PTF gcp,_fI69247_aux_uncurry_ptr_map,true) _fI69247_aux_uncurry(*this);
+//FUNCTION <68676>: flx_pkgconfig::tail_val::aux::_lam_1443: Clone method
+  _lam_1443* _lam_1443::clone(){
+  return new(*PTF gcp,_lam_1443_ptr_map,true) _lam_1443(*this);
 }
 
-//FUNCTION <69837>: flx_pkgconfig::handle_pkg::_lam_65160::_lam_65171::search_and_replace'2::iterator'2: Constructor
-_fI69837_iterator__apos_2::_fI69837_iterator__apos_2
+//FUNCTION <69354>: flx_pkgconfig::handle_pkg::_lam_64579::_lam_64590::_lam_1398: Constructor
+_fI69354__lam_1398::_fI69354__lam_1398
   (
     FLX_FPAR_DECL
-    _fI69824_search_and_replace__apos_2 *pptr_fI69824_search_and_replace__apos_2,
-    _lam_65171 *pptr_lam_65171,
-    _lam_65160 *pptr_lam_65160,
+    _lam_64590 *pptr_lam_64590,
+    _lam_64579 *pptr_lam_64579,
     handle_pkg *pptrhandle_pkg,
     flx_pkgconfig *pptrflx_pkgconfig
   )
-  FLX_FMEM_INIT pc(0),
-  ptr_fI69824_search_and_replace__apos_2(pptr_fI69824_search_and_replace__apos_2),
-  ptr_lam_65171(pptr_lam_65171),
-  ptr_lam_65160(pptr_lam_65160),
+  FLX_FMEM_INIT   ptr_lam_64590(pptr_lam_64590),
+  ptr_lam_64579(pptr_lam_64579),
   ptrhandle_pkg(pptrhandle_pkg),
   ptrflx_pkgconfig(pptrflx_pkgconfig) {}
 
 
-//FUNCTION <69837>: flx_pkgconfig::handle_pkg::_lam_65160::_lam_65171::search_and_replace'2::iterator'2: Clone method
-  _fI69837_iterator__apos_2* _fI69837_iterator__apos_2::clone(){
-  return this;
+//FUNCTION <69354>: flx_pkgconfig::handle_pkg::_lam_64579::_lam_64590::_lam_1398: Clone method
+  _fI69354__lam_1398* _fI69354__lam_1398::clone(){
+  return new(*PTF gcp,_fI69354__lam_1398_ptr_map,true) _fI69354__lam_1398(*this);
 }
 
+//FUNCTION <69528>: flx_pkgconfig::handle_pkg::aux_uncurry: Constructor
+_fI69528_aux_uncurry::_fI69528_aux_uncurry
+  (
+    FLX_FPAR_DECL
+    handle_pkg *pptrhandle_pkg,
+    flx_pkgconfig *pptrflx_pkgconfig
+  )
+  FLX_FMEM_INIT   ptrhandle_pkg(pptrhandle_pkg),
+  ptrflx_pkgconfig(pptrflx_pkgconfig) {}
+
+
+//FUNCTION <69528>: flx_pkgconfig::handle_pkg::aux_uncurry: Clone method
+  _fI69528_aux_uncurry* _fI69528_aux_uncurry::clone(){
+  return new(*PTF gcp,_fI69528_aux_uncurry_ptr_map,true) _fI69528_aux_uncurry(*this);
+}
+
+//FUNCTION <68996>: search_and_replace_uncurry::_lam_2306: Constructor
+_lam_2306::_lam_2306
+  (
+    FLX_FPAR_DECL
+    search_and_replace_uncurry *pptrsearch_and_replace_uncurry
+  )
+  FLX_FMEM_INIT   ptrsearch_and_replace_uncurry(pptrsearch_and_replace_uncurry) {}
+
+
+//FUNCTION <68996>: search_and_replace_uncurry::_lam_2306: Clone method
+  _lam_2306* _lam_2306::clone(){
+  return new(*PTF gcp,_lam_2306_ptr_map,true) _lam_2306(*this);
+}
+
+//PROCEDURE <68000:> iter_uncurry: Constructor
+iter_uncurry::iter_uncurry(FLX_FPAR_DECL_ONLY)  FLX_FMEM_INIT _f_uncurry(0) {}
+
+//PROCEDURE <68000:> iter_uncurry: Clone method
+  iter_uncurry* iter_uncurry::clone(){
+  return new(*PTF gcp,iter_uncurry_ptr_map,true) iter_uncurry(*this);
+}

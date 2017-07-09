@@ -307,6 +307,7 @@ extern "C" FLX_EXPORT mname::thread_frame_t *name##_create_thread_frame(\
   return p;\
 }
 
+// init is a heap procedure
 #define FLX_START_WRAPPER(mname,name,x)\
 extern "C" FLX_EXPORT ::flx::rtl::con_t *name##_flx_start(\
   mname::thread_frame_t *__ptf,\
@@ -325,7 +326,8 @@ extern "C" FLX_EXPORT ::flx::rtl::con_t *name##_flx_start(\
     mname::x(__ptf)) ->call(0);\
 }
 
-#define FLX_STACK_START_WRAPPER(mname,name,x)\
+// init is a stack procedure
+#define FLX_STACK_START_WRAPPER_PTF(mname,name,x)\
 extern "C" FLX_EXPORT ::flx::rtl::con_t *name##_flx_start(\
   mname::thread_frame_t *__ptf,\
   int argc,\
@@ -339,10 +341,32 @@ extern "C" FLX_EXPORT ::flx::rtl::con_t *name##_flx_start(\
   __ptf->flx_stdin = stdin_;\
   __ptf->flx_stdout = stdout_;\
   __ptf->flx_stderr = stderr_;\
-  mname::x(__ptf).stack_call();\
+  x(__ptf).stack_call();\
   return 0;\
 }
 
+
+// init is a stack procedure, no PTF
+#define FLX_STACK_START_WRAPPER_NOPTF(mname,name,x)\
+extern "C" FLX_EXPORT ::flx::rtl::con_t *name##_flx_start(\
+  mname::thread_frame_t *__ptf,\
+  int argc,\
+  char **argv,\
+  FILE *stdin_,\
+  FILE *stdout_,\
+  FILE *stderr_\
+) {\
+  __ptf->argc = argc;\
+  __ptf->argv = argv;\
+  __ptf->flx_stdin = stdin_;\
+  __ptf->flx_stdout = stdout_;\
+  __ptf->flx_stderr = stderr_;\
+  mname::x().stack_call();\
+  return 0;\
+}
+
+
+// init is a C procedure, passed PTF
 #define FLX_C_START_WRAPPER_PTF(mname,name,x)\
 extern "C" FLX_EXPORT ::flx::rtl::con_t *name##_flx_start(\
   mname::thread_frame_t *__ptf,\
@@ -361,6 +385,7 @@ extern "C" FLX_EXPORT ::flx::rtl::con_t *name##_flx_start(\
   return 0;\
 }
 
+// init is a C procedure, NOT passed PTF
 #define FLX_C_START_WRAPPER_NOPTF(mname,name,x)\
 extern "C" FLX_EXPORT ::flx::rtl::con_t *name##_flx_start(\
   mname::thread_frame_t *__ptf,\

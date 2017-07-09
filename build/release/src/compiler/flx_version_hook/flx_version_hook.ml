@@ -2,8 +2,8 @@ open Flx_version
 let version_data: version_data_t =
 {
   version_string = "2016.07.12-rc1";
-  build_time_float = 1499207547.3514562;
-  build_time = "Tue Jul  4 22:32:27 2017";
+  build_time_float = 1499579174.4568026;
+  build_time = "Sun Jul  9 05:46:14 2017";
 }
 ;;
 let set_version () =

@@ -72,6 +72,7 @@ syntax assignment {
     slexprs := stlelement "," slexprs =># "(cons _1 _3)";
     slexprs := stlelement =># "`(,_1)";
 
+    slelement := "once" sname =># "`(Once ,_sr ,_2)";
     slelement := "val" sname =># "`(Val ,_sr ,_2)";
     slelement := "var" sname =># "`(Var ,_sr ,_2)";
     slelement := sname =># "`(Name ,_sr ,_1)";

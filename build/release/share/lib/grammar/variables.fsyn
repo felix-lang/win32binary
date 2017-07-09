@@ -1,4 +1,4 @@
-#line 4966 "C:/projects/felix/src/packages/grammar.fdoc"
+#line 4970 "C:/projects/felix/src/packages/grammar.fdoc"
 //$ General variable binders.
 syntax variables {
   requires statements, executable;
@@ -40,6 +40,13 @@ syntax variables {
     """
     `(ast_val_decl ,_sr ,(first _2) ,(second _2) none (some ,_4))
      """;
+
+  //$ Once binder, single.
+  stmt := "once " sdeclname "=" sexpr ";" =>#
+    """
+    `(ast_once_decl ,_sr ,(first _2) ,(second _2) none (some ,_4))
+     """;
+
 
   stmt := "device" sdeclname "=" sexpr ";" =>#
     """

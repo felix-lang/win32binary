@@ -1,4 +1,4 @@
-#line 514 "C:/projects/felix/src/packages/rtl.fdoc"
+#line 539 "C:/projects/felix/src/packages/rtl.fdoc"
 #ifndef __FLX_RTL_H__
 #define __FLX_RTL_H__
 

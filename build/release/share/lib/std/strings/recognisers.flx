@@ -3,6 +3,7 @@ include "std/control/chips";
 include "std/strings/grammars";
 class Recognisers
 {
+open BaseChips; //needed for pipe symbol to work
 
 struct Buffer
 {
@@ -32,6 +33,9 @@ struct Buffer
     elif self.pos + i < 0 then char ""
     else (self.sp) . (self.pos + i)
   ;
+
+  fun stl_end => Buffer (self.sp,self.sp.len.int);
+
 }
 
 
@@ -74,7 +78,7 @@ ctor string (a:Buffer, b:Buffer) =
 typedef recog_t = BaseChips::iochip_t[Buffer,Buffer];
 // rendering lazy terms to actual recognizer
 
-#line 91 "C:/projects/felix/src/packages/recognisers.fdoc"
+#line 95 "C:/projects/felix/src/packages/recognisers.fdoc"
 chip match_string (s:string)
   connector io
     pin inp: %<Buffer
@@ -92,7 +96,7 @@ nextmatch:>
   goto nextmatch;
 }
 
-#line 111 "C:/projects/felix/src/packages/recognisers.fdoc"
+#line 115 "C:/projects/felix/src/packages/recognisers.fdoc"
 chip match_white
   connector io
     pin inp: %<Buffer
@@ -105,7 +109,7 @@ chip match_white
   done
 }
 
-#line 126 "C:/projects/felix/src/packages/recognisers.fdoc"
+#line 130 "C:/projects/felix/src/packages/recognisers.fdoc"
 chip match_cxx_comment
   connector io
     pin inp: %<Buffer
@@ -131,7 +135,7 @@ bad:>
   goto again;
 }
 
-#line 154 "C:/projects/felix/src/packages/recognisers.fdoc"
+#line 158 "C:/projects/felix/src/packages/recognisers.fdoc"
 chip match_nested_c_comment
   connector io
     pin inp: %<Buffer
@@ -177,7 +181,7 @@ bad:>
   goto again;
 }
 
-#line 202 "C:/projects/felix/src/packages/recognisers.fdoc"
+#line 206 "C:/projects/felix/src/packages/recognisers.fdoc"
 
 chip match_felix_white
   connector io
@@ -206,7 +210,7 @@ more:>
   goto again;
 }
 
-#line 233 "C:/projects/felix/src/packages/recognisers.fdoc"
+#line 237 "C:/projects/felix/src/packages/recognisers.fdoc"
 chip match_regex (r:RE2)
   connector io
     pin inp: %<Buffer
@@ -227,7 +231,7 @@ chip match_regex (r:RE2)
   done
 }
 
-#line 257 "C:/projects/felix/src/packages/recognisers.fdoc"
+#line 261 "C:/projects/felix/src/packages/recognisers.fdoc"
 device cident_matcher = match_regex (RE2 "[A-Za-z][A-Za-z0-9_]*");
 device flxident_matcher = match_regex (RE2 "[A-Za-z_][A-Za-z0-9_']*");
 device texident_matcher = match_regex (RE2 "\\\\[A-Za-z]+");
@@ -274,10 +278,10 @@ chip felix_identifier_matcher
 }
 
 
-#line 307 "C:/projects/felix/src/packages/recognisers.fdoc"
+#line 311 "C:/projects/felix/src/packages/recognisers.fdoc"
 device decimal_integer_matcher = match_regex (RE2 "[0-9]+");
 
-#line 316 "C:/projects/felix/src/packages/recognisers.fdoc"
+#line 320 "C:/projects/felix/src/packages/recognisers.fdoc"
 
 chip felix_integer_matcher
   connector io
@@ -383,7 +387,7 @@ bad:>
   goto nexttry;
 }
 
-#line 427 "C:/projects/felix/src/packages/recognisers.fdoc"
+#line 431 "C:/projects/felix/src/packages/recognisers.fdoc"
 chip felix_float_literal_matcher
   connector io
     pin inp: %<Buffer
@@ -466,7 +470,7 @@ bad:>
 }
 
 
-#line 513 "C:/projects/felix/src/packages/recognisers.fdoc"
+#line 517 "C:/projects/felix/src/packages/recognisers.fdoc"
 chip match_string_literal
   connector io
     pin inp: %<Buffer
@@ -599,7 +603,7 @@ bad:>
   goto restart;
 }
 
-#line 647 "C:/projects/felix/src/packages/recognisers.fdoc"
+#line 651 "C:/projects/felix/src/packages/recognisers.fdoc"
 chip eos_matcher
   connector io
     pin inp: %<Buffer
@@ -611,8 +615,8 @@ chip eos_matcher
   done
 }
 
-#line 660 "C:/projects/felix/src/packages/recognisers.fdoc"
-chip longest_match (a: list[iochip_t[Buffer,Buffer]])
+#line 664 "C:/projects/felix/src/packages/recognisers.fdoc"
+chip longest_match (a: list[recog_t])
   connector io
     pin inp: %<Buffer
     pin out: %>Buffer
@@ -634,8 +638,21 @@ chip longest_match (a: list[iochip_t[Buffer,Buffer]])
   endmatch;
 }
 
+#line 689 "C:/projects/felix/src/packages/recognisers.fdoc"
+chip toeos_matcher
+  connector io
+    pin inp: %<Buffer
+    pin out: %>Buffer
+{
+  while true do
+    var x = read io.inp;
+    write (io.out,x.stl_end);
+  done
+}
 
-#line 685 "C:/projects/felix/src/packages/recognisers.fdoc"
+
+
+#line 704 "C:/projects/felix/src/packages/recognisers.fdoc"
 // this is a function, so it cannot construct pipeline
 // chips, because they actually spawn the components internally
 // and functions can't do service calls.
@@ -663,9 +680,9 @@ fun render_prod
   | Terminal (s,r) => r
   | Epsilon =>  BaseChips::epsilon[Buffer]
   | Seq ps =>  BaseChips::pipeline_list (
-      map (fun (p:prod_t) => (render_prod (lib,v) p)) ps)
+      map (fun (p:prod_t) => render_prod (lib,v) p) ps)
   | Alt ps =>   BaseChips::tryall_list (
-      map (fun (p:prod_t) => (render_prod (lib,v) p)) ps)
+      map (fun (p:prod_t) => render_prod (lib,v) p) ps)
   | Nonterminal nt =>
     let idx = find v nt in
     let pslot = -(v.stl_begin + idx) in
@@ -716,6 +733,13 @@ chip make_recogniser_from_grammar
     done
     write (io.out, (v.(find v start).1));
   done
+}
+
+fun recogniser (g:grammar_t) : recog_t =
+{
+  var r: recog_t;
+  run (g.value |-> make_recogniser_from_grammar |-> store &r);
+  return r;
 }
 
 } // Recognisers
