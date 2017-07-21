@@ -1,5 +1,6 @@
 include "std/strings/recognisers";
 open Recognisers;
+open BaseChips;
 
 spawn_fthread {
   var test = "hello";
