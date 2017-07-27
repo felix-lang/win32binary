@@ -1,5 +1,0 @@
-  val x = (a=1, b=2.9, c="Hello");
-  val y = x;
-  println$ x.a + y.a;
-  println$ x.b + y.b;
-  println$ x.c + y.c;

@@ -1,5 +1,0 @@
-include "std/io/faio";
-var clock = #Faio::mk_alarm_clock;
-println$ "The Big Bang!";
-Faio::sleep (clock, 5.0);
-println$ "Hello world!";

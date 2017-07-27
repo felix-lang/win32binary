@@ -1,9 +1,0 @@
-include "./intro_01";
-proc myprintln (x:myint) 
-{
-  myprint (x);
-  myendl();
-}
-myprintln (myadd (one,two));
-fun mytwice (x:myint) => myadd (x,x);
-myprintln (mytwice (one)); 
