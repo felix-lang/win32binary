@@ -314,15 +314,6 @@ typedef ichip_t[T] = (inp: %<T) -> 1 -> 0;
 // source
 typedef ochip_t[T] = (out: %>T) -> 1 -> 0;
 
-// NOTE: this is currently a one-shot!
-// .. Well sort of!
-// It can do multiple reads if its first chip
-// cycles. If the pipeline drops dead, it will
-// not be reuable.
-//
-// To be reusable, components should not return,
-// instead loop back to reading without writing.
-
 chip pipeline_list[T] (a: list[iochip_t[T,T]])
   connector io
     pin inp: %<T
@@ -336,6 +327,8 @@ chip pipeline_list[T] (a: list[iochip_t[T,T]])
       aux (h2!tail) inchan;
     | h1 ! _ =>
       spawn_fthread$  h1 (inp=inp, out=io.out);
+    | Empty =>
+      spawn_fthread$ buffer (inp=io.inp, out=io.out);
     endmatch;
   }
   aux a io.inp;
@@ -373,7 +366,7 @@ chip tryall_list[D,C with Str[D]] (a: list[iochip_t[D,C]])
   done
 }
 
-#line 432 "C:/projects/felix/src/packages/chips.fdoc"
+#line 425 "C:/projects/felix/src/packages/chips.fdoc"
 chip deref_each_read[D,C] (p:&iochip_t[D,C])
   connector io
     pin inp: %<D
@@ -402,7 +395,7 @@ chip deref_first_read[D,C] (p:&iochip_t[D,C])
     write (rout,x);
   done
 }
-#line 464 "C:/projects/felix/src/packages/chips.fdoc"
+#line 457 "C:/projects/felix/src/packages/chips.fdoc"
 chip epsilon[T]
   connector io
    pin inp: %<T
@@ -414,7 +407,7 @@ chip epsilon[T]
     write (io.out, x);
   done
 }
-#line 480 "C:/projects/felix/src/packages/chips.fdoc"
+#line 473 "C:/projects/felix/src/packages/chips.fdoc"
 chip optional[T] (p:iochip_t[T,T])
   connector io
     pin inp: %<T
@@ -430,7 +423,7 @@ chip optional[T] (p:iochip_t[T,T])
   endcircuit
 }
 
-#line 497 "C:/projects/felix/src/packages/chips.fdoc"
+#line 490 "C:/projects/felix/src/packages/chips.fdoc"
 
 chip oneormore_matcher[T] (A:iochip_t[T,T])
 connector chans
@@ -446,7 +439,7 @@ connector chans
  endcircuit
 }
 
-#line 514 "C:/projects/felix/src/packages/chips.fdoc"
+#line 507 "C:/projects/felix/src/packages/chips.fdoc"
 
 chip zeroormore_matcher[T] (A:iochip_t[T,T])
 connector chans
@@ -460,6 +453,6 @@ connector chans
    wire chans.out to Ass.out
  endcircuit
 }
-#line 530 "C:/projects/felix/src/packages/chips.fdoc"
+#line 523 "C:/projects/felix/src/packages/chips.fdoc"
 } // end class BaseChips
 
