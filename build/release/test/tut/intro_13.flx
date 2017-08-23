@@ -1,0 +1,17 @@
+fun myrand : 1 -> int  = "rand()" 
+  requires header '#include <stdlib.h>'
+;
+
+fun mycond : bool * int * int -> int = "$1 ?? $2 : $3";
+
+fun mytwice : int  -> int = "$1+$1";
+fun mydiv: int * int -> int = "$1/$2";
+var x = mytwice (myrand());
+var tmp = myrand();
+var x2 = mytwice(tmp);
+var x3 = x+1 + x+1 + x+1 + x+1;
+val tmp2 = myrand();
+var x4 = mytwice (tmp2);
+val a = 1;
+var b = 0;
+var x5 = mycond ( b==0, 0, mydiv (a,b));

@@ -1,0 +1,9 @@
+  var a = varray[int](20.size); // bound 20 elements
+  a += 1; a += 2;
+  println$ a;
+  push_back (a, 3);
+  println$ a;
+  a.pop_back;
+  println$ a;
+  var x = varray (1,2,3,4);
+  println$ x;

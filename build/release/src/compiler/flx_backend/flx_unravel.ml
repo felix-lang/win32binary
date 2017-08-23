@@ -1,6 +1,7 @@
 open Flx_types
 open Flx_bexpr
 open Flx_bbdcl
+open Flx_bid
 
 let rec eassoc x l = match l with
   | [] -> raise Not_found
@@ -16,7 +17,7 @@ let unravel syms bsym_table e =
   let get e =
     try eassoc e !sube
     with Not_found ->
-      let n = Flx_mtypes2.fresh_bid syms.Flx_mtypes2.counter in
+      let n = fresh_bid syms.Flx_mtypes2.counter in
       let name = "_tmp" ^ Flx_print.string_of_bid n in
       sube := (e, name) :: !sube;
       name
@@ -33,7 +34,9 @@ let unravel syms bsym_table e =
       | BEXPR_apply_prim (i,ts,b),t  when n > 0 ->
         BEXPR_apply_prim (i, ts, aux n b),t
       *)
-
+(* ????
+      | BEXPR_cond (c,tr,fa), t -> bexpr_cond (aux c) tr fa 
+*)
       | BEXPR_apply_direct (i, ts, b), t
       | BEXPR_apply ((BEXPR_closure (i, ts), _), b), t ->
 
@@ -55,17 +58,17 @@ let unravel syms bsym_table e =
       aux e
   in
   let sube = List.rev !sube in
-  (*
+(*
   print_endline
   (
-    "Unravelled " ^ Flx_print.sbe syms.Flx_mtypes2.sym_table bsym_table e ^ "-->" ^
-    Flx_print.sbe syms.Flx_mtypes2.sym_table bsym_table e' ^ " where:\n" ^
+    "Unravelled " ^ Flx_print.sbe bsym_table e ^ "\n-->\n" ^
+    Flx_print.sbe bsym_table e' ^ "\nwhere:\n" ^
     Flx_util.catmap ""
     (fun (x,s) ->
-      s ^ " = " ^ Flx_print.sbe syms.Flx_mtypes2.sym_table bsym_table x ^ ";\n"
+      "  " ^ s ^ " = " ^ Flx_print.sbe bsym_table x ^ ";\n"
     )
     sube
   );
-  *)
+*)
   sube, e'
 

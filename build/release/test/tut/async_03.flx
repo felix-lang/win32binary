@@ -1,0 +1,22 @@
+include "std/io/faio";
+
+proc wait_until (
+    clock:Faio::alarm_clock_t,
+    delta:double,
+    p:Faio::alarm_clock_t->0)
+{
+  Faio::sleep (clock, delta);
+  p clock;
+}
+proc p (pcount:&int) (clock:Faio::alarm_clock_t)
+{
+  if *pcount < 5 do
+    println$ *pcount;
+    pcount <- *pcount + 1;
+    wait_until (clock, 1.0 , p pcount); 
+  done
+}
+var count = 0;
+var clock = #Faio::mk_alarm_clock;
+wait_until (clock, 1.0,  p &count);
+println$ "Final count is " + (str count);

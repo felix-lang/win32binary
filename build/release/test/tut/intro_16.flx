@@ -1,0 +1,46 @@
+class A
+{
+  fun f: int->int;
+  fun g: int->int;
+}
+var x1 = A::f (1);
+var x2 = A::g (1);
+class B
+{
+  fun h: int -> int;
+  class C
+  {
+    fun k: int -> int;
+  }
+}
+fun glo: int -> int;
+var x3 = B::C::k (1);
+var x3a = root::glo (1);
+class Base
+{
+  fun f: int -> int;
+}
+class Derived
+{
+  inherit Base;
+  fun g: int-> int;
+}
+var x4 = Base::f (1);
+var x5 = Derived::g (1);
+var x6 = Derived:: f(1);
+open Base;
+open Derived;
+var x7 = f(1);
+var x8 = g(1);
+class Another 
+{
+  open Base;
+  fun k(x:int)=>f(x);
+}
+// Another::f does not work!
+class X
+{
+  open Base;
+  fun f: int -> int;
+  fun g(x:int) => f x; // X::f
+}

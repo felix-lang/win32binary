@@ -85,7 +85,7 @@ syntax expressions {
           (
             (argt (caadr t))
             (ret (cadadr t))
-            (params `((((PVal _a ,argt none)) none))) ;; parameters
+            (params `((((,_sr PVal _a ,argt none)) none))) ;; parameters
             (body `((ast_fun_return ,_sr (ast_match ,_sr (,(noi '_a) ,matching)))))
             (fun_decl `(ast_curry ,_sr ,name ,tvars ,params
                (,ret ,traint)
@@ -416,7 +416,7 @@ syntax expressions {
          (ret (nos "bool"))
          (matchings `((,_1 ,_5)((pat_setform_any ,_sr)(ast_typed_case 0 2))))
          (body `((ast_fun_return ,_sr (ast_match ,_sr (,(noi '_a) ,matchings)))))
-         (param `(PVal _a ,argt none)) ;; one parameter
+         (param `(,_sr PVal _a ,argt none)) ;; one parameter
          (params `(,param))            ;; parameter tuple list
          (paramsx `(,params none))     ;; parameter tuple list with precondition
          (paramsxs `(,paramsx))        ;; curry parameters

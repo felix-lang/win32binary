@@ -1,0 +1,28 @@
+header stdlib_h = '#include <stdlib.h>';
+gen myrand: 1 -> int = "rand()" requires stdlib_h;
+header stddef_h = '#include <stddef.h>';
+fun something : int -> int = "something($1)"
+  requires stdlib_h, stddef_h
+;
+body prit = "void pr () @{}" requires stdlib_h;
+header A = "";
+header B = "";
+class X {
+  requires A, B;
+  fun f: int -> int;
+  fun g: int -> int;
+}
+class X2 {
+  fun f: int -> int requires A, B;
+  fun g: int -> int requires A, B;
+}
+header C = "";
+class Outer 
+{
+  requires A;
+  class Inner 
+  {
+    requires B;
+    fun f: int -> int requires C;
+  }
+}

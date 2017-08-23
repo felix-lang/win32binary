@@ -15,49 +15,8 @@ open Flx_generic
 open Flx_tpat
 open Flx_name_map
 open Flx_bid
-
-type bbind_state_t = {
-  counter: bid_t ref;
-  print_flag: bool;
-  sym_table: Flx_sym_table.t;
-  ticache : (bid_t, Flx_btype.t) Hashtbl.t;
-  varmap : typevarmap_t;
-  virtual_to_instances: (bid_t, (bvs_t * Flx_btype.t * Flx_btype.t list * bid_t) list) Hashtbl.t;
-  instances_of_typeclass: (bid_t, (bid_t * (bvs_t * Flx_btype.t * Flx_btype.t list)) list) Hashtbl.t;
-  reductions: reduction_t list ref;
-  axioms: axiom_t list ref;
-  lookup_state: Flx_lookup_state.lookup_state_t;
-
-  (* Used to cache which symbols we've already processed. *)
-  visited: (bid_t, unit) Hashtbl.t;
-}
-
-(** The state needed for binding. *)
-let make_bbind_state 
-  ~counter 
-  ~print_flag 
-  ~ticache 
-  ~varmap 
-  ~virtual_to_instances 
-  ~instances_of_typeclass 
-  ~sym_table 
-  ~axioms 
-  ~reductions
-  ~lookup_state 
-=
-  {
-    print_flag = print_flag;
-    counter = counter;
-    sym_table = sym_table;
-    ticache=ticache;
-    varmap=varmap;
-    virtual_to_instances=virtual_to_instances;
-    instances_of_typeclass=instances_of_typeclass;
-    axioms = axioms;
-    reductions = reductions;
-    lookup_state = lookup_state;
-    visited = Hashtbl.create 97;
-  }
+open Flx_bind_reqs
+open Flx_bbind_state
 
 let hfind msg h k =
   try Flx_sym_table.find h k
@@ -88,88 +47,6 @@ let rec find_true_parent sym_table child parent =
     | _ -> Some parent
 
 
-let bind_req state bsym_table env sr tag =
-  Flx_lookup.lookup_code_in_env
-    state.lookup_state
-    bsym_table
-    env
-    sr
-    tag
-
-
-(* this routine converts a requirements expression into a list
-  of requirements. Requirements must be satisfied.
-*)
-
-type tmp_req_t = 
-  | Satisfied of int * Flx_btype.t list 
-  | Fail of Flx_ast.qualified_name_t option
-
-let pr_tmp_req_t bsym_table = function
-  | Satisfied (i,ts) -> "Satisfied " ^ si i ^ "[" ^ catmap "," (sbt bsym_table) ts ^ "]"
-  | Fail None -> "Fail Logic"
-  | Fail (Some qn) -> "Fail qn=" ^ string_of_qualified_name qn
-
-let bind_reqs bt state bsym_table env sr reqs =
-  let add lst i =
-    if mem i lst then lst else begin 
-      (*
-      if state.print_flag then
-        print_endline ("// Adding requirement " ^ pr_tmp_req_t bsym_table i);
-      *)
-      i :: lst
-    end
-  in
-  let merge a b = fold_left add a b in
-  let rec aux reqs = match reqs with
-  | NREQ_true -> []
-  | NREQ_false -> [Fail None]
-  | NREQ_and (a,b) -> merge (aux a) (aux b)
-  | NREQ_or (a,b) ->
-    let check a = 
-      try 
-        List.iter (fun x -> match x with 
-          | Satisfied _ -> () 
-          | Fail _ -> raise Not_found
-        )
-        a;
-        true
-      with Not_found -> false
-    in
-    let a = aux a and b = aux b in
-    (* Note: we don't check b here, because if we found a failure, what would we do?
-       We can't report an error, because the alternative might be nested in another.
-       We return b so that at least we can get *some* kind of diagnostic on the final
-       check: it will only list the failure of the second alternative, but that's 
-       better than nothing
-    *)
-    if check a then a else b
-
-  | NREQ_atom tag ->
-    match bind_req state bsym_table env sr tag with
-    | None -> [Fail (Some tag)]
-    | Some (entries, ts) ->
-      let ts = map bt ts in
-      fold_left (fun lst index ->
-        let index = sye index in
-        try
-          let ts = adjust_ts state.sym_table bsym_table sr index ts in
-          add lst (Satisfied (index,ts))
-        with x ->
-          print_endline "** Bind_req failed due to vs/ts mismatch";
-          print_endline "** IGNORING! (HACK!!)";
-          lst
-      ) [] entries
-  in
-    let res = aux reqs in
-    let res = fold_left (fun acc r -> match r with 
-      | Satisfied (i,ts) -> (i,ts)::acc
-      | Fail None -> clierrx "[flx_bind/flx_bbind.ml:166: E0] " sr "Explicit requirements failure"
-      | Fail (Some q) -> clierrx "[flx_bind/flx_bbind.ml:167: E1] " sr ("Cannot find requirement for " ^ Flx_print.string_of_qualified_name q)
-      ) 
-      [] res 
-    in
-    res
 
 let bind_qual bt qual = match qual with
   | #base_type_qual_t as x -> x
@@ -347,7 +224,7 @@ print_endline (" &&&&&& bind_type_uses calling BBIND_SYMBOL");
   in
   let bind_quals quals = bind_quals bt quals in
   let bind_basic_ps ps =
-    List.map (fun (k,s,t,_) ->
+    List.map (fun (sr,k,s,t,_) ->
       let i = find_param sym.Flx_sym.privmap s in
       let t =
         let t = bt t in
@@ -472,7 +349,7 @@ with _ -> print_endline ("PARENT BINDING FAILED CONTINUING ANYHOW");
 
   | SYMDEF_function (ps,rt,effects,props,exes) ->
 (*
-    print_endline (" ... Binding function");
+print_endline ("Binding function " ^ sym.Flx_sym.id);
     print_endline (" ... Binding parameters");
 *)
     let bps = bindps ps in
@@ -484,6 +361,10 @@ with _ -> print_endline ("PARENT BINDING FAILED CONTINUING ANYHOW");
     (* We don't need to bind the intermediary type. *)
     let brt = bt' rt in
     let beffects = bt' effects in
+(*
+if sym.Flx_sym.id = "hhhhh" then
+print_endline ("Effects = " ^ Flx_btype.st beffects);
+*)
     let brt, bbexes = bexes exes brt symbol_index bvs in
     let bbdcl = bbdcl_fun (props,bvs,bps,brt,beffects,bbexes) in
 
@@ -496,6 +377,9 @@ with _ -> print_endline ("PARENT BINDING FAILED CONTINUING ANYHOW");
         else btyp_effector (d,beffects,brt)
       in
       let t = fold bsym_table state.counter ft in
+(*
+print_endline ("Flx_bbind: Adding type of index " ^ si symbol_index ^ " to cache, type=" ^ Flx_btype.st t);
+*)
       Hashtbl.add state.ticache symbol_index t
     end;
 
@@ -550,7 +434,8 @@ print_endline "BINDING PARAMETER";
 (*
 print_endline ("flx_bind: Adding label " ^ s ^ " index " ^ string_of_int symbol_index ^ " parent " ^
   (match true_parent with | None -> "None" | Some x -> string_of_int x));
-*) 
+  print_endline ("Current srcref = " ^ Flx_srcref.short_string_of_src sym.sr);
+*)
     add_bsym true_parent (bbdcl_label s) 
 
   | SYMDEF_const_ctor (uidx,ut,ctor_idx,vs') ->
@@ -903,6 +788,44 @@ print_endline ("Flx_bbind.bbind *********************** ");
    * binding new symbols can be added to the end of the table, so the terminating
    * index is not known in advance. It had better converge!
    *)
+
+  (* PASS 1, TYPE ONLY *)
+  let counter = ref start_counter in
+  while !counter < !ref_counter do
+    let i = !counter in
+    begin match
+      try Some (Flx_sym_table.find_with_parent state.sym_table i)
+      with Not_found -> None
+    with
+    | None -> (* print_endline "bbind: Symbol not found"; *) ()
+    | Some (parent, sym) ->
+(*
+print_endline ("[flx_bbind] bind_symbol " ^ sym.Flx_sym.id ^ "??");
+*)
+      begin match sym.Flx_sym.symdef with
+      | Flx_types.SYMDEF_union _
+      | Flx_types.SYMDEF_struct _
+      | Flx_types.SYMDEF_cstruct _ 
+      | Flx_types.SYMDEF_abs _ 
+      | Flx_types.SYMDEF_const_ctor _
+      | Flx_types.SYMDEF_nonconst_ctor _
+      | Flx_types.SYMDEF_newtype _
+      ->
+        begin try bbind_symbol state bsym_table i parent sym
+        with Not_found ->
+          try match hfind "bbind" state.sym_table i with { Flx_sym.id=id } ->
+            failwith ("Binding error, Not_found thrown binding " ^ id ^ " index " ^
+              string_of_bid i ^ " parent " ^ (match parent with | None -> "NONE" | Some p -> string_of_int p))
+          with Not_found ->
+            failwith ("Binding error, Not_found thrown binding unknown id with index " ^ string_of_bid i)
+        end
+      | _ -> ()
+      end
+    end;
+    incr counter
+  done
+  ;
+  (* PASS 2, NON DEFERRED FUNCTIONS *)
   let defered = ref [] in
   let counter = ref start_counter in
   while !counter < !ref_counter do
@@ -917,7 +840,7 @@ print_endline ("Flx_bbind.bbind *********************** ");
 print_endline ("[flx_bbind] bind_symbol " ^ sym.Flx_sym.id ^ "??");
 *)
       begin match sym.Flx_sym.symdef with
-      | Flx_types.SYMDEF_function (([kind,pid,TYP_defer _,_],None),ret,effects,props,exes) ->
+      | Flx_types.SYMDEF_function (([psr,kind,pid,TYP_defer _,_],None),ret,effects,props,exes) ->
 print_endline ("[flx_bbind] bind_symbol FUNCTION " ^ sym.Flx_sym.id ^ " .. DEFERED");
         defered := i :: !defered
       | Flx_types.SYMDEF_parameter (kind,TYP_defer _) ->
@@ -942,6 +865,7 @@ print_endline ("Binding symbol " ^ symdef.Flx_sym.id ^ "<" ^ si i ^ ">");
   done
   ;
 
+  (* PASS 3 DEFERRED FUNCTIONS *)
 if (List.length (!defered) <> 0) then begin
 print_endline ("DEFERED PROCESSING STARTS");
 
@@ -966,113 +890,5 @@ print_endline ("[flx_bbind] DEFERED bind_symbol " ^ sym.Flx_sym.id ^ "?? calling
   ;
 print_endline ("DEFERED PROCESSING ENDS");
 end
-
-let bind_interface (state:bbind_state_t) bsym_table = function
-  | sr, IFACE_export_fun (sn, cpp_name), parent ->
-      let env = Flx_lookup.build_env state.lookup_state bsym_table parent in
-      let index,ts = Flx_lookup.lookup_sn_in_env
-        state.lookup_state
-        bsym_table
-        env
-        sn
-      in
-      if ts = [] then
-        BIFACE_export_fun (sr,index, cpp_name)
-      else clierrx "[flx_bind/flx_bbind.ml:944: E3] " sr
-      (
-        "Can't export generic entity " ^
-        string_of_suffixed_name sn ^ " as a function"
-      )
-
-  | sr, IFACE_export_cfun (sn, cpp_name), parent ->
-      let env = Flx_lookup.build_env state.lookup_state bsym_table parent in
-      let index,ts = Flx_lookup.lookup_sn_in_env
-        state.lookup_state
-        bsym_table
-        env
-        sn
-      in
-      if ts = [] then
-        BIFACE_export_cfun (sr,index, cpp_name)
-      else clierrx "[flx_bind/flx_bbind.ml:960: E4] " sr
-      (
-        "Can't export generic entity " ^
-        string_of_suffixed_name sn ^ " as a C function"
-      )
-
-  | sr, IFACE_export_python_fun (sn, cpp_name), parent ->
-      let env = Flx_lookup.build_env state.lookup_state bsym_table parent in
-      let index,ts =
-        Flx_lookup.lookup_sn_in_env
-        state.lookup_state
-        bsym_table
-        env
-        sn
-      in
-      if ts = [] then
-        BIFACE_export_python_fun (sr,index, cpp_name)
-      else clierrx "[flx_bind/flx_bbind.ml:977: E5] " sr
-      (
-        "Can't export generic entity " ^
-        string_of_suffixed_name sn ^ " as a python function"
-      )
-
-  | sr, IFACE_export_type (typ, cpp_name), parent ->
-      let env = Flx_lookup.build_env state.lookup_state bsym_table parent in
-      let t = Flx_lookup.bind_type
-        state.lookup_state
-        bsym_table
-        env
-        Flx_srcref.dummy_sr
-        typ
-      in
-      if try var_occurs bsym_table t with _ -> true then
-      clierrx "[flx_bind/flx_bbind.ml:993: E6] " sr
-      (
-        "Can't export generic- or meta- type " ^
-        sbt bsym_table t
-      )
-      else
-        BIFACE_export_type (sr, t, cpp_name)
-
-  | sr, IFACE_export_struct (name), parent ->
-      let env = Flx_lookup.build_env state.lookup_state bsym_table parent in
-      let entry_set  = Flx_lookup.lookup_name_in_env state.lookup_state bsym_table env sr name in
-      begin match entry_set with
-      | FunctionEntry _ -> assert false
-      | NonFunctionEntry  {base_sym = index; spec_vs = vs; sub_ts = ts} ->
-        begin match  vs, ts with [],[] -> () | _ -> assert false end;
-        let bbdcl = Flx_bsym_table.find_bbdcl bsym_table index in
-        begin match bbdcl with
-        | BBDCL_struct _ -> BIFACE_export_struct (sr,index)
-        | _ ->
-          clierrx "[flx_bind/flx_bbind.ml:1012: E7] " sr ("Attempt to export struct "^name^
-          " which isn't a non-polymorphic struct, got entry : " ^ 
-          Flx_print.string_of_bbdcl bsym_table bbdcl index)
-        end
-     end
-
-  | sr, IFACE_export_union (flx_name, cpp_name), parent ->
-      let env = Flx_lookup.build_env state.lookup_state bsym_table parent in
-      let index,ts = Flx_lookup.lookup_sn_in_env
-        state.lookup_state
-        bsym_table
-        env
-        flx_name 
-      in
-      if ts = [] then
-        BIFACE_export_union (sr,index, cpp_name)
-      else clierrx "[flx_bind/flx_bbind.ml:1028: E8] " sr
-      (
-        "Can't export generic union " ^
-        string_of_suffixed_name flx_name ^ " as C datatype"
-      )
-
-  | sr, IFACE_export_requirement (reqs), parent ->
-      let env = Flx_lookup.build_env state.lookup_state bsym_table parent in
-      let bt t = Flx_lookup.bind_type state.lookup_state bsym_table env sr t in
-      let breqs = bind_reqs bt state bsym_table env sr reqs in
-      BIFACE_export_requirement (sr,breqs)
-
 
 

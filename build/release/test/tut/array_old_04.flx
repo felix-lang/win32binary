@@ -1,0 +1,18 @@
+val a = 1,2,3,4;
+println$ (case 1 of 4) a;
+println$ a . (case 1 of 4);
+val k = case 1 of 4;
+println$ a . k;
+println$ a . 1;  // converted to case 1 of 4
+println$ a . 1uz;  // converted to case 1 of 4
+//println$ a . 22; // fails at compile time
+var one = 1;
+//printn$ a . (one + 22); // assertion failure at run time
+val a1 = 1,2,3,4;
+val a2 = 5,6,7,8;
+var j = 1;
+println$ a1 . j, a2 . j;
+val i : 4 = 1 :>> 4;
+println$ a1 . i, a2 . i;
+println$ a.len;
+println$ unsafe_get (a, 1.size), get (a, 1.size);

@@ -1,0 +1,17 @@
+object fred[T] (x:list[T]) = 
+{
+  method proc print () { println$ x; }
+  method fun get () => x;
+}
+
+var lst = list$ 1,2,3;
+var a = fred lst;
+
+a.print();
+println$ a.get();
+interface A[T] { print : 1 -> 0; get: 1 -> list[T]; }
+object joe[T] (x:list[T]) implements A[T] = 
+{
+  method proc print () { println$ x; }
+  method fun get () => x;
+}

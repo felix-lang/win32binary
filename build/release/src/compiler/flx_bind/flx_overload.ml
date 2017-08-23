@@ -214,7 +214,7 @@ let sig_of_symdef symdef sr name i = match symdef with
     let p = fst ps in
     begin match p,r with
     | _ ->
-      paramtype p,r,Some (List.map (fun (_,name,_,d)->name,d) p)
+      paramtype p,r,Some (List.map (fun (sr,_,name,_,d)->name,d) p)
     end
 
   | SYMDEF_cstruct (ls, _) ->
@@ -1127,7 +1127,7 @@ let overload
   overload_result option
 =
 (*
-if name = "EInt" then
+if name = "map" then
 begin
   print_endline ("Overload " ^ name);
   print_endline ("Argument sigs are " ^ catmap ", " (sbt bsym_table) sufs);

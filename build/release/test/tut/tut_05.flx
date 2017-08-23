@@ -1,0 +1,6 @@
+write$ stdout,"Enter your name: "; fflush stdout;
+var name = strip (readln$ stdin);
+writeln$ stdout, "Hello " + name + "!";
+println$ "Hello world, how are you?!".[3 to 16];
+println$ "abc" + "def";  // valid concatenation of two strings
+println$ "abc" + 1.str; // convert 1 to "1" before concatenating

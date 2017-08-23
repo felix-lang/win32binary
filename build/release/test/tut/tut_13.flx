@@ -1,0 +1,4 @@
+  val x = 1,2.9,"Hello";
+  println x.0; // 1
+  println x.1; // 2.9
+  println x.2; // "Hello"

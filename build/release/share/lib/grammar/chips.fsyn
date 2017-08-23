@@ -30,7 +30,7 @@ syntax chips {
           (traint 'none)
           (body _7)
           (pinstype `(ast_record_type ,_6))
-          (pinsarg `(PVal ,_5 ,pinstype none))
+          (pinsarg `(,_sr PVal ,_5 ,pinstype none))
           (pinsargs `((,pinsarg) none))
           (args (append args `(,pinsargs (() none))))
         )

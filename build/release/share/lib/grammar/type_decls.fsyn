@@ -178,7 +178,7 @@ syntax type_decls {
                    `(ast_name ,_sr ,struct-name ,struct-pvs)
                  )
                )
-               (self-arg `(PVal ,self-name ,self-type none))
+               (self-arg `(,_sr PVal ,self-name ,self-type none))
                (self-args `((,self-arg) none))
                (args (cons self-args t4))
              )
