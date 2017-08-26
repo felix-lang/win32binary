@@ -1,4 +1,4 @@
-#line 1037 "C:/projects/felix/src/packages/lists.fdoc"
+#line 1038 "C:/projects/felix/src/packages/lists.fdoc"
 class DList[T]
 {
   typedef dnode_t=
@@ -12,7 +12,7 @@ class DList[T]
 
   ctor dlist_t () => (first=nullptr[dnode_t],last=nullptr[dnode_t]);
 
-#line 1052 "C:/projects/felix/src/packages/lists.fdoc"
+#line 1053 "C:/projects/felix/src/packages/lists.fdoc"
   fun len (x:dlist_t) = {
     var n = 0;
     var first : cptr[dnode_t] = x.first;
@@ -24,7 +24,7 @@ class DList[T]
     goto again;
   }
 
-#line 1065 "C:/projects/felix/src/packages/lists.fdoc"
+#line 1066 "C:/projects/felix/src/packages/lists.fdoc"
   fun peek_front (dl:dlist_t) : opt[T] =>
     match dl.first with
     | #nullptr => None[T]
@@ -39,7 +39,7 @@ class DList[T]
     endmatch
   ;
 
-#line 1081 "C:/projects/felix/src/packages/lists.fdoc"
+#line 1082 "C:/projects/felix/src/packages/lists.fdoc"
   proc push_front (dl:&dlist_t, v:T) {
     var oldfirst = dl*.first;
     var node = new (data=v, next=oldfirst, prev=nullptr[dnode_t]);
@@ -60,7 +60,7 @@ class DList[T]
     endmatch <- Ptr node;
   }
 
-#line 1103 "C:/projects/felix/src/packages/lists.fdoc"
+#line 1104 "C:/projects/felix/src/packages/lists.fdoc"
 
   gen pop_front (dl:&dlist_t): opt[T] = {
     match dl*.first do
@@ -92,12 +92,12 @@ class DList[T]
     done
   }
 
-#line 1138 "C:/projects/felix/src/packages/lists.fdoc"
+#line 1139 "C:/projects/felix/src/packages/lists.fdoc"
   typedef queue_t = dlist_t;
   proc enqueue (q:&queue_t) (v:T) => push_front (q,v);
   gen dequeue (q:&queue_t) :opt[T] => pop_back q;
   ctor queue_t () => dlist_t ();
-#line 1145 "C:/projects/felix/src/packages/lists.fdoc"
+#line 1146 "C:/projects/felix/src/packages/lists.fdoc"
   gen iterator (q:&queue_t) () => dequeue q;
 }
 

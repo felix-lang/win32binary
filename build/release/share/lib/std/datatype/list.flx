@@ -393,19 +393,20 @@ noinline fun outer_product[T] (x:list[list[T]]) (y:list[list[T]]): list[list[T]]
     | #Empty => return r;
     | Snoc (tail, head) =>
       r = head;
+      var tl = tail;
   next:>
-      match tail with
+      match tl with
       | #Empty => return r;
       | Snoc(t,h) =>
         r += sep + h;
-        tail = t;
+        tl = t;
         goto next;
       endmatch;
     endmatch;
     return r;
   }
 
-#line 485 "C:/projects/felix/src/packages/lists.fdoc"
+#line 486 "C:/projects/felix/src/packages/lists.fdoc"
   fun catmap[T] (sep:string) (f:T -> string) (ls: list[T]) =>
     cat sep (map f ls)
   ;
@@ -419,7 +420,7 @@ noinline fun outer_product[T] (x:list[list[T]]) (y:list[list[T]]): list[list[T]]
   ;
 
 
-#line 501 "C:/projects/felix/src/packages/lists.fdoc"
+#line 502 "C:/projects/felix/src/packages/lists.fdoc"
   //$ Return true if one value in a list satisfies the predicate.
   fun mem[T] (eq:T -> bool) (xs:list[T]) : bool =>
     match xs with
@@ -441,7 +442,7 @@ noinline fun outer_product[T] (x:list[list[T]]) (y:list[list[T]]): list[list[T]]
     fun \in (x:T, a:list[T]) => mem[T,T] eq of (T * T) a x;
   }
 
-#line 525 "C:/projects/felix/src/packages/lists.fdoc"
+#line 526 "C:/projects/felix/src/packages/lists.fdoc"
   //$ return option of the first element in a list satisfying the predicate.
   fun find[T] (eq:T -> bool) (xs:list[T]) : opt[T] =>
     match xs with
@@ -567,7 +568,7 @@ noinline fun outer_product[T] (x:list[list[T]]) (y:list[list[T]]): list[list[T]]
     fun ==(a:list[T], b:list[T])=> list_eq(a,b);
   }
 
-#line 652 "C:/projects/felix/src/packages/lists.fdoc"
+#line 653 "C:/projects/felix/src/packages/lists.fdoc"
   //$ Sort a list with given less than operator, which must be
   //$ total order. Uses varray sort (which uses STL sort).
   fun sort[T] (lt:T*T->bool) (x:list[T])=
@@ -587,7 +588,7 @@ noinline fun outer_product[T] (x:list[list[T]]) (y:list[list[T]]): list[list[T]]
   //$ Uses varray sort (which uses STL sort).
   fun sort[T with Tord[T]](x:list[T])=> sort lt x;
 
-#line 673 "C:/projects/felix/src/packages/lists.fdoc"
+#line 674 "C:/projects/felix/src/packages/lists.fdoc"
   instance[T] Iterable[list[T],T] {
   //$ Convert a list to a stream.
     gen iterator (var xs:list[T]) () = {

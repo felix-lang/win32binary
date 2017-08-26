@@ -180,6 +180,9 @@ print_endline "Cal call, types don't match ..";
   | BTYP_function (t, BTYP_fix (0,_)) 
   | BTYP_effector (t, _, BTYP_fix (0,_)) 
     ->
+(*
+print_endline ("Return type any found");
+*)
     let a = genargs t in
     bexe_jump a
 
@@ -557,6 +560,11 @@ print_endline ("        >>> Call, bound argument is type " ^ sbt bsym_table ta);
         state.ret_type <- varmap_subst (Flx_lookup_state.get_varmap state.lookup_state) state.ret_type;
         [(bexe_proc_return sr)]
       end
+    else if state.ret_type = btyp_any () then
+      begin
+        print_endline ("Routine found (extraneous procedure return included)");
+        [(bexe_proc_return sr)]
+      end
     else
       clierrx "[flx_bind/flx_bind_bexe.ml:540: E28] " sr
       (
@@ -761,7 +769,17 @@ print_endline ("Bind EXE_init "^s);
 print_endline ("BINDING ASSIGNMENT " ^ string_of_exe 0 exe);
 *)
       (* trick to generate diagnostic if l isn't an lvalue *)
-      let _,lhst as lx = be l in
+      let lexpr,lhst as lx = be l in
+      begin match lexpr with
+      | BEXPR_varname (i,_) ->
+        let sym = Flx_sym_table.find state.lookup_state.sym_table i in
+        begin match sym.symdef with
+        | SYMDEF_val _ ->
+          clierr sr ("Assign to val " ^ sym.id ^ " not allowed");
+        | _ -> ()
+        end 
+      | _ -> ()
+      end;
       let _,rhst as rx = be r in
 (*
 print_endline ("assign: LHS=" ^ sbe bsym_table lx ^ ", LHST = " ^ sbt bsym_table lhst);
