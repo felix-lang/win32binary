@@ -1,4 +1,4 @@
-#line 1798 "C:/projects/felix/src/packages/grammar.fdoc"
+#line 1802 "C:/projects/felix/src/packages/grammar.fdoc"
 //$ General functional forms.
 syntax functions {
   requires expressions;

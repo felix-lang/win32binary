@@ -1,4 +1,4 @@
-#line 5098 "C:/projects/felix/src/packages/grammar.fdoc"
+#line 5102 "C:/projects/felix/src/packages/grammar.fdoc"
 syntax chips {
   //$ input schannel type %<T
   pintype := "%<" x[spower_pri] =># '`(ast_name ,_sr "ischannel" (,_2))';
