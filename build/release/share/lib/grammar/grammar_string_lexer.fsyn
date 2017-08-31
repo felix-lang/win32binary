@@ -1,4 +1,4 @@
-#line 2699 "C:/projects/felix/src/packages/grammar.fdoc"
+#line 2700 "C:/projects/felix/src/packages/grammar.fdoc"
 
 SCHEME """
 (define (decode-string s)
