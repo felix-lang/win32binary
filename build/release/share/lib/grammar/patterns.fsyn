@@ -1,4 +1,4 @@
-#line 3625 "C:/projects/felix/src/packages/grammar.fdoc"
+#line 3626 "C:/projects/felix/src/packages/grammar.fdoc"
 //$ Pattern matching.
 //$
 //$ Pattern matching is a way to "take apart" a value according
