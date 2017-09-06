@@ -1,4 +1,4 @@
-#line 167 "C:/projects/felix/src/packages/control.fdoc"
+#line 168 "C:/projects/felix/src/packages/control.fdoc"
 syntax swapop
 {
   sswapop := "<->" =># "'_swap";

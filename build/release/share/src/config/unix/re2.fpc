@@ -1,4 +1,4 @@
-Generated_from: 1364 "C:\projects\felix\src\packages\strings.fdoc"
+Generated_from: 1366 "C:\projects\felix\src\packages\strings.fdoc"
 Name: Re2
 Description: Google Re2 regexp library
 provides_dlib: -lflx_re2_dynamic

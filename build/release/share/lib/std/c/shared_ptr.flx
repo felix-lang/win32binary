@@ -1,4 +1,4 @@
-#line 392 "C:/projects/felix/src/packages/pointers.fdoc"
+#line 377 "C:/projects/felix/src/packages/pointers.fdoc"
 open class SharedPtr
 {
    type shared_ptr[T]

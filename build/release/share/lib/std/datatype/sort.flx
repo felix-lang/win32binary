@@ -1,4 +1,4 @@
-#line 344 "C:/projects/felix/src/packages/pointers.fdoc"
+#line 329 "C:/projects/felix/src/packages/pointers.fdoc"
 
 //$ Utility class to leverage STL sort.
 class Sort

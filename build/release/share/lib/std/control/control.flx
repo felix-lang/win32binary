@@ -1,4 +1,4 @@
-#line 17 "C:/projects/felix/src/packages/control.fdoc"
+#line 18 "C:/projects/felix/src/packages/control.fdoc"
 open class Control
 {
   open C_hack;
