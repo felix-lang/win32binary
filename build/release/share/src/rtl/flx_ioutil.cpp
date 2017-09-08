@@ -127,7 +127,7 @@ next:
   // read up to n bytes
   string raw_read (FILE *fi, ::std::size_t n)
   {
-    void *buffer = malloc(n);
+    void *buffer = std::malloc(n);
     ::std::size_t m = fread (buffer, 1, n, fi);
     string s((char const*)buffer,m);
     free(buffer);

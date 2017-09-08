@@ -3,6 +3,7 @@
 include "std/scalar/ctypedefs";
 
 include "std/scalar/address";
+include "std/scalar/memory";
 include "std/scalar/bool";
 include "std/scalar/int";
 include "std/scalar/real";

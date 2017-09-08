@@ -1,4 +1,4 @@
-#line 181 "C:/projects/felix/src/packages/libstruct.fdoc"
+#line 180 "C:/projects/felix/src/packages/libstruct.fdoc"
 
 //$ This class provides access to raw C/C++ encodings.
 //$ Incorrect typing is likely to pass by Felix and
@@ -63,25 +63,6 @@ class C_hack
   //$ but screws up on (T())
   fun dflt[t]:1->t = "dflt<?1>()" requires header
     "template<class T> T dflt() { return T(); }";
-
-  body checked_malloc = """
-    void *checked_malloc(size_t n) {
-      void *p = ::std::malloc(n);
-      if(p) return p;
-      else throw "out of memory";
-    }
-  """;
-
-  //$ Raw unchecked malloc.
-  //$ Used typed malloc in carray if possible.
-  gen raw_malloc: !ints -> address = '::std::malloc($1)' requires Cxx_headers::cstdlib;
-
-  //$ Malloc with out of memory check.
-  //$ Throws c"out of memory" if out of memory.
-  gen malloc: !ints -> address = 'checked_malloc($1)' requires Cxx_headers::cstdlib, checked_malloc;
-
-  //$ Raw unchecked free.
-  proc free: address = '::std::free($1);' requires Cxx_headers::cstdlib;
 
   //$ Invoke C++ destructor
   proc destroy[T] : &T = "::destroy($1);/*C_hack*/"; // from flx_compiler_support_bodies

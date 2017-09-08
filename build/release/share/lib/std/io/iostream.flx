@@ -197,12 +197,12 @@ class IOStream {
     ostream: ostr)
   {
     val BUFSIZE = 100000;
-    var buf = C_hack::malloc(BUFSIZE);
+    var buf = Memory::malloc(BUFSIZE);
 
     // that's some nice error checking
     cat (istream, ostream, buf, BUFSIZE);
 
-    C_hack::free (buf);
+    Memory::free (buf);
   }
 
   publish "Read all the input streams to the output stream."
@@ -241,7 +241,7 @@ class IOStream {
 
       // It's very unfortunate that memcmp doesn't return the position of the
       // first non-equality
-      cmp = Carray::memcmp(buf1, buf2, size len);
+      cmp = Memory::memcmp(buf1, buf2, size len);
 
       if cmp == 0 do
         cmp = len1 - len2;
@@ -271,11 +271,11 @@ class IOStream {
     res: &int)
   {
     val BUFSIZE = 100000;
-    var buf1 = C_hack::malloc(BUFSIZE);
-    var buf2 = C_hack::malloc(BUFSIZE);
+    var buf1 = Memory::malloc(BUFSIZE);
+    var buf2 = Memory::malloc(BUFSIZE);
     stream_cmp(istream1, istream2, buf1, buf2, BUFSIZE, res);
-    C_hack::free(buf1);
-    C_hack::free(buf2);
+    Memory::free(buf1);
+    Memory::free(buf2);
   }
 
   publish "Read the results of a stream back into it's stream."
@@ -300,7 +300,7 @@ class IOStream {
     var len: int;
 
     val BUFSIZE = 10*1024;
-    var buf = C_hack::malloc(BUFSIZE);
+    var buf = Memory::malloc(BUFSIZE);
 
     // don't hammer!
     while not reof and not weof1 and not weof2 do
@@ -310,7 +310,7 @@ class IOStream {
       write (ostream2, &len, buf, &weof2);
     done
 
-    C_hack::free buf;
+    Memory::free buf;
   }
 
   // highly inefficient!

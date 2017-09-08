@@ -113,23 +113,6 @@ open class Carray
 
   //$ Convert C array to Felix array.
   fun array_of[T,N]: carray[T] -> &array[T,N] = "*(#0*)(void*)$1";
-
-#line 215 "C:/projects/felix/src/packages/pointers.fdoc"
-
-  //$ Fast byte-wise copy from address to address.
-  //$ WHY IS THIS HERE?
-  proc memcpy: address * address * size =
-    "{if($1 && $2 && $3)::std::memcpy($1,$2,$3);}"
-    requires Cxx_headers::cstring
-  ;
-  //$ Fast bytewise comparison from address to address.
-  //$ WHY IS THIS HERE?
-  fun memcmp: address * address * size -> int = "::std::memcmp($1,$2,$3)"
-    requires Cxx_headers::cstring
-  ;
-
-  // Unsafe C string functions for NTBS.
-  // move to where they should be (if it isn't here .. :)
 }
 
 open[T] Eq[carray[T]];

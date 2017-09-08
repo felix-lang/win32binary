@@ -105,7 +105,7 @@ class Win32FileSystem
       return false;
     done
     bsiz := size (4096 * 1024); // 4 Meg
-    var buffer = C_hack::cast[&char] (C_hack::malloc(bsiz)); // 4 MEG
+    var buffer = C_hack::cast[&char] (Memory::malloc(bsiz)); // 4 MEG
     var bread = read (fsrc, buffer, bsiz);
     while bread > size 0 do
       var bwrite = write (fdst,buffer,bread);
@@ -134,7 +134,7 @@ class Win32FileSystem
       eprintln$ "In filesystem::filecopy close on dst " + dst + " failed: " + str errno + "=" + #strerror;
     done
     C_hack::ignore(Win32FileStat::utime(dst,now,last_modification));
-    C_hack::free(C_hack::cast[address] buffer);
+    Memory::free(C_hack::cast[address] buffer);
     return true;
   }
 

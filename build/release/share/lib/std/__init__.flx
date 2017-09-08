@@ -1,4 +1,4 @@
-#line 29 "C:/projects/felix/src/packages/libstruct.fdoc"
+#line 28 "C:/projects/felix/src/packages/libstruct.fdoc"
 
 // ISO C++99 standard header tags
 include "std/c/__init__";

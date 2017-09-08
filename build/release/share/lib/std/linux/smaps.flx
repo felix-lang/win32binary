@@ -1,4 +1,4 @@
-#line 359 "C:/projects/felix/src/packages/libstruct.fdoc"
+#line 292 "C:/projects/felix/src/packages/libstruct.fdoc"
 
 publish """
 Parses and totals proc/PID/smaps memory stats.

@@ -1,4 +1,4 @@
-#line 263 "C:/projects/felix/src/packages/pointers.fdoc"
+#line 7 "C:/projects/felix/src/packages/memory.fdoc"
 
 //$ Core operations on addresses.
 open class Address {
@@ -53,12 +53,5 @@ open class Address {
   fun - : address * address -> ptrdiff = "(char*)$1-(char*)$2";
 }
 
-// Do we want this to be hex?
-//instance[T in addressing] Repr[T] {
-//  fun repr (t:T) : string => vsprintf (c"%p" t);
-//}
-
 open Eq[byte];
-
 open Tord[address];
-

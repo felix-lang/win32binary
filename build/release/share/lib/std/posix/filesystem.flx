@@ -104,7 +104,7 @@ class PosixFileSystem
       return false;
     done
     bsiz := size (4096 * 1024); // 4 Meg
-    var buffer = C_hack::cast[&char] (C_hack::malloc(bsiz)); // 4 MEG
+    var buffer = C_hack::cast[&char] (Memory::malloc(bsiz)); // 4 MEG
     var bread = read (fsrc, buffer, bsiz);
     while bread > size 0 do
       var bwrite = write (fdst,buffer,bread);
@@ -133,7 +133,7 @@ class PosixFileSystem
       eprintln$ "[PosixFileSystem::filecopy] close on dst " + dst + " failed: " + str errno + "=" + #strerror;
     done
     C_hack::ignore(PosixFileStat::utime(dst,now,last_modification));
-    C_hack::free(C_hack::cast[address] buffer);
+    Memory::free(C_hack::cast[address] buffer);
     return true;
   }
 

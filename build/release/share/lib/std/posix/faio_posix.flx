@@ -125,7 +125,7 @@ fun getpeername (s: socket_t) : string =
   match family with
   | $(AF_INET) =>
     begin
-      var buffer = C_hack::cast[+char] (C_hack::malloc INET_ADDRSTRLEN.int);
+      var buffer = C_hack::cast[+char] (Memory::malloc INET_ADDRSTRLEN.int);
       // cast to IPv4 socket address
       var inet_sockaddr = C_hack::cast[&sockaddr_in_t] paddr;
       // extract pointer to IPv4 internet address
@@ -139,12 +139,12 @@ fun getpeername (s: socket_t) : string =
         )
       ;
       if not p.isNULL do ips = str p; done
-      C_hack::free (C_hack::cast[address] buffer);
+      Memory::free (C_hack::cast[address] buffer);
     end
 
   | $(AF_INET6) =>
     begin
-      var buffer = C_hack::cast[+char] (C_hack::malloc INET6_ADDRSTRLEN.int);
+      var buffer = C_hack::cast[+char] (Memory::malloc INET6_ADDRSTRLEN.int);
       // cast to IPv6 socket address
       var inet6_sockaddr = C_hack::cast[&sockaddr_in6_t] paddr;
       // extract IPv6 internet address (address of a byte array)
@@ -158,7 +158,7 @@ fun getpeername (s: socket_t) : string =
         )
       ;
       if not p.isNULL do ips = str p; done
-      C_hack::free (C_hack::cast[address] buffer);
+      Memory::free (C_hack::cast[address] buffer);
     end
 
   | _ => ;

@@ -1,7 +1,7 @@
-#line 53 "C:/projects/felix/src/packages/core_scalar_types.fdoc"
+#line 54 "C:/projects/felix/src/packages/core_scalar_types.fdoc"
 pod type char = "char";
 
-#line 70 "C:/projects/felix/src/packages/core_scalar_types.fdoc"
+#line 71 "C:/projects/felix/src/packages/core_scalar_types.fdoc"
 pod type tiny = "signed char";
 pod type short = "short";
 pod type int = "int";
@@ -19,7 +19,7 @@ pod type size = "size_t" requires C89_headers::stddef_h;
 pod type ssize = "ssize_t" requires C89_headers::stddef_h;
 
 
-#line 95 "C:/projects/felix/src/packages/core_scalar_types.fdoc"
+#line 96 "C:/projects/felix/src/packages/core_scalar_types.fdoc"
 pod type int8 = "int8_t" requires C99_headers::stdint_h;
 pod type int16 = "int16_t" requires C99_headers::stdint_h;
 pod type int32 = "int32_t" requires C99_headers::stdint_h;
@@ -29,7 +29,7 @@ pod type uint16 = "uint16_t" requires C99_headers::stdint_h;
 pod type uint32 = "uint32_t" requires C99_headers::stdint_h;
 pod type uint64 = "uint64_t" requires C99_headers::stdint_h;
 
-#line 117 "C:/projects/felix/src/packages/core_scalar_types.fdoc"
+#line 118 "C:/projects/felix/src/packages/core_scalar_types.fdoc"
 pod type byte = "unsigned char";
 type caddress = "void *";
 _gc_pointer type address = "void *";
@@ -38,7 +38,7 @@ pod type ptrdiff = "ptrdiff_t" requires C89_headers::stddef_h;
 
 pod type intptr = "intptr_t" requires C99_headers::stdint_h;
 pod type uintptr = "uintptr_t" requires C99_headers::stdint_h;
-#line 397 "C:/projects/felix/src/packages/core_scalar_types.fdoc"
+#line 398 "C:/projects/felix/src/packages/core_scalar_types.fdoc"
 pod type float = "float";
 pod type double = "double";
 pod type ldouble = "long double";
@@ -47,7 +47,7 @@ pod type dcomplex = "::std::complex<double>" requires Cxx_headers::complex;
 pod type lcomplex = "::std::complex<long double>" requires Cxx_headers::complex;
 
 
-#line 477 "C:/projects/felix/src/packages/core_scalar_types.fdoc"
+#line 478 "C:/projects/felix/src/packages/core_scalar_types.fdoc"
 //$ Types associated with raw address calculations.
 typedef addressing = typesetof (
   byte,
@@ -58,7 +58,7 @@ typedef addressing = typesetof (
 //$ Character types.
 typedef chars = typesetof (char);
 
-#line 489 "C:/projects/felix/src/packages/core_scalar_types.fdoc"
+#line 490 "C:/projects/felix/src/packages/core_scalar_types.fdoc"
 //$ "natural" sized signed integer types.
 //$ These correspond to C/C++ core types.
 typedef fast_sints = typesetof (tiny, short, int, long, vlong);
@@ -100,7 +100,7 @@ typedef exact_ints = exact_sints \cup exact_uints;
 //$ All the integers.
 typedef ints = sints \cup uints;
 
-#line 532 "C:/projects/felix/src/packages/core_scalar_types.fdoc"
+#line 533 "C:/projects/felix/src/packages/core_scalar_types.fdoc"
 //$ All the core floating point types.
 typedef floats = typesetof (float, double, ldouble);
 
@@ -112,7 +112,7 @@ typedef complexes = typesetof (fcomplex,dcomplex,lcomplex);
 
 //$ All the core approximations to numbers.
 typedef numbers = reals \cup complexes;
-#line 547 "C:/projects/felix/src/packages/core_scalar_types.fdoc"
+#line 548 "C:/projects/felix/src/packages/core_scalar_types.fdoc"
 //$ All the basic scalar types.
 typedef basic_types = bool \cup numbers \cup chars \cup addressing;
 

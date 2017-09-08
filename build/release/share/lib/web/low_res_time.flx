@@ -67,10 +67,10 @@ if PLAT_WIN32 do
   body """
     string asctime_helper(struct tm const * ti) {
       int len = 64;
-      char *fmted = (char*) malloc(sizeof(char)*64);
+      char *fmted = (char*) ::std::malloc(sizeof(char)*64);
       asctime_s(fmted,64,ti);
       string s = string(fmted);
-      free(fmted);
+      ::std::free(fmted);
       return s;
     }
   """;
@@ -78,10 +78,10 @@ else
   body """
     string asctime_helper(struct tm const * ti) {
       int len = 64;
-      char *fmted = (char*) malloc(sizeof(char)*64);
+      char *fmted = (char*) ::std::malloc(sizeof(char)*64);
       asctime_r(ti,fmted);
       string s = string(fmted);
-      free(fmted);
+      ::std::free(fmted);
       return s;
     }
   """;
@@ -97,10 +97,10 @@ done
   body """
     string strftime_helper(const char *pat,    const struct tm * ti) {
       int len = 64;
-      char *fmted = (char*) malloc(sizeof(char)*64);
+      char *fmted = (char*) ::std::malloc(sizeof(char)*64);
       strftime(fmted,len,pat,ti);
       string s = string(fmted);
-      free(fmted);
+      ::std::free(fmted);
       return s;
     }
   """;
