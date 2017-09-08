@@ -27,7 +27,7 @@ open Flx_unify
 open Flx_util
 open Flx_gen_helper
 open Flx_bid
-open Flx_type_aux
+open Flx_btype_subst
 
 (*
 let gen_class syms bsym_table props index id sr vs ts instance_no =
@@ -415,7 +415,7 @@ let gen_function_methods filename syms bsym_table (
     let ret = rt' vs ret' in
     if ret = btyp_tuple [] then "// elided (returns unit)\n","" else
 
-    let funtype = fold bsym_table syms.counter (btyp_function (argtype, ret)) in
+    let funtype = Flx_fold.fold bsym_table syms.counter (btyp_function (argtype, ret)) in
 
     let argtypename = cpp_typename syms bsym_table argtype in
     let name = cpp_instance_name syms bsym_table index ts in
@@ -542,7 +542,7 @@ let gen_procedure_methods filename syms bsym_table
     *)
     let argtype = typeof_bparams bps in
     let argtype = rt vs argtype in
-    let funtype = fold bsym_table syms.counter (btyp_function (argtype, btyp_void ())) in
+    let funtype = Flx_fold.fold bsym_table syms.counter (btyp_function (argtype, btyp_void ())) in
 
     let argtypename = cpp_typename syms bsym_table argtype in
     let name = cpp_instance_name syms bsym_table index ts in

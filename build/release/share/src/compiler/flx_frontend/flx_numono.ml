@@ -9,7 +9,7 @@ open Flx_bbdcl
 open Flx_bexpr
 open Flx_bexe
 open Flx_bparameter
-open Flx_type_aux
+open Flx_btype_subst
 open Flx_bid
 
 module CS = Flx_code_spec
@@ -772,7 +772,7 @@ print_endline ("Dependent variables:");
         print_endline ("      Unified with MGU=" ^ catmap "," (fun (i,t) ->
           string_of_int i ^ "->" ^ sbt bsym_table t) mgu);
 *)
-        let mgu = List.map (fun (i,t) -> i, Flx_unify.minimise bsym_table syms.counter t) mgu in
+        let mgu = List.map (fun (i,t) -> i, Flx_fold.minimise bsym_table syms.counter t) mgu in
 (*
         print_endline ("      Miniused MGU   =" ^ catmap "," (fun (i,t) ->
           string_of_int i ^ "->" ^ sbt bsym_table t) mgu);
