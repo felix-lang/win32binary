@@ -22,6 +22,7 @@ open Eq[unit];
 
 // -----------------------------------------------------------------------------
 
+/*
 typedef unitsums = typesetof (3,4,5,6,7,8,9,10,11,12,13,14,15,16);
 
 instance[T in unitsums] Eq[T] {
@@ -81,4 +82,5 @@ open Str[13];
 open Str[14];
 open Str[15];
 open Str[16];
+*/
 

@@ -1,4 +1,4 @@
-#line 699 "C:/projects/felix/src/packages/core_type_constructors.fdoc"
+#line 701 "C:/projects/felix/src/packages/core_type_constructors.fdoc"
 syntax tupleexpr
 {
   //$ Tuple formation by cons: right associative.
