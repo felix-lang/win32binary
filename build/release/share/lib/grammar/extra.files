@@ -17,8 +17,8 @@ std/control/exceptions.fsyn
 std/control/spipeexpr.fsyn
 std/datatype/listexpr.fsyn
 std/datatype/tupleexpr.fsyn
+std/regex/regexps.fsyn
 std/scalar/boolexpr.fsyn
 std/strings/parsers.fsyn
 std/strings/parser_syn.fsyn
-std/strings/regexps.fsyn
 std/strings/stringexpr.fsyn

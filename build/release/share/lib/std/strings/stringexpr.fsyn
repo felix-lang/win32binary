@@ -1,4 +1,4 @@
-#line 887 "C:/projects/felix/src/packages/strings.fdoc"
+#line 788 "C:/projects/felix/src/packages/strings.fdoc"
 syntax stringexpr
 {
   //$ String subscript.

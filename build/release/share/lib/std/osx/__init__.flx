@@ -1,4 +1,4 @@
-#line 274 "C:/projects/felix/src/packages/libstruct.fdoc"
+#line 277 "C:/projects/felix/src/packages/libstruct.fdoc"
 
 struct Osx{};
 include "std/posix/__init__";
