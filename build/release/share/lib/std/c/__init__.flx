@@ -1,4 +1,4 @@
-#line 82 "C:/projects/felix/src/packages/libstruct.fdoc"
+#line 84 "C:/projects/felix/src/packages/libstruct.fdoc"
 
 include "std/c/c_headers";
 include "std/c/cxx_headers";

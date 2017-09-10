@@ -1,4 +1,4 @@
-#line 183 "C:/projects/felix/src/packages/libstruct.fdoc"
+#line 185 "C:/projects/felix/src/packages/libstruct.fdoc"
 
 //$ This class provides access to raw C/C++ encodings.
 //$ Incorrect typing is likely to pass by Felix and
