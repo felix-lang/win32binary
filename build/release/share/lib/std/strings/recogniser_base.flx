@@ -492,7 +492,7 @@ restart:>
     if ch == char "\n" goto restart; // end of line
   done
   b&.next;
-  io.out `write` b;
+  io.out `(write) b;
   goto restart;
 }
 
@@ -518,7 +518,7 @@ restart:>
     if ch == char "\n" goto restart; // end of line
   done
   b&.next;
-  io.out `write` b;
+  io.out `(write) b;
   goto restart;
 }
 
