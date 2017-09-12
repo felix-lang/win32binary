@@ -93,11 +93,11 @@ println$ "add_window: index = " + (windows.len.int - 1  ).str + " SDL windows id
   {
     println$ "Delete all";
     var e : SDL_Event;
-    e.type = SDL_WINDOWEVENT.uint32;
-    e.window.event = SDL_WINDOWEVENT_CLOSE.uint8;
+    e&.type <- SDL_WINDOWEVENT.uint32;
+    e&.window.event <- SDL_WINDOWEVENT_CLOSE.uint8;
     for wobj in windows do
       var omsgs = #(wobj.get_oschannel);
-      e.window.windowID = #(wobj.get_window_id);
+      e&.window.windowID <- #(wobj.get_window_id);
       write (omsgs, e);
     done
     // note: not bothering to delete the darray :)

@@ -38,7 +38,7 @@ class FlxGuiEvents
       var clock = Faio::mk_alarm_clock();
       var e : SDL_Event;
       // dummy first event
-      e.type = SDL_FIRSTEVENT.uint32;
+      e&.type <- SDL_FIRSTEVENT.uint32;
       write$ events.src,e;
       proc waitevent()
       {
@@ -71,7 +71,7 @@ class FlxGuiEvents
     if d > 0.0 goto again;
     quit <- true;
     var quitmsg : SDL_Event;
-    quitmsg.type = SDL_QUIT.uint32;
+    quitmsg&.type <- SDL_QUIT.uint32;
 println$ "TIMEOUT";
     C_hack::ignore(SDL_PushEvent(&quitmsg));
 doquit:>
