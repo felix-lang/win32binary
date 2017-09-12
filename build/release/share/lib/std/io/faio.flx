@@ -28,9 +28,9 @@ class Faio {
       var bytes_done = pb.get_bytes_done;
       //println$ "Bytes done = "+ str bytes_done;
       //println$ "Req len= "+ str (*len);
-      *eof = (bytes_done != *len);
+      eof <- (bytes_done != *len);
       //println$ "Eof = " + str (*eof);
-      *len = bytes_done;
+      len <- bytes_done;
       //println$ "Reset len to bytes done ..";
   }
 

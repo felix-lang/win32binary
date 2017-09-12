@@ -1,4 +1,4 @@
-#line 3345 "C:/projects/felix/src/packages/flx.fdoc"
+#line 3359 "C:/projects/felix/src/packages/flx.fdoc"
 include "std/felix/flx/bootflx";
 println$ "BOOTFLX";
 System::pexit$ BootFlx::runflx #System::args;

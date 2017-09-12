@@ -558,8 +558,12 @@ private noinline proc handle_filename
   }
 
   ploopctl.progname <- arg;
-  ploopctl*.path,ploopctl*.ext = Filename::split_extension(arg);
-  ploopctl*.dir,ploopctl*.base = Filename::split1(ploopctl*.path);
+  var path,ext = Filename::split_extension(arg);
+  ploopctl.path <- path;
+  ploopctl.ext <- ext;
+  var dir,base = Filename::split1(ploopctl*.path);
+  ploopctl.dir <- dir;
+  ploopctl.base <- base;
 
   match check_ext $ Filename::get_extension arg with
   | "compile" =>
@@ -732,8 +736,8 @@ noinline proc processing_stage1
 
   // Grab program arguments.
   while xloopctl*.argno < vargs.len.int do
-    *(control.USER_ARGS) += vargs . (xloopctl*.argno);
-    ++*xloopctl.argno;
+    control.USER_ARGS `(+=) vargs . (xloopctl*.argno);
+    pre_incr (xloopctl.argno);
   done
   debugln$ "USER_ARGS=" + str control*.USER_ARGS;
 

@@ -1,4 +1,4 @@
-#line 261 "C:/projects/felix/src/packages/stl.fdoc"
+#line 263 "C:/projects/felix/src/packages/stl.fdoc"
 
 include "stl/stl";
 class Stl_MultiSet[t]

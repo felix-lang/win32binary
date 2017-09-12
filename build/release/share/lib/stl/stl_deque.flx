@@ -1,4 +1,4 @@
-#line 635 "C:/projects/felix/src/packages/stl.fdoc"
+#line 638 "C:/projects/felix/src/packages/stl.fdoc"
 
 
 class Stl_Deque[t]

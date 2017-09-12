@@ -16,7 +16,7 @@ class Cookie {
   }
 
   fun _ctor_cookie (n:string,v:string) = {
-    var c:cookie;c.name=n;c.value=v;return c;}
+    var c:cookie;c&.name<-n;c&.value<-v;return c;}
 
 
 
@@ -33,8 +33,5 @@ class Cookie {
   fun set_cookies (c:list[cookie]):string*string => ("Set-Cookie",
     fold_left (fun(x:string) (y:string):string => y +"\r"+ x) ""
       (map (fun(z:cookie):string => str(z)) c));
-
-
-
 
 }

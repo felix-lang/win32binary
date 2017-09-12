@@ -1,4 +1,4 @@
-#line 84 "C:/projects/felix/src/packages/pointers.fdoc"
+#line 85 "C:/projects/felix/src/packages/pointers.fdoc"
 
 
 // For some reason this functor must be in global scope
@@ -14,7 +14,7 @@ open class Carray
   //$ The carray type.
   type carray[T] = new &T;
 
-#line 105 "C:/projects/felix/src/packages/pointers.fdoc"
+#line 106 "C:/projects/felix/src/packages/pointers.fdoc"
 
   //$ Allocate a C array on the C heap (malloc).
   //$ Unsafe: Not tracked by GC.
@@ -28,7 +28,7 @@ open class Carray
   //$ Must point to C heap allocated storage. Unsafe.
   proc free[T]: carray[T] = "::std::free($1);";
 
-#line 120 "C:/projects/felix/src/packages/pointers.fdoc"
+#line 121 "C:/projects/felix/src/packages/pointers.fdoc"
 
   //$ Functional get by index.
   fun get[T]: carray[T] * !ints -> T = '$1[$2]';
@@ -40,14 +40,16 @@ open class Carray
   //$ i x = x . i = get (x,i)
   fun apply [T,I in ints] (i:I, x:carray[T]) => get (x,i);
 
-#line 136 "C:/projects/felix/src/packages/pointers.fdoc"
+#line 137 "C:/projects/felix/src/packages/pointers.fdoc"
   //$ Lvalue reference to element by index position. Unsafe.
-  lvalue fun subscript[T]: carray[T] * !ints -> T = '$1[$2]';
+  //lvalue fun subscript[T]: carray[T] * !ints -> T = '$1[$2]';
+  fun subscript[T]: carray[T] * !ints -> T = '$1[$2]';
 
   //$ Lvalue reference to element by pointer.
-  lvalue fun deref[T]: carray[T] -> T = '*$1';
+  //lvalue fun deref[T]: carray[T] -> T = '*$1';
+  fun deref[T]: carray[T] -> T = '*$1';
 
-#line 144 "C:/projects/felix/src/packages/pointers.fdoc"
+#line 147 "C:/projects/felix/src/packages/pointers.fdoc"
   //$ Advance carray to next element.
   fun + [T]: carray[T] * !ints -> carray[T]= '$1+$2';
 
@@ -58,7 +60,7 @@ open class Carray
   //$ two overlapping carrays.
   fun - [T]: carray[T] * carray[T]-> ptrdiff = '$1-$2';
 
-#line 156 "C:/projects/felix/src/packages/pointers.fdoc"
+#line 159 "C:/projects/felix/src/packages/pointers.fdoc"
 
   //$ Mutable pre-increment ++p.
   proc pre_incr[T]: &carray[T] = '++*$1;';
@@ -78,7 +80,7 @@ open class Carray
   //$ Mutable backup by offset amount.
   proc -= [T]: &carray[T] * !ints = '*$1-=$2;';
 
-#line 177 "C:/projects/felix/src/packages/pointers.fdoc"
+#line 180 "C:/projects/felix/src/packages/pointers.fdoc"
 
   //$ Pointer equality.
   instance[T] Eq[carray[T]] {
@@ -94,7 +96,7 @@ open class Carray
     fun >= : carray[T] * carray[T] -> bool = '$1>=$2';
   }
 
-#line 194 "C:/projects/felix/src/packages/pointers.fdoc"
+#line 197 "C:/projects/felix/src/packages/pointers.fdoc"
   //$ Get carray of an array.
   fun stl_begin[T,N]: carray[array[T,N]] -> carray[T] = "(?1*)&($1->data)";
 

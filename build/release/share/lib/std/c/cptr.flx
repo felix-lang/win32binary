@@ -13,7 +13,8 @@ open class Cptr
   typedef ptr[T] = &T;
 
   //$ Dereference a Felx pointer.
-  lvalue fun deref[T]: &T -> T = "*$1";
+  //lvalue fun deref[T]: &T -> T = "*$1";
+  fun deref[T]: &T -> T = "*$1";
 
   //$ Type of a C pointer.
   //$ Either pointes to an object or is NULL.

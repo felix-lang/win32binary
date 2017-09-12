@@ -95,7 +95,7 @@ class FlxCache
   // changes the automaton must be rebuilt.
 
   // returns cache time
-  gen validate_cache  (spec: cache_validation_spec_t) : int * double =
+  gen validate_cache  (var spec: cache_validation_spec_t) : int * double =
   {
 
     // ensure the cache directory exists
@@ -149,7 +149,7 @@ class FlxCache
         (spec.CACHE_DIR == "/" or spec.CACHE_DIR == "" or spec.CACHE_DIR == ".")
       )
       do
-        spec.CLEAR_CACHE = 1;
+        spec&.CLEAR_CACHE <- 1;
       done
 
     // If the automaton exists and the grammar is newer than the automaton
@@ -158,7 +158,7 @@ class FlxCache
       println$ "Cache may be out of date due to grammar upgrade!";
       println$ "Grammar time stamp          =" + FileStat::strfiletime(grammar_time);
       println$ "Automaton.syntax time stamp =" + FileStat::strfiletime(automaton_time);
-      spec.CLEAR_CACHE = 1;
+      spec&.CLEAR_CACHE <- 1;
     done
 
     // FFF BE CAREFUL! The value "/" for these caches is perfectly good

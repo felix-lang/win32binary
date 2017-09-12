@@ -1,4 +1,4 @@
-#line 2966 "C:/projects/felix/src/packages/flx.fdoc"
+#line 2972 "C:/projects/felix/src/packages/flx.fdoc"
 include "std/felix/config";
 
 include "std/felix/flx_cache";
@@ -136,8 +136,12 @@ class Flx
         files = sort files;
         for file in files do
           var arg = Filename::join (control*.INDIR, file);
-          loopctl*.path,loopctl*.ext = Filename::split_extension(arg);
-          loopctl*.dir,loopctl*.base = Filename::split1(loopctl*.path);
+          var path,ext = Filename::split_extension(arg);
+          loopctl.path <- path;
+          loopctl.ext <- ext;
+          var dir,base = Filename::split1(loopctl*.path);
+          loopctl.dir <- dir;
+          loopctl.base <- base;
           // temporary hack, to force reset of the linker filename, stdout, and expect
           // file names in cal_depvars so they depend on the current file.
           control.LINKER_OUTPUT_FILENAME <- "";

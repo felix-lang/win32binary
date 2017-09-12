@@ -98,19 +98,13 @@ syntax cbind {
             `(rreq_and (rreq_atom (Property_req "generator")) ,reqs)
             reqs))
       )
-      (let (
-        (reqs
-          (if (memv 'Lvalue _1)
-            `(rreq_and (rreq_atom (Property_req "lvalue")) ,reqs)
-            reqs))
-      )
       (if (eq? 'ast_arrow (first t))
         (let (
           (argt (caadr t))
           (ret (cadadr t)))
         `(ast_fun_decl ,_sr ,name ,vs ,(mkl2 argt) ,ret ,ct ,reqs ,prec)
         )
-        (giveup)))))
+        (giveup))))
     """;
 
   //$ Define a constructor function by a C expression.

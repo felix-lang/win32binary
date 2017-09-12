@@ -61,11 +61,6 @@ syntax functions {
   //$ In classes only. Specifies an overrideable function.
   sadjective := "virtual" =># "'Virtual";
 
-  //$ Function adjective (prefix property) lvalue.
-  //$ C function bindings only.
-  //$ Allows result of function call to be addressed.
-  sadjective := "lvalue" =># "'Lvalue";
-
   //$ Function dependent on its arguments only,
   //$ not dependent on any variables in its enclosing context.
   sadjective := "pure" =># "'Pure";

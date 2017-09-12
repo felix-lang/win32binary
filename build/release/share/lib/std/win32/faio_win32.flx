@@ -41,7 +41,7 @@ fun cmk_socket : unit -> SOCKET = '::socket(AF_INET, SOCK_STREAM, IPPROTO_TCP)';
 // must associate with iocp to do overlapped io with s (WSASend/Recv)
 proc mk_socket(s: &SOCKET)
 {
-    *s = cmk_socket();
+    s <- cmk_socket();
     associate_with_iocp(*s);                // associate with iocp (errors?).
 }
 
@@ -62,7 +62,7 @@ proc Accept(success: &bool, listener: SOCKET, accepted: SOCKET)
 {
     var acc = mk_accept(sys_demux,listener, accepted);
     faio_req$ &acc;    // causes AcceptEx to be called
-    *success = get_success(acc);
+    success <- get_success(acc);
 }
 
 type connect_ex="flx::faio::connect_ex";

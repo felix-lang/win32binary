@@ -1,4 +1,4 @@
-#line 1666 "C:/projects/felix/src/packages/flx.fdoc"
+#line 1670 "C:/projects/felix/src/packages/flx.fdoc"
 include "std/felix/flx/flx_control";
 
 class FlxDepvars
@@ -120,14 +120,14 @@ gen cal_depvars(
     System::exit(1);
   done
 
-  control*.FLX_INTERFACE_FILENAME =
+  control.FLX_INTERFACE_FILENAME <-
     match control*.BUNDLE_DIR with
     | Some dir => Filename::join(dir,Filename::basename filebase+"_interface.flx")
     | #None => cache_join (config.FLX_OUTPUT_DIR,filebase+"_interface.flx")
     endmatch;
   debugln$ "Flx interface filename is " + control*.FLX_INTERFACE_FILENAME;
 
-  control*.CXX_INTERFACE_FILENAME =
+  control.CXX_INTERFACE_FILENAME <-
     match control*.BUNDLE_DIR with
     | Some dir => Filename::join(dir,Filename::basename filebase+".hpp")
     | #None => cache_join (config.FLX_OUTPUT_DIR,filebase+".hpp")
@@ -154,26 +154,26 @@ gen cal_depvars(
         f = filebase+EXT_SHARED_OBJ;
       done
     done
-    control*.LINKER_OUTPUT_FILENAME = cache_join (config.FLX_CACHE_DIR,f);
+    control.LINKER_OUTPUT_FILENAME <- cache_join (config.FLX_CACHE_DIR,f);
     debugln$ "Felx writing output binary to " + control*.LINKER_OUTPUT_FILENAME;
   elif control*.OUTPUT_FILENAME_WITHOUT_EXTENSION_SPECIFIED == 1 do
     if control*.LINKIT == 1 or control*.RUNONLY == 1 do
       if control*.STATICLIB == 1 do
-        *control.LINKER_OUTPUT_FILENAME += EXT_LIB;
+        control.LINKER_OUTPUT_FILENAME `(+=) EXT_LIB;
       elif control*.STATIC == 0 do // dynamic
         if control*.LINKEXE == 1 do
-          *control.LINKER_OUTPUT_FILENAME += EXT_EXE;
+          control.LINKER_OUTPUT_FILENAME `(+=) EXT_EXE;
         else
-          *control.LINKER_OUTPUT_FILENAME += EXT_SHLIB;
+          control.LINKER_OUTPUT_FILENAME `(+=) EXT_SHLIB;
         done
       else
-        *control.LINKER_OUTPUT_FILENAME += EXT_EXE;
+        control.LINKER_OUTPUT_FILENAME `(+=) EXT_EXE;
       done
     else // No link, name specifies object file only.
       if control*.STATIC == 1 do
-        *control.LINKER_OUTPUT_FILENAME += EXT_STATIC_OBJ;
+        control.LINKER_OUTPUT_FILENAME `(+=) EXT_STATIC_OBJ;
       else
-        *control.LINKER_OUTPUT_FILENAME += EXT_SHARED_OBJ;
+        control.LINKER_OUTPUT_FILENAME `(+=) EXT_SHARED_OBJ;
       done
     done
   elif control*.OUTPUT_DIRECTORY_SPECIFIED == 1 do

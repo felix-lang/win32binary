@@ -218,8 +218,8 @@ proc connect(s: &socket_t, addr: +char, port: int, err: &int)
 {
     var ac = mk_async_connect(sys_demux,addr, port);
     faio_req$ &ac;
-    *err = ac.get_err;
-    *s = ac.get_socket;
+    err <- ac.get_err;
+    s <- ac.get_socket;
 }
 
 type accept_request = "::flx::faio::accept_request";
@@ -235,7 +235,7 @@ proc accept(s: &socket_t, listener: socket_t)
 {
     var acc = mk_accept$ sys_demux,listener;
     faio_req$ &acc;
-    *s = acc.get_socket;
+    s <- acc.get_socket;
 }
 
 } // class faio_posix

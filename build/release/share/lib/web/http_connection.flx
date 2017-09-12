@@ -22,7 +22,7 @@ class HTTPConnection {
     return http_connection(config,sock,&b);
   }
   proc set_dirty(conn:http_connection,state:bool) {
-    *conn.dirty = state;
+    conn.dirty <- state;
   }
 
   noinline proc write(var conn:http_connection,var content:string) {

@@ -1,4 +1,4 @@
-#line 2346 "C:/projects/felix/src/packages/grammar.fdoc"
+#line 2341 "C:/projects/felix/src/packages/grammar.fdoc"
 syntax global_regdefs {
   /* ====================== REGULAR DEFINITIONS ============================ */
   /* special characters */

@@ -211,10 +211,10 @@ class HTTPRequest {
   } 
       
   private proc copy_request(orig:&http_request,cpy:&http_request) = {
-    *cpy.hmethod = *orig.hmethod;
-    *cpy.uri = *orig.uri;
-    *cpy.path = *orig.path;
-    *cpy.params = *orig.params;
+    cpy.hmethod <- *orig.hmethod;
+    cpy.uri <- *orig.uri;
+    cpy.path <- *orig.path;
+    cpy.params <- *orig.params;
   }
 
   publish """
@@ -234,7 +234,7 @@ class HTTPRequest {
       get_line(conn.sock, &line); 
       match split(line,':') with
         | Cons(key,value) =>
-              *headers = Cons((uri_decode(strip(key)),   
+              headers <- Cons((uri_decode(strip(key)),   
 	      uri_decode(strip(fold_left (fun(x:string) (y:string):string => x + y) "" value))),
               *headers);
          | x => println("WARNING:Possible malformed request headerline:"+x); 
@@ -266,9 +266,9 @@ class HTTPRequest {
     endmatch;  
     var headers = Empty[string^2];
     get_headers(conn,&headers);
-    got.headers = headers;
+    got&.headers <- headers;
     copy_request(&got,request); 
-    *request.headers=headers;
+    request.headers <- headers;
   }
 
 
@@ -292,7 +292,7 @@ class HTTPRequest {
       done
       Memory::free(buf_a);
     done
-    *request.entity_params = params;
+    request.entity_params <- params;
     return ; 
   }
 
@@ -317,7 +317,7 @@ fun read_bytes(conn:http_connection,olen:int) = {
     val llen = match get_header(*request,"Content-Length") with |Some s=> int(s) |_ => 0 endmatch;
     var rest = read_bytes(conn,llen);
     write(conn,HTTPResponse::make_continue());
-    *conn.dirty=false;
+    conn.dirty <- false;
 
     match (find (fun (s:string) => s == "boundary") attribs) with
       |Some b => { get_line(conn.sock, &line); 
@@ -326,7 +326,7 @@ fun read_bytes(conn:http_connection,olen:int) = {
       }
      |_ => {conn.config.log(DEBUG,"No Boundry"); }
     endmatch;
-     *request.entity_params=Empty[string*string];
+     request.entity_params <- Empty[string*string];
   }
 
   fun get_fname(request:http_request) ={
@@ -686,7 +686,7 @@ class HTTPConnection {
     return http_connection(config,sock,&b);
   }
   proc set_dirty(conn:http_connection,state:bool) {
-    *conn.dirty = state;
+    conn.dirty <- state;
   }
 
   noinline proc write(var conn:http_connection,var content:string) {
@@ -1212,7 +1212,7 @@ class Cookie {
   }
 
   fun _ctor_cookie (n:string,v:string) = {
-    var c:cookie;c.name=n;c.value=v;return c;}
+    var c:cookie;c&.name<-n;c&.value<-v;return c;}
 
 
 
@@ -1229,9 +1229,6 @@ class Cookie {
   fun set_cookies (c:list[cookie]):string*string => ("Set-Cookie",
     fold_left (fun(x:string) (y:string):string => y +"\r"+ x) "" 
       (map (fun(z:cookie):string => str(z)) c));
-
-
-
 
 }
 @
@@ -2028,13 +2025,13 @@ class ServerConfig {
       arg = System::argv argno;
       println$ "ARG=" + arg;
       if prefix(arg,"--document_root=") do
-        cfg.document_root = arg.[16 to];
+        cfg&.document_root <- arg.[16 to];
       elif prefix(arg,"--server_root=") do
-        cfg.server_root = arg.[14 to];
+        cfg&.server_root <- arg.[14 to];
       elif prefix(arg,"--port=") do
-        cfg.port = atoi arg.[7 to];
+        cfg&.port <- atoi arg.[7 to];
       elif prefix(arg,"--config=") do
-        cfg.file_name = arg.[9 to];
+        cfg&.file_name <- arg.[9 to];
         if( not (FileStat::fileexists(cfg.file_name))) do
           proc_fail("unable to open config file:"+cfg.file_name); 
         done
@@ -2046,7 +2043,7 @@ class ServerConfig {
         else
           dbg_log = console_logger(DEBUG);
         done;
-        cfg.log = logger(console_logger(INFO)+console_logger(ERROR)+dbg_log);
+        cfg&.log <- logger(console_logger(INFO)+console_logger(ERROR)+dbg_log);
       elif prefix(arg,"--help") do
         println("Usage: "+(System::argv 0)+""" [OPTION]
   --document-root=PATH    Path to document root directory defaults to ./html
@@ -2066,7 +2063,7 @@ class ServerConfig {
   private fun toupper: char->char = "(char)::std::toupper($1)" requires Cxx_headers::cctype ;
 
 
-  fun enhance_with_config_file(config:server_config):opt[server_config]*string = {
+  fun enhance_with_config_file(var config:server_config):opt[server_config]*string = {
     var cfg = config;
     val config_file_default = Filename::join("config","server_config.cfg");
     val enviro_config = Env::getenv((map toupper cfg.application)+"_CFG","");
@@ -2074,7 +2071,7 @@ class ServerConfig {
         if enviro_config  == "" do
             var cwd_config = Filename::join(".",config_file_default);
             if FileStat::fileexists(cwd_config) do 
-                cfg.file_name = cwd_config;
+                cfg&.file_name <- cwd_config;
             else
                 var home = Env::getenv("HOME","");
                 if home == "" do
@@ -2083,7 +2080,7 @@ class ServerConfig {
                     var home_config = Filename::join(home,
                     Filename::join(".felix",Filename::join(cfg.application,config_file_default)));
                     if FileStat::fileexists(home_config) do
-                        cfg.file_name = home_config;
+                        cfg&.file_name <- home_config;
                     else
                         return None[server_config],("Unable to open configurationfile:" + home_config);
                     done
@@ -2091,7 +2088,7 @@ class ServerConfig {
             done
         else 
             if FileStat::fileexists(enviro_config) do
-                cfg.file_name = enviro_config;
+                cfg&.file_name <- enviro_config;
             else
                 return None[server_config],("Unable to open configurationfile:" + enviro_config);
             done
@@ -2106,21 +2103,21 @@ class ServerConfig {
   }
 
   proc set_params(cfg:&server_config,params:list[string^2]) {
-    *cfg.params = params;
+    cfg.params <- params;
     match find (fun (a:string,b:string) => eq(a,b)) params "port" with 
-      |Some s => *cfg.port = int(s);
+      |Some s => cfg.port <- int(s);
       |_ => {}();
     endmatch;
     match find (fun (a:string,b:string) => eq(a,b)) params "server_root" with 
-      |Some s => *cfg.server_root = s;
+      |Some s => cfg.server_root <- s;
       |_ => {}();
     endmatch;
     match find (fun (a:string,b:string) => eq(a,b)) params "document_root" with 
-      |Some s => *cfg.document_root = s;
+      |Some s => cfg.document_root <- s;
       |_ => {}();
     endmatch;
     match find (fun (a:string,b:string) => eq(a,b)) params "delay" with 
-      |Some s => *cfg.delay = double(s);
+      |Some s => cfg.delay <- double(s);
       |_ => {}();
     endmatch;
 

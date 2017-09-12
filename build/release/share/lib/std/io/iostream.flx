@@ -67,15 +67,15 @@ class IOStream {
   instance IByteStream[devnull_t]
   {
     proc read(strm: devnull_t, len: &int, buf: address, eof: &bool) {
-      *len = 0;
-      *eof = true;
+      len <- 0;
+      eof <- true;
     }
   }
 
   instance OByteStream[devnull_t]
   {
     proc write(strm: devnull_t, len: &int, buf: address, eof: &bool) {
-      *eof = false;
+      eof <- false;
     }
   }
 
@@ -260,7 +260,7 @@ class IOStream {
       done
     done
 
-    *sign = cmp;
+    sign <- cmp;
   }
 
 
@@ -338,7 +338,7 @@ class IOStream {
         st += c;
       done
     done
-    *s = st;  // pass back result
+    s <- st;  // pass back result
   }
 
   proc write_string[ostr with OByteStream[ostr]] (

@@ -1,4 +1,4 @@
-#line 3331 "C:/projects/felix/src/packages/flx.fdoc"
+#line 3345 "C:/projects/felix/src/packages/flx.fdoc"
 class Flx_client {
   var runflx : list[string] -> int;
   proc setup ()

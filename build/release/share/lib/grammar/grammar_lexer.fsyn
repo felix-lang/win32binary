@@ -1,4 +1,4 @@
-#line 2298 "C:/projects/felix/src/packages/grammar.fdoc"
+#line 2293 "C:/projects/felix/src/packages/grammar.fdoc"
 SCHEME """
 (define (stripus s) ; strip underscores
   (let*
